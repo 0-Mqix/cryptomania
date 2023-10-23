@@ -11,17 +11,22 @@
                     <div class="symbol">{{.Symbol}}</div>
                     <div>
                         {{.Name}}
-                        {{ $value := index $wallet .Id }}
-                        {{if ne $value 0.0 }}
-                            <span class="balance">
-                                {{$value}}
-                            </span>
-                        {{end}}
+                     
                     </div>
                 </div>
                 <div class="price">
+                    {{ $value := index $wallet .Id }}
+                    {{if ne $value 0.0 }}
+                        <div class="balance">
+                            {{$value}} {{.Symbol}}
+                        </div>
+                    {{end}}
                     <div class="value">{{ format_float .PriceUsd 2 }} $</div>
-                    <div class="change">{{ price_change .ChangePercent24Hr }}</div>               
+                    <div class="change">{{ price_change .ChangePercent24Hr }}</div>    
+                    {{if ne $value 0.0 }}
+                        <div class="line"></div>
+                    <div>{{calculate_balance $value .PriceUsd }}</div>
+                    {{end}}      
                 </div>
             </div>
         {{ end }}
@@ -68,6 +73,10 @@
             .value {
                 color: var(--special-color-1);
                 font-weight: bold;
+            }
+
+            .line {
+                border-bottom: solid white 2px;
             }
         }
 

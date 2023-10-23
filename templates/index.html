@@ -1,0 +1,101 @@
+{{ $wallet := .Wallet }}
+
+<main>
+    <div id="filter">
+        
+    </div>
+    <div class="assets"> 
+        {{ range .Assets }}
+            <div class="asset">
+                <div class="name">
+                    <div class="symbol">{{.Symbol}}</div>
+                    <div>
+                        {{.Name}}
+                        {{ $value := index $wallet .Id }}
+                        {{if ne $value 0.0 }}
+                            <span class="balance">
+                                {{$value}}
+                            </span>
+                        {{end}}
+                    </div>
+                </div>
+                <div class="price">
+                    <div class="value">{{ format_float .PriceUsd 2 }} $</div>
+                    <div class="change">{{ price_change .ChangePercent24Hr }}</div>               
+                </div>
+            </div>
+        {{ end }}
+    </div>
+</main>
+
+<style>
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .assets {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-width: 600px;
+        width: 45vw;
+        padding: 12px;
+    }
+
+    .asset {
+        display: flex;
+        border: solid var(--color) 2px;
+        border-radius: 0.75rem;
+        justify-items: center;
+        align-items: center;
+        padding: 24px;
+        font-weight: bold;
+        font-size: medium;
+        color: var(--color);
+
+        .balance {
+            color: var(--special-color-2);
+        }
+
+        .price {
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            text-align: right;
+            
+            .value {
+                color: var(--special-color-1);
+                font-weight: bold;
+            }
+        }
+
+        .name {
+            display: flex;
+            align-items: center;
+
+            .symbol {
+                padding-right: 12px;
+                font-size: 36px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        .assets {
+            min-width: unset;
+            width: 100vw;
+
+            .name {
+                flex-direction: column;
+                align-items: flex-start;
+
+                .symbol {
+                    padding-right:0px;
+                }
+            }
+        }
+
+    }
+</style>

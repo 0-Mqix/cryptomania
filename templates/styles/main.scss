@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.positive {
+    color: var(--green);
+}
+
+.negative {
+    color: var(--red)
+}
+

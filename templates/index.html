@@ -1,9 +1,9 @@
+<import>Overview ./components/overview.html</import>
+
 {{ $wallet := .Wallet }}
 
 <main>
-    <div id="filter">
-        
-    </div>
+    <Overview />
     <div class="assets"> 
         {{ range .Assets }}
             <div class="asset">
@@ -11,14 +11,13 @@
                     <div class="symbol">{{.Symbol}}</div>
                     <div>
                         {{.Name}}
-                     
                     </div>
                 </div>
                 <div class="price">
                     {{ $value := index $wallet .Id }}
                     {{if ne $value 0.0 }}
                         <div class="balance">
-                            {{$value}} {{.Symbol}}
+                            {{format_float $value 3 }} {{.Symbol}}
                         </div>
                     {{end}}
                     <div class="value">{{ format_float .PriceUsd 2 }} $</div>
@@ -37,6 +36,7 @@
     main {
         display: flex;
         flex-direction: column;
+        width: 100%;
     }
 
     .assets {
@@ -45,7 +45,7 @@
         gap: 12px;
         min-width: 600px;
         width: 45vw;
-        padding: 12px;
+        padding-top: 12px;
     }
 
     .asset {
@@ -58,9 +58,15 @@
         font-weight: bold;
         font-size: medium;
         color: var(--color);
+        transition: font-size 0.25s;
 
         .balance {
-            color: var(--special-color-2);
+            color: var(--blue);
+        }
+
+
+        &:hover {
+            font-size: 120%;
         }
 
         .price {
@@ -71,12 +77,12 @@
             text-align: right;
             
             .value {
-                color: var(--special-color-1);
+                color: var(--purple);
                 font-weight: bold;
             }
 
             .line {
-                border-bottom: solid white 2px;
+                border-bottom: solid var(--color) 2px;
             }
         }
 
@@ -94,7 +100,7 @@
     @media screen and (max-width: 600px) {
         .assets {
             min-width: unset;
-            width: 100vw;
+            width: 100%;
 
             .name {
                 flex-direction: column;

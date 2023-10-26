@@ -1,0 +1,61 @@
+<div id="overview">
+    <div id="chart"></div> 
+    <button id="buy" class="button">buy</button>
+    <button id="sell" class="button">sell</button>
+</div>
+
+<style>
+    #chart {
+        height: 400px;
+        max-width: 100%;
+    }
+
+    #overview {
+        flex-direction: column;
+        justify-items: center;
+        display: flex;
+        gap: 12px;
+        min-width: 600px;
+        width: 45vw;
+        padding: 12px;
+        border: solid var(--color) 2px;
+        border-radius: 0.75rem;
+    }
+
+    .button {
+        padding: 12px;
+        border-radius: 0.75rem;
+        font-weight: bolder;
+        width: 60px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--background-color);
+    }
+
+    #sell {
+        color: var(--red);
+        border: solid var(--red) 2px;
+        &:hover {
+        }
+    }
+
+    #buy {
+        color: var(--blue);
+        border: solid var(--blue) 2px;
+        &:hover {
+        }
+    }
+
+    text.highcharts-credits {
+        display: none !important;
+    }
+    
+    @media screen and (max-width: 600px) {
+        #overview {
+            min-width: unset; 
+            width: 100%;
+        }
+    }
+</style>

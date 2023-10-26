@@ -80,7 +80,7 @@ func main() {
 		}),
 	)
 
-	wallet := map[string]float64{"bitcoin": 0.13, "xrp": 43}
+	wallet := map[string]float64{"bitcoin": 0.00704690, "chainlink": 2.33295218}
 
 	templates.Load(m, templates.GlobalHandlers{})
 	root := m.MustGetRoot("./templates/root.html")

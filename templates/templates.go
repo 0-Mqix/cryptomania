@@ -9,14 +9,18 @@ import (
 )
 
 var (
-	Index *melt.Component
+	Login              *melt.Component
+	ComponentsOverview *melt.Component
+	Index              *melt.Component
 )
 
 type GlobalHandlers struct {
 }
 
 func Load(furnace *melt.Furnace, handlers GlobalHandlers) {
+	ComponentsOverview = furnace.MustGetComponent("templates/components/overview.html")
 	Index = furnace.MustGetComponent("templates/index.html")
+	Login = furnace.MustGetComponent("templates/login.html")
 
 	globalHandlers := make(map[string]melt.GlobalHandler)
 
@@ -24,10 +28,10 @@ func Load(furnace *melt.Furnace, handlers GlobalHandlers) {
 }
 
 type IndexData struct {
-	Wallet            any
-	Assets            any
 	PriceUsd          any
 	ChangePercent24Hr any
+	Wallet            any
+	Assets            any
 }
 
 // generated write function for component
@@ -35,4 +39,22 @@ type IndexData struct {
 //	path: "templates/index.html"
 func WriteIndex(w io.Writer, r *http.Request, data IndexData, globalOptions ...melt.GlobalOption) error {
 	return Index.Write(w, r, data, globalOptions...)
+}
+
+type LoginData struct{}
+
+// generated write function for component
+//
+//	path: "templates/login.html"
+func WriteLogin(w io.Writer, r *http.Request, data LoginData, globalOptions ...melt.GlobalOption) error {
+	return Login.Write(w, r, data, globalOptions...)
+}
+
+type ComponentsOverviewData struct{}
+
+// generated write function for component
+//
+//	path: "templates/components/overview.html"
+func WriteComponentsOverview(w io.Writer, r *http.Request, data ComponentsOverviewData, globalOptions ...melt.GlobalOption) error {
+	return ComponentsOverview.Write(w, r, data, globalOptions...)
 }

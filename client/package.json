@@ -16,6 +16,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "highcharts": "^11.1.0",
     "htmx.org": "^1.9.5",
     "lit": "^3.0.0"
   }

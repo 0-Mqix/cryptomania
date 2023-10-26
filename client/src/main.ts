@@ -7,7 +7,7 @@ window.htmx = htmx
 
 
 async function prices(coin: string) {
-    return fetch(`https://api.coincap.io/v2/assets/bitcoin/history?interval=h1&start=${Date.now() -  604_800_000}&end=${Date.now()}`)
+    return fetch(`https://api.coincap.io/v2/assets/bitcoin/history?interval=m15&start=${Date.now() -  604_800_000}&end=${Date.now()}`)
     .then(response => response.json())
     .then(data => {
         //@ts-ignore

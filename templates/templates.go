@@ -27,20 +27,6 @@ func Load(furnace *melt.Furnace, handlers GlobalHandlers) {
 	furnace.SetGlobalHandlers(globalHandlers)
 }
 
-type IndexData struct {
-	PriceUsd          any
-	ChangePercent24Hr any
-	Wallet            any
-	Assets            any
-}
-
-// generated write function for component
-//
-//	path: "templates/index.html"
-func WriteIndex(w io.Writer, r *http.Request, data IndexData, globalOptions ...melt.GlobalOption) error {
-	return Index.Write(w, r, data, globalOptions...)
-}
-
 type LoginData struct{}
 
 // generated write function for component
@@ -57,4 +43,18 @@ type ComponentsOverviewData struct{}
 //	path: "templates/components/overview.html"
 func WriteComponentsOverview(w io.Writer, r *http.Request, data ComponentsOverviewData, globalOptions ...melt.GlobalOption) error {
 	return ComponentsOverview.Write(w, r, data, globalOptions...)
+}
+
+type IndexData struct {
+	Wallet            any
+	Assets            any
+	PriceUsd          any
+	ChangePercent24Hr any
+}
+
+// generated write function for component
+//
+//	path: "templates/index.html"
+func WriteIndex(w io.Writer, r *http.Request, data IndexData, globalOptions ...melt.GlobalOption) error {
+	return Index.Write(w, r, data, globalOptions...)
 }

@@ -8066,7 +8066,7 @@ var htmx_minExports = htmx_min.exports;
 const htmx = /* @__PURE__ */ getDefaultExportFromCjs(htmx_minExports);
 window.htmx = htmx;
 async function prices(ti) {
-  return fetch(`https://api.coincap.io/v2/assets/bitcoin/history?interval=h1&start=${Date.now() - 6048e5}&end=${Date.now()}`).then((ui) => ui.json()).then((ui) => ui.data.map((ci) => [ci.time, Number(ci.priceUsd)]));
+  return fetch(`https://api.coincap.io/v2/assets/bitcoin/history?interval=m15&start=${Date.now() - 6048e5}&end=${Date.now()}`).then((ui) => ui.json()).then((ui) => ui.data.map((ci) => [ci.time, Number(ci.priceUsd)]));
 }
 window.addEventListener("DOMContentLoaded", async function() {
   Highcharts.chart("chart", {

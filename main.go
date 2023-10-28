@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"html/template"
 	"io"
+	"math"
 	"net/http"
 	"strconv"
 	"strings"
@@ -15,19 +16,54 @@ import (
 
 //go:generate go run generate.go
 
-func formatFloatFunction(input any, number int) (string, error) {
+func formatFloat(number float64) string {
+	var str string
+	if number >= 100 {
+		str = fmt.Sprintf("%.0f", number)
+	} else if number < 0.1 {
+		decimals := strings.Split(strconv.FormatFloat(number, 'f', -1, 64), ".")[1]
+		for i := 0; i < len(decimals); i++ {
+			if decimals[i] == '0' {
+				continue
+			}
+			str = fmt.Sprintf("%."+strconv.Itoa(i+3)+"f", number)
+			break
+		}
+	} else {
+		str = fmt.Sprintf("%.2f", number)
+	}
+
+	split := strings.Split(str, ".")
+	runes := []rune(split[0])
+	var result []rune
+
+	for i := len(runes) - 1; i >= 0; i-- {
+		result = append([]rune{runes[i]}, result...)
+		if (len(runes)-1-i)%3 == 2 && i != 0 {
+			result = append([]rune{'_'}, result...)
+		}
+	}
+
+	if len(split) == 1 {
+		return string(result)
+	}
+
+	return string(result) + "." + split[1]
+}
+
+func formatFloatFunction(input any) (string, error) {
 	switch value := input.(type) {
 
 	case float64, float32:
-		return fmt.Sprintf(fmt.Sprintf("%%.%df", number), value), nil
+		return formatFloat(value.(float64)), nil
 
 	case string:
-		v, err := strconv.ParseFloat(value, 64)
+		number, err := strconv.ParseFloat(value, 64)
 
 		if err != nil {
 			return "", err
 		}
-		return fmt.Sprintf(fmt.Sprintf("%%.%df", number), v), nil
+		return formatFloat(number), nil
 
 	default:
 		return fmt.Sprint(value), nil
@@ -49,7 +85,7 @@ func priceChange(input string) (template.HTML, error) {
 		class = "positive"
 	}
 
-	return template.HTML(fmt.Sprintf("<span class=\"%s\"/>%.2f %%<span/>", class, value)), nil
+	return template.HTML(fmt.Sprintf("<span class=\"%s\"/>%.2f %%<span/>", class, math.Abs(value))), nil
 }
 
 func lowCase(s string) string {
@@ -63,7 +99,15 @@ func calculateBalance(balance float64, priceString string) (string, error) {
 		return "", err
 	}
 
-	return fmt.Sprintf("%.2f $", balance*price), err
+	return formatFloat(balance*price) + " $", err
+}
+
+var funcs = template.FuncMap{
+	"format_float":      formatFloatFunction,
+	"low_case":          lowCase,
+	"price_change":      priceChange,
+	"println":           fmt.Println,
+	"calculate_balance": calculateBalance,
 }
 
 func main() {
@@ -71,13 +115,7 @@ func main() {
 		melt.WithWatcher("/reload_event", true, true, []string{".html", ".scss"}, "./templates"),
 		melt.WithGeneration("./templates/templates.go"),
 		melt.WithStyle(true, "melt", "./templates/styles/main.scss", ""),
-		melt.WithComponentFuncMap(template.FuncMap{
-			"format_float":      formatFloatFunction,
-			"low_case":          lowCase,
-			"price_change":      priceChange,
-			"println":           fmt.Println,
-			"calculate_balance": calculateBalance,
-		}),
+		melt.WithComponentFuncMap(funcs),
 	)
 
 	wallet := map[string]float64{"bitcoin": 0.00704690, "chainlink": 2.33295218}
@@ -90,6 +128,10 @@ func main() {
 	r.Get("/", func(w http.ResponseWriter, r *http.Request) {
 		assets, err := GetAssets()
 
+		for _, a := range assets {
+			a.Balance = wallet[a.Id]
+		}
+
 		if err != nil {
 			w.WriteHeader(500)
 			return
@@ -100,6 +142,38 @@ func main() {
 		root.Write(w, nil, func(w io.Writer) {
 			templates.WriteIndex(w, r, data)
 		})
+	})
+
+	r.Get("/overview/{coin}", func(w http.ResponseWriter, r *http.Request) {
+		coin := chi.URLParam(r, "coin")
+		asset, err := GetAsset(coin)
+
+		if err != nil {
+			fmt.Println(err)
+			w.WriteHeader(500)
+			return
+		}
+
+		asset.Balance = wallet[asset.Id]
+
+		templates.WriteComponentsOverview(w, r, templates.ComponentsOverviewData{
+			Coin:  coin,
+			Asset: asset,
+		})
+	})
+
+	r.Get("/list/{coin}", func(w http.ResponseWriter, r *http.Request) {
+		coin := chi.URLParam(r, "coin")
+		asset, err := GetAsset(coin)
+
+		if err != nil {
+			fmt.Println(err)
+			w.WriteHeader(500)
+			return
+		}
+
+		asset.Balance = wallet[asset.Id]
+		templates.Index.WriteTemplate(w, "asset", asset)
 	})
 
 	r.Get("/reload_event", m.ReloadEventHandler)

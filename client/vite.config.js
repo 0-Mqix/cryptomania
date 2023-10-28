@@ -17,7 +17,7 @@ export default defineConfig({
 			closeBundle: async () => {
 				try {
 					const result = await fetch(
-						"http://localhost:4002/reload_event",
+						"http://localhost:3000/reload_event",
 						{
 							method: "post"
 						}

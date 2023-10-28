@@ -1,13 +1,16 @@
-import "./style.css"
 import Highcharts from "highcharts"
 import htmx from "htmx.org"
+
+import QuantitySelector from "./QuantitySelector";
 
 //@ts-ignore
 window.htmx = htmx
 
+//define custom elements
+customElements.define('quantity-selector', QuantitySelector);
 
 async function prices(coin: string) {
-    return fetch(`https://api.coincap.io/v2/assets/bitcoin/history?interval=m15&start=${Date.now() -  604_800_000}&end=${Date.now()}`)
+    return fetch(`https://api.coincap.io/v2/assets/${coin}/history?interval=m15&start=${Date.now() -  604_800_000}&end=${Date.now()}`)
     .then(response => response.json())
     .then(data => {
         //@ts-ignore
@@ -15,22 +18,31 @@ async function prices(coin: string) {
     })
 }
 
-window.addEventListener("DOMContentLoaded", async function() {
-    //@ts-ignore
-
-    const chart = Highcharts.chart("chart", {
+//@ts-ignore
+window.load_chart = async function (coin: string) {
+    Highcharts.chart("chart-" + coin, {
         chart: {
             type: 'line',
             backgroundColor: "var(--background-color)",
             numberFormatter: function(x) {
-                return x.toFixed(0);
-            },
+                if (x >= 100) { return x.toFixed(0) }
+
+                if (x < 0.1) {
+                    const decimals = x.toString().split(".")[1]
+                    
+                    for (let i = 0; i < decimals.length; i++) {
+                        if (decimals[i] == '0') {
+                            continue
+                        }
+                        return x.toFixed(i+3)
+                    }
+                }
+
+                return x.toFixed(2)
+            }
         },
         title: {
-            text: 'bitcoin price chart',
-            style: {
-                color: "var(--color)"
-            }
+            text: "",
         },  
         legend: {
             enabled: false
@@ -62,9 +74,8 @@ window.addEventListener("DOMContentLoaded", async function() {
         series: [{
             type: 'line',
             name: '$',
-            data: await prices("bitcoin"),
+            data: await prices(coin),
             color: "var(--purple)"
         }],
     });
-})
-
+};

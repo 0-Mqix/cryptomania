@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
+	"io"
 	"net/http"
 )
 
@@ -18,16 +19,23 @@ type Asset struct {
 	PriceUsd          string `json:"priceUsd"`
 	ChangePercent24Hr string `json:"changePercent24Hr"`
 	Vwap24Hr          string `json:"vwap24Hr"`
+
+	Balance float64
 }
 
 type AssetsData struct {
-	Assets    []Asset `json:"data"`
-	Timestamp int64   `json:"timestamp"`
+	Assets    []*Asset `json:"data"`
+	Timestamp int64    `json:"timestamp"`
+}
+
+type AssetData struct {
+	Asset     *Asset `json:"data"`
+	Timestamp int64  `json:"timestamp"`
 }
 
 const ASSETS_API_ENDPOINT = "https://api.coincap.io/v2/assets"
 
-func GetAssets() ([]Asset, error) {
+func GetAssets() ([]*Asset, error) {
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", ASSETS_API_ENDPOINT, nil)
 
@@ -50,4 +58,37 @@ func GetAssets() ([]Asset, error) {
 	}
 
 	return data.Assets, nil
+}
+
+func GetAsset(coin string) (*Asset, error) {
+	client := &http.Client{}
+	req, err := http.NewRequest("GET", ASSETS_API_ENDPOINT+"/"+coin, nil)
+
+	if err != nil {
+		fmt.Println(err)
+		return nil, err
+	}
+
+	res, err := client.Do(req)
+
+	if err != nil {
+		fmt.Println(err)
+		return nil, err
+	}
+
+	defer res.Body.Close()
+
+	if res.StatusCode != 200 {
+		body, _ := io.ReadAll(res.Body)
+		return nil, fmt.Errorf("%d: %s", res.StatusCode, body)
+	}
+
+	var data AssetData
+	err = json.NewDecoder(res.Body).Decode(&data)
+
+	if err != nil {
+		return nil, err
+	}
+
+	return data.Asset, nil
 }

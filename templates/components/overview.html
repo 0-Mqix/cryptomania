@@ -1,61 +1,188 @@
-<div id="overview">
-    <div id="chart"></div> 
-    <button id="buy" class="button">buy</button>
-    <button id="sell" class="button">sell</button>
+<div class="overview" coin="{{.Coin}}" hx-swap="outerHTML">
+	<div class="top">
+		<div class="name">
+			<div class="symbol">{{.Asset.Symbol}}</div>
+			<div>{{.Asset.Name}}</div>
+		</div>
+		<button hx-get="/list/{{.Coin}}" hx-target="closest .overview">
+			exit
+		</button>
+	</div>
+	<div class="info">
+		<span>Price</span>
+		<div class="price">{{ format_float .Asset.PriceUsd }} $</div>
+		<span>Change24hr</span>
+		<div class="change">{{ price_change .Asset.ChangePercent24Hr }}</div>
+		<span>MarketCap</span>
+		<div class="market-cap">{{ format_float .Asset.MarketCapUsd }} $</div>
+		<span>Volume</span>
+		<div class="volume">{{ format_float .Asset.VolumeUsd24Hr }} $</div>
+		<span>Supply</span>
+		<div class="supply">
+			{{ format_float .Asset.Supply }} {{.Asset.Symbol}}
+		</div>
+	</div>
+
+	<div class="chart" id="chart-{{.Coin}}"></div>
+	{{ $value := .Asset.Balance}} 
+	{{ if ne $value 0.0}}
+		<div class="balance">
+			<label>Balance</label>
+			<span>{{ $value }} {{ .Asset.Symbol}}</span>
+			<span>{{calculate_balance $value .Asset.PriceUsd }}</span>
+		</div>
+	{{end}}
+
+	<div class="actions">
+		<div class="action">
+			<label>Buy</label>
+			<quantity-selector
+				coin_price="{{.Asset.PriceUsd}}"
+				symbol="{{.Asset.Symbol}}"
+			></quantity-selector>
+			<button class="buy button">buy</button>
+		</div>
+		{{ if ne $value 0.0}}
+			<div class="action">
+				<label>Sell</label>
+				<quantity-selector
+					coin_price="{{.Asset.PriceUsd}}"
+					symbol="{{.Asset.Symbol}}"
+					sell
+					balance="{{$value}}"
+				></quantity-selector>
+				<button class="sell button">sell</button>
+			</div>
+		{{end}}
+	</div>
+
+	<script>
+		window.load_chart("{{.Coin}}")
+	</script>
 </div>
 
 <style>
-    #chart {
-        height: 400px;
-        max-width: 100%;
-    }
+	label {
+		margin: 0;
+		font-weight: bold;
+	}
 
-    #overview {
-        flex-direction: column;
-        justify-items: center;
-        display: flex;
-        gap: 12px;
-        min-width: 600px;
-        width: 45vw;
-        padding: 12px;
-        border: solid var(--color) 2px;
-        border-radius: 0.75rem;
-    }
+	.top {
+		display: flex;
+		justify-content: space-between;
+		gap: 12px;
 
-    .button {
-        padding: 12px;
-        border-radius: 0.75rem;
-        font-weight: bolder;
-        width: 60px;
-        height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: var(--background-color);
-    }
+		button {
+			height: 100%;
+		}
+	}
+	.info {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		width: fit-content;
+	}
 
-    #sell {
-        color: var(--red);
-        border: solid var(--red) 2px;
-        &:hover {
-        }
-    }
+	.price {
+		color: var(--purple);
+	}
 
-    #buy {
-        color: var(--blue);
-        border: solid var(--blue) 2px;
-        &:hover {
-        }
-    }
+	.balance {
+		display: flex;
+		flex-direction: column;
+		align-items: start;
+		> label {
+			padding-bottom: 8px;
+		}
+		> span {
+			color: var(--blue);
+		}
+		padding-bottom: 12px;
+		border-bottom: solid var(--color) 2px;
+	}
 
-    text.highcharts-credits {
-        display: none !important;
-    }
-    
-    @media screen and (max-width: 600px) {
-        #overview {
-            min-width: unset; 
-            width: 100%;
-        }
-    }
+	.name {
+		font-weight: bold;
+		display: flex;
+		align-items: center;
+
+		.symbol {
+			padding-right: 12px;
+			font-size: 36px;
+		}
+	}
+
+	.chart {
+		height: 400px;
+		max-width: 100%;
+
+		border-bottom: solid var(--color) 2px;
+	}
+
+	.overview {
+		flex-direction: column;
+		justify-items: center;
+		display: flex;
+		gap: 12px;
+		min-width: 600px;
+		width: 45vw;
+		padding: 12px;
+		border: solid var(--color) 2px;
+		border-radius: 0.75rem;
+	}
+
+	.actions {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		gap: 12px;
+
+		.action {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+			width: 100%;
+			
+			> button {
+				margin-top: auto;
+				height: 50px;
+				width: 100%;
+			}
+		}
+	}
+
+	@media screen and (min-width: 1000px) {
+		.actions {
+			flex-direction: row;
+			justify-content: space-around;
+		}
+	}
+
+	.sell {
+		color: var(--red);
+		border: solid var(--red) 2px;
+		&:hover {
+			background-color: var(--red);
+			color: var(--background-color);
+		}
+	}
+
+	.buy {
+		color: var(--green);
+		border: solid var(--green) 2px;
+		&:hover {
+			background-color: var(--green);
+			color: var(--background-color);
+		}
+	}
+
+	text.highcharts-credits {
+		display: none !important;
+	}
+
+	@media screen and (max-width: 600px) {
+		.overview {
+			min-width: unset;
+			width: 100%;
+		}
+	}
 </style>

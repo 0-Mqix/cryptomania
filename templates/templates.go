@@ -9,18 +9,18 @@ import (
 )
 
 var (
-	Login              *melt.Component
 	ComponentsOverview *melt.Component
 	Index              *melt.Component
+	Login              *melt.Component
 )
 
 type GlobalHandlers struct {
 }
 
 func Load(furnace *melt.Furnace, handlers GlobalHandlers) {
+	Login = furnace.MustGetComponent("templates/login.html")
 	ComponentsOverview = furnace.MustGetComponent("templates/components/overview.html")
 	Index = furnace.MustGetComponent("templates/index.html")
-	Login = furnace.MustGetComponent("templates/login.html")
 
 	globalHandlers := make(map[string]melt.GlobalHandler)
 
@@ -36,7 +36,10 @@ func WriteLogin(w io.Writer, r *http.Request, data LoginData, globalOptions ...m
 	return Login.Write(w, r, data, globalOptions...)
 }
 
-type ComponentsOverviewData struct{}
+type ComponentsOverviewData struct {
+	Coin  any
+	Asset any
+}
 
 // generated write function for component
 //
@@ -46,10 +49,11 @@ func WriteComponentsOverview(w io.Writer, r *http.Request, data ComponentsOvervi
 }
 
 type IndexData struct {
+	ChangePercent24Hr any
+	Balance           any
 	Wallet            any
 	Assets            any
 	PriceUsd          any
-	ChangePercent24Hr any
 }
 
 // generated write function for component
@@ -57,4 +61,19 @@ type IndexData struct {
 //	path: "templates/index.html"
 func WriteIndex(w io.Writer, r *http.Request, data IndexData, globalOptions ...melt.GlobalOption) error {
 	return Index.Write(w, r, data, globalOptions...)
+}
+
+type IndexAssetData struct {
+	Id      any
+	Symbol  any
+	Name    any
+	Balance any
+}
+
+// generated write function for a template in a component
+//
+//	path: "templates/index.html"
+//	template: "asset"
+func WriteIndexAsset(w io.Writer, data IndexAssetData) error {
+	return Index.WriteTemplate(w, "asset", data)
 }

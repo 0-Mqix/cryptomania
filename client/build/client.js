@@ -1,348 +1,347 @@
-const style = "";
 var commonjsGlobal = typeof globalThis < "u" ? globalThis : typeof window < "u" ? window : typeof global < "u" ? global : typeof self < "u" ? self : {};
-function getDefaultExportFromCjs(ti) {
-  return ti && ti.__esModule && Object.prototype.hasOwnProperty.call(ti, "default") ? ti.default : ti;
+function getDefaultExportFromCjs(Fe) {
+  return Fe && Fe.__esModule && Object.prototype.hasOwnProperty.call(Fe, "default") ? Fe.default : Fe;
 }
 var highcharts = { exports: {} };
-(function(ti) {
-  (function(ui, ci) {
-    ti.exports ? (ci.default = ci, ti.exports = ui.document ? ci(ui) : ci) : (ui.Highcharts && ui.Highcharts.error(16, !0), ui.Highcharts = ci(ui));
-  })(typeof window < "u" ? window : commonjsGlobal, function(ui) {
-    function ci(Si, ji, qi, ts) {
-      Si.hasOwnProperty(ji) || (Si[ji] = ts.apply(null, qi), typeof CustomEvent == "function" && ui.dispatchEvent(new CustomEvent("HighchartsModuleLoaded", { detail: { path: ji, module: Si[ji] } })));
+(function(Fe) {
+  (function(ei, ri) {
+    Fe.exports ? (ri.default = ri, Fe.exports = ei.document ? ri(ei) : ri) : (ei.Highcharts && ei.Highcharts.error(16, !0), ei.Highcharts = ri(ei));
+  })(typeof window < "u" ? window : commonjsGlobal, function(ei) {
+    function ri(li, Ci, zi, Ki) {
+      li.hasOwnProperty(Ci) || (li[Ci] = Ki.apply(null, zi), typeof CustomEvent == "function" && ei.dispatchEvent(new CustomEvent("HighchartsModuleLoaded", { detail: { path: Ci, module: li[Ci] } })));
     }
-    var oi = {};
-    return ci(oi, "Core/Globals.js", [], function() {
-      var Si;
-      return function(ji) {
-        ji.SVG_NS = "http://www.w3.org/2000/svg", ji.product = "Highcharts", ji.version = "11.1.0", ji.win = typeof ui < "u" ? ui : {}, ji.doc = ji.win.document, ji.svg = ji.doc && ji.doc.createElementNS && !!ji.doc.createElementNS(ji.SVG_NS, "svg").createSVGRect, ji.userAgent = ji.win.navigator && ji.win.navigator.userAgent || "", ji.isChrome = ji.userAgent.indexOf("Chrome") !== -1, ji.isFirefox = ji.userAgent.indexOf("Firefox") !== -1, ji.isMS = /(edge|msie|trident)/i.test(ji.userAgent) && !ji.win.opera, ji.isSafari = !ji.isChrome && ji.userAgent.indexOf("Safari") !== -1, ji.isTouchDevice = /(Mobile|Android|Windows Phone)/.test(ji.userAgent), ji.isWebKit = ji.userAgent.indexOf("AppleWebKit") !== -1, ji.deg2rad = 2 * Math.PI / 360, ji.hasBidiBug = ji.isFirefox && 4 > parseInt(ji.userAgent.split("Firefox/")[1], 10), ji.hasTouch = !!ji.win.TouchEvent, ji.marginNames = ["plotTop", "marginRight", "marginBottom", "plotLeft"], ji.noop = function() {
-        }, ji.supportsPassiveEvents = function() {
-          let qi = !1;
-          if (!ji.isMS) {
-            const ts = Object.defineProperty({}, "passive", { get: function() {
-              qi = !0;
+    var ii = {};
+    return ri(ii, "Core/Globals.js", [], function() {
+      var li;
+      return function(Ci) {
+        Ci.SVG_NS = "http://www.w3.org/2000/svg", Ci.product = "Highcharts", Ci.version = "11.1.0", Ci.win = typeof ei < "u" ? ei : {}, Ci.doc = Ci.win.document, Ci.svg = Ci.doc && Ci.doc.createElementNS && !!Ci.doc.createElementNS(Ci.SVG_NS, "svg").createSVGRect, Ci.userAgent = Ci.win.navigator && Ci.win.navigator.userAgent || "", Ci.isChrome = Ci.userAgent.indexOf("Chrome") !== -1, Ci.isFirefox = Ci.userAgent.indexOf("Firefox") !== -1, Ci.isMS = /(edge|msie|trident)/i.test(Ci.userAgent) && !Ci.win.opera, Ci.isSafari = !Ci.isChrome && Ci.userAgent.indexOf("Safari") !== -1, Ci.isTouchDevice = /(Mobile|Android|Windows Phone)/.test(Ci.userAgent), Ci.isWebKit = Ci.userAgent.indexOf("AppleWebKit") !== -1, Ci.deg2rad = 2 * Math.PI / 360, Ci.hasBidiBug = Ci.isFirefox && 4 > parseInt(Ci.userAgent.split("Firefox/")[1], 10), Ci.hasTouch = !!Ci.win.TouchEvent, Ci.marginNames = ["plotTop", "marginRight", "marginBottom", "plotLeft"], Ci.noop = function() {
+        }, Ci.supportsPassiveEvents = function() {
+          let zi = !1;
+          if (!Ci.isMS) {
+            const Ki = Object.defineProperty({}, "passive", { get: function() {
+              zi = !0;
             } });
-            ji.win.addEventListener && ji.win.removeEventListener && (ji.win.addEventListener("testPassive", ji.noop, ts), ji.win.removeEventListener("testPassive", ji.noop, ts));
+            Ci.win.addEventListener && Ci.win.removeEventListener && (Ci.win.addEventListener("testPassive", Ci.noop, Ki), Ci.win.removeEventListener("testPassive", Ci.noop, Ki));
           }
-          return qi;
-        }(), ji.charts = [], ji.dateFormats = {}, ji.seriesTypes = {}, ji.symbolSizes = {}, ji.chartCount = 0;
-      }(Si || (Si = {})), Si;
-    }), ci(oi, "Core/Utilities.js", [oi["Core/Globals.js"]], function(Si) {
-      function ji(Fe, ii, hi, gi) {
-        const Ei = ii ? "Highcharts error" : "Highcharts warning";
-        Fe === 32 && (Fe = `${Ei}: Deprecated member`);
-        const ni = Ki(Fe);
-        let Pi = ni ? `${Ei} #${Fe}: www.highcharts.com/errors/${Fe}/` : Fe.toString();
-        if (typeof gi < "u") {
-          let Fi = "";
-          ni && (Pi += "?"), Ti(gi, function(Zi, rs) {
-            Fi += `
- - ${rs}: ${Zi}`, ni && (Pi += encodeURI(rs) + "=" + encodeURI(Zi));
-          }), Pi += Fi;
+          return zi;
+        }(), Ci.charts = [], Ci.dateFormats = {}, Ci.seriesTypes = {}, Ci.symbolSizes = {}, Ci.chartCount = 0;
+      }(li || (li = {})), li;
+    }), ri(ii, "Core/Utilities.js", [ii["Core/Globals.js"]], function(li) {
+      function Ci(ti, oi, di, mi) {
+        const Oi = oi ? "Highcharts error" : "Highcharts warning";
+        ti === 32 && (ti = `${Oi}: Deprecated member`);
+        const hi = Vi(ti);
+        let Li = hi ? `${Oi} #${ti}: www.highcharts.com/errors/${ti}/` : ti.toString();
+        if (typeof mi < "u") {
+          let Ui = "";
+          hi && (Li += "?"), Ti(mi, function(Zi, rs) {
+            Ui += `
+ - ${rs}: ${Zi}`, hi && (Li += encodeURI(rs) + "=" + encodeURI(Zi));
+          }), Li += Ui;
         }
-        Oi(Si, "displayError", { chart: hi, code: Fe, message: Pi, params: gi }, function() {
-          if (ii)
-            throw Error(Pi);
-          xi.console && ji.messages.indexOf(Pi) === -1 && console.warn(Pi);
-        }), ji.messages.push(Pi);
+        Di(li, "displayError", { chart: di, code: ti, message: Li, params: mi }, function() {
+          if (oi)
+            throw Error(Li);
+          vi.console && Ci.messages.indexOf(Li) === -1 && console.warn(Li);
+        }), Ci.messages.push(Li);
       }
-      function qi(Fe, ii) {
-        return parseInt(Fe, ii || 10);
+      function zi(ti, oi) {
+        return parseInt(ti, oi || 10);
       }
-      function ts(Fe) {
-        return typeof Fe == "string";
+      function Ki(ti) {
+        return typeof ti == "string";
       }
-      function Qi(Fe) {
-        return Fe = Object.prototype.toString.call(Fe), Fe === "[object Array]" || Fe === "[object Array Iterator]";
+      function Yi(ti) {
+        return ti = Object.prototype.toString.call(ti), ti === "[object Array]" || ti === "[object Array Iterator]";
       }
-      function is(Fe, ii) {
-        return !!Fe && typeof Fe == "object" && (!ii || !Qi(Fe));
+      function es(ti, oi) {
+        return !!ti && typeof ti == "object" && (!oi || !Yi(ti));
       }
-      function ss(Fe) {
-        return is(Fe) && typeof Fe.nodeType == "number";
+      function is(ti) {
+        return es(ti) && typeof ti.nodeType == "number";
       }
-      function Wi(Fe) {
-        const ii = Fe && Fe.constructor;
-        return !(!is(Fe, !0) || ss(Fe) || !ii || !ii.name || ii.name === "Object");
+      function $i(ti) {
+        const oi = ti && ti.constructor;
+        return !(!es(ti, !0) || is(ti) || !oi || !oi.name || oi.name === "Object");
       }
-      function Ki(Fe) {
-        return typeof Fe == "number" && !isNaN(Fe) && 1 / 0 > Fe && -1 / 0 < Fe;
+      function Vi(ti) {
+        return typeof ti == "number" && !isNaN(ti) && 1 / 0 > ti && -1 / 0 < ti;
       }
-      function Ui(Fe) {
-        return typeof Fe < "u" && Fe !== null;
+      function _i(ti) {
+        return typeof ti < "u" && ti !== null;
       }
-      function ki(Fe, ii, hi) {
-        const gi = ts(ii) && !Ui(hi);
-        let Ei;
-        const ni = (Pi, Fi) => {
-          Ui(Pi) ? Fe.setAttribute(Fi, Pi) : gi ? (Ei = Fe.getAttribute(Fi)) || Fi !== "class" || (Ei = Fe.getAttribute(Fi + "Name")) : Fe.removeAttribute(Fi);
+      function bi(ti, oi, di) {
+        const mi = Ki(oi) && !_i(di);
+        let Oi;
+        const hi = (Li, Ui) => {
+          _i(Li) ? ti.setAttribute(Ui, Li) : mi ? (Oi = ti.getAttribute(Ui)) || Ui !== "class" || (Oi = ti.getAttribute(Ui + "Name")) : ti.removeAttribute(Ui);
         };
-        return ts(ii) ? ni(hi, ii) : Ti(ii, ni), Ei;
+        return Ki(oi) ? hi(di, oi) : Ti(oi, hi), Oi;
       }
-      function bi(Fe) {
-        return Qi(Fe) ? Fe : [Fe];
+      function Ai(ti) {
+        return Yi(ti) ? ti : [ti];
       }
-      function Ri(Fe, ii) {
-        let hi;
-        Fe || (Fe = {});
-        for (hi in ii)
-          Fe[hi] = ii[hi];
-        return Fe;
+      function ji(ti, oi) {
+        let di;
+        ti || (ti = {});
+        for (di in oi)
+          ti[di] = oi[di];
+        return ti;
       }
       function Ni() {
-        const Fe = arguments, ii = Fe.length;
-        for (let hi = 0; hi < ii; hi++) {
-          const gi = Fe[hi];
-          if (typeof gi < "u" && gi !== null)
-            return gi;
+        const ti = arguments, oi = ti.length;
+        for (let di = 0; di < oi; di++) {
+          const mi = ti[di];
+          if (typeof mi < "u" && mi !== null)
+            return mi;
         }
       }
-      function fi(Fe, ii) {
-        Si.isMS && !Si.svg && ii && Ui(ii.opacity) && (ii.filter = `alpha(opacity=${100 * ii.opacity})`), Ri(Fe.style, ii);
+      function gi(ti, oi) {
+        li.isMS && !li.svg && oi && _i(oi.opacity) && (oi.filter = `alpha(opacity=${100 * oi.opacity})`), ji(ti.style, oi);
       }
-      function Ci(Fe) {
-        return Math.pow(10, Math.floor(Math.log(Fe) / Math.LN10));
+      function ki(ti) {
+        return Math.pow(10, Math.floor(Math.log(ti) / Math.LN10));
       }
-      function wi(Fe, ii) {
-        return 1e14 < Fe ? Fe : parseFloat(Fe.toPrecision(ii || 14));
+      function wi(ti, oi) {
+        return 1e14 < ti ? ti : parseFloat(ti.toPrecision(oi || 14));
       }
-      function yi(Fe, ii, hi) {
-        let gi;
-        return ii === "width" ? (ii = Math.min(Fe.offsetWidth, Fe.scrollWidth), hi = Fe.getBoundingClientRect && Fe.getBoundingClientRect().width, hi < ii && hi >= ii - 1 && (ii = Math.floor(hi)), Math.max(0, ii - (yi(Fe, "padding-left", !0) || 0) - (yi(Fe, "padding-right", !0) || 0))) : ii === "height" ? Math.max(0, Math.min(Fe.offsetHeight, Fe.scrollHeight) - (yi(Fe, "padding-top", !0) || 0) - (yi(Fe, "padding-bottom", !0) || 0)) : ((Fe = xi.getComputedStyle(Fe, void 0)) && (gi = Fe.getPropertyValue(ii), Ni(hi, ii !== "opacity") && (gi = qi(gi))), gi);
+      function Si(ti, oi, di) {
+        let mi;
+        return oi === "width" ? (oi = Math.min(ti.offsetWidth, ti.scrollWidth), di = ti.getBoundingClientRect && ti.getBoundingClientRect().width, di < oi && di >= oi - 1 && (oi = Math.floor(di)), Math.max(0, oi - (Si(ti, "padding-left", !0) || 0) - (Si(ti, "padding-right", !0) || 0))) : oi === "height" ? Math.max(0, Math.min(ti.offsetHeight, ti.scrollHeight) - (Si(ti, "padding-top", !0) || 0) - (Si(ti, "padding-bottom", !0) || 0)) : ((ti = vi.getComputedStyle(ti, void 0)) && (mi = ti.getPropertyValue(oi), Ni(di, oi !== "opacity") && (mi = zi(mi))), mi);
       }
-      function Ti(Fe, ii, hi) {
-        for (const gi in Fe)
+      function Ti(ti, oi, di) {
+        for (const mi in ti)
           Object.hasOwnProperty.call(
-            Fe,
-            gi
-          ) && ii.call(hi || Fe[gi], Fe[gi], gi, Fe);
+            ti,
+            mi
+          ) && oi.call(di || ti[mi], ti[mi], mi, ti);
       }
-      function Mi(Fe, ii, hi) {
-        function gi(Pi, Fi) {
-          const Zi = Fe.removeEventListener;
-          Zi && Zi.call(Fe, Pi, Fi, !1);
+      function Mi(ti, oi, di) {
+        function mi(Li, Ui) {
+          const Zi = ti.removeEventListener;
+          Zi && Zi.call(ti, Li, Ui, !1);
         }
-        function Ei(Pi) {
-          let Fi, Zi;
-          Fe.nodeName && (ii ? (Fi = {}, Fi[ii] = !0) : Fi = Pi, Ti(Fi, function(rs, Bi) {
-            if (Pi[Bi])
-              for (Zi = Pi[Bi].length; Zi--; )
-                gi(Bi, Pi[Bi][Zi].fn);
+        function Oi(Li) {
+          let Ui, Zi;
+          ti.nodeName && (oi ? (Ui = {}, Ui[oi] = !0) : Ui = Li, Ti(Ui, function(rs, Bi) {
+            if (Li[Bi])
+              for (Zi = Li[Bi].length; Zi--; )
+                mi(Bi, Li[Bi][Zi].fn);
           }));
         }
-        var ni = typeof Fe == "function" && Fe.prototype || Fe;
-        if (Object.hasOwnProperty.call(ni, "hcEvents")) {
-          const Pi = ni.hcEvents;
-          ii ? (ni = Pi[ii] || [], hi ? (Pi[ii] = ni.filter(function(Fi) {
-            return hi !== Fi.fn;
-          }), gi(ii, hi)) : (Ei(Pi), Pi[ii] = [])) : (Ei(Pi), delete ni.hcEvents);
+        var hi = typeof ti == "function" && ti.prototype || ti;
+        if (Object.hasOwnProperty.call(hi, "hcEvents")) {
+          const Li = hi.hcEvents;
+          oi ? (hi = Li[oi] || [], di ? (Li[oi] = hi.filter(function(Ui) {
+            return di !== Ui.fn;
+          }), mi(oi, di)) : (Oi(Li), Li[oi] = [])) : (Oi(Li), delete hi.hcEvents);
         }
       }
-      function Oi(Fe, ii, hi, gi) {
-        if (hi = hi || {}, li.createEvent && (Fe.dispatchEvent || Fe.fireEvent && Fe !== Si)) {
-          var Ei = li.createEvent("Events");
-          Ei.initEvent(ii, !0, !0), hi = Ri(Ei, hi), Fe.dispatchEvent ? Fe.dispatchEvent(hi) : Fe.fireEvent(ii, hi);
-        } else if (Fe.hcEvents) {
-          hi.target || Ri(hi, { preventDefault: function() {
-            hi.defaultPrevented = !0;
-          }, target: Fe, type: ii }), Ei = [];
-          let ni = Fe, Pi = !1;
-          for (; ni.hcEvents; )
-            Object.hasOwnProperty.call(ni, "hcEvents") && ni.hcEvents[ii] && (Ei.length && (Pi = !0), Ei.unshift.apply(Ei, ni.hcEvents[ii])), ni = Object.getPrototypeOf(ni);
-          Pi && Ei.sort((Fi, Zi) => Fi.order - Zi.order), Ei.forEach((Fi) => {
-            Fi.fn.call(Fe, hi) === !1 && hi.preventDefault();
+      function Di(ti, oi, di, mi) {
+        if (di = di || {}, pi.createEvent && (ti.dispatchEvent || ti.fireEvent && ti !== li)) {
+          var Oi = pi.createEvent("Events");
+          Oi.initEvent(oi, !0, !0), di = ji(Oi, di), ti.dispatchEvent ? ti.dispatchEvent(di) : ti.fireEvent(oi, di);
+        } else if (ti.hcEvents) {
+          di.target || ji(di, { preventDefault: function() {
+            di.defaultPrevented = !0;
+          }, target: ti, type: oi }), Oi = [];
+          let hi = ti, Li = !1;
+          for (; hi.hcEvents; )
+            Object.hasOwnProperty.call(hi, "hcEvents") && hi.hcEvents[oi] && (Oi.length && (Li = !0), Oi.unshift.apply(Oi, hi.hcEvents[oi])), hi = Object.getPrototypeOf(hi);
+          Li && Oi.sort((Ui, Zi) => Ui.order - Zi.order), Oi.forEach((Ui) => {
+            Ui.fn.call(ti, di) === !1 && di.preventDefault();
           });
         }
-        gi && !hi.defaultPrevented && gi.call(Fe, hi);
+        mi && !di.defaultPrevented && mi.call(ti, di);
       }
-      const { charts: ai, doc: li, win: xi } = Si;
-      (ji || (ji = {})).messages = [], Math.easeInOutSine = function(Fe) {
-        return -0.5 * (Math.cos(Math.PI * Fe) - 1);
+      const { charts: ci, doc: pi, win: vi } = li;
+      (Ci || (Ci = {})).messages = [], Math.easeInOutSine = function(ti) {
+        return -0.5 * (Math.cos(Math.PI * ti) - 1);
       };
-      var di = Array.prototype.find ? function(Fe, ii) {
-        return Fe.find(ii);
-      } : function(Fe, ii) {
-        let hi;
-        const gi = Fe.length;
-        for (hi = 0; hi < gi; hi++)
-          if (ii(Fe[hi], hi))
-            return Fe[hi];
+      var ui = Array.prototype.find ? function(ti, oi) {
+        return ti.find(oi);
+      } : function(ti, oi) {
+        let di;
+        const mi = ti.length;
+        for (di = 0; di < mi; di++)
+          if (oi(ti[di], di))
+            return ti[di];
       };
-      Ti({ map: "map", each: "forEach", grep: "filter", reduce: "reduce", some: "some" }, function(Fe, ii) {
-        Si[ii] = function(hi) {
-          return ji(32, !1, void 0, { [`Highcharts.${ii}`]: `use Array.${Fe}` }), Array.prototype[Fe].apply(hi, [].slice.call(
+      Ti({ map: "map", each: "forEach", grep: "filter", reduce: "reduce", some: "some" }, function(ti, oi) {
+        li[oi] = function(di) {
+          return Ci(32, !1, void 0, { [`Highcharts.${oi}`]: `use Array.${ti}` }), Array.prototype[ti].apply(di, [].slice.call(
             arguments,
             1
           ));
         };
       });
-      let pi;
-      const ei = function() {
-        const Fe = Math.random().toString(36).substring(2, 9) + "-";
-        let ii = 0;
+      let fi;
+      const si = function() {
+        const ti = Math.random().toString(36).substring(2, 9) + "-";
+        let oi = 0;
         return function() {
-          return "highcharts-" + (pi ? "" : Fe) + ii++;
+          return "highcharts-" + (fi ? "" : ti) + oi++;
         };
       }();
-      return xi.jQuery && (xi.jQuery.fn.highcharts = function() {
-        const Fe = [].slice.call(arguments);
+      return vi.jQuery && (vi.jQuery.fn.highcharts = function() {
+        const ti = [].slice.call(arguments);
         if (this[0])
-          return Fe[0] ? (new Si[ts(Fe[0]) ? Fe.shift() : "Chart"](this[0], Fe[0], Fe[1]), this) : ai[ki(this[0], "data-highcharts-chart")];
-      }), di = { addEvent: function(Fe, ii, hi, gi = {}) {
-        var Ei = typeof Fe == "function" && Fe.prototype || Fe;
-        Object.hasOwnProperty.call(Ei, "hcEvents") || (Ei.hcEvents = {}), Ei = Ei.hcEvents, Si.Point && Fe instanceof Si.Point && Fe.series && Fe.series.chart && (Fe.series.chart.runTrackerClick = !0);
-        const ni = Fe.addEventListener;
-        return ni && ni.call(Fe, ii, hi, Si.supportsPassiveEvents ? { passive: gi.passive === void 0 ? ii.indexOf("touch") !== -1 : gi.passive, capture: !1 } : !1), Ei[ii] || (Ei[ii] = []), Ei[ii].push({ fn: hi, order: typeof gi.order == "number" ? gi.order : 1 / 0 }), Ei[ii].sort((Pi, Fi) => Pi.order - Fi.order), function() {
-          Mi(Fe, ii, hi);
+          return ti[0] ? (new li[Ki(ti[0]) ? ti.shift() : "Chart"](this[0], ti[0], ti[1]), this) : ci[bi(this[0], "data-highcharts-chart")];
+      }), ui = { addEvent: function(ti, oi, di, mi = {}) {
+        var Oi = typeof ti == "function" && ti.prototype || ti;
+        Object.hasOwnProperty.call(Oi, "hcEvents") || (Oi.hcEvents = {}), Oi = Oi.hcEvents, li.Point && ti instanceof li.Point && ti.series && ti.series.chart && (ti.series.chart.runTrackerClick = !0);
+        const hi = ti.addEventListener;
+        return hi && hi.call(ti, oi, di, li.supportsPassiveEvents ? { passive: mi.passive === void 0 ? oi.indexOf("touch") !== -1 : mi.passive, capture: !1 } : !1), Oi[oi] || (Oi[oi] = []), Oi[oi].push({ fn: di, order: typeof mi.order == "number" ? mi.order : 1 / 0 }), Oi[oi].sort((Li, Ui) => Li.order - Ui.order), function() {
+          Mi(ti, oi, di);
         };
-      }, arrayMax: function(Fe) {
-        let ii = Fe.length, hi = Fe[0];
-        for (; ii--; )
-          Fe[ii] > hi && (hi = Fe[ii]);
-        return hi;
-      }, arrayMin: function(Fe) {
-        let ii = Fe.length, hi = Fe[0];
-        for (; ii--; )
-          Fe[ii] < hi && (hi = Fe[ii]);
-        return hi;
-      }, attr: ki, clamp: function(Fe, ii, hi) {
-        return Fe > ii ? Fe < hi ? Fe : hi : ii;
-      }, clearTimeout: function(Fe) {
-        Ui(Fe) && clearTimeout(Fe);
-      }, correctFloat: wi, createElement: function(Fe, ii, hi, gi, Ei) {
-        return Fe = li.createElement(Fe), ii && Ri(Fe, ii), Ei && fi(Fe, { padding: "0", border: "none", margin: "0" }), hi && fi(Fe, hi), gi && gi.appendChild(Fe), Fe;
-      }, css: fi, defined: Ui, destroyObjectProperties: function(Fe, ii) {
-        Ti(Fe, function(hi, gi) {
-          hi && hi !== ii && hi.destroy && hi.destroy(), delete Fe[gi];
+      }, arrayMax: function(ti) {
+        let oi = ti.length, di = ti[0];
+        for (; oi--; )
+          ti[oi] > di && (di = ti[oi]);
+        return di;
+      }, arrayMin: function(ti) {
+        let oi = ti.length, di = ti[0];
+        for (; oi--; )
+          ti[oi] < di && (di = ti[oi]);
+        return di;
+      }, attr: bi, clamp: function(ti, oi, di) {
+        return ti > oi ? ti < di ? ti : di : oi;
+      }, clearTimeout: function(ti) {
+        _i(ti) && clearTimeout(ti);
+      }, correctFloat: wi, createElement: function(ti, oi, di, mi, Oi) {
+        return ti = pi.createElement(ti), oi && ji(ti, oi), Oi && gi(ti, { padding: "0", border: "none", margin: "0" }), di && gi(ti, di), mi && mi.appendChild(ti), ti;
+      }, css: gi, defined: _i, destroyObjectProperties: function(ti, oi) {
+        Ti(ti, function(di, mi) {
+          di && di !== oi && di.destroy && di.destroy(), delete ti[mi];
         });
-      }, diffObjects: function(Fe, ii, hi, gi) {
-        function Ei(Pi, Fi, Zi, rs) {
-          const Bi = hi ? Fi : Pi;
-          Ti(Pi, function(si, Li) {
-            if (!rs && gi && -1 < gi.indexOf(Li) && Fi[Li]) {
-              si = bi(si), Zi[Li] = [];
-              for (let Hi = 0; Hi < Math.max(si.length, Fi[Li].length); Hi++)
-                Fi[Li][Hi] && (si[Hi] === void 0 ? Zi[Li][Hi] = Fi[Li][Hi] : (Zi[Li][Hi] = {}, Ei(si[Hi], Fi[Li][Hi], Zi[Li][Hi], rs + 1)));
+      }, diffObjects: function(ti, oi, di, mi) {
+        function Oi(Li, Ui, Zi, rs) {
+          const Bi = di ? Ui : Li;
+          Ti(Li, function(ni, Pi) {
+            if (!rs && mi && -1 < mi.indexOf(Pi) && Ui[Pi]) {
+              ni = Ai(ni), Zi[Pi] = [];
+              for (let Hi = 0; Hi < Math.max(ni.length, Ui[Pi].length); Hi++)
+                Ui[Pi][Hi] && (ni[Hi] === void 0 ? Zi[Pi][Hi] = Ui[Pi][Hi] : (Zi[Pi][Hi] = {}, Oi(ni[Hi], Ui[Pi][Hi], Zi[Pi][Hi], rs + 1)));
             } else
-              is(si, !0) && !si.nodeType ? (Zi[Li] = Qi(si) ? [] : {}, Ei(si, Fi[Li] || {}, Zi[Li], rs + 1), Object.keys(Zi[Li]).length !== 0 || Li === "colorAxis" && rs === 0 || delete Zi[Li]) : (Pi[Li] !== Fi[Li] || Li in Pi && !(Li in Fi)) && (Zi[Li] = Bi[Li]);
+              es(ni, !0) && !ni.nodeType ? (Zi[Pi] = Yi(ni) ? [] : {}, Oi(ni, Ui[Pi] || {}, Zi[Pi], rs + 1), Object.keys(Zi[Pi]).length !== 0 || Pi === "colorAxis" && rs === 0 || delete Zi[Pi]) : (Li[Pi] !== Ui[Pi] || Pi in Li && !(Pi in Ui)) && (Zi[Pi] = Bi[Pi]);
           });
         }
-        const ni = {};
-        return Ei(Fe, ii, ni, 0), ni;
-      }, discardElement: function(Fe) {
-        Fe && Fe.parentElement && Fe.parentElement.removeChild(Fe);
-      }, erase: function(Fe, ii) {
-        let hi = Fe.length;
-        for (; hi--; )
-          if (Fe[hi] === ii) {
-            Fe.splice(hi, 1);
+        const hi = {};
+        return Oi(ti, oi, hi, 0), hi;
+      }, discardElement: function(ti) {
+        ti && ti.parentElement && ti.parentElement.removeChild(ti);
+      }, erase: function(ti, oi) {
+        let di = ti.length;
+        for (; di--; )
+          if (ti[di] === oi) {
+            ti.splice(di, 1);
             break;
           }
-      }, error: ji, extend: Ri, extendClass: function(Fe, ii) {
-        const hi = function() {
+      }, error: Ci, extend: ji, extendClass: function(ti, oi) {
+        const di = function() {
         };
-        return hi.prototype = new Fe(), Ri(hi.prototype, ii), hi;
-      }, find: di, fireEvent: Oi, getClosestDistance: function(Fe, ii) {
-        const hi = !ii;
-        let gi, Ei, ni;
-        return Fe.forEach((Pi) => {
-          if (1 < Pi.length)
-            for (ni = Pi.length - 1; 0 < ni; ni--)
-              Ei = Pi[ni] - Pi[ni - 1], 0 > Ei && !hi ? (ii == null || ii(), ii = void 0) : Ei && (typeof gi > "u" || Ei < gi) && (gi = Ei);
-        }), gi;
-      }, getMagnitude: Ci, getNestedProperty: function(Fe, ii) {
-        for (Fe = Fe.split("."); Fe.length && Ui(ii); ) {
-          const hi = Fe.shift();
-          if (typeof hi > "u" || hi === "__proto__")
+        return di.prototype = new ti(), ji(di.prototype, oi), di;
+      }, find: ui, fireEvent: Di, getClosestDistance: function(ti, oi) {
+        const di = !oi;
+        let mi, Oi, hi;
+        return ti.forEach((Li) => {
+          if (1 < Li.length)
+            for (hi = Li.length - 1; 0 < hi; hi--)
+              Oi = Li[hi] - Li[hi - 1], 0 > Oi && !di ? (oi == null || oi(), oi = void 0) : Oi && (typeof mi > "u" || Oi < mi) && (mi = Oi);
+        }), mi;
+      }, getMagnitude: ki, getNestedProperty: function(ti, oi) {
+        for (ti = ti.split("."); ti.length && _i(oi); ) {
+          const di = ti.shift();
+          if (typeof di > "u" || di === "__proto__")
             return;
-          if (hi === "this") {
-            let gi;
-            return is(ii) && (gi = ii["@this"]), gi ?? ii;
+          if (di === "this") {
+            let mi;
+            return es(oi) && (mi = oi["@this"]), mi ?? oi;
           }
-          if (ii = ii[hi], !Ui(ii) || typeof ii == "function" || typeof ii.nodeType == "number" || ii === xi)
+          if (oi = oi[di], !_i(oi) || typeof oi == "function" || typeof oi.nodeType == "number" || oi === vi)
             return;
         }
-        return ii;
-      }, getStyle: yi, inArray: function(Fe, ii, hi) {
-        return ji(32, !1, void 0, { "Highcharts.inArray": "use Array.indexOf" }), ii.indexOf(Fe, hi);
-      }, insertItem: function(Fe, ii) {
-        const hi = Fe.options.index, gi = ii.length;
-        let Ei;
-        for (Ei = Fe.options.isInternal ? gi : 0; Ei < gi + 1; Ei++)
-          if (!ii[Ei] || Ki(hi) && hi < Ni(ii[Ei].options.index, ii[Ei]._i) || ii[Ei].options.isInternal) {
-            ii.splice(
-              Ei,
+        return oi;
+      }, getStyle: Si, inArray: function(ti, oi, di) {
+        return Ci(32, !1, void 0, { "Highcharts.inArray": "use Array.indexOf" }), oi.indexOf(ti, di);
+      }, insertItem: function(ti, oi) {
+        const di = ti.options.index, mi = oi.length;
+        let Oi;
+        for (Oi = ti.options.isInternal ? mi : 0; Oi < mi + 1; Oi++)
+          if (!oi[Oi] || Vi(di) && di < Ni(oi[Oi].options.index, oi[Oi]._i) || oi[Oi].options.isInternal) {
+            oi.splice(
+              Oi,
               0,
-              Fe
+              ti
             );
             break;
           }
-        return Ei;
-      }, isArray: Qi, isClass: Wi, isDOMElement: ss, isFunction: function(Fe) {
-        return typeof Fe == "function";
-      }, isNumber: Ki, isObject: is, isString: ts, keys: function(Fe) {
-        return ji(32, !1, void 0, { "Highcharts.keys": "use Object.keys" }), Object.keys(Fe);
+        return Oi;
+      }, isArray: Yi, isClass: $i, isDOMElement: is, isFunction: function(ti) {
+        return typeof ti == "function";
+      }, isNumber: Vi, isObject: es, isString: Ki, keys: function(ti) {
+        return Ci(32, !1, void 0, { "Highcharts.keys": "use Object.keys" }), Object.keys(ti);
       }, merge: function() {
-        let Fe, ii = arguments, hi = {};
-        const gi = function(ni, Pi) {
-          return typeof ni != "object" && (ni = {}), Ti(Pi, function(Fi, Zi) {
-            Zi !== "__proto__" && Zi !== "constructor" && (!is(Fi, !0) || Wi(Fi) || ss(Fi) ? ni[Zi] = Pi[Zi] : ni[Zi] = gi(ni[Zi] || {}, Fi));
-          }), ni;
+        let ti, oi = arguments, di = {};
+        const mi = function(hi, Li) {
+          return typeof hi != "object" && (hi = {}), Ti(Li, function(Ui, Zi) {
+            Zi !== "__proto__" && Zi !== "constructor" && (!es(Ui, !0) || $i(Ui) || is(Ui) ? hi[Zi] = Li[Zi] : hi[Zi] = mi(hi[Zi] || {}, Ui));
+          }), hi;
         };
-        ii[0] === !0 && (hi = ii[1], ii = Array.prototype.slice.call(ii, 2));
-        const Ei = ii.length;
-        for (Fe = 0; Fe < Ei; Fe++)
-          hi = gi(hi, ii[Fe]);
-        return hi;
-      }, normalizeTickInterval: function(Fe, ii, hi, gi, Ei) {
-        let ni = Fe;
-        hi = Ni(hi, Ci(Fe));
-        const Pi = Fe / hi;
-        for (ii || (ii = Ei ? [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10] : [1, 2, 2.5, 5, 10], gi === !1 && (hi === 1 ? ii = ii.filter(function(Fi) {
-          return Fi % 1 === 0;
-        }) : 0.1 >= hi && (ii = [1 / hi]))), gi = 0; gi < ii.length && (ni = ii[gi], !(Ei && ni * hi >= Fe || !Ei && Pi <= (ii[gi] + (ii[gi + 1] || ii[gi])) / 2)); gi++)
+        oi[0] === !0 && (di = oi[1], oi = Array.prototype.slice.call(oi, 2));
+        const Oi = oi.length;
+        for (ti = 0; ti < Oi; ti++)
+          di = mi(di, oi[ti]);
+        return di;
+      }, normalizeTickInterval: function(ti, oi, di, mi, Oi) {
+        let hi = ti;
+        di = Ni(di, ki(ti));
+        const Li = ti / di;
+        for (oi || (oi = Oi ? [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10] : [1, 2, 2.5, 5, 10], mi === !1 && (di === 1 ? oi = oi.filter(function(Ui) {
+          return Ui % 1 === 0;
+        }) : 0.1 >= di && (oi = [1 / di]))), mi = 0; mi < oi.length && (hi = oi[mi], !(Oi && hi * di >= ti || !Oi && Li <= (oi[mi] + (oi[mi + 1] || oi[mi])) / 2)); mi++)
           ;
-        return ni = wi(ni * hi, -Math.round(Math.log(1e-3) / Math.LN10));
-      }, objectEach: Ti, offset: function(Fe) {
-        const ii = li.documentElement;
-        return Fe = Fe.parentElement || Fe.parentNode ? Fe.getBoundingClientRect() : {
+        return hi = wi(hi * di, -Math.round(Math.log(1e-3) / Math.LN10));
+      }, objectEach: Ti, offset: function(ti) {
+        const oi = pi.documentElement;
+        return ti = ti.parentElement || ti.parentNode ? ti.getBoundingClientRect() : {
           top: 0,
           left: 0,
           width: 0,
           height: 0
-        }, { top: Fe.top + (xi.pageYOffset || ii.scrollTop) - (ii.clientTop || 0), left: Fe.left + (xi.pageXOffset || ii.scrollLeft) - (ii.clientLeft || 0), width: Fe.width, height: Fe.height };
-      }, pad: function(Fe, ii, hi) {
-        return Array((ii || 2) + 1 - String(Fe).replace("-", "").length).join(hi || "0") + Fe;
-      }, pick: Ni, pInt: qi, pushUnique: function(Fe, ii) {
-        return 0 > Fe.indexOf(ii) && !!Fe.push(ii);
-      }, relativeLength: function(Fe, ii, hi) {
-        return /%$/.test(Fe) ? ii * parseFloat(Fe) / 100 + (hi || 0) : parseFloat(Fe);
-      }, removeEvent: Mi, splat: bi, stableSort: function(Fe, ii) {
-        const hi = Fe.length;
-        let gi, Ei;
-        for (Ei = 0; Ei < hi; Ei++)
-          Fe[Ei].safeI = Ei;
-        for (Fe.sort(function(ni, Pi) {
-          return gi = ii(ni, Pi), gi === 0 ? ni.safeI - Pi.safeI : gi;
-        }), Ei = 0; Ei < hi; Ei++)
-          delete Fe[Ei].safeI;
-      }, syncTimeout: function(Fe, ii, hi) {
-        return 0 < ii ? setTimeout(Fe, ii, hi) : (Fe.call(0, hi), -1);
-      }, timeUnits: { millisecond: 1, second: 1e3, minute: 6e4, hour: 36e5, day: 864e5, week: 6048e5, month: 24192e5, year: 314496e5 }, uniqueKey: ei, useSerialIds: function(Fe) {
-        return pi = Ni(Fe, pi);
-      }, wrap: function(Fe, ii, hi) {
-        const gi = Fe[ii];
-        Fe[ii] = function() {
-          const Ei = arguments, ni = this;
-          return hi.apply(this, [function() {
-            return gi.apply(
-              ni,
-              arguments.length ? arguments : Ei
+        }, { top: ti.top + (vi.pageYOffset || oi.scrollTop) - (oi.clientTop || 0), left: ti.left + (vi.pageXOffset || oi.scrollLeft) - (oi.clientLeft || 0), width: ti.width, height: ti.height };
+      }, pad: function(ti, oi, di) {
+        return Array((oi || 2) + 1 - String(ti).replace("-", "").length).join(di || "0") + ti;
+      }, pick: Ni, pInt: zi, pushUnique: function(ti, oi) {
+        return 0 > ti.indexOf(oi) && !!ti.push(oi);
+      }, relativeLength: function(ti, oi, di) {
+        return /%$/.test(ti) ? oi * parseFloat(ti) / 100 + (di || 0) : parseFloat(ti);
+      }, removeEvent: Mi, splat: Ai, stableSort: function(ti, oi) {
+        const di = ti.length;
+        let mi, Oi;
+        for (Oi = 0; Oi < di; Oi++)
+          ti[Oi].safeI = Oi;
+        for (ti.sort(function(hi, Li) {
+          return mi = oi(hi, Li), mi === 0 ? hi.safeI - Li.safeI : mi;
+        }), Oi = 0; Oi < di; Oi++)
+          delete ti[Oi].safeI;
+      }, syncTimeout: function(ti, oi, di) {
+        return 0 < oi ? setTimeout(ti, oi, di) : (ti.call(0, di), -1);
+      }, timeUnits: { millisecond: 1, second: 1e3, minute: 6e4, hour: 36e5, day: 864e5, week: 6048e5, month: 24192e5, year: 314496e5 }, uniqueKey: si, useSerialIds: function(ti) {
+        return fi = Ni(ti, fi);
+      }, wrap: function(ti, oi, di) {
+        const mi = ti[oi];
+        ti[oi] = function() {
+          const Oi = arguments, hi = this;
+          return di.apply(this, [function() {
+            return mi.apply(
+              hi,
+              arguments.length ? arguments : Oi
             );
           }].concat([].slice.call(arguments)));
         };
-      } }, di;
-    }), ci(oi, "Core/Chart/ChartDefaults.js", [], function() {
+      } }, ui;
+    }), ri(ii, "Core/Chart/ChartDefaults.js", [], function() {
       return {
         alignThresholds: !1,
         panning: { enabled: !1, type: "x" },
@@ -362,195 +361,195 @@ var highcharts = { exports: {} };
         backgroundColor: "#ffffff",
         plotBorderColor: "#cccccc"
       };
-    }), ci(oi, "Core/Color/Color.js", [oi["Core/Globals.js"], oi["Core/Utilities.js"]], function(Si, ji) {
-      const { isNumber: qi, merge: ts, pInt: Qi } = ji;
-      class is {
-        static parse(Wi) {
-          return Wi ? new is(Wi) : is.None;
+    }), ri(ii, "Core/Color/Color.js", [ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci) {
+      const { isNumber: zi, merge: Ki, pInt: Yi } = Ci;
+      class es {
+        static parse($i) {
+          return $i ? new es($i) : es.None;
         }
-        constructor(Wi) {
-          this.rgba = [NaN, NaN, NaN, NaN], this.input = Wi;
-          const Ki = Si.Color;
-          if (Ki && Ki !== is)
-            return new Ki(Wi);
-          this.init(Wi);
+        constructor($i) {
+          this.rgba = [NaN, NaN, NaN, NaN], this.input = $i;
+          const Vi = li.Color;
+          if (Vi && Vi !== es)
+            return new Vi($i);
+          this.init($i);
         }
-        init(Wi) {
-          let Ki, Ui;
-          if (typeof Wi == "object" && typeof Wi.stops < "u")
-            this.stops = Wi.stops.map((Ri) => new is(Ri[1]));
-          else if (typeof Wi == "string") {
-            if (this.input = Wi = is.names[Wi.toLowerCase()] || Wi, Wi.charAt(0) === "#") {
-              var ki = Wi.length, bi = parseInt(Wi.substr(1), 16);
-              ki === 7 ? Ki = [(bi & 16711680) >> 16, (bi & 65280) >> 8, bi & 255, 1] : ki === 4 && (Ki = [(bi & 3840) >> 4 | (bi & 3840) >> 8, (bi & 240) >> 4 | bi & 240, (bi & 15) << 4 | bi & 15, 1]);
+        init($i) {
+          let Vi, _i;
+          if (typeof $i == "object" && typeof $i.stops < "u")
+            this.stops = $i.stops.map((ji) => new es(ji[1]));
+          else if (typeof $i == "string") {
+            if (this.input = $i = es.names[$i.toLowerCase()] || $i, $i.charAt(0) === "#") {
+              var bi = $i.length, Ai = parseInt($i.substr(1), 16);
+              bi === 7 ? Vi = [(Ai & 16711680) >> 16, (Ai & 65280) >> 8, Ai & 255, 1] : bi === 4 && (Vi = [(Ai & 3840) >> 4 | (Ai & 3840) >> 8, (Ai & 240) >> 4 | Ai & 240, (Ai & 15) << 4 | Ai & 15, 1]);
             }
-            if (!Ki)
-              for (bi = is.parsers.length; bi-- && !Ki; )
-                Ui = is.parsers[bi], (ki = Ui.regex.exec(Wi)) && (Ki = Ui.parse(ki));
+            if (!Vi)
+              for (Ai = es.parsers.length; Ai-- && !Vi; )
+                _i = es.parsers[Ai], (bi = _i.regex.exec($i)) && (Vi = _i.parse(bi));
           }
-          Ki && (this.rgba = Ki);
+          Vi && (this.rgba = Vi);
         }
-        get(Wi) {
-          const Ki = this.input, Ui = this.rgba;
-          if (typeof Ki == "object" && typeof this.stops < "u") {
-            const ki = ts(Ki);
-            return ki.stops = [].slice.call(ki.stops), this.stops.forEach((bi, Ri) => {
-              ki.stops[Ri] = [
-                ki.stops[Ri][0],
-                bi.get(Wi)
+        get($i) {
+          const Vi = this.input, _i = this.rgba;
+          if (typeof Vi == "object" && typeof this.stops < "u") {
+            const bi = Ki(Vi);
+            return bi.stops = [].slice.call(bi.stops), this.stops.forEach((Ai, ji) => {
+              bi.stops[ji] = [
+                bi.stops[ji][0],
+                Ai.get($i)
               ];
-            }), ki;
+            }), bi;
           }
-          return Ui && qi(Ui[0]) ? Wi === "rgb" || !Wi && Ui[3] === 1 ? "rgb(" + Ui[0] + "," + Ui[1] + "," + Ui[2] + ")" : Wi === "a" ? `${Ui[3]}` : "rgba(" + Ui.join(",") + ")" : Ki;
+          return _i && zi(_i[0]) ? $i === "rgb" || !$i && _i[3] === 1 ? "rgb(" + _i[0] + "," + _i[1] + "," + _i[2] + ")" : $i === "a" ? `${_i[3]}` : "rgba(" + _i.join(",") + ")" : Vi;
         }
-        brighten(Wi) {
-          const Ki = this.rgba;
+        brighten($i) {
+          const Vi = this.rgba;
           if (this.stops)
-            this.stops.forEach(function(Ui) {
-              Ui.brighten(Wi);
+            this.stops.forEach(function(_i) {
+              _i.brighten($i);
             });
-          else if (qi(Wi) && Wi !== 0)
-            for (let Ui = 0; 3 > Ui; Ui++)
-              Ki[Ui] += Qi(255 * Wi), 0 > Ki[Ui] && (Ki[Ui] = 0), 255 < Ki[Ui] && (Ki[Ui] = 255);
+          else if (zi($i) && $i !== 0)
+            for (let _i = 0; 3 > _i; _i++)
+              Vi[_i] += Yi(255 * $i), 0 > Vi[_i] && (Vi[_i] = 0), 255 < Vi[_i] && (Vi[_i] = 255);
           return this;
         }
-        setOpacity(Wi) {
-          return this.rgba[3] = Wi, this;
+        setOpacity($i) {
+          return this.rgba[3] = $i, this;
         }
-        tweenTo(Wi, Ki) {
-          const Ui = this.rgba, ki = Wi.rgba;
-          return !qi(Ui[0]) || !qi(ki[0]) ? Wi.input || "none" : (Wi = ki[3] !== 1 || Ui[3] !== 1, (Wi ? "rgba(" : "rgb(") + Math.round(ki[0] + (Ui[0] - ki[0]) * (1 - Ki)) + "," + Math.round(ki[1] + (Ui[1] - ki[1]) * (1 - Ki)) + "," + Math.round(ki[2] + (Ui[2] - ki[2]) * (1 - Ki)) + (Wi ? "," + (ki[3] + (Ui[3] - ki[3]) * (1 - Ki)) : "") + ")");
+        tweenTo($i, Vi) {
+          const _i = this.rgba, bi = $i.rgba;
+          return !zi(_i[0]) || !zi(bi[0]) ? $i.input || "none" : ($i = bi[3] !== 1 || _i[3] !== 1, ($i ? "rgba(" : "rgb(") + Math.round(bi[0] + (_i[0] - bi[0]) * (1 - Vi)) + "," + Math.round(bi[1] + (_i[1] - bi[1]) * (1 - Vi)) + "," + Math.round(bi[2] + (_i[2] - bi[2]) * (1 - Vi)) + ($i ? "," + (bi[3] + (_i[3] - bi[3]) * (1 - Vi)) : "") + ")");
         }
       }
-      return is.names = { white: "#ffffff", black: "#000000" }, is.parsers = [{ regex: /rgba\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]?(?:\.[0-9]+)?)\s*\)/, parse: function(ss) {
-        return [Qi(ss[1]), Qi(ss[2]), Qi(ss[3]), parseFloat(ss[4], 10)];
-      } }, { regex: /rgb\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*\)/, parse: function(ss) {
+      return es.names = { white: "#ffffff", black: "#000000" }, es.parsers = [{ regex: /rgba\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]?(?:\.[0-9]+)?)\s*\)/, parse: function(is) {
+        return [Yi(is[1]), Yi(is[2]), Yi(is[3]), parseFloat(is[4], 10)];
+      } }, { regex: /rgb\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*\)/, parse: function(is) {
         return [
-          Qi(ss[1]),
-          Qi(ss[2]),
-          Qi(ss[3]),
+          Yi(is[1]),
+          Yi(is[2]),
+          Yi(is[3]),
           1
         ];
-      } }], is.None = new is(""), is;
-    }), ci(oi, "Core/Color/Palettes.js", [], function() {
+      } }], es.None = new es(""), es;
+    }), ri(ii, "Core/Color/Palettes.js", [], function() {
       return { colors: "#2caffe #544fc5 #00e272 #fe6a35 #6b8abc #d568fb #2ee0ca #fa4b42 #feb56a #91e8e1".split(" ") };
-    }), ci(oi, "Core/Time.js", [oi["Core/Globals.js"], oi["Core/Utilities.js"]], function(Si, ji) {
-      const { win: qi } = Si, { defined: ts, error: Qi, extend: is, isObject: ss, merge: Wi, objectEach: Ki, pad: Ui, pick: ki, splat: bi, timeUnits: Ri } = ji, Ni = Si.isSafari && qi.Intl && qi.Intl.DateTimeFormat.prototype.formatRange, fi = Si.isSafari && qi.Intl && !qi.Intl.DateTimeFormat.prototype.formatRange;
-      class Ci {
-        constructor(yi) {
-          this.options = {}, this.variableTimezone = this.useUTC = !1, this.Date = qi.Date, this.getTimezoneOffset = this.timezoneOffsetFunction(), this.update(yi);
+    }), ri(ii, "Core/Time.js", [ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci) {
+      const { win: zi } = li, { defined: Ki, error: Yi, extend: es, isObject: is, merge: $i, objectEach: Vi, pad: _i, pick: bi, splat: Ai, timeUnits: ji } = Ci, Ni = li.isSafari && zi.Intl && zi.Intl.DateTimeFormat.prototype.formatRange, gi = li.isSafari && zi.Intl && !zi.Intl.DateTimeFormat.prototype.formatRange;
+      class ki {
+        constructor(Si) {
+          this.options = {}, this.variableTimezone = this.useUTC = !1, this.Date = zi.Date, this.getTimezoneOffset = this.timezoneOffsetFunction(), this.update(Si);
         }
-        get(yi, Ti) {
+        get(Si, Ti) {
           if (this.variableTimezone || this.timezoneOffset) {
-            const Mi = Ti.getTime(), Oi = Mi - this.getTimezoneOffset(Ti);
-            return Ti.setTime(Oi), yi = Ti["getUTC" + yi](), Ti.setTime(Mi), yi;
+            const Mi = Ti.getTime(), Di = Mi - this.getTimezoneOffset(Ti);
+            return Ti.setTime(Di), Si = Ti["getUTC" + Si](), Ti.setTime(Mi), Si;
           }
-          return this.useUTC ? Ti["getUTC" + yi]() : Ti["get" + yi]();
+          return this.useUTC ? Ti["getUTC" + Si]() : Ti["get" + Si]();
         }
-        set(yi, Ti, Mi) {
+        set(Si, Ti, Mi) {
           if (this.variableTimezone || this.timezoneOffset) {
-            if (yi === "Milliseconds" || yi === "Seconds" || yi === "Minutes" && this.getTimezoneOffset(Ti) % 36e5 === 0)
-              return Ti["setUTC" + yi](Mi);
-            var Oi = this.getTimezoneOffset(Ti);
-            return Oi = Ti.getTime() - Oi, Ti.setTime(Oi), Ti["setUTC" + yi](Mi), yi = this.getTimezoneOffset(Ti), Oi = Ti.getTime() + yi, Ti.setTime(Oi);
+            if (Si === "Milliseconds" || Si === "Seconds" || Si === "Minutes" && this.getTimezoneOffset(Ti) % 36e5 === 0)
+              return Ti["setUTC" + Si](Mi);
+            var Di = this.getTimezoneOffset(Ti);
+            return Di = Ti.getTime() - Di, Ti.setTime(Di), Ti["setUTC" + Si](Mi), Si = this.getTimezoneOffset(Ti), Di = Ti.getTime() + Si, Ti.setTime(Di);
           }
-          return this.useUTC || Ni && yi === "FullYear" ? Ti["setUTC" + yi](Mi) : Ti["set" + yi](Mi);
+          return this.useUTC || Ni && Si === "FullYear" ? Ti["setUTC" + Si](Mi) : Ti["set" + Si](Mi);
         }
-        update(yi = {}) {
-          const Ti = ki(yi.useUTC, !0);
-          this.options = yi = Wi(!0, this.options, yi), this.Date = yi.Date || qi.Date || Date, this.timezoneOffset = (this.useUTC = Ti) && yi.timezoneOffset || void 0, this.getTimezoneOffset = this.timezoneOffsetFunction(), this.variableTimezone = Ti && !(!yi.getTimezoneOffset && !yi.timezone);
+        update(Si = {}) {
+          const Ti = bi(Si.useUTC, !0);
+          this.options = Si = $i(!0, this.options, Si), this.Date = Si.Date || zi.Date || Date, this.timezoneOffset = (this.useUTC = Ti) && Si.timezoneOffset || void 0, this.getTimezoneOffset = this.timezoneOffsetFunction(), this.variableTimezone = Ti && !(!Si.getTimezoneOffset && !Si.timezone);
         }
-        makeTime(yi, Ti, Mi, Oi, ai, li) {
-          let xi, di, pi;
-          return this.useUTC ? (xi = this.Date.UTC.apply(0, arguments), di = this.getTimezoneOffset(xi), xi += di, pi = this.getTimezoneOffset(xi), di !== pi ? xi += pi - di : di - 36e5 !== this.getTimezoneOffset(xi - 36e5) || fi || (xi -= 36e5)) : xi = new this.Date(yi, Ti, ki(Mi, 1), ki(Oi, 0), ki(ai, 0), ki(li, 0)).getTime(), xi;
+        makeTime(Si, Ti, Mi, Di, ci, pi) {
+          let vi, ui, fi;
+          return this.useUTC ? (vi = this.Date.UTC.apply(0, arguments), ui = this.getTimezoneOffset(vi), vi += ui, fi = this.getTimezoneOffset(vi), ui !== fi ? vi += fi - ui : ui - 36e5 !== this.getTimezoneOffset(vi - 36e5) || gi || (vi -= 36e5)) : vi = new this.Date(Si, Ti, bi(Mi, 1), bi(Di, 0), bi(ci, 0), bi(pi, 0)).getTime(), vi;
         }
         timezoneOffsetFunction() {
-          const yi = this, Ti = this.options, Mi = Ti.getTimezoneOffset, Oi = Ti.moment || qi.moment;
+          const Si = this, Ti = this.options, Mi = Ti.getTimezoneOffset, Di = Ti.moment || zi.moment;
           if (!this.useUTC)
-            return function(ai) {
-              return 6e4 * new Date(ai.toString()).getTimezoneOffset();
+            return function(ci) {
+              return 6e4 * new Date(ci.toString()).getTimezoneOffset();
             };
           if (Ti.timezone) {
-            if (Oi)
-              return function(ai) {
-                return 6e4 * -Oi.tz(ai, Ti.timezone).utcOffset();
+            if (Di)
+              return function(ci) {
+                return 6e4 * -Di.tz(ci, Ti.timezone).utcOffset();
               };
-            Qi(25);
+            Yi(25);
           }
-          return this.useUTC && Mi ? function(ai) {
-            return 6e4 * Mi(ai.valueOf());
+          return this.useUTC && Mi ? function(ci) {
+            return 6e4 * Mi(ci.valueOf());
           } : function() {
-            return 6e4 * (yi.timezoneOffset || 0);
+            return 6e4 * (Si.timezoneOffset || 0);
           };
         }
-        dateFormat(yi, Ti, Mi) {
-          if (!ts(Ti) || isNaN(Ti))
-            return Si.defaultOptions.lang && Si.defaultOptions.lang.invalidDate || "";
-          yi = ki(yi, "%Y-%m-%d %H:%M:%S");
-          const Oi = this;
-          var ai = new this.Date(Ti);
-          const li = this.get("Hours", ai), xi = this.get("Day", ai), di = this.get("Date", ai), pi = this.get("Month", ai), ei = this.get("FullYear", ai), Fe = Si.defaultOptions.lang, ii = Fe && Fe.weekdays, hi = Fe && Fe.shortWeekdays;
-          return ai = is({ a: hi ? hi[xi] : ii[xi].substr(0, 3), A: ii[xi], d: Ui(di), e: Ui(di, 2, " "), w: xi, b: Fe.shortMonths[pi], B: Fe.months[pi], m: Ui(pi + 1), o: pi + 1, y: ei.toString().substr(2, 2), Y: ei, H: Ui(li), k: li, I: Ui(li % 12 || 12), l: li % 12 || 12, M: Ui(this.get("Minutes", ai)), p: 12 > li ? "AM" : "PM", P: 12 > li ? "am" : "pm", S: Ui(ai.getSeconds()), L: Ui(Math.floor(Ti % 1e3), 3) }, Si.dateFormats), Ki(ai, function(gi, Ei) {
-            for (; yi.indexOf("%" + Ei) !== -1; )
-              yi = yi.replace("%" + Ei, typeof gi == "function" ? gi.call(Oi, Ti) : gi);
-          }), Mi ? yi.substr(0, 1).toUpperCase() + yi.substr(1) : yi;
+        dateFormat(Si, Ti, Mi) {
+          if (!Ki(Ti) || isNaN(Ti))
+            return li.defaultOptions.lang && li.defaultOptions.lang.invalidDate || "";
+          Si = bi(Si, "%Y-%m-%d %H:%M:%S");
+          const Di = this;
+          var ci = new this.Date(Ti);
+          const pi = this.get("Hours", ci), vi = this.get("Day", ci), ui = this.get("Date", ci), fi = this.get("Month", ci), si = this.get("FullYear", ci), ti = li.defaultOptions.lang, oi = ti && ti.weekdays, di = ti && ti.shortWeekdays;
+          return ci = es({ a: di ? di[vi] : oi[vi].substr(0, 3), A: oi[vi], d: _i(ui), e: _i(ui, 2, " "), w: vi, b: ti.shortMonths[fi], B: ti.months[fi], m: _i(fi + 1), o: fi + 1, y: si.toString().substr(2, 2), Y: si, H: _i(pi), k: pi, I: _i(pi % 12 || 12), l: pi % 12 || 12, M: _i(this.get("Minutes", ci)), p: 12 > pi ? "AM" : "PM", P: 12 > pi ? "am" : "pm", S: _i(ci.getSeconds()), L: _i(Math.floor(Ti % 1e3), 3) }, li.dateFormats), Vi(ci, function(mi, Oi) {
+            for (; Si.indexOf("%" + Oi) !== -1; )
+              Si = Si.replace("%" + Oi, typeof mi == "function" ? mi.call(Di, Ti) : mi);
+          }), Mi ? Si.substr(0, 1).toUpperCase() + Si.substr(1) : Si;
         }
-        resolveDTLFormat(yi) {
-          return ss(yi, !0) ? yi : (yi = bi(yi), {
-            main: yi[0],
-            from: yi[1],
-            to: yi[2]
+        resolveDTLFormat(Si) {
+          return is(Si, !0) ? Si : (Si = Ai(Si), {
+            main: Si[0],
+            from: Si[1],
+            to: Si[2]
           });
         }
-        getTimeTicks(yi, Ti, Mi, Oi) {
-          const ai = this, li = [], xi = {};
-          var di = new ai.Date(Ti);
-          const pi = yi.unitRange, ei = yi.count || 1;
-          let Fe;
-          if (Oi = ki(Oi, 1), ts(Ti)) {
-            if (ai.set("Milliseconds", di, pi >= Ri.second ? 0 : ei * Math.floor(ai.get("Milliseconds", di) / ei)), pi >= Ri.second && ai.set("Seconds", di, pi >= Ri.minute ? 0 : ei * Math.floor(ai.get("Seconds", di) / ei)), pi >= Ri.minute && ai.set("Minutes", di, pi >= Ri.hour ? 0 : ei * Math.floor(ai.get("Minutes", di) / ei)), pi >= Ri.hour && ai.set("Hours", di, pi >= Ri.day ? 0 : ei * Math.floor(ai.get("Hours", di) / ei)), pi >= Ri.day && ai.set("Date", di, pi >= Ri.month ? 1 : Math.max(1, ei * Math.floor(ai.get(
+        getTimeTicks(Si, Ti, Mi, Di) {
+          const ci = this, pi = [], vi = {};
+          var ui = new ci.Date(Ti);
+          const fi = Si.unitRange, si = Si.count || 1;
+          let ti;
+          if (Di = bi(Di, 1), Ki(Ti)) {
+            if (ci.set("Milliseconds", ui, fi >= ji.second ? 0 : si * Math.floor(ci.get("Milliseconds", ui) / si)), fi >= ji.second && ci.set("Seconds", ui, fi >= ji.minute ? 0 : si * Math.floor(ci.get("Seconds", ui) / si)), fi >= ji.minute && ci.set("Minutes", ui, fi >= ji.hour ? 0 : si * Math.floor(ci.get("Minutes", ui) / si)), fi >= ji.hour && ci.set("Hours", ui, fi >= ji.day ? 0 : si * Math.floor(ci.get("Hours", ui) / si)), fi >= ji.day && ci.set("Date", ui, fi >= ji.month ? 1 : Math.max(1, si * Math.floor(ci.get(
               "Date",
-              di
-            ) / ei))), pi >= Ri.month) {
-              ai.set("Month", di, pi >= Ri.year ? 0 : ei * Math.floor(ai.get("Month", di) / ei));
-              var ii = ai.get("FullYear", di);
+              ui
+            ) / si))), fi >= ji.month) {
+              ci.set("Month", ui, fi >= ji.year ? 0 : si * Math.floor(ci.get("Month", ui) / si));
+              var oi = ci.get("FullYear", ui);
             }
-            pi >= Ri.year && ai.set("FullYear", di, ii - ii % ei), pi === Ri.week && (ii = ai.get("Day", di), ai.set("Date", di, ai.get("Date", di) - ii + Oi + (ii < Oi ? -7 : 0))), ii = ai.get("FullYear", di), Oi = ai.get("Month", di);
-            const hi = ai.get("Date", di), gi = ai.get("Hours", di);
-            for (Ti = di.getTime(), !ai.variableTimezone && ai.useUTC || !ts(Mi) || (Fe = Mi - Ti > 4 * Ri.month || ai.getTimezoneOffset(Ti) !== ai.getTimezoneOffset(Mi)), Ti = di.getTime(), di = 1; Ti < Mi; )
-              li.push(Ti), Ti = pi === Ri.year ? ai.makeTime(ii + di * ei, 0) : pi === Ri.month ? ai.makeTime(ii, Oi + di * ei) : !Fe || pi !== Ri.day && pi !== Ri.week ? Fe && pi === Ri.hour && 1 < ei ? ai.makeTime(ii, Oi, hi, gi + di * ei) : Ti + pi * ei : ai.makeTime(ii, Oi, hi + di * ei * (pi === Ri.day ? 1 : 7)), di++;
-            li.push(Ti), pi <= Ri.hour && 1e4 > li.length && li.forEach(function(Ei) {
-              Ei % 18e5 === 0 && ai.dateFormat("%H%M%S%L", Ei) === "000000000" && (xi[Ei] = "day");
+            fi >= ji.year && ci.set("FullYear", ui, oi - oi % si), fi === ji.week && (oi = ci.get("Day", ui), ci.set("Date", ui, ci.get("Date", ui) - oi + Di + (oi < Di ? -7 : 0))), oi = ci.get("FullYear", ui), Di = ci.get("Month", ui);
+            const di = ci.get("Date", ui), mi = ci.get("Hours", ui);
+            for (Ti = ui.getTime(), !ci.variableTimezone && ci.useUTC || !Ki(Mi) || (ti = Mi - Ti > 4 * ji.month || ci.getTimezoneOffset(Ti) !== ci.getTimezoneOffset(Mi)), Ti = ui.getTime(), ui = 1; Ti < Mi; )
+              pi.push(Ti), Ti = fi === ji.year ? ci.makeTime(oi + ui * si, 0) : fi === ji.month ? ci.makeTime(oi, Di + ui * si) : !ti || fi !== ji.day && fi !== ji.week ? ti && fi === ji.hour && 1 < si ? ci.makeTime(oi, Di, di, mi + ui * si) : Ti + fi * si : ci.makeTime(oi, Di, di + ui * si * (fi === ji.day ? 1 : 7)), ui++;
+            pi.push(Ti), fi <= ji.hour && 1e4 > pi.length && pi.forEach(function(Oi) {
+              Oi % 18e5 === 0 && ci.dateFormat("%H%M%S%L", Oi) === "000000000" && (vi[Oi] = "day");
             });
           }
-          return li.info = is(yi, { higherRanks: xi, totalRange: pi * ei }), li;
+          return pi.info = es(Si, { higherRanks: vi, totalRange: fi * si }), pi;
         }
-        getDateFormat(yi, Ti, Mi, Oi) {
-          const ai = this.dateFormat("%m-%d %H:%M:%S.%L", Ti), li = { millisecond: 15, second: 12, minute: 9, hour: 6, day: 3 };
-          let xi, di = "millisecond";
-          for (xi in Ri) {
-            if (yi === Ri.week && +this.dateFormat(
+        getDateFormat(Si, Ti, Mi, Di) {
+          const ci = this.dateFormat("%m-%d %H:%M:%S.%L", Ti), pi = { millisecond: 15, second: 12, minute: 9, hour: 6, day: 3 };
+          let vi, ui = "millisecond";
+          for (vi in ji) {
+            if (Si === ji.week && +this.dateFormat(
               "%w",
               Ti
-            ) === Mi && ai.substr(6) === "00:00:00.000") {
-              xi = "week";
+            ) === Mi && ci.substr(6) === "00:00:00.000") {
+              vi = "week";
               break;
             }
-            if (Ri[xi] > yi) {
-              xi = di;
+            if (ji[vi] > Si) {
+              vi = ui;
               break;
             }
-            if (li[xi] && ai.substr(li[xi]) !== "01-01 00:00:00.000".substr(li[xi]))
+            if (pi[vi] && ci.substr(pi[vi]) !== "01-01 00:00:00.000".substr(pi[vi]))
               break;
-            xi !== "week" && (di = xi);
+            vi !== "week" && (ui = vi);
           }
-          return this.resolveDTLFormat(Oi[xi]).main;
+          return this.resolveDTLFormat(Di[vi]).main;
         }
       }
-      return Ci;
-    }), ci(oi, "Core/Defaults.js", [oi["Core/Chart/ChartDefaults.js"], oi["Core/Color/Color.js"], oi["Core/Globals.js"], oi["Core/Color/Palettes.js"], oi["Core/Time.js"], oi["Core/Utilities.js"]], function(Si, ji, qi, ts, Qi, is) {
-      const { isTouchDevice: ss, svg: Wi } = qi, { merge: Ki } = is, Ui = {
-        colors: ts.colors,
+      return ki;
+    }), ri(ii, "Core/Defaults.js", [ii["Core/Chart/ChartDefaults.js"], ii["Core/Color/Color.js"], ii["Core/Globals.js"], ii["Core/Color/Palettes.js"], ii["Core/Time.js"], ii["Core/Utilities.js"]], function(li, Ci, zi, Ki, Yi, es) {
+      const { isTouchDevice: is, svg: $i } = zi, { merge: Vi } = es, _i = {
+        colors: Ki.colors,
         symbols: [
           "circle",
           "diamond",
@@ -567,7 +566,7 @@ var highcharts = { exports: {} };
           timezoneOffset: 0,
           useUTC: !0
         },
-        chart: Si,
+        chart: li,
         title: { style: { color: "#333333", fontWeight: "bold" }, text: "Chart title", align: "center", margin: 15, widthAdjust: -44 },
         subtitle: { style: { color: "#666666", fontSize: "0.8em" }, text: "", align: "center", widthAdjust: -44 },
         caption: { margin: 15, style: { color: "#666666", fontSize: "0.8em" }, text: "", align: "left", verticalAlign: "bottom" },
@@ -601,7 +600,7 @@ var highcharts = { exports: {} };
         loading: { labelStyle: { fontWeight: "bold", position: "relative", top: "45%" }, style: { position: "absolute", backgroundColor: "#ffffff", opacity: 0.5, textAlign: "center" } },
         tooltip: {
           enabled: !0,
-          animation: Wi,
+          animation: $i,
           borderRadius: 3,
           dateTimeLabelFormats: { millisecond: "%A, %e %b, %H:%M:%S.%L", second: "%A, %e %b, %H:%M:%S", minute: "%A, %e %b, %H:%M", hour: "%A, %e %b, %H:%M", day: "%A, %e %b %Y", week: "Week from %A, %e %b %Y", month: "%B %Y", year: "%Y" },
           footerFormat: "",
@@ -610,7 +609,7 @@ var highcharts = { exports: {} };
           padding: 8,
           shape: "callout",
           shared: !1,
-          snap: ss ? 25 : 10,
+          snap: is ? 25 : 10,
           headerFormat: '<span style="font-size: 0.8em">{point.key}</span><br/>',
           pointFormat: '<span style="color:{point.color}">●</span> {series.name}: <b>{point.y}</b><br/>',
           backgroundColor: "#ffffff",
@@ -628,541 +627,541 @@ var highcharts = { exports: {} };
           text: "Highcharts.com"
         }
       };
-      Ui.chart.styledMode = !1;
-      const ki = new Qi(Ui.time);
-      return Si = { defaultOptions: Ui, defaultTime: ki, getOptions: function() {
-        return Ui;
-      }, setOptions: function(bi) {
-        return Ki(!0, Ui, bi), (bi.time || bi.global) && (qi.time ? qi.time.update(Ki(Ui.global, Ui.time, bi.global, bi.time)) : qi.time = ki), Ui;
-      } }, Si;
-    }), ci(oi, "Core/Animation/Fx.js", [oi["Core/Color/Color.js"], oi["Core/Globals.js"], oi["Core/Utilities.js"]], function(Si, ji, qi) {
-      const { parse: ts } = Si, { win: Qi } = ji, { isNumber: is, objectEach: ss } = qi;
-      class Wi {
-        constructor(Ui, ki, bi) {
-          this.pos = NaN, this.options = ki, this.elem = Ui, this.prop = bi;
+      _i.chart.styledMode = !1;
+      const bi = new Yi(_i.time);
+      return li = { defaultOptions: _i, defaultTime: bi, getOptions: function() {
+        return _i;
+      }, setOptions: function(Ai) {
+        return Vi(!0, _i, Ai), (Ai.time || Ai.global) && (zi.time ? zi.time.update(Vi(_i.global, _i.time, Ai.global, Ai.time)) : zi.time = bi), _i;
+      } }, li;
+    }), ri(ii, "Core/Animation/Fx.js", [ii["Core/Color/Color.js"], ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+      const { parse: Ki } = li, { win: Yi } = Ci, { isNumber: es, objectEach: is } = zi;
+      class $i {
+        constructor(_i, bi, Ai) {
+          this.pos = NaN, this.options = bi, this.elem = _i, this.prop = Ai;
         }
         dSetter() {
-          var Ui = this.paths;
-          const ki = Ui && Ui[0];
-          Ui = Ui && Ui[1];
-          const bi = this.now || 0;
-          let Ri = [];
-          if (bi !== 1 && ki && Ui)
-            if (ki.length === Ui.length && 1 > bi)
-              for (let Ni = 0; Ni < Ui.length; Ni++) {
-                const fi = ki[Ni], Ci = Ui[Ni], wi = [];
-                for (let yi = 0; yi < Ci.length; yi++) {
-                  const Ti = fi[yi], Mi = Ci[yi];
-                  is(Ti) && is(Mi) && (Ci[0] !== "A" || yi !== 4 && yi !== 5) ? wi[yi] = Ti + bi * (Mi - Ti) : wi[yi] = Mi;
+          var _i = this.paths;
+          const bi = _i && _i[0];
+          _i = _i && _i[1];
+          const Ai = this.now || 0;
+          let ji = [];
+          if (Ai !== 1 && bi && _i)
+            if (bi.length === _i.length && 1 > Ai)
+              for (let Ni = 0; Ni < _i.length; Ni++) {
+                const gi = bi[Ni], ki = _i[Ni], wi = [];
+                for (let Si = 0; Si < ki.length; Si++) {
+                  const Ti = gi[Si], Mi = ki[Si];
+                  es(Ti) && es(Mi) && (ki[0] !== "A" || Si !== 4 && Si !== 5) ? wi[Si] = Ti + Ai * (Mi - Ti) : wi[Si] = Mi;
                 }
-                Ri.push(wi);
+                ji.push(wi);
               }
             else
-              Ri = Ui;
+              ji = _i;
           else
-            Ri = this.toD || [];
-          this.elem.attr("d", Ri, void 0, !0);
+            ji = this.toD || [];
+          this.elem.attr("d", ji, void 0, !0);
         }
         update() {
-          const Ui = this.elem, ki = this.prop, bi = this.now, Ri = this.options.step;
-          this[ki + "Setter"] ? this[ki + "Setter"]() : Ui.attr ? Ui.element && Ui.attr(ki, bi, null, !0) : Ui.style[ki] = bi + this.unit, Ri && Ri.call(Ui, bi, this);
+          const _i = this.elem, bi = this.prop, Ai = this.now, ji = this.options.step;
+          this[bi + "Setter"] ? this[bi + "Setter"]() : _i.attr ? _i.element && _i.attr(bi, Ai, null, !0) : _i.style[bi] = Ai + this.unit, ji && ji.call(_i, Ai, this);
         }
-        run(Ui, ki, bi) {
-          const Ri = this, Ni = Ri.options, fi = function(yi) {
-            return fi.stopped ? !1 : Ri.step(yi);
-          }, Ci = Qi.requestAnimationFrame || function(yi) {
-            setTimeout(yi, 13);
+        run(_i, bi, Ai) {
+          const ji = this, Ni = ji.options, gi = function(Si) {
+            return gi.stopped ? !1 : ji.step(Si);
+          }, ki = Yi.requestAnimationFrame || function(Si) {
+            setTimeout(Si, 13);
           }, wi = function() {
-            for (let yi = 0; yi < Wi.timers.length; yi++)
-              Wi.timers[yi]() || Wi.timers.splice(yi--, 1);
-            Wi.timers.length && Ci(wi);
+            for (let Si = 0; Si < $i.timers.length; Si++)
+              $i.timers[Si]() || $i.timers.splice(Si--, 1);
+            $i.timers.length && ki(wi);
           };
-          Ui !== ki || this.elem["forceAnimate:" + this.prop] ? (this.startTime = +/* @__PURE__ */ new Date(), this.start = Ui, this.end = ki, this.unit = bi, this.now = this.start, this.pos = 0, fi.elem = this.elem, fi.prop = this.prop, fi() && Wi.timers.push(fi) === 1 && Ci(wi)) : (delete Ni.curAnim[this.prop], Ni.complete && Object.keys(Ni.curAnim).length === 0 && Ni.complete.call(this.elem));
+          _i !== bi || this.elem["forceAnimate:" + this.prop] ? (this.startTime = +/* @__PURE__ */ new Date(), this.start = _i, this.end = bi, this.unit = Ai, this.now = this.start, this.pos = 0, gi.elem = this.elem, gi.prop = this.prop, gi() && $i.timers.push(gi) === 1 && ki(wi)) : (delete Ni.curAnim[this.prop], Ni.complete && Object.keys(Ni.curAnim).length === 0 && Ni.complete.call(this.elem));
         }
-        step(Ui) {
-          const ki = +/* @__PURE__ */ new Date(), bi = this.options, Ri = this.elem, Ni = bi.complete, fi = bi.duration, Ci = bi.curAnim;
+        step(_i) {
+          const bi = +/* @__PURE__ */ new Date(), Ai = this.options, ji = this.elem, Ni = Ai.complete, gi = Ai.duration, ki = Ai.curAnim;
           let wi;
-          return Ri.attr && !Ri.element ? Ui = !1 : Ui || ki >= fi + this.startTime ? (this.now = this.end, this.pos = 1, this.update(), wi = Ci[this.prop] = !0, ss(Ci, function(yi) {
-            yi !== !0 && (wi = !1);
-          }), wi && Ni && Ni.call(Ri), Ui = !1) : (this.pos = bi.easing((ki - this.startTime) / fi), this.now = this.start + (this.end - this.start) * this.pos, this.update(), Ui = !0), Ui;
+          return ji.attr && !ji.element ? _i = !1 : _i || bi >= gi + this.startTime ? (this.now = this.end, this.pos = 1, this.update(), wi = ki[this.prop] = !0, is(ki, function(Si) {
+            Si !== !0 && (wi = !1);
+          }), wi && Ni && Ni.call(ji), _i = !1) : (this.pos = Ai.easing((bi - this.startTime) / gi), this.now = this.start + (this.end - this.start) * this.pos, this.update(), _i = !0), _i;
         }
-        initPath(Ui, ki, bi) {
-          function Ri(ai, li) {
-            for (; ai.length < Mi; ) {
-              var xi = ai[0];
-              const di = li[Mi - ai.length];
-              di && xi[0] === "M" && (ai[0] = di[0] === "C" ? ["C", xi[1], xi[2], xi[1], xi[2], xi[1], xi[2]] : ["L", xi[1], xi[2]]), ai.unshift(xi), wi && (xi = ai.pop(), ai.push(ai[ai.length - 1], xi));
+        initPath(_i, bi, Ai) {
+          function ji(ci, pi) {
+            for (; ci.length < Mi; ) {
+              var vi = ci[0];
+              const ui = pi[Mi - ci.length];
+              ui && vi[0] === "M" && (ci[0] = ui[0] === "C" ? ["C", vi[1], vi[2], vi[1], vi[2], vi[1], vi[2]] : ["L", vi[1], vi[2]]), ci.unshift(vi), wi && (vi = ci.pop(), ci.push(ci[ci.length - 1], vi));
             }
           }
-          function Ni(ai, li) {
-            for (; ai.length < Mi; )
-              if (li = ai[Math.floor(ai.length / yi) - 1].slice(), li[0] === "C" && (li[1] = li[5], li[2] = li[6]), wi) {
-                const xi = ai[Math.floor(ai.length / yi)].slice();
-                ai.splice(ai.length / 2, 0, li, xi);
+          function Ni(ci, pi) {
+            for (; ci.length < Mi; )
+              if (pi = ci[Math.floor(ci.length / Si) - 1].slice(), pi[0] === "C" && (pi[1] = pi[5], pi[2] = pi[6]), wi) {
+                const vi = ci[Math.floor(ci.length / Si)].slice();
+                ci.splice(ci.length / 2, 0, pi, vi);
               } else
-                ai.push(li);
+                ci.push(pi);
           }
-          const fi = Ui.startX, Ci = Ui.endX;
-          bi = bi.slice();
-          const wi = Ui.isArea, yi = wi ? 2 : 1;
-          let Ti, Mi, Oi;
-          if (ki = ki && ki.slice(), !ki)
+          const gi = _i.startX, ki = _i.endX;
+          Ai = Ai.slice();
+          const wi = _i.isArea, Si = wi ? 2 : 1;
+          let Ti, Mi, Di;
+          if (bi = bi && bi.slice(), !bi)
             return [
-              bi,
-              bi
+              Ai,
+              Ai
             ];
-          if (fi && Ci && Ci.length) {
-            for (Ui = 0; Ui < fi.length; Ui++)
-              if (fi[Ui] === Ci[0]) {
-                Ti = Ui;
+          if (gi && ki && ki.length) {
+            for (_i = 0; _i < gi.length; _i++)
+              if (gi[_i] === ki[0]) {
+                Ti = _i;
                 break;
-              } else if (fi[0] === Ci[Ci.length - fi.length + Ui]) {
-                Ti = Ui, Oi = !0;
+              } else if (gi[0] === ki[ki.length - gi.length + _i]) {
+                Ti = _i, Di = !0;
                 break;
-              } else if (fi[fi.length - 1] === Ci[Ci.length - fi.length + Ui]) {
-                Ti = fi.length - Ui;
+              } else if (gi[gi.length - 1] === ki[ki.length - gi.length + _i]) {
+                Ti = gi.length - _i;
                 break;
               }
-            typeof Ti > "u" && (ki = []);
+            typeof Ti > "u" && (bi = []);
           }
-          return ki.length && is(Ti) && (Mi = bi.length + Ti * yi, Oi ? (Ri(ki, bi), Ni(bi, ki)) : (Ri(bi, ki), Ni(ki, bi))), [ki, bi];
+          return bi.length && es(Ti) && (Mi = Ai.length + Ti * Si, Di ? (ji(bi, Ai), Ni(Ai, bi)) : (ji(Ai, bi), Ni(bi, Ai))), [bi, Ai];
         }
         fillSetter() {
-          Wi.prototype.strokeSetter.apply(this, arguments);
+          $i.prototype.strokeSetter.apply(this, arguments);
         }
         strokeSetter() {
-          this.elem.attr(this.prop, ts(this.start).tweenTo(ts(this.end), this.pos), void 0, !0);
+          this.elem.attr(this.prop, Ki(this.start).tweenTo(Ki(this.end), this.pos), void 0, !0);
         }
       }
-      return Wi.timers = [], Wi;
-    }), ci(
-      oi,
+      return $i.timers = [], $i;
+    }), ri(
+      ii,
       "Core/Animation/AnimationUtilities.js",
-      [oi["Core/Animation/Fx.js"], oi["Core/Utilities.js"]],
-      function(Si, ji) {
-        function qi(Ri) {
-          return Ki(Ri) ? Ui({ duration: 500, defer: 0 }, Ri) : { duration: Ri ? 500 : 0, defer: 0 };
+      [ii["Core/Animation/Fx.js"], ii["Core/Utilities.js"]],
+      function(li, Ci) {
+        function zi(ji) {
+          return Vi(ji) ? _i({ duration: 500, defer: 0 }, ji) : { duration: ji ? 500 : 0, defer: 0 };
         }
-        function ts(Ri, Ni) {
-          let fi = Si.timers.length;
-          for (; fi--; )
-            Si.timers[fi].elem !== Ri || Ni && Ni !== Si.timers[fi].prop || (Si.timers[fi].stopped = !0);
+        function Ki(ji, Ni) {
+          let gi = li.timers.length;
+          for (; gi--; )
+            li.timers[gi].elem !== ji || Ni && Ni !== li.timers[gi].prop || (li.timers[gi].stopped = !0);
         }
-        const { defined: Qi, getStyle: is, isArray: ss, isNumber: Wi, isObject: Ki, merge: Ui, objectEach: ki, pick: bi } = ji;
-        return { animate: function(Ri, Ni, fi) {
-          let Ci, wi = "", yi, Ti, Mi;
-          Ki(fi) || (Mi = arguments, fi = { duration: Mi[2], easing: Mi[3], complete: Mi[4] }), Wi(fi.duration) || (fi.duration = 400), fi.easing = typeof fi.easing == "function" ? fi.easing : Math[fi.easing] || Math.easeInOutSine, fi.curAnim = Ui(Ni), ki(Ni, function(Oi, ai) {
-            ts(Ri, ai), Ti = new Si(Ri, fi, ai), yi = void 0, ai === "d" && ss(Ni.d) ? (Ti.paths = Ti.initPath(Ri, Ri.pathArray, Ni.d), Ti.toD = Ni.d, Ci = 0, yi = 1) : Ri.attr ? Ci = Ri.attr(ai) : (Ci = parseFloat(is(Ri, ai)) || 0, ai !== "opacity" && (wi = "px")), yi || (yi = Oi), typeof yi == "string" && yi.match("px") && (yi = yi.replace(/px/g, "")), Ti.run(Ci, yi, wi);
+        const { defined: Yi, getStyle: es, isArray: is, isNumber: $i, isObject: Vi, merge: _i, objectEach: bi, pick: Ai } = Ci;
+        return { animate: function(ji, Ni, gi) {
+          let ki, wi = "", Si, Ti, Mi;
+          Vi(gi) || (Mi = arguments, gi = { duration: Mi[2], easing: Mi[3], complete: Mi[4] }), $i(gi.duration) || (gi.duration = 400), gi.easing = typeof gi.easing == "function" ? gi.easing : Math[gi.easing] || Math.easeInOutSine, gi.curAnim = _i(Ni), bi(Ni, function(Di, ci) {
+            Ki(ji, ci), Ti = new li(ji, gi, ci), Si = void 0, ci === "d" && is(Ni.d) ? (Ti.paths = Ti.initPath(ji, ji.pathArray, Ni.d), Ti.toD = Ni.d, ki = 0, Si = 1) : ji.attr ? ki = ji.attr(ci) : (ki = parseFloat(es(ji, ci)) || 0, ci !== "opacity" && (wi = "px")), Si || (Si = Di), typeof Si == "string" && Si.match("px") && (Si = Si.replace(/px/g, "")), Ti.run(ki, Si, wi);
           });
-        }, animObject: qi, getDeferredAnimation: function(Ri, Ni, fi) {
-          const Ci = qi(Ni);
-          let wi = 0, yi = 0;
-          return (fi ? [fi] : Ri.series).forEach((Ti) => {
-            Ti = qi(Ti.options.animation), wi = Ni && Qi(Ni.defer) ? Ci.defer : Math.max(wi, Ti.duration + Ti.defer), yi = Math.min(Ci.duration, Ti.duration);
-          }), Ri.renderer.forExport && (wi = 0), { defer: Math.max(0, wi - yi), duration: Math.min(wi, yi) };
-        }, setAnimation: function(Ri, Ni) {
-          Ni.renderer.globalAnimation = bi(Ri, Ni.options.chart.animation, !0);
-        }, stop: ts };
+        }, animObject: zi, getDeferredAnimation: function(ji, Ni, gi) {
+          const ki = zi(Ni);
+          let wi = 0, Si = 0;
+          return (gi ? [gi] : ji.series).forEach((Ti) => {
+            Ti = zi(Ti.options.animation), wi = Ni && Yi(Ni.defer) ? ki.defer : Math.max(wi, Ti.duration + Ti.defer), Si = Math.min(ki.duration, Ti.duration);
+          }), ji.renderer.forExport && (wi = 0), { defer: Math.max(0, wi - Si), duration: Math.min(wi, Si) };
+        }, setAnimation: function(ji, Ni) {
+          Ni.renderer.globalAnimation = Ai(ji, Ni.options.chart.animation, !0);
+        }, stop: Ki };
       }
-    ), ci(oi, "Core/Renderer/HTML/AST.js", [oi["Core/Globals.js"], oi["Core/Utilities.js"]], function(Si, ji) {
-      const { SVG_NS: qi, win: ts } = Si, { attr: Qi, createElement: is, css: ss, error: Wi, isFunction: Ki, isString: Ui, objectEach: ki, splat: bi } = ji;
-      ({ trustedTypes: ji } = ts);
-      const Ri = ji && Ki(ji.createPolicy) && ji.createPolicy("highcharts", { createHTML: (wi) => wi });
-      ji = Ri ? Ri.createHTML("") : "";
+    ), ri(ii, "Core/Renderer/HTML/AST.js", [ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci) {
+      const { SVG_NS: zi, win: Ki } = li, { attr: Yi, createElement: es, css: is, error: $i, isFunction: Vi, isString: _i, objectEach: bi, splat: Ai } = Ci;
+      ({ trustedTypes: Ci } = Ki);
+      const ji = Ci && Vi(Ci.createPolicy) && Ci.createPolicy("highcharts", { createHTML: (wi) => wi });
+      Ci = ji ? ji.createHTML("") : "";
       try {
-        var Ni = !!new DOMParser().parseFromString(ji, "text/html");
+        var Ni = !!new DOMParser().parseFromString(Ci, "text/html");
       } catch {
         Ni = !1;
       }
-      const fi = Ni;
-      class Ci {
-        static filterUserAttributes(yi) {
-          return ki(yi, (Ti, Mi) => {
-            let Oi = !0;
-            Ci.allowedAttributes.indexOf(Mi) === -1 && (Oi = !1), ["background", "dynsrc", "href", "lowsrc", "src"].indexOf(Mi) !== -1 && (Oi = Ui(Ti) && Ci.allowedReferences.some((ai) => Ti.indexOf(ai) === 0)), Oi || (Wi(33, !1, void 0, { "Invalid attribute in config": `${Mi}` }), delete yi[Mi]), Ui(Ti) && yi[Mi] && (yi[Mi] = Ti.replace(
+      const gi = Ni;
+      class ki {
+        static filterUserAttributes(Si) {
+          return bi(Si, (Ti, Mi) => {
+            let Di = !0;
+            ki.allowedAttributes.indexOf(Mi) === -1 && (Di = !1), ["background", "dynsrc", "href", "lowsrc", "src"].indexOf(Mi) !== -1 && (Di = _i(Ti) && ki.allowedReferences.some((ci) => Ti.indexOf(ci) === 0)), Di || ($i(33, !1, void 0, { "Invalid attribute in config": `${Mi}` }), delete Si[Mi]), _i(Ti) && Si[Mi] && (Si[Mi] = Ti.replace(
               /</g,
               "&lt;"
             ));
-          }), yi;
+          }), Si;
         }
-        static parseStyle(yi) {
-          return yi.split(";").reduce((Ti, Mi) => {
-            Mi = Mi.split(":").map((ai) => ai.trim());
-            const Oi = Mi.shift();
-            return Oi && Mi.length && (Ti[Oi.replace(/-([a-z])/g, (ai) => ai[1].toUpperCase())] = Mi.join(":")), Ti;
+        static parseStyle(Si) {
+          return Si.split(";").reduce((Ti, Mi) => {
+            Mi = Mi.split(":").map((ci) => ci.trim());
+            const Di = Mi.shift();
+            return Di && Mi.length && (Ti[Di.replace(/-([a-z])/g, (ci) => ci[1].toUpperCase())] = Mi.join(":")), Ti;
           }, {});
         }
-        static setElementHTML(yi, Ti) {
-          yi.innerHTML = Ci.emptyHTML, Ti && new Ci(Ti).addToDOM(yi);
+        static setElementHTML(Si, Ti) {
+          Si.innerHTML = ki.emptyHTML, Ti && new ki(Ti).addToDOM(Si);
         }
-        constructor(yi) {
-          this.nodes = typeof yi == "string" ? this.parseMarkup(yi) : yi;
+        constructor(Si) {
+          this.nodes = typeof Si == "string" ? this.parseMarkup(Si) : Si;
         }
-        addToDOM(yi) {
-          function Ti(Mi, Oi) {
-            let ai;
-            return bi(Mi).forEach(function(li) {
-              var xi = li.tagName;
-              const di = li.textContent ? Si.doc.createTextNode(li.textContent) : void 0, pi = Ci.bypassHTMLFiltering;
-              let ei;
-              if (xi)
-                if (xi === "#text")
-                  ei = di;
-                else if (Ci.allowedTags.indexOf(xi) !== -1 || pi) {
-                  xi = Si.doc.createElementNS(xi === "svg" ? qi : Oi.namespaceURI || qi, xi);
-                  const Fe = li.attributes || {};
-                  ki(li, function(ii, hi) {
-                    hi !== "tagName" && hi !== "attributes" && hi !== "children" && hi !== "style" && hi !== "textContent" && (Fe[hi] = ii);
-                  }), Qi(xi, pi ? Fe : Ci.filterUserAttributes(Fe)), li.style && ss(xi, li.style), di && xi.appendChild(di), Ti(li.children || [], xi), ei = xi;
+        addToDOM(Si) {
+          function Ti(Mi, Di) {
+            let ci;
+            return Ai(Mi).forEach(function(pi) {
+              var vi = pi.tagName;
+              const ui = pi.textContent ? li.doc.createTextNode(pi.textContent) : void 0, fi = ki.bypassHTMLFiltering;
+              let si;
+              if (vi)
+                if (vi === "#text")
+                  si = ui;
+                else if (ki.allowedTags.indexOf(vi) !== -1 || fi) {
+                  vi = li.doc.createElementNS(vi === "svg" ? zi : Di.namespaceURI || zi, vi);
+                  const ti = pi.attributes || {};
+                  bi(pi, function(oi, di) {
+                    di !== "tagName" && di !== "attributes" && di !== "children" && di !== "style" && di !== "textContent" && (ti[di] = oi);
+                  }), Yi(vi, fi ? ti : ki.filterUserAttributes(ti)), pi.style && is(vi, pi.style), ui && vi.appendChild(ui), Ti(pi.children || [], vi), si = vi;
                 } else
-                  Wi(33, !1, void 0, { "Invalid tagName in config": xi });
-              ei && Oi.appendChild(ei), ai = ei;
-            }), ai;
+                  $i(33, !1, void 0, { "Invalid tagName in config": vi });
+              si && Di.appendChild(si), ci = si;
+            }), ci;
           }
-          return Ti(this.nodes, yi);
+          return Ti(this.nodes, Si);
         }
-        parseMarkup(yi) {
+        parseMarkup(Si) {
           const Ti = [];
-          if (yi = yi.trim().replace(/ style=(["'])/g, " data-style=$1"), fi)
-            yi = new DOMParser().parseFromString(Ri ? Ri.createHTML(yi) : yi, "text/html");
+          if (Si = Si.trim().replace(/ style=(["'])/g, " data-style=$1"), gi)
+            Si = new DOMParser().parseFromString(ji ? ji.createHTML(Si) : Si, "text/html");
           else {
-            const Oi = is("div");
-            Oi.innerHTML = yi, yi = { body: Oi };
+            const Di = es("div");
+            Di.innerHTML = Si, Si = { body: Di };
           }
-          const Mi = (Oi, ai) => {
-            var li = Oi.nodeName.toLowerCase();
-            const xi = { tagName: li };
-            if (li === "#text" && (xi.textContent = Oi.textContent || ""), li = Oi.attributes) {
-              const di = {};
-              [].forEach.call(li, (pi) => {
-                pi.name === "data-style" ? xi.style = Ci.parseStyle(pi.value) : di[pi.name] = pi.value;
-              }), xi.attributes = di;
+          const Mi = (Di, ci) => {
+            var pi = Di.nodeName.toLowerCase();
+            const vi = { tagName: pi };
+            if (pi === "#text" && (vi.textContent = Di.textContent || ""), pi = Di.attributes) {
+              const ui = {};
+              [].forEach.call(pi, (fi) => {
+                fi.name === "data-style" ? vi.style = ki.parseStyle(fi.value) : ui[fi.name] = fi.value;
+              }), vi.attributes = ui;
             }
-            if (Oi.childNodes.length) {
-              const di = [];
-              [].forEach.call(Oi.childNodes, (pi) => {
+            if (Di.childNodes.length) {
+              const ui = [];
+              [].forEach.call(Di.childNodes, (fi) => {
                 Mi(
-                  pi,
-                  di
+                  fi,
+                  ui
                 );
-              }), di.length && (xi.children = di);
+              }), ui.length && (vi.children = ui);
             }
-            ai.push(xi);
+            ci.push(vi);
           };
-          return [].forEach.call(yi.body.childNodes, (Oi) => Mi(Oi, Ti)), Ti;
+          return [].forEach.call(Si.body.childNodes, (Di) => Mi(Di, Ti)), Ti;
         }
       }
-      return Ci.allowedAttributes = "alt aria-controls aria-describedby aria-expanded aria-haspopup aria-hidden aria-label aria-labelledby aria-live aria-pressed aria-readonly aria-roledescription aria-selected class clip-path color colspan cx cy d dx dy disabled fill flood-color flood-opacity height href id in markerHeight markerWidth offset opacity orient padding paddingLeft paddingRight patternUnits r refX refY role scope slope src startOffset stdDeviation stroke stroke-linecap stroke-width style tableValues result rowspan summary target tabindex text-align text-anchor textAnchor textLength title type valign width x x1 x2 xlink:href y y1 y2 zIndex".split(" "), Ci.allowedReferences = "https:// http:// mailto: / ../ ./ #".split(" "), Ci.allowedTags = "a abbr b br button caption circle clipPath code dd defs div dl dt em feComponentTransfer feDropShadow feFuncA feFuncB feFuncG feFuncR feGaussianBlur feOffset feMerge feMergeNode filter h1 h2 h3 h4 h5 h6 hr i img li linearGradient marker ol p path pattern pre rect small span stop strong style sub sup svg table text textPath thead title tbody tspan td th tr u ul #text".split(" "), Ci.emptyHTML = ji, Ci.bypassHTMLFiltering = !1, Ci;
-    }), ci(oi, "Core/Templating.js", [oi["Core/Defaults.js"], oi["Core/Utilities.js"]], function(Si, ji) {
-      function qi(fi = "", Ci, wi) {
-        const yi = /\{([a-zA-Z0-9:\.,;\-\/<>%_@"'= #\(\)]+)\}/g, Ti = /\(([a-zA-Z0-9:\.,;\-\/<>%_@"'= ]+)\)/g, Mi = [], Oi = /f$/, ai = /\.([0-9])/, li = Qi.lang, xi = wi && wi.time || is, di = wi && wi.numberFormatter || ts, pi = (ni = "") => {
-          let Pi;
-          return ni === "true" ? !0 : ni === "false" ? !1 : (Pi = Number(ni)).toString() === ni ? Pi : Wi(ni, Ci);
+      return ki.allowedAttributes = "alt aria-controls aria-describedby aria-expanded aria-haspopup aria-hidden aria-label aria-labelledby aria-live aria-pressed aria-readonly aria-roledescription aria-selected class clip-path color colspan cx cy d dx dy disabled fill flood-color flood-opacity height href id in markerHeight markerWidth offset opacity orient padding paddingLeft paddingRight patternUnits r refX refY role scope slope src startOffset stdDeviation stroke stroke-linecap stroke-width style tableValues result rowspan summary target tabindex text-align text-anchor textAnchor textLength title type valign width x x1 x2 xlink:href y y1 y2 zIndex".split(" "), ki.allowedReferences = "https:// http:// mailto: / ../ ./ #".split(" "), ki.allowedTags = "a abbr b br button caption circle clipPath code dd defs div dl dt em feComponentTransfer feDropShadow feFuncA feFuncB feFuncG feFuncR feGaussianBlur feOffset feMerge feMergeNode filter h1 h2 h3 h4 h5 h6 hr i img li linearGradient marker ol p path pattern pre rect small span stop strong style sub sup svg table text textPath thead title tbody tspan td th tr u ul #text".split(" "), ki.emptyHTML = Ci, ki.bypassHTMLFiltering = !1, ki;
+    }), ri(ii, "Core/Templating.js", [ii["Core/Defaults.js"], ii["Core/Utilities.js"]], function(li, Ci) {
+      function zi(gi = "", ki, wi) {
+        const Si = /\{([a-zA-Z0-9:\.,;\-\/<>%_@"'= #\(\)]+)\}/g, Ti = /\(([a-zA-Z0-9:\.,;\-\/<>%_@"'= ]+)\)/g, Mi = [], Di = /f$/, ci = /\.([0-9])/, pi = Yi.lang, vi = wi && wi.time || es, ui = wi && wi.numberFormatter || Ki, fi = (hi = "") => {
+          let Li;
+          return hi === "true" ? !0 : hi === "false" ? !1 : (Li = Number(hi)).toString() === hi ? Li : $i(hi, ki);
         };
-        let ei, Fe, ii = 0, hi;
-        for (; (ei = yi.exec(fi)) !== null; ) {
-          const ni = Ti.exec(ei[1]);
-          ni && (ei = ni, hi = !0), Fe && Fe.isBlock || (Fe = {
-            ctx: Ci,
-            expression: ei[1],
-            find: ei[0],
-            isBlock: ei[1].charAt(0) === "#",
-            start: ei.index,
-            startInner: ei.index + ei[0].length,
-            length: ei[0].length
+        let si, ti, oi = 0, di;
+        for (; (si = Si.exec(gi)) !== null; ) {
+          const hi = Ti.exec(si[1]);
+          hi && (si = hi, di = !0), ti && ti.isBlock || (ti = {
+            ctx: ki,
+            expression: si[1],
+            find: si[0],
+            isBlock: si[1].charAt(0) === "#",
+            start: si.index,
+            startInner: si.index + si[0].length,
+            length: si[0].length
           });
-          var gi = ei[1].split(" ")[0].replace("#", "");
-          if (Ni[gi] && (Fe.isBlock && gi === Fe.fn && ii++, Fe.fn || (Fe.fn = gi)), gi = ei[1] === "else", Fe.isBlock && Fe.fn && (ei[1] === `/${Fe.fn}` || gi))
-            if (ii)
-              gi || ii--;
+          var mi = si[1].split(" ")[0].replace("#", "");
+          if (Ni[mi] && (ti.isBlock && mi === ti.fn && oi++, ti.fn || (ti.fn = mi)), mi = si[1] === "else", ti.isBlock && ti.fn && (si[1] === `/${ti.fn}` || mi))
+            if (oi)
+              mi || oi--;
             else {
-              var Ei = Fe.startInner;
-              Ei = fi.substr(Ei, ei.index - Ei), Fe.body === void 0 ? (Fe.body = Ei, Fe.startInner = ei.index + ei[0].length) : Fe.elseBody = Ei, Fe.find += Ei + ei[0], gi || (Mi.push(Fe), Fe = void 0);
+              var Oi = ti.startInner;
+              Oi = gi.substr(Oi, si.index - Oi), ti.body === void 0 ? (ti.body = Oi, ti.startInner = si.index + si[0].length) : ti.elseBody = Oi, ti.find += Oi + si[0], mi || (Mi.push(ti), ti = void 0);
             }
           else
-            Fe.isBlock || Mi.push(Fe);
-          if (ni && (Fe == null || !Fe.isBlock))
+            ti.isBlock || Mi.push(ti);
+          if (hi && (ti == null || !ti.isBlock))
             break;
         }
-        return Mi.forEach((ni) => {
-          const { body: Pi, elseBody: Fi, expression: Zi, fn: rs } = ni;
+        return Mi.forEach((hi) => {
+          const { body: Li, elseBody: Ui, expression: Zi, fn: rs } = hi;
           var Bi;
           if (rs) {
-            var si = [ni], Li = Zi.split(" ");
+            var ni = [hi], Pi = Zi.split(" ");
             for (Bi = Ni[rs].length; Bi--; )
-              si.unshift(pi(Li[Bi + 1]));
-            Bi = Ni[rs].apply(Ci, si), ni.isBlock && typeof Bi == "boolean" && (Bi = qi(Bi ? Pi : Fi, Ci));
+              ni.unshift(fi(Pi[Bi + 1]));
+            Bi = Ni[rs].apply(ki, ni), hi.isBlock && typeof Bi == "boolean" && (Bi = zi(Bi ? Li : Ui, ki));
           } else
-            si = Zi.split(":"), Bi = pi(si.shift() || ""), si.length && typeof Bi == "number" && (si = si.join(":"), Oi.test(si) ? (Li = parseInt((si.match(ai) || ["", "-1"])[1], 10), Bi !== null && (Bi = di(Bi, Li, li.decimalPoint, -1 < si.indexOf(",") ? li.thousandsSep : ""))) : Bi = xi.dateFormat(si, Bi));
-          fi = fi.replace(ni.find, bi(Bi, ""));
-        }), hi ? qi(fi, Ci, wi) : fi;
+            ni = Zi.split(":"), Bi = fi(ni.shift() || ""), ni.length && typeof Bi == "number" && (ni = ni.join(":"), Di.test(ni) ? (Pi = parseInt((ni.match(ci) || ["", "-1"])[1], 10), Bi !== null && (Bi = ui(Bi, Pi, pi.decimalPoint, -1 < ni.indexOf(",") ? pi.thousandsSep : ""))) : Bi = vi.dateFormat(ni, Bi));
+          gi = gi.replace(hi.find, Ai(Bi, ""));
+        }), di ? zi(gi, ki, wi) : gi;
       }
-      function ts(fi, Ci, wi, yi) {
-        fi = +fi || 0, Ci = +Ci;
-        const Ti = Qi.lang;
-        var Mi = (fi.toString().split(".")[1] || "").split("e")[0].length;
-        const Oi = fi.toString().split("e"), ai = Ci;
-        if (Ci === -1)
-          Ci = Math.min(Mi, 20);
-        else if (!Ui(Ci))
-          Ci = 2;
-        else if (Ci && Oi[1] && 0 > Oi[1]) {
-          var li = Ci + +Oi[1];
-          0 <= li ? (Oi[0] = (+Oi[0]).toExponential(li).split("e")[0], Ci = li) : (Oi[0] = Oi[0].split(".")[0] || 0, fi = 20 > Ci ? (Oi[0] * Math.pow(10, Oi[1])).toFixed(Ci) : 0, Oi[1] = 0);
+      function Ki(gi, ki, wi, Si) {
+        gi = +gi || 0, ki = +ki;
+        const Ti = Yi.lang;
+        var Mi = (gi.toString().split(".")[1] || "").split("e")[0].length;
+        const Di = gi.toString().split("e"), ci = ki;
+        if (ki === -1)
+          ki = Math.min(Mi, 20);
+        else if (!_i(ki))
+          ki = 2;
+        else if (ki && Di[1] && 0 > Di[1]) {
+          var pi = ki + +Di[1];
+          0 <= pi ? (Di[0] = (+Di[0]).toExponential(pi).split("e")[0], ki = pi) : (Di[0] = Di[0].split(".")[0] || 0, gi = 20 > ki ? (Di[0] * Math.pow(10, Di[1])).toFixed(ki) : 0, Di[1] = 0);
         }
-        li = (Math.abs(Oi[1] ? Oi[0] : fi) + Math.pow(10, -Math.max(Ci, Mi) - 1)).toFixed(Ci), Mi = String(Ri(li));
-        const xi = 3 < Mi.length ? Mi.length % 3 : 0;
-        return wi = bi(wi, Ti.decimalPoint), yi = bi(yi, Ti.thousandsSep), fi = (0 > fi ? "-" : "") + (xi ? Mi.substr(0, xi) + yi : ""), fi = 0 > +Oi[1] && !ai ? "0" : fi + Mi.substr(xi).replace(/(\d{3})(?=\d)/g, "$1" + yi), Ci && (fi += wi + li.slice(-Ci)), Oi[1] && +fi != 0 && (fi += "e" + Oi[1]), fi;
+        pi = (Math.abs(Di[1] ? Di[0] : gi) + Math.pow(10, -Math.max(ki, Mi) - 1)).toFixed(ki), Mi = String(ji(pi));
+        const vi = 3 < Mi.length ? Mi.length % 3 : 0;
+        return wi = Ai(wi, Ti.decimalPoint), Si = Ai(Si, Ti.thousandsSep), gi = (0 > gi ? "-" : "") + (vi ? Mi.substr(0, vi) + Si : ""), gi = 0 > +Di[1] && !ci ? "0" : gi + Mi.substr(vi).replace(/(\d{3})(?=\d)/g, "$1" + Si), ki && (gi += wi + pi.slice(-ki)), Di[1] && +gi != 0 && (gi += "e" + Di[1]), gi;
       }
-      const { defaultOptions: Qi, defaultTime: is } = Si, { extend: ss, getNestedProperty: Wi, isArray: Ki, isNumber: Ui, isObject: ki, pick: bi, pInt: Ri } = ji, Ni = { add: (fi, Ci) => fi + Ci, divide: (fi, Ci) => Ci !== 0 ? fi / Ci : "", eq: (fi, Ci) => fi == Ci, each: function(fi) {
-        const Ci = arguments[arguments.length - 1];
-        return Ki(fi) ? fi.map((wi, yi) => qi(Ci.body, ss(ki(wi) ? wi : { "@this": wi }, { "@index": yi, "@first": yi === 0, "@last": yi === fi.length - 1 }))).join("") : !1;
-      }, ge: (fi, Ci) => fi >= Ci, gt: (fi, Ci) => fi > Ci, if: (fi) => !!fi, le: (fi, Ci) => fi <= Ci, lt: (fi, Ci) => fi < Ci, multiply: (fi, Ci) => fi * Ci, ne: (fi, Ci) => fi != Ci, subtract: (fi, Ci) => fi - Ci, unless: (fi) => !fi };
-      return { dateFormat: function(fi, Ci, wi) {
-        return is.dateFormat(fi, Ci, wi);
-      }, format: qi, helpers: Ni, numberFormat: ts };
-    }), ci(oi, "Core/Renderer/RendererUtilities.js", [oi["Core/Utilities.js"]], function(Si) {
-      const { clamp: ji, pick: qi, stableSort: ts } = Si;
-      var Qi;
-      return function(is) {
-        function ss(Wi, Ki, Ui) {
-          const ki = Wi;
-          var bi = ki.reducedLen || Ki, Ri = (Ti, Mi) => (Mi.rank || 0) - (Ti.rank || 0);
+      const { defaultOptions: Yi, defaultTime: es } = li, { extend: is, getNestedProperty: $i, isArray: Vi, isNumber: _i, isObject: bi, pick: Ai, pInt: ji } = Ci, Ni = { add: (gi, ki) => gi + ki, divide: (gi, ki) => ki !== 0 ? gi / ki : "", eq: (gi, ki) => gi == ki, each: function(gi) {
+        const ki = arguments[arguments.length - 1];
+        return Vi(gi) ? gi.map((wi, Si) => zi(ki.body, is(bi(wi) ? wi : { "@this": wi }, { "@index": Si, "@first": Si === 0, "@last": Si === gi.length - 1 }))).join("") : !1;
+      }, ge: (gi, ki) => gi >= ki, gt: (gi, ki) => gi > ki, if: (gi) => !!gi, le: (gi, ki) => gi <= ki, lt: (gi, ki) => gi < ki, multiply: (gi, ki) => gi * ki, ne: (gi, ki) => gi != ki, subtract: (gi, ki) => gi - ki, unless: (gi) => !gi };
+      return { dateFormat: function(gi, ki, wi) {
+        return es.dateFormat(gi, ki, wi);
+      }, format: zi, helpers: Ni, numberFormat: Ki };
+    }), ri(ii, "Core/Renderer/RendererUtilities.js", [ii["Core/Utilities.js"]], function(li) {
+      const { clamp: Ci, pick: zi, stableSort: Ki } = li;
+      var Yi;
+      return function(es) {
+        function is($i, Vi, _i) {
+          const bi = $i;
+          var Ai = bi.reducedLen || Vi, ji = (Ti, Mi) => (Mi.rank || 0) - (Ti.rank || 0);
           const Ni = (Ti, Mi) => Ti.target - Mi.target;
-          let fi, Ci = !0, wi = [], yi = 0;
-          for (fi = Wi.length; fi--; )
-            yi += Wi[fi].size;
-          if (yi > bi) {
-            for (ts(Wi, Ri), yi = fi = 0; yi <= bi; )
-              yi += Wi[fi].size, fi++;
-            wi = Wi.splice(fi - 1, Wi.length);
+          let gi, ki = !0, wi = [], Si = 0;
+          for (gi = $i.length; gi--; )
+            Si += $i[gi].size;
+          if (Si > Ai) {
+            for (Ki($i, ji), Si = gi = 0; Si <= Ai; )
+              Si += $i[gi].size, gi++;
+            wi = $i.splice(gi - 1, $i.length);
           }
-          for (ts(Wi, Ni), Wi = Wi.map((Ti) => ({ size: Ti.size, targets: [Ti.target], align: qi(Ti.align, 0.5) })); Ci; ) {
-            for (fi = Wi.length; fi--; )
-              bi = Wi[fi], Ri = (Math.min.apply(0, bi.targets) + Math.max.apply(0, bi.targets)) / 2, bi.pos = ji(Ri - bi.size * bi.align, 0, Ki - bi.size);
-            for (fi = Wi.length, Ci = !1; fi--; )
-              0 < fi && Wi[fi - 1].pos + Wi[fi - 1].size > Wi[fi].pos && (Wi[fi - 1].size += Wi[fi].size, Wi[fi - 1].targets = Wi[fi - 1].targets.concat(Wi[fi].targets), Wi[fi - 1].align = 0.5, Wi[fi - 1].pos + Wi[fi - 1].size > Ki && (Wi[fi - 1].pos = Ki - Wi[fi - 1].size), Wi.splice(fi, 1), Ci = !0);
+          for (Ki($i, Ni), $i = $i.map((Ti) => ({ size: Ti.size, targets: [Ti.target], align: zi(Ti.align, 0.5) })); ki; ) {
+            for (gi = $i.length; gi--; )
+              Ai = $i[gi], ji = (Math.min.apply(0, Ai.targets) + Math.max.apply(0, Ai.targets)) / 2, Ai.pos = Ci(ji - Ai.size * Ai.align, 0, Vi - Ai.size);
+            for (gi = $i.length, ki = !1; gi--; )
+              0 < gi && $i[gi - 1].pos + $i[gi - 1].size > $i[gi].pos && ($i[gi - 1].size += $i[gi].size, $i[gi - 1].targets = $i[gi - 1].targets.concat($i[gi].targets), $i[gi - 1].align = 0.5, $i[gi - 1].pos + $i[gi - 1].size > Vi && ($i[gi - 1].pos = Vi - $i[gi - 1].size), $i.splice(gi, 1), ki = !0);
           }
-          return ki.push.apply(ki, wi), fi = 0, Wi.some((Ti) => {
+          return bi.push.apply(bi, wi), gi = 0, $i.some((Ti) => {
             let Mi = 0;
-            return (Ti.targets || []).some(() => (ki[fi].pos = Ti.pos + Mi, typeof Ui < "u" && Math.abs(ki[fi].pos - ki[fi].target) > Ui ? (ki.slice(0, fi + 1).forEach((Oi) => delete Oi.pos), ki.reducedLen = (ki.reducedLen || Ki) - 0.1 * Ki, ki.reducedLen > 0.1 * Ki && ss(ki, Ki, Ui), !0) : (Mi += ki[fi].size, fi++, !1)));
-          }), ts(ki, Ni), ki;
+            return (Ti.targets || []).some(() => (bi[gi].pos = Ti.pos + Mi, typeof _i < "u" && Math.abs(bi[gi].pos - bi[gi].target) > _i ? (bi.slice(0, gi + 1).forEach((Di) => delete Di.pos), bi.reducedLen = (bi.reducedLen || Vi) - 0.1 * Vi, bi.reducedLen > 0.1 * Vi && is(bi, Vi, _i), !0) : (Mi += bi[gi].size, gi++, !1)));
+          }), Ki(bi, Ni), bi;
         }
-        is.distribute = ss;
-      }(Qi || (Qi = {})), Qi;
-    }), ci(oi, "Core/Renderer/SVG/SVGElement.js", [
-      oi["Core/Animation/AnimationUtilities.js"],
-      oi["Core/Color/Color.js"],
-      oi["Core/Globals.js"],
-      oi["Core/Utilities.js"]
-    ], function(Si, ji, qi, ts) {
-      const { animate: Qi, animObject: is, stop: ss } = Si, { deg2rad: Wi, doc: Ki, svg: Ui, SVG_NS: ki, win: bi } = qi, { addEvent: Ri, attr: Ni, createElement: fi, css: Ci, defined: wi, erase: yi, extend: Ti, fireEvent: Mi, isArray: Oi, isFunction: ai, isObject: li, isString: xi, merge: di, objectEach: pi, pick: ei, pInt: Fe, syncTimeout: ii, uniqueKey: hi } = ts;
-      class gi {
+        es.distribute = is;
+      }(Yi || (Yi = {})), Yi;
+    }), ri(ii, "Core/Renderer/SVG/SVGElement.js", [
+      ii["Core/Animation/AnimationUtilities.js"],
+      ii["Core/Color/Color.js"],
+      ii["Core/Globals.js"],
+      ii["Core/Utilities.js"]
+    ], function(li, Ci, zi, Ki) {
+      const { animate: Yi, animObject: es, stop: is } = li, { deg2rad: $i, doc: Vi, svg: _i, SVG_NS: bi, win: Ai } = zi, { addEvent: ji, attr: Ni, createElement: gi, css: ki, defined: wi, erase: Si, extend: Ti, fireEvent: Mi, isArray: Di, isFunction: ci, isObject: pi, isString: vi, merge: ui, objectEach: fi, pick: si, pInt: ti, syncTimeout: oi, uniqueKey: di } = Ki;
+      class mi {
         constructor() {
-          this.element = void 0, this.onEvents = {}, this.opacity = 1, this.renderer = void 0, this.SVG_NS = ki;
+          this.element = void 0, this.onEvents = {}, this.opacity = 1, this.renderer = void 0, this.SVG_NS = bi;
         }
-        _defaultGetter(ni) {
-          return ni = ei(this[ni + "Value"], this[ni], this.element ? this.element.getAttribute(ni) : null, 0), /^[\-0-9\.]+$/.test(ni) && (ni = parseFloat(ni)), ni;
+        _defaultGetter(hi) {
+          return hi = si(this[hi + "Value"], this[hi], this.element ? this.element.getAttribute(hi) : null, 0), /^[\-0-9\.]+$/.test(hi) && (hi = parseFloat(hi)), hi;
         }
-        _defaultSetter(ni, Pi, Fi) {
-          Fi.setAttribute(Pi, ni);
+        _defaultSetter(hi, Li, Ui) {
+          Ui.setAttribute(Li, hi);
         }
-        add(ni) {
-          const Pi = this.renderer, Fi = this.element;
+        add(hi) {
+          const Li = this.renderer, Ui = this.element;
           let Zi;
-          return ni && (this.parentGroup = ni), typeof this.textStr < "u" && this.element.nodeName === "text" && Pi.buildText(this), this.added = !0, (!ni || ni.handleZ || this.zIndex) && (Zi = this.zIndexSetter()), Zi || (ni ? ni.element : Pi.box).appendChild(Fi), this.onAdd && this.onAdd(), this;
+          return hi && (this.parentGroup = hi), typeof this.textStr < "u" && this.element.nodeName === "text" && Li.buildText(this), this.added = !0, (!hi || hi.handleZ || this.zIndex) && (Zi = this.zIndexSetter()), Zi || (hi ? hi.element : Li.box).appendChild(Ui), this.onAdd && this.onAdd(), this;
         }
-        addClass(ni, Pi) {
-          const Fi = Pi ? "" : this.attr("class") || "";
-          return ni = (ni || "").split(/ /g).reduce(function(Zi, rs) {
-            return Fi.indexOf(rs) === -1 && Zi.push(rs), Zi;
-          }, Fi ? [Fi] : []).join(" "), ni !== Fi && this.attr("class", ni), this;
+        addClass(hi, Li) {
+          const Ui = Li ? "" : this.attr("class") || "";
+          return hi = (hi || "").split(/ /g).reduce(function(Zi, rs) {
+            return Ui.indexOf(rs) === -1 && Zi.push(rs), Zi;
+          }, Ui ? [Ui] : []).join(" "), hi !== Ui && this.attr("class", hi), this;
         }
         afterSetters() {
           this.doTransform && (this.updateTransform(), this.doTransform = !1);
         }
-        align(ni, Pi, Fi) {
+        align(hi, Li, Ui) {
           const Zi = {};
-          var rs = this.renderer, Bi = rs.alignedObjects, si;
-          let Li, Hi;
-          ni ? (this.alignOptions = ni, this.alignByTranslate = Pi, (!Fi || xi(Fi)) && (this.alignTo = si = Fi || "renderer", yi(Bi, this), Bi.push(this), Fi = void 0)) : (ni = this.alignOptions, Pi = this.alignByTranslate, si = this.alignTo), Fi = ei(Fi, rs[si], si === "scrollablePlotBox" ? rs.plotBox : void 0, rs), si = ni.align;
-          const Di = ni.verticalAlign;
-          return rs = (Fi.x || 0) + (ni.x || 0), Bi = (Fi.y || 0) + (ni.y || 0), si === "right" ? Li = 1 : si === "center" && (Li = 2), Li && (rs += (Fi.width - (ni.width || 0)) / Li), Zi[Pi ? "translateX" : "x"] = Math.round(rs), Di === "bottom" ? Hi = 1 : Di === "middle" && (Hi = 2), Hi && (Bi += (Fi.height - (ni.height || 0)) / Hi), Zi[Pi ? "translateY" : "y"] = Math.round(Bi), this[this.placed ? "animate" : "attr"](Zi), this.placed = !0, this.alignAttr = Zi, this;
+          var rs = this.renderer, Bi = rs.alignedObjects, ni;
+          let Pi, Hi;
+          hi ? (this.alignOptions = hi, this.alignByTranslate = Li, (!Ui || vi(Ui)) && (this.alignTo = ni = Ui || "renderer", Si(Bi, this), Bi.push(this), Ui = void 0)) : (hi = this.alignOptions, Li = this.alignByTranslate, ni = this.alignTo), Ui = si(Ui, rs[ni], ni === "scrollablePlotBox" ? rs.plotBox : void 0, rs), ni = hi.align;
+          const Ri = hi.verticalAlign;
+          return rs = (Ui.x || 0) + (hi.x || 0), Bi = (Ui.y || 0) + (hi.y || 0), ni === "right" ? Pi = 1 : ni === "center" && (Pi = 2), Pi && (rs += (Ui.width - (hi.width || 0)) / Pi), Zi[Li ? "translateX" : "x"] = Math.round(rs), Ri === "bottom" ? Hi = 1 : Ri === "middle" && (Hi = 2), Hi && (Bi += (Ui.height - (hi.height || 0)) / Hi), Zi[Li ? "translateY" : "y"] = Math.round(Bi), this[this.placed ? "animate" : "attr"](Zi), this.placed = !0, this.alignAttr = Zi, this;
         }
-        alignSetter(ni) {
-          const Pi = { left: "start", center: "middle", right: "end" };
-          Pi[ni] && (this.alignValue = ni, this.element.setAttribute("text-anchor", Pi[ni]));
+        alignSetter(hi) {
+          const Li = { left: "start", center: "middle", right: "end" };
+          Li[hi] && (this.alignValue = hi, this.element.setAttribute("text-anchor", Li[hi]));
         }
-        animate(ni, Pi, Fi) {
-          const Zi = is(ei(Pi, this.renderer.globalAnimation, !0));
-          return Pi = Zi.defer, Ki.hidden && (Zi.duration = 0), Zi.duration !== 0 ? (Fi && (Zi.complete = Fi), ii(() => {
-            this.element && Qi(this, ni, Zi);
-          }, Pi)) : (this.attr(ni, void 0, Fi || Zi.complete), pi(ni, function(rs, Bi) {
+        animate(hi, Li, Ui) {
+          const Zi = es(si(Li, this.renderer.globalAnimation, !0));
+          return Li = Zi.defer, Vi.hidden && (Zi.duration = 0), Zi.duration !== 0 ? (Ui && (Zi.complete = Ui), oi(() => {
+            this.element && Yi(this, hi, Zi);
+          }, Li)) : (this.attr(hi, void 0, Ui || Zi.complete), fi(hi, function(rs, Bi) {
             Zi.step && Zi.step.call(this, rs, { prop: Bi, pos: 1, elem: this });
           }, this)), this;
         }
-        applyTextOutline(ni) {
-          const Pi = this.element;
-          ni.indexOf("contrast") !== -1 && (ni = ni.replace(/contrast/g, this.renderer.getContrast(Pi.style.fill)));
-          var Fi = ni.split(" ");
-          if (ni = Fi[Fi.length - 1], (Fi = Fi[0]) && Fi !== "none" && qi.svg) {
-            this.fakeTS = !0, Fi = Fi.replace(/(^[\d\.]+)(.*?)$/g, function(Bi, si, Li) {
-              return 2 * Number(si) + Li;
+        applyTextOutline(hi) {
+          const Li = this.element;
+          hi.indexOf("contrast") !== -1 && (hi = hi.replace(/contrast/g, this.renderer.getContrast(Li.style.fill)));
+          var Ui = hi.split(" ");
+          if (hi = Ui[Ui.length - 1], (Ui = Ui[0]) && Ui !== "none" && zi.svg) {
+            this.fakeTS = !0, Ui = Ui.replace(/(^[\d\.]+)(.*?)$/g, function(Bi, ni, Pi) {
+              return 2 * Number(ni) + Pi;
             }), this.removeTextOutline();
-            const Zi = Ki.createElementNS(ki, "tspan");
-            Ni(Zi, { class: "highcharts-text-outline", fill: ni, stroke: ni, "stroke-width": Fi, "stroke-linejoin": "round" }), ni = Pi.querySelector("textPath") || Pi, [].forEach.call(ni.childNodes, (Bi) => {
-              const si = Bi.cloneNode(!0);
-              si.removeAttribute && ["fill", "stroke", "stroke-width", "stroke"].forEach((Li) => si.removeAttribute(Li)), Zi.appendChild(si);
+            const Zi = Vi.createElementNS(bi, "tspan");
+            Ni(Zi, { class: "highcharts-text-outline", fill: hi, stroke: hi, "stroke-width": Ui, "stroke-linejoin": "round" }), hi = Li.querySelector("textPath") || Li, [].forEach.call(hi.childNodes, (Bi) => {
+              const ni = Bi.cloneNode(!0);
+              ni.removeAttribute && ["fill", "stroke", "stroke-width", "stroke"].forEach((Pi) => ni.removeAttribute(Pi)), Zi.appendChild(ni);
             });
             let rs = 0;
-            [].forEach.call(ni.querySelectorAll("text tspan"), (Bi) => {
+            [].forEach.call(hi.querySelectorAll("text tspan"), (Bi) => {
               rs += Number(Bi.getAttribute("dy"));
-            }), Fi = Ki.createElementNS(ki, "tspan"), Fi.textContent = "​", Ni(Fi, { x: Number(Pi.getAttribute("x")), dy: -rs }), Zi.appendChild(Fi), ni.insertBefore(Zi, ni.firstChild);
+            }), Ui = Vi.createElementNS(bi, "tspan"), Ui.textContent = "​", Ni(Ui, { x: Number(Li.getAttribute("x")), dy: -rs }), Zi.appendChild(Ui), hi.insertBefore(Zi, hi.firstChild);
           }
         }
-        attr(ni, Pi, Fi, Zi) {
-          const rs = this.element, Bi = gi.symbolCustomAttribs;
-          let si, Li, Hi = this, Di, Vi;
-          return typeof ni == "string" && typeof Pi < "u" && (si = ni, ni = {}, ni[si] = Pi), typeof ni == "string" ? Hi = (this[ni + "Getter"] || this._defaultGetter).call(this, ni, rs) : (pi(ni, function(ri, mi) {
-            Di = !1, Zi || ss(this, mi), this.symbolName && Bi.indexOf(mi) !== -1 && (Li || (this.symbolAttr(ni), Li = !0), Di = !0), !this.rotation || mi !== "x" && mi !== "y" || (this.doTransform = !0), Di || (Vi = this[mi + "Setter"] || this._defaultSetter, Vi.call(this, ri, mi, rs));
-          }, this), this.afterSetters()), Fi && Fi.call(this), Hi;
+        attr(hi, Li, Ui, Zi) {
+          const rs = this.element, Bi = mi.symbolCustomAttribs;
+          let ni, Pi, Hi = this, Ri, qi;
+          return typeof hi == "string" && typeof Li < "u" && (ni = hi, hi = {}, hi[ni] = Li), typeof hi == "string" ? Hi = (this[hi + "Getter"] || this._defaultGetter).call(this, hi, rs) : (fi(hi, function(ai, xi) {
+            Ri = !1, Zi || is(this, xi), this.symbolName && Bi.indexOf(xi) !== -1 && (Pi || (this.symbolAttr(hi), Pi = !0), Ri = !0), !this.rotation || xi !== "x" && xi !== "y" || (this.doTransform = !0), Ri || (qi = this[xi + "Setter"] || this._defaultSetter, qi.call(this, ai, xi, rs));
+          }, this), this.afterSetters()), Ui && Ui.call(this), Hi;
         }
-        clip(ni) {
-          return this.attr("clip-path", ni ? "url(" + this.renderer.url + "#" + ni.id + ")" : "none");
+        clip(hi) {
+          return this.attr("clip-path", hi ? "url(" + this.renderer.url + "#" + hi.id + ")" : "none");
         }
-        crisp(ni, Pi) {
-          Pi = Pi || ni.strokeWidth || 0;
-          const Fi = Math.round(Pi) % 2 / 2;
-          return ni.x = Math.floor(ni.x || this.x || 0) + Fi, ni.y = Math.floor(ni.y || this.y || 0) + Fi, ni.width = Math.floor((ni.width || this.width || 0) - 2 * Fi), ni.height = Math.floor((ni.height || this.height || 0) - 2 * Fi), wi(ni.strokeWidth) && (ni.strokeWidth = Pi), ni;
+        crisp(hi, Li) {
+          Li = Li || hi.strokeWidth || 0;
+          const Ui = Math.round(Li) % 2 / 2;
+          return hi.x = Math.floor(hi.x || this.x || 0) + Ui, hi.y = Math.floor(hi.y || this.y || 0) + Ui, hi.width = Math.floor((hi.width || this.width || 0) - 2 * Ui), hi.height = Math.floor((hi.height || this.height || 0) - 2 * Ui), wi(hi.strokeWidth) && (hi.strokeWidth = Li), hi;
         }
-        complexColor(ni, Pi, Fi) {
+        complexColor(hi, Li, Ui) {
           const Zi = this.renderer;
-          let rs, Bi, si, Li, Hi, Di, Vi, ri, mi, vi, zi = [], Xi;
+          let rs, Bi, ni, Pi, Hi, Ri, qi, ai, xi, yi, Gi = [], Xi;
           Mi(this.renderer, "complexColor", { args: arguments }, function() {
-            if (ni.radialGradient ? Bi = "radialGradient" : ni.linearGradient && (Bi = "linearGradient"), Bi) {
-              if (si = ni[Bi], Hi = Zi.gradients, Di = ni.stops, mi = Fi.radialReference, Oi(si) && (ni[Bi] = si = { x1: si[0], y1: si[1], x2: si[2], y2: si[3], gradientUnits: "userSpaceOnUse" }), Bi === "radialGradient" && mi && !wi(si.gradientUnits) && (Li = si, si = di(si, Zi.getRadialAttr(mi, Li), { gradientUnits: "userSpaceOnUse" })), pi(si, function(Gi, Ji) {
-                Ji !== "id" && zi.push(Ji, Gi);
-              }), pi(Di, function(Gi) {
-                zi.push(Gi);
-              }), zi = zi.join(","), Hi[zi])
-                vi = Hi[zi].attr("id");
+            if (hi.radialGradient ? Bi = "radialGradient" : hi.linearGradient && (Bi = "linearGradient"), Bi) {
+              if (ni = hi[Bi], Hi = Zi.gradients, Ri = hi.stops, xi = Ui.radialReference, Di(ni) && (hi[Bi] = ni = { x1: ni[0], y1: ni[1], x2: ni[2], y2: ni[3], gradientUnits: "userSpaceOnUse" }), Bi === "radialGradient" && xi && !wi(ni.gradientUnits) && (Pi = ni, ni = ui(ni, Zi.getRadialAttr(xi, Pi), { gradientUnits: "userSpaceOnUse" })), fi(ni, function(Wi, ts) {
+                ts !== "id" && Gi.push(ts, Wi);
+              }), fi(Ri, function(Wi) {
+                Gi.push(Wi);
+              }), Gi = Gi.join(","), Hi[Gi])
+                yi = Hi[Gi].attr("id");
               else {
-                si.id = vi = hi();
-                const Gi = Hi[zi] = Zi.createElement(Bi).attr(si).add(Zi.defs);
-                Gi.radAttr = Li, Gi.stops = [], Di.forEach(function(Ji) {
-                  Ji[1].indexOf("rgba") === 0 ? (rs = ji.parse(Ji[1]), Vi = rs.get("rgb"), ri = rs.get("a")) : (Vi = Ji[1], ri = 1), Ji = Zi.createElement("stop").attr({ offset: Ji[0], "stop-color": Vi, "stop-opacity": ri }).add(Gi), Gi.stops.push(Ji);
+                ni.id = yi = di();
+                const Wi = Hi[Gi] = Zi.createElement(Bi).attr(ni).add(Zi.defs);
+                Wi.radAttr = Pi, Wi.stops = [], Ri.forEach(function(ts) {
+                  ts[1].indexOf("rgba") === 0 ? (rs = Ci.parse(ts[1]), qi = rs.get("rgb"), ai = rs.get("a")) : (qi = ts[1], ai = 1), ts = Zi.createElement("stop").attr({ offset: ts[0], "stop-color": qi, "stop-opacity": ai }).add(Wi), Wi.stops.push(ts);
                 });
               }
-              Xi = "url(" + Zi.url + "#" + vi + ")", Fi.setAttribute(Pi, Xi), Fi.gradient = zi, ni.toString = function() {
+              Xi = "url(" + Zi.url + "#" + yi + ")", Ui.setAttribute(Li, Xi), Ui.gradient = Gi, hi.toString = function() {
                 return Xi;
               };
             }
           });
         }
-        css(ni) {
-          const Pi = this.styles, Fi = {}, Zi = this.element;
-          let rs, Bi = !Pi;
-          if (Pi && pi(ni, function(si, Li) {
-            Pi && Pi[Li] !== si && (Fi[Li] = si, Bi = !0);
+        css(hi) {
+          const Li = this.styles, Ui = {}, Zi = this.element;
+          let rs, Bi = !Li;
+          if (Li && fi(hi, function(ni, Pi) {
+            Li && Li[Pi] !== ni && (Ui[Pi] = ni, Bi = !0);
           }), Bi) {
-            Pi && (ni = Ti(Pi, Fi)), ni.width === null || ni.width === "auto" ? delete this.textWidth : Zi.nodeName.toLowerCase() === "text" && ni.width && (rs = this.textWidth = Fe(ni.width)), this.styles = ni, rs && !Ui && this.renderer.forExport && delete ni.width;
-            const si = di(ni);
-            Zi.namespaceURI === this.SVG_NS && (["textOutline", "textOverflow", "width"].forEach((Li) => si && delete si[Li]), si.color && (si.fill = si.color)), Ci(Zi, si);
+            Li && (hi = Ti(Li, Ui)), hi.width === null || hi.width === "auto" ? delete this.textWidth : Zi.nodeName.toLowerCase() === "text" && hi.width && (rs = this.textWidth = ti(hi.width)), this.styles = hi, rs && !_i && this.renderer.forExport && delete hi.width;
+            const ni = ui(hi);
+            Zi.namespaceURI === this.SVG_NS && (["textOutline", "textOverflow", "width"].forEach((Pi) => ni && delete ni[Pi]), ni.color && (ni.fill = ni.color)), ki(Zi, ni);
           }
-          return this.added && (this.element.nodeName === "text" && this.renderer.buildText(this), ni.textOutline && this.applyTextOutline(ni.textOutline)), this;
+          return this.added && (this.element.nodeName === "text" && this.renderer.buildText(this), hi.textOutline && this.applyTextOutline(hi.textOutline)), this;
         }
-        dashstyleSetter(ni) {
-          let Pi = this["stroke-width"];
-          if (Pi === "inherit" && (Pi = 1), ni = ni && ni.toLowerCase()) {
-            const Fi = ni.replace("shortdashdotdot", "3,1,1,1,1,1,").replace("shortdashdot", "3,1,1,1").replace("shortdot", "1,1,").replace("shortdash", "3,1,").replace("longdash", "8,3,").replace(/dot/g, "1,3,").replace("dash", "4,3,").replace(/,$/, "").split(",");
-            for (ni = Fi.length; ni--; )
-              Fi[ni] = "" + Fe(Fi[ni]) * ei(Pi, NaN);
-            ni = Fi.join(",").replace(/NaN/g, "none"), this.element.setAttribute(
+        dashstyleSetter(hi) {
+          let Li = this["stroke-width"];
+          if (Li === "inherit" && (Li = 1), hi = hi && hi.toLowerCase()) {
+            const Ui = hi.replace("shortdashdotdot", "3,1,1,1,1,1,").replace("shortdashdot", "3,1,1,1").replace("shortdot", "1,1,").replace("shortdash", "3,1,").replace("longdash", "8,3,").replace(/dot/g, "1,3,").replace("dash", "4,3,").replace(/,$/, "").split(",");
+            for (hi = Ui.length; hi--; )
+              Ui[hi] = "" + ti(Ui[hi]) * si(Li, NaN);
+            hi = Ui.join(",").replace(/NaN/g, "none"), this.element.setAttribute(
               "stroke-dasharray",
-              ni
+              hi
             );
           }
         }
         destroy() {
-          const ni = this;
-          var Pi = ni.element || {};
-          const Fi = ni.renderer;
-          var Zi = Pi.ownerSVGElement;
-          let rs = Pi.nodeName === "SPAN" && ni.parentGroup || void 0;
-          if (Pi.onclick = Pi.onmouseout = Pi.onmouseover = Pi.onmousemove = Pi.point = null, ss(ni), ni.clipPath && Zi) {
-            const Bi = ni.clipPath;
-            [].forEach.call(Zi.querySelectorAll("[clip-path],[CLIP-PATH]"), function(si) {
-              -1 < si.getAttribute("clip-path").indexOf(Bi.element.id) && si.removeAttribute("clip-path");
-            }), ni.clipPath = Bi.destroy();
+          const hi = this;
+          var Li = hi.element || {};
+          const Ui = hi.renderer;
+          var Zi = Li.ownerSVGElement;
+          let rs = Li.nodeName === "SPAN" && hi.parentGroup || void 0;
+          if (Li.onclick = Li.onmouseout = Li.onmouseover = Li.onmousemove = Li.point = null, is(hi), hi.clipPath && Zi) {
+            const Bi = hi.clipPath;
+            [].forEach.call(Zi.querySelectorAll("[clip-path],[CLIP-PATH]"), function(ni) {
+              -1 < ni.getAttribute("clip-path").indexOf(Bi.element.id) && ni.removeAttribute("clip-path");
+            }), hi.clipPath = Bi.destroy();
           }
-          if (ni.stops) {
-            for (Zi = 0; Zi < ni.stops.length; Zi++)
-              ni.stops[Zi].destroy();
-            ni.stops.length = 0, ni.stops = void 0;
+          if (hi.stops) {
+            for (Zi = 0; Zi < hi.stops.length; Zi++)
+              hi.stops[Zi].destroy();
+            hi.stops.length = 0, hi.stops = void 0;
           }
-          for (ni.safeRemoveChild(Pi); rs && rs.div && rs.div.childNodes.length === 0; )
-            Pi = rs.parentGroup, ni.safeRemoveChild(rs.div), delete rs.div, rs = Pi;
-          ni.alignTo && yi(Fi.alignedObjects, ni), pi(ni, function(Bi, si) {
-            ni[si] && ni[si].parentGroup === ni && ni[si].destroy && ni[si].destroy(), delete ni[si];
+          for (hi.safeRemoveChild(Li); rs && rs.div && rs.div.childNodes.length === 0; )
+            Li = rs.parentGroup, hi.safeRemoveChild(rs.div), delete rs.div, rs = Li;
+          hi.alignTo && Si(Ui.alignedObjects, hi), fi(hi, function(Bi, ni) {
+            hi[ni] && hi[ni].parentGroup === hi && hi[ni].destroy && hi[ni].destroy(), delete hi[ni];
           });
         }
-        dSetter(ni, Pi, Fi) {
-          Oi(ni) && (typeof ni[0] == "string" && (ni = this.renderer.pathToSegments(ni)), this.pathArray = ni, ni = ni.reduce((Zi, rs, Bi) => rs && rs.join ? (Bi ? Zi + " " : "") + rs.join(" ") : (rs || "").toString(), "")), /(NaN| {2}|^$)/.test(ni) && (ni = "M 0 0"), this[Pi] !== ni && (Fi.setAttribute(
-            Pi,
-            ni
-          ), this[Pi] = ni);
+        dSetter(hi, Li, Ui) {
+          Di(hi) && (typeof hi[0] == "string" && (hi = this.renderer.pathToSegments(hi)), this.pathArray = hi, hi = hi.reduce((Zi, rs, Bi) => rs && rs.join ? (Bi ? Zi + " " : "") + rs.join(" ") : (rs || "").toString(), "")), /(NaN| {2}|^$)/.test(hi) && (hi = "M 0 0"), this[Li] !== hi && (Ui.setAttribute(
+            Li,
+            hi
+          ), this[Li] = hi);
         }
-        fadeOut(ni) {
-          const Pi = this;
-          Pi.animate({ opacity: 0 }, { duration: ei(ni, 150), complete: function() {
-            Pi.hide();
+        fadeOut(hi) {
+          const Li = this;
+          Li.animate({ opacity: 0 }, { duration: si(hi, 150), complete: function() {
+            Li.hide();
           } });
         }
-        fillSetter(ni, Pi, Fi) {
-          typeof ni == "string" ? Fi.setAttribute(Pi, ni) : ni && this.complexColor(ni, Pi, Fi);
+        fillSetter(hi, Li, Ui) {
+          typeof hi == "string" ? Ui.setAttribute(Li, hi) : hi && this.complexColor(hi, Li, Ui);
         }
-        getBBox(ni, Pi) {
-          const { alignValue: Fi, element: Zi, renderer: rs, styles: Bi, textStr: si } = this, { cache: Li, cacheKeys: Hi } = rs;
-          var Di = Zi.namespaceURI === this.SVG_NS;
-          Pi = ei(Pi, this.rotation, 0);
-          var Vi = rs.styledMode ? Zi && gi.prototype.getStyle.call(Zi, "font-size") : Bi && Bi.fontSize;
-          let ri, mi;
-          if (wi(si) && (mi = si.toString(), mi.indexOf("<") === -1 && (mi = mi.replace(
+        getBBox(hi, Li) {
+          const { alignValue: Ui, element: Zi, renderer: rs, styles: Bi, textStr: ni } = this, { cache: Pi, cacheKeys: Hi } = rs;
+          var Ri = Zi.namespaceURI === this.SVG_NS;
+          Li = si(Li, this.rotation, 0);
+          var qi = rs.styledMode ? Zi && mi.prototype.getStyle.call(Zi, "font-size") : Bi && Bi.fontSize;
+          let ai, xi;
+          if (wi(ni) && (xi = ni.toString(), xi.indexOf("<") === -1 && (xi = xi.replace(
             /[0-9]/g,
             "0"
-          )), mi += ["", rs.rootFontSize, Vi, Pi, this.textWidth, Fi, Bi && Bi.textOverflow, Bi && Bi.fontWeight].join()), mi && !ni && (ri = Li[mi]), !ri) {
-            if (Di || rs.forExport) {
+          )), xi += ["", rs.rootFontSize, qi, Li, this.textWidth, Ui, Bi && Bi.textOverflow, Bi && Bi.fontWeight].join()), xi && !hi && (ai = Pi[xi]), !ai) {
+            if (Ri || rs.forExport) {
               try {
-                var vi = this.fakeTS && function(es) {
+                var yi = this.fakeTS && function(ss) {
                   const os = Zi.querySelector(".highcharts-text-outline");
-                  os && Ci(os, { display: es });
+                  os && ki(os, { display: ss });
                 };
-                ai(vi) && vi("none"), ri = Zi.getBBox ? Ti({}, Zi.getBBox()) : { width: Zi.offsetWidth, height: Zi.offsetHeight, x: 0, y: 0 }, ai(vi) && vi("");
+                ci(yi) && yi("none"), ai = Zi.getBBox ? Ti({}, Zi.getBBox()) : { width: Zi.offsetWidth, height: Zi.offsetHeight, x: 0, y: 0 }, ci(yi) && yi("");
               } catch {
               }
-              (!ri || 0 > ri.width) && (ri = { x: 0, y: 0, width: 0, height: 0 });
+              (!ai || 0 > ai.width) && (ai = { x: 0, y: 0, width: 0, height: 0 });
             } else
-              ri = this.htmlGetBBox();
-            if (vi = ri.width, ni = ri.height, Di && (ri.height = ni = { "11px,17": 14, "13px,20": 16 }[`${Vi || ""},${Math.round(ni)}`] || ni), Pi) {
-              Di = Number(Zi.getAttribute("y") || 0) - ri.y, Vi = { right: 1, center: 0.5 }[Fi || 0] || 0;
-              var zi = Pi * Wi, Xi = (Pi - 90) * Wi, Gi = vi * Math.cos(zi);
-              Pi = vi * Math.sin(zi);
-              var Ji = Math.cos(Xi);
-              zi = Math.sin(Xi), vi = ri.x + Vi * (vi - Gi) + Di * Ji, Xi = vi + Gi, Ji = Xi - ni * Ji, Gi = Ji - Gi, Di = ri.y + Di - Vi * Pi + Di * zi, Vi = Di + Pi, ni = Vi - ni * zi, Pi = ni - Pi, ri.x = Math.min(vi, Xi, Ji, Gi), ri.y = Math.min(Di, Vi, ni, Pi), ri.width = Math.max(vi, Xi, Ji, Gi) - ri.x, ri.height = Math.max(Di, Vi, ni, Pi) - ri.y;
+              ai = this.htmlGetBBox();
+            if (yi = ai.width, hi = ai.height, Ri && (ai.height = hi = { "11px,17": 14, "13px,20": 16 }[`${qi || ""},${Math.round(hi)}`] || hi), Li) {
+              Ri = Number(Zi.getAttribute("y") || 0) - ai.y, qi = { right: 1, center: 0.5 }[Ui || 0] || 0;
+              var Gi = Li * $i, Xi = (Li - 90) * $i, Wi = yi * Math.cos(Gi);
+              Li = yi * Math.sin(Gi);
+              var ts = Math.cos(Xi);
+              Gi = Math.sin(Xi), yi = ai.x + qi * (yi - Wi) + Ri * ts, Xi = yi + Wi, ts = Xi - hi * ts, Wi = ts - Wi, Ri = ai.y + Ri - qi * Li + Ri * Gi, qi = Ri + Li, hi = qi - hi * Gi, Li = hi - Li, ai.x = Math.min(yi, Xi, ts, Wi), ai.y = Math.min(Ri, qi, hi, Li), ai.width = Math.max(yi, Xi, ts, Wi) - ai.x, ai.height = Math.max(Ri, qi, hi, Li) - ai.y;
             }
           }
-          if (mi && (si === "" || 0 < ri.height)) {
+          if (xi && (ni === "" || 0 < ai.height)) {
             for (; 250 < Hi.length; )
-              delete Li[Hi.shift()];
-            Li[mi] || Hi.push(mi), Li[mi] = ri;
+              delete Pi[Hi.shift()];
+            Pi[xi] || Hi.push(xi), Pi[xi] = ai;
           }
-          return ri;
+          return ai;
         }
-        getStyle(ni) {
-          return bi.getComputedStyle(this.element || this, "").getPropertyValue(ni);
+        getStyle(hi) {
+          return Ai.getComputedStyle(this.element || this, "").getPropertyValue(hi);
         }
-        hasClass(ni) {
-          return ("" + this.attr("class")).split(" ").indexOf(ni) !== -1;
+        hasClass(hi) {
+          return ("" + this.attr("class")).split(" ").indexOf(hi) !== -1;
         }
         hide() {
           return this.attr({ visibility: "hidden" });
@@ -1170,414 +1169,414 @@ var highcharts = { exports: {} };
         htmlGetBBox() {
           return { height: 0, width: 0, x: 0, y: 0 };
         }
-        init(ni, Pi) {
-          this.element = Pi === "span" ? fi(Pi) : Ki.createElementNS(this.SVG_NS, Pi), this.renderer = ni, Mi(this, "afterInit");
+        init(hi, Li) {
+          this.element = Li === "span" ? gi(Li) : Vi.createElementNS(this.SVG_NS, Li), this.renderer = hi, Mi(this, "afterInit");
         }
-        on(ni, Pi) {
-          const { onEvents: Fi } = this;
-          return Fi[ni] && Fi[ni](), Fi[ni] = Ri(this.element, ni, Pi), this;
+        on(hi, Li) {
+          const { onEvents: Ui } = this;
+          return Ui[hi] && Ui[hi](), Ui[hi] = ji(this.element, hi, Li), this;
         }
-        opacitySetter(ni, Pi, Fi) {
-          this.opacity = ni = Number(Number(ni).toFixed(3)), Fi.setAttribute(Pi, ni);
+        opacitySetter(hi, Li, Ui) {
+          this.opacity = hi = Number(Number(hi).toFixed(3)), Ui.setAttribute(Li, hi);
         }
-        removeClass(ni) {
+        removeClass(hi) {
           return this.attr(
             "class",
-            ("" + this.attr("class")).replace(xi(ni) ? new RegExp(`(^| )${ni}( |$)`) : ni, " ").replace(/ +/g, " ").trim()
+            ("" + this.attr("class")).replace(vi(hi) ? new RegExp(`(^| )${hi}( |$)`) : hi, " ").replace(/ +/g, " ").trim()
           );
         }
         removeTextOutline() {
-          const ni = this.element.querySelector("tspan.highcharts-text-outline");
-          ni && this.safeRemoveChild(ni);
+          const hi = this.element.querySelector("tspan.highcharts-text-outline");
+          hi && this.safeRemoveChild(hi);
         }
-        safeRemoveChild(ni) {
-          const Pi = ni.parentNode;
-          Pi && Pi.removeChild(ni);
+        safeRemoveChild(hi) {
+          const Li = hi.parentNode;
+          Li && Li.removeChild(hi);
         }
-        setRadialReference(ni) {
-          const Pi = this.element.gradient && this.renderer.gradients[this.element.gradient];
-          return this.element.radialReference = ni, Pi && Pi.radAttr && Pi.animate(this.renderer.getRadialAttr(ni, Pi.radAttr)), this;
+        setRadialReference(hi) {
+          const Li = this.element.gradient && this.renderer.gradients[this.element.gradient];
+          return this.element.radialReference = hi, Li && Li.radAttr && Li.animate(this.renderer.getRadialAttr(hi, Li.radAttr)), this;
         }
-        setTextPath(ni, Pi) {
-          Pi = di(!0, { enabled: !0, attributes: { dy: -5, startOffset: "50%", textAnchor: "middle" } }, Pi);
-          const Fi = this.renderer.url, Zi = this.text || this, rs = Zi.textPath, { attributes: Bi, enabled: si } = Pi;
-          return ni = ni || rs && rs.path, rs && rs.undo(), ni && si ? (Pi = Ri(Zi, "afterModifyTree", (Li) => {
-            if (ni && si) {
-              let Di = ni.attr("id");
-              Di || ni.attr("id", Di = hi());
+        setTextPath(hi, Li) {
+          Li = ui(!0, { enabled: !0, attributes: { dy: -5, startOffset: "50%", textAnchor: "middle" } }, Li);
+          const Ui = this.renderer.url, Zi = this.text || this, rs = Zi.textPath, { attributes: Bi, enabled: ni } = Li;
+          return hi = hi || rs && rs.path, rs && rs.undo(), hi && ni ? (Li = ji(Zi, "afterModifyTree", (Pi) => {
+            if (hi && ni) {
+              let Ri = hi.attr("id");
+              Ri || hi.attr("id", Ri = di());
               var Hi = { x: 0, y: 0 };
-              wi(Bi.dx) && (Hi.dx = Bi.dx, delete Bi.dx), wi(Bi.dy) && (Hi.dy = Bi.dy, delete Bi.dy), Zi.attr(Hi), this.attr({ transform: "" }), this.box && (this.box = this.box.destroy()), Hi = Li.nodes.slice(0), Li.nodes.length = 0, Li.nodes[0] = { tagName: "textPath", attributes: Ti(
+              wi(Bi.dx) && (Hi.dx = Bi.dx, delete Bi.dx), wi(Bi.dy) && (Hi.dy = Bi.dy, delete Bi.dy), Zi.attr(Hi), this.attr({ transform: "" }), this.box && (this.box = this.box.destroy()), Hi = Pi.nodes.slice(0), Pi.nodes.length = 0, Pi.nodes[0] = { tagName: "textPath", attributes: Ti(
                 Bi,
-                { "text-anchor": Bi.textAnchor, href: `${Fi}#${Di}` }
+                { "text-anchor": Bi.textAnchor, href: `${Ui}#${Ri}` }
               ), children: Hi };
             }
-          }), Zi.textPath = { path: ni, undo: Pi }) : (Zi.attr({ dx: 0, dy: 0 }), delete Zi.textPath), this.added && (Zi.textCache = "", this.renderer.buildText(Zi)), this;
+          }), Zi.textPath = { path: hi, undo: Li }) : (Zi.attr({ dx: 0, dy: 0 }), delete Zi.textPath), this.added && (Zi.textCache = "", this.renderer.buildText(Zi)), this;
         }
-        shadow(ni) {
-          var Pi;
-          const { renderer: Fi } = this, Zi = di(((Pi = this.parentGroup) === null || Pi === void 0 ? void 0 : Pi.rotation) === 90 ? { offsetX: -1, offsetY: -1 } : {}, li(ni) ? ni : {});
-          return Pi = Fi.shadowDefinition(Zi), this.attr({ filter: ni ? `url(${Fi.url}#${Pi})` : "none" });
+        shadow(hi) {
+          var Li;
+          const { renderer: Ui } = this, Zi = ui(((Li = this.parentGroup) === null || Li === void 0 ? void 0 : Li.rotation) === 90 ? { offsetX: -1, offsetY: -1 } : {}, pi(hi) ? hi : {});
+          return Li = Ui.shadowDefinition(Zi), this.attr({ filter: hi ? `url(${Ui.url}#${Li})` : "none" });
         }
-        show(ni = !0) {
-          return this.attr({ visibility: ni ? "inherit" : "visible" });
+        show(hi = !0) {
+          return this.attr({ visibility: hi ? "inherit" : "visible" });
         }
-        "stroke-widthSetter"(ni, Pi, Fi) {
-          this[Pi] = ni, Fi.setAttribute(Pi, ni);
+        "stroke-widthSetter"(hi, Li, Ui) {
+          this[Li] = hi, Ui.setAttribute(Li, hi);
         }
         strokeWidth() {
           if (!this.renderer.styledMode)
             return this["stroke-width"] || 0;
-          const ni = this.getStyle("stroke-width");
-          let Pi = 0, Fi;
-          return ni.indexOf("px") === ni.length - 2 ? Pi = Fe(ni) : ni !== "" && (Fi = Ki.createElementNS(ki, "rect"), Ni(Fi, { width: ni, "stroke-width": 0 }), this.element.parentNode.appendChild(Fi), Pi = Fi.getBBox().width, Fi.parentNode.removeChild(Fi)), Pi;
+          const hi = this.getStyle("stroke-width");
+          let Li = 0, Ui;
+          return hi.indexOf("px") === hi.length - 2 ? Li = ti(hi) : hi !== "" && (Ui = Vi.createElementNS(bi, "rect"), Ni(Ui, { width: hi, "stroke-width": 0 }), this.element.parentNode.appendChild(Ui), Li = Ui.getBBox().width, Ui.parentNode.removeChild(Ui)), Li;
         }
-        symbolAttr(ni) {
-          const Pi = this;
-          gi.symbolCustomAttribs.forEach(function(Fi) {
-            Pi[Fi] = ei(ni[Fi], Pi[Fi]);
-          }), Pi.attr({ d: Pi.renderer.symbols[Pi.symbolName](
-            Pi.x,
-            Pi.y,
-            Pi.width,
-            Pi.height,
-            Pi
+        symbolAttr(hi) {
+          const Li = this;
+          mi.symbolCustomAttribs.forEach(function(Ui) {
+            Li[Ui] = si(hi[Ui], Li[Ui]);
+          }), Li.attr({ d: Li.renderer.symbols[Li.symbolName](
+            Li.x,
+            Li.y,
+            Li.width,
+            Li.height,
+            Li
           ) });
         }
-        textSetter(ni) {
-          ni !== this.textStr && (delete this.textPxLength, this.textStr = ni, this.added && this.renderer.buildText(this));
+        textSetter(hi) {
+          hi !== this.textStr && (delete this.textPxLength, this.textStr = hi, this.added && this.renderer.buildText(this));
         }
-        titleSetter(ni) {
-          const Pi = this.element, Fi = Pi.getElementsByTagName("title")[0] || Ki.createElementNS(this.SVG_NS, "title");
-          Pi.insertBefore ? Pi.insertBefore(Fi, Pi.firstChild) : Pi.appendChild(Fi), Fi.textContent = String(ei(ni, "")).replace(/<[^>]*>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+        titleSetter(hi) {
+          const Li = this.element, Ui = Li.getElementsByTagName("title")[0] || Vi.createElementNS(this.SVG_NS, "title");
+          Li.insertBefore ? Li.insertBefore(Ui, Li.firstChild) : Li.appendChild(Ui), Ui.textContent = String(si(hi, "")).replace(/<[^>]*>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
         }
         toFront() {
-          const ni = this.element;
-          return ni.parentNode.appendChild(ni), this;
+          const hi = this.element;
+          return hi.parentNode.appendChild(hi), this;
         }
-        translate(ni, Pi) {
+        translate(hi, Li) {
           return this.attr({
-            translateX: ni,
-            translateY: Pi
+            translateX: hi,
+            translateY: Li
           });
         }
         updateTransform() {
-          const { element: ni, matrix: Pi, rotation: Fi = 0, scaleX: Zi, scaleY: rs, translateX: Bi = 0, translateY: si = 0 } = this, Li = ["translate(" + Bi + "," + si + ")"];
-          wi(Pi) && Li.push("matrix(" + Pi.join(",") + ")"), Fi && Li.push("rotate(" + Fi + " " + ei(this.rotationOriginX, ni.getAttribute("x"), 0) + " " + ei(this.rotationOriginY, ni.getAttribute("y") || 0) + ")"), (wi(Zi) || wi(rs)) && Li.push("scale(" + ei(Zi, 1) + " " + ei(rs, 1) + ")"), Li.length && !(this.text || this).textPath && ni.setAttribute("transform", Li.join(" "));
+          const { element: hi, matrix: Li, rotation: Ui = 0, scaleX: Zi, scaleY: rs, translateX: Bi = 0, translateY: ni = 0 } = this, Pi = ["translate(" + Bi + "," + ni + ")"];
+          wi(Li) && Pi.push("matrix(" + Li.join(",") + ")"), Ui && Pi.push("rotate(" + Ui + " " + si(this.rotationOriginX, hi.getAttribute("x"), 0) + " " + si(this.rotationOriginY, hi.getAttribute("y") || 0) + ")"), (wi(Zi) || wi(rs)) && Pi.push("scale(" + si(Zi, 1) + " " + si(rs, 1) + ")"), Pi.length && !(this.text || this).textPath && hi.setAttribute("transform", Pi.join(" "));
         }
-        visibilitySetter(ni, Pi, Fi) {
-          ni === "inherit" ? Fi.removeAttribute(Pi) : this[Pi] !== ni && Fi.setAttribute(Pi, ni), this[Pi] = ni;
+        visibilitySetter(hi, Li, Ui) {
+          hi === "inherit" ? Ui.removeAttribute(Li) : this[Li] !== hi && Ui.setAttribute(Li, hi), this[Li] = hi;
         }
-        xGetter(ni) {
-          return this.element.nodeName === "circle" && (ni === "x" ? ni = "cx" : ni === "y" && (ni = "cy")), this._defaultGetter(ni);
+        xGetter(hi) {
+          return this.element.nodeName === "circle" && (hi === "x" ? hi = "cx" : hi === "y" && (hi = "cy")), this._defaultGetter(hi);
         }
-        zIndexSetter(ni, Pi) {
-          var Fi = this.renderer, Zi = this.parentGroup;
-          const rs = (Zi || Fi).element || Fi.box, Bi = this.element;
-          Fi = rs === Fi.box;
-          let si = !1, Li;
+        zIndexSetter(hi, Li) {
+          var Ui = this.renderer, Zi = this.parentGroup;
+          const rs = (Zi || Ui).element || Ui.box, Bi = this.element;
+          Ui = rs === Ui.box;
+          let ni = !1, Pi;
           var Hi = this.added;
-          let Di;
-          if (wi(ni) ? (Bi.setAttribute("data-z-index", ni), ni = +ni, this[Pi] === ni && (Hi = !1)) : wi(this[Pi]) && Bi.removeAttribute("data-z-index"), this[Pi] = ni, Hi) {
-            for ((ni = this.zIndex) && Zi && (Zi.handleZ = !0), Pi = rs.childNodes, Di = Pi.length - 1; 0 <= Di && !si; Di--)
-              Zi = Pi[Di], Hi = Zi.getAttribute("data-z-index"), Li = !wi(Hi), Zi !== Bi && (0 > ni && Li && !Fi && !Di ? (rs.insertBefore(Bi, Pi[Di]), si = !0) : (Fe(Hi) <= ni || Li && (!wi(ni) || 0 <= ni)) && (rs.insertBefore(Bi, Pi[Di + 1]), si = !0));
-            si || (rs.insertBefore(Bi, Pi[Fi ? 3 : 0]), si = !0);
+          let Ri;
+          if (wi(hi) ? (Bi.setAttribute("data-z-index", hi), hi = +hi, this[Li] === hi && (Hi = !1)) : wi(this[Li]) && Bi.removeAttribute("data-z-index"), this[Li] = hi, Hi) {
+            for ((hi = this.zIndex) && Zi && (Zi.handleZ = !0), Li = rs.childNodes, Ri = Li.length - 1; 0 <= Ri && !ni; Ri--)
+              Zi = Li[Ri], Hi = Zi.getAttribute("data-z-index"), Pi = !wi(Hi), Zi !== Bi && (0 > hi && Pi && !Ui && !Ri ? (rs.insertBefore(Bi, Li[Ri]), ni = !0) : (ti(Hi) <= hi || Pi && (!wi(hi) || 0 <= hi)) && (rs.insertBefore(Bi, Li[Ri + 1]), ni = !0));
+            ni || (rs.insertBefore(Bi, Li[Ui ? 3 : 0]), ni = !0);
           }
-          return si;
+          return ni;
         }
       }
-      return gi.symbolCustomAttribs = "anchorX anchorY clockwise end height innerR r start width x y".split(" "), gi.prototype.strokeSetter = gi.prototype.fillSetter, gi.prototype.yGetter = gi.prototype.xGetter, gi.prototype.matrixSetter = gi.prototype.rotationOriginXSetter = gi.prototype.rotationOriginYSetter = gi.prototype.rotationSetter = gi.prototype.scaleXSetter = gi.prototype.scaleYSetter = gi.prototype.translateXSetter = gi.prototype.translateYSetter = gi.prototype.verticalAlignSetter = function(Ei, ni) {
-        this[ni] = Ei, this.doTransform = !0;
-      }, gi;
-    }), ci(oi, "Core/Renderer/RendererRegistry.js", [oi["Core/Globals.js"]], function(Si) {
-      var ji;
-      return function(qi) {
-        qi.rendererTypes = {};
-        let ts;
-        qi.getRendererType = function(Qi = ts) {
-          return qi.rendererTypes[Qi] || qi.rendererTypes[ts];
-        }, qi.registerRendererType = function(Qi, is, ss) {
-          qi.rendererTypes[Qi] = is, (!ts || ss) && (ts = Qi, Si.Renderer = is);
+      return mi.symbolCustomAttribs = "anchorX anchorY clockwise end height innerR r start width x y".split(" "), mi.prototype.strokeSetter = mi.prototype.fillSetter, mi.prototype.yGetter = mi.prototype.xGetter, mi.prototype.matrixSetter = mi.prototype.rotationOriginXSetter = mi.prototype.rotationOriginYSetter = mi.prototype.rotationSetter = mi.prototype.scaleXSetter = mi.prototype.scaleYSetter = mi.prototype.translateXSetter = mi.prototype.translateYSetter = mi.prototype.verticalAlignSetter = function(Oi, hi) {
+        this[hi] = Oi, this.doTransform = !0;
+      }, mi;
+    }), ri(ii, "Core/Renderer/RendererRegistry.js", [ii["Core/Globals.js"]], function(li) {
+      var Ci;
+      return function(zi) {
+        zi.rendererTypes = {};
+        let Ki;
+        zi.getRendererType = function(Yi = Ki) {
+          return zi.rendererTypes[Yi] || zi.rendererTypes[Ki];
+        }, zi.registerRendererType = function(Yi, es, is) {
+          zi.rendererTypes[Yi] = es, (!Ki || is) && (Ki = Yi, li.Renderer = es);
         };
-      }(ji || (ji = {})), ji;
-    }), ci(oi, "Core/Renderer/SVG/SVGLabel.js", [oi["Core/Renderer/SVG/SVGElement.js"], oi["Core/Utilities.js"]], function(Si, ji) {
-      const { defined: qi, extend: ts, isNumber: Qi, merge: is, pick: ss, removeEvent: Wi } = ji;
-      class Ki extends Si {
-        constructor(ki, bi, Ri, Ni, fi, Ci, wi, yi, Ti, Mi) {
-          super(), this.paddingRightSetter = this.paddingLeftSetter = this.paddingSetter, this.init(ki, "g"), this.textStr = bi, this.x = Ri, this.y = Ni, this.anchorX = Ci, this.anchorY = wi, this.baseline = Ti, this.className = Mi, this.addClass(Mi === "button" ? "highcharts-no-tooltip" : "highcharts-label"), Mi && this.addClass("highcharts-" + Mi), this.text = ki.text(void 0, 0, 0, yi).attr({ zIndex: 1 });
-          let Oi;
-          typeof fi == "string" && ((Oi = /^url\((.*?)\)$/.test(fi)) || this.renderer.symbols[fi]) && (this.symbolKey = fi), this.bBox = Ki.emptyBBox, this.padding = 3, this.baselineOffset = 0, this.needsBox = ki.styledMode || Oi, this.deferredAttr = {}, this.alignFactor = 0;
+      }(Ci || (Ci = {})), Ci;
+    }), ri(ii, "Core/Renderer/SVG/SVGLabel.js", [ii["Core/Renderer/SVG/SVGElement.js"], ii["Core/Utilities.js"]], function(li, Ci) {
+      const { defined: zi, extend: Ki, isNumber: Yi, merge: es, pick: is, removeEvent: $i } = Ci;
+      class Vi extends li {
+        constructor(bi, Ai, ji, Ni, gi, ki, wi, Si, Ti, Mi) {
+          super(), this.paddingRightSetter = this.paddingLeftSetter = this.paddingSetter, this.init(bi, "g"), this.textStr = Ai, this.x = ji, this.y = Ni, this.anchorX = ki, this.anchorY = wi, this.baseline = Ti, this.className = Mi, this.addClass(Mi === "button" ? "highcharts-no-tooltip" : "highcharts-label"), Mi && this.addClass("highcharts-" + Mi), this.text = bi.text(void 0, 0, 0, Si).attr({ zIndex: 1 });
+          let Di;
+          typeof gi == "string" && ((Di = /^url\((.*?)\)$/.test(gi)) || this.renderer.symbols[gi]) && (this.symbolKey = gi), this.bBox = Vi.emptyBBox, this.padding = 3, this.baselineOffset = 0, this.needsBox = bi.styledMode || Di, this.deferredAttr = {}, this.alignFactor = 0;
         }
-        alignSetter(ki) {
-          ki = { left: 0, center: 0.5, right: 1 }[ki], ki !== this.alignFactor && (this.alignFactor = ki, this.bBox && Qi(this.xSetting) && this.attr({ x: this.xSetting }));
+        alignSetter(bi) {
+          bi = { left: 0, center: 0.5, right: 1 }[bi], bi !== this.alignFactor && (this.alignFactor = bi, this.bBox && Yi(this.xSetting) && this.attr({ x: this.xSetting }));
         }
-        anchorXSetter(ki, bi) {
-          this.anchorX = ki, this.boxAttr(bi, Math.round(ki) - this.getCrispAdjust() - this.xSetting);
+        anchorXSetter(bi, Ai) {
+          this.anchorX = bi, this.boxAttr(Ai, Math.round(bi) - this.getCrispAdjust() - this.xSetting);
         }
-        anchorYSetter(ki, bi) {
-          this.anchorY = ki, this.boxAttr(bi, ki - this.ySetting);
+        anchorYSetter(bi, Ai) {
+          this.anchorY = bi, this.boxAttr(Ai, bi - this.ySetting);
         }
-        boxAttr(ki, bi) {
-          this.box ? this.box.attr(ki, bi) : this.deferredAttr[ki] = bi;
+        boxAttr(bi, Ai) {
+          this.box ? this.box.attr(bi, Ai) : this.deferredAttr[bi] = Ai;
         }
-        css(ki) {
-          if (ki) {
-            const bi = {};
-            ki = is(ki), Ki.textProps.forEach((Ri) => {
-              typeof ki[Ri] < "u" && (bi[Ri] = ki[Ri], delete ki[Ri]);
-            }), this.text.css(bi), "fontSize" in bi || "fontWeight" in bi ? this.updateTextPadding() : ("width" in bi || "textOverflow" in bi) && this.updateBoxSize();
+        css(bi) {
+          if (bi) {
+            const Ai = {};
+            bi = es(bi), Vi.textProps.forEach((ji) => {
+              typeof bi[ji] < "u" && (Ai[ji] = bi[ji], delete bi[ji]);
+            }), this.text.css(Ai), "fontSize" in Ai || "fontWeight" in Ai ? this.updateTextPadding() : ("width" in Ai || "textOverflow" in Ai) && this.updateBoxSize();
           }
-          return Si.prototype.css.call(this, ki);
+          return li.prototype.css.call(this, bi);
         }
         destroy() {
-          Wi(this.element, "mouseenter"), Wi(this.element, "mouseleave"), this.text && this.text.destroy(), this.box && (this.box = this.box.destroy()), Si.prototype.destroy.call(this);
+          $i(this.element, "mouseenter"), $i(this.element, "mouseleave"), this.text && this.text.destroy(), this.box && (this.box = this.box.destroy()), li.prototype.destroy.call(this);
         }
-        fillSetter(ki, bi) {
-          ki && (this.needsBox = !0), this.fill = ki, this.boxAttr(bi, ki);
+        fillSetter(bi, Ai) {
+          bi && (this.needsBox = !0), this.fill = bi, this.boxAttr(Ai, bi);
         }
         getBBox() {
           this.textStr && this.bBox.width === 0 && this.bBox.height === 0 && this.updateBoxSize();
-          const ki = this.padding, bi = ss(this.paddingLeft, ki);
-          return { width: this.width, height: this.height, x: this.bBox.x - bi, y: this.bBox.y - ki };
+          const bi = this.padding, Ai = is(this.paddingLeft, bi);
+          return { width: this.width, height: this.height, x: this.bBox.x - Ai, y: this.bBox.y - bi };
         }
         getCrispAdjust() {
           return this.renderer.styledMode && this.box ? this.box.strokeWidth() % 2 / 2 : (this["stroke-width"] ? parseInt(this["stroke-width"], 10) : 0) % 2 / 2;
         }
-        heightSetter(ki) {
-          this.heightSetting = ki;
+        heightSetter(bi) {
+          this.heightSetting = bi;
         }
         onAdd() {
-          this.text.add(this), this.attr({ text: ss(this.textStr, ""), x: this.x || 0, y: this.y || 0 }), this.box && qi(this.anchorX) && this.attr({ anchorX: this.anchorX, anchorY: this.anchorY });
+          this.text.add(this), this.attr({ text: is(this.textStr, ""), x: this.x || 0, y: this.y || 0 }), this.box && zi(this.anchorX) && this.attr({ anchorX: this.anchorX, anchorY: this.anchorY });
         }
-        paddingSetter(ki, bi) {
-          Qi(ki) ? ki !== this[bi] && (this[bi] = ki, this.updateTextPadding()) : this[bi] = void 0;
+        paddingSetter(bi, Ai) {
+          Yi(bi) ? bi !== this[Ai] && (this[Ai] = bi, this.updateTextPadding()) : this[Ai] = void 0;
         }
-        rSetter(ki, bi) {
-          this.boxAttr(bi, ki);
+        rSetter(bi, Ai) {
+          this.boxAttr(Ai, bi);
         }
-        strokeSetter(ki, bi) {
-          this.stroke = ki, this.boxAttr(bi, ki);
+        strokeSetter(bi, Ai) {
+          this.stroke = bi, this.boxAttr(Ai, bi);
         }
-        "stroke-widthSetter"(ki, bi) {
-          ki && (this.needsBox = !0), this["stroke-width"] = ki, this.boxAttr(bi, ki);
+        "stroke-widthSetter"(bi, Ai) {
+          bi && (this.needsBox = !0), this["stroke-width"] = bi, this.boxAttr(Ai, bi);
         }
-        "text-alignSetter"(ki) {
-          this.textAlign = ki;
+        "text-alignSetter"(bi) {
+          this.textAlign = bi;
         }
-        textSetter(ki) {
-          typeof ki < "u" && this.text.attr({ text: ki }), this.updateTextPadding();
+        textSetter(bi) {
+          typeof bi < "u" && this.text.attr({ text: bi }), this.updateTextPadding();
         }
         updateBoxSize() {
-          var ki = this.text;
-          const bi = {}, Ri = this.padding, Ni = this.bBox = Qi(this.widthSetting) && Qi(this.heightSetting) && !this.textAlign || !qi(ki.textStr) ? Ki.emptyBBox : ki.getBBox();
-          this.width = this.getPaddedWidth(), this.height = (this.heightSetting || Ni.height || 0) + 2 * Ri;
-          const fi = this.renderer.fontMetrics(ki);
-          this.baselineOffset = Ri + Math.min((this.text.firstLineMetrics || fi).b, Ni.height || 1 / 0), this.heightSetting && (this.baselineOffset += (this.heightSetting - fi.h) / 2), this.needsBox && !ki.textPath && (this.box || (ki = this.box = this.symbolKey ? this.renderer.symbol(this.symbolKey) : this.renderer.rect(), ki.addClass((this.className === "button" ? "" : "highcharts-label-box") + (this.className ? " highcharts-" + this.className + "-box" : "")), ki.add(this)), ki = this.getCrispAdjust(), bi.x = ki, bi.y = (this.baseline ? -this.baselineOffset : 0) + ki, bi.width = Math.round(this.width), bi.height = Math.round(this.height), this.box.attr(ts(bi, this.deferredAttr)), this.deferredAttr = {});
+          var bi = this.text;
+          const Ai = {}, ji = this.padding, Ni = this.bBox = Yi(this.widthSetting) && Yi(this.heightSetting) && !this.textAlign || !zi(bi.textStr) ? Vi.emptyBBox : bi.getBBox();
+          this.width = this.getPaddedWidth(), this.height = (this.heightSetting || Ni.height || 0) + 2 * ji;
+          const gi = this.renderer.fontMetrics(bi);
+          this.baselineOffset = ji + Math.min((this.text.firstLineMetrics || gi).b, Ni.height || 1 / 0), this.heightSetting && (this.baselineOffset += (this.heightSetting - gi.h) / 2), this.needsBox && !bi.textPath && (this.box || (bi = this.box = this.symbolKey ? this.renderer.symbol(this.symbolKey) : this.renderer.rect(), bi.addClass((this.className === "button" ? "" : "highcharts-label-box") + (this.className ? " highcharts-" + this.className + "-box" : "")), bi.add(this)), bi = this.getCrispAdjust(), Ai.x = bi, Ai.y = (this.baseline ? -this.baselineOffset : 0) + bi, Ai.width = Math.round(this.width), Ai.height = Math.round(this.height), this.box.attr(Ki(Ai, this.deferredAttr)), this.deferredAttr = {});
         }
         updateTextPadding() {
-          const ki = this.text;
-          if (!ki.textPath) {
+          const bi = this.text;
+          if (!bi.textPath) {
             this.updateBoxSize();
-            const bi = this.baseline ? 0 : this.baselineOffset;
-            let Ri = ss(this.paddingLeft, this.padding);
-            qi(this.widthSetting) && this.bBox && (this.textAlign === "center" || this.textAlign === "right") && (Ri += { center: 0.5, right: 1 }[this.textAlign] * (this.widthSetting - this.bBox.width)), (Ri !== ki.x || bi !== ki.y) && (ki.attr("x", Ri), ki.hasBoxWidthChanged && (this.bBox = ki.getBBox(!0)), typeof bi < "u" && ki.attr("y", bi)), ki.x = Ri, ki.y = bi;
+            const Ai = this.baseline ? 0 : this.baselineOffset;
+            let ji = is(this.paddingLeft, this.padding);
+            zi(this.widthSetting) && this.bBox && (this.textAlign === "center" || this.textAlign === "right") && (ji += { center: 0.5, right: 1 }[this.textAlign] * (this.widthSetting - this.bBox.width)), (ji !== bi.x || Ai !== bi.y) && (bi.attr("x", ji), bi.hasBoxWidthChanged && (this.bBox = bi.getBBox(!0)), typeof Ai < "u" && bi.attr("y", Ai)), bi.x = ji, bi.y = Ai;
           }
         }
-        widthSetter(ki) {
-          this.widthSetting = Qi(ki) ? ki : void 0;
+        widthSetter(bi) {
+          this.widthSetting = Yi(bi) ? bi : void 0;
         }
         getPaddedWidth() {
-          var ki = this.padding;
-          const bi = ss(this.paddingLeft, ki);
-          return ki = ss(
+          var bi = this.padding;
+          const Ai = is(this.paddingLeft, bi);
+          return bi = is(
             this.paddingRight,
-            ki
-          ), (this.widthSetting || this.bBox.width || 0) + bi + ki;
+            bi
+          ), (this.widthSetting || this.bBox.width || 0) + Ai + bi;
         }
-        xSetter(ki) {
-          this.x = ki, this.alignFactor && (ki -= this.alignFactor * this.getPaddedWidth(), this["forceAnimate:x"] = !0), this.xSetting = Math.round(ki), this.attr("translateX", this.xSetting);
+        xSetter(bi) {
+          this.x = bi, this.alignFactor && (bi -= this.alignFactor * this.getPaddedWidth(), this["forceAnimate:x"] = !0), this.xSetting = Math.round(bi), this.attr("translateX", this.xSetting);
         }
-        ySetter(ki) {
-          this.ySetting = this.y = Math.round(ki), this.attr("translateY", this.ySetting);
+        ySetter(bi) {
+          this.ySetting = this.y = Math.round(bi), this.attr("translateY", this.ySetting);
         }
       }
-      return Ki.emptyBBox = { width: 0, height: 0, x: 0, y: 0 }, Ki.textProps = "color direction fontFamily fontSize fontStyle fontWeight lineHeight textAlign textDecoration textOutline textOverflow whiteSpace width".split(" "), Ki;
-    }), ci(oi, "Core/Renderer/SVG/Symbols.js", [oi["Core/Utilities.js"]], function(Si) {
-      function ji(Wi, Ki, Ui, ki, bi) {
-        const Ri = [];
-        if (bi) {
-          const Ni = bi.start || 0, fi = ss(bi.r, Ui);
-          Ui = ss(bi.r, ki || Ui), ki = (bi.end || 0) - 1e-3;
-          const Ci = bi.innerR, wi = ss(bi.open, 1e-3 > Math.abs((bi.end || 0) - Ni - 2 * Math.PI)), yi = Math.cos(Ni), Ti = Math.sin(Ni), Mi = Math.cos(ki), Oi = Math.sin(ki), ai = ss(bi.longArc, 1e-3 > ki - Ni - Math.PI ? 0 : 1);
-          let li = ["A", fi, Ui, 0, ai, ss(bi.clockwise, 1), Wi + fi * Mi, Ki + Ui * Oi];
-          li.params = { start: Ni, end: ki, cx: Wi, cy: Ki }, Ri.push(["M", Wi + fi * yi, Ki + Ui * Ti], li), Qi(Ci) && (li = ["A", Ci, Ci, 0, ai, Qi(bi.clockwise) ? 1 - bi.clockwise : 0, Wi + Ci * yi, Ki + Ci * Ti], li.params = { start: ki, end: Ni, cx: Wi, cy: Ki }, Ri.push(wi ? ["M", Wi + Ci * Mi, Ki + Ci * Oi] : ["L", Wi + Ci * Mi, Ki + Ci * Oi], li)), wi || Ri.push(["Z"]);
+      return Vi.emptyBBox = { width: 0, height: 0, x: 0, y: 0 }, Vi.textProps = "color direction fontFamily fontSize fontStyle fontWeight lineHeight textAlign textDecoration textOutline textOverflow whiteSpace width".split(" "), Vi;
+    }), ri(ii, "Core/Renderer/SVG/Symbols.js", [ii["Core/Utilities.js"]], function(li) {
+      function Ci($i, Vi, _i, bi, Ai) {
+        const ji = [];
+        if (Ai) {
+          const Ni = Ai.start || 0, gi = is(Ai.r, _i);
+          _i = is(Ai.r, bi || _i), bi = (Ai.end || 0) - 1e-3;
+          const ki = Ai.innerR, wi = is(Ai.open, 1e-3 > Math.abs((Ai.end || 0) - Ni - 2 * Math.PI)), Si = Math.cos(Ni), Ti = Math.sin(Ni), Mi = Math.cos(bi), Di = Math.sin(bi), ci = is(Ai.longArc, 1e-3 > bi - Ni - Math.PI ? 0 : 1);
+          let pi = ["A", gi, _i, 0, ci, is(Ai.clockwise, 1), $i + gi * Mi, Vi + _i * Di];
+          pi.params = { start: Ni, end: bi, cx: $i, cy: Vi }, ji.push(["M", $i + gi * Si, Vi + _i * Ti], pi), Yi(ki) && (pi = ["A", ki, ki, 0, ci, Yi(Ai.clockwise) ? 1 - Ai.clockwise : 0, $i + ki * Si, Vi + ki * Ti], pi.params = { start: bi, end: Ni, cx: $i, cy: Vi }, ji.push(wi ? ["M", $i + ki * Mi, Vi + ki * Di] : ["L", $i + ki * Mi, Vi + ki * Di], pi)), wi || ji.push(["Z"]);
         }
-        return Ri;
+        return ji;
       }
-      function qi(Wi, Ki, Ui, ki, bi) {
-        return bi && bi.r ? ts(Wi, Ki, Ui, ki, bi) : [["M", Wi, Ki], ["L", Wi + Ui, Ki], ["L", Wi + Ui, Ki + ki], ["L", Wi, Ki + ki], ["Z"]];
+      function zi($i, Vi, _i, bi, Ai) {
+        return Ai && Ai.r ? Ki($i, Vi, _i, bi, Ai) : [["M", $i, Vi], ["L", $i + _i, Vi], ["L", $i + _i, Vi + bi], ["L", $i, Vi + bi], ["Z"]];
       }
-      function ts(Wi, Ki, Ui, ki, bi) {
-        return bi = (bi == null ? void 0 : bi.r) || 0, [["M", Wi + bi, Ki], ["L", Wi + Ui - bi, Ki], ["A", bi, bi, 0, 0, 1, Wi + Ui, Ki + bi], ["L", Wi + Ui, Ki + ki - bi], ["A", bi, bi, 0, 0, 1, Wi + Ui - bi, Ki + ki], ["L", Wi + bi, Ki + ki], ["A", bi, bi, 0, 0, 1, Wi, Ki + ki - bi], ["L", Wi, Ki + bi], ["A", bi, bi, 0, 0, 1, Wi + bi, Ki], ["Z"]];
+      function Ki($i, Vi, _i, bi, Ai) {
+        return Ai = (Ai == null ? void 0 : Ai.r) || 0, [["M", $i + Ai, Vi], ["L", $i + _i - Ai, Vi], ["A", Ai, Ai, 0, 0, 1, $i + _i, Vi + Ai], ["L", $i + _i, Vi + bi - Ai], ["A", Ai, Ai, 0, 0, 1, $i + _i - Ai, Vi + bi], ["L", $i + Ai, Vi + bi], ["A", Ai, Ai, 0, 0, 1, $i, Vi + bi - Ai], ["L", $i, Vi + Ai], ["A", Ai, Ai, 0, 0, 1, $i + Ai, Vi], ["Z"]];
       }
-      const { defined: Qi, isNumber: is, pick: ss } = Si;
-      return { arc: ji, callout: function(Wi, Ki, Ui, ki, bi) {
-        const Ri = Math.min(bi && bi.r || 0, Ui, ki), Ni = Ri + 6, fi = bi && bi.anchorX;
-        bi = bi && bi.anchorY || 0;
-        const Ci = ts(Wi, Ki, Ui, ki, { r: Ri });
-        return is(fi) && (Wi + fi >= Ui ? bi > Ki + Ni && bi < Ki + ki - Ni ? Ci.splice(3, 1, ["L", Wi + Ui, bi - 6], ["L", Wi + Ui + 6, bi], ["L", Wi + Ui, bi + 6], ["L", Wi + Ui, Ki + ki - Ri]) : Ci.splice(3, 1, ["L", Wi + Ui, ki / 2], ["L", fi, bi], ["L", Wi + Ui, ki / 2], ["L", Wi + Ui, Ki + ki - Ri]) : 0 >= Wi + fi ? bi > Ki + Ni && bi < Ki + ki - Ni ? Ci.splice(7, 1, ["L", Wi, bi + 6], ["L", Wi - 6, bi], ["L", Wi, bi - 6], ["L", Wi, Ki + Ri]) : Ci.splice(7, 1, ["L", Wi, ki / 2], ["L", fi, bi], ["L", Wi, ki / 2], ["L", Wi, Ki + Ri]) : bi && bi > ki && fi > Wi + Ni && fi < Wi + Ui - Ni ? Ci.splice(5, 1, [
+      const { defined: Yi, isNumber: es, pick: is } = li;
+      return { arc: Ci, callout: function($i, Vi, _i, bi, Ai) {
+        const ji = Math.min(Ai && Ai.r || 0, _i, bi), Ni = ji + 6, gi = Ai && Ai.anchorX;
+        Ai = Ai && Ai.anchorY || 0;
+        const ki = Ki($i, Vi, _i, bi, { r: ji });
+        return es(gi) && ($i + gi >= _i ? Ai > Vi + Ni && Ai < Vi + bi - Ni ? ki.splice(3, 1, ["L", $i + _i, Ai - 6], ["L", $i + _i + 6, Ai], ["L", $i + _i, Ai + 6], ["L", $i + _i, Vi + bi - ji]) : ki.splice(3, 1, ["L", $i + _i, bi / 2], ["L", gi, Ai], ["L", $i + _i, bi / 2], ["L", $i + _i, Vi + bi - ji]) : 0 >= $i + gi ? Ai > Vi + Ni && Ai < Vi + bi - Ni ? ki.splice(7, 1, ["L", $i, Ai + 6], ["L", $i - 6, Ai], ["L", $i, Ai - 6], ["L", $i, Vi + ji]) : ki.splice(7, 1, ["L", $i, bi / 2], ["L", gi, Ai], ["L", $i, bi / 2], ["L", $i, Vi + ji]) : Ai && Ai > bi && gi > $i + Ni && gi < $i + _i - Ni ? ki.splice(5, 1, [
           "L",
-          fi + 6,
-          Ki + ki
-        ], ["L", fi, Ki + ki + 6], ["L", fi - 6, Ki + ki], ["L", Wi + Ri, Ki + ki]) : bi && 0 > bi && fi > Wi + Ni && fi < Wi + Ui - Ni && Ci.splice(1, 1, ["L", fi - 6, Ki], ["L", fi, Ki - 6], ["L", fi + 6, Ki], ["L", Ui - Ri, Ki])), Ci;
-      }, circle: function(Wi, Ki, Ui, ki) {
-        return ji(Wi + Ui / 2, Ki + ki / 2, Ui / 2, ki / 2, { start: 0.5 * Math.PI, end: 2.5 * Math.PI, open: !1 });
-      }, diamond: function(Wi, Ki, Ui, ki) {
-        return [["M", Wi + Ui / 2, Ki], ["L", Wi + Ui, Ki + ki / 2], ["L", Wi + Ui / 2, Ki + ki], ["L", Wi, Ki + ki / 2], ["Z"]];
-      }, rect: qi, roundedRect: ts, square: qi, triangle: function(Wi, Ki, Ui, ki) {
-        return [["M", Wi + Ui / 2, Ki], ["L", Wi + Ui, Ki + ki], ["L", Wi, Ki + ki], ["Z"]];
-      }, "triangle-down": function(Wi, Ki, Ui, ki) {
+          gi + 6,
+          Vi + bi
+        ], ["L", gi, Vi + bi + 6], ["L", gi - 6, Vi + bi], ["L", $i + ji, Vi + bi]) : Ai && 0 > Ai && gi > $i + Ni && gi < $i + _i - Ni && ki.splice(1, 1, ["L", gi - 6, Vi], ["L", gi, Vi - 6], ["L", gi + 6, Vi], ["L", _i - ji, Vi])), ki;
+      }, circle: function($i, Vi, _i, bi) {
+        return Ci($i + _i / 2, Vi + bi / 2, _i / 2, bi / 2, { start: 0.5 * Math.PI, end: 2.5 * Math.PI, open: !1 });
+      }, diamond: function($i, Vi, _i, bi) {
+        return [["M", $i + _i / 2, Vi], ["L", $i + _i, Vi + bi / 2], ["L", $i + _i / 2, Vi + bi], ["L", $i, Vi + bi / 2], ["Z"]];
+      }, rect: zi, roundedRect: Ki, square: zi, triangle: function($i, Vi, _i, bi) {
+        return [["M", $i + _i / 2, Vi], ["L", $i + _i, Vi + bi], ["L", $i, Vi + bi], ["Z"]];
+      }, "triangle-down": function($i, Vi, _i, bi) {
         return [[
           "M",
-          Wi,
-          Ki
-        ], ["L", Wi + Ui, Ki], ["L", Wi + Ui / 2, Ki + ki], ["Z"]];
+          $i,
+          Vi
+        ], ["L", $i + _i, Vi], ["L", $i + _i / 2, Vi + bi], ["Z"]];
       } };
-    }), ci(oi, "Core/Renderer/SVG/TextBuilder.js", [oi["Core/Renderer/HTML/AST.js"], oi["Core/Globals.js"], oi["Core/Utilities.js"]], function(Si, ji, qi) {
-      const { doc: ts, SVG_NS: Qi, win: is } = ji, { attr: ss, extend: Wi, fireEvent: Ki, isString: Ui, objectEach: ki, pick: bi } = qi;
-      class Ri {
-        constructor(fi) {
-          const Ci = fi.styles;
-          this.renderer = fi.renderer, this.svgElement = fi, this.width = fi.textWidth, this.textLineHeight = Ci && Ci.lineHeight, this.textOutline = Ci && Ci.textOutline, this.ellipsis = !(!Ci || Ci.textOverflow !== "ellipsis"), this.noWrap = !(!Ci || Ci.whiteSpace !== "nowrap");
+    }), ri(ii, "Core/Renderer/SVG/TextBuilder.js", [ii["Core/Renderer/HTML/AST.js"], ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+      const { doc: Ki, SVG_NS: Yi, win: es } = Ci, { attr: is, extend: $i, fireEvent: Vi, isString: _i, objectEach: bi, pick: Ai } = zi;
+      class ji {
+        constructor(gi) {
+          const ki = gi.styles;
+          this.renderer = gi.renderer, this.svgElement = gi, this.width = gi.textWidth, this.textLineHeight = ki && ki.lineHeight, this.textOutline = ki && ki.textOutline, this.ellipsis = !(!ki || ki.textOverflow !== "ellipsis"), this.noWrap = !(!ki || ki.whiteSpace !== "nowrap");
         }
         buildSVG() {
-          const fi = this.svgElement, Ci = fi.element;
-          var wi = fi.renderer, yi = bi(fi.textStr, "").toString();
-          const Ti = yi.indexOf("<") !== -1, Mi = Ci.childNodes;
-          wi = !fi.added && wi.box;
-          const Oi = /<br.*?>/g;
-          var ai = [yi, this.ellipsis, this.noWrap, this.textLineHeight, this.textOutline, fi.getStyle("font-size"), this.width].join();
-          if (ai !== fi.textCache) {
-            for (fi.textCache = ai, delete fi.actualWidth, ai = Mi.length; ai--; )
-              Ci.removeChild(Mi[ai]);
-            Ti || this.ellipsis || this.width || fi.textPath || yi.indexOf(" ") !== -1 && (!this.noWrap || Oi.test(yi)) ? yi !== "" && (wi && wi.appendChild(Ci), yi = new Si(yi), this.modifyTree(yi.nodes), yi.addToDOM(Ci), this.modifyDOM(), this.ellipsis && (Ci.textContent || "").indexOf("…") !== -1 && fi.attr("title", this.unescapeEntities(fi.textStr || "", ["&lt;", "&gt;"])), wi && wi.removeChild(Ci)) : Ci.appendChild(ts.createTextNode(this.unescapeEntities(yi))), Ui(this.textOutline) && fi.applyTextOutline && fi.applyTextOutline(this.textOutline);
+          const gi = this.svgElement, ki = gi.element;
+          var wi = gi.renderer, Si = Ai(gi.textStr, "").toString();
+          const Ti = Si.indexOf("<") !== -1, Mi = ki.childNodes;
+          wi = !gi.added && wi.box;
+          const Di = /<br.*?>/g;
+          var ci = [Si, this.ellipsis, this.noWrap, this.textLineHeight, this.textOutline, gi.getStyle("font-size"), this.width].join();
+          if (ci !== gi.textCache) {
+            for (gi.textCache = ci, delete gi.actualWidth, ci = Mi.length; ci--; )
+              ki.removeChild(Mi[ci]);
+            Ti || this.ellipsis || this.width || gi.textPath || Si.indexOf(" ") !== -1 && (!this.noWrap || Di.test(Si)) ? Si !== "" && (wi && wi.appendChild(ki), Si = new li(Si), this.modifyTree(Si.nodes), Si.addToDOM(ki), this.modifyDOM(), this.ellipsis && (ki.textContent || "").indexOf("…") !== -1 && gi.attr("title", this.unescapeEntities(gi.textStr || "", ["&lt;", "&gt;"])), wi && wi.removeChild(ki)) : ki.appendChild(Ki.createTextNode(this.unescapeEntities(Si))), _i(this.textOutline) && gi.applyTextOutline && gi.applyTextOutline(this.textOutline);
           }
         }
         modifyDOM() {
-          const fi = this.svgElement, Ci = ss(fi.element, "x");
-          fi.firstLineMetrics = void 0;
+          const gi = this.svgElement, ki = is(gi.element, "x");
+          gi.firstLineMetrics = void 0;
           let wi;
-          for (; (wi = fi.element.firstChild) && /^[\s\u200B]*$/.test(wi.textContent || " "); )
-            fi.element.removeChild(wi);
-          [].forEach.call(fi.element.querySelectorAll("tspan.highcharts-br"), (Oi, ai) => {
-            Oi.nextSibling && Oi.previousSibling && (ai === 0 && Oi.previousSibling.nodeType === 1 && (fi.firstLineMetrics = fi.renderer.fontMetrics(Oi.previousSibling)), ss(Oi, { dy: this.getLineHeight(Oi.nextSibling), x: Ci }));
+          for (; (wi = gi.element.firstChild) && /^[\s\u200B]*$/.test(wi.textContent || " "); )
+            gi.element.removeChild(wi);
+          [].forEach.call(gi.element.querySelectorAll("tspan.highcharts-br"), (Di, ci) => {
+            Di.nextSibling && Di.previousSibling && (ci === 0 && Di.previousSibling.nodeType === 1 && (gi.firstLineMetrics = gi.renderer.fontMetrics(Di.previousSibling)), is(Di, { dy: this.getLineHeight(Di.nextSibling), x: ki }));
           });
-          const yi = this.width || 0;
-          if (yi) {
-            var Ti = (Oi, ai) => {
-              var li = Oi.textContent || "";
-              const xi = li.replace(/([^\^])-/g, "$1- ").split(" ");
-              var di = !this.noWrap && (1 < xi.length || 1 < fi.element.childNodes.length);
-              const pi = this.getLineHeight(ai);
-              let ei = 0, Fe = fi.actualWidth;
+          const Si = this.width || 0;
+          if (Si) {
+            var Ti = (Di, ci) => {
+              var pi = Di.textContent || "";
+              const vi = pi.replace(/([^\^])-/g, "$1- ").split(" ");
+              var ui = !this.noWrap && (1 < vi.length || 1 < gi.element.childNodes.length);
+              const fi = this.getLineHeight(ci);
+              let si = 0, ti = gi.actualWidth;
               if (this.ellipsis)
-                li && this.truncate(Oi, li, void 0, 0, Math.max(0, yi - 0.8 * pi), (ii, hi) => ii.substring(0, hi) + "…");
-              else if (di) {
-                for (li = [], di = []; ai.firstChild && ai.firstChild !== Oi; )
-                  di.push(ai.firstChild), ai.removeChild(ai.firstChild);
-                for (; xi.length; )
-                  xi.length && !this.noWrap && 0 < ei && (li.push(Oi.textContent || ""), Oi.textContent = xi.join(" ").replace(/- /g, "-")), this.truncate(Oi, void 0, xi, ei === 0 && Fe || 0, yi, (ii, hi) => xi.slice(0, hi).join(" ").replace(/- /g, "-")), Fe = fi.actualWidth, ei++;
-                di.forEach((ii) => {
-                  ai.insertBefore(ii, Oi);
-                }), li.forEach((ii) => {
-                  ai.insertBefore(ts.createTextNode(ii), Oi), ii = ts.createElementNS(Qi, "tspan"), ii.textContent = "​", ss(ii, { dy: pi, x: Ci }), ai.insertBefore(ii, Oi);
+                pi && this.truncate(Di, pi, void 0, 0, Math.max(0, Si - 0.8 * fi), (oi, di) => oi.substring(0, di) + "…");
+              else if (ui) {
+                for (pi = [], ui = []; ci.firstChild && ci.firstChild !== Di; )
+                  ui.push(ci.firstChild), ci.removeChild(ci.firstChild);
+                for (; vi.length; )
+                  vi.length && !this.noWrap && 0 < si && (pi.push(Di.textContent || ""), Di.textContent = vi.join(" ").replace(/- /g, "-")), this.truncate(Di, void 0, vi, si === 0 && ti || 0, Si, (oi, di) => vi.slice(0, di).join(" ").replace(/- /g, "-")), ti = gi.actualWidth, si++;
+                ui.forEach((oi) => {
+                  ci.insertBefore(oi, Di);
+                }), pi.forEach((oi) => {
+                  ci.insertBefore(Ki.createTextNode(oi), Di), oi = Ki.createElementNS(Yi, "tspan"), oi.textContent = "​", is(oi, { dy: fi, x: ki }), ci.insertBefore(oi, Di);
                 });
               }
-            }, Mi = (Oi) => {
-              [].slice.call(Oi.childNodes).forEach((ai) => {
-                ai.nodeType === is.Node.TEXT_NODE ? Ti(ai, Oi) : (ai.className.baseVal.indexOf("highcharts-br") !== -1 && (fi.actualWidth = 0), Mi(ai));
+            }, Mi = (Di) => {
+              [].slice.call(Di.childNodes).forEach((ci) => {
+                ci.nodeType === es.Node.TEXT_NODE ? Ti(ci, Di) : (ci.className.baseVal.indexOf("highcharts-br") !== -1 && (gi.actualWidth = 0), Mi(ci));
               });
             };
-            Mi(fi.element);
+            Mi(gi.element);
           }
         }
-        getLineHeight(fi) {
-          return fi = fi.nodeType === is.Node.TEXT_NODE ? fi.parentElement : fi, this.textLineHeight ? parseInt(this.textLineHeight.toString(), 10) : this.renderer.fontMetrics(fi || this.svgElement.element).h;
+        getLineHeight(gi) {
+          return gi = gi.nodeType === es.Node.TEXT_NODE ? gi.parentElement : gi, this.textLineHeight ? parseInt(this.textLineHeight.toString(), 10) : this.renderer.fontMetrics(gi || this.svgElement.element).h;
         }
-        modifyTree(fi) {
-          const Ci = (wi, yi) => {
-            const { attributes: Ti = {}, children: Mi, style: Oi = {}, tagName: ai } = wi, li = this.renderer.styledMode;
-            ai === "b" || ai === "strong" ? li ? Ti.class = "highcharts-strong" : Oi.fontWeight = "bold" : (ai === "i" || ai === "em") && (li ? Ti.class = "highcharts-emphasized" : Oi.fontStyle = "italic"), Oi && Oi.color && (Oi.fill = Oi.color), ai === "br" ? (Ti.class = "highcharts-br", wi.textContent = "​", (yi = fi[yi + 1]) && yi.textContent && (yi.textContent = yi.textContent.replace(/^ +/gm, ""))) : ai === "a" && Mi && Mi.some((xi) => xi.tagName === "#text") && (wi.children = [{ children: Mi, tagName: "tspan" }]), ai !== "#text" && ai !== "a" && (wi.tagName = "tspan"), Wi(wi, { attributes: Ti, style: Oi }), Mi && Mi.filter((xi) => xi.tagName !== "#text").forEach(Ci);
+        modifyTree(gi) {
+          const ki = (wi, Si) => {
+            const { attributes: Ti = {}, children: Mi, style: Di = {}, tagName: ci } = wi, pi = this.renderer.styledMode;
+            ci === "b" || ci === "strong" ? pi ? Ti.class = "highcharts-strong" : Di.fontWeight = "bold" : (ci === "i" || ci === "em") && (pi ? Ti.class = "highcharts-emphasized" : Di.fontStyle = "italic"), Di && Di.color && (Di.fill = Di.color), ci === "br" ? (Ti.class = "highcharts-br", wi.textContent = "​", (Si = gi[Si + 1]) && Si.textContent && (Si.textContent = Si.textContent.replace(/^ +/gm, ""))) : ci === "a" && Mi && Mi.some((vi) => vi.tagName === "#text") && (wi.children = [{ children: Mi, tagName: "tspan" }]), ci !== "#text" && ci !== "a" && (wi.tagName = "tspan"), $i(wi, { attributes: Ti, style: Di }), Mi && Mi.filter((vi) => vi.tagName !== "#text").forEach(ki);
           };
-          fi.forEach(Ci), Ki(this.svgElement, "afterModifyTree", { nodes: fi });
+          gi.forEach(ki), Vi(this.svgElement, "afterModifyTree", { nodes: gi });
         }
-        truncate(fi, Ci, wi, yi, Ti, Mi) {
-          const Oi = this.svgElement, { rotation: ai } = Oi, li = [];
-          let xi = wi ? 1 : 0, di = (Ci || wi || "").length, pi = di, ei, Fe;
-          const ii = function(hi, gi) {
-            if (hi = gi || hi, (gi = fi.parentNode) && typeof li[hi] > "u" && gi.getSubStringLength)
+        truncate(gi, ki, wi, Si, Ti, Mi) {
+          const Di = this.svgElement, { rotation: ci } = Di, pi = [];
+          let vi = wi ? 1 : 0, ui = (ki || wi || "").length, fi = ui, si, ti;
+          const oi = function(di, mi) {
+            if (di = mi || di, (mi = gi.parentNode) && typeof pi[di] > "u" && mi.getSubStringLength)
               try {
-                li[hi] = yi + gi.getSubStringLength(0, wi ? hi + 1 : hi);
+                pi[di] = Si + mi.getSubStringLength(0, wi ? di + 1 : di);
               } catch {
               }
-            return li[hi];
+            return pi[di];
           };
-          if (Oi.rotation = 0, Fe = ii(fi.textContent.length), yi + Fe > Ti) {
-            for (; xi <= di; )
-              pi = Math.ceil((xi + di) / 2), wi && (ei = Mi(wi, pi)), Fe = ii(pi, ei && ei.length - 1), xi === di ? xi = di + 1 : Fe > Ti ? di = pi - 1 : xi = pi;
-            di === 0 ? fi.textContent = "" : Ci && di === Ci.length - 1 || (fi.textContent = ei || Mi(Ci || wi, pi));
+          if (Di.rotation = 0, ti = oi(gi.textContent.length), Si + ti > Ti) {
+            for (; vi <= ui; )
+              fi = Math.ceil((vi + ui) / 2), wi && (si = Mi(wi, fi)), ti = oi(fi, si && si.length - 1), vi === ui ? vi = ui + 1 : ti > Ti ? ui = fi - 1 : vi = fi;
+            ui === 0 ? gi.textContent = "" : ki && ui === ki.length - 1 || (gi.textContent = si || Mi(ki || wi, fi));
           }
-          wi && wi.splice(0, pi), Oi.actualWidth = Fe, Oi.rotation = ai;
+          wi && wi.splice(0, fi), Di.actualWidth = ti, Di.rotation = ci;
         }
-        unescapeEntities(fi, Ci) {
-          return ki(this.renderer.escapes, function(wi, yi) {
-            Ci && Ci.indexOf(wi) !== -1 || (fi = fi.toString().replace(new RegExp(wi, "g"), yi));
-          }), fi;
+        unescapeEntities(gi, ki) {
+          return bi(this.renderer.escapes, function(wi, Si) {
+            ki && ki.indexOf(wi) !== -1 || (gi = gi.toString().replace(new RegExp(wi, "g"), Si));
+          }), gi;
         }
       }
-      return Ri;
-    }), ci(oi, "Core/Renderer/SVG/SVGRenderer.js", [
-      oi["Core/Renderer/HTML/AST.js"],
-      oi["Core/Color/Color.js"],
-      oi["Core/Globals.js"],
-      oi["Core/Renderer/RendererRegistry.js"],
-      oi["Core/Renderer/SVG/SVGElement.js"],
-      oi["Core/Renderer/SVG/SVGLabel.js"],
-      oi["Core/Renderer/SVG/Symbols.js"],
-      oi["Core/Renderer/SVG/TextBuilder.js"],
-      oi["Core/Utilities.js"]
-    ], function(Si, ji, qi, ts, Qi, is, ss, Wi, Ki) {
-      const { charts: Ui, deg2rad: ki, doc: bi, isFirefox: Ri, isMS: Ni, isWebKit: fi, noop: Ci, SVG_NS: wi, symbolSizes: yi, win: Ti } = qi, { addEvent: Mi, attr: Oi, createElement: ai, css: li, defined: xi, destroyObjectProperties: di, extend: pi, isArray: ei, isNumber: Fe, isObject: ii, isString: hi, merge: gi, pick: Ei, pInt: ni, uniqueKey: Pi } = Ki;
-      let Fi;
+      return ji;
+    }), ri(ii, "Core/Renderer/SVG/SVGRenderer.js", [
+      ii["Core/Renderer/HTML/AST.js"],
+      ii["Core/Color/Color.js"],
+      ii["Core/Globals.js"],
+      ii["Core/Renderer/RendererRegistry.js"],
+      ii["Core/Renderer/SVG/SVGElement.js"],
+      ii["Core/Renderer/SVG/SVGLabel.js"],
+      ii["Core/Renderer/SVG/Symbols.js"],
+      ii["Core/Renderer/SVG/TextBuilder.js"],
+      ii["Core/Utilities.js"]
+    ], function(li, Ci, zi, Ki, Yi, es, is, $i, Vi) {
+      const { charts: _i, deg2rad: bi, doc: Ai, isFirefox: ji, isMS: Ni, isWebKit: gi, noop: ki, SVG_NS: wi, symbolSizes: Si, win: Ti } = zi, { addEvent: Mi, attr: Di, createElement: ci, css: pi, defined: vi, destroyObjectProperties: ui, extend: fi, isArray: si, isNumber: ti, isObject: oi, isString: di, merge: mi, pick: Oi, pInt: hi, uniqueKey: Li } = Vi;
+      let Ui;
       class Zi {
-        constructor(Bi, si, Li, Hi, Di, Vi, ri) {
-          this.width = this.url = this.style = this.imgCount = this.height = this.gradients = this.globalAnimation = this.defs = this.chartIndex = this.cacheKeys = this.cache = this.boxWrapper = this.box = this.alignedObjects = void 0, this.init(Bi, si, Li, Hi, Di, Vi, ri);
+        constructor(Bi, ni, Pi, Hi, Ri, qi, ai) {
+          this.width = this.url = this.style = this.imgCount = this.height = this.gradients = this.globalAnimation = this.defs = this.chartIndex = this.cacheKeys = this.cache = this.boxWrapper = this.box = this.alignedObjects = void 0, this.init(Bi, ni, Pi, Hi, Ri, qi, ai);
         }
-        init(Bi, si, Li, Hi, Di, Vi, ri) {
-          const mi = this.createElement("svg").attr({ version: "1.1", class: "highcharts-root" }), vi = mi.element;
-          ri || mi.css(this.getStyle(Hi)), Bi.appendChild(vi), Oi(Bi, "dir", "ltr"), Bi.innerHTML.indexOf("xmlns") === -1 && Oi(vi, "xmlns", this.SVG_NS), this.box = vi, this.boxWrapper = mi, this.alignedObjects = [], this.url = this.getReferenceURL(), this.createElement("desc").add().element.appendChild(bi.createTextNode("Created with Highcharts 11.1.0")), this.defs = this.createElement("defs").add(), this.allowHTML = Vi, this.forExport = Di, this.styledMode = ri, this.gradients = {}, this.cache = {}, this.cacheKeys = [], this.imgCount = 0, this.rootFontSize = mi.getStyle("font-size"), this.setSize(si, Li, !1);
-          let zi;
-          Ri && Bi.getBoundingClientRect && (si = function() {
-            li(Bi, { left: 0, top: 0 }), zi = Bi.getBoundingClientRect(), li(Bi, { left: Math.ceil(zi.left) - zi.left + "px", top: Math.ceil(zi.top) - zi.top + "px" });
-          }, si(), this.unSubPixelFix = Mi(Ti, "resize", si));
+        init(Bi, ni, Pi, Hi, Ri, qi, ai) {
+          const xi = this.createElement("svg").attr({ version: "1.1", class: "highcharts-root" }), yi = xi.element;
+          ai || xi.css(this.getStyle(Hi)), Bi.appendChild(yi), Di(Bi, "dir", "ltr"), Bi.innerHTML.indexOf("xmlns") === -1 && Di(yi, "xmlns", this.SVG_NS), this.box = yi, this.boxWrapper = xi, this.alignedObjects = [], this.url = this.getReferenceURL(), this.createElement("desc").add().element.appendChild(Ai.createTextNode("Created with Highcharts 11.1.0")), this.defs = this.createElement("defs").add(), this.allowHTML = qi, this.forExport = Ri, this.styledMode = ai, this.gradients = {}, this.cache = {}, this.cacheKeys = [], this.imgCount = 0, this.rootFontSize = xi.getStyle("font-size"), this.setSize(ni, Pi, !1);
+          let Gi;
+          ji && Bi.getBoundingClientRect && (ni = function() {
+            pi(Bi, { left: 0, top: 0 }), Gi = Bi.getBoundingClientRect(), pi(Bi, { left: Math.ceil(Gi.left) - Gi.left + "px", top: Math.ceil(Gi.top) - Gi.top + "px" });
+          }, ni(), this.unSubPixelFix = Mi(Ti, "resize", ni));
         }
         definition(Bi) {
-          return new Si([Bi]).addToDOM(this.defs.element);
+          return new li([Bi]).addToDOM(this.defs.element);
         }
         getReferenceURL() {
-          if ((Ri || fi) && bi.getElementsByTagName("base").length) {
-            if (!xi(Fi)) {
-              var Bi = Pi();
-              Bi = new Si([{ tagName: "svg", attributes: { width: 8, height: 8 }, children: [{ tagName: "defs", children: [{ tagName: "clipPath", attributes: { id: Bi }, children: [{ tagName: "rect", attributes: { width: 4, height: 4 } }] }] }, { tagName: "rect", attributes: { id: "hitme", width: 8, height: 8, "clip-path": `url(#${Bi})`, fill: "rgba(0,0,0,0.001)" } }] }]).addToDOM(bi.body), li(Bi, { position: "fixed", top: 0, left: 0, zIndex: 9e5 });
-              const si = bi.elementFromPoint(6, 6);
-              Fi = (si && si.id) === "hitme", bi.body.removeChild(Bi);
+          if ((ji || gi) && Ai.getElementsByTagName("base").length) {
+            if (!vi(Ui)) {
+              var Bi = Li();
+              Bi = new li([{ tagName: "svg", attributes: { width: 8, height: 8 }, children: [{ tagName: "defs", children: [{ tagName: "clipPath", attributes: { id: Bi }, children: [{ tagName: "rect", attributes: { width: 4, height: 4 } }] }] }, { tagName: "rect", attributes: { id: "hitme", width: 8, height: 8, "clip-path": `url(#${Bi})`, fill: "rgba(0,0,0,0.001)" } }] }]).addToDOM(Ai.body), pi(Bi, { position: "fixed", top: 0, left: 0, zIndex: 9e5 });
+              const ni = Ai.elementFromPoint(6, 6);
+              Ui = (ni && ni.id) === "hitme", Ai.body.removeChild(Bi);
             }
-            if (Fi)
+            if (Ui)
               return Ti.location.href.split("#")[0].replace(/<[^>]*>/g, "").replace(/([\('\)])/g, "\\$1").replace(/ /g, "%20");
           }
           return "";
         }
         getStyle(Bi) {
-          return this.style = pi({ fontFamily: "Helvetica, Arial, sans-serif", fontSize: "1rem" }, Bi);
+          return this.style = fi({ fontFamily: "Helvetica, Arial, sans-serif", fontSize: "1rem" }, Bi);
         }
         setStyle(Bi) {
           this.boxWrapper.css(this.getStyle(Bi));
@@ -1587,291 +1586,291 @@ var highcharts = { exports: {} };
         }
         destroy() {
           const Bi = this.defs;
-          return this.box = null, this.boxWrapper = this.boxWrapper.destroy(), di(this.gradients || {}), this.gradients = null, this.defs = Bi.destroy(), this.unSubPixelFix && this.unSubPixelFix(), this.alignedObjects = null;
+          return this.box = null, this.boxWrapper = this.boxWrapper.destroy(), ui(this.gradients || {}), this.gradients = null, this.defs = Bi.destroy(), this.unSubPixelFix && this.unSubPixelFix(), this.alignedObjects = null;
         }
         createElement(Bi) {
-          const si = new this.Element();
-          return si.init(this, Bi), si;
+          const ni = new this.Element();
+          return ni.init(this, Bi), ni;
         }
-        getRadialAttr(Bi, si) {
-          return { cx: Bi[0] - Bi[2] / 2 + (si.cx || 0) * Bi[2], cy: Bi[1] - Bi[2] / 2 + (si.cy || 0) * Bi[2], r: (si.r || 0) * Bi[2] };
+        getRadialAttr(Bi, ni) {
+          return { cx: Bi[0] - Bi[2] / 2 + (ni.cx || 0) * Bi[2], cy: Bi[1] - Bi[2] / 2 + (ni.cy || 0) * Bi[2], r: (ni.r || 0) * Bi[2] };
         }
         shadowDefinition(Bi) {
-          const si = [`highcharts-drop-shadow-${this.chartIndex}`, ...Object.keys(Bi).map((Hi) => Bi[Hi])].join("-").replace(/[^a-z0-9\-]/g, ""), Li = gi({
+          const ni = [`highcharts-drop-shadow-${this.chartIndex}`, ...Object.keys(Bi).map((Hi) => Bi[Hi])].join("-").replace(/[^a-z0-9\-]/g, ""), Pi = mi({
             color: "#000000",
             offsetX: 1,
             offsetY: 1,
             opacity: 0.15,
             width: 5
           }, Bi);
-          return this.defs.element.querySelector(`#${si}`) || this.definition({ tagName: "filter", attributes: { id: si }, children: [{ tagName: "feDropShadow", attributes: { dx: Li.offsetX, dy: Li.offsetY, "flood-color": Li.color, "flood-opacity": Math.min(5 * Li.opacity, 1), stdDeviation: Li.width / 2 } }] }), si;
+          return this.defs.element.querySelector(`#${ni}`) || this.definition({ tagName: "filter", attributes: { id: ni }, children: [{ tagName: "feDropShadow", attributes: { dx: Pi.offsetX, dy: Pi.offsetY, "flood-color": Pi.color, "flood-opacity": Math.min(5 * Pi.opacity, 1), stdDeviation: Pi.width / 2 } }] }), ni;
         }
         buildText(Bi) {
-          new Wi(Bi).buildSVG();
+          new $i(Bi).buildSVG();
         }
         getContrast(Bi) {
-          return Bi = ji.parse(Bi).rgba.map((si) => (si /= 255, 0.03928 >= si ? si / 12.92 : Math.pow((si + 0.055) / 1.055, 2.4))), Bi = 0.2126 * Bi[0] + 0.7152 * Bi[1] + 0.0722 * Bi[2], 1.05 / (Bi + 0.05) > (Bi + 0.05) / 0.05 ? "#FFFFFF" : "#000000";
+          return Bi = Ci.parse(Bi).rgba.map((ni) => (ni /= 255, 0.03928 >= ni ? ni / 12.92 : Math.pow((ni + 0.055) / 1.055, 2.4))), Bi = 0.2126 * Bi[0] + 0.7152 * Bi[1] + 0.0722 * Bi[2], 1.05 / (Bi + 0.05) > (Bi + 0.05) / 0.05 ? "#FFFFFF" : "#000000";
         }
-        button(Bi, si, Li, Hi, Di = {}, Vi, ri, mi, vi, zi) {
-          const Xi = this.label(Bi, si, Li, vi, void 0, void 0, zi, void 0, "button"), Gi = this.styledMode;
-          Bi = Di.states || {};
-          let Ji = 0;
-          Di = gi(Di), delete Di.states;
-          const es = gi({ color: "#333333", cursor: "pointer", fontSize: "0.8em", fontWeight: "normal" }, Di.style);
-          delete Di.style;
-          let os = Si.filterUserAttributes(Di);
-          Xi.attr(gi({ padding: 8, r: 2 }, os));
+        button(Bi, ni, Pi, Hi, Ri = {}, qi, ai, xi, yi, Gi) {
+          const Xi = this.label(Bi, ni, Pi, yi, void 0, void 0, Gi, void 0, "button"), Wi = this.styledMode;
+          Bi = Ri.states || {};
+          let ts = 0;
+          Ri = mi(Ri), delete Ri.states;
+          const ss = mi({ color: "#333333", cursor: "pointer", fontSize: "0.8em", fontWeight: "normal" }, Ri.style);
+          delete Ri.style;
+          let os = li.filterUserAttributes(Ri);
+          Xi.attr(mi({ padding: 8, r: 2 }, os));
           let ns, ls, Ii;
-          return Gi || (os = gi({ fill: "#f7f7f7", stroke: "#cccccc", "stroke-width": 1 }, os), Vi = gi(os, { fill: "#e6e6e6" }, Si.filterUserAttributes(Vi || Bi.hover || {})), ns = Vi.style, delete Vi.style, ri = gi(os, { fill: "#e6e9ff", style: {
+          return Wi || (os = mi({ fill: "#f7f7f7", stroke: "#cccccc", "stroke-width": 1 }, os), qi = mi(os, { fill: "#e6e6e6" }, li.filterUserAttributes(qi || Bi.hover || {})), ns = qi.style, delete qi.style, ai = mi(os, { fill: "#e6e9ff", style: {
             color: "#000000",
             fontWeight: "bold"
-          } }, Si.filterUserAttributes(ri || Bi.select || {})), ls = ri.style, delete ri.style, mi = gi(os, { style: { color: "#cccccc" } }, Si.filterUserAttributes(mi || Bi.disabled || {})), Ii = mi.style, delete mi.style), Mi(Xi.element, Ni ? "mouseover" : "mouseenter", function() {
-            Ji !== 3 && Xi.setState(1);
+          } }, li.filterUserAttributes(ai || Bi.select || {})), ls = ai.style, delete ai.style, xi = mi(os, { style: { color: "#cccccc" } }, li.filterUserAttributes(xi || Bi.disabled || {})), Ii = xi.style, delete xi.style), Mi(Xi.element, Ni ? "mouseover" : "mouseenter", function() {
+            ts !== 3 && Xi.setState(1);
           }), Mi(Xi.element, Ni ? "mouseout" : "mouseleave", function() {
-            Ji !== 3 && Xi.setState(Ji);
-          }), Xi.setState = function(Ai) {
-            Ai !== 1 && (Xi.state = Ji = Ai), Xi.removeClass(/highcharts-button-(normal|hover|pressed|disabled)/).addClass("highcharts-button-" + [
+            ts !== 3 && Xi.setState(ts);
+          }), Xi.setState = function(Ei) {
+            Ei !== 1 && (Xi.state = ts = Ei), Xi.removeClass(/highcharts-button-(normal|hover|pressed|disabled)/).addClass("highcharts-button-" + [
               "normal",
               "hover",
               "pressed",
               "disabled"
-            ][Ai || 0]), Gi || (Xi.attr([os, Vi, ri, mi][Ai || 0]), Ai = [es, ns, ls, Ii][Ai || 0], ii(Ai) && Xi.css(Ai));
-          }, Gi || (Xi.attr(os).css(pi({ cursor: "default" }, es)), zi && Xi.text.css({ pointerEvents: "none" })), Xi.on("touchstart", (Ai) => Ai.stopPropagation()).on("click", function(Ai) {
-            Ji !== 3 && Hi.call(Xi, Ai);
+            ][Ei || 0]), Wi || (Xi.attr([os, qi, ai, xi][Ei || 0]), Ei = [ss, ns, ls, Ii][Ei || 0], oi(Ei) && Xi.css(Ei));
+          }, Wi || (Xi.attr(os).css(fi({ cursor: "default" }, ss)), Gi && Xi.text.css({ pointerEvents: "none" })), Xi.on("touchstart", (Ei) => Ei.stopPropagation()).on("click", function(Ei) {
+            ts !== 3 && Hi.call(Xi, Ei);
           });
         }
-        crispLine(Bi, si, Li = "round") {
-          const Hi = Bi[0], Di = Bi[1];
-          return xi(Hi[1]) && Hi[1] === Di[1] && (Hi[1] = Di[1] = Math[Li](Hi[1]) - si % 2 / 2), xi(Hi[2]) && Hi[2] === Di[2] && (Hi[2] = Di[2] = Math[Li](Hi[2]) + si % 2 / 2), Bi;
+        crispLine(Bi, ni, Pi = "round") {
+          const Hi = Bi[0], Ri = Bi[1];
+          return vi(Hi[1]) && Hi[1] === Ri[1] && (Hi[1] = Ri[1] = Math[Pi](Hi[1]) - ni % 2 / 2), vi(Hi[2]) && Hi[2] === Ri[2] && (Hi[2] = Ri[2] = Math[Pi](Hi[2]) + ni % 2 / 2), Bi;
         }
         path(Bi) {
-          const si = this.styledMode ? {} : { fill: "none" };
-          return ei(Bi) ? si.d = Bi : ii(Bi) && pi(si, Bi), this.createElement("path").attr(si);
+          const ni = this.styledMode ? {} : { fill: "none" };
+          return si(Bi) ? ni.d = Bi : oi(Bi) && fi(ni, Bi), this.createElement("path").attr(ni);
         }
-        circle(Bi, si, Li) {
-          return Bi = ii(Bi) ? Bi : typeof Bi > "u" ? {} : { x: Bi, y: si, r: Li }, si = this.createElement("circle"), si.xSetter = si.ySetter = function(Hi, Di, Vi) {
-            Vi.setAttribute("c" + Di, Hi);
-          }, si.attr(Bi);
+        circle(Bi, ni, Pi) {
+          return Bi = oi(Bi) ? Bi : typeof Bi > "u" ? {} : { x: Bi, y: ni, r: Pi }, ni = this.createElement("circle"), ni.xSetter = ni.ySetter = function(Hi, Ri, qi) {
+            qi.setAttribute("c" + Ri, Hi);
+          }, ni.attr(Bi);
         }
-        arc(Bi, si, Li, Hi, Di, Vi) {
-          return ii(Bi) ? (Hi = Bi, si = Hi.y, Li = Hi.r, Bi = Hi.x) : Hi = { innerR: Hi, start: Di, end: Vi }, Bi = this.symbol("arc", Bi, si, Li, Li, Hi), Bi.r = Li, Bi;
+        arc(Bi, ni, Pi, Hi, Ri, qi) {
+          return oi(Bi) ? (Hi = Bi, ni = Hi.y, Pi = Hi.r, Bi = Hi.x) : Hi = { innerR: Hi, start: Ri, end: qi }, Bi = this.symbol("arc", Bi, ni, Pi, Pi, Hi), Bi.r = Pi, Bi;
         }
-        rect(Bi, si, Li, Hi, Di, Vi) {
-          Bi = ii(Bi) ? Bi : typeof Bi > "u" ? {} : { x: Bi, y: si, r: Di, width: Math.max(Li || 0, 0), height: Math.max(Hi || 0, 0) };
-          const ri = this.createElement("rect");
-          return this.styledMode || (typeof Vi < "u" && (Bi["stroke-width"] = Vi, pi(Bi, ri.crisp(Bi))), Bi.fill = "none"), ri.rSetter = function(mi, vi, zi) {
-            ri.r = mi, Oi(zi, { rx: mi, ry: mi });
-          }, ri.rGetter = function() {
-            return ri.r || 0;
-          }, ri.attr(Bi);
+        rect(Bi, ni, Pi, Hi, Ri, qi) {
+          Bi = oi(Bi) ? Bi : typeof Bi > "u" ? {} : { x: Bi, y: ni, r: Ri, width: Math.max(Pi || 0, 0), height: Math.max(Hi || 0, 0) };
+          const ai = this.createElement("rect");
+          return this.styledMode || (typeof qi < "u" && (Bi["stroke-width"] = qi, fi(Bi, ai.crisp(Bi))), Bi.fill = "none"), ai.rSetter = function(xi, yi, Gi) {
+            ai.r = xi, Di(Gi, { rx: xi, ry: xi });
+          }, ai.rGetter = function() {
+            return ai.r || 0;
+          }, ai.attr(Bi);
         }
         roundedRect(Bi) {
           return this.symbol("roundedRect").attr(Bi);
         }
-        setSize(Bi, si, Li) {
-          this.width = Bi, this.height = si, this.boxWrapper.animate({ width: Bi, height: si }, { step: function() {
+        setSize(Bi, ni, Pi) {
+          this.width = Bi, this.height = ni, this.boxWrapper.animate({ width: Bi, height: ni }, { step: function() {
             this.attr({ viewBox: "0 0 " + this.attr("width") + " " + this.attr("height") });
-          }, duration: Ei(Li, !0) ? void 0 : 0 }), this.alignElements();
+          }, duration: Oi(Pi, !0) ? void 0 : 0 }), this.alignElements();
         }
         g(Bi) {
-          const si = this.createElement("g");
-          return Bi ? si.attr({ class: "highcharts-" + Bi }) : si;
+          const ni = this.createElement("g");
+          return Bi ? ni.attr({ class: "highcharts-" + Bi }) : ni;
         }
-        image(Bi, si, Li, Hi, Di, Vi) {
-          const ri = { preserveAspectRatio: "none" };
-          Fe(si) && (ri.x = si), Fe(Li) && (ri.y = Li), Fe(Hi) && (ri.width = Hi), Fe(Di) && (ri.height = Di);
-          const mi = this.createElement("image").attr(ri);
-          return si = function(vi) {
-            mi.attr({ href: Bi }), Vi.call(mi, vi);
-          }, Vi ? (mi.attr({ href: "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" }), Li = new Ti.Image(), Mi(Li, "load", si), Li.src = Bi, Li.complete && si({})) : mi.attr({ href: Bi }), mi;
+        image(Bi, ni, Pi, Hi, Ri, qi) {
+          const ai = { preserveAspectRatio: "none" };
+          ti(ni) && (ai.x = ni), ti(Pi) && (ai.y = Pi), ti(Hi) && (ai.width = Hi), ti(Ri) && (ai.height = Ri);
+          const xi = this.createElement("image").attr(ai);
+          return ni = function(yi) {
+            xi.attr({ href: Bi }), qi.call(xi, yi);
+          }, qi ? (xi.attr({ href: "data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" }), Pi = new Ti.Image(), Mi(Pi, "load", ni), Pi.src = Bi, Pi.complete && ni({})) : xi.attr({ href: Bi }), xi;
         }
-        symbol(Bi, si, Li, Hi, Di, Vi) {
-          const ri = this, mi = /^url\((.*?)\)$/, vi = mi.test(Bi), zi = !vi && (this.symbols[Bi] ? Bi : "circle"), Xi = zi && this.symbols[zi];
-          let Gi, Ji, es, os;
+        symbol(Bi, ni, Pi, Hi, Ri, qi) {
+          const ai = this, xi = /^url\((.*?)\)$/, yi = xi.test(Bi), Gi = !yi && (this.symbols[Bi] ? Bi : "circle"), Xi = Gi && this.symbols[Gi];
+          let Wi, ts, ss, os;
           if (Xi)
-            typeof si == "number" && (Ji = Xi.call(this.symbols, Math.round(si || 0), Math.round(Li || 0), Hi || 0, Di || 0, Vi)), Gi = this.path(Ji), ri.styledMode || Gi.attr("fill", "none"), pi(Gi, { symbolName: zi || void 0, x: si, y: Li, width: Hi, height: Di }), Vi && pi(Gi, Vi);
-          else if (vi) {
-            es = Bi.match(mi)[1];
-            const ns = Gi = this.image(es);
-            ns.imgwidth = Ei(Vi && Vi.width, yi[es] && yi[es].width), ns.imgheight = Ei(Vi && Vi.height, yi[es] && yi[es].height), os = (ls) => ls.attr({ width: ls.width, height: ls.height }), ["width", "height"].forEach(function(ls) {
-              ns[ls + "Setter"] = function(Ii, Ai) {
-                this[Ai] = Ii;
+            typeof ni == "number" && (ts = Xi.call(this.symbols, Math.round(ni || 0), Math.round(Pi || 0), Hi || 0, Ri || 0, qi)), Wi = this.path(ts), ai.styledMode || Wi.attr("fill", "none"), fi(Wi, { symbolName: Gi || void 0, x: ni, y: Pi, width: Hi, height: Ri }), qi && fi(Wi, qi);
+          else if (yi) {
+            ss = Bi.match(xi)[1];
+            const ns = Wi = this.image(ss);
+            ns.imgwidth = Oi(qi && qi.width, Si[ss] && Si[ss].width), ns.imgheight = Oi(qi && qi.height, Si[ss] && Si[ss].height), os = (ls) => ls.attr({ width: ls.width, height: ls.height }), ["width", "height"].forEach(function(ls) {
+              ns[ls + "Setter"] = function(Ii, Ei) {
+                this[Ei] = Ii;
                 const {
-                  alignByTranslate: $i,
-                  element: Yi,
-                  width: _i,
+                  alignByTranslate: Ji,
+                  element: Fi,
+                  width: Qi,
                   height: hs,
                   imgwidth: as,
-                  imgheight: us
+                  imgheight: ps
                 } = this;
-                if (Ii = this["img" + Ai], xi(Ii)) {
-                  let ps = 1;
-                  Vi && Vi.backgroundSize === "within" && _i && hs ? (ps = Math.min(_i / as, hs / us), Oi(Yi, { width: Math.round(as * ps), height: Math.round(us * ps) })) : Yi && Yi.setAttribute(Ai, Ii), $i || this.translate(((_i || 0) - as * ps) / 2, ((hs || 0) - us * ps) / 2);
+                if (Ii = this["img" + Ei], vi(Ii)) {
+                  let us = 1;
+                  qi && qi.backgroundSize === "within" && Qi && hs ? (us = Math.min(Qi / as, hs / ps), Di(Fi, { width: Math.round(as * us), height: Math.round(ps * us) })) : Fi && Fi.setAttribute(Ei, Ii), Ji || this.translate(((Qi || 0) - as * us) / 2, ((hs || 0) - ps * us) / 2);
                 }
               };
-            }), xi(si) && ns.attr({ x: si, y: Li }), ns.isImg = !0, xi(ns.imgwidth) && xi(ns.imgheight) ? os(ns) : (ns.attr({ width: 0, height: 0 }), ai("img", { onload: function() {
-              const ls = Ui[ri.chartIndex];
-              this.width === 0 && (li(this, { position: "absolute", top: "-999em" }), bi.body.appendChild(this)), yi[es] = {
+            }), vi(ni) && ns.attr({ x: ni, y: Pi }), ns.isImg = !0, vi(ns.imgwidth) && vi(ns.imgheight) ? os(ns) : (ns.attr({ width: 0, height: 0 }), ci("img", { onload: function() {
+              const ls = _i[ai.chartIndex];
+              this.width === 0 && (pi(this, { position: "absolute", top: "-999em" }), Ai.body.appendChild(this)), Si[ss] = {
                 width: this.width,
                 height: this.height
-              }, ns.imgwidth = this.width, ns.imgheight = this.height, ns.element && os(ns), this.parentNode && this.parentNode.removeChild(this), ri.imgCount--, !ri.imgCount && ls && !ls.hasLoaded && ls.onload();
-            }, src: es }), this.imgCount++);
+              }, ns.imgwidth = this.width, ns.imgheight = this.height, ns.element && os(ns), this.parentNode && this.parentNode.removeChild(this), ai.imgCount--, !ai.imgCount && ls && !ls.hasLoaded && ls.onload();
+            }, src: ss }), this.imgCount++);
           }
-          return Gi;
+          return Wi;
         }
-        clipRect(Bi, si, Li, Hi) {
-          const Di = Pi() + "-", Vi = this.createElement("clipPath").attr({ id: Di }).add(this.defs);
-          return Bi = this.rect(Bi, si, Li, Hi, 0).add(Vi), Bi.id = Di, Bi.clipPath = Vi, Bi.count = 0, Bi;
+        clipRect(Bi, ni, Pi, Hi) {
+          const Ri = Li() + "-", qi = this.createElement("clipPath").attr({ id: Ri }).add(this.defs);
+          return Bi = this.rect(Bi, ni, Pi, Hi, 0).add(qi), Bi.id = Ri, Bi.clipPath = qi, Bi.count = 0, Bi;
         }
-        text(Bi, si, Li, Hi) {
-          const Di = {};
-          return Hi && (this.allowHTML || !this.forExport) ? this.html(Bi, si, Li) : (Di.x = Math.round(si || 0), Li && (Di.y = Math.round(Li)), xi(Bi) && (Di.text = Bi), Bi = this.createElement("text").attr(Di), (!Hi || this.forExport && !this.allowHTML) && (Bi.xSetter = function(Vi, ri, mi) {
-            const vi = mi.getElementsByTagName("tspan"), zi = mi.getAttribute(ri);
-            for (let Xi = 0, Gi; Xi < vi.length; Xi++)
-              Gi = vi[Xi], Gi.getAttribute(ri) === zi && Gi.setAttribute(ri, Vi);
-            mi.setAttribute(ri, Vi);
+        text(Bi, ni, Pi, Hi) {
+          const Ri = {};
+          return Hi && (this.allowHTML || !this.forExport) ? this.html(Bi, ni, Pi) : (Ri.x = Math.round(ni || 0), Pi && (Ri.y = Math.round(Pi)), vi(Bi) && (Ri.text = Bi), Bi = this.createElement("text").attr(Ri), (!Hi || this.forExport && !this.allowHTML) && (Bi.xSetter = function(qi, ai, xi) {
+            const yi = xi.getElementsByTagName("tspan"), Gi = xi.getAttribute(ai);
+            for (let Xi = 0, Wi; Xi < yi.length; Xi++)
+              Wi = yi[Xi], Wi.getAttribute(ai) === Gi && Wi.setAttribute(ai, qi);
+            xi.setAttribute(ai, qi);
           }), Bi);
         }
         fontMetrics(Bi) {
-          Bi = ni(Qi.prototype.getStyle.call(Bi, "font-size") || 0);
-          const si = 24 > Bi ? Bi + 3 : Math.round(1.2 * Bi);
-          return { h: si, b: Math.round(0.8 * si), f: Bi };
+          Bi = hi(Yi.prototype.getStyle.call(Bi, "font-size") || 0);
+          const ni = 24 > Bi ? Bi + 3 : Math.round(1.2 * Bi);
+          return { h: ni, b: Math.round(0.8 * ni), f: Bi };
         }
-        rotCorr(Bi, si, Li) {
+        rotCorr(Bi, ni, Pi) {
           let Hi = Bi;
-          return si && Li && (Hi = Math.max(Hi * Math.cos(si * ki), 4)), { x: -Bi / 3 * Math.sin(si * ki), y: Hi };
+          return ni && Pi && (Hi = Math.max(Hi * Math.cos(ni * bi), 4)), { x: -Bi / 3 * Math.sin(ni * bi), y: Hi };
         }
         pathToSegments(Bi) {
-          const si = [], Li = [], Hi = { A: 8, C: 7, H: 2, L: 3, M: 3, Q: 5, S: 5, T: 3, V: 2 };
-          for (let Di = 0; Di < Bi.length; Di++)
-            hi(Li[0]) && Fe(Bi[Di]) && Li.length === Hi[Li[0].toUpperCase()] && Bi.splice(Di, 0, Li[0].replace("M", "L").replace("m", "l")), typeof Bi[Di] == "string" && (Li.length && si.push(Li.slice(0)), Li.length = 0), Li.push(Bi[Di]);
-          return si.push(Li.slice(0)), si;
+          const ni = [], Pi = [], Hi = { A: 8, C: 7, H: 2, L: 3, M: 3, Q: 5, S: 5, T: 3, V: 2 };
+          for (let Ri = 0; Ri < Bi.length; Ri++)
+            di(Pi[0]) && ti(Bi[Ri]) && Pi.length === Hi[Pi[0].toUpperCase()] && Bi.splice(Ri, 0, Pi[0].replace("M", "L").replace("m", "l")), typeof Bi[Ri] == "string" && (Pi.length && ni.push(Pi.slice(0)), Pi.length = 0), Pi.push(Bi[Ri]);
+          return ni.push(Pi.slice(0)), ni;
         }
-        label(Bi, si, Li, Hi, Di, Vi, ri, mi, vi) {
-          return new is(this, Bi, si, Li, Hi, Di, Vi, ri, mi, vi);
+        label(Bi, ni, Pi, Hi, Ri, qi, ai, xi, yi) {
+          return new es(this, Bi, ni, Pi, Hi, Ri, qi, ai, xi, yi);
         }
         alignElements() {
           this.alignedObjects.forEach((Bi) => Bi.align());
         }
       }
-      return pi(Zi.prototype, {
-        Element: Qi,
+      return fi(Zi.prototype, {
+        Element: Yi,
         SVG_NS: wi,
         escapes: { "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" },
-        symbols: ss,
-        draw: Ci
-      }), ts.registerRendererType("svg", Zi, !0), Zi;
-    }), ci(oi, "Core/Renderer/HTML/HTMLElement.js", [oi["Core/Globals.js"], oi["Core/Renderer/SVG/SVGElement.js"], oi["Core/Utilities.js"]], function(Si, ji, qi) {
-      const { isFirefox: ts, isMS: Qi, isWebKit: is, win: ss } = Si, { css: Wi, defined: Ki, extend: Ui, pick: ki, pInt: bi } = qi, Ri = [];
-      class Ni extends ji {
-        static compose(Ci) {
-          if (qi.pushUnique(Ri, Ci)) {
-            const wi = Ni.prototype, yi = Ci.prototype;
-            yi.getSpanCorrection = wi.getSpanCorrection, yi.htmlCss = wi.htmlCss, yi.htmlGetBBox = wi.htmlGetBBox, yi.htmlUpdateTransform = wi.htmlUpdateTransform, yi.setSpanRotation = wi.setSpanRotation;
+        symbols: is,
+        draw: ki
+      }), Ki.registerRendererType("svg", Zi, !0), Zi;
+    }), ri(ii, "Core/Renderer/HTML/HTMLElement.js", [ii["Core/Globals.js"], ii["Core/Renderer/SVG/SVGElement.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+      const { isFirefox: Ki, isMS: Yi, isWebKit: es, win: is } = li, { css: $i, defined: Vi, extend: _i, pick: bi, pInt: Ai } = zi, ji = [];
+      class Ni extends Ci {
+        static compose(ki) {
+          if (zi.pushUnique(ji, ki)) {
+            const wi = Ni.prototype, Si = ki.prototype;
+            Si.getSpanCorrection = wi.getSpanCorrection, Si.htmlCss = wi.htmlCss, Si.htmlGetBBox = wi.htmlGetBBox, Si.htmlUpdateTransform = wi.htmlUpdateTransform, Si.setSpanRotation = wi.setSpanRotation;
           }
-          return Ci;
+          return ki;
         }
-        getSpanCorrection(Ci, wi, yi) {
-          this.xCorr = -Ci * yi, this.yCorr = -wi;
+        getSpanCorrection(ki, wi, Si) {
+          this.xCorr = -ki * Si, this.yCorr = -wi;
         }
-        htmlCss(Ci) {
-          const wi = this.element.tagName === "SPAN" && Ci && "width" in Ci, yi = ki(wi && Ci.width, void 0);
+        htmlCss(ki) {
+          const wi = this.element.tagName === "SPAN" && ki && "width" in ki, Si = bi(wi && ki.width, void 0);
           let Ti;
-          return wi && (delete Ci.width, this.textWidth = yi, Ti = !0), Ci && Ci.textOverflow === "ellipsis" && (Ci.whiteSpace = "nowrap", Ci.overflow = "hidden"), this.styles = Ui(this.styles, Ci), Wi(this.element, Ci), Ti && this.htmlUpdateTransform(), this;
+          return wi && (delete ki.width, this.textWidth = Si, Ti = !0), ki && ki.textOverflow === "ellipsis" && (ki.whiteSpace = "nowrap", ki.overflow = "hidden"), this.styles = _i(this.styles, ki), $i(this.element, ki), Ti && this.htmlUpdateTransform(), this;
         }
         htmlGetBBox() {
-          const Ci = this.element;
-          return { x: Ci.offsetLeft, y: Ci.offsetTop, width: Ci.offsetWidth, height: Ci.offsetHeight };
+          const ki = this.element;
+          return { x: ki.offsetLeft, y: ki.offsetTop, width: ki.offsetWidth, height: ki.offsetHeight };
         }
         htmlUpdateTransform() {
           if (this.added) {
-            var Ci = this.renderer, wi = this.element, yi = this.x || 0, Ti = this.y || 0, Mi = this.textAlign || "left", Oi = { left: 0, center: 0.5, right: 1 }[Mi], ai = this.styles, li = ai && ai.whiteSpace;
-            if (Wi(wi, { marginLeft: this.translateX || 0, marginTop: this.translateY || 0 }), wi.tagName === "SPAN") {
-              ai = this.rotation;
-              const di = this.textWidth && bi(this.textWidth), pi = [ai, Mi, wi.innerHTML, this.textWidth, this.textAlign].join();
-              let ei = !1;
-              if (di !== this.oldTextWidth) {
+            var ki = this.renderer, wi = this.element, Si = this.x || 0, Ti = this.y || 0, Mi = this.textAlign || "left", Di = { left: 0, center: 0.5, right: 1 }[Mi], ci = this.styles, pi = ci && ci.whiteSpace;
+            if ($i(wi, { marginLeft: this.translateX || 0, marginTop: this.translateY || 0 }), wi.tagName === "SPAN") {
+              ci = this.rotation;
+              const ui = this.textWidth && Ai(this.textWidth), fi = [ci, Mi, wi.innerHTML, this.textWidth, this.textAlign].join();
+              let si = !1;
+              if (ui !== this.oldTextWidth) {
                 if (this.textPxLength)
-                  var xi = this.textPxLength;
+                  var vi = this.textPxLength;
                 else
-                  Wi(wi, { width: "", whiteSpace: li || "nowrap" }), xi = wi.offsetWidth;
-                (di > this.oldTextWidth || xi > di) && (/[ \-]/.test(wi.textContent || wi.innerText) || wi.style.textOverflow === "ellipsis") && (Wi(wi, { width: xi > di || ai ? di + "px" : "auto", display: "block", whiteSpace: li || "normal" }), this.oldTextWidth = di, ei = !0);
+                  $i(wi, { width: "", whiteSpace: pi || "nowrap" }), vi = wi.offsetWidth;
+                (ui > this.oldTextWidth || vi > ui) && (/[ \-]/.test(wi.textContent || wi.innerText) || wi.style.textOverflow === "ellipsis") && ($i(wi, { width: vi > ui || ci ? ui + "px" : "auto", display: "block", whiteSpace: pi || "normal" }), this.oldTextWidth = ui, si = !0);
               }
-              this.hasBoxWidthChanged = ei, pi !== this.cTT && (Ci = Ci.fontMetrics(wi).b, !Ki(ai) || ai === (this.oldRotation || 0) && Mi === this.oldAlign || this.setSpanRotation(ai, Oi, Ci), this.getSpanCorrection(!Ki(ai) && this.textPxLength || wi.offsetWidth, Ci, Oi, ai, Mi)), Wi(wi, { left: yi + (this.xCorr || 0) + "px", top: Ti + (this.yCorr || 0) + "px" }), this.cTT = pi, this.oldRotation = ai, this.oldAlign = Mi;
+              this.hasBoxWidthChanged = si, fi !== this.cTT && (ki = ki.fontMetrics(wi).b, !Vi(ci) || ci === (this.oldRotation || 0) && Mi === this.oldAlign || this.setSpanRotation(ci, Di, ki), this.getSpanCorrection(!Vi(ci) && this.textPxLength || wi.offsetWidth, ki, Di, ci, Mi)), $i(wi, { left: Si + (this.xCorr || 0) + "px", top: Ti + (this.yCorr || 0) + "px" }), this.cTT = fi, this.oldRotation = ci, this.oldAlign = Mi;
             }
           } else
             this.alignOnAdd = !0;
         }
-        setSpanRotation(Ci, wi, yi) {
-          const Ti = {}, Mi = Qi && !/Edge/.test(ss.navigator.userAgent) ? "-ms-transform" : is ? "-webkit-transform" : ts ? "MozTransform" : ss.opera ? "-o-transform" : void 0;
-          Mi && (Ti[Mi] = Ti.transform = "rotate(" + Ci + "deg)", Ti[Mi + (ts ? "Origin" : "-origin")] = Ti.transformOrigin = 100 * wi + "% " + yi + "px", Wi(this.element, Ti));
+        setSpanRotation(ki, wi, Si) {
+          const Ti = {}, Mi = Yi && !/Edge/.test(is.navigator.userAgent) ? "-ms-transform" : es ? "-webkit-transform" : Ki ? "MozTransform" : is.opera ? "-o-transform" : void 0;
+          Mi && (Ti[Mi] = Ti.transform = "rotate(" + ki + "deg)", Ti[Mi + (Ki ? "Origin" : "-origin")] = Ti.transformOrigin = 100 * wi + "% " + Si + "px", $i(this.element, Ti));
         }
       }
       return Ni;
-    }), ci(oi, "Core/Renderer/HTML/HTMLRenderer.js", [
-      oi["Core/Renderer/HTML/AST.js"],
-      oi["Core/Renderer/SVG/SVGElement.js"],
-      oi["Core/Renderer/SVG/SVGRenderer.js"],
-      oi["Core/Utilities.js"]
-    ], function(Si, ji, qi, ts) {
-      const { attr: Qi, createElement: is, extend: ss, pick: Wi } = ts, Ki = [];
-      class Ui extends qi {
-        static compose(bi) {
-          return ts.pushUnique(Ki, bi) && (bi.prototype.html = Ui.prototype.html), bi;
+    }), ri(ii, "Core/Renderer/HTML/HTMLRenderer.js", [
+      ii["Core/Renderer/HTML/AST.js"],
+      ii["Core/Renderer/SVG/SVGElement.js"],
+      ii["Core/Renderer/SVG/SVGRenderer.js"],
+      ii["Core/Utilities.js"]
+    ], function(li, Ci, zi, Ki) {
+      const { attr: Yi, createElement: es, extend: is, pick: $i } = Ki, Vi = [];
+      class _i extends zi {
+        static compose(Ai) {
+          return Ki.pushUnique(Vi, Ai) && (Ai.prototype.html = _i.prototype.html), Ai;
         }
-        html(bi, Ri, Ni) {
-          const fi = this.createElement("span"), Ci = fi.element, wi = fi.renderer, yi = function(Ti, Mi) {
-            ["opacity", "visibility"].forEach(function(Oi) {
-              Ti[Oi + "Setter"] = function(ai, li, xi) {
-                const di = Ti.div ? Ti.div.style : Mi;
-                ji.prototype[Oi + "Setter"].call(this, ai, li, xi), di && (di[li] = ai);
+        html(Ai, ji, Ni) {
+          const gi = this.createElement("span"), ki = gi.element, wi = gi.renderer, Si = function(Ti, Mi) {
+            ["opacity", "visibility"].forEach(function(Di) {
+              Ti[Di + "Setter"] = function(ci, pi, vi) {
+                const ui = Ti.div ? Ti.div.style : Mi;
+                Ci.prototype[Di + "Setter"].call(this, ci, pi, vi), ui && (ui[pi] = ci);
               };
             }), Ti.addedSetters = !0;
           };
-          return fi.textSetter = function(Ti) {
-            Ti !== this.textStr && (delete this.bBox, delete this.oldTextWidth, Si.setElementHTML(this.element, Wi(Ti, "")), this.textStr = Ti, fi.doTransform = !0);
-          }, yi(fi, fi.element.style), fi.xSetter = fi.ySetter = fi.alignSetter = fi.rotationSetter = function(Ti, Mi) {
-            Mi === "align" ? fi.alignValue = fi.textAlign = Ti : fi[Mi] = Ti, fi.doTransform = !0;
-          }, fi.afterSetters = function() {
+          return gi.textSetter = function(Ti) {
+            Ti !== this.textStr && (delete this.bBox, delete this.oldTextWidth, li.setElementHTML(this.element, $i(Ti, "")), this.textStr = Ti, gi.doTransform = !0);
+          }, Si(gi, gi.element.style), gi.xSetter = gi.ySetter = gi.alignSetter = gi.rotationSetter = function(Ti, Mi) {
+            Mi === "align" ? gi.alignValue = gi.textAlign = Ti : gi[Mi] = Ti, gi.doTransform = !0;
+          }, gi.afterSetters = function() {
             this.doTransform && (this.htmlUpdateTransform(), this.doTransform = !1);
-          }, fi.attr({ text: bi, x: Math.round(Ri), y: Math.round(Ni) }).css({ position: "absolute" }), wi.styledMode || fi.css({ fontFamily: this.style.fontFamily, fontSize: this.style.fontSize }), Ci.style.whiteSpace = "nowrap", fi.css = fi.htmlCss, fi.add = function(Ti) {
-            const Mi = wi.box.parentNode, Oi = [];
-            let ai;
+          }, gi.attr({ text: Ai, x: Math.round(ji), y: Math.round(Ni) }).css({ position: "absolute" }), wi.styledMode || gi.css({ fontFamily: this.style.fontFamily, fontSize: this.style.fontSize }), ki.style.whiteSpace = "nowrap", gi.css = gi.htmlCss, gi.add = function(Ti) {
+            const Mi = wi.box.parentNode, Di = [];
+            let ci;
             if (this.parentGroup = Ti) {
-              if (ai = Ti.div, !ai) {
+              if (ci = Ti.div, !ci) {
                 for (; Ti; )
-                  Oi.push(Ti), Ti = Ti.parentGroup;
-                Oi.reverse().forEach(function(li) {
-                  function xi(Fe, ii) {
-                    li[ii] = Fe, ii === "translateX" ? ei.left = Fe + "px" : ei.top = Fe + "px", li.doTransform = !0;
+                  Di.push(Ti), Ti = Ti.parentGroup;
+                Di.reverse().forEach(function(pi) {
+                  function vi(ti, oi) {
+                    pi[oi] = ti, oi === "translateX" ? si.left = ti + "px" : si.top = ti + "px", pi.doTransform = !0;
                   }
-                  const di = Qi(li.element, "class"), pi = li.styles || {};
-                  ai = li.div = li.div || is("div", di ? { className: di } : void 0, { position: "absolute", left: (li.translateX || 0) + "px", top: (li.translateY || 0) + "px", display: li.display, opacity: li.opacity, visibility: li.visibility }, ai || Mi);
-                  const ei = ai.style;
-                  ss(li, { classSetter: function(Fe) {
-                    return function(ii) {
-                      this.element.setAttribute("class", ii), Fe.className = ii;
+                  const ui = Yi(pi.element, "class"), fi = pi.styles || {};
+                  ci = pi.div = pi.div || es("div", ui ? { className: ui } : void 0, { position: "absolute", left: (pi.translateX || 0) + "px", top: (pi.translateY || 0) + "px", display: pi.display, opacity: pi.opacity, visibility: pi.visibility }, ci || Mi);
+                  const si = ci.style;
+                  is(pi, { classSetter: function(ti) {
+                    return function(oi) {
+                      this.element.setAttribute("class", oi), ti.className = oi;
                     };
-                  }(ai), css: function(Fe) {
-                    return fi.css.call(li, Fe), ["cursor", "pointerEvents"].forEach((ii) => {
-                      Fe[ii] && (ei[ii] = Fe[ii]);
-                    }), li;
+                  }(ci), css: function(ti) {
+                    return gi.css.call(pi, ti), ["cursor", "pointerEvents"].forEach((oi) => {
+                      ti[oi] && (si[oi] = ti[oi]);
+                    }), pi;
                   }, on: function() {
-                    return Oi[0].div && fi.on.apply({ element: Oi[0].div, onEvents: li.onEvents }, arguments), li;
-                  }, translateXSetter: xi, translateYSetter: xi }), li.addedSetters || yi(li), li.css(pi);
+                    return Di[0].div && gi.on.apply({ element: Di[0].div, onEvents: pi.onEvents }, arguments), pi;
+                  }, translateXSetter: vi, translateYSetter: vi }), pi.addedSetters || Si(pi), pi.css(fi);
                 });
               }
             } else
-              ai = Mi;
-            return ai.appendChild(Ci), fi.added = !0, fi.alignOnAdd && fi.htmlUpdateTransform(), fi;
-          }, fi;
+              ci = Mi;
+            return ci.appendChild(ki), gi.added = !0, gi.alignOnAdd && gi.htmlUpdateTransform(), gi;
+          }, gi;
         }
       }
-      return Ui;
-    }), ci(oi, "Core/Axis/AxisDefaults.js", [], function() {
-      var Si;
-      return function(ji) {
-        ji.defaultXAxisOptions = {
+      return _i;
+    }), ri(ii, "Core/Axis/AxisDefaults.js", [], function() {
+      var li;
+      return function(Ci) {
+        Ci.defaultXAxisOptions = {
           alignTicks: !0,
           allowDecimals: void 0,
           panningEnabled: !0,
@@ -1913,7 +1912,7 @@ var highcharts = { exports: {} };
           gridLineColor: "#e6e6e6",
           gridLineWidth: void 0,
           tickColor: "#333333"
-        }, ji.defaultYAxisOptions = {
+        }, Ci.defaultYAxisOptions = {
           reversedStacks: !0,
           endOnTick: !0,
           maxPadding: 0.05,
@@ -1924,1101 +1923,1101 @@ var highcharts = { exports: {} };
           startOnTick: !0,
           title: { rotation: 270, text: "Values" },
           stackLabels: { animation: {}, allowOverlap: !1, enabled: !1, crop: !0, overflow: "justify", formatter: function() {
-            const { numberFormatter: qi } = this.axis.chart;
-            return qi(this.total || 0, -1);
+            const { numberFormatter: zi } = this.axis.chart;
+            return zi(this.total || 0, -1);
           }, style: { color: "#000000", fontSize: "0.7em", fontWeight: "bold", textOutline: "1px contrast" } },
           gridLineWidth: 1,
           lineWidth: 0
-        }, ji.defaultLeftAxisOptions = { title: { rotation: 270 } }, ji.defaultRightAxisOptions = { title: { rotation: 90 } }, ji.defaultBottomAxisOptions = { labels: { autoRotation: [-45] }, margin: 15, title: { rotation: 0 } }, ji.defaultTopAxisOptions = { labels: { autoRotation: [-45] }, margin: 15, title: { rotation: 0 } };
-      }(Si || (Si = {})), Si;
-    }), ci(oi, "Core/Foundation.js", [oi["Core/Utilities.js"]], function(Si) {
-      const { addEvent: ji, isFunction: qi, objectEach: ts, removeEvent: Qi } = Si;
-      var is;
-      return function(ss) {
-        ss.registerEventOptions = function(Wi, Ki) {
-          Wi.eventOptions = Wi.eventOptions || {}, ts(Ki.events, function(Ui, ki) {
-            Wi.eventOptions[ki] !== Ui && (Wi.eventOptions[ki] && (Qi(Wi, ki, Wi.eventOptions[ki]), delete Wi.eventOptions[ki]), qi(Ui) && (Wi.eventOptions[ki] = Ui, ji(Wi, ki, Ui, { order: 0 })));
+        }, Ci.defaultLeftAxisOptions = { title: { rotation: 270 } }, Ci.defaultRightAxisOptions = { title: { rotation: 90 } }, Ci.defaultBottomAxisOptions = { labels: { autoRotation: [-45] }, margin: 15, title: { rotation: 0 } }, Ci.defaultTopAxisOptions = { labels: { autoRotation: [-45] }, margin: 15, title: { rotation: 0 } };
+      }(li || (li = {})), li;
+    }), ri(ii, "Core/Foundation.js", [ii["Core/Utilities.js"]], function(li) {
+      const { addEvent: Ci, isFunction: zi, objectEach: Ki, removeEvent: Yi } = li;
+      var es;
+      return function(is) {
+        is.registerEventOptions = function($i, Vi) {
+          $i.eventOptions = $i.eventOptions || {}, Ki(Vi.events, function(_i, bi) {
+            $i.eventOptions[bi] !== _i && ($i.eventOptions[bi] && (Yi($i, bi, $i.eventOptions[bi]), delete $i.eventOptions[bi]), zi(_i) && ($i.eventOptions[bi] = _i, Ci($i, bi, _i, { order: 0 })));
           });
         };
-      }(is || (is = {})), is;
-    }), ci(oi, "Core/Axis/Tick.js", [oi["Core/Templating.js"], oi["Core/Globals.js"], oi["Core/Utilities.js"]], function(Si, ji, qi) {
-      const { deg2rad: ts } = ji, { clamp: Qi, correctFloat: is, defined: ss, destroyObjectProperties: Wi, extend: Ki, fireEvent: Ui, isNumber: ki, merge: bi, objectEach: Ri, pick: Ni } = qi;
-      class fi {
-        constructor(wi, yi, Ti, Mi, Oi) {
-          this.isNewLabel = this.isNew = !0, this.axis = wi, this.pos = yi, this.type = Ti || "", this.parameters = Oi || {}, this.tickmarkOffset = this.parameters.tickmarkOffset, this.options = this.parameters.options, Ui(this, "init"), Ti || Mi || this.addLabel();
+      }(es || (es = {})), es;
+    }), ri(ii, "Core/Axis/Tick.js", [ii["Core/Templating.js"], ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+      const { deg2rad: Ki } = Ci, { clamp: Yi, correctFloat: es, defined: is, destroyObjectProperties: $i, extend: Vi, fireEvent: _i, isNumber: bi, merge: Ai, objectEach: ji, pick: Ni } = zi;
+      class gi {
+        constructor(wi, Si, Ti, Mi, Di) {
+          this.isNewLabel = this.isNew = !0, this.axis = wi, this.pos = Si, this.type = Ti || "", this.parameters = Di || {}, this.tickmarkOffset = this.parameters.tickmarkOffset, this.options = this.parameters.options, _i(this, "init"), Ti || Mi || this.addLabel();
         }
         addLabel() {
-          const wi = this, yi = wi.axis;
-          var Ti = yi.options;
-          const Mi = yi.chart;
-          var Oi = yi.categories;
-          const ai = yi.logarithmic, li = yi.names, xi = wi.pos, di = Ni(wi.options && wi.options.labels, Ti.labels);
-          var pi = yi.tickPositions;
-          const ei = xi === pi[0], Fe = xi === pi[pi.length - 1], ii = (!di.step || di.step === 1) && yi.tickInterval === 1;
-          pi = pi.info;
-          let hi = wi.label, gi, Ei, ni;
-          Oi = this.parameters.category || (Oi ? Ni(Oi[xi], li[xi], xi) : xi), ai && ki(Oi) && (Oi = is(ai.lin2log(Oi))), yi.dateTime && (pi ? (Ei = Mi.time.resolveDTLFormat(Ti.dateTimeLabelFormats[!Ti.grid && pi.higherRanks[xi] || pi.unitName]), gi = Ei.main) : ki(Oi) && (gi = yi.dateTime.getXDateFormat(Oi, Ti.dateTimeLabelFormats || {}))), wi.isFirst = ei, wi.isLast = Fe;
-          const Pi = { axis: yi, chart: Mi, dateTimeLabelFormat: gi, isFirst: ei, isLast: Fe, pos: xi, tick: wi, tickPositionInfo: pi, value: Oi };
-          Ui(this, "labelFormat", Pi);
-          const Fi = (rs) => di.formatter ? di.formatter.call(rs, rs) : di.format ? (rs.text = yi.defaultLabelFormatter.call(rs, rs), Si.format(di.format, rs, Mi)) : yi.defaultLabelFormatter.call(rs, rs);
-          Ti = Fi.call(Pi, Pi);
-          const Zi = Ei && Ei.list;
+          const wi = this, Si = wi.axis;
+          var Ti = Si.options;
+          const Mi = Si.chart;
+          var Di = Si.categories;
+          const ci = Si.logarithmic, pi = Si.names, vi = wi.pos, ui = Ni(wi.options && wi.options.labels, Ti.labels);
+          var fi = Si.tickPositions;
+          const si = vi === fi[0], ti = vi === fi[fi.length - 1], oi = (!ui.step || ui.step === 1) && Si.tickInterval === 1;
+          fi = fi.info;
+          let di = wi.label, mi, Oi, hi;
+          Di = this.parameters.category || (Di ? Ni(Di[vi], pi[vi], vi) : vi), ci && bi(Di) && (Di = es(ci.lin2log(Di))), Si.dateTime && (fi ? (Oi = Mi.time.resolveDTLFormat(Ti.dateTimeLabelFormats[!Ti.grid && fi.higherRanks[vi] || fi.unitName]), mi = Oi.main) : bi(Di) && (mi = Si.dateTime.getXDateFormat(Di, Ti.dateTimeLabelFormats || {}))), wi.isFirst = si, wi.isLast = ti;
+          const Li = { axis: Si, chart: Mi, dateTimeLabelFormat: mi, isFirst: si, isLast: ti, pos: vi, tick: wi, tickPositionInfo: fi, value: Di };
+          _i(this, "labelFormat", Li);
+          const Ui = (rs) => ui.formatter ? ui.formatter.call(rs, rs) : ui.format ? (rs.text = Si.defaultLabelFormatter.call(rs, rs), li.format(ui.format, rs, Mi)) : Si.defaultLabelFormatter.call(rs, rs);
+          Ti = Ui.call(Li, Li);
+          const Zi = Oi && Oi.list;
           wi.shortenLabel = Zi ? function() {
-            for (ni = 0; ni < Zi.length; ni++)
-              if (Ki(
-                Pi,
-                { dateTimeLabelFormat: Zi[ni] }
-              ), hi.attr({ text: Fi.call(Pi, Pi) }), hi.getBBox().width < yi.getSlotWidth(wi) - 2 * di.padding)
+            for (hi = 0; hi < Zi.length; hi++)
+              if (Vi(
+                Li,
+                { dateTimeLabelFormat: Zi[hi] }
+              ), di.attr({ text: Ui.call(Li, Li) }), di.getBBox().width < Si.getSlotWidth(wi) - 2 * ui.padding)
                 return;
-            hi.attr({ text: "" });
-          } : void 0, ii && yi._addedPlotLB && wi.moveLabel(Ti, di), ss(hi) || wi.movedLabel ? hi && hi.textStr !== Ti && !ii && (!hi.textWidth || di.style.width || hi.styles.width || hi.css({ width: null }), hi.attr({ text: Ti }), hi.textPxLength = hi.getBBox().width) : (wi.label = hi = wi.createLabel({ x: 0, y: 0 }, Ti, di), wi.rotation = 0);
+            di.attr({ text: "" });
+          } : void 0, oi && Si._addedPlotLB && wi.moveLabel(Ti, ui), is(di) || wi.movedLabel ? di && di.textStr !== Ti && !oi && (!di.textWidth || ui.style.width || di.styles.width || di.css({ width: null }), di.attr({ text: Ti }), di.textPxLength = di.getBBox().width) : (wi.label = di = wi.createLabel({ x: 0, y: 0 }, Ti, ui), wi.rotation = 0);
         }
-        createLabel(wi, yi, Ti) {
-          const Mi = this.axis, Oi = Mi.chart;
-          return (wi = ss(yi) && Ti.enabled ? Oi.renderer.text(yi, wi.x, wi.y, Ti.useHTML).add(Mi.labelGroup) : null) && (Oi.styledMode || wi.css(bi(Ti.style)), wi.textPxLength = wi.getBBox().width), wi;
+        createLabel(wi, Si, Ti) {
+          const Mi = this.axis, Di = Mi.chart;
+          return (wi = is(Si) && Ti.enabled ? Di.renderer.text(Si, wi.x, wi.y, Ti.useHTML).add(Mi.labelGroup) : null) && (Di.styledMode || wi.css(Ai(Ti.style)), wi.textPxLength = wi.getBBox().width), wi;
         }
         destroy() {
-          Wi(this, this.axis);
+          $i(this, this.axis);
         }
-        getPosition(wi, yi, Ti, Mi) {
-          const Oi = this.axis, ai = Oi.chart, li = Mi && ai.oldChartHeight || ai.chartHeight;
-          return wi = { x: wi ? is(Oi.translate(yi + Ti, void 0, void 0, Mi) + Oi.transB) : Oi.left + Oi.offset + (Oi.opposite ? (Mi && ai.oldChartWidth || ai.chartWidth) - Oi.right - Oi.left : 0), y: wi ? li - Oi.bottom + Oi.offset - (Oi.opposite ? Oi.height : 0) : is(li - Oi.translate(yi + Ti, void 0, void 0, Mi) - Oi.transB) }, wi.y = Qi(wi.y, -1e5, 1e5), Ui(this, "afterGetPosition", { pos: wi }), wi;
+        getPosition(wi, Si, Ti, Mi) {
+          const Di = this.axis, ci = Di.chart, pi = Mi && ci.oldChartHeight || ci.chartHeight;
+          return wi = { x: wi ? es(Di.translate(Si + Ti, void 0, void 0, Mi) + Di.transB) : Di.left + Di.offset + (Di.opposite ? (Mi && ci.oldChartWidth || ci.chartWidth) - Di.right - Di.left : 0), y: wi ? pi - Di.bottom + Di.offset - (Di.opposite ? Di.height : 0) : es(pi - Di.translate(Si + Ti, void 0, void 0, Mi) - Di.transB) }, wi.y = Yi(wi.y, -1e5, 1e5), _i(this, "afterGetPosition", { pos: wi }), wi;
         }
-        getLabelPosition(wi, yi, Ti, Mi, Oi, ai, li, xi) {
-          const di = this.axis, pi = di.transA, ei = di.isLinked && di.linkedParent ? di.linkedParent.reversed : di.reversed, Fe = di.staggerLines, ii = di.tickRotCorr || { x: 0, y: 0 }, hi = Mi || di.reserveSpaceDefault ? 0 : -di.labelOffset * (di.labelAlign === "center" ? 0.5 : 1), gi = Oi.distance, Ei = {};
-          return Ti = di.side === 0 ? Ti.rotation ? -gi : -Ti.getBBox().height : di.side === 2 ? ii.y + gi : Math.cos(Ti.rotation * ts) * (ii.y - Ti.getBBox(!1, 0).height / 2), ss(Oi.y) && (Ti = di.side === 0 && di.horiz ? Oi.y + Ti : Oi.y), wi = wi + Ni(Oi.x, [0, 1, 0, -1][di.side] * gi) + hi + ii.x - (ai && Mi ? ai * pi * (ei ? -1 : 1) : 0), yi = yi + Ti - (ai && !Mi ? ai * pi * (ei ? 1 : -1) : 0), Fe && (Mi = li / (xi || 1) % Fe, di.opposite && (Mi = Fe - Mi - 1), yi += di.labelOffset / Fe * Mi), Ei.x = wi, Ei.y = Math.round(yi), Ui(this, "afterGetLabelPosition", { pos: Ei, tickmarkOffset: ai, index: li }), Ei;
+        getLabelPosition(wi, Si, Ti, Mi, Di, ci, pi, vi) {
+          const ui = this.axis, fi = ui.transA, si = ui.isLinked && ui.linkedParent ? ui.linkedParent.reversed : ui.reversed, ti = ui.staggerLines, oi = ui.tickRotCorr || { x: 0, y: 0 }, di = Mi || ui.reserveSpaceDefault ? 0 : -ui.labelOffset * (ui.labelAlign === "center" ? 0.5 : 1), mi = Di.distance, Oi = {};
+          return Ti = ui.side === 0 ? Ti.rotation ? -mi : -Ti.getBBox().height : ui.side === 2 ? oi.y + mi : Math.cos(Ti.rotation * Ki) * (oi.y - Ti.getBBox(!1, 0).height / 2), is(Di.y) && (Ti = ui.side === 0 && ui.horiz ? Di.y + Ti : Di.y), wi = wi + Ni(Di.x, [0, 1, 0, -1][ui.side] * mi) + di + oi.x - (ci && Mi ? ci * fi * (si ? -1 : 1) : 0), Si = Si + Ti - (ci && !Mi ? ci * fi * (si ? 1 : -1) : 0), ti && (Mi = pi / (vi || 1) % ti, ui.opposite && (Mi = ti - Mi - 1), Si += ui.labelOffset / ti * Mi), Oi.x = wi, Oi.y = Math.round(Si), _i(this, "afterGetLabelPosition", { pos: Oi, tickmarkOffset: ci, index: pi }), Oi;
         }
         getLabelSize() {
           return this.label ? this.label.getBBox()[this.axis.horiz ? "height" : "width"] : 0;
         }
-        getMarkPath(wi, yi, Ti, Mi, Oi, ai) {
-          return ai.crispLine([["M", wi, yi], ["L", wi + (Oi ? 0 : -Ti), yi + (Oi ? Ti : 0)]], Mi);
+        getMarkPath(wi, Si, Ti, Mi, Di, ci) {
+          return ci.crispLine([["M", wi, Si], ["L", wi + (Di ? 0 : -Ti), Si + (Di ? Ti : 0)]], Mi);
         }
         handleOverflow(wi) {
-          const yi = this.axis, Ti = yi.options.labels, Mi = wi.x;
-          var Oi = yi.chart.chartWidth, ai = yi.chart.spacing;
-          const li = Ni(yi.labelLeft, Math.min(yi.pos, ai[3]));
-          ai = Ni(yi.labelRight, Math.max(yi.isRadial ? 0 : yi.pos + yi.len, Oi - ai[1]));
-          const xi = this.label, di = this.rotation, pi = { left: 0, center: 0.5, right: 1 }[yi.labelAlign || xi.attr("align")], ei = xi.getBBox().width, Fe = yi.getSlotWidth(this), ii = {};
-          let hi = Fe, gi = 1, Ei;
-          di || Ti.overflow !== "justify" ? 0 > di && Mi - pi * ei < li ? Ei = Math.round(Mi / Math.cos(di * ts) - li) : 0 < di && Mi + pi * ei > ai && (Ei = Math.round((Oi - Mi) / Math.cos(di * ts))) : (Oi = Mi + (1 - pi) * ei, Mi - pi * ei < li ? hi = wi.x + hi * (1 - pi) - li : Oi > ai && (hi = ai - wi.x + hi * pi, gi = -1), hi = Math.min(Fe, hi), hi < Fe && yi.labelAlign === "center" && (wi.x += gi * (Fe - hi - pi * (Fe - Math.min(ei, hi)))), (ei > hi || yi.autoRotation && (xi.styles || {}).width) && (Ei = hi)), Ei && (this.shortenLabel ? this.shortenLabel() : (ii.width = Math.floor(Ei) + "px", (Ti.style || {}).textOverflow || (ii.textOverflow = "ellipsis"), xi.css(ii)));
+          const Si = this.axis, Ti = Si.options.labels, Mi = wi.x;
+          var Di = Si.chart.chartWidth, ci = Si.chart.spacing;
+          const pi = Ni(Si.labelLeft, Math.min(Si.pos, ci[3]));
+          ci = Ni(Si.labelRight, Math.max(Si.isRadial ? 0 : Si.pos + Si.len, Di - ci[1]));
+          const vi = this.label, ui = this.rotation, fi = { left: 0, center: 0.5, right: 1 }[Si.labelAlign || vi.attr("align")], si = vi.getBBox().width, ti = Si.getSlotWidth(this), oi = {};
+          let di = ti, mi = 1, Oi;
+          ui || Ti.overflow !== "justify" ? 0 > ui && Mi - fi * si < pi ? Oi = Math.round(Mi / Math.cos(ui * Ki) - pi) : 0 < ui && Mi + fi * si > ci && (Oi = Math.round((Di - Mi) / Math.cos(ui * Ki))) : (Di = Mi + (1 - fi) * si, Mi - fi * si < pi ? di = wi.x + di * (1 - fi) - pi : Di > ci && (di = ci - wi.x + di * fi, mi = -1), di = Math.min(ti, di), di < ti && Si.labelAlign === "center" && (wi.x += mi * (ti - di - fi * (ti - Math.min(si, di)))), (si > di || Si.autoRotation && (vi.styles || {}).width) && (Oi = di)), Oi && (this.shortenLabel ? this.shortenLabel() : (oi.width = Math.floor(Oi) + "px", (Ti.style || {}).textOverflow || (oi.textOverflow = "ellipsis"), vi.css(oi)));
         }
-        moveLabel(wi, yi) {
+        moveLabel(wi, Si) {
           const Ti = this;
           var Mi = Ti.label;
-          const Oi = Ti.axis;
-          let ai = !1;
-          Mi && Mi.textStr === wi ? (Ti.movedLabel = Mi, ai = !0, delete Ti.label) : Ri(Oi.ticks, function(li) {
-            ai || li.isNew || li === Ti || !li.label || li.label.textStr !== wi || (Ti.movedLabel = li.label, ai = !0, li.labelPos = Ti.movedLabel.xy, delete li.label);
-          }), ai || !Ti.labelPos && !Mi || (Mi = Ti.labelPos || Mi.xy, Ti.movedLabel = Ti.createLabel(Mi, wi, yi), Ti.movedLabel && Ti.movedLabel.attr({ opacity: 0 }));
+          const Di = Ti.axis;
+          let ci = !1;
+          Mi && Mi.textStr === wi ? (Ti.movedLabel = Mi, ci = !0, delete Ti.label) : ji(Di.ticks, function(pi) {
+            ci || pi.isNew || pi === Ti || !pi.label || pi.label.textStr !== wi || (Ti.movedLabel = pi.label, ci = !0, pi.labelPos = Ti.movedLabel.xy, delete pi.label);
+          }), ci || !Ti.labelPos && !Mi || (Mi = Ti.labelPos || Mi.xy, Ti.movedLabel = Ti.createLabel(Mi, wi, Si), Ti.movedLabel && Ti.movedLabel.attr({ opacity: 0 }));
         }
-        render(wi, yi, Ti) {
-          var Mi = this.axis, Oi = Mi.horiz, ai = this.pos, li = Ni(this.tickmarkOffset, Mi.tickmarkOffset);
-          ai = this.getPosition(Oi, ai, li, yi), li = ai.x;
-          const xi = ai.y;
-          Mi = Oi && li === Mi.pos + Mi.len || !Oi && xi === Mi.pos ? -1 : 1, Oi = Ni(Ti, this.label && this.label.newOpacity, 1), Ti = Ni(Ti, 1), this.isActive = !0, this.renderGridLine(yi, Ti, Mi), this.renderMark(ai, Ti, Mi), this.renderLabel(ai, yi, Oi, wi), this.isNew = !1, Ui(this, "afterRender");
+        render(wi, Si, Ti) {
+          var Mi = this.axis, Di = Mi.horiz, ci = this.pos, pi = Ni(this.tickmarkOffset, Mi.tickmarkOffset);
+          ci = this.getPosition(Di, ci, pi, Si), pi = ci.x;
+          const vi = ci.y;
+          Mi = Di && pi === Mi.pos + Mi.len || !Di && vi === Mi.pos ? -1 : 1, Di = Ni(Ti, this.label && this.label.newOpacity, 1), Ti = Ni(Ti, 1), this.isActive = !0, this.renderGridLine(Si, Ti, Mi), this.renderMark(ci, Ti, Mi), this.renderLabel(ci, Si, Di, wi), this.isNew = !1, _i(this, "afterRender");
         }
-        renderGridLine(wi, yi, Ti) {
-          const Mi = this.axis, Oi = Mi.options, ai = {}, li = this.pos, xi = this.type, di = Ni(this.tickmarkOffset, Mi.tickmarkOffset), pi = Mi.chart.renderer;
-          let ei = this.gridLine, Fe = Oi.gridLineWidth, ii = Oi.gridLineColor, hi = Oi.gridLineDashStyle;
-          this.type === "minor" && (Fe = Oi.minorGridLineWidth, ii = Oi.minorGridLineColor, hi = Oi.minorGridLineDashStyle), ei || (Mi.chart.styledMode || (ai.stroke = ii, ai["stroke-width"] = Fe || 0, ai.dashstyle = hi), xi || (ai.zIndex = 1), wi && (yi = 0), this.gridLine = ei = pi.path().attr(ai).addClass("highcharts-" + (xi ? xi + "-" : "") + "grid-line").add(Mi.gridGroup)), ei && (Ti = Mi.getPlotLinePath({ value: li + di, lineWidth: ei.strokeWidth() * Ti, force: "pass", old: wi, acrossPanes: !1 })) && ei[wi || this.isNew ? "attr" : "animate"]({ d: Ti, opacity: yi });
+        renderGridLine(wi, Si, Ti) {
+          const Mi = this.axis, Di = Mi.options, ci = {}, pi = this.pos, vi = this.type, ui = Ni(this.tickmarkOffset, Mi.tickmarkOffset), fi = Mi.chart.renderer;
+          let si = this.gridLine, ti = Di.gridLineWidth, oi = Di.gridLineColor, di = Di.gridLineDashStyle;
+          this.type === "minor" && (ti = Di.minorGridLineWidth, oi = Di.minorGridLineColor, di = Di.minorGridLineDashStyle), si || (Mi.chart.styledMode || (ci.stroke = oi, ci["stroke-width"] = ti || 0, ci.dashstyle = di), vi || (ci.zIndex = 1), wi && (Si = 0), this.gridLine = si = fi.path().attr(ci).addClass("highcharts-" + (vi ? vi + "-" : "") + "grid-line").add(Mi.gridGroup)), si && (Ti = Mi.getPlotLinePath({ value: pi + ui, lineWidth: si.strokeWidth() * Ti, force: "pass", old: wi, acrossPanes: !1 })) && si[wi || this.isNew ? "attr" : "animate"]({ d: Ti, opacity: Si });
         }
-        renderMark(wi, yi, Ti) {
+        renderMark(wi, Si, Ti) {
           const Mi = this.axis;
-          var Oi = Mi.options;
-          const ai = Mi.chart.renderer, li = this.type, xi = Mi.tickSize(li ? li + "Tick" : "tick"), di = wi.x;
+          var Di = Mi.options;
+          const ci = Mi.chart.renderer, pi = this.type, vi = Mi.tickSize(pi ? pi + "Tick" : "tick"), ui = wi.x;
           wi = wi.y;
-          const pi = Ni(Oi[li !== "minor" ? "tickWidth" : "minorTickWidth"], !li && Mi.isXAxis ? 1 : 0);
-          Oi = Oi[li !== "minor" ? "tickColor" : "minorTickColor"];
-          let ei = this.mark;
-          const Fe = !ei;
-          xi && (Mi.opposite && (xi[0] = -xi[0]), ei || (this.mark = ei = ai.path().addClass("highcharts-" + (li ? li + "-" : "") + "tick").add(Mi.axisGroup), Mi.chart.styledMode || ei.attr({ stroke: Oi, "stroke-width": pi })), ei[Fe ? "attr" : "animate"]({ d: this.getMarkPath(di, wi, xi[0], ei.strokeWidth() * Ti, Mi.horiz, ai), opacity: yi }));
+          const fi = Ni(Di[pi !== "minor" ? "tickWidth" : "minorTickWidth"], !pi && Mi.isXAxis ? 1 : 0);
+          Di = Di[pi !== "minor" ? "tickColor" : "minorTickColor"];
+          let si = this.mark;
+          const ti = !si;
+          vi && (Mi.opposite && (vi[0] = -vi[0]), si || (this.mark = si = ci.path().addClass("highcharts-" + (pi ? pi + "-" : "") + "tick").add(Mi.axisGroup), Mi.chart.styledMode || si.attr({ stroke: Di, "stroke-width": fi })), si[ti ? "attr" : "animate"]({ d: this.getMarkPath(ui, wi, vi[0], si.strokeWidth() * Ti, Mi.horiz, ci), opacity: Si }));
         }
-        renderLabel(wi, yi, Ti, Mi) {
-          var Oi = this.axis;
-          const ai = Oi.horiz, li = Oi.options, xi = this.label, di = li.labels, pi = di.step;
-          Oi = Ni(this.tickmarkOffset, Oi.tickmarkOffset);
-          const ei = wi.x;
+        renderLabel(wi, Si, Ti, Mi) {
+          var Di = this.axis;
+          const ci = Di.horiz, pi = Di.options, vi = this.label, ui = pi.labels, fi = ui.step;
+          Di = Ni(this.tickmarkOffset, Di.tickmarkOffset);
+          const si = wi.x;
           wi = wi.y;
-          let Fe = !0;
-          xi && ki(ei) && (xi.xy = wi = this.getLabelPosition(ei, wi, xi, ai, di, Oi, Mi, pi), this.isFirst && !this.isLast && !li.showFirstLabel || this.isLast && !this.isFirst && !li.showLastLabel ? Fe = !1 : !ai || di.step || di.rotation || yi || Ti === 0 || this.handleOverflow(wi), pi && Mi % pi && (Fe = !1), Fe && ki(wi.y) ? (wi.opacity = Ti, xi[this.isNewLabel ? "attr" : "animate"](wi).show(!0), this.isNewLabel = !1) : (xi.hide(), this.isNewLabel = !0));
+          let ti = !0;
+          vi && bi(si) && (vi.xy = wi = this.getLabelPosition(si, wi, vi, ci, ui, Di, Mi, fi), this.isFirst && !this.isLast && !pi.showFirstLabel || this.isLast && !this.isFirst && !pi.showLastLabel ? ti = !1 : !ci || ui.step || ui.rotation || Si || Ti === 0 || this.handleOverflow(wi), fi && Mi % fi && (ti = !1), ti && bi(wi.y) ? (wi.opacity = Ti, vi[this.isNewLabel ? "attr" : "animate"](wi).show(!0), this.isNewLabel = !1) : (vi.hide(), this.isNewLabel = !0));
         }
         replaceMovedLabel() {
-          const wi = this.label, yi = this.axis;
-          wi && !this.isNew && (wi.animate({ opacity: 0 }, void 0, wi.destroy), delete this.label), yi.isDirty = !0, this.label = this.movedLabel, delete this.movedLabel;
+          const wi = this.label, Si = this.axis;
+          wi && !this.isNew && (wi.animate({ opacity: 0 }, void 0, wi.destroy), delete this.label), Si.isDirty = !0, this.label = this.movedLabel, delete this.movedLabel;
         }
       }
-      return fi;
-    }), ci(oi, "Core/Axis/Axis.js", [oi["Core/Animation/AnimationUtilities.js"], oi["Core/Axis/AxisDefaults.js"], oi["Core/Color/Color.js"], oi["Core/Defaults.js"], oi["Core/Foundation.js"], oi["Core/Globals.js"], oi["Core/Axis/Tick.js"], oi["Core/Utilities.js"]], function(Si, ji, qi, ts, Qi, is, ss, Wi) {
-      const { animObject: Ki } = Si, { defaultOptions: Ui } = ts, { registerEventOptions: ki } = Qi, { deg2rad: bi } = is, { arrayMax: Ri, arrayMin: Ni, clamp: fi, correctFloat: Ci, defined: wi, destroyObjectProperties: yi, erase: Ti, error: Mi, extend: Oi, fireEvent: ai, getClosestDistance: li, insertItem: xi, isArray: di, isNumber: pi, isString: ei, merge: Fe, normalizeTickInterval: ii, objectEach: hi, pick: gi, relativeLength: Ei, removeEvent: ni, splat: Pi, syncTimeout: Fi } = Wi, Zi = (Bi, si) => ii(si, void 0, void 0, gi(Bi.options.allowDecimals, 0.5 > si || Bi.tickAmount !== void 0), !!Bi.tickAmount);
+      return gi;
+    }), ri(ii, "Core/Axis/Axis.js", [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Axis/AxisDefaults.js"], ii["Core/Color/Color.js"], ii["Core/Defaults.js"], ii["Core/Foundation.js"], ii["Core/Globals.js"], ii["Core/Axis/Tick.js"], ii["Core/Utilities.js"]], function(li, Ci, zi, Ki, Yi, es, is, $i) {
+      const { animObject: Vi } = li, { defaultOptions: _i } = Ki, { registerEventOptions: bi } = Yi, { deg2rad: Ai } = es, { arrayMax: ji, arrayMin: Ni, clamp: gi, correctFloat: ki, defined: wi, destroyObjectProperties: Si, erase: Ti, error: Mi, extend: Di, fireEvent: ci, getClosestDistance: pi, insertItem: vi, isArray: ui, isNumber: fi, isString: si, merge: ti, normalizeTickInterval: oi, objectEach: di, pick: mi, relativeLength: Oi, removeEvent: hi, splat: Li, syncTimeout: Ui } = $i, Zi = (Bi, ni) => oi(ni, void 0, void 0, mi(Bi.options.allowDecimals, 0.5 > ni || Bi.tickAmount !== void 0), !!Bi.tickAmount);
       class rs {
-        constructor(si, Li, Hi) {
-          this.zoomEnabled = this.width = this.visible = this.userOptions = this.translationSlope = this.transB = this.transA = this.top = this.ticks = this.tickRotCorr = this.tickPositions = this.tickmarkOffset = this.tickInterval = this.tickAmount = this.side = this.series = this.right = this.positiveValuesOnly = this.pos = this.pointRangePadding = this.pointRange = this.plotLinesAndBandsGroups = this.plotLinesAndBands = this.paddedTicks = this.overlap = this.options = this.offset = this.names = this.minPixelPadding = this.minorTicks = this.minorTickInterval = this.min = this.maxLabelLength = this.max = this.len = this.left = this.labelFormatter = this.labelEdge = this.isLinked = this.index = this.height = this.hasVisibleSeries = this.hasNames = this.eventOptions = this.coll = this.closestPointRange = this.chart = this.bottom = this.alternateBands = void 0, this.init(si, Li, Hi);
+        constructor(ni, Pi, Hi) {
+          this.zoomEnabled = this.width = this.visible = this.userOptions = this.translationSlope = this.transB = this.transA = this.top = this.ticks = this.tickRotCorr = this.tickPositions = this.tickmarkOffset = this.tickInterval = this.tickAmount = this.side = this.series = this.right = this.positiveValuesOnly = this.pos = this.pointRangePadding = this.pointRange = this.plotLinesAndBandsGroups = this.plotLinesAndBands = this.paddedTicks = this.overlap = this.options = this.offset = this.names = this.minPixelPadding = this.minorTicks = this.minorTickInterval = this.min = this.maxLabelLength = this.max = this.len = this.left = this.labelFormatter = this.labelEdge = this.isLinked = this.index = this.height = this.hasVisibleSeries = this.hasNames = this.eventOptions = this.coll = this.closestPointRange = this.chart = this.bottom = this.alternateBands = void 0, this.init(ni, Pi, Hi);
         }
-        init(si, Li, Hi = this.coll) {
-          const Di = Hi === "xAxis";
-          this.chart = si, this.horiz = this.isZAxis || (si.inverted ? !Di : Di), this.isXAxis = Di, this.coll = Hi, ai(this, "init", { userOptions: Li }), this.opposite = gi(Li.opposite, this.opposite), this.side = gi(Li.side, this.side, this.horiz ? this.opposite ? 0 : 2 : this.opposite ? 1 : 3), this.setOptions(Li), Hi = this.options;
-          const Vi = Hi.labels, ri = Hi.type;
-          this.userOptions = Li, this.minPixelPadding = 0, this.reversed = gi(Hi.reversed, this.reversed), this.visible = Hi.visible, this.zoomEnabled = Hi.zoomEnabled, this.hasNames = ri === "category" || Hi.categories === !0, this.categories = Hi.categories || (this.hasNames ? [] : void 0), this.names || (this.names = [], this.names.keys = {}), this.plotLinesAndBandsGroups = {}, this.positiveValuesOnly = !!this.logarithmic, this.isLinked = wi(Hi.linkedTo), this.ticks = {}, this.labelEdge = [], this.minorTicks = {}, this.plotLinesAndBands = [], this.alternateBands = {}, this.len = 0, this.minRange = this.userMinRange = Hi.minRange || Hi.maxZoom, this.range = Hi.range, this.offset = Hi.offset || 0, this.min = this.max = null, Li = gi(Hi.crosshair, Pi(si.options.tooltip.crosshairs)[Di ? 0 : 1]), this.crosshair = Li === !0 ? {} : Li, si.axes.indexOf(this) === -1 && (Di ? si.axes.splice(si.xAxis.length, 0, this) : si.axes.push(this), xi(this, si[this.coll])), si.orderItems(this.coll), this.series = this.series || [], si.inverted && !this.isZAxis && Di && typeof this.reversed > "u" && (this.reversed = !0), this.labelRotation = pi(Vi.rotation) ? Vi.rotation : void 0, ki(this, Hi), ai(this, "afterInit");
+        init(ni, Pi, Hi = this.coll) {
+          const Ri = Hi === "xAxis";
+          this.chart = ni, this.horiz = this.isZAxis || (ni.inverted ? !Ri : Ri), this.isXAxis = Ri, this.coll = Hi, ci(this, "init", { userOptions: Pi }), this.opposite = mi(Pi.opposite, this.opposite), this.side = mi(Pi.side, this.side, this.horiz ? this.opposite ? 0 : 2 : this.opposite ? 1 : 3), this.setOptions(Pi), Hi = this.options;
+          const qi = Hi.labels, ai = Hi.type;
+          this.userOptions = Pi, this.minPixelPadding = 0, this.reversed = mi(Hi.reversed, this.reversed), this.visible = Hi.visible, this.zoomEnabled = Hi.zoomEnabled, this.hasNames = ai === "category" || Hi.categories === !0, this.categories = Hi.categories || (this.hasNames ? [] : void 0), this.names || (this.names = [], this.names.keys = {}), this.plotLinesAndBandsGroups = {}, this.positiveValuesOnly = !!this.logarithmic, this.isLinked = wi(Hi.linkedTo), this.ticks = {}, this.labelEdge = [], this.minorTicks = {}, this.plotLinesAndBands = [], this.alternateBands = {}, this.len = 0, this.minRange = this.userMinRange = Hi.minRange || Hi.maxZoom, this.range = Hi.range, this.offset = Hi.offset || 0, this.min = this.max = null, Pi = mi(Hi.crosshair, Li(ni.options.tooltip.crosshairs)[Ri ? 0 : 1]), this.crosshair = Pi === !0 ? {} : Pi, ni.axes.indexOf(this) === -1 && (Ri ? ni.axes.splice(ni.xAxis.length, 0, this) : ni.axes.push(this), vi(this, ni[this.coll])), ni.orderItems(this.coll), this.series = this.series || [], ni.inverted && !this.isZAxis && Ri && typeof this.reversed > "u" && (this.reversed = !0), this.labelRotation = fi(qi.rotation) ? qi.rotation : void 0, bi(this, Hi), ci(this, "afterInit");
         }
-        setOptions(si) {
-          this.options = Fe(ji.defaultXAxisOptions, this.coll === "yAxis" && ji.defaultYAxisOptions, [ji.defaultTopAxisOptions, ji.defaultRightAxisOptions, ji.defaultBottomAxisOptions, ji.defaultLeftAxisOptions][this.side], Fe(Ui[this.coll], si)), ai(this, "afterSetOptions", { userOptions: si });
+        setOptions(ni) {
+          this.options = ti(Ci.defaultXAxisOptions, this.coll === "yAxis" && Ci.defaultYAxisOptions, [Ci.defaultTopAxisOptions, Ci.defaultRightAxisOptions, Ci.defaultBottomAxisOptions, Ci.defaultLeftAxisOptions][this.side], ti(_i[this.coll], ni)), ci(this, "afterSetOptions", { userOptions: ni });
         }
-        defaultLabelFormatter(si) {
-          var Li = this.axis;
-          ({ numberFormatter: si } = this.chart);
-          const Hi = pi(this.value) ? this.value : NaN, Di = Li.chart.time, Vi = this.dateTimeLabelFormat;
-          var ri = Ui.lang;
-          const mi = ri.numericSymbols;
-          ri = ri.numericSymbolMagnitude || 1e3;
-          const vi = Li.logarithmic ? Math.abs(Hi) : Li.tickInterval;
-          let zi = mi && mi.length, Xi;
-          if (Li.categories)
+        defaultLabelFormatter(ni) {
+          var Pi = this.axis;
+          ({ numberFormatter: ni } = this.chart);
+          const Hi = fi(this.value) ? this.value : NaN, Ri = Pi.chart.time, qi = this.dateTimeLabelFormat;
+          var ai = _i.lang;
+          const xi = ai.numericSymbols;
+          ai = ai.numericSymbolMagnitude || 1e3;
+          const yi = Pi.logarithmic ? Math.abs(Hi) : Pi.tickInterval;
+          let Gi = xi && xi.length, Xi;
+          if (Pi.categories)
             Xi = `${this.value}`;
-          else if (Vi)
-            Xi = Di.dateFormat(Vi, Hi);
-          else if (zi && 1e3 <= vi)
-            for (; zi-- && typeof Xi > "u"; )
-              Li = Math.pow(ri, zi + 1), vi >= Li && 10 * Hi % Li === 0 && mi[zi] !== null && Hi !== 0 && (Xi = si(Hi / Li, -1) + mi[zi]);
-          return typeof Xi > "u" && (Xi = 1e4 <= Math.abs(Hi) ? si(Hi, -1) : si(Hi, -1, void 0, "")), Xi;
+          else if (qi)
+            Xi = Ri.dateFormat(qi, Hi);
+          else if (Gi && 1e3 <= yi)
+            for (; Gi-- && typeof Xi > "u"; )
+              Pi = Math.pow(ai, Gi + 1), yi >= Pi && 10 * Hi % Pi === 0 && xi[Gi] !== null && Hi !== 0 && (Xi = ni(Hi / Pi, -1) + xi[Gi]);
+          return typeof Xi > "u" && (Xi = 1e4 <= Math.abs(Hi) ? ni(Hi, -1) : ni(Hi, -1, void 0, "")), Xi;
         }
         getSeriesExtremes() {
-          const si = this, Li = si.chart;
+          const ni = this, Pi = ni.chart;
           let Hi;
-          ai(this, "getSeriesExtremes", null, function() {
-            si.hasVisibleSeries = !1, si.dataMin = si.dataMax = si.threshold = null, si.softThreshold = !si.isXAxis, si.series.forEach(function(Di) {
-              if (Di.visible || !Li.options.chart.ignoreHiddenSeries) {
-                var Vi = Di.options;
-                let ri = Vi.threshold, mi, vi;
-                si.hasVisibleSeries = !0, si.positiveValuesOnly && 0 >= ri && (ri = null), si.isXAxis ? (Vi = Di.xData) && Vi.length && (Vi = si.logarithmic ? Vi.filter((zi) => 0 < zi) : Vi, Hi = Di.getXExtremes(Vi), mi = Hi.min, vi = Hi.max, pi(mi) || mi instanceof Date || (Vi = Vi.filter(pi), Hi = Di.getXExtremes(Vi), mi = Hi.min, vi = Hi.max), Vi.length && (si.dataMin = Math.min(gi(si.dataMin, mi), mi), si.dataMax = Math.max(gi(
-                  si.dataMax,
-                  vi
-                ), vi))) : (Di = Di.applyExtremes(), pi(Di.dataMin) && (mi = Di.dataMin, si.dataMin = Math.min(gi(si.dataMin, mi), mi)), pi(Di.dataMax) && (vi = Di.dataMax, si.dataMax = Math.max(gi(si.dataMax, vi), vi)), wi(ri) && (si.threshold = ri), (!Vi.softThreshold || si.positiveValuesOnly) && (si.softThreshold = !1));
+          ci(this, "getSeriesExtremes", null, function() {
+            ni.hasVisibleSeries = !1, ni.dataMin = ni.dataMax = ni.threshold = null, ni.softThreshold = !ni.isXAxis, ni.series.forEach(function(Ri) {
+              if (Ri.visible || !Pi.options.chart.ignoreHiddenSeries) {
+                var qi = Ri.options;
+                let ai = qi.threshold, xi, yi;
+                ni.hasVisibleSeries = !0, ni.positiveValuesOnly && 0 >= ai && (ai = null), ni.isXAxis ? (qi = Ri.xData) && qi.length && (qi = ni.logarithmic ? qi.filter((Gi) => 0 < Gi) : qi, Hi = Ri.getXExtremes(qi), xi = Hi.min, yi = Hi.max, fi(xi) || xi instanceof Date || (qi = qi.filter(fi), Hi = Ri.getXExtremes(qi), xi = Hi.min, yi = Hi.max), qi.length && (ni.dataMin = Math.min(mi(ni.dataMin, xi), xi), ni.dataMax = Math.max(mi(
+                  ni.dataMax,
+                  yi
+                ), yi))) : (Ri = Ri.applyExtremes(), fi(Ri.dataMin) && (xi = Ri.dataMin, ni.dataMin = Math.min(mi(ni.dataMin, xi), xi)), fi(Ri.dataMax) && (yi = Ri.dataMax, ni.dataMax = Math.max(mi(ni.dataMax, yi), yi)), wi(ai) && (ni.threshold = ai), (!qi.softThreshold || ni.positiveValuesOnly) && (ni.softThreshold = !1));
               }
             });
-          }), ai(this, "afterGetSeriesExtremes");
+          }), ci(this, "afterGetSeriesExtremes");
         }
-        translate(si, Li, Hi, Di, Vi, ri) {
-          const mi = this.linkedParent || this, vi = Di && mi.old ? mi.old.min : mi.min;
-          if (!pi(vi))
+        translate(ni, Pi, Hi, Ri, qi, ai) {
+          const xi = this.linkedParent || this, yi = Ri && xi.old ? xi.old.min : xi.min;
+          if (!fi(yi))
             return NaN;
-          const zi = mi.minPixelPadding;
-          Vi = (mi.isOrdinal || mi.brokenAxis && mi.brokenAxis.hasBreaks || mi.logarithmic && Vi) && mi.lin2val;
-          let Xi = 1, Gi = 0;
-          return Di = Di && mi.old ? mi.old.transA : mi.transA, Di || (Di = mi.transA), Hi && (Xi *= -1, Gi = mi.len), mi.reversed && (Xi *= -1, Gi -= Xi * (mi.sector || mi.len)), Li ? (ri = (si * Xi + Gi - zi) / Di + vi, Vi && (ri = mi.lin2val(ri))) : (Vi && (si = mi.val2lin(si)), si = Xi * (si - vi) * Di, ri = (mi.isRadial ? si : Ci(si)) + Gi + Xi * zi + (pi(ri) ? Di * ri : 0)), ri;
+          const Gi = xi.minPixelPadding;
+          qi = (xi.isOrdinal || xi.brokenAxis && xi.brokenAxis.hasBreaks || xi.logarithmic && qi) && xi.lin2val;
+          let Xi = 1, Wi = 0;
+          return Ri = Ri && xi.old ? xi.old.transA : xi.transA, Ri || (Ri = xi.transA), Hi && (Xi *= -1, Wi = xi.len), xi.reversed && (Xi *= -1, Wi -= Xi * (xi.sector || xi.len)), Pi ? (ai = (ni * Xi + Wi - Gi) / Ri + yi, qi && (ai = xi.lin2val(ai))) : (qi && (ni = xi.val2lin(ni)), ni = Xi * (ni - yi) * Ri, ai = (xi.isRadial ? ni : ki(ni)) + Wi + Xi * Gi + (fi(ai) ? Ri * ai : 0)), ai;
         }
-        toPixels(si, Li) {
-          return this.translate(si, !1, !this.horiz, void 0, !0) + (Li ? 0 : this.pos);
+        toPixels(ni, Pi) {
+          return this.translate(ni, !1, !this.horiz, void 0, !0) + (Pi ? 0 : this.pos);
         }
-        toValue(si, Li) {
-          return this.translate(si - (Li ? 0 : this.pos), !0, !this.horiz, void 0, !0);
+        toValue(ni, Pi) {
+          return this.translate(ni - (Pi ? 0 : this.pos), !0, !this.horiz, void 0, !0);
         }
-        getPlotLinePath(si) {
-          function Li(Yi, _i, hs) {
-            return os !== "pass" && (Yi < _i || Yi > hs) && (os ? Yi = fi(Yi, _i, hs) : $i = !0), Yi;
+        getPlotLinePath(ni) {
+          function Pi(Fi, Qi, hs) {
+            return os !== "pass" && (Fi < Qi || Fi > hs) && (os ? Fi = gi(Fi, Qi, hs) : Ji = !0), Fi;
           }
-          const Hi = this, Di = Hi.chart, Vi = Hi.left, ri = Hi.top, mi = si.old, vi = si.value, zi = si.lineWidth, Xi = mi && Di.oldChartHeight || Di.chartHeight, Gi = mi && Di.oldChartWidth || Di.chartWidth, Ji = Hi.transB;
-          let es = si.translatedValue, os = si.force, ns, ls, Ii, Ai, $i;
-          return si = { value: vi, lineWidth: zi, old: mi, force: os, acrossPanes: si.acrossPanes, translatedValue: es }, ai(this, "getPlotLinePath", si, function(Yi) {
-            es = gi(es, Hi.translate(vi, void 0, void 0, mi)), es = fi(es, -1e5, 1e5), ns = Ii = Math.round(es + Ji), ls = Ai = Math.round(Xi - es - Ji), pi(es) ? Hi.horiz ? (ls = ri, Ai = Xi - Hi.bottom, ns = Ii = Li(ns, Vi, Vi + Hi.width)) : (ns = Vi, Ii = Gi - Hi.right, ls = Ai = Li(ls, ri, ri + Hi.height)) : ($i = !0, os = !1), Yi.path = $i && !os ? null : Di.renderer.crispLine([["M", ns, ls], ["L", Ii, Ai]], zi || 1);
-          }), si.path;
+          const Hi = this, Ri = Hi.chart, qi = Hi.left, ai = Hi.top, xi = ni.old, yi = ni.value, Gi = ni.lineWidth, Xi = xi && Ri.oldChartHeight || Ri.chartHeight, Wi = xi && Ri.oldChartWidth || Ri.chartWidth, ts = Hi.transB;
+          let ss = ni.translatedValue, os = ni.force, ns, ls, Ii, Ei, Ji;
+          return ni = { value: yi, lineWidth: Gi, old: xi, force: os, acrossPanes: ni.acrossPanes, translatedValue: ss }, ci(this, "getPlotLinePath", ni, function(Fi) {
+            ss = mi(ss, Hi.translate(yi, void 0, void 0, xi)), ss = gi(ss, -1e5, 1e5), ns = Ii = Math.round(ss + ts), ls = Ei = Math.round(Xi - ss - ts), fi(ss) ? Hi.horiz ? (ls = ai, Ei = Xi - Hi.bottom, ns = Ii = Pi(ns, qi, qi + Hi.width)) : (ns = qi, Ii = Wi - Hi.right, ls = Ei = Pi(ls, ai, ai + Hi.height)) : (Ji = !0, os = !1), Fi.path = Ji && !os ? null : Ri.renderer.crispLine([["M", ns, ls], ["L", Ii, Ei]], Gi || 1);
+          }), ni.path;
         }
-        getLinearTickPositions(si, Li, Hi) {
-          const Di = Ci(Math.floor(Li / si) * si);
-          Hi = Ci(Math.ceil(Hi / si) * si);
-          const Vi = [];
-          let ri, mi;
-          if (Ci(Di + si) === Di && (mi = 20), this.single)
-            return [Li];
-          for (Li = Di; Li <= Hi && (Vi.push(Li), Li = Ci(Li + si, mi), Li !== ri); )
-            ri = Li;
-          return Vi;
+        getLinearTickPositions(ni, Pi, Hi) {
+          const Ri = ki(Math.floor(Pi / ni) * ni);
+          Hi = ki(Math.ceil(Hi / ni) * ni);
+          const qi = [];
+          let ai, xi;
+          if (ki(Ri + ni) === Ri && (xi = 20), this.single)
+            return [Pi];
+          for (Pi = Ri; Pi <= Hi && (qi.push(Pi), Pi = ki(Pi + ni, xi), Pi !== ai); )
+            ai = Pi;
+          return qi;
         }
         getMinorTickInterval() {
-          const si = this.options;
-          return si.minorTicks === !0 ? gi(si.minorTickInterval, "auto") : si.minorTicks === !1 ? null : si.minorTickInterval;
+          const ni = this.options;
+          return ni.minorTicks === !0 ? mi(ni.minorTickInterval, "auto") : ni.minorTicks === !1 ? null : ni.minorTickInterval;
         }
         getMinorTickPositions() {
-          var si = this.options;
-          const Li = this.tickPositions, Hi = this.minorTickInterval;
-          var Di = this.pointRangePadding || 0;
-          const Vi = this.min - Di;
-          Di = this.max + Di;
-          const ri = Di - Vi;
-          let mi = [];
-          if (ri && ri / Hi < this.len / 3) {
-            const vi = this.logarithmic;
-            if (vi)
-              this.paddedTicks.forEach(function(zi, Xi, Gi) {
-                Xi && mi.push.apply(mi, vi.getLogTickPositions(Hi, Gi[Xi - 1], Gi[Xi], !0));
+          var ni = this.options;
+          const Pi = this.tickPositions, Hi = this.minorTickInterval;
+          var Ri = this.pointRangePadding || 0;
+          const qi = this.min - Ri;
+          Ri = this.max + Ri;
+          const ai = Ri - qi;
+          let xi = [];
+          if (ai && ai / Hi < this.len / 3) {
+            const yi = this.logarithmic;
+            if (yi)
+              this.paddedTicks.forEach(function(Gi, Xi, Wi) {
+                Xi && xi.push.apply(xi, yi.getLogTickPositions(Hi, Wi[Xi - 1], Wi[Xi], !0));
               });
             else if (this.dateTime && this.getMinorTickInterval() === "auto")
-              mi = mi.concat(this.getTimeTicks(this.dateTime.normalizeTimeTickInterval(Hi), Vi, Di, si.startOfWeek));
+              xi = xi.concat(this.getTimeTicks(this.dateTime.normalizeTimeTickInterval(Hi), qi, Ri, ni.startOfWeek));
             else
-              for (si = Vi + (Li[0] - Vi) % Hi; si <= Di && si !== mi[0]; si += Hi)
-                mi.push(si);
+              for (ni = qi + (Pi[0] - qi) % Hi; ni <= Ri && ni !== xi[0]; ni += Hi)
+                xi.push(ni);
           }
-          return mi.length !== 0 && this.trimTicks(mi), mi;
+          return xi.length !== 0 && this.trimTicks(xi), xi;
         }
         adjustForMinRange() {
-          const si = this.options, Li = this.logarithmic;
+          const ni = this.options, Pi = this.logarithmic;
           let Hi = this.min;
-          var Di = this.max;
-          let Vi, ri;
-          if (this.isXAxis && typeof this.minRange > "u" && !Li)
-            if (wi(si.min) || wi(si.max) || wi(si.floor) || wi(si.ceiling))
+          var Ri = this.max;
+          let qi, ai;
+          if (this.isXAxis && typeof this.minRange > "u" && !Pi)
+            if (wi(ni.min) || wi(ni.max) || wi(ni.floor) || wi(ni.ceiling))
               this.minRange = null;
             else {
-              var mi = li(this.series.map((vi) => {
-                var zi;
-                return (vi.xIncrement ? (zi = vi.xData) === null || zi === void 0 ? void 0 : zi.slice(0, 2) : vi.xData) || [];
+              var xi = pi(this.series.map((yi) => {
+                var Gi;
+                return (yi.xIncrement ? (Gi = yi.xData) === null || Gi === void 0 ? void 0 : Gi.slice(0, 2) : yi.xData) || [];
               })) || 0;
-              this.minRange = Math.min(5 * mi, this.dataMax - this.dataMin);
+              this.minRange = Math.min(5 * xi, this.dataMax - this.dataMin);
             }
-          Di - Hi < this.minRange && (mi = this.dataMax - this.dataMin >= this.minRange, ri = this.minRange, Di = (ri - Di + Hi) / 2, Vi = [Hi - Di, gi(si.min, Hi - Di)], mi && (Vi[2] = Li ? Li.log2lin(this.dataMin) : this.dataMin), Hi = Ri(Vi), Di = [Hi + ri, gi(si.max, Hi + ri)], mi && (Di[2] = Li ? Li.log2lin(this.dataMax) : this.dataMax), Di = Ni(Di), Di - Hi < ri && (Vi[0] = Di - ri, Vi[1] = gi(si.min, Di - ri), Hi = Ri(Vi))), this.min = Hi, this.max = Di;
+          Ri - Hi < this.minRange && (xi = this.dataMax - this.dataMin >= this.minRange, ai = this.minRange, Ri = (ai - Ri + Hi) / 2, qi = [Hi - Ri, mi(ni.min, Hi - Ri)], xi && (qi[2] = Pi ? Pi.log2lin(this.dataMin) : this.dataMin), Hi = ji(qi), Ri = [Hi + ai, mi(ni.max, Hi + ai)], xi && (Ri[2] = Pi ? Pi.log2lin(this.dataMax) : this.dataMax), Ri = Ni(Ri), Ri - Hi < ai && (qi[0] = Ri - ai, qi[1] = mi(ni.min, Ri - ai), Hi = ji(qi))), this.min = Hi, this.max = Ri;
         }
         getClosest() {
-          let si, Li;
+          let ni, Pi;
           if (this.categories)
-            Li = 1;
+            Pi = 1;
           else {
             const Hi = [];
-            this.series.forEach(function(Di) {
-              var Vi;
-              const ri = Di.closestPointRange, mi = Di.visible || !Di.chart.options.chart.ignoreHiddenSeries;
-              ((Vi = Di.xData) === null || Vi === void 0 ? void 0 : Vi.length) === 1 ? Hi.push(Di.xData[0]) : !Di.noSharedTooltip && wi(ri) && mi && (Li = wi(Li) ? Math.min(Li, ri) : ri);
-            }), Hi.length && (Hi.sort((Di, Vi) => Di - Vi), si = li([Hi]));
+            this.series.forEach(function(Ri) {
+              var qi;
+              const ai = Ri.closestPointRange, xi = Ri.visible || !Ri.chart.options.chart.ignoreHiddenSeries;
+              ((qi = Ri.xData) === null || qi === void 0 ? void 0 : qi.length) === 1 ? Hi.push(Ri.xData[0]) : !Ri.noSharedTooltip && wi(ai) && xi && (Pi = wi(Pi) ? Math.min(Pi, ai) : ai);
+            }), Hi.length && (Hi.sort((Ri, qi) => Ri - qi), ni = pi([Hi]));
           }
-          return si && Li ? Math.min(si, Li) : si || Li;
+          return ni && Pi ? Math.min(ni, Pi) : ni || Pi;
         }
-        nameToX(si) {
-          const Li = di(this.options.categories), Hi = Li ? this.categories : this.names;
-          let Di = si.options.x, Vi;
-          return si.series.requireSorting = !1, wi(Di) || (Di = this.options.uniqueNames && Hi ? Li ? Hi.indexOf(si.name) : gi(Hi.keys[si.name], -1) : si.series.autoIncrement()), Di === -1 ? !Li && Hi && (Vi = Hi.length) : Vi = Di, typeof Vi < "u" ? (this.names[Vi] = si.name, this.names.keys[si.name] = Vi) : si.x && (Vi = si.x), Vi;
+        nameToX(ni) {
+          const Pi = ui(this.options.categories), Hi = Pi ? this.categories : this.names;
+          let Ri = ni.options.x, qi;
+          return ni.series.requireSorting = !1, wi(Ri) || (Ri = this.options.uniqueNames && Hi ? Pi ? Hi.indexOf(ni.name) : mi(Hi.keys[ni.name], -1) : ni.series.autoIncrement()), Ri === -1 ? !Pi && Hi && (qi = Hi.length) : qi = Ri, typeof qi < "u" ? (this.names[qi] = ni.name, this.names.keys[ni.name] = qi) : ni.x && (qi = ni.x), qi;
         }
         updateNames() {
-          const si = this, Li = this.names;
-          0 < Li.length && (Object.keys(Li.keys).forEach(function(Hi) {
-            delete Li.keys[Hi];
-          }), Li.length = 0, this.minRange = this.userMinRange, (this.series || []).forEach(function(Hi) {
-            Hi.xIncrement = null, (!Hi.points || Hi.isDirtyData) && (si.max = Math.max(si.max, Hi.xData.length - 1), Hi.processData(), Hi.generatePoints()), Hi.data.forEach(function(Di, Vi) {
-              let ri;
-              Di && Di.options && typeof Di.name < "u" && (ri = si.nameToX(Di), typeof ri < "u" && ri !== Di.x && (Di.x = ri, Hi.xData[Vi] = ri));
+          const ni = this, Pi = this.names;
+          0 < Pi.length && (Object.keys(Pi.keys).forEach(function(Hi) {
+            delete Pi.keys[Hi];
+          }), Pi.length = 0, this.minRange = this.userMinRange, (this.series || []).forEach(function(Hi) {
+            Hi.xIncrement = null, (!Hi.points || Hi.isDirtyData) && (ni.max = Math.max(ni.max, Hi.xData.length - 1), Hi.processData(), Hi.generatePoints()), Hi.data.forEach(function(Ri, qi) {
+              let ai;
+              Ri && Ri.options && typeof Ri.name < "u" && (ai = ni.nameToX(Ri), typeof ai < "u" && ai !== Ri.x && (Ri.x = ai, Hi.xData[qi] = ai));
             });
           }));
         }
         setAxisTranslation() {
-          const si = this, Li = si.max - si.min;
-          var Hi = si.linkedParent;
-          const Di = !!si.categories, Vi = si.isXAxis;
-          let ri = si.axisPointRange || 0, mi, vi = 0, zi = 0, Xi = si.transA;
-          (Vi || Di || ri) && (mi = si.getClosest(), Hi ? (vi = Hi.minPointOffset, zi = Hi.pointRangePadding) : si.series.forEach(function(Gi) {
-            const Ji = Di ? 1 : Vi ? gi(Gi.options.pointRange, mi, 0) : si.axisPointRange || 0, es = Gi.options.pointPlacement;
-            ri = Math.max(ri, Ji), (!si.single || Di) && (Gi = Gi.is("xrange") ? !Vi : Vi, vi = Math.max(vi, Gi && ei(es) ? 0 : Ji / 2), zi = Math.max(zi, Gi && es === "on" ? 0 : Ji));
-          }), Hi = si.ordinal && si.ordinal.slope && mi ? si.ordinal.slope / mi : 1, si.minPointOffset = vi *= Hi, si.pointRangePadding = zi *= Hi, si.pointRange = Math.min(ri, si.single && Di ? 1 : Li), Vi && mi && (si.closestPointRange = mi)), si.translationSlope = si.transA = Xi = si.staticScale || si.len / (Li + zi || 1), si.transB = si.horiz ? si.left : si.bottom, si.minPixelPadding = Xi * vi, ai(this, "afterSetAxisTranslation");
+          const ni = this, Pi = ni.max - ni.min;
+          var Hi = ni.linkedParent;
+          const Ri = !!ni.categories, qi = ni.isXAxis;
+          let ai = ni.axisPointRange || 0, xi, yi = 0, Gi = 0, Xi = ni.transA;
+          (qi || Ri || ai) && (xi = ni.getClosest(), Hi ? (yi = Hi.minPointOffset, Gi = Hi.pointRangePadding) : ni.series.forEach(function(Wi) {
+            const ts = Ri ? 1 : qi ? mi(Wi.options.pointRange, xi, 0) : ni.axisPointRange || 0, ss = Wi.options.pointPlacement;
+            ai = Math.max(ai, ts), (!ni.single || Ri) && (Wi = Wi.is("xrange") ? !qi : qi, yi = Math.max(yi, Wi && si(ss) ? 0 : ts / 2), Gi = Math.max(Gi, Wi && ss === "on" ? 0 : ts));
+          }), Hi = ni.ordinal && ni.ordinal.slope && xi ? ni.ordinal.slope / xi : 1, ni.minPointOffset = yi *= Hi, ni.pointRangePadding = Gi *= Hi, ni.pointRange = Math.min(ai, ni.single && Ri ? 1 : Pi), qi && xi && (ni.closestPointRange = xi)), ni.translationSlope = ni.transA = Xi = ni.staticScale || ni.len / (Pi + Gi || 1), ni.transB = ni.horiz ? ni.left : ni.bottom, ni.minPixelPadding = Xi * yi, ci(this, "afterSetAxisTranslation");
         }
         minFromRange() {
           return this.max - this.range;
         }
-        setTickInterval(si) {
-          var Li = this.chart;
-          const Hi = this.logarithmic, Di = this.options, Vi = this.isXAxis, ri = this.isLinked, mi = Di.tickPixelInterval, vi = this.categories, zi = this.softThreshold;
-          let Xi = Di.maxPadding, Gi = Di.minPadding, Ji = pi(Di.tickInterval) && 0 <= Di.tickInterval ? Di.tickInterval : void 0, es = pi(this.threshold) ? this.threshold : null, os, ns, ls;
-          if (this.dateTime || vi || ri || this.getTickAmount(), ns = gi(this.userMin, Di.min), ls = gi(this.userMax, Di.max), ri) {
-            this.linkedParent = Li[this.coll][Di.linkedTo];
+        setTickInterval(ni) {
+          var Pi = this.chart;
+          const Hi = this.logarithmic, Ri = this.options, qi = this.isXAxis, ai = this.isLinked, xi = Ri.tickPixelInterval, yi = this.categories, Gi = this.softThreshold;
+          let Xi = Ri.maxPadding, Wi = Ri.minPadding, ts = fi(Ri.tickInterval) && 0 <= Ri.tickInterval ? Ri.tickInterval : void 0, ss = fi(this.threshold) ? this.threshold : null, os, ns, ls;
+          if (this.dateTime || yi || ai || this.getTickAmount(), ns = mi(this.userMin, Ri.min), ls = mi(this.userMax, Ri.max), ai) {
+            this.linkedParent = Pi[this.coll][Ri.linkedTo];
             var Ii = this.linkedParent.getExtremes();
-            this.min = gi(Ii.min, Ii.dataMin), this.max = gi(Ii.max, Ii.dataMax), Di.type !== this.linkedParent.options.type && Mi(11, 1, Li);
+            this.min = mi(Ii.min, Ii.dataMin), this.max = mi(Ii.max, Ii.dataMax), Ri.type !== this.linkedParent.options.type && Mi(11, 1, Pi);
           } else
-            zi && wi(es) && (this.dataMin >= es ? (Ii = es, Gi = 0) : this.dataMax <= es && (os = es, Xi = 0)), this.min = gi(ns, Ii, this.dataMin), this.max = gi(ls, os, this.dataMax);
-          if (Hi && (this.positiveValuesOnly && !si && 0 >= Math.min(this.min, gi(
+            Gi && wi(ss) && (this.dataMin >= ss ? (Ii = ss, Wi = 0) : this.dataMax <= ss && (os = ss, Xi = 0)), this.min = mi(ns, Ii, this.dataMin), this.max = mi(ls, os, this.dataMax);
+          if (Hi && (this.positiveValuesOnly && !ni && 0 >= Math.min(this.min, mi(
             this.dataMin,
             this.min
-          )) && Mi(10, 1, Li), this.min = Ci(Hi.log2lin(this.min), 16), this.max = Ci(Hi.log2lin(this.max), 16)), this.range && wi(this.max) && (this.userMin = this.min = ns = Math.max(this.dataMin, this.minFromRange()), this.userMax = ls = this.max, this.range = null), ai(this, "foundExtremes"), this.beforePadding && this.beforePadding(), this.adjustForMinRange(), !pi(this.userMin) && pi(Di.softMin) && Di.softMin < this.min && (this.min = ns = Di.softMin), !pi(this.userMax) && pi(Di.softMax) && Di.softMax > this.max && (this.max = ls = Di.softMax), !(vi || this.axisPointRange || this.stacking && this.stacking.usePercentage || ri) && wi(this.min) && wi(this.max) && (Li = this.max - this.min) && (!wi(ns) && Gi && (this.min -= Li * Gi), !wi(ls) && Xi && (this.max += Li * Xi)), !pi(this.userMin) && pi(Di.floor) && (this.min = Math.max(this.min, Di.floor)), !pi(this.userMax) && pi(Di.ceiling) && (this.max = Math.min(this.max, Di.ceiling)), zi && wi(this.dataMin) && (es = es || 0, !wi(ns) && this.min < es && this.dataMin >= es ? this.min = this.options.minRange ? Math.min(es, this.max - this.minRange) : es : !wi(ls) && this.max > es && this.dataMax <= es && (this.max = this.options.minRange ? Math.max(es, this.min + this.minRange) : es)), pi(this.min) && pi(this.max) && !this.chart.polar && this.min > this.max && (wi(this.options.min) ? this.max = this.min : wi(this.options.max) && (this.min = this.max)), this.tickInterval = this.min === this.max || typeof this.min > "u" || typeof this.max > "u" ? 1 : ri && this.linkedParent && !Ji && mi === this.linkedParent.options.tickPixelInterval ? Ji = this.linkedParent.tickInterval : gi(Ji, this.tickAmount ? (this.max - this.min) / Math.max(this.tickAmount - 1, 1) : void 0, vi ? 1 : (this.max - this.min) * mi / Math.max(this.len, mi)), Vi && !si) {
-            const Ai = this.min !== (this.old && this.old.min) || this.max !== (this.old && this.old.max);
-            this.series.forEach(function($i) {
-              $i.forceCrop = $i.forceCropping && $i.forceCropping(), $i.processData(Ai);
-            }), ai(this, "postProcessData", { hasExtremesChanged: Ai });
+          )) && Mi(10, 1, Pi), this.min = ki(Hi.log2lin(this.min), 16), this.max = ki(Hi.log2lin(this.max), 16)), this.range && wi(this.max) && (this.userMin = this.min = ns = Math.max(this.dataMin, this.minFromRange()), this.userMax = ls = this.max, this.range = null), ci(this, "foundExtremes"), this.beforePadding && this.beforePadding(), this.adjustForMinRange(), !fi(this.userMin) && fi(Ri.softMin) && Ri.softMin < this.min && (this.min = ns = Ri.softMin), !fi(this.userMax) && fi(Ri.softMax) && Ri.softMax > this.max && (this.max = ls = Ri.softMax), !(yi || this.axisPointRange || this.stacking && this.stacking.usePercentage || ai) && wi(this.min) && wi(this.max) && (Pi = this.max - this.min) && (!wi(ns) && Wi && (this.min -= Pi * Wi), !wi(ls) && Xi && (this.max += Pi * Xi)), !fi(this.userMin) && fi(Ri.floor) && (this.min = Math.max(this.min, Ri.floor)), !fi(this.userMax) && fi(Ri.ceiling) && (this.max = Math.min(this.max, Ri.ceiling)), Gi && wi(this.dataMin) && (ss = ss || 0, !wi(ns) && this.min < ss && this.dataMin >= ss ? this.min = this.options.minRange ? Math.min(ss, this.max - this.minRange) : ss : !wi(ls) && this.max > ss && this.dataMax <= ss && (this.max = this.options.minRange ? Math.max(ss, this.min + this.minRange) : ss)), fi(this.min) && fi(this.max) && !this.chart.polar && this.min > this.max && (wi(this.options.min) ? this.max = this.min : wi(this.options.max) && (this.min = this.max)), this.tickInterval = this.min === this.max || typeof this.min > "u" || typeof this.max > "u" ? 1 : ai && this.linkedParent && !ts && xi === this.linkedParent.options.tickPixelInterval ? ts = this.linkedParent.tickInterval : mi(ts, this.tickAmount ? (this.max - this.min) / Math.max(this.tickAmount - 1, 1) : void 0, yi ? 1 : (this.max - this.min) * xi / Math.max(this.len, xi)), qi && !ni) {
+            const Ei = this.min !== (this.old && this.old.min) || this.max !== (this.old && this.old.max);
+            this.series.forEach(function(Ji) {
+              Ji.forceCrop = Ji.forceCropping && Ji.forceCropping(), Ji.processData(Ei);
+            }), ci(this, "postProcessData", { hasExtremesChanged: Ei });
           }
-          this.setAxisTranslation(), ai(this, "initialAxisTranslation"), this.pointRange && !Ji && (this.tickInterval = Math.max(this.pointRange, this.tickInterval)), si = gi(Di.minTickInterval, this.dateTime && !this.series.some((Ai) => Ai.noSharedTooltip) ? this.closestPointRange : 0), !Ji && this.tickInterval < si && (this.tickInterval = si), this.dateTime || this.logarithmic || Ji || (this.tickInterval = Zi(this, this.tickInterval)), this.tickAmount || (this.tickInterval = this.unsquish()), this.setTickPositions();
+          this.setAxisTranslation(), ci(this, "initialAxisTranslation"), this.pointRange && !ts && (this.tickInterval = Math.max(this.pointRange, this.tickInterval)), ni = mi(Ri.minTickInterval, this.dateTime && !this.series.some((Ei) => Ei.noSharedTooltip) ? this.closestPointRange : 0), !ts && this.tickInterval < ni && (this.tickInterval = ni), this.dateTime || this.logarithmic || ts || (this.tickInterval = Zi(this, this.tickInterval)), this.tickAmount || (this.tickInterval = this.unsquish()), this.setTickPositions();
         }
         setTickPositions() {
-          var si = this.options;
-          const Li = si.tickPositions, Hi = si.tickPositioner;
-          var Di = this.getMinorTickInterval(), Vi = this.hasVerticalPanning(), ri = this.coll === "colorAxis";
-          const mi = (ri || !Vi) && si.startOnTick;
-          Vi = (ri || !Vi) && si.endOnTick, ri = [];
-          let vi;
-          if (this.tickmarkOffset = this.categories && si.tickmarkPlacement === "between" && this.tickInterval === 1 ? 0.5 : 0, this.minorTickInterval = Di === "auto" && this.tickInterval ? this.tickInterval / si.minorTicksPerMajor : Di, this.single = this.min === this.max && wi(this.min) && !this.tickAmount && (parseInt(this.min, 10) === this.min || si.allowDecimals !== !1), Li)
-            ri = Li.slice();
-          else if (pi(this.min) && pi(this.max)) {
+          var ni = this.options;
+          const Pi = ni.tickPositions, Hi = ni.tickPositioner;
+          var Ri = this.getMinorTickInterval(), qi = this.hasVerticalPanning(), ai = this.coll === "colorAxis";
+          const xi = (ai || !qi) && ni.startOnTick;
+          qi = (ai || !qi) && ni.endOnTick, ai = [];
+          let yi;
+          if (this.tickmarkOffset = this.categories && ni.tickmarkPlacement === "between" && this.tickInterval === 1 ? 0.5 : 0, this.minorTickInterval = Ri === "auto" && this.tickInterval ? this.tickInterval / ni.minorTicksPerMajor : Ri, this.single = this.min === this.max && wi(this.min) && !this.tickAmount && (parseInt(this.min, 10) === this.min || ni.allowDecimals !== !1), Pi)
+            ai = Pi.slice();
+          else if (fi(this.min) && fi(this.max)) {
             if (this.ordinal && this.ordinal.positions || !((this.max - this.min) / this.tickInterval > Math.max(2 * this.len, 200)))
               if (this.dateTime)
-                ri = this.getTimeTicks(
-                  this.dateTime.normalizeTimeTickInterval(this.tickInterval, si.units),
+                ai = this.getTimeTicks(
+                  this.dateTime.normalizeTimeTickInterval(this.tickInterval, ni.units),
                   this.min,
                   this.max,
-                  si.startOfWeek,
+                  ni.startOfWeek,
                   this.ordinal && this.ordinal.positions,
                   this.closestPointRange,
                   !0
                 );
               else if (this.logarithmic)
-                ri = this.logarithmic.getLogTickPositions(this.tickInterval, this.min, this.max);
+                ai = this.logarithmic.getLogTickPositions(this.tickInterval, this.min, this.max);
               else
-                for (Di = si = this.tickInterval; Di <= 2 * si && (ri = this.getLinearTickPositions(this.tickInterval, this.min, this.max), this.tickAmount && ri.length > this.tickAmount); )
-                  this.tickInterval = Zi(this, Di *= 1.1);
+                for (Ri = ni = this.tickInterval; Ri <= 2 * ni && (ai = this.getLinearTickPositions(this.tickInterval, this.min, this.max), this.tickAmount && ai.length > this.tickAmount); )
+                  this.tickInterval = Zi(this, Ri *= 1.1);
             else
-              ri = [this.min, this.max], Mi(19, !1, this.chart);
-            ri.length > this.len && (ri = [ri[0], ri[ri.length - 1]], ri[0] === ri[1] && (ri.length = 1)), Hi && (this.tickPositions = ri, (vi = Hi.apply(this, [this.min, this.max])) && (ri = vi));
+              ai = [this.min, this.max], Mi(19, !1, this.chart);
+            ai.length > this.len && (ai = [ai[0], ai[ai.length - 1]], ai[0] === ai[1] && (ai.length = 1)), Hi && (this.tickPositions = ai, (yi = Hi.apply(this, [this.min, this.max])) && (ai = yi));
           }
-          this.tickPositions = ri, this.paddedTicks = ri.slice(0), this.trimTicks(ri, mi, Vi), !this.isLinked && pi(this.min) && pi(this.max) && (this.single && 2 > ri.length && !this.categories && !this.series.some((zi) => zi.is("heatmap") && zi.options.pointPlacement === "between") && (this.min -= 0.5, this.max += 0.5), Li || vi || this.adjustTickAmount()), ai(this, "afterSetTickPositions");
+          this.tickPositions = ai, this.paddedTicks = ai.slice(0), this.trimTicks(ai, xi, qi), !this.isLinked && fi(this.min) && fi(this.max) && (this.single && 2 > ai.length && !this.categories && !this.series.some((Gi) => Gi.is("heatmap") && Gi.options.pointPlacement === "between") && (this.min -= 0.5, this.max += 0.5), Pi || yi || this.adjustTickAmount()), ci(this, "afterSetTickPositions");
         }
-        trimTicks(si, Li, Hi) {
-          const Di = si[0], Vi = si[si.length - 1], ri = !this.isOrdinal && this.minPointOffset || 0;
-          if (ai(this, "trimTicks"), !this.isLinked) {
-            if (Li && Di !== -1 / 0)
-              this.min = Di;
+        trimTicks(ni, Pi, Hi) {
+          const Ri = ni[0], qi = ni[ni.length - 1], ai = !this.isOrdinal && this.minPointOffset || 0;
+          if (ci(this, "trimTicks"), !this.isLinked) {
+            if (Pi && Ri !== -1 / 0)
+              this.min = Ri;
             else
-              for (; this.min - ri > si[0]; )
-                si.shift();
+              for (; this.min - ai > ni[0]; )
+                ni.shift();
             if (Hi)
-              this.max = Vi;
+              this.max = qi;
             else
-              for (; this.max + ri < si[si.length - 1]; )
-                si.pop();
-            si.length === 0 && wi(Di) && !this.options.tickPositions && si.push((Vi + Di) / 2);
+              for (; this.max + ai < ni[ni.length - 1]; )
+                ni.pop();
+            ni.length === 0 && wi(Ri) && !this.options.tickPositions && ni.push((qi + Ri) / 2);
           }
         }
         alignToOthers() {
-          const si = this, Li = [this], Hi = si.options, Di = this.coll === "yAxis" && this.chart.options.chart.alignThresholds, Vi = [];
-          let ri;
-          if (si.thresholdAlignment = void 0, (this.chart.options.chart.alignTicks !== !1 && Hi.alignTicks || Di) && Hi.startOnTick !== !1 && Hi.endOnTick !== !1 && !si.logarithmic) {
-            const mi = (zi) => {
-              const { horiz: Xi, options: Gi } = zi;
-              return [Xi ? Gi.left : Gi.top, Gi.width, Gi.height, Gi.pane].join();
-            }, vi = mi(this);
-            this.chart[this.coll].forEach(function(zi) {
-              const { series: Xi } = zi;
-              Xi.length && Xi.some((Gi) => Gi.visible) && zi !== si && mi(zi) === vi && (ri = !0, Li.push(zi));
+          const ni = this, Pi = [this], Hi = ni.options, Ri = this.coll === "yAxis" && this.chart.options.chart.alignThresholds, qi = [];
+          let ai;
+          if (ni.thresholdAlignment = void 0, (this.chart.options.chart.alignTicks !== !1 && Hi.alignTicks || Ri) && Hi.startOnTick !== !1 && Hi.endOnTick !== !1 && !ni.logarithmic) {
+            const xi = (Gi) => {
+              const { horiz: Xi, options: Wi } = Gi;
+              return [Xi ? Wi.left : Wi.top, Wi.width, Wi.height, Wi.pane].join();
+            }, yi = xi(this);
+            this.chart[this.coll].forEach(function(Gi) {
+              const { series: Xi } = Gi;
+              Xi.length && Xi.some((Wi) => Wi.visible) && Gi !== ni && xi(Gi) === yi && (ai = !0, Pi.push(Gi));
             });
           }
-          if (ri && Di) {
-            Li.forEach((vi) => {
-              vi = vi.getThresholdAlignment(si), pi(vi) && Vi.push(vi);
+          if (ai && Ri) {
+            Pi.forEach((yi) => {
+              yi = yi.getThresholdAlignment(ni), fi(yi) && qi.push(yi);
             });
-            const mi = 1 < Vi.length ? Vi.reduce((vi, zi) => vi + zi, 0) / Vi.length : void 0;
-            Li.forEach((vi) => {
-              vi.thresholdAlignment = mi;
+            const xi = 1 < qi.length ? qi.reduce((yi, Gi) => yi + Gi, 0) / qi.length : void 0;
+            Pi.forEach((yi) => {
+              yi.thresholdAlignment = xi;
             });
           }
-          return ri;
+          return ai;
         }
-        getThresholdAlignment(si) {
-          if ((!pi(this.dataMin) || this !== si && this.series.some((Li) => Li.isDirty || Li.isDirtyData)) && this.getSeriesExtremes(), pi(this.threshold))
-            return si = fi((this.threshold - (this.dataMin || 0)) / ((this.dataMax || 0) - (this.dataMin || 0)), 0, 1), this.options.reversed && (si = 1 - si), si;
+        getThresholdAlignment(ni) {
+          if ((!fi(this.dataMin) || this !== ni && this.series.some((Pi) => Pi.isDirty || Pi.isDirtyData)) && this.getSeriesExtremes(), fi(this.threshold))
+            return ni = gi((this.threshold - (this.dataMin || 0)) / ((this.dataMax || 0) - (this.dataMin || 0)), 0, 1), this.options.reversed && (ni = 1 - ni), ni;
         }
         getTickAmount() {
-          const si = this.options, Li = si.tickPixelInterval;
-          let Hi = si.tickAmount;
-          !wi(si.tickInterval) && !Hi && this.len < Li && !this.isRadial && !this.logarithmic && si.startOnTick && si.endOnTick && (Hi = 2), !Hi && this.alignToOthers() && (Hi = Math.ceil(this.len / Li) + 1), 4 > Hi && (this.finalTickAmt = Hi, Hi = 5), this.tickAmount = Hi;
+          const ni = this.options, Pi = ni.tickPixelInterval;
+          let Hi = ni.tickAmount;
+          !wi(ni.tickInterval) && !Hi && this.len < Pi && !this.isRadial && !this.logarithmic && ni.startOnTick && ni.endOnTick && (Hi = 2), !Hi && this.alignToOthers() && (Hi = Math.ceil(this.len / Pi) + 1), 4 > Hi && (this.finalTickAmt = Hi, Hi = 5), this.tickAmount = Hi;
         }
         adjustTickAmount() {
-          const si = this, { finalTickAmt: Li, max: Hi, min: Di, options: Vi, tickPositions: ri, tickAmount: mi, thresholdAlignment: vi } = si, zi = ri && ri.length;
-          var Xi = gi(si.threshold, si.softThreshold ? 0 : null), Gi = si.tickInterval;
-          let Ji;
-          if (pi(vi) && (Ji = 0.5 > vi ? Math.ceil(vi * (mi - 1)) : Math.floor(vi * (mi - 1)), Vi.reversed && (Ji = mi - 1 - Ji)), si.hasData() && pi(Di) && pi(Hi)) {
-            const es = () => {
-              si.transA *= (zi - 1) / (mi - 1), si.min = Vi.startOnTick ? ri[0] : Math.min(Di, ri[0]), si.max = Vi.endOnTick ? ri[ri.length - 1] : Math.max(Hi, ri[ri.length - 1]);
+          const ni = this, { finalTickAmt: Pi, max: Hi, min: Ri, options: qi, tickPositions: ai, tickAmount: xi, thresholdAlignment: yi } = ni, Gi = ai && ai.length;
+          var Xi = mi(ni.threshold, ni.softThreshold ? 0 : null), Wi = ni.tickInterval;
+          let ts;
+          if (fi(yi) && (ts = 0.5 > yi ? Math.ceil(yi * (xi - 1)) : Math.floor(yi * (xi - 1)), qi.reversed && (ts = xi - 1 - ts)), ni.hasData() && fi(Ri) && fi(Hi)) {
+            const ss = () => {
+              ni.transA *= (Gi - 1) / (xi - 1), ni.min = qi.startOnTick ? ai[0] : Math.min(Ri, ai[0]), ni.max = qi.endOnTick ? ai[ai.length - 1] : Math.max(Hi, ai[ai.length - 1]);
             };
-            if (pi(Ji) && pi(si.threshold)) {
-              for (; ri[Ji] !== Xi || ri.length !== mi || ri[0] > Di || ri[ri.length - 1] < Hi; ) {
-                for (ri.length = 0, ri.push(si.threshold); ri.length < mi; )
-                  ri[Ji] === void 0 || ri[Ji] > si.threshold ? ri.unshift(Ci(ri[0] - Gi)) : ri.push(Ci(ri[ri.length - 1] + Gi));
-                if (Gi > 8 * si.tickInterval)
+            if (fi(ts) && fi(ni.threshold)) {
+              for (; ai[ts] !== Xi || ai.length !== xi || ai[0] > Ri || ai[ai.length - 1] < Hi; ) {
+                for (ai.length = 0, ai.push(ni.threshold); ai.length < xi; )
+                  ai[ts] === void 0 || ai[ts] > ni.threshold ? ai.unshift(ki(ai[0] - Wi)) : ai.push(ki(ai[ai.length - 1] + Wi));
+                if (Wi > 8 * ni.tickInterval)
                   break;
-                Gi *= 2;
+                Wi *= 2;
               }
-              es();
-            } else if (zi < mi) {
-              for (; ri.length < mi; )
-                ri.length % 2 || Di === Xi ? ri.push(Ci(ri[ri.length - 1] + Gi)) : ri.unshift(Ci(ri[0] - Gi));
-              es();
+              ss();
+            } else if (Gi < xi) {
+              for (; ai.length < xi; )
+                ai.length % 2 || Ri === Xi ? ai.push(ki(ai[ai.length - 1] + Wi)) : ai.unshift(ki(ai[0] - Wi));
+              ss();
             }
-            if (wi(Li)) {
-              for (Gi = Xi = ri.length; Gi--; )
-                (Li === 3 && Gi % 2 === 1 || 2 >= Li && 0 < Gi && Gi < Xi - 1) && ri.splice(Gi, 1);
-              si.finalTickAmt = void 0;
+            if (wi(Pi)) {
+              for (Wi = Xi = ai.length; Wi--; )
+                (Pi === 3 && Wi % 2 === 1 || 2 >= Pi && 0 < Wi && Wi < Xi - 1) && ai.splice(Wi, 1);
+              ni.finalTickAmt = void 0;
             }
           }
         }
         setScale() {
-          let si = !1, Li = !1;
-          this.series.forEach(function(Di) {
-            si = si || Di.isDirtyData || Di.isDirty, Li = Li || Di.xAxis && Di.xAxis.isDirty || !1;
+          let ni = !1, Pi = !1;
+          this.series.forEach(function(Ri) {
+            ni = ni || Ri.isDirtyData || Ri.isDirty, Pi = Pi || Ri.xAxis && Ri.xAxis.isDirty || !1;
           }), this.setAxisSize();
           const Hi = this.len !== (this.old && this.old.len);
-          Hi || si || Li || this.isLinked || this.forceRedraw || this.userMin !== (this.old && this.old.userMin) || this.userMax !== (this.old && this.old.userMax) || this.alignToOthers() ? (this.stacking && (this.stacking.resetStacks(), this.stacking.buildStacks()), this.forceRedraw = !1, this.userMinRange || (this.minRange = void 0), this.getSeriesExtremes(), this.setTickInterval(), this.isDirty || (this.isDirty = Hi || this.min !== (this.old && this.old.min) || this.max !== (this.old && this.old.max))) : this.stacking && this.stacking.cleanStacks(), si && this.panningState && (this.panningState.isDirty = !0), ai(this, "afterSetScale");
+          Hi || ni || Pi || this.isLinked || this.forceRedraw || this.userMin !== (this.old && this.old.userMin) || this.userMax !== (this.old && this.old.userMax) || this.alignToOthers() ? (this.stacking && (this.stacking.resetStacks(), this.stacking.buildStacks()), this.forceRedraw = !1, this.userMinRange || (this.minRange = void 0), this.getSeriesExtremes(), this.setTickInterval(), this.isDirty || (this.isDirty = Hi || this.min !== (this.old && this.old.min) || this.max !== (this.old && this.old.max))) : this.stacking && this.stacking.cleanStacks(), ni && this.panningState && (this.panningState.isDirty = !0), ci(this, "afterSetScale");
         }
-        setExtremes(si, Li, Hi, Di, Vi) {
-          const ri = this, mi = ri.chart;
-          Hi = gi(Hi, !0), ri.series.forEach(function(vi) {
-            delete vi.kdTree;
-          }), Vi = Oi(Vi, { min: si, max: Li }), ai(ri, "setExtremes", Vi, function() {
-            ri.userMin = si, ri.userMax = Li, ri.eventArgs = Vi, Hi && mi.redraw(Di);
+        setExtremes(ni, Pi, Hi, Ri, qi) {
+          const ai = this, xi = ai.chart;
+          Hi = mi(Hi, !0), ai.series.forEach(function(yi) {
+            delete yi.kdTree;
+          }), qi = Di(qi, { min: ni, max: Pi }), ci(ai, "setExtremes", qi, function() {
+            ai.userMin = ni, ai.userMax = Pi, ai.eventArgs = qi, Hi && xi.redraw(Ri);
           });
         }
-        zoom(si, Li) {
-          const Hi = this, Di = this.dataMin, Vi = this.dataMax, ri = this.options, mi = Math.min(Di, gi(ri.min, Di)), vi = Math.max(Vi, gi(ri.max, Vi));
-          return si = { newMin: si, newMax: Li }, ai(this, "zoom", si, function(zi) {
-            let Xi = zi.newMin, Gi = zi.newMax;
-            (Xi !== Hi.min || Gi !== Hi.max) && (Hi.allowZoomOutside || (wi(Di) && (Xi < mi && (Xi = mi), Xi > vi && (Xi = vi)), wi(Vi) && (Gi < mi && (Gi = mi), Gi > vi && (Gi = vi))), Hi.displayBtn = typeof Xi < "u" || typeof Gi < "u", Hi.setExtremes(Xi, Gi, !1, void 0, { trigger: "zoom" })), zi.zoomed = !0;
-          }), si.zoomed;
+        zoom(ni, Pi) {
+          const Hi = this, Ri = this.dataMin, qi = this.dataMax, ai = this.options, xi = Math.min(Ri, mi(ai.min, Ri)), yi = Math.max(qi, mi(ai.max, qi));
+          return ni = { newMin: ni, newMax: Pi }, ci(this, "zoom", ni, function(Gi) {
+            let Xi = Gi.newMin, Wi = Gi.newMax;
+            (Xi !== Hi.min || Wi !== Hi.max) && (Hi.allowZoomOutside || (wi(Ri) && (Xi < xi && (Xi = xi), Xi > yi && (Xi = yi)), wi(qi) && (Wi < xi && (Wi = xi), Wi > yi && (Wi = yi))), Hi.displayBtn = typeof Xi < "u" || typeof Wi < "u", Hi.setExtremes(Xi, Wi, !1, void 0, { trigger: "zoom" })), Gi.zoomed = !0;
+          }), ni.zoomed;
         }
         setAxisSize() {
-          const si = this.chart;
-          var Li = this.options;
-          const Hi = Li.offsets || [0, 0, 0, 0], Di = this.horiz, Vi = this.width = Math.round(Ei(gi(Li.width, si.plotWidth - Hi[3] + Hi[1]), si.plotWidth)), ri = this.height = Math.round(Ei(gi(Li.height, si.plotHeight - Hi[0] + Hi[2]), si.plotHeight)), mi = this.top = Math.round(Ei(gi(Li.top, si.plotTop + Hi[0]), si.plotHeight, si.plotTop));
-          Li = this.left = Math.round(Ei(
-            gi(Li.left, si.plotLeft + Hi[3]),
-            si.plotWidth,
-            si.plotLeft
-          )), this.bottom = si.chartHeight - ri - mi, this.right = si.chartWidth - Vi - Li, this.len = Math.max(Di ? Vi : ri, 0), this.pos = Di ? Li : mi;
+          const ni = this.chart;
+          var Pi = this.options;
+          const Hi = Pi.offsets || [0, 0, 0, 0], Ri = this.horiz, qi = this.width = Math.round(Oi(mi(Pi.width, ni.plotWidth - Hi[3] + Hi[1]), ni.plotWidth)), ai = this.height = Math.round(Oi(mi(Pi.height, ni.plotHeight - Hi[0] + Hi[2]), ni.plotHeight)), xi = this.top = Math.round(Oi(mi(Pi.top, ni.plotTop + Hi[0]), ni.plotHeight, ni.plotTop));
+          Pi = this.left = Math.round(Oi(
+            mi(Pi.left, ni.plotLeft + Hi[3]),
+            ni.plotWidth,
+            ni.plotLeft
+          )), this.bottom = ni.chartHeight - ai - xi, this.right = ni.chartWidth - qi - Pi, this.len = Math.max(Ri ? qi : ai, 0), this.pos = Ri ? Pi : xi;
         }
         getExtremes() {
-          const si = this.logarithmic;
-          return { min: si ? Ci(si.lin2log(this.min)) : this.min, max: si ? Ci(si.lin2log(this.max)) : this.max, dataMin: this.dataMin, dataMax: this.dataMax, userMin: this.userMin, userMax: this.userMax };
+          const ni = this.logarithmic;
+          return { min: ni ? ki(ni.lin2log(this.min)) : this.min, max: ni ? ki(ni.lin2log(this.max)) : this.max, dataMin: this.dataMin, dataMax: this.dataMax, userMin: this.userMin, userMax: this.userMax };
         }
-        getThreshold(si) {
-          var Li = this.logarithmic;
-          const Hi = Li ? Li.lin2log(this.min) : this.min;
-          return Li = Li ? Li.lin2log(this.max) : this.max, si === null || si === -1 / 0 ? si = Hi : si === 1 / 0 ? si = Li : Hi > si ? si = Hi : Li < si && (si = Li), this.translate(
-            si,
+        getThreshold(ni) {
+          var Pi = this.logarithmic;
+          const Hi = Pi ? Pi.lin2log(this.min) : this.min;
+          return Pi = Pi ? Pi.lin2log(this.max) : this.max, ni === null || ni === -1 / 0 ? ni = Hi : ni === 1 / 0 ? ni = Pi : Hi > ni ? ni = Hi : Pi < ni && (ni = Pi), this.translate(
+            ni,
             0,
             1,
             0,
             1
           );
         }
-        autoLabelAlign(si) {
-          const Li = (gi(si, 0) - 90 * this.side + 720) % 360;
-          return si = { align: "center" }, ai(this, "autoLabelAlign", si, function(Hi) {
-            15 < Li && 165 > Li ? Hi.align = "right" : 195 < Li && 345 > Li && (Hi.align = "left");
-          }), si.align;
+        autoLabelAlign(ni) {
+          const Pi = (mi(ni, 0) - 90 * this.side + 720) % 360;
+          return ni = { align: "center" }, ci(this, "autoLabelAlign", ni, function(Hi) {
+            15 < Pi && 165 > Pi ? Hi.align = "right" : 195 < Pi && 345 > Pi && (Hi.align = "left");
+          }), ni.align;
         }
-        tickSize(si) {
-          const Li = this.options, Hi = gi(Li[si === "tick" ? "tickWidth" : "minorTickWidth"], si === "tick" && this.isXAxis && !this.categories ? 1 : 0);
-          let Di = Li[si === "tick" ? "tickLength" : "minorTickLength"], Vi;
-          return Hi && Di && (Li[si + "Position"] === "inside" && (Di = -Di), Vi = [Di, Hi]), si = { tickSize: Vi }, ai(this, "afterTickSize", si), si.tickSize;
+        tickSize(ni) {
+          const Pi = this.options, Hi = mi(Pi[ni === "tick" ? "tickWidth" : "minorTickWidth"], ni === "tick" && this.isXAxis && !this.categories ? 1 : 0);
+          let Ri = Pi[ni === "tick" ? "tickLength" : "minorTickLength"], qi;
+          return Hi && Ri && (Pi[ni + "Position"] === "inside" && (Ri = -Ri), qi = [Ri, Hi]), ni = { tickSize: qi }, ci(this, "afterTickSize", ni), ni.tickSize;
         }
         labelMetrics() {
-          const si = this.chart.renderer;
-          var Li = this.ticks;
-          return Li = Li[Object.keys(Li)[0]] || {}, this.chart.renderer.fontMetrics(Li.label || Li.movedLabel || si.box);
+          const ni = this.chart.renderer;
+          var Pi = this.ticks;
+          return Pi = Pi[Object.keys(Pi)[0]] || {}, this.chart.renderer.fontMetrics(Pi.label || Pi.movedLabel || ni.box);
         }
         unsquish() {
-          const si = this.options.labels;
-          var Li = this.horiz;
-          const Hi = this.tickInterval, Di = this.len / (((this.categories ? 1 : 0) + this.max - this.min) / Hi), Vi = si.rotation, ri = 0.75 * this.labelMetrics().h, mi = Math.max(this.max - this.min, 0), vi = function(es) {
-            let os = es / (Di || 1);
-            return os = 1 < os ? Math.ceil(os) : 1, os * Hi > mi && es !== 1 / 0 && Di !== 1 / 0 && mi && (os = Math.ceil(mi / Hi)), Ci(os * Hi);
+          const ni = this.options.labels;
+          var Pi = this.horiz;
+          const Hi = this.tickInterval, Ri = this.len / (((this.categories ? 1 : 0) + this.max - this.min) / Hi), qi = ni.rotation, ai = 0.75 * this.labelMetrics().h, xi = Math.max(this.max - this.min, 0), yi = function(ss) {
+            let os = ss / (Ri || 1);
+            return os = 1 < os ? Math.ceil(os) : 1, os * Hi > xi && ss !== 1 / 0 && Ri !== 1 / 0 && xi && (os = Math.ceil(xi / Hi)), ki(os * Hi);
           };
-          let zi = Hi, Xi, Gi = Number.MAX_VALUE, Ji;
-          if (Li) {
-            if (si.staggerLines || (pi(Vi) ? Ji = [Vi] : Di < si.autoRotationLimit && (Ji = si.autoRotation)), Ji) {
-              let es;
-              for (const os of Ji)
-                (os === Vi || os && -90 <= os && 90 >= os) && (Li = vi(Math.abs(ri / Math.sin(bi * os))), es = Li + Math.abs(os / 360), es < Gi && (Gi = es, Xi = os, zi = Li));
+          let Gi = Hi, Xi, Wi = Number.MAX_VALUE, ts;
+          if (Pi) {
+            if (ni.staggerLines || (fi(qi) ? ts = [qi] : Ri < ni.autoRotationLimit && (ts = ni.autoRotation)), ts) {
+              let ss;
+              for (const os of ts)
+                (os === qi || os && -90 <= os && 90 >= os) && (Pi = yi(Math.abs(ai / Math.sin(Ai * os))), ss = Pi + Math.abs(os / 360), ss < Wi && (Wi = ss, Xi = os, Gi = Pi));
             }
           } else
-            zi = vi(ri);
-          return this.autoRotation = Ji, this.labelRotation = gi(Xi, pi(Vi) ? Vi : 0), si.step ? Hi : zi;
+            Gi = yi(ai);
+          return this.autoRotation = ts, this.labelRotation = mi(Xi, fi(qi) ? qi : 0), ni.step ? Hi : Gi;
         }
-        getSlotWidth(si) {
-          const Li = this.chart, Hi = this.horiz, Di = this.options.labels, Vi = Math.max(this.tickPositions.length - (this.categories ? 0 : 1), 1), ri = Li.margin[3];
-          if (si && pi(si.slotWidth))
-            return si.slotWidth;
-          if (Hi && 2 > Di.step)
-            return Di.rotation ? 0 : (this.staggerLines || 1) * this.len / Vi;
+        getSlotWidth(ni) {
+          const Pi = this.chart, Hi = this.horiz, Ri = this.options.labels, qi = Math.max(this.tickPositions.length - (this.categories ? 0 : 1), 1), ai = Pi.margin[3];
+          if (ni && fi(ni.slotWidth))
+            return ni.slotWidth;
+          if (Hi && 2 > Ri.step)
+            return Ri.rotation ? 0 : (this.staggerLines || 1) * this.len / qi;
           if (!Hi) {
-            if (si = Di.style.width, si !== void 0)
-              return parseInt(String(si), 10);
-            if (ri)
-              return ri - Li.spacing[3];
+            if (ni = Ri.style.width, ni !== void 0)
+              return parseInt(String(ni), 10);
+            if (ai)
+              return ai - Pi.spacing[3];
           }
-          return 0.33 * Li.chartWidth;
+          return 0.33 * Pi.chartWidth;
         }
         renderUnsquish() {
-          const si = this.chart, Li = si.renderer, Hi = this.tickPositions, Di = this.ticks, Vi = this.options.labels, ri = Vi.style, mi = this.horiz, vi = this.getSlotWidth();
-          var zi = Math.max(1, Math.round(vi - 2 * Vi.padding));
-          const Xi = {}, Gi = this.labelMetrics(), Ji = ri.textOverflow;
-          let es, os, ns = 0;
-          if (ei(Vi.rotation) || (Xi.rotation = Vi.rotation || 0), Hi.forEach(function(Ii) {
-            Ii = Di[Ii], Ii.movedLabel && Ii.replaceMovedLabel(), Ii && Ii.label && Ii.label.textPxLength > ns && (ns = Ii.label.textPxLength);
+          const ni = this.chart, Pi = ni.renderer, Hi = this.tickPositions, Ri = this.ticks, qi = this.options.labels, ai = qi.style, xi = this.horiz, yi = this.getSlotWidth();
+          var Gi = Math.max(1, Math.round(yi - 2 * qi.padding));
+          const Xi = {}, Wi = this.labelMetrics(), ts = ai.textOverflow;
+          let ss, os, ns = 0;
+          if (si(qi.rotation) || (Xi.rotation = qi.rotation || 0), Hi.forEach(function(Ii) {
+            Ii = Ri[Ii], Ii.movedLabel && Ii.replaceMovedLabel(), Ii && Ii.label && Ii.label.textPxLength > ns && (ns = Ii.label.textPxLength);
           }), this.maxLabelLength = ns, this.autoRotation)
-            ns > zi && ns > Gi.h ? Xi.rotation = this.labelRotation : this.labelRotation = 0;
-          else if (vi && (es = zi, !Ji))
-            for (os = "clip", zi = Hi.length; !mi && zi--; ) {
-              var ls = Hi[zi];
-              (ls = Di[ls].label) && (ls.styles && ls.styles.textOverflow === "ellipsis" ? ls.css({ textOverflow: "clip" }) : ls.textPxLength > vi && ls.css({ width: vi + "px" }), ls.getBBox().height > this.len / Hi.length - (Gi.h - Gi.f) && (ls.specificTextOverflow = "ellipsis"));
+            ns > Gi && ns > Wi.h ? Xi.rotation = this.labelRotation : this.labelRotation = 0;
+          else if (yi && (ss = Gi, !ts))
+            for (os = "clip", Gi = Hi.length; !xi && Gi--; ) {
+              var ls = Hi[Gi];
+              (ls = Ri[ls].label) && (ls.styles && ls.styles.textOverflow === "ellipsis" ? ls.css({ textOverflow: "clip" }) : ls.textPxLength > yi && ls.css({ width: yi + "px" }), ls.getBBox().height > this.len / Hi.length - (Wi.h - Wi.f) && (ls.specificTextOverflow = "ellipsis"));
             }
-          Xi.rotation && (es = ns > 0.5 * si.chartHeight ? 0.33 * si.chartHeight : ns, Ji || (os = "ellipsis")), (this.labelAlign = Vi.align || this.autoLabelAlign(this.labelRotation)) && (Xi.align = this.labelAlign), Hi.forEach(function(Ii) {
-            const Ai = (Ii = Di[Ii]) && Ii.label, $i = ri.width, Yi = {};
-            Ai && (Ai.attr(Xi), Ii.shortenLabel ? Ii.shortenLabel() : es && !$i && ri.whiteSpace !== "nowrap" && (es < Ai.textPxLength || Ai.element.tagName === "SPAN") ? (Yi.width = es + "px", Ji || (Yi.textOverflow = Ai.specificTextOverflow || os), Ai.css(Yi)) : Ai.styles && Ai.styles.width && !Yi.width && !$i && Ai.css({ width: null }), delete Ai.specificTextOverflow, Ii.rotation = Xi.rotation);
-          }, this), this.tickRotCorr = Li.rotCorr(
-            Gi.b,
+          Xi.rotation && (ss = ns > 0.5 * ni.chartHeight ? 0.33 * ni.chartHeight : ns, ts || (os = "ellipsis")), (this.labelAlign = qi.align || this.autoLabelAlign(this.labelRotation)) && (Xi.align = this.labelAlign), Hi.forEach(function(Ii) {
+            const Ei = (Ii = Ri[Ii]) && Ii.label, Ji = ai.width, Fi = {};
+            Ei && (Ei.attr(Xi), Ii.shortenLabel ? Ii.shortenLabel() : ss && !Ji && ai.whiteSpace !== "nowrap" && (ss < Ei.textPxLength || Ei.element.tagName === "SPAN") ? (Fi.width = ss + "px", ts || (Fi.textOverflow = Ei.specificTextOverflow || os), Ei.css(Fi)) : Ei.styles && Ei.styles.width && !Fi.width && !Ji && Ei.css({ width: null }), delete Ei.specificTextOverflow, Ii.rotation = Xi.rotation);
+          }, this), this.tickRotCorr = Pi.rotCorr(
+            Wi.b,
             this.labelRotation || 0,
             this.side !== 0
           );
         }
         hasData() {
-          return this.series.some(function(si) {
-            return si.hasData();
+          return this.series.some(function(ni) {
+            return ni.hasData();
           }) || this.options.showEmpty && wi(this.min) && wi(this.max);
         }
-        addTitle(si) {
-          const Li = this.chart.renderer, Hi = this.horiz, Di = this.opposite, Vi = this.options.title, ri = this.chart.styledMode;
-          let mi;
-          this.axisTitle || ((mi = Vi.textAlign) || (mi = (Hi ? { low: "left", middle: "center", high: "right" } : { low: Di ? "right" : "left", middle: "center", high: Di ? "left" : "right" })[Vi.align]), this.axisTitle = Li.text(Vi.text || "", 0, 0, Vi.useHTML).attr({
+        addTitle(ni) {
+          const Pi = this.chart.renderer, Hi = this.horiz, Ri = this.opposite, qi = this.options.title, ai = this.chart.styledMode;
+          let xi;
+          this.axisTitle || ((xi = qi.textAlign) || (xi = (Hi ? { low: "left", middle: "center", high: "right" } : { low: Ri ? "right" : "left", middle: "center", high: Ri ? "left" : "right" })[qi.align]), this.axisTitle = Pi.text(qi.text || "", 0, 0, qi.useHTML).attr({
             zIndex: 7,
-            rotation: Vi.rotation,
-            align: mi
-          }).addClass("highcharts-axis-title"), ri || this.axisTitle.css(Fe(Vi.style)), this.axisTitle.add(this.axisGroup), this.axisTitle.isNew = !0), ri || Vi.style.width || this.isRadial || this.axisTitle.css({ width: this.len + "px" }), this.axisTitle[si ? "show" : "hide"](si);
+            rotation: qi.rotation,
+            align: xi
+          }).addClass("highcharts-axis-title"), ai || this.axisTitle.css(ti(qi.style)), this.axisTitle.add(this.axisGroup), this.axisTitle.isNew = !0), ai || qi.style.width || this.isRadial || this.axisTitle.css({ width: this.len + "px" }), this.axisTitle[ni ? "show" : "hide"](ni);
         }
-        generateTick(si) {
-          const Li = this.ticks;
-          Li[si] ? Li[si].addLabel() : Li[si] = new ss(this, si);
+        generateTick(ni) {
+          const Pi = this.ticks;
+          Pi[ni] ? Pi[ni].addLabel() : Pi[ni] = new is(this, ni);
         }
         getOffset() {
-          const si = this, { chart: Li, horiz: Hi, options: Di, side: Vi, ticks: ri, tickPositions: mi, coll: vi, axisParent: zi } = si, Xi = Li.renderer, Gi = Li.inverted && !si.isZAxis ? [1, 0, 3, 2][Vi] : Vi;
-          var Ji = si.hasData();
-          const es = Di.title;
-          var os = Di.labels;
-          const ns = pi(Di.crossing);
-          var ls = Li.axisOffset;
-          const Ii = Li.clipOffset, Ai = [-1, 1, 1, -1][Vi], $i = Di.className;
-          let Yi, _i = 0, hs;
+          const ni = this, { chart: Pi, horiz: Hi, options: Ri, side: qi, ticks: ai, tickPositions: xi, coll: yi, axisParent: Gi } = ni, Xi = Pi.renderer, Wi = Pi.inverted && !ni.isZAxis ? [1, 0, 3, 2][qi] : qi;
+          var ts = ni.hasData();
+          const ss = Ri.title;
+          var os = Ri.labels;
+          const ns = fi(Ri.crossing);
+          var ls = Pi.axisOffset;
+          const Ii = Pi.clipOffset, Ei = [-1, 1, 1, -1][qi], Ji = Ri.className;
+          let Fi, Qi = 0, hs;
           var as = 0;
-          let us = 0;
-          if (si.showAxis = Yi = Ji || Di.showEmpty, si.staggerLines = si.horiz && os.staggerLines || void 0, !si.axisGroup) {
-            const ps = (cs, ds, ms) => Xi.g(cs).attr({ zIndex: ms }).addClass(`highcharts-${vi.toLowerCase()}${ds} ` + (this.isRadial ? `highcharts-radial-axis${ds} ` : "") + ($i || "")).add(zi);
-            si.gridGroup = ps("grid", "-grid", Di.gridZIndex), si.axisGroup = ps("axis", "", Di.zIndex), si.labelGroup = ps(
+          let ps = 0;
+          if (ni.showAxis = Fi = ts || Ri.showEmpty, ni.staggerLines = ni.horiz && os.staggerLines || void 0, !ni.axisGroup) {
+            const us = (cs, ds, ms) => Xi.g(cs).attr({ zIndex: ms }).addClass(`highcharts-${yi.toLowerCase()}${ds} ` + (this.isRadial ? `highcharts-radial-axis${ds} ` : "") + (Ji || "")).add(Gi);
+            ni.gridGroup = us("grid", "-grid", Ri.gridZIndex), ni.axisGroup = us("axis", "", Ri.zIndex), ni.labelGroup = us(
               "axis-labels",
               "-labels",
               os.zIndex
             );
           }
-          Ji || si.isLinked ? (mi.forEach(function(ps) {
-            si.generateTick(ps);
-          }), si.renderUnsquish(), si.reserveSpaceDefault = Vi === 0 || Vi === 2 || { 1: "left", 3: "right" }[Vi] === si.labelAlign, gi(os.reserveSpace, ns ? !1 : null, si.labelAlign === "center" ? !0 : null, si.reserveSpaceDefault) && mi.forEach(function(ps) {
-            us = Math.max(ri[ps].getLabelSize(), us);
-          }), si.staggerLines && (us *= si.staggerLines), si.labelOffset = us * (si.opposite ? -1 : 1)) : hi(ri, function(ps, cs) {
-            ps.destroy(), delete ri[cs];
-          }), es && es.text && es.enabled !== !1 && (si.addTitle(Yi), Yi && !ns && es.reserveSpace !== !1 && (si.titleOffset = _i = si.axisTitle.getBBox()[Hi ? "height" : "width"], hs = es.offset, as = wi(hs) ? 0 : gi(es.margin, Hi ? 5 : 10))), si.renderLine(), si.offset = Ai * gi(Di.offset, ls[Vi] ? ls[Vi] + (Di.margin || 0) : 0), si.tickRotCorr = si.tickRotCorr || { x: 0, y: 0 }, Ji = Vi === 0 ? -si.labelMetrics().h : Vi === 2 ? si.tickRotCorr.y : 0, as = Math.abs(us) + as, us && (as = as - Ji + Ai * (Hi ? gi(os.y, si.tickRotCorr.y + Ai * os.distance) : gi(os.x, Ai * os.distance))), si.axisTitleMargin = gi(hs, as), si.getMaxLabelDimensions && (si.maxLabelDimensions = si.getMaxLabelDimensions(ri, mi)), vi !== "colorAxis" && (os = this.tickSize("tick"), ls[Vi] = Math.max(ls[Vi], (si.axisTitleMargin || 0) + _i + Ai * si.offset, as, mi && mi.length && os ? os[0] + Ai * si.offset : 0), ls = !si.axisLine || Di.offset ? 0 : 2 * Math.floor(si.axisLine.strokeWidth() / 2), Ii[Gi] = Math.max(Ii[Gi], ls)), ai(this, "afterGetOffset");
+          ts || ni.isLinked ? (xi.forEach(function(us) {
+            ni.generateTick(us);
+          }), ni.renderUnsquish(), ni.reserveSpaceDefault = qi === 0 || qi === 2 || { 1: "left", 3: "right" }[qi] === ni.labelAlign, mi(os.reserveSpace, ns ? !1 : null, ni.labelAlign === "center" ? !0 : null, ni.reserveSpaceDefault) && xi.forEach(function(us) {
+            ps = Math.max(ai[us].getLabelSize(), ps);
+          }), ni.staggerLines && (ps *= ni.staggerLines), ni.labelOffset = ps * (ni.opposite ? -1 : 1)) : di(ai, function(us, cs) {
+            us.destroy(), delete ai[cs];
+          }), ss && ss.text && ss.enabled !== !1 && (ni.addTitle(Fi), Fi && !ns && ss.reserveSpace !== !1 && (ni.titleOffset = Qi = ni.axisTitle.getBBox()[Hi ? "height" : "width"], hs = ss.offset, as = wi(hs) ? 0 : mi(ss.margin, Hi ? 5 : 10))), ni.renderLine(), ni.offset = Ei * mi(Ri.offset, ls[qi] ? ls[qi] + (Ri.margin || 0) : 0), ni.tickRotCorr = ni.tickRotCorr || { x: 0, y: 0 }, ts = qi === 0 ? -ni.labelMetrics().h : qi === 2 ? ni.tickRotCorr.y : 0, as = Math.abs(ps) + as, ps && (as = as - ts + Ei * (Hi ? mi(os.y, ni.tickRotCorr.y + Ei * os.distance) : mi(os.x, Ei * os.distance))), ni.axisTitleMargin = mi(hs, as), ni.getMaxLabelDimensions && (ni.maxLabelDimensions = ni.getMaxLabelDimensions(ai, xi)), yi !== "colorAxis" && (os = this.tickSize("tick"), ls[qi] = Math.max(ls[qi], (ni.axisTitleMargin || 0) + Qi + Ei * ni.offset, as, xi && xi.length && os ? os[0] + Ei * ni.offset : 0), ls = !ni.axisLine || Ri.offset ? 0 : 2 * Math.floor(ni.axisLine.strokeWidth() / 2), Ii[Wi] = Math.max(Ii[Wi], ls)), ci(this, "afterGetOffset");
         }
-        getLinePath(si) {
-          const Li = this.chart, Hi = this.opposite;
-          var Di = this.offset;
-          const Vi = this.horiz, ri = this.left + (Hi ? this.width : 0) + Di;
-          return Di = Li.chartHeight - this.bottom - (Hi ? this.height : 0) + Di, Hi && (si *= -1), Li.renderer.crispLine([["M", Vi ? this.left : ri, Vi ? Di : this.top], ["L", Vi ? Li.chartWidth - this.right : ri, Vi ? Di : Li.chartHeight - this.bottom]], si);
+        getLinePath(ni) {
+          const Pi = this.chart, Hi = this.opposite;
+          var Ri = this.offset;
+          const qi = this.horiz, ai = this.left + (Hi ? this.width : 0) + Ri;
+          return Ri = Pi.chartHeight - this.bottom - (Hi ? this.height : 0) + Ri, Hi && (ni *= -1), Pi.renderer.crispLine([["M", qi ? this.left : ai, qi ? Ri : this.top], ["L", qi ? Pi.chartWidth - this.right : ai, qi ? Ri : Pi.chartHeight - this.bottom]], ni);
         }
         renderLine() {
           this.axisLine || (this.axisLine = this.chart.renderer.path().addClass("highcharts-axis-line").add(this.axisGroup), this.chart.styledMode || this.axisLine.attr({ stroke: this.options.lineColor, "stroke-width": this.options.lineWidth, zIndex: 7 }));
         }
-        getTitlePosition(si) {
-          var Li = this.horiz, Hi = this.left;
-          const Di = this.top;
-          var Vi = this.len;
-          const ri = this.options.title, mi = Li ? Hi : Di, vi = this.opposite, zi = this.offset, Xi = ri.x, Gi = ri.y, Ji = this.chart.renderer.fontMetrics(si);
-          return si = si ? Math.max(si.getBBox(!1, 0).height - Ji.h - 1, 0) : 0, Vi = { low: mi + (Li ? 0 : Vi), middle: mi + Vi / 2, high: mi + (Li ? Vi : 0) }[ri.align], Hi = (Li ? Di + this.height : Hi) + (Li ? 1 : -1) * (vi ? -1 : 1) * (this.axisTitleMargin || 0) + [-si, si, Ji.f, -si][this.side], Li = { x: Li ? Vi + Xi : Hi + (vi ? this.width : 0) + zi + Xi, y: Li ? Hi + Gi - (vi ? this.height : 0) + zi : Vi + Gi }, ai(this, "afterGetTitlePosition", { titlePosition: Li }), Li;
+        getTitlePosition(ni) {
+          var Pi = this.horiz, Hi = this.left;
+          const Ri = this.top;
+          var qi = this.len;
+          const ai = this.options.title, xi = Pi ? Hi : Ri, yi = this.opposite, Gi = this.offset, Xi = ai.x, Wi = ai.y, ts = this.chart.renderer.fontMetrics(ni);
+          return ni = ni ? Math.max(ni.getBBox(!1, 0).height - ts.h - 1, 0) : 0, qi = { low: xi + (Pi ? 0 : qi), middle: xi + qi / 2, high: xi + (Pi ? qi : 0) }[ai.align], Hi = (Pi ? Ri + this.height : Hi) + (Pi ? 1 : -1) * (yi ? -1 : 1) * (this.axisTitleMargin || 0) + [-ni, ni, ts.f, -ni][this.side], Pi = { x: Pi ? qi + Xi : Hi + (yi ? this.width : 0) + Gi + Xi, y: Pi ? Hi + Wi - (yi ? this.height : 0) + Gi : qi + Wi }, ci(this, "afterGetTitlePosition", { titlePosition: Pi }), Pi;
         }
-        renderMinorTick(si, Li) {
+        renderMinorTick(ni, Pi) {
           const Hi = this.minorTicks;
-          Hi[si] || (Hi[si] = new ss(this, si, "minor")), Li && Hi[si].isNew && Hi[si].render(null, !0), Hi[si].render(null, !1, 1);
+          Hi[ni] || (Hi[ni] = new is(this, ni, "minor")), Pi && Hi[ni].isNew && Hi[ni].render(null, !0), Hi[ni].render(null, !1, 1);
         }
-        renderTick(si, Li, Hi) {
-          const Di = this.ticks;
-          (!this.isLinked || si >= this.min && si <= this.max || this.grid && this.grid.isColumn) && (Di[si] || (Di[si] = new ss(
+        renderTick(ni, Pi, Hi) {
+          const Ri = this.ticks;
+          (!this.isLinked || ni >= this.min && ni <= this.max || this.grid && this.grid.isColumn) && (Ri[ni] || (Ri[ni] = new is(
             this,
-            si
-          )), Hi && Di[si].isNew && Di[si].render(Li, !0, -1), Di[si].render(Li));
+            ni
+          )), Hi && Ri[ni].isNew && Ri[ni].render(Pi, !0, -1), Ri[ni].render(Pi));
         }
         render() {
-          const si = this, Li = si.chart, Hi = si.logarithmic, Di = si.options, Vi = si.isLinked, ri = si.tickPositions, mi = si.axisTitle, vi = si.ticks, zi = si.minorTicks, Xi = si.alternateBands, Gi = Di.stackLabels, Ji = Di.alternateGridColor;
-          var es = Di.crossing;
-          const os = si.tickmarkOffset, ns = si.axisLine, ls = si.showAxis, Ii = Ki(Li.renderer.globalAnimation);
-          let Ai, $i;
-          if (si.labelEdge.length = 0, si.overlap = !1, [vi, zi, Xi].forEach(function(Yi) {
-            hi(Yi, function(_i) {
-              _i.isActive = !1;
+          const ni = this, Pi = ni.chart, Hi = ni.logarithmic, Ri = ni.options, qi = ni.isLinked, ai = ni.tickPositions, xi = ni.axisTitle, yi = ni.ticks, Gi = ni.minorTicks, Xi = ni.alternateBands, Wi = Ri.stackLabels, ts = Ri.alternateGridColor;
+          var ss = Ri.crossing;
+          const os = ni.tickmarkOffset, ns = ni.axisLine, ls = ni.showAxis, Ii = Vi(Pi.renderer.globalAnimation);
+          let Ei, Ji;
+          if (ni.labelEdge.length = 0, ni.overlap = !1, [yi, Gi, Xi].forEach(function(Fi) {
+            di(Fi, function(Qi) {
+              Qi.isActive = !1;
             });
-          }), pi(es)) {
-            const Yi = this.isXAxis ? Li.yAxis[0] : Li.xAxis[0], _i = [1, -1, -1, 1][this.side];
-            Yi && (es = Yi.toPixels(es, !0), si.horiz && (es = Yi.len - es), si.offset = _i * es);
+          }), fi(ss)) {
+            const Fi = this.isXAxis ? Pi.yAxis[0] : Pi.xAxis[0], Qi = [1, -1, -1, 1][this.side];
+            Fi && (ss = Fi.toPixels(ss, !0), ni.horiz && (ss = Fi.len - ss), ni.offset = Qi * ss);
           }
-          if (si.hasData() || Vi) {
-            const Yi = si.chart.hasRendered && si.old && pi(si.old.min);
-            si.minorTickInterval && !si.categories && si.getMinorTickPositions().forEach(function(_i) {
-              si.renderMinorTick(_i, Yi);
-            }), ri.length && (ri.forEach(function(_i, hs) {
-              si.renderTick(_i, hs, Yi);
-            }), os && (si.min === 0 || si.single) && (vi[-1] || (vi[-1] = new ss(si, -1, null, !0)), vi[-1].render(-1))), Ji && ri.forEach(function(_i, hs) {
-              $i = typeof ri[hs + 1] < "u" ? ri[hs + 1] + os : si.max - os, hs % 2 === 0 && _i < si.max && $i <= si.max + (Li.polar ? -os : os) && (Xi[_i] || (Xi[_i] = new is.PlotLineOrBand(si)), Ai = _i + os, Xi[_i].options = { from: Hi ? Hi.lin2log(Ai) : Ai, to: Hi ? Hi.lin2log($i) : $i, color: Ji, className: "highcharts-alternate-grid" }, Xi[_i].render(), Xi[_i].isActive = !0);
-            }), si._addedPlotLB || (si._addedPlotLB = !0, (Di.plotLines || []).concat(Di.plotBands || []).forEach(function(_i) {
-              si.addPlotBandOrLine(_i);
+          if (ni.hasData() || qi) {
+            const Fi = ni.chart.hasRendered && ni.old && fi(ni.old.min);
+            ni.minorTickInterval && !ni.categories && ni.getMinorTickPositions().forEach(function(Qi) {
+              ni.renderMinorTick(Qi, Fi);
+            }), ai.length && (ai.forEach(function(Qi, hs) {
+              ni.renderTick(Qi, hs, Fi);
+            }), os && (ni.min === 0 || ni.single) && (yi[-1] || (yi[-1] = new is(ni, -1, null, !0)), yi[-1].render(-1))), ts && ai.forEach(function(Qi, hs) {
+              Ji = typeof ai[hs + 1] < "u" ? ai[hs + 1] + os : ni.max - os, hs % 2 === 0 && Qi < ni.max && Ji <= ni.max + (Pi.polar ? -os : os) && (Xi[Qi] || (Xi[Qi] = new es.PlotLineOrBand(ni)), Ei = Qi + os, Xi[Qi].options = { from: Hi ? Hi.lin2log(Ei) : Ei, to: Hi ? Hi.lin2log(Ji) : Ji, color: ts, className: "highcharts-alternate-grid" }, Xi[Qi].render(), Xi[Qi].isActive = !0);
+            }), ni._addedPlotLB || (ni._addedPlotLB = !0, (Ri.plotLines || []).concat(Ri.plotBands || []).forEach(function(Qi) {
+              ni.addPlotBandOrLine(Qi);
             }));
           }
-          [vi, zi, Xi].forEach(function(Yi) {
-            const _i = [], hs = Ii.duration;
-            hi(Yi, function(as, us) {
-              as.isActive || (as.render(us, !1, 0), as.isActive = !1, _i.push(us));
-            }), Fi(function() {
-              let as = _i.length;
+          [yi, Gi, Xi].forEach(function(Fi) {
+            const Qi = [], hs = Ii.duration;
+            di(Fi, function(as, ps) {
+              as.isActive || (as.render(ps, !1, 0), as.isActive = !1, Qi.push(ps));
+            }), Ui(function() {
+              let as = Qi.length;
               for (; as--; )
-                Yi[_i[as]] && !Yi[_i[as]].isActive && (Yi[_i[as]].destroy(), delete Yi[_i[as]]);
-            }, Yi !== Xi && Li.hasRendered && hs ? hs : 0);
-          }), ns && (ns[ns.isPlaced ? "animate" : "attr"]({ d: this.getLinePath(ns.strokeWidth()) }), ns.isPlaced = !0, ns[ls ? "show" : "hide"](ls)), mi && ls && (mi[mi.isNew ? "attr" : "animate"](si.getTitlePosition(mi)), mi.isNew = !1), Gi && Gi.enabled && si.stacking && si.stacking.renderStackTotals(), si.old = { len: si.len, max: si.max, min: si.min, transA: si.transA, userMax: si.userMax, userMin: si.userMin }, si.isDirty = !1, ai(this, "afterRender");
+                Fi[Qi[as]] && !Fi[Qi[as]].isActive && (Fi[Qi[as]].destroy(), delete Fi[Qi[as]]);
+            }, Fi !== Xi && Pi.hasRendered && hs ? hs : 0);
+          }), ns && (ns[ns.isPlaced ? "animate" : "attr"]({ d: this.getLinePath(ns.strokeWidth()) }), ns.isPlaced = !0, ns[ls ? "show" : "hide"](ls)), xi && ls && (xi[xi.isNew ? "attr" : "animate"](ni.getTitlePosition(xi)), xi.isNew = !1), Wi && Wi.enabled && ni.stacking && ni.stacking.renderStackTotals(), ni.old = { len: ni.len, max: ni.max, min: ni.min, transA: ni.transA, userMax: ni.userMax, userMin: ni.userMin }, ni.isDirty = !1, ci(this, "afterRender");
         }
         redraw() {
-          this.visible && (this.render(), this.plotLinesAndBands.forEach(function(si) {
-            si.render();
-          })), this.series.forEach(function(si) {
-            si.isDirty = !0;
+          this.visible && (this.render(), this.plotLinesAndBands.forEach(function(ni) {
+            ni.render();
+          })), this.series.forEach(function(ni) {
+            ni.isDirty = !0;
           });
         }
         getKeepProps() {
           return this.keepProps || rs.keepProps;
         }
-        destroy(si) {
-          const Li = this, Hi = Li.plotLinesAndBands, Di = this.eventOptions;
-          if (ai(this, "destroy", { keepEvents: si }), si || ni(Li), [Li.ticks, Li.minorTicks, Li.alternateBands].forEach(function(Vi) {
-            yi(Vi);
+        destroy(ni) {
+          const Pi = this, Hi = Pi.plotLinesAndBands, Ri = this.eventOptions;
+          if (ci(this, "destroy", { keepEvents: ni }), ni || hi(Pi), [Pi.ticks, Pi.minorTicks, Pi.alternateBands].forEach(function(qi) {
+            Si(qi);
           }), Hi)
-            for (si = Hi.length; si--; )
-              Hi[si].destroy();
-          "axisLine axisTitle axisGroup gridGroup labelGroup cross scrollbar".split(" ").forEach(function(Vi) {
-            Li[Vi] && (Li[Vi] = Li[Vi].destroy());
+            for (ni = Hi.length; ni--; )
+              Hi[ni].destroy();
+          "axisLine axisTitle axisGroup gridGroup labelGroup cross scrollbar".split(" ").forEach(function(qi) {
+            Pi[qi] && (Pi[qi] = Pi[qi].destroy());
           });
-          for (const Vi in Li.plotLinesAndBandsGroups)
-            Li.plotLinesAndBandsGroups[Vi] = Li.plotLinesAndBandsGroups[Vi].destroy();
-          hi(Li, function(Vi, ri) {
-            Li.getKeepProps().indexOf(ri) === -1 && delete Li[ri];
-          }), this.eventOptions = Di;
+          for (const qi in Pi.plotLinesAndBandsGroups)
+            Pi.plotLinesAndBandsGroups[qi] = Pi.plotLinesAndBandsGroups[qi].destroy();
+          di(Pi, function(qi, ai) {
+            Pi.getKeepProps().indexOf(ai) === -1 && delete Pi[ai];
+          }), this.eventOptions = Ri;
         }
-        drawCrosshair(si, Li) {
+        drawCrosshair(ni, Pi) {
           const Hi = this.crosshair;
-          var Di = gi(Hi && Hi.snap, !0);
-          const Vi = this.chart;
-          let ri, mi = this.cross;
-          if (ai(this, "drawCrosshair", { e: si, point: Li }), si || (si = this.cross && this.cross.e), Hi && (wi(Li) || !Di) !== !1) {
-            if (Di ? wi(Li) && (ri = gi(this.coll !== "colorAxis" ? Li.crosshairPos : null, this.isXAxis ? Li.plotX : this.len - Li.plotY)) : ri = si && (this.horiz ? si.chartX - this.pos : this.len - si.chartY + this.pos), wi(ri)) {
-              var vi = { value: Li && (this.isXAxis ? Li.x : gi(Li.stackY, Li.y)), translatedValue: ri };
-              Vi.polar && Oi(vi, { isCrosshair: !0, chartX: si && si.chartX, chartY: si && si.chartY, point: Li }), vi = this.getPlotLinePath(vi) || null;
+          var Ri = mi(Hi && Hi.snap, !0);
+          const qi = this.chart;
+          let ai, xi = this.cross;
+          if (ci(this, "drawCrosshair", { e: ni, point: Pi }), ni || (ni = this.cross && this.cross.e), Hi && (wi(Pi) || !Ri) !== !1) {
+            if (Ri ? wi(Pi) && (ai = mi(this.coll !== "colorAxis" ? Pi.crosshairPos : null, this.isXAxis ? Pi.plotX : this.len - Pi.plotY)) : ai = ni && (this.horiz ? ni.chartX - this.pos : this.len - ni.chartY + this.pos), wi(ai)) {
+              var yi = { value: Pi && (this.isXAxis ? Pi.x : mi(Pi.stackY, Pi.y)), translatedValue: ai };
+              qi.polar && Di(yi, { isCrosshair: !0, chartX: ni && ni.chartX, chartY: ni && ni.chartY, point: Pi }), yi = this.getPlotLinePath(yi) || null;
             }
-            if (!wi(vi)) {
+            if (!wi(yi)) {
               this.hideCrosshair();
               return;
             }
-            Di = this.categories && !this.isRadial, mi || (this.cross = mi = Vi.renderer.path().addClass("highcharts-crosshair highcharts-crosshair-" + (Di ? "category " : "thin ") + (Hi.className || "")).attr({ zIndex: gi(Hi.zIndex, 2) }).add(), Vi.styledMode || (mi.attr({ stroke: Hi.color || (Di ? qi.parse("#ccd3ff").setOpacity(0.25).get() : "#cccccc"), "stroke-width": gi(
+            Ri = this.categories && !this.isRadial, xi || (this.cross = xi = qi.renderer.path().addClass("highcharts-crosshair highcharts-crosshair-" + (Ri ? "category " : "thin ") + (Hi.className || "")).attr({ zIndex: mi(Hi.zIndex, 2) }).add(), qi.styledMode || (xi.attr({ stroke: Hi.color || (Ri ? zi.parse("#ccd3ff").setOpacity(0.25).get() : "#cccccc"), "stroke-width": mi(
               Hi.width,
               1
-            ) }).css({ "pointer-events": "none" }), Hi.dashStyle && mi.attr({ dashstyle: Hi.dashStyle }))), mi.show().attr({ d: vi }), Di && !Hi.width && mi.attr({ "stroke-width": this.transA }), this.cross.e = si;
+            ) }).css({ "pointer-events": "none" }), Hi.dashStyle && xi.attr({ dashstyle: Hi.dashStyle }))), xi.show().attr({ d: yi }), Ri && !Hi.width && xi.attr({ "stroke-width": this.transA }), this.cross.e = ni;
           } else
             this.hideCrosshair();
-          ai(this, "afterDrawCrosshair", { e: si, point: Li });
+          ci(this, "afterDrawCrosshair", { e: ni, point: Pi });
         }
         hideCrosshair() {
-          this.cross && this.cross.hide(), ai(this, "afterHideCrosshair");
+          this.cross && this.cross.hide(), ci(this, "afterHideCrosshair");
         }
         hasVerticalPanning() {
-          const si = this.chart.options.chart.panning;
-          return !!(si && si.enabled && /y/.test(si.type));
+          const ni = this.chart.options.chart.panning;
+          return !!(ni && ni.enabled && /y/.test(ni.type));
         }
-        update(si, Li) {
+        update(ni, Pi) {
           const Hi = this.chart;
-          si = Fe(this.userOptions, si), this.destroy(!0), this.init(Hi, si), Hi.isDirtyBox = !0, gi(Li, !0) && Hi.redraw();
+          ni = ti(this.userOptions, ni), this.destroy(!0), this.init(Hi, ni), Hi.isDirtyBox = !0, mi(Pi, !0) && Hi.redraw();
         }
-        remove(si) {
-          const Li = this.chart, Hi = this.coll, Di = this.series;
-          let Vi = Di.length;
-          for (; Vi--; )
-            Di[Vi] && Di[Vi].remove(!1);
-          Ti(Li.axes, this), Ti(Li[Hi] || [], this), Li.orderItems(Hi), this.destroy(), Li.isDirtyBox = !0, gi(si, !0) && Li.redraw();
+        remove(ni) {
+          const Pi = this.chart, Hi = this.coll, Ri = this.series;
+          let qi = Ri.length;
+          for (; qi--; )
+            Ri[qi] && Ri[qi].remove(!1);
+          Ti(Pi.axes, this), Ti(Pi[Hi] || [], this), Pi.orderItems(Hi), this.destroy(), Pi.isDirtyBox = !0, mi(ni, !0) && Pi.redraw();
         }
-        setTitle(si, Li) {
-          this.update({ title: si }, Li);
+        setTitle(ni, Pi) {
+          this.update({ title: ni }, Pi);
         }
-        setCategories(si, Li) {
-          this.update({ categories: si }, Li);
+        setCategories(ni, Pi) {
+          this.update({ categories: ni }, Pi);
         }
       }
-      return rs.defaultOptions = ji.defaultXAxisOptions, rs.keepProps = "coll extKey hcEvents names series userMax userMin".split(" "), rs;
-    }), ci(
-      oi,
+      return rs.defaultOptions = Ci.defaultXAxisOptions, rs.keepProps = "coll extKey hcEvents names series userMax userMin".split(" "), rs;
+    }), ri(
+      ii,
       "Core/Axis/DateTimeAxis.js",
-      [oi["Core/Utilities.js"]],
-      function(Si) {
-        const { addEvent: ji, getMagnitude: qi, normalizeTickInterval: ts, timeUnits: Qi } = Si;
-        var is;
-        return function(ss) {
-          function Wi() {
+      [ii["Core/Utilities.js"]],
+      function(li) {
+        const { addEvent: Ci, getMagnitude: zi, normalizeTickInterval: Ki, timeUnits: Yi } = li;
+        var es;
+        return function(is) {
+          function $i() {
             return this.chart.time.getTimeTicks.apply(this.chart.time, arguments);
           }
-          function Ki(bi) {
-            bi.userOptions.type !== "datetime" ? this.dateTime = void 0 : this.dateTime || (this.dateTime = new ki(this));
+          function Vi(Ai) {
+            Ai.userOptions.type !== "datetime" ? this.dateTime = void 0 : this.dateTime || (this.dateTime = new bi(this));
           }
-          const Ui = [];
-          ss.compose = function(bi) {
-            return Si.pushUnique(Ui, bi) && (bi.keepProps.push("dateTime"), bi.prototype.getTimeTicks = Wi, ji(bi, "init", Ki)), bi;
+          const _i = [];
+          is.compose = function(Ai) {
+            return li.pushUnique(_i, Ai) && (Ai.keepProps.push("dateTime"), Ai.prototype.getTimeTicks = $i, Ci(Ai, "init", Vi)), Ai;
           };
-          class ki {
-            constructor(Ri) {
-              this.axis = Ri;
+          class bi {
+            constructor(ji) {
+              this.axis = ji;
             }
-            normalizeTimeTickInterval(Ri, Ni) {
-              const fi = Ni || [["millisecond", [1, 2, 5, 10, 20, 25, 50, 100, 200, 500]], ["second", [1, 2, 5, 10, 15, 30]], ["minute", [1, 2, 5, 10, 15, 30]], ["hour", [1, 2, 3, 4, 6, 8, 12]], ["day", [1, 2]], ["week", [1, 2]], ["month", [1, 2, 3, 4, 6]], ["year", null]];
-              Ni = fi[fi.length - 1];
-              let Ci = Qi[Ni[0]], wi = Ni[1], yi;
-              for (yi = 0; yi < fi.length && (Ni = fi[yi], Ci = Qi[Ni[0]], wi = Ni[1], !(fi[yi + 1] && Ri <= (Ci * wi[wi.length - 1] + Qi[fi[yi + 1][0]]) / 2)); yi++)
+            normalizeTimeTickInterval(ji, Ni) {
+              const gi = Ni || [["millisecond", [1, 2, 5, 10, 20, 25, 50, 100, 200, 500]], ["second", [1, 2, 5, 10, 15, 30]], ["minute", [1, 2, 5, 10, 15, 30]], ["hour", [1, 2, 3, 4, 6, 8, 12]], ["day", [1, 2]], ["week", [1, 2]], ["month", [1, 2, 3, 4, 6]], ["year", null]];
+              Ni = gi[gi.length - 1];
+              let ki = Yi[Ni[0]], wi = Ni[1], Si;
+              for (Si = 0; Si < gi.length && (Ni = gi[Si], ki = Yi[Ni[0]], wi = Ni[1], !(gi[Si + 1] && ji <= (ki * wi[wi.length - 1] + Yi[gi[Si + 1][0]]) / 2)); Si++)
                 ;
-              return Ci === Qi.year && Ri < 5 * Ci && (wi = [1, 2, 5]), Ri = ts(Ri / Ci, wi, Ni[0] === "year" ? Math.max(qi(Ri / Ci), 1) : 1), { unitRange: Ci, count: Ri, unitName: Ni[0] };
+              return ki === Yi.year && ji < 5 * ki && (wi = [1, 2, 5]), ji = Ki(ji / ki, wi, Ni[0] === "year" ? Math.max(zi(ji / ki), 1) : 1), { unitRange: ki, count: ji, unitName: Ni[0] };
             }
-            getXDateFormat(Ri, Ni) {
-              const { axis: fi } = this, Ci = fi.chart.time;
-              return fi.closestPointRange ? Ci.getDateFormat(fi.closestPointRange, Ri, fi.options.startOfWeek, Ni) || Ci.resolveDTLFormat(Ni.year).main : Ci.resolveDTLFormat(Ni.day).main;
+            getXDateFormat(ji, Ni) {
+              const { axis: gi } = this, ki = gi.chart.time;
+              return gi.closestPointRange ? ki.getDateFormat(gi.closestPointRange, ji, gi.options.startOfWeek, Ni) || ki.resolveDTLFormat(Ni.year).main : ki.resolveDTLFormat(Ni.day).main;
             }
           }
-          ss.Additions = ki;
-        }(is || (is = {})), is;
+          is.Additions = bi;
+        }(es || (es = {})), es;
       }
-    ), ci(oi, "Core/Axis/LogarithmicAxis.js", [oi["Core/Utilities.js"]], function(Si) {
-      const { addEvent: ji, normalizeTickInterval: qi, pick: ts } = Si;
-      var Qi;
-      return function(is) {
-        function ss(ki) {
-          let bi = this.logarithmic;
-          ki.userOptions.type !== "logarithmic" ? this.logarithmic = void 0 : bi || (this.logarithmic = new Ui(this));
+    ), ri(ii, "Core/Axis/LogarithmicAxis.js", [ii["Core/Utilities.js"]], function(li) {
+      const { addEvent: Ci, normalizeTickInterval: zi, pick: Ki } = li;
+      var Yi;
+      return function(es) {
+        function is(bi) {
+          let Ai = this.logarithmic;
+          bi.userOptions.type !== "logarithmic" ? this.logarithmic = void 0 : Ai || (this.logarithmic = new _i(this));
         }
-        function Wi() {
-          const ki = this.logarithmic;
-          ki && (this.lin2val = function(bi) {
-            return ki.lin2log(bi);
-          }, this.val2lin = function(bi) {
-            return ki.log2lin(bi);
+        function $i() {
+          const bi = this.logarithmic;
+          bi && (this.lin2val = function(Ai) {
+            return bi.lin2log(Ai);
+          }, this.val2lin = function(Ai) {
+            return bi.log2lin(Ai);
           });
         }
-        const Ki = [];
-        is.compose = function(ki) {
-          return Si.pushUnique(Ki, ki) && (ki.keepProps.push("logarithmic"), ji(ki, "init", ss), ji(ki, "afterInit", Wi)), ki;
+        const Vi = [];
+        es.compose = function(bi) {
+          return li.pushUnique(Vi, bi) && (bi.keepProps.push("logarithmic"), Ci(bi, "init", is), Ci(bi, "afterInit", $i)), bi;
         };
-        class Ui {
-          constructor(bi) {
-            this.axis = bi;
+        class _i {
+          constructor(Ai) {
+            this.axis = Ai;
           }
-          getLogTickPositions(bi, Ri, Ni, fi) {
-            const Ci = this.axis;
-            var wi = Ci.len, yi = Ci.options;
+          getLogTickPositions(Ai, ji, Ni, gi) {
+            const ki = this.axis;
+            var wi = ki.len, Si = ki.options;
             let Ti = [];
-            if (fi || (this.minorAutoInterval = void 0), 0.5 <= bi)
-              bi = Math.round(bi), Ti = Ci.getLinearTickPositions(bi, Ri, Ni);
-            else if (0.08 <= bi) {
-              yi = Math.floor(Ri);
-              let Mi, Oi, ai, li, xi;
-              for (wi = 0.3 < bi ? [1, 2, 4] : 0.15 < bi ? [1, 2, 4, 6, 8] : [1, 2, 3, 4, 5, 6, 7, 8, 9]; yi < Ni + 1 && !xi; yi++)
-                for (Oi = wi.length, Mi = 0; Mi < Oi && !xi; Mi++)
-                  ai = this.log2lin(this.lin2log(yi) * wi[Mi]), ai > Ri && (!fi || li <= Ni) && typeof li < "u" && Ti.push(li), li > Ni && (xi = !0), li = ai;
+            if (gi || (this.minorAutoInterval = void 0), 0.5 <= Ai)
+              Ai = Math.round(Ai), Ti = ki.getLinearTickPositions(Ai, ji, Ni);
+            else if (0.08 <= Ai) {
+              Si = Math.floor(ji);
+              let Mi, Di, ci, pi, vi;
+              for (wi = 0.3 < Ai ? [1, 2, 4] : 0.15 < Ai ? [1, 2, 4, 6, 8] : [1, 2, 3, 4, 5, 6, 7, 8, 9]; Si < Ni + 1 && !vi; Si++)
+                for (Di = wi.length, Mi = 0; Mi < Di && !vi; Mi++)
+                  ci = this.log2lin(this.lin2log(Si) * wi[Mi]), ci > ji && (!gi || pi <= Ni) && typeof pi < "u" && Ti.push(pi), pi > Ni && (vi = !0), pi = ci;
             } else
-              Ri = this.lin2log(Ri), Ni = this.lin2log(Ni), bi = fi ? Ci.getMinorTickInterval() : yi.tickInterval, bi = ts(bi === "auto" ? null : bi, this.minorAutoInterval, yi.tickPixelInterval / (fi ? 5 : 1) * (Ni - Ri) / ((fi ? wi / Ci.tickPositions.length : wi) || 1)), bi = qi(bi), Ti = Ci.getLinearTickPositions(bi, Ri, Ni).map(this.log2lin), fi || (this.minorAutoInterval = bi / 5);
-            return fi || (Ci.tickInterval = bi), Ti;
+              ji = this.lin2log(ji), Ni = this.lin2log(Ni), Ai = gi ? ki.getMinorTickInterval() : Si.tickInterval, Ai = Ki(Ai === "auto" ? null : Ai, this.minorAutoInterval, Si.tickPixelInterval / (gi ? 5 : 1) * (Ni - ji) / ((gi ? wi / ki.tickPositions.length : wi) || 1)), Ai = zi(Ai), Ti = ki.getLinearTickPositions(Ai, ji, Ni).map(this.log2lin), gi || (this.minorAutoInterval = Ai / 5);
+            return gi || (ki.tickInterval = Ai), Ti;
           }
-          lin2log(bi) {
+          lin2log(Ai) {
             return Math.pow(
               10,
-              bi
+              Ai
             );
           }
-          log2lin(bi) {
-            return Math.log(bi) / Math.LN10;
+          log2lin(Ai) {
+            return Math.log(Ai) / Math.LN10;
           }
         }
-        is.Additions = Ui;
-      }(Qi || (Qi = {})), Qi;
-    }), ci(oi, "Core/Axis/PlotLineOrBand/PlotLineOrBandAxis.js", [oi["Core/Utilities.js"]], function(Si) {
-      const { erase: ji, extend: qi, isNumber: ts } = Si;
-      var Qi;
-      return function(is) {
-        function ss(Ci) {
-          return this.addPlotBandOrLine(Ci, "plotBands");
+        es.Additions = _i;
+      }(Yi || (Yi = {})), Yi;
+    }), ri(ii, "Core/Axis/PlotLineOrBand/PlotLineOrBandAxis.js", [ii["Core/Utilities.js"]], function(li) {
+      const { erase: Ci, extend: zi, isNumber: Ki } = li;
+      var Yi;
+      return function(es) {
+        function is(ki) {
+          return this.addPlotBandOrLine(ki, "plotBands");
         }
-        function Wi(Ci, wi) {
-          const yi = this.userOptions;
-          let Ti = new fi(this, Ci);
+        function $i(ki, wi) {
+          const Si = this.userOptions;
+          let Ti = new gi(this, ki);
           if (this.visible && (Ti = Ti.render()), Ti) {
-            if (this._addedPlotLB || (this._addedPlotLB = !0, (yi.plotLines || []).concat(yi.plotBands || []).forEach((Mi) => {
+            if (this._addedPlotLB || (this._addedPlotLB = !0, (Si.plotLines || []).concat(Si.plotBands || []).forEach((Mi) => {
               this.addPlotBandOrLine(Mi);
             })), wi) {
-              const Mi = yi[wi] || [];
-              Mi.push(Ci), yi[wi] = Mi;
+              const Mi = Si[wi] || [];
+              Mi.push(ki), Si[wi] = Mi;
             }
             this.plotLinesAndBands.push(Ti);
           }
           return Ti;
         }
-        function Ki(Ci) {
-          return this.addPlotBandOrLine(Ci, "plotLines");
+        function Vi(ki) {
+          return this.addPlotBandOrLine(ki, "plotLines");
         }
-        function Ui(Ci, wi, yi = this.options) {
-          const Ti = this.getPlotLinePath({ value: wi, force: !0, acrossPanes: yi.acrossPanes }), Mi = [], Oi = this.horiz;
-          wi = !ts(this.min) || !ts(this.max) || Ci < this.min && wi < this.min || Ci > this.max && wi > this.max, Ci = this.getPlotLinePath({ value: Ci, force: !0, acrossPanes: yi.acrossPanes }), yi = 1;
-          let ai;
-          if (Ci && Ti)
-            for (wi && (ai = Ci.toString() === Ti.toString(), yi = 0), wi = 0; wi < Ci.length; wi += 2) {
-              const li = Ci[wi], xi = Ci[wi + 1], di = Ti[wi], pi = Ti[wi + 1];
-              li[0] !== "M" && li[0] !== "L" || xi[0] !== "M" && xi[0] !== "L" || di[0] !== "M" && di[0] !== "L" || pi[0] !== "M" && pi[0] !== "L" || (Oi && di[1] === li[1] ? (di[1] += yi, pi[1] += yi) : Oi || di[2] !== li[2] || (di[2] += yi, pi[2] += yi), Mi.push(["M", li[1], li[2]], ["L", xi[1], xi[2]], ["L", pi[1], pi[2]], ["L", di[1], di[2]], ["Z"])), Mi.isFlat = ai;
+        function _i(ki, wi, Si = this.options) {
+          const Ti = this.getPlotLinePath({ value: wi, force: !0, acrossPanes: Si.acrossPanes }), Mi = [], Di = this.horiz;
+          wi = !Ki(this.min) || !Ki(this.max) || ki < this.min && wi < this.min || ki > this.max && wi > this.max, ki = this.getPlotLinePath({ value: ki, force: !0, acrossPanes: Si.acrossPanes }), Si = 1;
+          let ci;
+          if (ki && Ti)
+            for (wi && (ci = ki.toString() === Ti.toString(), Si = 0), wi = 0; wi < ki.length; wi += 2) {
+              const pi = ki[wi], vi = ki[wi + 1], ui = Ti[wi], fi = Ti[wi + 1];
+              pi[0] !== "M" && pi[0] !== "L" || vi[0] !== "M" && vi[0] !== "L" || ui[0] !== "M" && ui[0] !== "L" || fi[0] !== "M" && fi[0] !== "L" || (Di && ui[1] === pi[1] ? (ui[1] += Si, fi[1] += Si) : Di || ui[2] !== pi[2] || (ui[2] += Si, fi[2] += Si), Mi.push(["M", pi[1], pi[2]], ["L", vi[1], vi[2]], ["L", fi[1], fi[2]], ["L", ui[1], ui[2]], ["Z"])), Mi.isFlat = ci;
             }
           return Mi;
         }
-        function ki(Ci) {
-          this.removePlotBandOrLine(Ci);
+        function bi(ki) {
+          this.removePlotBandOrLine(ki);
         }
-        function bi(Ci) {
-          const wi = this.plotLinesAndBands, yi = this.options, Ti = this.userOptions;
+        function Ai(ki) {
+          const wi = this.plotLinesAndBands, Si = this.options, Ti = this.userOptions;
           if (wi) {
             let Mi = wi.length;
             for (; Mi--; )
-              wi[Mi].id === Ci && wi[Mi].destroy();
+              wi[Mi].id === ki && wi[Mi].destroy();
             [
-              yi.plotLines || [],
+              Si.plotLines || [],
               Ti.plotLines || [],
-              yi.plotBands || [],
+              Si.plotBands || [],
               Ti.plotBands || []
-            ].forEach(function(Oi) {
-              for (Mi = Oi.length; Mi--; )
-                (Oi[Mi] || {}).id === Ci && ji(Oi, Oi[Mi]);
+            ].forEach(function(Di) {
+              for (Mi = Di.length; Mi--; )
+                (Di[Mi] || {}).id === ki && Ci(Di, Di[Mi]);
             });
           }
         }
-        function Ri(Ci) {
-          this.removePlotBandOrLine(Ci);
+        function ji(ki) {
+          this.removePlotBandOrLine(ki);
         }
         const Ni = [];
-        let fi;
-        is.compose = function(Ci, wi) {
-          return fi || (fi = Ci), Si.pushUnique(Ni, wi) && qi(wi.prototype, { addPlotBand: ss, addPlotLine: Ki, addPlotBandOrLine: Wi, getPlotBandPath: Ui, removePlotBand: ki, removePlotLine: Ri, removePlotBandOrLine: bi }), wi;
+        let gi;
+        es.compose = function(ki, wi) {
+          return gi || (gi = ki), li.pushUnique(Ni, wi) && zi(wi.prototype, { addPlotBand: is, addPlotLine: Vi, addPlotBandOrLine: $i, getPlotBandPath: _i, removePlotBand: bi, removePlotLine: ji, removePlotBandOrLine: Ai }), wi;
         };
-      }(Qi || (Qi = {})), Qi;
-    }), ci(
-      oi,
+      }(Yi || (Yi = {})), Yi;
+    }), ri(
+      ii,
       "Core/Axis/PlotLineOrBand/PlotLineOrBand.js",
-      [oi["Core/Axis/PlotLineOrBand/PlotLineOrBandAxis.js"], oi["Core/Utilities.js"]],
-      function(Si, ji) {
-        const { arrayMax: qi, arrayMin: ts, defined: Qi, destroyObjectProperties: is, erase: ss, fireEvent: Wi, merge: Ki, objectEach: Ui, pick: ki } = ji;
-        class bi {
+      [ii["Core/Axis/PlotLineOrBand/PlotLineOrBandAxis.js"], ii["Core/Utilities.js"]],
+      function(li, Ci) {
+        const { arrayMax: zi, arrayMin: Ki, defined: Yi, destroyObjectProperties: es, erase: is, fireEvent: $i, merge: Vi, objectEach: _i, pick: bi } = Ci;
+        class Ai {
           static compose(Ni) {
-            return Si.compose(bi, Ni);
+            return li.compose(Ai, Ni);
           }
-          constructor(Ni, fi) {
-            this.axis = Ni, fi && (this.options = fi, this.id = fi.id);
+          constructor(Ni, gi) {
+            this.axis = Ni, gi && (this.options = gi, this.id = gi.id);
           }
           render() {
-            Wi(this, "render");
-            const Ni = this, fi = Ni.axis, Ci = fi.horiz;
-            var wi = fi.logarithmic;
-            const yi = Ni.options, Ti = yi.color, Mi = ki(yi.zIndex, 0), Oi = yi.events, ai = {}, li = fi.chart.renderer;
-            let xi = yi.label, di = Ni.label, pi = yi.to, ei = yi.from, Fe = yi.value, ii = Ni.svgElem;
-            var hi = [];
-            const gi = Qi(ei) && Qi(pi);
-            hi = Qi(Fe);
-            const Ei = !ii, ni = { class: "highcharts-plot-" + (gi ? "band " : "line ") + (yi.className || "") };
-            let Pi = gi ? "bands" : "lines";
-            if (wi && (ei = wi.log2lin(ei), pi = wi.log2lin(pi), Fe = wi.log2lin(Fe)), fi.chart.styledMode || (hi ? (ni.stroke = Ti || "#999999", ni["stroke-width"] = ki(yi.width, 1), yi.dashStyle && (ni.dashstyle = yi.dashStyle)) : gi && (ni.fill = Ti || "#e6e9ff", yi.borderWidth && (ni.stroke = yi.borderColor, ni["stroke-width"] = yi.borderWidth))), ai.zIndex = Mi, Pi += "-" + Mi, (wi = fi.plotLinesAndBandsGroups[Pi]) || (fi.plotLinesAndBandsGroups[Pi] = wi = li.g("plot-" + Pi).attr(ai).add()), Ei && (Ni.svgElem = ii = li.path().attr(ni).add(wi)), hi)
-              hi = fi.getPlotLinePath({ value: Fe, lineWidth: ii.strokeWidth(), acrossPanes: yi.acrossPanes });
-            else if (gi)
-              hi = fi.getPlotBandPath(ei, pi, yi);
+            $i(this, "render");
+            const Ni = this, gi = Ni.axis, ki = gi.horiz;
+            var wi = gi.logarithmic;
+            const Si = Ni.options, Ti = Si.color, Mi = bi(Si.zIndex, 0), Di = Si.events, ci = {}, pi = gi.chart.renderer;
+            let vi = Si.label, ui = Ni.label, fi = Si.to, si = Si.from, ti = Si.value, oi = Ni.svgElem;
+            var di = [];
+            const mi = Yi(si) && Yi(fi);
+            di = Yi(ti);
+            const Oi = !oi, hi = { class: "highcharts-plot-" + (mi ? "band " : "line ") + (Si.className || "") };
+            let Li = mi ? "bands" : "lines";
+            if (wi && (si = wi.log2lin(si), fi = wi.log2lin(fi), ti = wi.log2lin(ti)), gi.chart.styledMode || (di ? (hi.stroke = Ti || "#999999", hi["stroke-width"] = bi(Si.width, 1), Si.dashStyle && (hi.dashstyle = Si.dashStyle)) : mi && (hi.fill = Ti || "#e6e9ff", Si.borderWidth && (hi.stroke = Si.borderColor, hi["stroke-width"] = Si.borderWidth))), ci.zIndex = Mi, Li += "-" + Mi, (wi = gi.plotLinesAndBandsGroups[Li]) || (gi.plotLinesAndBandsGroups[Li] = wi = pi.g("plot-" + Li).attr(ci).add()), Oi && (Ni.svgElem = oi = pi.path().attr(hi).add(wi)), di)
+              di = gi.getPlotLinePath({ value: ti, lineWidth: oi.strokeWidth(), acrossPanes: Si.acrossPanes });
+            else if (mi)
+              di = gi.getPlotBandPath(si, fi, Si);
             else
               return;
-            return !Ni.eventsAdded && Oi && (Ui(Oi, function(Fi, Zi) {
-              ii.on(Zi, function(rs) {
-                Oi[Zi].apply(Ni, [rs]);
+            return !Ni.eventsAdded && Di && (_i(Di, function(Ui, Zi) {
+              oi.on(Zi, function(rs) {
+                Di[Zi].apply(Ni, [rs]);
               });
-            }), Ni.eventsAdded = !0), (Ei || !ii.d) && hi && hi.length ? ii.attr({ d: hi }) : ii && (hi ? (ii.show(), ii.animate({ d: hi })) : ii.d && (ii.hide(), di && (Ni.label = di = di.destroy()))), xi && (Qi(xi.text) || Qi(xi.formatter)) && hi && hi.length && 0 < fi.width && 0 < fi.height && !hi.isFlat ? (xi = Ki({ align: Ci && gi && "center", x: Ci ? !gi && 4 : 10, verticalAlign: !Ci && gi && "middle", y: Ci ? gi ? 16 : 10 : gi ? 6 : -4, rotation: Ci && !gi && 90 }, xi), this.renderLabel(xi, hi, gi, Mi)) : di && di.hide(), Ni;
+            }), Ni.eventsAdded = !0), (Oi || !oi.d) && di && di.length ? oi.attr({ d: di }) : oi && (di ? (oi.show(), oi.animate({ d: di })) : oi.d && (oi.hide(), ui && (Ni.label = ui = ui.destroy()))), vi && (Yi(vi.text) || Yi(vi.formatter)) && di && di.length && 0 < gi.width && 0 < gi.height && !di.isFlat ? (vi = Vi({ align: ki && mi && "center", x: ki ? !mi && 4 : 10, verticalAlign: !ki && mi && "middle", y: ki ? mi ? 16 : 10 : mi ? 6 : -4, rotation: ki && !mi && 90 }, vi), this.renderLabel(vi, di, mi, Mi)) : ui && ui.hide(), Ni;
           }
-          renderLabel(Ni, fi, Ci, wi) {
-            const yi = this.axis;
-            var Ti = yi.chart.renderer;
+          renderLabel(Ni, gi, ki, wi) {
+            const Si = this.axis;
+            var Ti = Si.chart.renderer;
             let Mi = this.label;
-            Mi || (this.label = Mi = Ti.text(this.getLabelText(Ni), 0, 0, Ni.useHTML).attr({ align: Ni.textAlign || Ni.align, rotation: Ni.rotation, class: "highcharts-plot-" + (Ci ? "band" : "line") + "-label " + (Ni.className || ""), zIndex: wi }).add(), yi.chart.styledMode || Mi.css(Ki({ fontSize: "0.8em", textOverflow: "ellipsis" }, Ni.style))), wi = fi.xBounds || [fi[0][1], fi[1][1], Ci ? fi[2][1] : fi[0][1]], fi = fi.yBounds || [fi[0][2], fi[1][2], Ci ? fi[2][2] : fi[0][2]], Ci = ts(wi), Ti = ts(fi), Mi.align(Ni, !1, { x: Ci, y: Ti, width: qi(wi) - Ci, height: qi(fi) - Ti }), Mi.alignValue && Mi.alignValue !== "left" || (Ni = Ni.clip ? yi.width : yi.chart.chartWidth, Mi.css({ width: (Mi.rotation === 90 ? yi.height - (Mi.alignAttr.y - yi.top) : Ni - (Mi.alignAttr.x - yi.left)) + "px" })), Mi.show(!0);
+            Mi || (this.label = Mi = Ti.text(this.getLabelText(Ni), 0, 0, Ni.useHTML).attr({ align: Ni.textAlign || Ni.align, rotation: Ni.rotation, class: "highcharts-plot-" + (ki ? "band" : "line") + "-label " + (Ni.className || ""), zIndex: wi }).add(), Si.chart.styledMode || Mi.css(Vi({ fontSize: "0.8em", textOverflow: "ellipsis" }, Ni.style))), wi = gi.xBounds || [gi[0][1], gi[1][1], ki ? gi[2][1] : gi[0][1]], gi = gi.yBounds || [gi[0][2], gi[1][2], ki ? gi[2][2] : gi[0][2]], ki = Ki(wi), Ti = Ki(gi), Mi.align(Ni, !1, { x: ki, y: Ti, width: zi(wi) - ki, height: zi(gi) - Ti }), Mi.alignValue && Mi.alignValue !== "left" || (Ni = Ni.clip ? Si.width : Si.chart.chartWidth, Mi.css({ width: (Mi.rotation === 90 ? Si.height - (Mi.alignAttr.y - Si.top) : Ni - (Mi.alignAttr.x - Si.left)) + "px" })), Mi.show(!0);
           }
           getLabelText(Ni) {
-            return Qi(Ni.formatter) ? Ni.formatter.call(this) : Ni.text;
+            return Yi(Ni.formatter) ? Ni.formatter.call(this) : Ni.text;
           }
           destroy() {
-            ss(this.axis.plotLinesAndBands, this), delete this.axis, is(this);
+            is(this.axis.plotLinesAndBands, this), delete this.axis, es(this);
           }
         }
-        return bi;
+        return Ai;
       }
-    ), ci(oi, "Core/Tooltip.js", [
-      oi["Core/Templating.js"],
-      oi["Core/Globals.js"],
-      oi["Core/Renderer/RendererUtilities.js"],
-      oi["Core/Renderer/RendererRegistry.js"],
-      oi["Core/Utilities.js"]
-    ], function(Si, ji, qi, ts, Qi) {
-      const { format: is } = Si, { doc: ss, isSafari: Wi } = ji, { distribute: Ki } = qi, { addEvent: Ui, clamp: ki, css: bi, discardElement: Ri, extend: Ni, fireEvent: fi, isArray: Ci, isNumber: wi, isString: yi, merge: Ti, pick: Mi, splat: Oi, syncTimeout: ai } = Qi;
-      class li {
-        constructor(di, pi) {
-          this.allowShared = !0, this.container = void 0, this.crosshairs = [], this.distance = 0, this.isHidden = !0, this.isSticky = !1, this.now = {}, this.options = {}, this.outside = !1, this.chart = di, this.init(di, pi);
+    ), ri(ii, "Core/Tooltip.js", [
+      ii["Core/Templating.js"],
+      ii["Core/Globals.js"],
+      ii["Core/Renderer/RendererUtilities.js"],
+      ii["Core/Renderer/RendererRegistry.js"],
+      ii["Core/Utilities.js"]
+    ], function(li, Ci, zi, Ki, Yi) {
+      const { format: es } = li, { doc: is, isSafari: $i } = Ci, { distribute: Vi } = zi, { addEvent: _i, clamp: bi, css: Ai, discardElement: ji, extend: Ni, fireEvent: gi, isArray: ki, isNumber: wi, isString: Si, merge: Ti, pick: Mi, splat: Di, syncTimeout: ci } = Yi;
+      class pi {
+        constructor(ui, fi) {
+          this.allowShared = !0, this.container = void 0, this.crosshairs = [], this.distance = 0, this.isHidden = !0, this.isSticky = !1, this.now = {}, this.options = {}, this.outside = !1, this.chart = ui, this.init(ui, fi);
         }
-        bodyFormatter(di) {
-          return di.map(function(pi) {
-            const ei = pi.series.tooltipOptions;
-            return (ei[(pi.point.formatPrefix || "point") + "Formatter"] || pi.point.tooltipFormatter).call(pi.point, ei[(pi.point.formatPrefix || "point") + "Format"] || "");
+        bodyFormatter(ui) {
+          return ui.map(function(fi) {
+            const si = fi.series.tooltipOptions;
+            return (si[(fi.point.formatPrefix || "point") + "Formatter"] || fi.point.tooltipFormatter).call(fi.point, si[(fi.point.formatPrefix || "point") + "Format"] || "");
           });
         }
-        cleanSplit(di) {
-          this.chart.series.forEach(function(pi) {
-            const ei = pi && pi.tt;
-            ei && (!ei.isActive || di ? pi.tt = ei.destroy() : ei.isActive = !1);
+        cleanSplit(ui) {
+          this.chart.series.forEach(function(fi) {
+            const si = fi && fi.tt;
+            si && (!si.isActive || ui ? fi.tt = si.destroy() : si.isActive = !1);
           });
         }
-        defaultFormatter(di) {
-          const pi = this.points || Oi(this);
-          let ei;
-          return ei = [di.tooltipFooterHeaderFormatter(pi[0])], ei = ei.concat(di.bodyFormatter(pi)), ei.push(di.tooltipFooterHeaderFormatter(
-            pi[0],
+        defaultFormatter(ui) {
+          const fi = this.points || Di(this);
+          let si;
+          return si = [ui.tooltipFooterHeaderFormatter(fi[0])], si = si.concat(ui.bodyFormatter(fi)), si.push(ui.tooltipFooterHeaderFormatter(
+            fi[0],
             !0
-          )), ei;
+          )), si;
         }
         destroy() {
-          this.label && (this.label = this.label.destroy()), this.split && (this.cleanSplit(!0), this.tt && (this.tt = this.tt.destroy())), this.renderer && (this.renderer = this.renderer.destroy(), Ri(this.container)), Qi.clearTimeout(this.hideTimer), Qi.clearTimeout(this.tooltipTimeout);
+          this.label && (this.label = this.label.destroy()), this.split && (this.cleanSplit(!0), this.tt && (this.tt = this.tt.destroy())), this.renderer && (this.renderer = this.renderer.destroy(), ji(this.container)), Yi.clearTimeout(this.hideTimer), Yi.clearTimeout(this.tooltipTimeout);
         }
-        getAnchor(di, pi) {
-          var ei = this.chart;
-          const Fe = ei.pointer, ii = ei.inverted, hi = ei.plotTop;
-          if (ei = ei.plotLeft, di = Oi(di), di[0].series && di[0].series.yAxis && !di[0].series.yAxis.options.reversedStacks && (di = di.slice().reverse()), this.followPointer && pi)
-            typeof pi.chartX > "u" && (pi = Fe.normalize(pi)), di = [pi.chartX - ei, pi.chartY - hi];
-          else if (di[0].tooltipPos)
-            di = di[0].tooltipPos;
+        getAnchor(ui, fi) {
+          var si = this.chart;
+          const ti = si.pointer, oi = si.inverted, di = si.plotTop;
+          if (si = si.plotLeft, ui = Di(ui), ui[0].series && ui[0].series.yAxis && !ui[0].series.yAxis.options.reversedStacks && (ui = ui.slice().reverse()), this.followPointer && fi)
+            typeof fi.chartX > "u" && (fi = ti.normalize(fi)), ui = [fi.chartX - si, fi.chartY - di];
+          else if (ui[0].tooltipPos)
+            ui = ui[0].tooltipPos;
           else {
-            let gi = 0, Ei = 0;
-            di.forEach(function(ni) {
-              (ni = ni.pos(!0)) && (gi += ni[0], Ei += ni[1]);
-            }), gi /= di.length, Ei /= di.length, this.shared && 1 < di.length && pi && (ii ? gi = pi.chartX : Ei = pi.chartY), di = [gi - ei, Ei - hi];
+            let mi = 0, Oi = 0;
+            ui.forEach(function(hi) {
+              (hi = hi.pos(!0)) && (mi += hi[0], Oi += hi[1]);
+            }), mi /= ui.length, Oi /= ui.length, this.shared && 1 < ui.length && fi && (oi ? mi = fi.chartX : Oi = fi.chartY), ui = [mi - si, Oi - di];
           }
-          return di.map(Math.round);
+          return ui.map(Math.round);
         }
-        getClassName(di, pi, ei) {
-          const Fe = di.series, ii = Fe.options;
-          return [this.options.className, "highcharts-label", ei && "highcharts-tooltip-header", pi ? "highcharts-tooltip-box" : "highcharts-tooltip", !ei && "highcharts-color-" + Mi(
-            di.colorIndex,
-            Fe.colorIndex
-          ), ii && ii.className].filter(yi).join(" ");
+        getClassName(ui, fi, si) {
+          const ti = ui.series, oi = ti.options;
+          return [this.options.className, "highcharts-label", si && "highcharts-tooltip-header", fi ? "highcharts-tooltip-box" : "highcharts-tooltip", !si && "highcharts-color-" + Mi(
+            ui.colorIndex,
+            ti.colorIndex
+          ), oi && oi.className].filter(Si).join(" ");
         }
         getLabel() {
-          const di = this, pi = this.chart.styledMode, ei = this.options, Fe = this.split && this.allowShared, ii = ei.style.pointerEvents || (this.shouldStickOnContact() ? "auto" : "none");
-          let hi, gi = this.chart.renderer;
+          const ui = this, fi = this.chart.styledMode, si = this.options, ti = this.split && this.allowShared, oi = si.style.pointerEvents || (this.shouldStickOnContact() ? "auto" : "none");
+          let di, mi = this.chart.renderer;
           if (this.label) {
-            var Ei = !this.label.hasClass("highcharts-label");
-            (!Fe && Ei || Fe && !Ei) && this.destroy();
+            var Oi = !this.label.hasClass("highcharts-label");
+            (!ti && Oi || ti && !Oi) && this.destroy();
           }
           if (!this.label) {
             if (this.outside) {
-              Ei = this.chart.options.chart.style;
-              const ni = ts.getRendererType();
-              this.container = hi = ji.doc.createElement("div"), hi.className = "highcharts-tooltip-container", bi(hi, { position: "absolute", top: "1px", pointerEvents: ii, zIndex: Math.max(this.options.style.zIndex || 0, (Ei && Ei.zIndex || 0) + 3) }), ji.doc.body.appendChild(hi), this.renderer = gi = new ni(hi, 0, 0, Ei, void 0, void 0, gi.styledMode);
+              Oi = this.chart.options.chart.style;
+              const hi = Ki.getRendererType();
+              this.container = di = Ci.doc.createElement("div"), di.className = "highcharts-tooltip-container", Ai(di, { position: "absolute", top: "1px", pointerEvents: oi, zIndex: Math.max(this.options.style.zIndex || 0, (Oi && Oi.zIndex || 0) + 3) }), Ci.doc.body.appendChild(di), this.renderer = mi = new hi(di, 0, 0, Oi, void 0, void 0, mi.styledMode);
             }
-            if (Fe ? this.label = gi.g("tooltip") : (this.label = gi.label("", 0, 0, ei.shape, void 0, void 0, ei.useHTML, void 0, "tooltip").attr({ padding: ei.padding, r: ei.borderRadius }), pi || this.label.attr({ fill: ei.backgroundColor, "stroke-width": ei.borderWidth || 0 }).css(ei.style).css({ pointerEvents: ii })), di.outside) {
-              const ni = this.label, {
-                xSetter: Pi,
-                ySetter: Fi
-              } = ni;
-              ni.xSetter = function(Zi) {
-                Pi.call(ni, di.distance), hi.style.left = Zi + "px";
-              }, ni.ySetter = function(Zi) {
-                Fi.call(ni, di.distance), hi.style.top = Zi + "px";
+            if (ti ? this.label = mi.g("tooltip") : (this.label = mi.label("", 0, 0, si.shape, void 0, void 0, si.useHTML, void 0, "tooltip").attr({ padding: si.padding, r: si.borderRadius }), fi || this.label.attr({ fill: si.backgroundColor, "stroke-width": si.borderWidth || 0 }).css(si.style).css({ pointerEvents: oi })), ui.outside) {
+              const hi = this.label, {
+                xSetter: Li,
+                ySetter: Ui
+              } = hi;
+              hi.xSetter = function(Zi) {
+                Li.call(hi, ui.distance), di.style.left = Zi + "px";
+              }, hi.ySetter = function(Zi) {
+                Ui.call(hi, ui.distance), di.style.top = Zi + "px";
               };
             }
-            this.label.attr({ zIndex: 8 }).shadow(ei.shadow).add();
+            this.label.attr({ zIndex: 8 }).shadow(si.shadow).add();
           }
           return this.label;
         }
         getPlayingField() {
-          const { body: di, documentElement: pi } = ss, { chart: ei, distance: Fe, outside: ii } = this;
-          return { width: ii ? Math.max(di.scrollWidth, pi.scrollWidth, di.offsetWidth, pi.offsetWidth, pi.clientWidth) - 2 * Fe : ei.chartWidth, height: ii ? Math.max(di.scrollHeight, pi.scrollHeight, di.offsetHeight, pi.offsetHeight, pi.clientHeight) : ei.chartHeight };
+          const { body: ui, documentElement: fi } = is, { chart: si, distance: ti, outside: oi } = this;
+          return { width: oi ? Math.max(ui.scrollWidth, fi.scrollWidth, ui.offsetWidth, fi.offsetWidth, fi.clientWidth) - 2 * ti : si.chartWidth, height: oi ? Math.max(ui.scrollHeight, fi.scrollHeight, ui.offsetHeight, fi.offsetHeight, fi.clientHeight) : si.chartHeight };
         }
-        getPosition(di, pi, ei) {
-          const Fe = this.chart, ii = this.distance, hi = {}, gi = Fe.inverted && ei.h || 0, Ei = this.outside;
-          var ni = this.getPlayingField();
-          const Pi = ni.width, Fi = ni.height, Zi = Fe.pointer.getChartPosition();
-          ni = (mi) => {
-            const vi = mi === "x";
-            return [mi, vi ? Pi : Fi, vi ? di : pi].concat(Ei ? [vi ? di * Zi.scaleX : pi * Zi.scaleY, vi ? Zi.left - ii + (ei.plotX + Fe.plotLeft) * Zi.scaleX : Zi.top - ii + (ei.plotY + Fe.plotTop) * Zi.scaleY, 0, vi ? Pi : Fi] : [vi ? di : pi, vi ? ei.plotX + Fe.plotLeft : ei.plotY + Fe.plotTop, vi ? Fe.plotLeft : Fe.plotTop, vi ? Fe.plotLeft + Fe.plotWidth : Fe.plotTop + Fe.plotHeight]);
+        getPosition(ui, fi, si) {
+          const ti = this.chart, oi = this.distance, di = {}, mi = ti.inverted && si.h || 0, Oi = this.outside;
+          var hi = this.getPlayingField();
+          const Li = hi.width, Ui = hi.height, Zi = ti.pointer.getChartPosition();
+          hi = (xi) => {
+            const yi = xi === "x";
+            return [xi, yi ? Li : Ui, yi ? ui : fi].concat(Oi ? [yi ? ui * Zi.scaleX : fi * Zi.scaleY, yi ? Zi.left - oi + (si.plotX + ti.plotLeft) * Zi.scaleX : Zi.top - oi + (si.plotY + ti.plotTop) * Zi.scaleY, 0, yi ? Li : Ui] : [yi ? ui : fi, yi ? si.plotX + ti.plotLeft : si.plotY + ti.plotTop, yi ? ti.plotLeft : ti.plotTop, yi ? ti.plotLeft + ti.plotWidth : ti.plotTop + ti.plotHeight]);
           };
-          let rs = ni("y"), Bi = ni("x"), si;
-          ni = !!ei.negative, !Fe.polar && Fe.hoverSeries && Fe.hoverSeries.yAxis && Fe.hoverSeries.yAxis.reversed && (ni = !ni);
-          const Li = !this.followPointer && Mi(ei.ttBelow, !Fe.inverted === ni), Hi = function(mi, vi, zi, Xi, Gi, Ji, es) {
-            const os = Ei ? mi === "y" ? ii * Zi.scaleY : ii * Zi.scaleX : ii, ns = (zi - Xi) / 2, ls = Xi < Gi - ii, Ii = Gi + ii + Xi < vi, Ai = Gi - os - zi + ns;
-            if (Gi = Gi + os - ns, Li && Ii)
-              hi[mi] = Gi;
-            else if (!Li && ls)
-              hi[mi] = Ai;
+          let rs = hi("y"), Bi = hi("x"), ni;
+          hi = !!si.negative, !ti.polar && ti.hoverSeries && ti.hoverSeries.yAxis && ti.hoverSeries.yAxis.reversed && (hi = !hi);
+          const Pi = !this.followPointer && Mi(si.ttBelow, !ti.inverted === hi), Hi = function(xi, yi, Gi, Xi, Wi, ts, ss) {
+            const os = Oi ? xi === "y" ? oi * Zi.scaleY : oi * Zi.scaleX : oi, ns = (Gi - Xi) / 2, ls = Xi < Wi - oi, Ii = Wi + oi + Xi < yi, Ei = Wi - os - Gi + ns;
+            if (Wi = Wi + os - ns, Pi && Ii)
+              di[xi] = Wi;
+            else if (!Pi && ls)
+              di[xi] = Ei;
             else if (ls)
-              hi[mi] = Math.min(es - Xi, 0 > Ai - gi ? Ai : Ai - gi);
+              di[xi] = Math.min(ss - Xi, 0 > Ei - mi ? Ei : Ei - mi);
             else if (Ii)
-              hi[mi] = Math.max(Ji, Gi + gi + zi > vi ? Gi : Gi + gi);
+              di[xi] = Math.max(ts, Wi + mi + Gi > yi ? Wi : Wi + mi);
             else
               return !1;
-          }, Di = function(mi, vi, zi, Xi, Gi) {
-            let Ji;
-            return Gi < ii || Gi > vi - ii ? Ji = !1 : hi[mi] = Gi < zi / 2 ? 1 : Gi > vi - Xi / 2 ? vi - Xi - 2 : Gi - zi / 2, Ji;
-          }, Vi = function(mi) {
-            const vi = rs;
-            rs = Bi, Bi = vi, si = mi;
-          }, ri = function() {
-            Hi.apply(0, rs) !== !1 ? Di.apply(0, Bi) !== !1 || si || (Vi(!0), ri()) : si ? hi.x = hi.y = 0 : (Vi(!0), ri());
+          }, Ri = function(xi, yi, Gi, Xi, Wi) {
+            let ts;
+            return Wi < oi || Wi > yi - oi ? ts = !1 : di[xi] = Wi < Gi / 2 ? 1 : Wi > yi - Xi / 2 ? yi - Xi - 2 : Wi - Gi / 2, ts;
+          }, qi = function(xi) {
+            const yi = rs;
+            rs = Bi, Bi = yi, ni = xi;
+          }, ai = function() {
+            Hi.apply(0, rs) !== !1 ? Ri.apply(0, Bi) !== !1 || ni || (qi(!0), ai()) : ni ? di.x = di.y = 0 : (qi(!0), ai());
           };
-          return (Fe.inverted || 1 < this.len) && Vi(), ri(), hi;
+          return (ti.inverted || 1 < this.len) && qi(), ai(), di;
         }
-        hide(di) {
-          const pi = this;
-          Qi.clearTimeout(this.hideTimer), di = Mi(di, this.options.hideDelay), this.isHidden || (this.hideTimer = ai(function() {
-            pi.getLabel().fadeOut(di && void 0), pi.isHidden = !0;
-          }, di));
+        hide(ui) {
+          const fi = this;
+          Yi.clearTimeout(this.hideTimer), ui = Mi(ui, this.options.hideDelay), this.isHidden || (this.hideTimer = ci(function() {
+            fi.getLabel().fadeOut(ui && void 0), fi.isHidden = !0;
+          }, ui));
         }
-        init(di, pi) {
-          this.chart = di, this.options = pi, this.crosshairs = [], this.now = { x: 0, y: 0 }, this.isHidden = !0, this.split = pi.split && !di.inverted && !di.polar, this.shared = pi.shared || this.split, this.outside = Mi(pi.outside, !(!di.scrollablePixelsX && !di.scrollablePixelsY));
+        init(ui, fi) {
+          this.chart = ui, this.options = fi, this.crosshairs = [], this.now = { x: 0, y: 0 }, this.isHidden = !0, this.split = fi.split && !ui.inverted && !ui.polar, this.shared = fi.shared || this.split, this.outside = Mi(fi.outside, !(!ui.scrollablePixelsX && !ui.scrollablePixelsY));
         }
-        shouldStickOnContact(di) {
-          return !(this.followPointer || !this.options.stickOnContact || di && !this.chart.pointer.inClass(di.target, "highcharts-tooltip"));
+        shouldStickOnContact(ui) {
+          return !(this.followPointer || !this.options.stickOnContact || ui && !this.chart.pointer.inClass(ui.target, "highcharts-tooltip"));
         }
-        move(di, pi, ei, Fe) {
-          const ii = this, hi = ii.now, gi = ii.options.animation !== !1 && !ii.isHidden && (1 < Math.abs(di - hi.x) || 1 < Math.abs(pi - hi.y)), Ei = ii.followPointer || 1 < ii.len;
-          Ni(hi, { x: gi ? (2 * hi.x + di) / 3 : di, y: gi ? (hi.y + pi) / 2 : pi, anchorX: Ei ? void 0 : gi ? (2 * hi.anchorX + ei) / 3 : ei, anchorY: Ei ? void 0 : gi ? (hi.anchorY + Fe) / 2 : Fe }), ii.getLabel().attr(hi), ii.drawTracker(), gi && (Qi.clearTimeout(this.tooltipTimeout), this.tooltipTimeout = setTimeout(function() {
-            ii && ii.move(di, pi, ei, Fe);
+        move(ui, fi, si, ti) {
+          const oi = this, di = oi.now, mi = oi.options.animation !== !1 && !oi.isHidden && (1 < Math.abs(ui - di.x) || 1 < Math.abs(fi - di.y)), Oi = oi.followPointer || 1 < oi.len;
+          Ni(di, { x: mi ? (2 * di.x + ui) / 3 : ui, y: mi ? (di.y + fi) / 2 : fi, anchorX: Oi ? void 0 : mi ? (2 * di.anchorX + si) / 3 : si, anchorY: Oi ? void 0 : mi ? (di.anchorY + ti) / 2 : ti }), oi.getLabel().attr(di), oi.drawTracker(), mi && (Yi.clearTimeout(this.tooltipTimeout), this.tooltipTimeout = setTimeout(function() {
+            oi && oi.move(ui, fi, si, ti);
           }, 32));
         }
-        refresh(di, pi) {
-          const ei = this.chart, Fe = this.options, ii = ei.pointer, hi = Oi(di), gi = hi[0], Ei = [];
-          var ni = Fe.format, Pi = Fe.formatter || this.defaultFormatter;
-          const Fi = this.shared, Zi = ei.styledMode;
+        refresh(ui, fi) {
+          const si = this.chart, ti = this.options, oi = si.pointer, di = Di(ui), mi = di[0], Oi = [];
+          var hi = ti.format, Li = ti.formatter || this.defaultFormatter;
+          const Ui = this.shared, Zi = si.styledMode;
           let rs = {};
-          if (Fe.enabled && gi.series) {
-            Qi.clearTimeout(this.hideTimer), this.allowShared = !(!Ci(di) && di.series && di.series.noSharedTooltip), this.followPointer = !this.split && gi.series.tooltipOptions.followPointer, di = this.getAnchor(di, pi);
-            var Bi = di[0], si = di[1];
-            if (Fi && this.allowShared ? (ii.applyInactiveState(hi), hi.forEach(function(Li) {
-              Li.setState("hover"), Ei.push(Li.getLabelConfig());
-            }), rs = gi.getLabelConfig(), rs.points = Ei) : rs = gi.getLabelConfig(), this.len = Ei.length, ni = yi(ni) ? is(ni, rs, ei) : Pi.call(rs, this), Pi = gi.series, this.distance = Mi(Pi.tooltipOptions.distance, 16), ni === !1)
+          if (ti.enabled && mi.series) {
+            Yi.clearTimeout(this.hideTimer), this.allowShared = !(!ki(ui) && ui.series && ui.series.noSharedTooltip), this.followPointer = !this.split && mi.series.tooltipOptions.followPointer, ui = this.getAnchor(ui, fi);
+            var Bi = ui[0], ni = ui[1];
+            if (Ui && this.allowShared ? (oi.applyInactiveState(di), di.forEach(function(Pi) {
+              Pi.setState("hover"), Oi.push(Pi.getLabelConfig());
+            }), rs = mi.getLabelConfig(), rs.points = Oi) : rs = mi.getLabelConfig(), this.len = Oi.length, hi = Si(hi) ? es(hi, rs, si) : Li.call(rs, this), Li = mi.series, this.distance = Mi(Li.tooltipOptions.distance, 16), hi === !1)
               this.hide();
             else {
               if (this.split && this.allowShared)
-                this.renderSplit(ni, hi);
+                this.renderSplit(hi, di);
               else {
-                let Li = Bi, Hi = si;
-                if (pi && ii.isDirectTouch && (Li = pi.chartX - ei.plotLeft, Hi = pi.chartY - ei.plotTop), ei.polar || Pi.options.clip === !1 || hi.some((Di) => ii.isDirectTouch || Di.series.shouldShowTooltip(
-                  Li,
+                let Pi = Bi, Hi = ni;
+                if (fi && oi.isDirectTouch && (Pi = fi.chartX - si.plotLeft, Hi = fi.chartY - si.plotTop), si.polar || Li.options.clip === !1 || di.some((Ri) => oi.isDirectTouch || Ri.series.shouldShowTooltip(
+                  Pi,
                   Hi
                 )))
-                  pi = this.getLabel(), Fe.style.width && !Zi || pi.css({ width: (this.outside ? this.getPlayingField() : ei.spacingBox).width + "px" }), pi.attr({ text: ni && ni.join ? ni.join("") : ni }), pi.addClass(this.getClassName(gi), !0), Zi || pi.attr({ stroke: Fe.borderColor || gi.color || Pi.color || "#666666" }), this.updatePosition({ plotX: Bi, plotY: si, negative: gi.negative, ttBelow: gi.ttBelow, h: di[2] || 0 });
+                  fi = this.getLabel(), ti.style.width && !Zi || fi.css({ width: (this.outside ? this.getPlayingField() : si.spacingBox).width + "px" }), fi.attr({ text: hi && hi.join ? hi.join("") : hi }), fi.addClass(this.getClassName(mi), !0), Zi || fi.attr({ stroke: ti.borderColor || mi.color || Li.color || "#666666" }), this.updatePosition({ plotX: Bi, plotY: ni, negative: mi.negative, ttBelow: mi.ttBelow, h: ui[2] || 0 });
                 else {
                   this.hide();
                   return;
@@ -3026,928 +3025,928 @@ var highcharts = { exports: {} };
               }
               this.isHidden && this.label && this.label.attr({ opacity: 1 }).show(), this.isHidden = !1;
             }
-            fi(this, "refresh");
+            gi(this, "refresh");
           }
         }
-        renderSplit(di, pi) {
-          function ei(Yi, _i, hs, as, us = !0) {
-            return hs ? (_i = zi ? 0 : os, Yi = ki(Yi - as / 2, ri.left, ri.right - as - (Fe.outside ? Xi : 0))) : (_i -= Ji, Yi = us ? Yi - as - Hi : Yi + Hi, Yi = ki(Yi, us ? Yi : ri.left, ri.right)), { x: Yi, y: _i };
+        renderSplit(ui, fi) {
+          function si(Fi, Qi, hs, as, ps = !0) {
+            return hs ? (Qi = Gi ? 0 : os, Fi = bi(Fi - as / 2, ai.left, ai.right - as - (ti.outside ? Xi : 0))) : (Qi -= ts, Fi = ps ? Fi - as - Hi : Fi + Hi, Fi = bi(Fi, ps ? Fi : ai.left, ai.right)), { x: Fi, y: Qi };
           }
-          const Fe = this, { chart: ii, chart: { chartWidth: hi, chartHeight: gi, plotHeight: Ei, plotLeft: ni, plotTop: Pi, pointer: Fi, scrollablePixelsY: Zi = 0, scrollablePixelsX: rs, scrollingContainer: { scrollLeft: Bi, scrollTop: si } = { scrollLeft: 0, scrollTop: 0 }, styledMode: Li }, distance: Hi, options: Di, options: { positioner: Vi } } = Fe, ri = Fe.outside && typeof rs != "number" ? ss.documentElement.getBoundingClientRect() : {
+          const ti = this, { chart: oi, chart: { chartWidth: di, chartHeight: mi, plotHeight: Oi, plotLeft: hi, plotTop: Li, pointer: Ui, scrollablePixelsY: Zi = 0, scrollablePixelsX: rs, scrollingContainer: { scrollLeft: Bi, scrollTop: ni } = { scrollLeft: 0, scrollTop: 0 }, styledMode: Pi }, distance: Hi, options: Ri, options: { positioner: qi } } = ti, ai = ti.outside && typeof rs != "number" ? is.documentElement.getBoundingClientRect() : {
             left: Bi,
-            right: Bi + hi,
-            top: si,
-            bottom: si + gi
-          }, mi = Fe.getLabel(), vi = this.renderer || ii.renderer, zi = !(!ii.xAxis[0] || !ii.xAxis[0].opposite), { left: Xi, top: Gi } = Fi.getChartPosition();
-          let Ji = Pi + si, es = 0, os = Ei - Zi;
-          yi(di) && (di = [!1, di]), di = di.slice(0, pi.length + 1).reduce(function(Yi, _i, hs) {
-            if (_i !== !1 && _i !== "") {
-              hs = pi[hs - 1] || { isHeader: !0, plotX: pi[0].plotX, plotY: Ei, series: {} };
+            right: Bi + di,
+            top: ni,
+            bottom: ni + mi
+          }, xi = ti.getLabel(), yi = this.renderer || oi.renderer, Gi = !(!oi.xAxis[0] || !oi.xAxis[0].opposite), { left: Xi, top: Wi } = Ui.getChartPosition();
+          let ts = Li + ni, ss = 0, os = Oi - Zi;
+          Si(ui) && (ui = [!1, ui]), ui = ui.slice(0, fi.length + 1).reduce(function(Fi, Qi, hs) {
+            if (Qi !== !1 && Qi !== "") {
+              hs = fi[hs - 1] || { isHeader: !0, plotX: fi[0].plotX, plotY: Oi, series: {} };
               const ms = hs.isHeader;
-              var as = ms ? Fe : hs.series, us;
+              var as = ms ? ti : hs.series, ps;
               {
-                var ps = hs;
-                _i = _i.toString();
+                var us = hs;
+                Qi = Qi.toString();
                 var cs = as.tt;
-                const { isHeader: xs, series: Ss } = ps;
-                cs || (cs = { padding: Di.padding, r: Di.borderRadius }, Li || (cs.fill = Di.backgroundColor, cs["stroke-width"] = (us = Di.borderWidth) !== null && us !== void 0 ? us : 1), cs = vi.label("", 0, 0, Di[xs ? "headerShape" : "shape"], void 0, void 0, Di.useHTML).addClass(Fe.getClassName(ps, !0, xs)).attr(cs).add(mi)), cs.isActive = !0, cs.attr({ text: _i }), Li || cs.css(Di.style).attr({ stroke: Di.borderColor || ps.color || Ss.color || "#333333" }), us = cs;
+                const { isHeader: xs, series: Ss } = us;
+                cs || (cs = { padding: Ri.padding, r: Ri.borderRadius }, Pi || (cs.fill = Ri.backgroundColor, cs["stroke-width"] = (ps = Ri.borderWidth) !== null && ps !== void 0 ? ps : 1), cs = yi.label("", 0, 0, Ri[xs ? "headerShape" : "shape"], void 0, void 0, Ri.useHTML).addClass(ti.getClassName(us, !0, xs)).attr(cs).add(xi)), cs.isActive = !0, cs.attr({ text: Qi }), Pi || cs.css(Ri.style).attr({ stroke: Ri.borderColor || us.color || Ss.color || "#333333" }), ps = cs;
               }
-              us = as.tt = us, ps = us.getBBox(), as = ps.width + us.strokeWidth(), ms && (es = ps.height, os += es, zi && (Ji -= es));
+              ps = as.tt = ps, us = ps.getBBox(), as = us.width + ps.strokeWidth(), ms && (ss = us.height, os += ss, Gi && (ts -= ss));
               {
                 const { isHeader: xs, plotX: Ss = 0, plotY: vs = 0, series: ws } = hs;
                 if (xs) {
-                  _i = ni + Ss;
-                  var ds = Pi + Ei / 2;
+                  Qi = hi + Ss;
+                  var ds = Li + Oi / 2;
                 } else {
-                  const { xAxis: ks, yAxis: ys } = ws;
-                  _i = ks.pos + ki(Ss, -Hi, ks.len + Hi), ws.shouldShowTooltip(0, ys.pos - Pi + vs, { ignoreX: !0 }) && (ds = ys.pos + vs);
+                  const { xAxis: bs, yAxis: ys } = ws;
+                  Qi = bs.pos + bi(Ss, -Hi, bs.len + Hi), ws.shouldShowTooltip(0, ys.pos - Li + vs, { ignoreX: !0 }) && (ds = ys.pos + vs);
                 }
-                _i = ki(_i, ri.left - Hi, ri.right + Hi), ds = { anchorX: _i, anchorY: ds };
+                Qi = bi(Qi, ai.left - Hi, ai.right + Hi), ds = { anchorX: Qi, anchorY: ds };
               }
               const { anchorX: fs, anchorY: gs } = ds;
-              typeof gs == "number" ? (ds = ps.height + 1, ps = Vi ? Vi.call(Fe, as, ds, hs) : ei(fs, gs, ms, as), Yi.push({ align: Vi ? 0 : void 0, anchorX: fs, anchorY: gs, boxWidth: as, point: hs, rank: Mi(ps.rank, ms ? 1 : 0), size: ds, target: ps.y, tt: us, x: ps.x })) : us.isActive = !1;
+              typeof gs == "number" ? (ds = us.height + 1, us = qi ? qi.call(ti, as, ds, hs) : si(fs, gs, ms, as), Fi.push({ align: qi ? 0 : void 0, anchorX: fs, anchorY: gs, boxWidth: as, point: hs, rank: Mi(us.rank, ms ? 1 : 0), size: ds, target: us.y, tt: ps, x: us.x })) : ps.isActive = !1;
             }
-            return Yi;
-          }, []), !Vi && di.some((Yi) => {
-            var { outside: _i } = Fe;
-            return _i = (_i ? Xi : 0) + Yi.anchorX, _i < ri.left && _i + Yi.boxWidth < ri.right ? !0 : _i < Xi - ri.left + Yi.boxWidth && ri.right - _i > _i;
-          }) && (di = di.map((Yi) => {
-            const { x: _i, y: hs } = ei(
-              Yi.anchorX,
-              Yi.anchorY,
-              Yi.point.isHeader,
-              Yi.boxWidth,
+            return Fi;
+          }, []), !qi && ui.some((Fi) => {
+            var { outside: Qi } = ti;
+            return Qi = (Qi ? Xi : 0) + Fi.anchorX, Qi < ai.left && Qi + Fi.boxWidth < ai.right ? !0 : Qi < Xi - ai.left + Fi.boxWidth && ai.right - Qi > Qi;
+          }) && (ui = ui.map((Fi) => {
+            const { x: Qi, y: hs } = si(
+              Fi.anchorX,
+              Fi.anchorY,
+              Fi.point.isHeader,
+              Fi.boxWidth,
               !1
             );
-            return Ni(Yi, { target: hs, x: _i });
-          })), Fe.cleanSplit(), Ki(di, os);
+            return Ni(Fi, { target: hs, x: Qi });
+          })), ti.cleanSplit(), Vi(ui, os);
           var ns = Xi, ls = Xi;
-          di.forEach(function(Yi) {
-            const { x: _i, boxWidth: hs, isHeader: as } = Yi;
-            as || (Fe.outside && Xi + _i < ns && (ns = Xi + _i), !as && Fe.outside && ns + hs > ls && (ls = Xi + _i));
-          }), di.forEach(function(Yi) {
-            const { x: _i, anchorX: hs, anchorY: as, pos: us, point: { isHeader: ps } } = Yi, cs = { visibility: typeof us > "u" ? "hidden" : "inherit", x: _i, y: (us || 0) + Ji, anchorX: hs, anchorY: as };
-            if (Fe.outside && _i < hs) {
+          ui.forEach(function(Fi) {
+            const { x: Qi, boxWidth: hs, isHeader: as } = Fi;
+            as || (ti.outside && Xi + Qi < ns && (ns = Xi + Qi), !as && ti.outside && ns + hs > ls && (ls = Xi + Qi));
+          }), ui.forEach(function(Fi) {
+            const { x: Qi, anchorX: hs, anchorY: as, pos: ps, point: { isHeader: us } } = Fi, cs = { visibility: typeof ps > "u" ? "hidden" : "inherit", x: Qi, y: (ps || 0) + ts, anchorX: hs, anchorY: as };
+            if (ti.outside && Qi < hs) {
               const ds = Xi - ns;
-              0 < ds && (ps || (cs.x = _i + ds, cs.anchorX = hs + ds), ps && (cs.x = (ls - ns) / 2, cs.anchorX = hs + ds));
+              0 < ds && (us || (cs.x = Qi + ds, cs.anchorX = hs + ds), us && (cs.x = (ls - ns) / 2, cs.anchorX = hs + ds));
             }
-            Yi.tt.attr(cs);
+            Fi.tt.attr(cs);
           });
           const {
             container: Ii,
-            outside: Ai,
-            renderer: $i
-          } = Fe;
-          if (Ai && Ii && $i) {
-            const { width: Yi, height: _i, x: hs, y: as } = mi.getBBox();
-            $i.setSize(Yi + hs, _i + as, !1), Ii.style.left = ns + "px", Ii.style.top = Gi + "px";
+            outside: Ei,
+            renderer: Ji
+          } = ti;
+          if (Ei && Ii && Ji) {
+            const { width: Fi, height: Qi, x: hs, y: as } = xi.getBBox();
+            Ji.setSize(Fi + hs, Qi + as, !1), Ii.style.left = ns + "px", Ii.style.top = Wi + "px";
           }
-          Wi && mi.attr({ opacity: mi.opacity === 1 ? 0.999 : 1 });
+          $i && xi.attr({ opacity: xi.opacity === 1 ? 0.999 : 1 });
         }
         drawTracker() {
           if (this.shouldStickOnContact()) {
-            var di = this.chart, pi = this.label, ei = this.shared ? di.hoverPoints : di.hoverPoint;
-            if (pi && ei) {
-              var Fe = { x: 0, y: 0, width: 0, height: 0 };
-              ei = this.getAnchor(ei);
-              var ii = pi.getBBox();
-              ei[0] += di.plotLeft - pi.translateX, ei[1] += di.plotTop - pi.translateY, Fe.x = Math.min(0, ei[0]), Fe.y = Math.min(0, ei[1]), Fe.width = 0 > ei[0] ? Math.max(Math.abs(ei[0]), ii.width - ei[0]) : Math.max(Math.abs(ei[0]), ii.width), Fe.height = 0 > ei[1] ? Math.max(Math.abs(ei[1]), ii.height - Math.abs(ei[1])) : Math.max(Math.abs(ei[1]), ii.height), this.tracker ? this.tracker.attr(Fe) : (this.tracker = pi.renderer.rect(Fe).addClass("highcharts-tracker").add(pi), di.styledMode || this.tracker.attr({ fill: "rgba(0,0,0,0)" }));
+            var ui = this.chart, fi = this.label, si = this.shared ? ui.hoverPoints : ui.hoverPoint;
+            if (fi && si) {
+              var ti = { x: 0, y: 0, width: 0, height: 0 };
+              si = this.getAnchor(si);
+              var oi = fi.getBBox();
+              si[0] += ui.plotLeft - fi.translateX, si[1] += ui.plotTop - fi.translateY, ti.x = Math.min(0, si[0]), ti.y = Math.min(0, si[1]), ti.width = 0 > si[0] ? Math.max(Math.abs(si[0]), oi.width - si[0]) : Math.max(Math.abs(si[0]), oi.width), ti.height = 0 > si[1] ? Math.max(Math.abs(si[1]), oi.height - Math.abs(si[1])) : Math.max(Math.abs(si[1]), oi.height), this.tracker ? this.tracker.attr(ti) : (this.tracker = fi.renderer.rect(ti).addClass("highcharts-tracker").add(fi), ui.styledMode || this.tracker.attr({ fill: "rgba(0,0,0,0)" }));
             }
           } else
             this.tracker && (this.tracker = this.tracker.destroy());
         }
-        styledModeFormat(di) {
-          return di.replace('style="font-size: 0.8em"', 'class="highcharts-header"').replace(
+        styledModeFormat(ui) {
+          return ui.replace('style="font-size: 0.8em"', 'class="highcharts-header"').replace(
             /style="color:{(point|series)\.color}"/g,
             'class="highcharts-color-{$1.colorIndex} {series.options.className} {point.options.className}"'
           );
         }
-        tooltipFooterHeaderFormatter(di, pi) {
-          const ei = di.series, Fe = ei.tooltipOptions;
-          var ii = ei.xAxis;
-          const hi = ii && ii.dateTime;
-          ii = { isFooter: pi, labelConfig: di };
-          let gi = Fe.xDateFormat, Ei = Fe[pi ? "footerFormat" : "headerFormat"];
-          return fi(this, "headerFormatter", ii, function(ni) {
-            hi && !gi && wi(di.key) && (gi = hi.getXDateFormat(di.key, Fe.dateTimeLabelFormats)), hi && gi && (di.point && di.point.tooltipDateKeys || ["key"]).forEach(function(Pi) {
-              Ei = Ei.replace("{point." + Pi + "}", "{point." + Pi + ":" + gi + "}");
-            }), ei.chart.styledMode && (Ei = this.styledModeFormat(Ei)), ni.text = is(Ei, { point: di, series: ei }, this.chart);
-          }), ii.text;
+        tooltipFooterHeaderFormatter(ui, fi) {
+          const si = ui.series, ti = si.tooltipOptions;
+          var oi = si.xAxis;
+          const di = oi && oi.dateTime;
+          oi = { isFooter: fi, labelConfig: ui };
+          let mi = ti.xDateFormat, Oi = ti[fi ? "footerFormat" : "headerFormat"];
+          return gi(this, "headerFormatter", oi, function(hi) {
+            di && !mi && wi(ui.key) && (mi = di.getXDateFormat(ui.key, ti.dateTimeLabelFormats)), di && mi && (ui.point && ui.point.tooltipDateKeys || ["key"]).forEach(function(Li) {
+              Oi = Oi.replace("{point." + Li + "}", "{point." + Li + ":" + mi + "}");
+            }), si.chart.styledMode && (Oi = this.styledModeFormat(Oi)), hi.text = es(Oi, { point: ui, series: si }, this.chart);
+          }), oi.text;
         }
-        update(di) {
-          this.destroy(), this.init(this.chart, Ti(!0, this.options, di));
+        update(ui) {
+          this.destroy(), this.init(this.chart, Ti(!0, this.options, ui));
         }
-        updatePosition(di) {
-          const { chart: pi, distance: ei, options: Fe } = this;
-          var ii = pi.pointer;
-          const hi = this.getLabel(), { left: gi, top: Ei, scaleX: ni, scaleY: Pi } = ii.getChartPosition();
-          ii = (Fe.positioner || this.getPosition).call(this, hi.width, hi.height, di);
-          let Fi = (di.plotX || 0) + pi.plotLeft;
-          di = (di.plotY || 0) + pi.plotTop;
+        updatePosition(ui) {
+          const { chart: fi, distance: si, options: ti } = this;
+          var oi = fi.pointer;
+          const di = this.getLabel(), { left: mi, top: Oi, scaleX: hi, scaleY: Li } = oi.getChartPosition();
+          oi = (ti.positioner || this.getPosition).call(this, di.width, di.height, ui);
+          let Ui = (ui.plotX || 0) + fi.plotLeft;
+          ui = (ui.plotY || 0) + fi.plotTop;
           let Zi;
-          this.outside && (Fe.positioner && (ii.x += gi - ei, ii.y += Ei - ei), Zi = (Fe.borderWidth || 0) + 2 * ei, this.renderer.setSize(hi.width + Zi, hi.height + Zi, !1), (ni !== 1 || Pi !== 1) && (bi(this.container, { transform: `scale(${ni}, ${Pi})` }), Fi *= ni, di *= Pi), Fi += gi - ii.x, di += Ei - ii.y), this.move(Math.round(ii.x), Math.round(ii.y || 0), Fi, di);
+          this.outside && (ti.positioner && (oi.x += mi - si, oi.y += Oi - si), Zi = (ti.borderWidth || 0) + 2 * si, this.renderer.setSize(di.width + Zi, di.height + Zi, !1), (hi !== 1 || Li !== 1) && (Ai(this.container, { transform: `scale(${hi}, ${Li})` }), Ui *= hi, ui *= Li), Ui += mi - oi.x, ui += Oi - oi.y), this.move(Math.round(oi.x), Math.round(oi.y || 0), Ui, ui);
         }
       }
-      return function(xi) {
-        const di = [];
-        xi.compose = function(pi) {
-          Qi.pushUnique(di, pi) && Ui(pi, "afterInit", function() {
-            const ei = this.chart;
-            ei.options.tooltip && (ei.tooltip = new xi(ei, ei.options.tooltip));
+      return function(vi) {
+        const ui = [];
+        vi.compose = function(fi) {
+          Yi.pushUnique(ui, fi) && _i(fi, "afterInit", function() {
+            const si = this.chart;
+            si.options.tooltip && (si.tooltip = new vi(si, si.options.tooltip));
           });
         };
-      }(li || (li = {})), li;
-    }), ci(oi, "Core/Series/Point.js", [
-      oi["Core/Renderer/HTML/AST.js"],
-      oi["Core/Animation/AnimationUtilities.js"],
-      oi["Core/Defaults.js"],
-      oi["Core/Templating.js"],
-      oi["Core/Utilities.js"]
-    ], function(Si, ji, qi, ts, Qi) {
-      const { animObject: is } = ji, { defaultOptions: ss } = qi, { format: Wi } = ts, { addEvent: Ki, defined: Ui, erase: ki, extend: bi, fireEvent: Ri, getNestedProperty: Ni, isArray: fi, isFunction: Ci, isNumber: wi, isObject: yi, merge: Ti, objectEach: Mi, pick: Oi, syncTimeout: ai, removeEvent: li, uniqueKey: xi } = Qi;
-      class di {
+      }(pi || (pi = {})), pi;
+    }), ri(ii, "Core/Series/Point.js", [
+      ii["Core/Renderer/HTML/AST.js"],
+      ii["Core/Animation/AnimationUtilities.js"],
+      ii["Core/Defaults.js"],
+      ii["Core/Templating.js"],
+      ii["Core/Utilities.js"]
+    ], function(li, Ci, zi, Ki, Yi) {
+      const { animObject: es } = Ci, { defaultOptions: is } = zi, { format: $i } = Ki, { addEvent: Vi, defined: _i, erase: bi, extend: Ai, fireEvent: ji, getNestedProperty: Ni, isArray: gi, isFunction: ki, isNumber: wi, isObject: Si, merge: Ti, objectEach: Mi, pick: Di, syncTimeout: ci, removeEvent: pi, uniqueKey: vi } = Yi;
+      class ui {
         constructor() {
           this.category = void 0, this.destroyed = !1, this.formatPrefix = "point", this.id = void 0, this.isNull = !1, this.percentage = this.options = this.name = void 0, this.selected = !1, this.total = this.shapeArgs = this.series = void 0, this.visible = !0, this.x = void 0;
         }
         animateBeforeDestroy() {
-          const ei = this, Fe = { x: ei.startXPos, opacity: 0 }, ii = ei.getGraphicalProps();
-          ii.singular.forEach(function(hi) {
-            ei[hi] = ei[hi].animate(hi === "dataLabel" ? { x: ei[hi].startXPos, y: ei[hi].startYPos, opacity: 0 } : Fe);
-          }), ii.plural.forEach(function(hi) {
-            ei[hi].forEach(function(gi) {
-              gi.element && gi.animate(bi({ x: ei.startXPos }, gi.startYPos ? { x: gi.startXPos, y: gi.startYPos } : {}));
+          const si = this, ti = { x: si.startXPos, opacity: 0 }, oi = si.getGraphicalProps();
+          oi.singular.forEach(function(di) {
+            si[di] = si[di].animate(di === "dataLabel" ? { x: si[di].startXPos, y: si[di].startYPos, opacity: 0 } : ti);
+          }), oi.plural.forEach(function(di) {
+            si[di].forEach(function(mi) {
+              mi.element && mi.animate(Ai({ x: si.startXPos }, mi.startYPos ? { x: mi.startXPos, y: mi.startYPos } : {}));
             });
           });
         }
-        applyOptions(ei, Fe) {
-          const ii = this.series, hi = ii.options.pointValKey || ii.pointValKey;
-          return ei = di.prototype.optionsToObject.call(this, ei), bi(this, ei), this.options = this.options ? bi(this.options, ei) : ei, ei.group && delete this.group, ei.dataLabels && delete this.dataLabels, hi && (this.y = di.prototype.getNestedProperty.call(this, hi)), this.formatPrefix = (this.isNull = this.isValid && !this.isValid()) ? "null" : "point", this.selected && (this.state = "select"), "name" in this && typeof Fe > "u" && ii.xAxis && ii.xAxis.hasNames && (this.x = ii.xAxis.nameToX(this)), typeof this.x > "u" && ii ? this.x = typeof Fe > "u" ? ii.autoIncrement() : Fe : wi(ei.x) && ii.options.relativeXValue && (this.x = ii.autoIncrement(ei.x)), this;
+        applyOptions(si, ti) {
+          const oi = this.series, di = oi.options.pointValKey || oi.pointValKey;
+          return si = ui.prototype.optionsToObject.call(this, si), Ai(this, si), this.options = this.options ? Ai(this.options, si) : si, si.group && delete this.group, si.dataLabels && delete this.dataLabels, di && (this.y = ui.prototype.getNestedProperty.call(this, di)), this.formatPrefix = (this.isNull = this.isValid && !this.isValid()) ? "null" : "point", this.selected && (this.state = "select"), "name" in this && typeof ti > "u" && oi.xAxis && oi.xAxis.hasNames && (this.x = oi.xAxis.nameToX(this)), typeof this.x > "u" && oi ? this.x = typeof ti > "u" ? oi.autoIncrement() : ti : wi(si.x) && oi.options.relativeXValue && (this.x = oi.autoIncrement(si.x)), this;
         }
         destroy() {
           if (!this.destroyed) {
-            const Fe = this;
-            var ei = Fe.series;
-            const ii = ei.chart;
-            ei = ei.options.dataSorting;
-            const hi = ii.hoverPoints, gi = is(Fe.series.chart.renderer.globalAnimation), Ei = () => {
-              (Fe.graphic || Fe.graphics || Fe.dataLabel || Fe.dataLabels) && (li(Fe), Fe.destroyElements());
-              for (const ni in Fe)
-                delete Fe[ni];
+            const ti = this;
+            var si = ti.series;
+            const oi = si.chart;
+            si = si.options.dataSorting;
+            const di = oi.hoverPoints, mi = es(ti.series.chart.renderer.globalAnimation), Oi = () => {
+              (ti.graphic || ti.graphics || ti.dataLabel || ti.dataLabels) && (pi(ti), ti.destroyElements());
+              for (const hi in ti)
+                delete ti[hi];
             };
-            Fe.legendItem && ii.legend.destroyItem(Fe), hi && (Fe.setState(), ki(hi, Fe), hi.length || (ii.hoverPoints = null)), Fe === ii.hoverPoint && Fe.onMouseOut(), ei && ei.enabled ? (this.animateBeforeDestroy(), ai(Ei, gi.duration)) : Ei(), ii.pointCount--;
+            ti.legendItem && oi.legend.destroyItem(ti), di && (ti.setState(), bi(di, ti), di.length || (oi.hoverPoints = null)), ti === oi.hoverPoint && ti.onMouseOut(), si && si.enabled ? (this.animateBeforeDestroy(), ci(Oi, mi.duration)) : Oi(), oi.pointCount--;
           }
           this.destroyed = !0;
         }
-        destroyElements(ei) {
-          const Fe = this;
-          ei = Fe.getGraphicalProps(ei), ei.singular.forEach(function(ii) {
-            Fe[ii] = Fe[ii].destroy();
-          }), ei.plural.forEach(function(ii) {
-            Fe[ii].forEach(function(hi) {
-              hi && hi.element && hi.destroy();
-            }), delete Fe[ii];
+        destroyElements(si) {
+          const ti = this;
+          si = ti.getGraphicalProps(si), si.singular.forEach(function(oi) {
+            ti[oi] = ti[oi].destroy();
+          }), si.plural.forEach(function(oi) {
+            ti[oi].forEach(function(di) {
+              di && di.element && di.destroy();
+            }), delete ti[oi];
           });
         }
-        firePointEvent(ei, Fe, ii) {
-          const hi = this, gi = this.series.options;
-          (gi.point.events[ei] || hi.options && hi.options.events && hi.options.events[ei]) && hi.importEvents(), ei === "click" && gi.allowPointSelect && (ii = function(Ei) {
-            hi.select && hi.select(null, Ei.ctrlKey || Ei.metaKey || Ei.shiftKey);
-          }), Ri(hi, ei, Fe, ii);
+        firePointEvent(si, ti, oi) {
+          const di = this, mi = this.series.options;
+          (mi.point.events[si] || di.options && di.options.events && di.options.events[si]) && di.importEvents(), si === "click" && mi.allowPointSelect && (oi = function(Oi) {
+            di.select && di.select(null, Oi.ctrlKey || Oi.metaKey || Oi.shiftKey);
+          }), ji(di, si, ti, oi);
         }
         getClassName() {
           return "highcharts-point" + (this.selected ? " highcharts-point-select" : "") + (this.negative ? " highcharts-negative" : "") + (this.isNull ? " highcharts-null-point" : "") + (typeof this.colorIndex < "u" ? " highcharts-color-" + this.colorIndex : "") + (this.options.className ? " " + this.options.className : "") + (this.zone && this.zone.className ? " " + this.zone.className.replace("highcharts-negative", "") : "");
         }
-        getGraphicalProps(ei) {
-          const Fe = this, ii = [], hi = { singular: [], plural: [] };
-          let gi, Ei;
-          for (ei = ei || { graphic: 1, dataLabel: 1 }, ei.graphic && ii.push("graphic"), ei.dataLabel && ii.push("dataLabel", "dataLabelPath", "dataLabelUpper", "connector"), Ei = ii.length; Ei--; )
-            gi = ii[Ei], Fe[gi] && hi.singular.push(gi);
-          return ["graphic", "dataLabel", "connector"].forEach(function(ni) {
-            const Pi = ni + "s";
-            ei[ni] && Fe[Pi] && hi.plural.push(Pi);
-          }), hi;
+        getGraphicalProps(si) {
+          const ti = this, oi = [], di = { singular: [], plural: [] };
+          let mi, Oi;
+          for (si = si || { graphic: 1, dataLabel: 1 }, si.graphic && oi.push("graphic"), si.dataLabel && oi.push("dataLabel", "dataLabelPath", "dataLabelUpper", "connector"), Oi = oi.length; Oi--; )
+            mi = oi[Oi], ti[mi] && di.singular.push(mi);
+          return ["graphic", "dataLabel", "connector"].forEach(function(hi) {
+            const Li = hi + "s";
+            si[hi] && ti[Li] && di.plural.push(Li);
+          }), di;
         }
         getLabelConfig() {
           return { x: this.category, y: this.y, color: this.color, colorIndex: this.colorIndex, key: this.name || this.category, series: this.series, point: this, percentage: this.percentage, total: this.total || this.stackTotal };
         }
-        getNestedProperty(ei) {
-          if (ei)
-            return ei.indexOf("custom.") === 0 ? Ni(ei, this.options) : this[ei];
+        getNestedProperty(si) {
+          if (si)
+            return si.indexOf("custom.") === 0 ? Ni(si, this.options) : this[si];
         }
         getZone() {
-          var ei = this.series;
-          const Fe = ei.zones;
-          ei = ei.zoneAxis || "y";
-          let ii, hi = 0;
-          for (ii = Fe[hi]; this[ei] >= ii.value; )
-            ii = Fe[++hi];
-          return this.nonZonedColor || (this.nonZonedColor = this.color), this.color = ii && ii.color && !this.options.color ? ii.color : this.nonZonedColor, ii;
+          var si = this.series;
+          const ti = si.zones;
+          si = si.zoneAxis || "y";
+          let oi, di = 0;
+          for (oi = ti[di]; this[si] >= oi.value; )
+            oi = ti[++di];
+          return this.nonZonedColor || (this.nonZonedColor = this.color), this.color = oi && oi.color && !this.options.color ? oi.color : this.nonZonedColor, oi;
         }
         hasNewShapeType() {
           return (this.graphic && (this.graphic.symbolName || this.graphic.element.nodeName)) !== this.shapeType;
         }
-        init(ei, Fe, ii) {
-          return this.series = ei, this.applyOptions(Fe, ii), this.id = Ui(this.id) ? this.id : xi(), this.resolveColor(), ei.chart.pointCount++, Ri(this, "afterInit"), this;
+        init(si, ti, oi) {
+          return this.series = si, this.applyOptions(ti, oi), this.id = _i(this.id) ? this.id : vi(), this.resolveColor(), si.chart.pointCount++, ji(this, "afterInit"), this;
         }
         isValid() {
           return this.x !== null && wi(this.y);
         }
-        optionsToObject(ei) {
-          var Fe = this.series;
-          const ii = Fe.options.keys, hi = ii || Fe.pointArrayMap || ["y"], gi = hi.length;
-          let Ei = {}, ni = 0, Pi = 0;
-          if (wi(ei) || ei === null)
-            Ei[hi[0]] = ei;
-          else if (fi(ei))
-            for (!ii && ei.length > gi && (Fe = typeof ei[0], Fe === "string" ? Ei.name = ei[0] : Fe === "number" && (Ei.x = ei[0]), ni++); Pi < gi; )
-              ii && typeof ei[ni] > "u" || (0 < hi[Pi].indexOf(".") ? di.prototype.setNestedProperty(Ei, ei[ni], hi[Pi]) : Ei[hi[Pi]] = ei[ni]), ni++, Pi++;
+        optionsToObject(si) {
+          var ti = this.series;
+          const oi = ti.options.keys, di = oi || ti.pointArrayMap || ["y"], mi = di.length;
+          let Oi = {}, hi = 0, Li = 0;
+          if (wi(si) || si === null)
+            Oi[di[0]] = si;
+          else if (gi(si))
+            for (!oi && si.length > mi && (ti = typeof si[0], ti === "string" ? Oi.name = si[0] : ti === "number" && (Oi.x = si[0]), hi++); Li < mi; )
+              oi && typeof si[hi] > "u" || (0 < di[Li].indexOf(".") ? ui.prototype.setNestedProperty(Oi, si[hi], di[Li]) : Oi[di[Li]] = si[hi]), hi++, Li++;
           else
-            typeof ei == "object" && (Ei = ei, ei.dataLabels && (Fe._hasPointLabels = !0), ei.marker && (Fe._hasPointMarkers = !0));
-          return Ei;
+            typeof si == "object" && (Oi = si, si.dataLabels && (ti._hasPointLabels = !0), si.marker && (ti._hasPointMarkers = !0));
+          return Oi;
         }
-        pos(ei, Fe = this.plotY) {
+        pos(si, ti = this.plotY) {
           if (!this.destroyed) {
-            const { plotX: ii, series: hi } = this, { chart: gi, xAxis: Ei, yAxis: ni } = hi;
-            let Pi = 0, Fi = 0;
-            if (wi(ii) && wi(Fe))
-              return ei && (Pi = Ei ? Ei.pos : gi.plotLeft, Fi = ni ? ni.pos : gi.plotTop), gi.inverted && Ei && ni ? [ni.len - Fe + Fi, Ei.len - ii + Pi] : [ii + Pi, Fe + Fi];
+            const { plotX: oi, series: di } = this, { chart: mi, xAxis: Oi, yAxis: hi } = di;
+            let Li = 0, Ui = 0;
+            if (wi(oi) && wi(ti))
+              return si && (Li = Oi ? Oi.pos : mi.plotLeft, Ui = hi ? hi.pos : mi.plotTop), mi.inverted && Oi && hi ? [hi.len - ti + Ui, Oi.len - oi + Li] : [oi + Li, ti + Ui];
           }
         }
         resolveColor() {
-          const ei = this.series;
-          var Fe = ei.chart.styledMode;
-          let ii;
-          var hi = ei.chart.options.chart.colorCount;
-          delete this.nonZonedColor, ei.options.colorByPoint ? (Fe || (hi = ei.options.colors || ei.chart.options.colors, ii = hi[ei.colorCounter], hi = hi.length), Fe = ei.colorCounter, ei.colorCounter++, ei.colorCounter === hi && (ei.colorCounter = 0)) : (Fe || (ii = ei.color), Fe = ei.colorIndex), this.colorIndex = Oi(this.options.colorIndex, Fe), this.color = Oi(this.options.color, ii);
+          const si = this.series;
+          var ti = si.chart.styledMode;
+          let oi;
+          var di = si.chart.options.chart.colorCount;
+          delete this.nonZonedColor, si.options.colorByPoint ? (ti || (di = si.options.colors || si.chart.options.colors, oi = di[si.colorCounter], di = di.length), ti = si.colorCounter, si.colorCounter++, si.colorCounter === di && (si.colorCounter = 0)) : (ti || (oi = si.color), ti = si.colorIndex), this.colorIndex = Di(this.options.colorIndex, ti), this.color = Di(this.options.color, oi);
         }
-        setNestedProperty(ei, Fe, ii) {
-          return ii.split(".").reduce(function(hi, gi, Ei, ni) {
-            return hi[gi] = ni.length - 1 === Ei ? Fe : yi(hi[gi], !0) ? hi[gi] : {}, hi[gi];
-          }, ei), ei;
+        setNestedProperty(si, ti, oi) {
+          return oi.split(".").reduce(function(di, mi, Oi, hi) {
+            return di[mi] = hi.length - 1 === Oi ? ti : Si(di[mi], !0) ? di[mi] : {}, di[mi];
+          }, si), si;
         }
         shouldDraw() {
           return !this.isNull;
         }
-        tooltipFormatter(ei) {
-          const Fe = this.series, ii = Fe.tooltipOptions, hi = Oi(ii.valueDecimals, ""), gi = ii.valuePrefix || "", Ei = ii.valueSuffix || "";
-          return Fe.chart.styledMode && (ei = Fe.chart.tooltip.styledModeFormat(ei)), (Fe.pointArrayMap || ["y"]).forEach(function(ni) {
-            ni = "{point." + ni, (gi || Ei) && (ei = ei.replace(RegExp(ni + "}", "g"), gi + ni + "}" + Ei)), ei = ei.replace(RegExp(ni + "}", "g"), ni + ":,." + hi + "f}");
-          }), Wi(ei, { point: this, series: this.series }, Fe.chart);
+        tooltipFormatter(si) {
+          const ti = this.series, oi = ti.tooltipOptions, di = Di(oi.valueDecimals, ""), mi = oi.valuePrefix || "", Oi = oi.valueSuffix || "";
+          return ti.chart.styledMode && (si = ti.chart.tooltip.styledModeFormat(si)), (ti.pointArrayMap || ["y"]).forEach(function(hi) {
+            hi = "{point." + hi, (mi || Oi) && (si = si.replace(RegExp(hi + "}", "g"), mi + hi + "}" + Oi)), si = si.replace(RegExp(hi + "}", "g"), hi + ":,." + di + "f}");
+          }), $i(si, { point: this, series: this.series }, ti.chart);
         }
-        update(ei, Fe, ii, hi) {
-          function gi() {
-            Ei.applyOptions(ei);
-            var Bi = Pi && Ei.hasMockGraphic;
-            Bi = Ei.y === null ? !Bi : Bi, Pi && Bi && (Ei.graphic = Pi.destroy(), delete Ei.hasMockGraphic), yi(ei, !0) && (Pi && Pi.element && ei && ei.marker && typeof ei.marker.symbol < "u" && (Ei.graphic = Pi.destroy()), ei && ei.dataLabels && Ei.dataLabel && (Ei.dataLabel = Ei.dataLabel.destroy()), Ei.connector && (Ei.connector = Ei.connector.destroy())), rs = Ei.index, ni.updateParallelArrays(Ei, rs), Zi.data[rs] = yi(Zi.data[rs], !0) || yi(ei, !0) ? Ei.options : Oi(ei, Zi.data[rs]), ni.isDirty = ni.isDirtyData = !0, !ni.fixedBox && ni.hasCartesianSeries && (Fi.isDirtyBox = !0), Zi.legendType === "point" && (Fi.isDirtyLegend = !0), Fe && Fi.redraw(ii);
+        update(si, ti, oi, di) {
+          function mi() {
+            Oi.applyOptions(si);
+            var Bi = Li && Oi.hasMockGraphic;
+            Bi = Oi.y === null ? !Bi : Bi, Li && Bi && (Oi.graphic = Li.destroy(), delete Oi.hasMockGraphic), Si(si, !0) && (Li && Li.element && si && si.marker && typeof si.marker.symbol < "u" && (Oi.graphic = Li.destroy()), si && si.dataLabels && Oi.dataLabel && (Oi.dataLabel = Oi.dataLabel.destroy()), Oi.connector && (Oi.connector = Oi.connector.destroy())), rs = Oi.index, hi.updateParallelArrays(Oi, rs), Zi.data[rs] = Si(Zi.data[rs], !0) || Si(si, !0) ? Oi.options : Di(si, Zi.data[rs]), hi.isDirty = hi.isDirtyData = !0, !hi.fixedBox && hi.hasCartesianSeries && (Ui.isDirtyBox = !0), Zi.legendType === "point" && (Ui.isDirtyLegend = !0), ti && Ui.redraw(oi);
           }
-          const Ei = this, ni = Ei.series, Pi = Ei.graphic, Fi = ni.chart, Zi = ni.options;
+          const Oi = this, hi = Oi.series, Li = Oi.graphic, Ui = hi.chart, Zi = hi.options;
           let rs;
-          Fe = Oi(Fe, !0), hi === !1 ? gi() : Ei.firePointEvent("update", { options: ei }, gi);
+          ti = Di(ti, !0), di === !1 ? mi() : Oi.firePointEvent("update", { options: si }, mi);
         }
-        remove(ei, Fe) {
+        remove(si, ti) {
           this.series.removePoint(
             this.series.data.indexOf(this),
-            ei,
-            Fe
+            si,
+            ti
           );
         }
-        select(ei, Fe) {
-          const ii = this, hi = ii.series, gi = hi.chart;
-          this.selectedStaging = ei = Oi(ei, !ii.selected), ii.firePointEvent(ei ? "select" : "unselect", { accumulate: Fe }, function() {
-            ii.selected = ii.options.selected = ei, hi.options.data[hi.data.indexOf(ii)] = ii.options, ii.setState(ei && "select"), Fe || gi.getSelectedPoints().forEach(function(Ei) {
-              const ni = Ei.series;
-              Ei.selected && Ei !== ii && (Ei.selected = Ei.options.selected = !1, ni.options.data[ni.data.indexOf(Ei)] = Ei.options, Ei.setState(gi.hoverPoints && ni.options.inactiveOtherPoints ? "inactive" : ""), Ei.firePointEvent("unselect"));
+        select(si, ti) {
+          const oi = this, di = oi.series, mi = di.chart;
+          this.selectedStaging = si = Di(si, !oi.selected), oi.firePointEvent(si ? "select" : "unselect", { accumulate: ti }, function() {
+            oi.selected = oi.options.selected = si, di.options.data[di.data.indexOf(oi)] = oi.options, oi.setState(si && "select"), ti || mi.getSelectedPoints().forEach(function(Oi) {
+              const hi = Oi.series;
+              Oi.selected && Oi !== oi && (Oi.selected = Oi.options.selected = !1, hi.options.data[hi.data.indexOf(Oi)] = Oi.options, Oi.setState(mi.hoverPoints && hi.options.inactiveOtherPoints ? "inactive" : ""), Oi.firePointEvent("unselect"));
             });
           }), delete this.selectedStaging;
         }
-        onMouseOver(ei) {
-          const Fe = this.series.chart, ii = Fe.pointer;
-          ei = ei ? ii.normalize(ei) : ii.getChartCoordinatesFromPoint(this, Fe.inverted), ii.runPointActions(ei, this);
+        onMouseOver(si) {
+          const ti = this.series.chart, oi = ti.pointer;
+          si = si ? oi.normalize(si) : oi.getChartCoordinatesFromPoint(this, ti.inverted), oi.runPointActions(si, this);
         }
         onMouseOut() {
-          const ei = this.series.chart;
-          this.firePointEvent("mouseOut"), this.series.options.inactiveOtherPoints || (ei.hoverPoints || []).forEach(function(Fe) {
-            Fe.setState();
-          }), ei.hoverPoints = ei.hoverPoint = null;
+          const si = this.series.chart;
+          this.firePointEvent("mouseOut"), this.series.options.inactiveOtherPoints || (si.hoverPoints || []).forEach(function(ti) {
+            ti.setState();
+          }), si.hoverPoints = si.hoverPoint = null;
         }
         importEvents() {
           if (!this.hasImportedEvents) {
-            const ei = this, Fe = Ti(ei.series.options.point, ei.options).events;
-            ei.events = Fe, Mi(Fe, function(ii, hi) {
-              Ci(ii) && Ki(ei, hi, ii);
+            const si = this, ti = Ti(si.series.options.point, si.options).events;
+            si.events = ti, Mi(ti, function(oi, di) {
+              ki(oi) && Vi(si, di, oi);
             }), this.hasImportedEvents = !0;
           }
         }
-        setState(ei, Fe) {
-          const ii = this.series;
-          var hi = this.state, gi = ii.options.states[ei || "normal"] || {}, Ei = ss.plotOptions[ii.type].marker && ii.options.marker;
-          const ni = Ei && Ei.enabled === !1, Pi = Ei && Ei.states && Ei.states[ei || "normal"] || {}, Fi = Pi.enabled === !1, Zi = this.marker || {}, rs = ii.chart, Bi = Ei && ii.markerAttribs;
-          let si = ii.halo;
-          var Li;
+        setState(si, ti) {
+          const oi = this.series;
+          var di = this.state, mi = oi.options.states[si || "normal"] || {}, Oi = is.plotOptions[oi.type].marker && oi.options.marker;
+          const hi = Oi && Oi.enabled === !1, Li = Oi && Oi.states && Oi.states[si || "normal"] || {}, Ui = Li.enabled === !1, Zi = this.marker || {}, rs = oi.chart, Bi = Oi && oi.markerAttribs;
+          let ni = oi.halo;
+          var Pi;
           let Hi;
-          var Di = ii.stateMarkerGraphic;
-          if (ei = ei || "", !(ei === this.state && !Fe || this.selected && ei !== "select" || gi.enabled === !1 || ei && (Fi || ni && Pi.enabled === !1) || ei && Zi.states && Zi.states[ei] && Zi.states[ei].enabled === !1)) {
-            if (this.state = ei, Bi && (Li = ii.markerAttribs(this, ei)), this.graphic && !this.hasMockGraphic) {
-              if (hi && this.graphic.removeClass("highcharts-point-" + hi), ei && this.graphic.addClass("highcharts-point-" + ei), !rs.styledMode) {
-                hi = ii.pointAttribs(this, ei), Hi = Oi(rs.options.chart.animation, gi.animation);
-                const Vi = hi.opacity;
-                ii.options.inactiveOtherPoints && wi(Vi) && ((this.dataLabels || []).forEach(function(ri) {
-                  ri && !ri.hasClass("highcharts-data-label-hidden") && ri.animate({ opacity: Vi }, Hi);
-                }), this.connector && this.connector.animate({ opacity: Vi }, Hi)), this.graphic.animate(
-                  hi,
+          var Ri = oi.stateMarkerGraphic;
+          if (si = si || "", !(si === this.state && !ti || this.selected && si !== "select" || mi.enabled === !1 || si && (Ui || hi && Li.enabled === !1) || si && Zi.states && Zi.states[si] && Zi.states[si].enabled === !1)) {
+            if (this.state = si, Bi && (Pi = oi.markerAttribs(this, si)), this.graphic && !this.hasMockGraphic) {
+              if (di && this.graphic.removeClass("highcharts-point-" + di), si && this.graphic.addClass("highcharts-point-" + si), !rs.styledMode) {
+                di = oi.pointAttribs(this, si), Hi = Di(rs.options.chart.animation, mi.animation);
+                const qi = di.opacity;
+                oi.options.inactiveOtherPoints && wi(qi) && ((this.dataLabels || []).forEach(function(ai) {
+                  ai && !ai.hasClass("highcharts-data-label-hidden") && ai.animate({ opacity: qi }, Hi);
+                }), this.connector && this.connector.animate({ opacity: qi }, Hi)), this.graphic.animate(
+                  di,
                   Hi
                 );
               }
-              Li && this.graphic.animate(Li, Oi(rs.options.chart.animation, Pi.animation, Ei.animation)), Di && Di.hide();
+              Pi && this.graphic.animate(Pi, Di(rs.options.chart.animation, Li.animation, Oi.animation)), Ri && Ri.hide();
             } else
-              ei && Pi && (Ei = Zi.symbol || ii.symbol, Di && Di.currentSymbol !== Ei && (Di = Di.destroy()), Li && (Di ? Di[Fe ? "animate" : "attr"]({ x: Li.x, y: Li.y }) : Ei && (ii.stateMarkerGraphic = Di = rs.renderer.symbol(Ei, Li.x, Li.y, Li.width, Li.height).add(ii.markerGroup), Di.currentSymbol = Ei)), !rs.styledMode && Di && this.state !== "inactive" && Di.attr(ii.pointAttribs(this, ei))), Di && (Di[ei && this.isInside ? "show" : "hide"](), Di.element.point = this, Di.addClass(this.getClassName(), !0));
-            gi = gi.halo, Li = (Di = this.graphic || Di) && Di.visibility || "inherit", gi && gi.size && Di && Li !== "hidden" && !this.isCluster ? (si || (ii.halo = si = rs.renderer.path().add(Di.parentGroup)), si.show()[Fe ? "animate" : "attr"]({ d: this.haloPath(gi.size) }), si.attr({ class: "highcharts-halo highcharts-color-" + Oi(this.colorIndex, ii.colorIndex) + (this.className ? " " + this.className : ""), visibility: Li, zIndex: -1 }), si.point = this, rs.styledMode || si.attr(bi({ fill: this.color || ii.color, "fill-opacity": gi.opacity }, Si.filterUserAttributes(gi.attributes || {})))) : si && si.point && si.point.haloPath && si.animate({ d: si.point.haloPath(0) }, null, si.hide), Ri(this, "afterSetState", { state: ei });
+              si && Li && (Oi = Zi.symbol || oi.symbol, Ri && Ri.currentSymbol !== Oi && (Ri = Ri.destroy()), Pi && (Ri ? Ri[ti ? "animate" : "attr"]({ x: Pi.x, y: Pi.y }) : Oi && (oi.stateMarkerGraphic = Ri = rs.renderer.symbol(Oi, Pi.x, Pi.y, Pi.width, Pi.height).add(oi.markerGroup), Ri.currentSymbol = Oi)), !rs.styledMode && Ri && this.state !== "inactive" && Ri.attr(oi.pointAttribs(this, si))), Ri && (Ri[si && this.isInside ? "show" : "hide"](), Ri.element.point = this, Ri.addClass(this.getClassName(), !0));
+            mi = mi.halo, Pi = (Ri = this.graphic || Ri) && Ri.visibility || "inherit", mi && mi.size && Ri && Pi !== "hidden" && !this.isCluster ? (ni || (oi.halo = ni = rs.renderer.path().add(Ri.parentGroup)), ni.show()[ti ? "animate" : "attr"]({ d: this.haloPath(mi.size) }), ni.attr({ class: "highcharts-halo highcharts-color-" + Di(this.colorIndex, oi.colorIndex) + (this.className ? " " + this.className : ""), visibility: Pi, zIndex: -1 }), ni.point = this, rs.styledMode || ni.attr(Ai({ fill: this.color || oi.color, "fill-opacity": mi.opacity }, li.filterUserAttributes(mi.attributes || {})))) : ni && ni.point && ni.point.haloPath && ni.animate({ d: ni.point.haloPath(0) }, null, ni.hide), ji(this, "afterSetState", { state: si });
           }
         }
-        haloPath(ei) {
-          const Fe = this.pos();
-          return Fe ? this.series.chart.renderer.symbols.circle(Math.floor(Fe[0]) - ei, Fe[1] - ei, 2 * ei, 2 * ei) : [];
+        haloPath(si) {
+          const ti = this.pos();
+          return ti ? this.series.chart.renderer.symbols.circle(Math.floor(ti[0]) - si, ti[1] - si, 2 * si, 2 * si) : [];
         }
       }
-      return di;
-    }), ci(oi, "Core/Pointer.js", [oi["Core/Color/Color.js"], oi["Core/Globals.js"], oi["Core/Utilities.js"]], function(Si, ji, qi) {
-      const { parse: ts } = Si, { charts: Qi, noop: is } = ji, { addEvent: ss, attr: Wi, css: Ki, defined: Ui, extend: ki, find: bi, fireEvent: Ri, isNumber: Ni, isObject: fi, objectEach: Ci, offset: wi, pick: yi, splat: Ti } = qi;
+      return ui;
+    }), ri(ii, "Core/Pointer.js", [ii["Core/Color/Color.js"], ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+      const { parse: Ki } = li, { charts: Yi, noop: es } = Ci, { addEvent: is, attr: $i, css: Vi, defined: _i, extend: bi, find: Ai, fireEvent: ji, isNumber: Ni, isObject: gi, objectEach: ki, offset: wi, pick: Si, splat: Ti } = zi;
       class Mi {
-        constructor(ai, li) {
-          this.lastValidTouch = {}, this.pinchDown = [], this.runChartClick = !1, this.eventsToUnbind = [], this.chart = ai, this.hasDragged = !1, this.options = li, this.init(ai, li);
+        constructor(ci, pi) {
+          this.lastValidTouch = {}, this.pinchDown = [], this.runChartClick = !1, this.eventsToUnbind = [], this.chart = ci, this.hasDragged = !1, this.options = pi, this.init(ci, pi);
         }
-        applyInactiveState(ai) {
-          let li = [], xi;
-          (ai || []).forEach(function(di) {
-            xi = di.series, li.push(xi), xi.linkedParent && li.push(xi.linkedParent), xi.linkedSeries && (li = li.concat(xi.linkedSeries)), xi.navigatorSeries && li.push(xi.navigatorSeries);
-          }), this.chart.series.forEach(function(di) {
-            li.indexOf(di) === -1 ? di.setState("inactive", !0) : di.options.inactiveOtherPoints && di.setAllPointsToState("inactive");
+        applyInactiveState(ci) {
+          let pi = [], vi;
+          (ci || []).forEach(function(ui) {
+            vi = ui.series, pi.push(vi), vi.linkedParent && pi.push(vi.linkedParent), vi.linkedSeries && (pi = pi.concat(vi.linkedSeries)), vi.navigatorSeries && pi.push(vi.navigatorSeries);
+          }), this.chart.series.forEach(function(ui) {
+            pi.indexOf(ui) === -1 ? ui.setState("inactive", !0) : ui.options.inactiveOtherPoints && ui.setAllPointsToState("inactive");
           });
         }
         destroy() {
-          const ai = this;
-          this.eventsToUnbind.forEach((li) => li()), this.eventsToUnbind = [], ji.chartCount || (Mi.unbindDocumentMouseUp && (Mi.unbindDocumentMouseUp = Mi.unbindDocumentMouseUp()), Mi.unbindDocumentTouchEnd && (Mi.unbindDocumentTouchEnd = Mi.unbindDocumentTouchEnd())), clearInterval(ai.tooltipTimeout), Ci(ai, function(li, xi) {
-            ai[xi] = void 0;
+          const ci = this;
+          this.eventsToUnbind.forEach((pi) => pi()), this.eventsToUnbind = [], Ci.chartCount || (Mi.unbindDocumentMouseUp && (Mi.unbindDocumentMouseUp = Mi.unbindDocumentMouseUp()), Mi.unbindDocumentTouchEnd && (Mi.unbindDocumentTouchEnd = Mi.unbindDocumentTouchEnd())), clearInterval(ci.tooltipTimeout), ki(ci, function(pi, vi) {
+            ci[vi] = void 0;
           });
         }
-        getSelectionMarkerAttrs(ai, li) {
-          const xi = { args: { chartX: ai, chartY: li }, attrs: {}, shapeType: "rect" };
-          return Ri(this, "getSelectionMarkerAttrs", xi, (di) => {
-            const { chart: pi, mouseDownX: ei = 0, mouseDownY: Fe = 0, zoomHor: ii, zoomVert: hi } = this;
-            di = di.attrs;
-            let gi;
-            di.x = pi.plotLeft, di.y = pi.plotTop, di.width = ii ? 1 : pi.plotWidth, di.height = hi ? 1 : pi.plotHeight, ii && (gi = ai - ei, di.width = Math.abs(gi), di.x = (0 < gi ? 0 : gi) + ei), hi && (gi = li - Fe, di.height = Math.abs(gi), di.y = (0 < gi ? 0 : gi) + Fe);
-          }), xi;
+        getSelectionMarkerAttrs(ci, pi) {
+          const vi = { args: { chartX: ci, chartY: pi }, attrs: {}, shapeType: "rect" };
+          return ji(this, "getSelectionMarkerAttrs", vi, (ui) => {
+            const { chart: fi, mouseDownX: si = 0, mouseDownY: ti = 0, zoomHor: oi, zoomVert: di } = this;
+            ui = ui.attrs;
+            let mi;
+            ui.x = fi.plotLeft, ui.y = fi.plotTop, ui.width = oi ? 1 : fi.plotWidth, ui.height = di ? 1 : fi.plotHeight, oi && (mi = ci - si, ui.width = Math.abs(mi), ui.x = (0 < mi ? 0 : mi) + si), di && (mi = pi - ti, ui.height = Math.abs(mi), ui.y = (0 < mi ? 0 : mi) + ti);
+          }), vi;
         }
-        drag(ai) {
-          const li = this.chart, xi = li.options.chart;
-          var di = li.plotLeft;
-          const pi = li.plotTop, ei = li.plotWidth, Fe = li.plotHeight, ii = this.mouseDownX || 0, hi = this.mouseDownY || 0, gi = fi(xi.panning) ? xi.panning && xi.panning.enabled : xi.panning, Ei = xi.panKey && ai[xi.panKey + "Key"];
-          let ni = ai.chartX, Pi = ai.chartY, Fi = this.selectionMarker;
-          if ((!Fi || !Fi.touch) && (ni < di ? ni = di : ni > di + ei && (ni = di + ei), Pi < pi ? Pi = pi : Pi > pi + Fe && (Pi = pi + Fe), this.hasDragged = Math.sqrt(Math.pow(ii - ni, 2) + Math.pow(hi - Pi, 2)), 10 < this.hasDragged)) {
-            di = li.isInsidePlot(ii - di, hi - pi, { visiblePlotOnly: !0 });
-            const { shapeType: Zi, attrs: rs } = this.getSelectionMarkerAttrs(ni, Pi);
-            !li.hasCartesianSeries && !li.mapView || !this.zoomX && !this.zoomY || !di || Ei || Fi || (this.selectionMarker = Fi = li.renderer[Zi](), Fi.attr({ class: "highcharts-selection-marker", zIndex: 7 }).add(), li.styledMode || Fi.attr({ fill: xi.selectionMarkerFill || ts("#334eff").setOpacity(0.25).get() })), Fi && Fi.attr(rs), di && !Fi && gi && li.pan(ai, xi.panning);
+        drag(ci) {
+          const pi = this.chart, vi = pi.options.chart;
+          var ui = pi.plotLeft;
+          const fi = pi.plotTop, si = pi.plotWidth, ti = pi.plotHeight, oi = this.mouseDownX || 0, di = this.mouseDownY || 0, mi = gi(vi.panning) ? vi.panning && vi.panning.enabled : vi.panning, Oi = vi.panKey && ci[vi.panKey + "Key"];
+          let hi = ci.chartX, Li = ci.chartY, Ui = this.selectionMarker;
+          if ((!Ui || !Ui.touch) && (hi < ui ? hi = ui : hi > ui + si && (hi = ui + si), Li < fi ? Li = fi : Li > fi + ti && (Li = fi + ti), this.hasDragged = Math.sqrt(Math.pow(oi - hi, 2) + Math.pow(di - Li, 2)), 10 < this.hasDragged)) {
+            ui = pi.isInsidePlot(oi - ui, di - fi, { visiblePlotOnly: !0 });
+            const { shapeType: Zi, attrs: rs } = this.getSelectionMarkerAttrs(hi, Li);
+            !pi.hasCartesianSeries && !pi.mapView || !this.zoomX && !this.zoomY || !ui || Oi || Ui || (this.selectionMarker = Ui = pi.renderer[Zi](), Ui.attr({ class: "highcharts-selection-marker", zIndex: 7 }).add(), pi.styledMode || Ui.attr({ fill: vi.selectionMarkerFill || Ki("#334eff").setOpacity(0.25).get() })), Ui && Ui.attr(rs), ui && !Ui && mi && pi.pan(ci, vi.panning);
           }
         }
-        dragStart(ai) {
-          const li = this.chart;
-          li.mouseIsDown = ai.type, li.cancelClick = !1, li.mouseDownX = this.mouseDownX = ai.chartX, li.mouseDownY = this.mouseDownY = ai.chartY;
+        dragStart(ci) {
+          const pi = this.chart;
+          pi.mouseIsDown = ci.type, pi.cancelClick = !1, pi.mouseDownX = this.mouseDownX = ci.chartX, pi.mouseDownY = this.mouseDownY = ci.chartY;
         }
-        getSelectionBox(ai) {
-          const li = { args: { marker: ai }, result: {} };
-          return Ri(this, "getSelectionBox", li, (xi) => {
-            xi.result = { x: ai.attr ? +ai.attr("x") : ai.x, y: ai.attr ? +ai.attr("y") : ai.y, width: ai.attr ? ai.attr("width") : ai.width, height: ai.attr ? ai.attr("height") : ai.height };
-          }), li.result;
+        getSelectionBox(ci) {
+          const pi = { args: { marker: ci }, result: {} };
+          return ji(this, "getSelectionBox", pi, (vi) => {
+            vi.result = { x: ci.attr ? +ci.attr("x") : ci.x, y: ci.attr ? +ci.attr("y") : ci.y, width: ci.attr ? ci.attr("width") : ci.width, height: ci.attr ? ci.attr("height") : ci.height };
+          }), pi.result;
         }
-        drop(ai) {
-          const li = this, xi = this.chart, di = this.hasPinched;
+        drop(ci) {
+          const pi = this, vi = this.chart, ui = this.hasPinched;
           if (this.selectionMarker) {
             const {
-              x: pi,
-              y: ei,
-              width: Fe,
-              height: ii
-            } = this.getSelectionBox(this.selectionMarker), hi = { originalEvent: ai, xAxis: [], yAxis: [], x: pi, y: ei, width: Fe, height: ii };
-            let gi = !!xi.mapView;
-            (this.hasDragged || di) && (xi.axes.forEach(function(Ei) {
-              if (Ei.zoomEnabled && Ui(Ei.min) && (di || li[{ xAxis: "zoomX", yAxis: "zoomY" }[Ei.coll]]) && Ni(pi) && Ni(ei) && Ni(Fe) && Ni(ii)) {
-                var ni = Ei.horiz;
-                const Pi = ai.type === "touchend" ? Ei.minPixelPadding : 0, Fi = Ei.toValue((ni ? pi : ei) + Pi);
-                ni = Ei.toValue((ni ? pi + Fe : ei + ii) - Pi), hi[Ei.coll].push({ axis: Ei, min: Math.min(Fi, ni), max: Math.max(Fi, ni) }), gi = !0;
+              x: fi,
+              y: si,
+              width: ti,
+              height: oi
+            } = this.getSelectionBox(this.selectionMarker), di = { originalEvent: ci, xAxis: [], yAxis: [], x: fi, y: si, width: ti, height: oi };
+            let mi = !!vi.mapView;
+            (this.hasDragged || ui) && (vi.axes.forEach(function(Oi) {
+              if (Oi.zoomEnabled && _i(Oi.min) && (ui || pi[{ xAxis: "zoomX", yAxis: "zoomY" }[Oi.coll]]) && Ni(fi) && Ni(si) && Ni(ti) && Ni(oi)) {
+                var hi = Oi.horiz;
+                const Li = ci.type === "touchend" ? Oi.minPixelPadding : 0, Ui = Oi.toValue((hi ? fi : si) + Li);
+                hi = Oi.toValue((hi ? fi + ti : si + oi) - Li), di[Oi.coll].push({ axis: Oi, min: Math.min(Ui, hi), max: Math.max(Ui, hi) }), mi = !0;
               }
-            }), gi && Ri(xi, "selection", hi, function(Ei) {
-              xi.zoom(ki(
-                Ei,
-                di ? { animation: !1 } : null
+            }), mi && ji(vi, "selection", di, function(Oi) {
+              vi.zoom(bi(
+                Oi,
+                ui ? { animation: !1 } : null
               ));
-            })), Ni(xi.index) && (this.selectionMarker = this.selectionMarker.destroy()), di && this.scaleGroups();
+            })), Ni(vi.index) && (this.selectionMarker = this.selectionMarker.destroy()), ui && this.scaleGroups();
           }
-          xi && Ni(xi.index) && (Ki(xi.container, { cursor: xi._cursor }), xi.cancelClick = 10 < this.hasDragged, xi.mouseIsDown = this.hasDragged = this.hasPinched = !1, this.pinchDown = []);
+          vi && Ni(vi.index) && (Vi(vi.container, { cursor: vi._cursor }), vi.cancelClick = 10 < this.hasDragged, vi.mouseIsDown = this.hasDragged = this.hasPinched = !1, this.pinchDown = []);
         }
-        findNearestKDPoint(ai, li, xi) {
-          let di;
-          return ai.forEach(function(pi) {
-            var ei = !(pi.noSharedTooltip && li) && 0 > pi.options.findNearestPointBy.indexOf("y");
-            if (pi = pi.searchPoint(xi, ei), (ei = fi(pi, !0) && pi.series) && !(ei = !fi(di, !0))) {
+        findNearestKDPoint(ci, pi, vi) {
+          let ui;
+          return ci.forEach(function(fi) {
+            var si = !(fi.noSharedTooltip && pi) && 0 > fi.options.findNearestPointBy.indexOf("y");
+            if (fi = fi.searchPoint(vi, si), (si = gi(fi, !0) && fi.series) && !(si = !gi(ui, !0))) {
               {
-                ei = di.distX - pi.distX;
-                const Fe = di.dist - pi.dist, ii = (pi.series.group && pi.series.group.zIndex) - (di.series.group && di.series.group.zIndex);
-                ei = ei !== 0 && li ? ei : Fe !== 0 ? Fe : ii !== 0 ? ii : di.series.index > pi.series.index ? -1 : 1;
+                si = ui.distX - fi.distX;
+                const ti = ui.dist - fi.dist, oi = (fi.series.group && fi.series.group.zIndex) - (ui.series.group && ui.series.group.zIndex);
+                si = si !== 0 && pi ? si : ti !== 0 ? ti : oi !== 0 ? oi : ui.series.index > fi.series.index ? -1 : 1;
               }
-              ei = 0 < ei;
+              si = 0 < si;
             }
-            ei && (di = pi);
-          }), di;
+            si && (ui = fi);
+          }), ui;
         }
-        getChartCoordinatesFromPoint(ai, li) {
-          var xi = ai.series;
-          const di = xi.xAxis;
-          xi = xi.yAxis;
-          const pi = ai.shapeArgs;
-          if (di && xi) {
-            let ei = yi(ai.clientX, ai.plotX), Fe = ai.plotY || 0;
-            return ai.isNode && pi && Ni(pi.x) && Ni(pi.y) && (ei = pi.x, Fe = pi.y), li ? { chartX: xi.len + xi.pos - Fe, chartY: di.len + di.pos - ei } : { chartX: ei + di.pos, chartY: Fe + xi.pos };
+        getChartCoordinatesFromPoint(ci, pi) {
+          var vi = ci.series;
+          const ui = vi.xAxis;
+          vi = vi.yAxis;
+          const fi = ci.shapeArgs;
+          if (ui && vi) {
+            let si = Si(ci.clientX, ci.plotX), ti = ci.plotY || 0;
+            return ci.isNode && fi && Ni(fi.x) && Ni(fi.y) && (si = fi.x, ti = fi.y), pi ? { chartX: vi.len + vi.pos - ti, chartY: ui.len + ui.pos - si } : { chartX: si + ui.pos, chartY: ti + vi.pos };
           }
-          if (pi && pi.x && pi.y)
-            return { chartX: pi.x, chartY: pi.y };
+          if (fi && fi.x && fi.y)
+            return { chartX: fi.x, chartY: fi.y };
         }
         getChartPosition() {
           if (this.chartPosition)
             return this.chartPosition;
-          var { container: ai } = this.chart;
-          const li = wi(ai);
-          this.chartPosition = { left: li.left, top: li.top, scaleX: 1, scaleY: 1 };
-          const xi = ai.offsetWidth;
-          return ai = ai.offsetHeight, 2 < xi && 2 < ai && (this.chartPosition.scaleX = li.width / xi, this.chartPosition.scaleY = li.height / ai), this.chartPosition;
+          var { container: ci } = this.chart;
+          const pi = wi(ci);
+          this.chartPosition = { left: pi.left, top: pi.top, scaleX: 1, scaleY: 1 };
+          const vi = ci.offsetWidth;
+          return ci = ci.offsetHeight, 2 < vi && 2 < ci && (this.chartPosition.scaleX = pi.width / vi, this.chartPosition.scaleY = pi.height / ci), this.chartPosition;
         }
-        getCoordinates(ai) {
-          const li = { xAxis: [], yAxis: [] };
-          return this.chart.axes.forEach(function(xi) {
-            li[xi.isXAxis ? "xAxis" : "yAxis"].push({ axis: xi, value: xi.toValue(ai[xi.horiz ? "chartX" : "chartY"]) });
-          }), li;
+        getCoordinates(ci) {
+          const pi = { xAxis: [], yAxis: [] };
+          return this.chart.axes.forEach(function(vi) {
+            pi[vi.isXAxis ? "xAxis" : "yAxis"].push({ axis: vi, value: vi.toValue(ci[vi.horiz ? "chartX" : "chartY"]) });
+          }), pi;
         }
-        getHoverData(ai, li, xi, di, pi, ei) {
-          const Fe = [];
-          di = !(!di || !ai);
-          const ii = function(ni) {
-            return ni.visible && !(!pi && ni.directTouch) && yi(ni.options.enableMouseTracking, !0);
+        getHoverData(ci, pi, vi, ui, fi, si) {
+          const ti = [];
+          ui = !(!ui || !ci);
+          const oi = function(hi) {
+            return hi.visible && !(!fi && hi.directTouch) && Si(hi.options.enableMouseTracking, !0);
           };
-          let hi, gi = { chartX: ei ? ei.chartX : void 0, chartY: ei ? ei.chartY : void 0, shared: pi };
-          Ri(this, "beforeGetHoverData", gi), hi = li && !li.stickyTracking ? [li] : xi.filter((ni) => ni.stickyTracking && (gi.filter || ii)(ni));
-          const Ei = di || !ei ? ai : this.findNearestKDPoint(hi, pi, ei);
-          return li = Ei && Ei.series, Ei && (pi && !li.noSharedTooltip ? (hi = xi.filter(function(ni) {
-            return gi.filter ? gi.filter(ni) : ii(ni) && !ni.noSharedTooltip;
-          }), hi.forEach(function(ni) {
-            let Pi = bi(ni.points, function(Fi) {
-              return Fi.x === Ei.x && !Fi.isNull;
+          let di, mi = { chartX: si ? si.chartX : void 0, chartY: si ? si.chartY : void 0, shared: fi };
+          ji(this, "beforeGetHoverData", mi), di = pi && !pi.stickyTracking ? [pi] : vi.filter((hi) => hi.stickyTracking && (mi.filter || oi)(hi));
+          const Oi = ui || !si ? ci : this.findNearestKDPoint(di, fi, si);
+          return pi = Oi && Oi.series, Oi && (fi && !pi.noSharedTooltip ? (di = vi.filter(function(hi) {
+            return mi.filter ? mi.filter(hi) : oi(hi) && !hi.noSharedTooltip;
+          }), di.forEach(function(hi) {
+            let Li = Ai(hi.points, function(Ui) {
+              return Ui.x === Oi.x && !Ui.isNull;
             });
-            fi(Pi) && (ni.boosted && ni.boost && (Pi = ni.boost.getPoint(Pi)), Fe.push(Pi));
-          })) : Fe.push(Ei)), gi = { hoverPoint: Ei }, Ri(this, "afterGetHoverData", gi), { hoverPoint: gi.hoverPoint, hoverSeries: li, hoverPoints: Fe };
+            gi(Li) && (hi.boosted && hi.boost && (Li = hi.boost.getPoint(Li)), ti.push(Li));
+          })) : ti.push(Oi)), mi = { hoverPoint: Oi }, ji(this, "afterGetHoverData", mi), { hoverPoint: mi.hoverPoint, hoverSeries: pi, hoverPoints: ti };
         }
-        getPointFromEvent(ai) {
-          ai = ai.target;
-          let li;
-          for (; ai && !li; )
-            li = ai.point, ai = ai.parentNode;
-          return li;
+        getPointFromEvent(ci) {
+          ci = ci.target;
+          let pi;
+          for (; ci && !pi; )
+            pi = ci.point, ci = ci.parentNode;
+          return pi;
         }
-        onTrackerMouseOut(ai) {
-          ai = ai.relatedTarget;
-          const li = this.chart.hoverSeries;
-          this.isDirectTouch = !1, !li || !ai || li.stickyTracking || this.inClass(ai, "highcharts-tooltip") || this.inClass(ai, "highcharts-series-" + li.index) && this.inClass(ai, "highcharts-tracker") || li.onMouseOut();
+        onTrackerMouseOut(ci) {
+          ci = ci.relatedTarget;
+          const pi = this.chart.hoverSeries;
+          this.isDirectTouch = !1, !pi || !ci || pi.stickyTracking || this.inClass(ci, "highcharts-tooltip") || this.inClass(ci, "highcharts-series-" + pi.index) && this.inClass(ci, "highcharts-tracker") || pi.onMouseOut();
         }
-        inClass(ai, li) {
-          let xi;
-          for (; ai; ) {
-            if (xi = Wi(ai, "class")) {
-              if (xi.indexOf(li) !== -1)
+        inClass(ci, pi) {
+          let vi;
+          for (; ci; ) {
+            if (vi = $i(ci, "class")) {
+              if (vi.indexOf(pi) !== -1)
                 return !0;
-              if (xi.indexOf("highcharts-container") !== -1)
+              if (vi.indexOf("highcharts-container") !== -1)
                 return !1;
             }
-            ai = ai.parentElement;
+            ci = ci.parentElement;
           }
         }
-        init(ai, li) {
-          this.options = li, this.chart = ai, this.runChartClick = !(!li.chart.events || !li.chart.events.click), this.pinchDown = [], this.lastValidTouch = {}, this.setDOMEvents(), Ri(this, "afterInit");
+        init(ci, pi) {
+          this.options = pi, this.chart = ci, this.runChartClick = !(!pi.chart.events || !pi.chart.events.click), this.pinchDown = [], this.lastValidTouch = {}, this.setDOMEvents(), ji(this, "afterInit");
         }
-        normalize(ai, li) {
-          var xi = ai.touches, di = xi ? xi.length ? xi.item(0) : yi(xi.changedTouches, ai.changedTouches)[0] : ai;
-          return li || (li = this.getChartPosition()), xi = di.pageX - li.left, di = di.pageY - li.top, xi /= li.scaleX, di /= li.scaleY, ki(ai, { chartX: Math.round(xi), chartY: Math.round(di) });
+        normalize(ci, pi) {
+          var vi = ci.touches, ui = vi ? vi.length ? vi.item(0) : Si(vi.changedTouches, ci.changedTouches)[0] : ci;
+          return pi || (pi = this.getChartPosition()), vi = ui.pageX - pi.left, ui = ui.pageY - pi.top, vi /= pi.scaleX, ui /= pi.scaleY, bi(ci, { chartX: Math.round(vi), chartY: Math.round(ui) });
         }
-        onContainerClick(ai) {
-          const li = this.chart, xi = li.hoverPoint;
-          ai = this.normalize(ai);
-          const di = li.plotLeft, pi = li.plotTop;
-          li.cancelClick || (xi && this.inClass(ai.target, "highcharts-tracker") ? (Ri(xi.series, "click", ki(ai, { point: xi })), li.hoverPoint && xi.firePointEvent("click", ai)) : (ki(ai, this.getCoordinates(ai)), li.isInsidePlot(ai.chartX - di, ai.chartY - pi, { visiblePlotOnly: !0 }) && Ri(li, "click", ai)));
+        onContainerClick(ci) {
+          const pi = this.chart, vi = pi.hoverPoint;
+          ci = this.normalize(ci);
+          const ui = pi.plotLeft, fi = pi.plotTop;
+          pi.cancelClick || (vi && this.inClass(ci.target, "highcharts-tracker") ? (ji(vi.series, "click", bi(ci, { point: vi })), pi.hoverPoint && vi.firePointEvent("click", ci)) : (bi(ci, this.getCoordinates(ci)), pi.isInsidePlot(ci.chartX - ui, ci.chartY - fi, { visiblePlotOnly: !0 }) && ji(pi, "click", ci)));
         }
-        onContainerMouseDown(ai) {
-          const li = ((ai.buttons || ai.button) & 1) === 1;
-          ai = this.normalize(ai), ji.isFirefox && ai.button !== 0 && this.onContainerMouseMove(ai), (typeof ai.button > "u" || li) && (this.zoomOption(ai), li && ai.preventDefault && ai.preventDefault(), this.dragStart(ai));
+        onContainerMouseDown(ci) {
+          const pi = ((ci.buttons || ci.button) & 1) === 1;
+          ci = this.normalize(ci), Ci.isFirefox && ci.button !== 0 && this.onContainerMouseMove(ci), (typeof ci.button > "u" || pi) && (this.zoomOption(ci), pi && ci.preventDefault && ci.preventDefault(), this.dragStart(ci));
         }
-        onContainerMouseLeave(ai) {
-          const li = Qi[yi(Mi.hoverChartIndex, -1)];
-          ai = this.normalize(ai), li && ai.relatedTarget && !this.inClass(ai.relatedTarget, "highcharts-tooltip") && (li.pointer.reset(), li.pointer.chartPosition = void 0);
+        onContainerMouseLeave(ci) {
+          const pi = Yi[Si(Mi.hoverChartIndex, -1)];
+          ci = this.normalize(ci), pi && ci.relatedTarget && !this.inClass(ci.relatedTarget, "highcharts-tooltip") && (pi.pointer.reset(), pi.pointer.chartPosition = void 0);
         }
-        onContainerMouseEnter(ai) {
+        onContainerMouseEnter(ci) {
           delete this.chartPosition;
         }
-        onContainerMouseMove(ai) {
-          const li = this.chart, xi = li.tooltip;
-          ai = this.normalize(ai), this.setHoverChartIndex(), (li.mouseIsDown === "mousedown" || this.touchSelect(ai)) && this.drag(ai), li.openMenu || !this.inClass(ai.target, "highcharts-tracker") && !li.isInsidePlot(ai.chartX - li.plotLeft, ai.chartY - li.plotTop, { visiblePlotOnly: !0 }) || xi && xi.shouldStickOnContact(ai) || (this.inClass(ai.target, "highcharts-no-tooltip") ? this.reset(!1, 0) : this.runPointActions(ai));
+        onContainerMouseMove(ci) {
+          const pi = this.chart, vi = pi.tooltip;
+          ci = this.normalize(ci), this.setHoverChartIndex(), (pi.mouseIsDown === "mousedown" || this.touchSelect(ci)) && this.drag(ci), pi.openMenu || !this.inClass(ci.target, "highcharts-tracker") && !pi.isInsidePlot(ci.chartX - pi.plotLeft, ci.chartY - pi.plotTop, { visiblePlotOnly: !0 }) || vi && vi.shouldStickOnContact(ci) || (this.inClass(ci.target, "highcharts-no-tooltip") ? this.reset(!1, 0) : this.runPointActions(ci));
         }
-        onDocumentTouchEnd(ai) {
-          const li = Qi[yi(Mi.hoverChartIndex, -1)];
-          li && li.pointer.drop(ai);
+        onDocumentTouchEnd(ci) {
+          const pi = Yi[Si(Mi.hoverChartIndex, -1)];
+          pi && pi.pointer.drop(ci);
         }
-        onContainerTouchMove(ai) {
-          this.touchSelect(ai) ? this.onContainerMouseMove(ai) : this.touch(ai);
+        onContainerTouchMove(ci) {
+          this.touchSelect(ci) ? this.onContainerMouseMove(ci) : this.touch(ci);
         }
-        onContainerTouchStart(ai) {
-          this.touchSelect(ai) ? this.onContainerMouseDown(ai) : (this.zoomOption(ai), this.touch(ai, !0));
+        onContainerTouchStart(ci) {
+          this.touchSelect(ci) ? this.onContainerMouseDown(ci) : (this.zoomOption(ci), this.touch(ci, !0));
         }
-        onDocumentMouseMove(ai) {
-          const li = this.chart, xi = li.tooltip, di = this.chartPosition;
-          ai = this.normalize(ai, di), !di || li.isInsidePlot(ai.chartX - li.plotLeft, ai.chartY - li.plotTop, { visiblePlotOnly: !0 }) || xi && xi.shouldStickOnContact(ai) || this.inClass(ai.target, "highcharts-tracker") || this.reset();
+        onDocumentMouseMove(ci) {
+          const pi = this.chart, vi = pi.tooltip, ui = this.chartPosition;
+          ci = this.normalize(ci, ui), !ui || pi.isInsidePlot(ci.chartX - pi.plotLeft, ci.chartY - pi.plotTop, { visiblePlotOnly: !0 }) || vi && vi.shouldStickOnContact(ci) || this.inClass(ci.target, "highcharts-tracker") || this.reset();
         }
-        onDocumentMouseUp(ai) {
-          const li = Qi[yi(Mi.hoverChartIndex, -1)];
-          li && li.pointer.drop(ai);
+        onDocumentMouseUp(ci) {
+          const pi = Yi[Si(Mi.hoverChartIndex, -1)];
+          pi && pi.pointer.drop(ci);
         }
-        pinch(ai) {
-          const li = this, xi = li.chart, di = li.pinchDown, pi = ai.touches || [], ei = pi.length, Fe = li.lastValidTouch, ii = li.hasZoom, hi = {}, gi = ei === 1 && (li.inClass(ai.target, "highcharts-tracker") && xi.runTrackerClick || li.runChartClick), Ei = {};
-          var ni = li.chart.tooltip;
-          ni = ei === 1 && yi(ni && ni.options.followTouchMove, !0);
-          let Pi = li.selectionMarker;
-          1 < ei ? li.initiated = !0 : ni && (li.initiated = !1), ii && li.initiated && !gi && ai.cancelable !== !1 && ai.preventDefault(), [].map.call(pi, function(Fi) {
-            return li.normalize(Fi);
-          }), ai.type === "touchstart" ? ([].forEach.call(pi, function(Fi, Zi) {
-            di[Zi] = { chartX: Fi.chartX, chartY: Fi.chartY };
-          }), Fe.x = [di[0].chartX, di[1] && di[1].chartX], Fe.y = [di[0].chartY, di[1] && di[1].chartY], xi.axes.forEach(function(Fi) {
-            if (Fi.zoomEnabled) {
-              const Zi = xi.bounds[Fi.horiz ? "h" : "v"], rs = Fi.minPixelPadding, Bi = Fi.toPixels(Math.min(yi(Fi.options.min, Fi.dataMin), Fi.dataMin)), si = Fi.toPixels(Math.max(yi(Fi.options.max, Fi.dataMax), Fi.dataMax)), Li = Math.max(Bi, si);
-              Zi.min = Math.min(Fi.pos, Math.min(Bi, si) - rs), Zi.max = Math.max(Fi.pos + Fi.len, Li + rs);
+        pinch(ci) {
+          const pi = this, vi = pi.chart, ui = pi.pinchDown, fi = ci.touches || [], si = fi.length, ti = pi.lastValidTouch, oi = pi.hasZoom, di = {}, mi = si === 1 && (pi.inClass(ci.target, "highcharts-tracker") && vi.runTrackerClick || pi.runChartClick), Oi = {};
+          var hi = pi.chart.tooltip;
+          hi = si === 1 && Si(hi && hi.options.followTouchMove, !0);
+          let Li = pi.selectionMarker;
+          1 < si ? pi.initiated = !0 : hi && (pi.initiated = !1), oi && pi.initiated && !mi && ci.cancelable !== !1 && ci.preventDefault(), [].map.call(fi, function(Ui) {
+            return pi.normalize(Ui);
+          }), ci.type === "touchstart" ? ([].forEach.call(fi, function(Ui, Zi) {
+            ui[Zi] = { chartX: Ui.chartX, chartY: Ui.chartY };
+          }), ti.x = [ui[0].chartX, ui[1] && ui[1].chartX], ti.y = [ui[0].chartY, ui[1] && ui[1].chartY], vi.axes.forEach(function(Ui) {
+            if (Ui.zoomEnabled) {
+              const Zi = vi.bounds[Ui.horiz ? "h" : "v"], rs = Ui.minPixelPadding, Bi = Ui.toPixels(Math.min(Si(Ui.options.min, Ui.dataMin), Ui.dataMin)), ni = Ui.toPixels(Math.max(Si(Ui.options.max, Ui.dataMax), Ui.dataMax)), Pi = Math.max(Bi, ni);
+              Zi.min = Math.min(Ui.pos, Math.min(Bi, ni) - rs), Zi.max = Math.max(Ui.pos + Ui.len, Pi + rs);
             }
-          }), li.res = !0) : ni ? this.runPointActions(li.normalize(ai)) : di.length && (Ri(xi, "touchpan", { originalEvent: ai }, () => {
-            Pi || (li.selectionMarker = Pi = ki({ destroy: is, touch: !0 }, xi.plotBox)), li.pinchTranslate(di, pi, hi, Pi, Ei, Fe), li.hasPinched = ii, li.scaleGroups(hi, Ei);
-          }), li.res && (li.res = !1, this.reset(
+          }), pi.res = !0) : hi ? this.runPointActions(pi.normalize(ci)) : ui.length && (ji(vi, "touchpan", { originalEvent: ci }, () => {
+            Li || (pi.selectionMarker = Li = bi({ destroy: es, touch: !0 }, vi.plotBox)), pi.pinchTranslate(ui, fi, di, Li, Oi, ti), pi.hasPinched = oi, pi.scaleGroups(di, Oi);
+          }), pi.res && (pi.res = !1, this.reset(
             !1,
             0
           )));
         }
-        pinchTranslate(ai, li, xi, di, pi, ei) {
-          this.zoomHor && this.pinchTranslateDirection(!0, ai, li, xi, di, pi, ei), this.zoomVert && this.pinchTranslateDirection(!1, ai, li, xi, di, pi, ei);
+        pinchTranslate(ci, pi, vi, ui, fi, si) {
+          this.zoomHor && this.pinchTranslateDirection(!0, ci, pi, vi, ui, fi, si), this.zoomVert && this.pinchTranslateDirection(!1, ci, pi, vi, ui, fi, si);
         }
-        pinchTranslateDirection(ai, li, xi, di, pi, ei, Fe, ii) {
-          const hi = this.chart, gi = ai ? "x" : "y", Ei = ai ? "X" : "Y", ni = "chart" + Ei, Pi = ai ? "width" : "height", Fi = hi["plot" + (ai ? "Left" : "Top")], Zi = hi.inverted, rs = hi.bounds[ai ? "h" : "v"], Bi = li.length === 1, si = li[0][ni], Li = !Bi && li[1][ni];
-          li = function() {
-            typeof mi == "number" && 20 < Math.abs(si - Li) && (Vi = ii || Math.abs(ri - mi) / Math.abs(si - Li)), Di = (Fi - ri) / Vi + si, Hi = hi["plot" + (ai ? "Width" : "Height")] / Vi;
+        pinchTranslateDirection(ci, pi, vi, ui, fi, si, ti, oi) {
+          const di = this.chart, mi = ci ? "x" : "y", Oi = ci ? "X" : "Y", hi = "chart" + Oi, Li = ci ? "width" : "height", Ui = di["plot" + (ci ? "Left" : "Top")], Zi = di.inverted, rs = di.bounds[ci ? "h" : "v"], Bi = pi.length === 1, ni = pi[0][hi], Pi = !Bi && pi[1][hi];
+          pi = function() {
+            typeof xi == "number" && 20 < Math.abs(ni - Pi) && (qi = oi || Math.abs(ai - xi) / Math.abs(ni - Pi)), Ri = (Ui - ai) / qi + ni, Hi = di["plot" + (ci ? "Width" : "Height")] / qi;
           };
-          let Hi, Di, Vi = ii || 1, ri = xi[0][ni], mi = !Bi && xi[1][ni], vi;
-          li(), xi = Di, xi < rs.min ? (xi = rs.min, vi = !0) : xi + Hi > rs.max && (xi = rs.max - Hi, vi = !0), vi ? (ri -= 0.8 * (ri - Fe[gi][0]), typeof mi == "number" && (mi -= 0.8 * (mi - Fe[gi][1])), li()) : Fe[gi] = [ri, mi], Zi || (ei[gi] = Di - Fi, ei[Pi] = Hi), ei = Zi ? 1 / Vi : Vi, pi[Pi] = Hi, pi[gi] = xi, di[Zi ? ai ? "scaleY" : "scaleX" : "scale" + Ei] = Vi, di["translate" + Ei] = ei * Fi + (ri - ei * si);
+          let Hi, Ri, qi = oi || 1, ai = vi[0][hi], xi = !Bi && vi[1][hi], yi;
+          pi(), vi = Ri, vi < rs.min ? (vi = rs.min, yi = !0) : vi + Hi > rs.max && (vi = rs.max - Hi, yi = !0), yi ? (ai -= 0.8 * (ai - ti[mi][0]), typeof xi == "number" && (xi -= 0.8 * (xi - ti[mi][1])), pi()) : ti[mi] = [ai, xi], Zi || (si[mi] = Ri - Ui, si[Li] = Hi), si = Zi ? 1 / qi : qi, fi[Li] = Hi, fi[mi] = vi, ui[Zi ? ci ? "scaleY" : "scaleX" : "scale" + Oi] = qi, ui["translate" + Oi] = si * Ui + (ai - si * ni);
         }
-        reset(ai, li) {
-          const xi = this.chart, di = xi.hoverSeries, pi = xi.hoverPoint, ei = xi.hoverPoints, Fe = xi.tooltip, ii = Fe && Fe.shared ? ei : pi;
-          ai && ii && Ti(ii).forEach(function(hi) {
-            hi.series.isCartesian && typeof hi.plotX > "u" && (ai = !1);
-          }), ai ? Fe && ii && Ti(ii).length && (Fe.refresh(ii), Fe.shared && ei ? ei.forEach(function(hi) {
-            hi.setState(hi.state, !0), hi.series.isCartesian && (hi.series.xAxis.crosshair && hi.series.xAxis.drawCrosshair(null, hi), hi.series.yAxis.crosshair && hi.series.yAxis.drawCrosshair(null, hi));
-          }) : pi && (pi.setState(pi.state, !0), xi.axes.forEach(function(hi) {
-            hi.crosshair && pi.series[hi.coll] === hi && hi.drawCrosshair(null, pi);
-          }))) : (pi && pi.onMouseOut(), ei && ei.forEach(function(hi) {
-            hi.setState();
-          }), di && di.onMouseOut(), Fe && Fe.hide(li), this.unDocMouseMove && (this.unDocMouseMove = this.unDocMouseMove()), xi.axes.forEach(function(hi) {
-            hi.hideCrosshair();
-          }), this.hoverX = xi.hoverPoints = xi.hoverPoint = null);
+        reset(ci, pi) {
+          const vi = this.chart, ui = vi.hoverSeries, fi = vi.hoverPoint, si = vi.hoverPoints, ti = vi.tooltip, oi = ti && ti.shared ? si : fi;
+          ci && oi && Ti(oi).forEach(function(di) {
+            di.series.isCartesian && typeof di.plotX > "u" && (ci = !1);
+          }), ci ? ti && oi && Ti(oi).length && (ti.refresh(oi), ti.shared && si ? si.forEach(function(di) {
+            di.setState(di.state, !0), di.series.isCartesian && (di.series.xAxis.crosshair && di.series.xAxis.drawCrosshair(null, di), di.series.yAxis.crosshair && di.series.yAxis.drawCrosshair(null, di));
+          }) : fi && (fi.setState(fi.state, !0), vi.axes.forEach(function(di) {
+            di.crosshair && fi.series[di.coll] === di && di.drawCrosshair(null, fi);
+          }))) : (fi && fi.onMouseOut(), si && si.forEach(function(di) {
+            di.setState();
+          }), ui && ui.onMouseOut(), ti && ti.hide(pi), this.unDocMouseMove && (this.unDocMouseMove = this.unDocMouseMove()), vi.axes.forEach(function(di) {
+            di.hideCrosshair();
+          }), this.hoverX = vi.hoverPoints = vi.hoverPoint = null);
         }
-        runPointActions(ai, li, xi) {
-          const di = this.chart, pi = di.tooltip && di.tooltip.options.enabled ? di.tooltip : void 0, ei = pi ? pi.shared : !1;
-          let Fe = li || di.hoverPoint, ii = Fe && Fe.series || di.hoverSeries;
-          li = this.getHoverData(Fe, ii, di.series, (!ai || ai.type !== "touchmove") && (!!li || ii && ii.directTouch && this.isDirectTouch), ei, ai), Fe = li.hoverPoint, ii = li.hoverSeries;
-          const hi = li.hoverPoints;
-          li = ii && ii.tooltipOptions.followPointer && !ii.tooltipOptions.split;
-          const gi = ei && ii && !ii.noSharedTooltip;
-          if (Fe && (xi || Fe !== di.hoverPoint || pi && pi.isHidden)) {
-            if ((di.hoverPoints || []).forEach(function(Ei) {
-              hi.indexOf(Ei) === -1 && Ei.setState();
-            }), di.hoverSeries !== ii && ii.onMouseOver(), this.applyInactiveState(hi), (hi || []).forEach(function(Ei) {
-              Ei.setState("hover");
-            }), di.hoverPoint && di.hoverPoint.firePointEvent("mouseOut"), !Fe.series)
+        runPointActions(ci, pi, vi) {
+          const ui = this.chart, fi = ui.tooltip && ui.tooltip.options.enabled ? ui.tooltip : void 0, si = fi ? fi.shared : !1;
+          let ti = pi || ui.hoverPoint, oi = ti && ti.series || ui.hoverSeries;
+          pi = this.getHoverData(ti, oi, ui.series, (!ci || ci.type !== "touchmove") && (!!pi || oi && oi.directTouch && this.isDirectTouch), si, ci), ti = pi.hoverPoint, oi = pi.hoverSeries;
+          const di = pi.hoverPoints;
+          pi = oi && oi.tooltipOptions.followPointer && !oi.tooltipOptions.split;
+          const mi = si && oi && !oi.noSharedTooltip;
+          if (ti && (vi || ti !== ui.hoverPoint || fi && fi.isHidden)) {
+            if ((ui.hoverPoints || []).forEach(function(Oi) {
+              di.indexOf(Oi) === -1 && Oi.setState();
+            }), ui.hoverSeries !== oi && oi.onMouseOver(), this.applyInactiveState(di), (di || []).forEach(function(Oi) {
+              Oi.setState("hover");
+            }), ui.hoverPoint && ui.hoverPoint.firePointEvent("mouseOut"), !ti.series)
               return;
-            di.hoverPoints = hi, di.hoverPoint = Fe, Fe.firePointEvent("mouseOver", void 0, () => {
-              pi && Fe && pi.refresh(gi ? hi : Fe, ai);
+            ui.hoverPoints = di, ui.hoverPoint = ti, ti.firePointEvent("mouseOver", void 0, () => {
+              fi && ti && fi.refresh(mi ? di : ti, ci);
             });
           } else
-            li && pi && !pi.isHidden && (xi = pi.getAnchor([{}], ai), di.isInsidePlot(xi[0], xi[1], { visiblePlotOnly: !0 }) && pi.updatePosition({
-              plotX: xi[0],
-              plotY: xi[1]
+            pi && fi && !fi.isHidden && (vi = fi.getAnchor([{}], ci), ui.isInsidePlot(vi[0], vi[1], { visiblePlotOnly: !0 }) && fi.updatePosition({
+              plotX: vi[0],
+              plotY: vi[1]
             }));
-          this.unDocMouseMove || (this.unDocMouseMove = ss(di.container.ownerDocument, "mousemove", function(Ei) {
-            const ni = Qi[Mi.hoverChartIndex];
-            ni && ni.pointer.onDocumentMouseMove(Ei);
-          }), this.eventsToUnbind.push(this.unDocMouseMove)), di.axes.forEach(function(Ei) {
-            const ni = yi((Ei.crosshair || {}).snap, !0);
-            let Pi;
-            ni && ((Pi = di.hoverPoint) && Pi.series[Ei.coll] === Ei || (Pi = bi(hi, (Fi) => Fi.series && Fi.series[Ei.coll] === Ei))), Pi || !ni ? Ei.drawCrosshair(ai, Pi) : Ei.hideCrosshair();
+          this.unDocMouseMove || (this.unDocMouseMove = is(ui.container.ownerDocument, "mousemove", function(Oi) {
+            const hi = Yi[Mi.hoverChartIndex];
+            hi && hi.pointer.onDocumentMouseMove(Oi);
+          }), this.eventsToUnbind.push(this.unDocMouseMove)), ui.axes.forEach(function(Oi) {
+            const hi = Si((Oi.crosshair || {}).snap, !0);
+            let Li;
+            hi && ((Li = ui.hoverPoint) && Li.series[Oi.coll] === Oi || (Li = Ai(di, (Ui) => Ui.series && Ui.series[Oi.coll] === Oi))), Li || !hi ? Oi.drawCrosshair(ci, Li) : Oi.hideCrosshair();
           });
         }
-        scaleGroups(ai, li) {
-          const xi = this.chart;
-          xi.series.forEach(function(di) {
-            const pi = ai || di.getPlotBox();
-            di.group && (di.xAxis && di.xAxis.zoomEnabled || xi.mapView) && (di.group.attr(pi), di.markerGroup && (di.markerGroup.attr(pi), di.markerGroup.clip(li ? xi.clipRect : null)), di.dataLabelsGroup && di.dataLabelsGroup.attr(pi));
-          }), xi.clipRect.attr(li || xi.clipBox);
+        scaleGroups(ci, pi) {
+          const vi = this.chart;
+          vi.series.forEach(function(ui) {
+            const fi = ci || ui.getPlotBox();
+            ui.group && (ui.xAxis && ui.xAxis.zoomEnabled || vi.mapView) && (ui.group.attr(fi), ui.markerGroup && (ui.markerGroup.attr(fi), ui.markerGroup.clip(pi ? vi.clipRect : null)), ui.dataLabelsGroup && ui.dataLabelsGroup.attr(fi));
+          }), vi.clipRect.attr(pi || vi.clipBox);
         }
         setDOMEvents() {
-          const ai = this.chart.container, li = ai.ownerDocument;
-          ai.onmousedown = this.onContainerMouseDown.bind(this), ai.onmousemove = this.onContainerMouseMove.bind(this), ai.onclick = this.onContainerClick.bind(this), this.eventsToUnbind.push(ss(ai, "mouseenter", this.onContainerMouseEnter.bind(this))), this.eventsToUnbind.push(ss(ai, "mouseleave", this.onContainerMouseLeave.bind(this))), Mi.unbindDocumentMouseUp || (Mi.unbindDocumentMouseUp = ss(li, "mouseup", this.onDocumentMouseUp.bind(this)));
-          let xi = this.chart.renderTo.parentElement;
-          for (; xi && xi.tagName !== "BODY"; )
-            this.eventsToUnbind.push(ss(xi, "scroll", () => {
+          const ci = this.chart.container, pi = ci.ownerDocument;
+          ci.onmousedown = this.onContainerMouseDown.bind(this), ci.onmousemove = this.onContainerMouseMove.bind(this), ci.onclick = this.onContainerClick.bind(this), this.eventsToUnbind.push(is(ci, "mouseenter", this.onContainerMouseEnter.bind(this))), this.eventsToUnbind.push(is(ci, "mouseleave", this.onContainerMouseLeave.bind(this))), Mi.unbindDocumentMouseUp || (Mi.unbindDocumentMouseUp = is(pi, "mouseup", this.onDocumentMouseUp.bind(this)));
+          let vi = this.chart.renderTo.parentElement;
+          for (; vi && vi.tagName !== "BODY"; )
+            this.eventsToUnbind.push(is(vi, "scroll", () => {
               delete this.chartPosition;
-            })), xi = xi.parentElement;
-          ji.hasTouch && (this.eventsToUnbind.push(ss(ai, "touchstart", this.onContainerTouchStart.bind(this), { passive: !1 })), this.eventsToUnbind.push(ss(
-            ai,
+            })), vi = vi.parentElement;
+          Ci.hasTouch && (this.eventsToUnbind.push(is(ci, "touchstart", this.onContainerTouchStart.bind(this), { passive: !1 })), this.eventsToUnbind.push(is(
+            ci,
             "touchmove",
             this.onContainerTouchMove.bind(this),
             { passive: !1 }
-          )), Mi.unbindDocumentTouchEnd || (Mi.unbindDocumentTouchEnd = ss(li, "touchend", this.onDocumentTouchEnd.bind(this), { passive: !1 })));
+          )), Mi.unbindDocumentTouchEnd || (Mi.unbindDocumentTouchEnd = is(pi, "touchend", this.onDocumentTouchEnd.bind(this), { passive: !1 })));
         }
         setHoverChartIndex() {
-          const ai = this.chart, li = ji.charts[yi(Mi.hoverChartIndex, -1)];
-          li && li !== ai && li.pointer.onContainerMouseLeave({ relatedTarget: ai.container }), li && li.mouseIsDown || (Mi.hoverChartIndex = ai.index);
+          const ci = this.chart, pi = Ci.charts[Si(Mi.hoverChartIndex, -1)];
+          pi && pi !== ci && pi.pointer.onContainerMouseLeave({ relatedTarget: ci.container }), pi && pi.mouseIsDown || (Mi.hoverChartIndex = ci.index);
         }
-        touch(ai, li) {
-          const xi = this.chart;
-          let di;
-          this.setHoverChartIndex(), ai.touches.length === 1 ? (ai = this.normalize(ai), xi.isInsidePlot(ai.chartX - xi.plotLeft, ai.chartY - xi.plotTop, { visiblePlotOnly: !0 }) && !xi.openMenu ? (li && this.runPointActions(ai), ai.type === "touchmove" && (li = this.pinchDown, di = li[0] ? 4 <= Math.sqrt(Math.pow(li[0].chartX - ai.chartX, 2) + Math.pow(li[0].chartY - ai.chartY, 2)) : !1), yi(di, !0) && this.pinch(ai)) : li && this.reset()) : ai.touches.length === 2 && this.pinch(ai);
+        touch(ci, pi) {
+          const vi = this.chart;
+          let ui;
+          this.setHoverChartIndex(), ci.touches.length === 1 ? (ci = this.normalize(ci), vi.isInsidePlot(ci.chartX - vi.plotLeft, ci.chartY - vi.plotTop, { visiblePlotOnly: !0 }) && !vi.openMenu ? (pi && this.runPointActions(ci), ci.type === "touchmove" && (pi = this.pinchDown, ui = pi[0] ? 4 <= Math.sqrt(Math.pow(pi[0].chartX - ci.chartX, 2) + Math.pow(pi[0].chartY - ci.chartY, 2)) : !1), Si(ui, !0) && this.pinch(ci)) : pi && this.reset()) : ci.touches.length === 2 && this.pinch(ci);
         }
-        touchSelect(ai) {
-          return !(!this.chart.zooming.singleTouch || !ai.touches || ai.touches.length !== 1);
+        touchSelect(ci) {
+          return !(!this.chart.zooming.singleTouch || !ci.touches || ci.touches.length !== 1);
         }
-        zoomOption(ai) {
-          const li = this.chart, xi = li.inverted;
-          var di = li.zooming.type || "";
-          /touch/.test(ai.type) && (di = yi(li.zooming.pinchType, di)), this.zoomX = ai = /x/.test(di), this.zoomY = di = /y/.test(di), this.zoomHor = ai && !xi || di && xi, this.zoomVert = di && !xi || ai && xi, this.hasZoom = ai || di;
+        zoomOption(ci) {
+          const pi = this.chart, vi = pi.inverted;
+          var ui = pi.zooming.type || "";
+          /touch/.test(ci.type) && (ui = Si(pi.zooming.pinchType, ui)), this.zoomX = ci = /x/.test(ui), this.zoomY = ui = /y/.test(ui), this.zoomHor = ci && !vi || ui && vi, this.zoomVert = ui && !vi || ci && vi, this.hasZoom = ci || ui;
         }
       }
-      return function(Oi) {
-        const ai = [], li = [];
-        Oi.compose = function(xi) {
-          qi.pushUnique(li, xi) && ss(xi, "beforeRender", function() {
-            this.pointer = new Oi(this, this.options);
+      return function(Di) {
+        const ci = [], pi = [];
+        Di.compose = function(vi) {
+          zi.pushUnique(pi, vi) && is(vi, "beforeRender", function() {
+            this.pointer = new Di(this, this.options);
           });
-        }, Oi.dissolve = function() {
-          for (let xi = 0, di = ai.length; xi < di; ++xi)
-            ai[xi]();
-          ai.length = 0;
+        }, Di.dissolve = function() {
+          for (let vi = 0, ui = ci.length; vi < ui; ++vi)
+            ci[vi]();
+          ci.length = 0;
         };
       }(Mi || (Mi = {})), Mi;
-    }), ci(
-      oi,
+    }), ri(
+      ii,
       "Core/Legend/Legend.js",
-      [oi["Core/Animation/AnimationUtilities.js"], oi["Core/Templating.js"], oi["Core/Globals.js"], oi["Core/Series/Point.js"], oi["Core/Renderer/RendererUtilities.js"], oi["Core/Utilities.js"]],
-      function(Si, ji, qi, ts, Qi, is) {
-        const { animObject: ss, setAnimation: Wi } = Si, { format: Ki } = ji, { marginNames: Ui } = qi, { distribute: ki } = Qi, { addEvent: bi, createElement: Ri, css: Ni, defined: fi, discardElement: Ci, find: wi, fireEvent: yi, isNumber: Ti, merge: Mi, pick: Oi, relativeLength: ai, stableSort: li, syncTimeout: xi } = is;
-        class di {
-          constructor(ei, Fe) {
-            this.allItems = [], this.contentGroup = this.box = void 0, this.display = !1, this.group = void 0, this.offsetWidth = this.maxLegendWidth = this.maxItemWidth = this.legendWidth = this.legendHeight = this.lastLineHeight = this.lastItemY = this.itemY = this.itemX = this.itemMarginTop = this.itemMarginBottom = this.itemHeight = this.initialItemY = 0, this.options = void 0, this.padding = 0, this.pages = [], this.proximate = !1, this.scrollGroup = void 0, this.widthOption = this.totalItemWidth = this.titleHeight = this.symbolWidth = this.symbolHeight = 0, this.chart = ei, this.init(ei, Fe);
+      [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Templating.js"], ii["Core/Globals.js"], ii["Core/Series/Point.js"], ii["Core/Renderer/RendererUtilities.js"], ii["Core/Utilities.js"]],
+      function(li, Ci, zi, Ki, Yi, es) {
+        const { animObject: is, setAnimation: $i } = li, { format: Vi } = Ci, { marginNames: _i } = zi, { distribute: bi } = Yi, { addEvent: Ai, createElement: ji, css: Ni, defined: gi, discardElement: ki, find: wi, fireEvent: Si, isNumber: Ti, merge: Mi, pick: Di, relativeLength: ci, stableSort: pi, syncTimeout: vi } = es;
+        class ui {
+          constructor(si, ti) {
+            this.allItems = [], this.contentGroup = this.box = void 0, this.display = !1, this.group = void 0, this.offsetWidth = this.maxLegendWidth = this.maxItemWidth = this.legendWidth = this.legendHeight = this.lastLineHeight = this.lastItemY = this.itemY = this.itemX = this.itemMarginTop = this.itemMarginBottom = this.itemHeight = this.initialItemY = 0, this.options = void 0, this.padding = 0, this.pages = [], this.proximate = !1, this.scrollGroup = void 0, this.widthOption = this.totalItemWidth = this.titleHeight = this.symbolWidth = this.symbolHeight = 0, this.chart = si, this.init(si, ti);
           }
-          init(ei, Fe) {
-            this.chart = ei, this.setOptions(Fe), Fe.enabled && (this.render(), bi(this.chart, "endResize", function() {
+          init(si, ti) {
+            this.chart = si, this.setOptions(ti), ti.enabled && (this.render(), Ai(this.chart, "endResize", function() {
               this.legend.positionCheckboxes();
-            }), bi(this.chart, "render", () => {
+            }), Ai(this.chart, "render", () => {
               this.proximate && (this.proximatePositions(), this.positionItems());
             }));
           }
-          setOptions(ei) {
-            const Fe = Oi(ei.padding, 8);
-            this.options = ei, this.chart.styledMode || (this.itemStyle = ei.itemStyle, this.itemHiddenStyle = Mi(this.itemStyle, ei.itemHiddenStyle)), this.itemMarginTop = ei.itemMarginTop, this.itemMarginBottom = ei.itemMarginBottom, this.padding = Fe, this.initialItemY = Fe - 5, this.symbolWidth = Oi(ei.symbolWidth, 16), this.pages = [], this.proximate = ei.layout === "proximate" && !this.chart.inverted, this.baseline = void 0;
+          setOptions(si) {
+            const ti = Di(si.padding, 8);
+            this.options = si, this.chart.styledMode || (this.itemStyle = si.itemStyle, this.itemHiddenStyle = Mi(this.itemStyle, si.itemHiddenStyle)), this.itemMarginTop = si.itemMarginTop, this.itemMarginBottom = si.itemMarginBottom, this.padding = ti, this.initialItemY = ti - 5, this.symbolWidth = Di(si.symbolWidth, 16), this.pages = [], this.proximate = si.layout === "proximate" && !this.chart.inverted, this.baseline = void 0;
           }
-          update(ei, Fe) {
-            const ii = this.chart;
-            this.setOptions(Mi(!0, this.options, ei)), this.destroy(), ii.isDirtyLegend = ii.isDirtyBox = !0, Oi(Fe, !0) && ii.redraw(), yi(this, "afterUpdate");
+          update(si, ti) {
+            const oi = this.chart;
+            this.setOptions(Mi(!0, this.options, si)), this.destroy(), oi.isDirtyLegend = oi.isDirtyBox = !0, Di(ti, !0) && oi.redraw(), Si(this, "afterUpdate");
           }
-          colorizeItem(ei, Fe) {
-            const { group: ii, label: hi, line: gi, symbol: Ei } = ei.legendItem || {};
-            if (ii && ii[Fe ? "removeClass" : "addClass"]("highcharts-legend-item-hidden"), !this.chart.styledMode) {
-              const { itemHiddenStyle: ni } = this, Pi = ni.color, Fi = Fe && ei.color || Pi, Zi = ei.options && ei.options.marker;
-              let rs = { fill: Fi };
-              hi == null || hi.css(Mi(Fe ? this.itemStyle : ni)), gi == null || gi.attr({ stroke: Fi }), Ei && (Zi && Ei.isMarker && (rs = ei.pointAttribs(), Fe || (rs.stroke = rs.fill = Pi)), Ei.attr(rs));
+          colorizeItem(si, ti) {
+            const { group: oi, label: di, line: mi, symbol: Oi } = si.legendItem || {};
+            if (oi && oi[ti ? "removeClass" : "addClass"]("highcharts-legend-item-hidden"), !this.chart.styledMode) {
+              const { itemHiddenStyle: hi } = this, Li = hi.color, Ui = ti && si.color || Li, Zi = si.options && si.options.marker;
+              let rs = { fill: Ui };
+              di == null || di.css(Mi(ti ? this.itemStyle : hi)), mi == null || mi.attr({ stroke: Ui }), Oi && (Zi && Oi.isMarker && (rs = si.pointAttribs(), ti || (rs.stroke = rs.fill = Li)), Oi.attr(rs));
             }
-            yi(this, "afterColorizeItem", { item: ei, visible: Fe });
+            Si(this, "afterColorizeItem", { item: si, visible: ti });
           }
           positionItems() {
             this.allItems.forEach(this.positionItem, this), this.chart.isResizing || this.positionCheckboxes();
           }
-          positionItem(ei) {
-            const { group: Fe, x: ii = 0, y: hi = 0 } = ei.legendItem || {};
-            var gi = this.options, Ei = gi.symbolPadding;
-            const ni = !gi.rtl;
-            gi = ei.checkbox, Fe && Fe.element && (Ei = { translateX: ni ? ii : this.legendWidth - ii - 2 * Ei - 4, translateY: hi }, Fe[fi(Fe.translateY) ? "animate" : "attr"](Ei, void 0, () => {
-              yi(this, "afterPositionItem", { item: ei });
-            })), gi && (gi.x = ii, gi.y = hi);
+          positionItem(si) {
+            const { group: ti, x: oi = 0, y: di = 0 } = si.legendItem || {};
+            var mi = this.options, Oi = mi.symbolPadding;
+            const hi = !mi.rtl;
+            mi = si.checkbox, ti && ti.element && (Oi = { translateX: hi ? oi : this.legendWidth - oi - 2 * Oi - 4, translateY: di }, ti[gi(ti.translateY) ? "animate" : "attr"](Oi, void 0, () => {
+              Si(this, "afterPositionItem", { item: si });
+            })), mi && (mi.x = oi, mi.y = di);
           }
-          destroyItem(ei) {
-            const Fe = ei.checkbox, ii = ei.legendItem || {};
-            for (const hi of ["group", "label", "line", "symbol"])
-              ii[hi] && (ii[hi] = ii[hi].destroy());
-            Fe && Ci(Fe), ei.legendItem = void 0;
+          destroyItem(si) {
+            const ti = si.checkbox, oi = si.legendItem || {};
+            for (const di of ["group", "label", "line", "symbol"])
+              oi[di] && (oi[di] = oi[di].destroy());
+            ti && ki(ti), si.legendItem = void 0;
           }
           destroy() {
-            for (const ei of this.getAllItems())
-              this.destroyItem(ei);
-            for (const ei of "clipRect up down pager nav box title group".split(" "))
-              this[ei] && (this[ei] = this[ei].destroy());
+            for (const si of this.getAllItems())
+              this.destroyItem(si);
+            for (const si of "clipRect up down pager nav box title group".split(" "))
+              this[si] && (this[si] = this[si].destroy());
             this.display = null;
           }
           positionCheckboxes() {
-            const ei = this.group && this.group.alignAttr, Fe = this.clipHeight || this.legendHeight, ii = this.titleHeight;
-            let hi;
-            ei && (hi = ei.translateY, this.allItems.forEach(function(gi) {
-              const Ei = gi.checkbox;
-              let ni;
-              Ei && (ni = hi + ii + Ei.y + (this.scrollOffset || 0) + 3, Ni(Ei, { left: ei.translateX + gi.checkboxOffset + Ei.x - 20 + "px", top: ni + "px", display: this.proximate || ni > hi - 6 && ni < hi + Fe - 6 ? "" : "none" }));
+            const si = this.group && this.group.alignAttr, ti = this.clipHeight || this.legendHeight, oi = this.titleHeight;
+            let di;
+            si && (di = si.translateY, this.allItems.forEach(function(mi) {
+              const Oi = mi.checkbox;
+              let hi;
+              Oi && (hi = di + oi + Oi.y + (this.scrollOffset || 0) + 3, Ni(Oi, { left: si.translateX + mi.checkboxOffset + Oi.x - 20 + "px", top: hi + "px", display: this.proximate || hi > di - 6 && hi < di + ti - 6 ? "" : "none" }));
             }, this));
           }
           renderTitle() {
-            var ei = this.options;
-            const Fe = this.padding, ii = ei.title;
-            let hi = 0;
-            ii.text && (this.title || (this.title = this.chart.renderer.label(ii.text, Fe - 3, Fe - 4, void 0, void 0, void 0, ei.useHTML, void 0, "legend-title").attr({ zIndex: 1 }), this.chart.styledMode || this.title.css(ii.style), this.title.add(this.group)), ii.width || this.title.css({ width: this.maxLegendWidth + "px" }), ei = this.title.getBBox(), hi = ei.height, this.offsetWidth = ei.width, this.contentGroup.attr({ translateY: hi })), this.titleHeight = hi;
+            var si = this.options;
+            const ti = this.padding, oi = si.title;
+            let di = 0;
+            oi.text && (this.title || (this.title = this.chart.renderer.label(oi.text, ti - 3, ti - 4, void 0, void 0, void 0, si.useHTML, void 0, "legend-title").attr({ zIndex: 1 }), this.chart.styledMode || this.title.css(oi.style), this.title.add(this.group)), oi.width || this.title.css({ width: this.maxLegendWidth + "px" }), si = this.title.getBBox(), di = si.height, this.offsetWidth = si.width, this.contentGroup.attr({ translateY: di })), this.titleHeight = di;
           }
-          setText(ei) {
-            const Fe = this.options;
-            ei.legendItem.label.attr({ text: Fe.labelFormat ? Ki(Fe.labelFormat, ei, this.chart) : Fe.labelFormatter.call(ei) });
+          setText(si) {
+            const ti = this.options;
+            si.legendItem.label.attr({ text: ti.labelFormat ? Vi(ti.labelFormat, si, this.chart) : ti.labelFormatter.call(si) });
           }
-          renderItem(ei) {
-            const Fe = ei.legendItem = ei.legendItem || {};
-            var ii = this.chart, hi = ii.renderer;
-            const gi = this.options, Ei = this.symbolWidth, ni = gi.symbolPadding || 0, Pi = this.itemStyle, Fi = this.itemHiddenStyle, Zi = gi.layout === "horizontal" ? Oi(gi.itemDistance, 20) : 0, rs = !gi.rtl, Bi = !ei.series, si = !Bi && ei.series.drawLegendSymbol ? ei.series : ei;
-            var Li = si.options;
-            const Hi = this.createCheckboxForItem && Li && Li.showCheckbox, Di = gi.useHTML, Vi = ei.options.className;
-            let ri = Fe.label;
-            Li = Ei + ni + Zi + (Hi ? 20 : 0), ri || (Fe.group = hi.g("legend-item").addClass("highcharts-" + si.type + "-series highcharts-color-" + ei.colorIndex + (Vi ? " " + Vi : "") + (Bi ? " highcharts-series-" + ei.index : "")).attr({ zIndex: 1 }).add(this.scrollGroup), Fe.label = ri = hi.text("", rs ? Ei + ni : -ni, this.baseline || 0, Di), ii.styledMode || ri.css(Mi(ei.visible ? Pi : Fi)), ri.attr({ align: rs ? "left" : "right", zIndex: 2 }).add(Fe.group), this.baseline || (this.fontMetrics = hi.fontMetrics(ri), this.baseline = this.fontMetrics.f + 3 + this.itemMarginTop, ri.attr("y", this.baseline), this.symbolHeight = Oi(gi.symbolHeight, this.fontMetrics.f), gi.squareSymbol && (this.symbolWidth = Oi(gi.symbolWidth, Math.max(this.symbolHeight, 16)), Li = this.symbolWidth + ni + Zi + (Hi ? 20 : 0), rs && ri.attr("x", this.symbolWidth + ni))), si.drawLegendSymbol(this, ei), this.setItemEvents && this.setItemEvents(ei, ri, Di)), Hi && !ei.checkbox && this.createCheckboxForItem && this.createCheckboxForItem(ei), this.colorizeItem(
-              ei,
-              ei.visible
-            ), !ii.styledMode && Pi.width || ri.css({ width: (gi.itemWidth || this.widthOption || ii.spacingBox.width) - Li + "px" }), this.setText(ei), ii = ri.getBBox(), hi = this.fontMetrics && this.fontMetrics.h || 0, ei.itemWidth = ei.checkboxOffset = gi.itemWidth || Fe.labelWidth || ii.width + Li, this.maxItemWidth = Math.max(this.maxItemWidth, ei.itemWidth), this.totalItemWidth += ei.itemWidth, this.itemHeight = ei.itemHeight = Math.round(Fe.labelHeight || (ii.height > 1.5 * hi ? ii.height : hi));
+          renderItem(si) {
+            const ti = si.legendItem = si.legendItem || {};
+            var oi = this.chart, di = oi.renderer;
+            const mi = this.options, Oi = this.symbolWidth, hi = mi.symbolPadding || 0, Li = this.itemStyle, Ui = this.itemHiddenStyle, Zi = mi.layout === "horizontal" ? Di(mi.itemDistance, 20) : 0, rs = !mi.rtl, Bi = !si.series, ni = !Bi && si.series.drawLegendSymbol ? si.series : si;
+            var Pi = ni.options;
+            const Hi = this.createCheckboxForItem && Pi && Pi.showCheckbox, Ri = mi.useHTML, qi = si.options.className;
+            let ai = ti.label;
+            Pi = Oi + hi + Zi + (Hi ? 20 : 0), ai || (ti.group = di.g("legend-item").addClass("highcharts-" + ni.type + "-series highcharts-color-" + si.colorIndex + (qi ? " " + qi : "") + (Bi ? " highcharts-series-" + si.index : "")).attr({ zIndex: 1 }).add(this.scrollGroup), ti.label = ai = di.text("", rs ? Oi + hi : -hi, this.baseline || 0, Ri), oi.styledMode || ai.css(Mi(si.visible ? Li : Ui)), ai.attr({ align: rs ? "left" : "right", zIndex: 2 }).add(ti.group), this.baseline || (this.fontMetrics = di.fontMetrics(ai), this.baseline = this.fontMetrics.f + 3 + this.itemMarginTop, ai.attr("y", this.baseline), this.symbolHeight = Di(mi.symbolHeight, this.fontMetrics.f), mi.squareSymbol && (this.symbolWidth = Di(mi.symbolWidth, Math.max(this.symbolHeight, 16)), Pi = this.symbolWidth + hi + Zi + (Hi ? 20 : 0), rs && ai.attr("x", this.symbolWidth + hi))), ni.drawLegendSymbol(this, si), this.setItemEvents && this.setItemEvents(si, ai, Ri)), Hi && !si.checkbox && this.createCheckboxForItem && this.createCheckboxForItem(si), this.colorizeItem(
+              si,
+              si.visible
+            ), !oi.styledMode && Li.width || ai.css({ width: (mi.itemWidth || this.widthOption || oi.spacingBox.width) - Pi + "px" }), this.setText(si), oi = ai.getBBox(), di = this.fontMetrics && this.fontMetrics.h || 0, si.itemWidth = si.checkboxOffset = mi.itemWidth || ti.labelWidth || oi.width + Pi, this.maxItemWidth = Math.max(this.maxItemWidth, si.itemWidth), this.totalItemWidth += si.itemWidth, this.itemHeight = si.itemHeight = Math.round(ti.labelHeight || (oi.height > 1.5 * di ? oi.height : di));
           }
-          layoutItem(ei) {
-            var Fe = this.options;
-            const ii = this.padding, hi = Fe.layout === "horizontal", gi = ei.itemHeight, Ei = this.itemMarginBottom, ni = this.itemMarginTop, Pi = hi ? Oi(Fe.itemDistance, 20) : 0, Fi = this.maxLegendWidth;
-            Fe = Fe.alignColumns && this.totalItemWidth > Fi ? this.maxItemWidth : ei.itemWidth;
-            const Zi = ei.legendItem || {};
-            hi && this.itemX - ii + Fe > Fi && (this.itemX = ii, this.lastLineHeight && (this.itemY += ni + this.lastLineHeight + Ei), this.lastLineHeight = 0), this.lastItemY = ni + this.itemY + Ei, this.lastLineHeight = Math.max(gi, this.lastLineHeight), Zi.x = this.itemX, Zi.y = this.itemY, hi ? this.itemX += Fe : (this.itemY += ni + gi + Ei, this.lastLineHeight = gi), this.offsetWidth = this.widthOption || Math.max((hi ? this.itemX - ii - (ei.checkbox ? 0 : Pi) : Fe) + ii, this.offsetWidth);
+          layoutItem(si) {
+            var ti = this.options;
+            const oi = this.padding, di = ti.layout === "horizontal", mi = si.itemHeight, Oi = this.itemMarginBottom, hi = this.itemMarginTop, Li = di ? Di(ti.itemDistance, 20) : 0, Ui = this.maxLegendWidth;
+            ti = ti.alignColumns && this.totalItemWidth > Ui ? this.maxItemWidth : si.itemWidth;
+            const Zi = si.legendItem || {};
+            di && this.itemX - oi + ti > Ui && (this.itemX = oi, this.lastLineHeight && (this.itemY += hi + this.lastLineHeight + Oi), this.lastLineHeight = 0), this.lastItemY = hi + this.itemY + Oi, this.lastLineHeight = Math.max(mi, this.lastLineHeight), Zi.x = this.itemX, Zi.y = this.itemY, di ? this.itemX += ti : (this.itemY += hi + mi + Oi, this.lastLineHeight = mi), this.offsetWidth = this.widthOption || Math.max((di ? this.itemX - oi - (si.checkbox ? 0 : Li) : ti) + oi, this.offsetWidth);
           }
           getAllItems() {
-            let ei = [];
-            return this.chart.series.forEach(function(Fe) {
-              const ii = Fe && Fe.options;
-              Fe && Oi(ii.showInLegend, fi(ii.linkedTo) ? !1 : void 0, !0) && (ei = ei.concat((Fe.legendItem || {}).labels || (ii.legendType === "point" ? Fe.data : Fe)));
-            }), yi(this, "afterGetAllItems", { allItems: ei }), ei;
+            let si = [];
+            return this.chart.series.forEach(function(ti) {
+              const oi = ti && ti.options;
+              ti && Di(oi.showInLegend, gi(oi.linkedTo) ? !1 : void 0, !0) && (si = si.concat((ti.legendItem || {}).labels || (oi.legendType === "point" ? ti.data : ti)));
+            }), Si(this, "afterGetAllItems", { allItems: si }), si;
           }
           getAlignment() {
-            const ei = this.options;
-            return this.proximate ? ei.align.charAt(0) + "tv" : ei.floating ? "" : ei.align.charAt(0) + ei.verticalAlign.charAt(0) + ei.layout.charAt(0);
+            const si = this.options;
+            return this.proximate ? si.align.charAt(0) + "tv" : si.floating ? "" : si.align.charAt(0) + si.verticalAlign.charAt(0) + si.layout.charAt(0);
           }
-          adjustMargins(ei, Fe) {
-            const ii = this.chart, hi = this.options, gi = this.getAlignment();
-            gi && [/(lth|ct|rth)/, /(rtv|rm|rbv)/, /(rbh|cb|lbh)/, /(lbv|lm|ltv)/].forEach(function(Ei, ni) {
-              Ei.test(gi) && !fi(ei[ni]) && (ii[Ui[ni]] = Math.max(ii[Ui[ni]], ii.legend[(ni + 1) % 2 ? "legendHeight" : "legendWidth"] + [1, -1, -1, 1][ni] * hi[ni % 2 ? "x" : "y"] + Oi(hi.margin, 12) + Fe[ni] + (ii.titleOffset[ni] || 0)));
+          adjustMargins(si, ti) {
+            const oi = this.chart, di = this.options, mi = this.getAlignment();
+            mi && [/(lth|ct|rth)/, /(rtv|rm|rbv)/, /(rbh|cb|lbh)/, /(lbv|lm|ltv)/].forEach(function(Oi, hi) {
+              Oi.test(mi) && !gi(si[hi]) && (oi[_i[hi]] = Math.max(oi[_i[hi]], oi.legend[(hi + 1) % 2 ? "legendHeight" : "legendWidth"] + [1, -1, -1, 1][hi] * di[hi % 2 ? "x" : "y"] + Di(di.margin, 12) + ti[hi] + (oi.titleOffset[hi] || 0)));
             });
           }
           proximatePositions() {
-            const ei = this.chart, Fe = [], ii = this.options.align === "left";
-            this.allItems.forEach(function(gi) {
-              var Ei, ni = ii;
-              let Pi;
-              gi.yAxis && (gi.xAxis.options.reversed && (ni = !ni), gi.points && (Ei = wi(ni ? gi.points : gi.points.slice(0).reverse(), function(Fi) {
-                return Ti(Fi.plotY);
-              })), ni = this.itemMarginTop + gi.legendItem.label.getBBox().height + this.itemMarginBottom, Pi = gi.yAxis.top - ei.plotTop, gi.visible ? (Ei = Ei ? Ei.plotY : gi.yAxis.height, Ei += Pi - 0.3 * ni) : Ei = Pi + gi.yAxis.height, Fe.push({ target: Ei, size: ni, item: gi }));
+            const si = this.chart, ti = [], oi = this.options.align === "left";
+            this.allItems.forEach(function(mi) {
+              var Oi, hi = oi;
+              let Li;
+              mi.yAxis && (mi.xAxis.options.reversed && (hi = !hi), mi.points && (Oi = wi(hi ? mi.points : mi.points.slice(0).reverse(), function(Ui) {
+                return Ti(Ui.plotY);
+              })), hi = this.itemMarginTop + mi.legendItem.label.getBBox().height + this.itemMarginBottom, Li = mi.yAxis.top - si.plotTop, mi.visible ? (Oi = Oi ? Oi.plotY : mi.yAxis.height, Oi += Li - 0.3 * hi) : Oi = Li + mi.yAxis.height, ti.push({ target: Oi, size: hi, item: mi }));
             }, this);
-            let hi;
-            for (const gi of ki(Fe, ei.plotHeight))
-              hi = gi.item.legendItem || {}, Ti(gi.pos) && (hi.y = ei.plotTop - ei.spacing[0] + gi.pos);
+            let di;
+            for (const mi of bi(ti, si.plotHeight))
+              di = mi.item.legendItem || {}, Ti(mi.pos) && (di.y = si.plotTop - si.spacing[0] + mi.pos);
           }
           render() {
-            const ei = this.chart, Fe = ei.renderer, ii = this.options, hi = this.padding;
-            var gi = this.getAllItems();
-            let Ei, ni = this.group, Pi = this.box;
-            this.itemX = hi, this.itemY = this.initialItemY, this.lastItemY = this.offsetWidth = 0, this.widthOption = ai(ii.width, ei.spacingBox.width - hi);
-            var Fi = ei.spacingBox.width - 2 * hi - ii.x;
-            -1 < ["rm", "lm"].indexOf(this.getAlignment().substring(0, 2)) && (Fi /= 2), this.maxLegendWidth = this.widthOption || Fi, ni || (this.group = ni = Fe.g("legend").addClass(ii.className || "").attr({ zIndex: 7 }).add(), this.contentGroup = Fe.g().attr({ zIndex: 1 }).add(ni), this.scrollGroup = Fe.g().add(this.contentGroup)), this.renderTitle(), li(gi, (Zi, rs) => (Zi.options && Zi.options.legendIndex || 0) - (rs.options && rs.options.legendIndex || 0)), ii.reversed && gi.reverse(), this.allItems = gi, this.display = Fi = !!gi.length, this.itemHeight = this.totalItemWidth = this.maxItemWidth = this.lastLineHeight = 0, gi.forEach(this.renderItem, this), gi.forEach(this.layoutItem, this), gi = (this.widthOption || this.offsetWidth) + hi, Ei = this.lastItemY + this.lastLineHeight + this.titleHeight, Ei = this.handleOverflow(Ei), Ei += hi, Pi || (this.box = Pi = Fe.rect().addClass("highcharts-legend-box").attr({ r: ii.borderRadius }).add(ni)), ei.styledMode || Pi.attr({
-              stroke: ii.borderColor,
-              "stroke-width": ii.borderWidth || 0,
-              fill: ii.backgroundColor || "none"
-            }).shadow(ii.shadow), 0 < gi && 0 < Ei && Pi[Pi.placed ? "animate" : "attr"](Pi.crisp.call({}, { x: 0, y: 0, width: gi, height: Ei }, Pi.strokeWidth())), ni[Fi ? "show" : "hide"](), ei.styledMode && ni.getStyle("display") === "none" && (gi = Ei = 0), this.legendWidth = gi, this.legendHeight = Ei, Fi && this.align(), this.proximate || this.positionItems(), yi(this, "afterRender");
+            const si = this.chart, ti = si.renderer, oi = this.options, di = this.padding;
+            var mi = this.getAllItems();
+            let Oi, hi = this.group, Li = this.box;
+            this.itemX = di, this.itemY = this.initialItemY, this.lastItemY = this.offsetWidth = 0, this.widthOption = ci(oi.width, si.spacingBox.width - di);
+            var Ui = si.spacingBox.width - 2 * di - oi.x;
+            -1 < ["rm", "lm"].indexOf(this.getAlignment().substring(0, 2)) && (Ui /= 2), this.maxLegendWidth = this.widthOption || Ui, hi || (this.group = hi = ti.g("legend").addClass(oi.className || "").attr({ zIndex: 7 }).add(), this.contentGroup = ti.g().attr({ zIndex: 1 }).add(hi), this.scrollGroup = ti.g().add(this.contentGroup)), this.renderTitle(), pi(mi, (Zi, rs) => (Zi.options && Zi.options.legendIndex || 0) - (rs.options && rs.options.legendIndex || 0)), oi.reversed && mi.reverse(), this.allItems = mi, this.display = Ui = !!mi.length, this.itemHeight = this.totalItemWidth = this.maxItemWidth = this.lastLineHeight = 0, mi.forEach(this.renderItem, this), mi.forEach(this.layoutItem, this), mi = (this.widthOption || this.offsetWidth) + di, Oi = this.lastItemY + this.lastLineHeight + this.titleHeight, Oi = this.handleOverflow(Oi), Oi += di, Li || (this.box = Li = ti.rect().addClass("highcharts-legend-box").attr({ r: oi.borderRadius }).add(hi)), si.styledMode || Li.attr({
+              stroke: oi.borderColor,
+              "stroke-width": oi.borderWidth || 0,
+              fill: oi.backgroundColor || "none"
+            }).shadow(oi.shadow), 0 < mi && 0 < Oi && Li[Li.placed ? "animate" : "attr"](Li.crisp.call({}, { x: 0, y: 0, width: mi, height: Oi }, Li.strokeWidth())), hi[Ui ? "show" : "hide"](), si.styledMode && hi.getStyle("display") === "none" && (mi = Oi = 0), this.legendWidth = mi, this.legendHeight = Oi, Ui && this.align(), this.proximate || this.positionItems(), Si(this, "afterRender");
           }
-          align(ei = this.chart.spacingBox) {
-            const Fe = this.chart, ii = this.options;
-            let hi = ei.y;
-            /(lth|ct|rth)/.test(this.getAlignment()) && 0 < Fe.titleOffset[0] ? hi += Fe.titleOffset[0] : /(lbh|cb|rbh)/.test(this.getAlignment()) && 0 < Fe.titleOffset[2] && (hi -= Fe.titleOffset[2]), hi !== ei.y && (ei = Mi(ei, { y: hi })), Fe.hasRendered || (this.group.placed = !1), this.group.align(Mi(ii, { width: this.legendWidth, height: this.legendHeight, verticalAlign: this.proximate ? "top" : ii.verticalAlign }), !0, ei);
+          align(si = this.chart.spacingBox) {
+            const ti = this.chart, oi = this.options;
+            let di = si.y;
+            /(lth|ct|rth)/.test(this.getAlignment()) && 0 < ti.titleOffset[0] ? di += ti.titleOffset[0] : /(lbh|cb|rbh)/.test(this.getAlignment()) && 0 < ti.titleOffset[2] && (di -= ti.titleOffset[2]), di !== si.y && (si = Mi(si, { y: di })), ti.hasRendered || (this.group.placed = !1), this.group.align(Mi(oi, { width: this.legendWidth, height: this.legendHeight, verticalAlign: this.proximate ? "top" : oi.verticalAlign }), !0, si);
           }
-          handleOverflow(ei) {
-            const Fe = this, ii = this.chart, hi = ii.renderer, gi = this.options;
-            var Ei = gi.y;
-            const ni = gi.verticalAlign === "top", Pi = this.padding, Fi = gi.maxHeight, Zi = gi.navigation, rs = Oi(Zi.animation, !0), Bi = Zi.arrowSize || 12, si = this.pages, Li = this.allItems, Hi = function(Xi) {
-              typeof Xi == "number" ? zi.attr({ height: Xi }) : zi && (Fe.clipRect = zi.destroy(), Fe.contentGroup.clip()), Fe.contentGroup.div && (Fe.contentGroup.div.style.clip = Xi ? "rect(" + Pi + "px,9999px," + (Pi + Xi) + "px,0)" : "auto");
-            }, Di = function(Xi) {
-              return Fe[Xi] = hi.circle(0, 0, 1.3 * Bi).translate(Bi / 2, Bi / 2).add(vi), ii.styledMode || Fe[Xi].attr("fill", "rgba(0,0,0,0.0001)"), Fe[Xi];
+          handleOverflow(si) {
+            const ti = this, oi = this.chart, di = oi.renderer, mi = this.options;
+            var Oi = mi.y;
+            const hi = mi.verticalAlign === "top", Li = this.padding, Ui = mi.maxHeight, Zi = mi.navigation, rs = Di(Zi.animation, !0), Bi = Zi.arrowSize || 12, ni = this.pages, Pi = this.allItems, Hi = function(Xi) {
+              typeof Xi == "number" ? Gi.attr({ height: Xi }) : Gi && (ti.clipRect = Gi.destroy(), ti.contentGroup.clip()), ti.contentGroup.div && (ti.contentGroup.div.style.clip = Xi ? "rect(" + Li + "px,9999px," + (Li + Xi) + "px,0)" : "auto");
+            }, Ri = function(Xi) {
+              return ti[Xi] = di.circle(0, 0, 1.3 * Bi).translate(Bi / 2, Bi / 2).add(yi), oi.styledMode || ti[Xi].attr("fill", "rgba(0,0,0,0.0001)"), ti[Xi];
             };
-            let Vi, ri, mi;
-            Ei = ii.spacingBox.height + (ni ? -Ei : Ei) - Pi;
-            let vi = this.nav, zi = this.clipRect;
-            return gi.layout !== "horizontal" || gi.verticalAlign === "middle" || gi.floating || (Ei /= 2), Fi && (Ei = Math.min(Ei, Fi)), si.length = 0, ei && 0 < Ei && ei > Ei && Zi.enabled !== !1 ? (this.clipHeight = Vi = Math.max(Ei - 20 - this.titleHeight - Pi, 0), this.currentPage = Oi(this.currentPage, 1), this.fullHeight = ei, Li.forEach((Xi, Gi) => {
-              mi = Xi.legendItem || {}, Xi = mi.y || 0;
-              const Ji = Math.round(mi.label.getBBox().height);
-              let es = si.length;
-              (!es || Xi - si[es - 1] > Vi && (ri || Xi) !== si[es - 1]) && (si.push(ri || Xi), es++), mi.pageIx = es - 1, ri && ((Li[Gi - 1].legendItem || {}).pageIx = es - 1), Gi === Li.length - 1 && Xi + Ji - si[es - 1] > Vi && Xi > si[es - 1] && (si.push(Xi), mi.pageIx = es), Xi !== ri && (ri = Xi);
-            }), zi || (zi = Fe.clipRect = hi.clipRect(0, Pi - 2, 9999, 0), Fe.contentGroup.clip(zi)), Hi(Vi), vi || (this.nav = vi = hi.g().attr({ zIndex: 1 }).add(this.group), this.up = hi.symbol("triangle", 0, 0, Bi, Bi).add(vi), Di("upTracker").on("click", function() {
-              Fe.scroll(-1, rs);
-            }), this.pager = hi.text("", 15, 10).addClass("highcharts-legend-navigation"), !ii.styledMode && Zi.style && this.pager.css(Zi.style), this.pager.add(vi), this.down = hi.symbol("triangle-down", 0, 0, Bi, Bi).add(vi), Di("downTracker").on("click", function() {
-              Fe.scroll(1, rs);
-            })), Fe.scroll(0), ei = Ei) : vi && (Hi(), this.nav = vi.destroy(), this.scrollGroup.attr({ translateY: 1 }), this.clipHeight = 0), ei;
+            let qi, ai, xi;
+            Oi = oi.spacingBox.height + (hi ? -Oi : Oi) - Li;
+            let yi = this.nav, Gi = this.clipRect;
+            return mi.layout !== "horizontal" || mi.verticalAlign === "middle" || mi.floating || (Oi /= 2), Ui && (Oi = Math.min(Oi, Ui)), ni.length = 0, si && 0 < Oi && si > Oi && Zi.enabled !== !1 ? (this.clipHeight = qi = Math.max(Oi - 20 - this.titleHeight - Li, 0), this.currentPage = Di(this.currentPage, 1), this.fullHeight = si, Pi.forEach((Xi, Wi) => {
+              xi = Xi.legendItem || {}, Xi = xi.y || 0;
+              const ts = Math.round(xi.label.getBBox().height);
+              let ss = ni.length;
+              (!ss || Xi - ni[ss - 1] > qi && (ai || Xi) !== ni[ss - 1]) && (ni.push(ai || Xi), ss++), xi.pageIx = ss - 1, ai && ((Pi[Wi - 1].legendItem || {}).pageIx = ss - 1), Wi === Pi.length - 1 && Xi + ts - ni[ss - 1] > qi && Xi > ni[ss - 1] && (ni.push(Xi), xi.pageIx = ss), Xi !== ai && (ai = Xi);
+            }), Gi || (Gi = ti.clipRect = di.clipRect(0, Li - 2, 9999, 0), ti.contentGroup.clip(Gi)), Hi(qi), yi || (this.nav = yi = di.g().attr({ zIndex: 1 }).add(this.group), this.up = di.symbol("triangle", 0, 0, Bi, Bi).add(yi), Ri("upTracker").on("click", function() {
+              ti.scroll(-1, rs);
+            }), this.pager = di.text("", 15, 10).addClass("highcharts-legend-navigation"), !oi.styledMode && Zi.style && this.pager.css(Zi.style), this.pager.add(yi), this.down = di.symbol("triangle-down", 0, 0, Bi, Bi).add(yi), Ri("downTracker").on("click", function() {
+              ti.scroll(1, rs);
+            })), ti.scroll(0), si = Oi) : yi && (Hi(), this.nav = yi.destroy(), this.scrollGroup.attr({ translateY: 1 }), this.clipHeight = 0), si;
           }
-          scroll(ei, Fe) {
-            const ii = this.chart, hi = this.pages, gi = hi.length, Ei = this.clipHeight, ni = this.options.navigation, Pi = this.pager, Fi = this.padding;
-            let Zi = this.currentPage + ei;
-            Zi > gi && (Zi = gi), 0 < Zi && (typeof Fe < "u" && Wi(Fe, ii), this.nav.attr({ translateX: Fi, translateY: Ei + this.padding + 7 + this.titleHeight, visibility: "inherit" }), [this.up, this.upTracker].forEach(function(rs) {
+          scroll(si, ti) {
+            const oi = this.chart, di = this.pages, mi = di.length, Oi = this.clipHeight, hi = this.options.navigation, Li = this.pager, Ui = this.padding;
+            let Zi = this.currentPage + si;
+            Zi > mi && (Zi = mi), 0 < Zi && (typeof ti < "u" && $i(ti, oi), this.nav.attr({ translateX: Ui, translateY: Oi + this.padding + 7 + this.titleHeight, visibility: "inherit" }), [this.up, this.upTracker].forEach(function(rs) {
               rs.attr({ class: Zi === 1 ? "highcharts-legend-nav-inactive" : "highcharts-legend-nav-active" });
-            }), Pi.attr({ text: Zi + "/" + gi }), [this.down, this.downTracker].forEach(function(rs) {
-              rs.attr({ x: 18 + this.pager.getBBox().width, class: Zi === gi ? "highcharts-legend-nav-inactive" : "highcharts-legend-nav-active" });
-            }, this), ii.styledMode || (this.up.attr({ fill: Zi === 1 ? ni.inactiveColor : ni.activeColor }), this.upTracker.css({ cursor: Zi === 1 ? "default" : "pointer" }), this.down.attr({ fill: Zi === gi ? ni.inactiveColor : ni.activeColor }), this.downTracker.css({ cursor: Zi === gi ? "default" : "pointer" })), this.scrollOffset = -hi[Zi - 1] + this.initialItemY, this.scrollGroup.animate({ translateY: this.scrollOffset }), this.currentPage = Zi, this.positionCheckboxes(), ei = ss(Oi(Fe, ii.renderer.globalAnimation, !0)), xi(() => {
-              yi(this, "afterScroll", { currentPage: Zi });
-            }, ei.duration));
+            }), Li.attr({ text: Zi + "/" + mi }), [this.down, this.downTracker].forEach(function(rs) {
+              rs.attr({ x: 18 + this.pager.getBBox().width, class: Zi === mi ? "highcharts-legend-nav-inactive" : "highcharts-legend-nav-active" });
+            }, this), oi.styledMode || (this.up.attr({ fill: Zi === 1 ? hi.inactiveColor : hi.activeColor }), this.upTracker.css({ cursor: Zi === 1 ? "default" : "pointer" }), this.down.attr({ fill: Zi === mi ? hi.inactiveColor : hi.activeColor }), this.downTracker.css({ cursor: Zi === mi ? "default" : "pointer" })), this.scrollOffset = -di[Zi - 1] + this.initialItemY, this.scrollGroup.animate({ translateY: this.scrollOffset }), this.currentPage = Zi, this.positionCheckboxes(), si = is(Di(ti, oi.renderer.globalAnimation, !0)), vi(() => {
+              Si(this, "afterScroll", { currentPage: Zi });
+            }, si.duration));
           }
-          setItemEvents(ei, Fe, ii) {
-            const hi = this, gi = ei.legendItem || {}, Ei = hi.chart.renderer.boxWrapper, ni = ei instanceof ts, Pi = "highcharts-legend-" + (ni ? "point" : "series") + "-active", Fi = hi.chart.styledMode;
-            ii = ii ? [Fe, gi.symbol] : [gi.group];
+          setItemEvents(si, ti, oi) {
+            const di = this, mi = si.legendItem || {}, Oi = di.chart.renderer.boxWrapper, hi = si instanceof Ki, Li = "highcharts-legend-" + (hi ? "point" : "series") + "-active", Ui = di.chart.styledMode;
+            oi = oi ? [ti, mi.symbol] : [mi.group];
             const Zi = (rs) => {
-              hi.allItems.forEach((Bi) => {
-                ei !== Bi && [Bi].concat(Bi.linkedSeries || []).forEach((si) => {
-                  si.setState(rs, !ni);
+              di.allItems.forEach((Bi) => {
+                si !== Bi && [Bi].concat(Bi.linkedSeries || []).forEach((ni) => {
+                  ni.setState(rs, !hi);
                 });
               });
             };
-            for (const rs of ii)
+            for (const rs of oi)
               rs && rs.on("mouseover", function() {
-                ei.visible && Zi("inactive"), ei.setState("hover"), ei.visible && Ei.addClass(Pi), Fi || Fe.css(hi.options.itemHoverStyle);
+                si.visible && Zi("inactive"), si.setState("hover"), si.visible && Oi.addClass(Li), Ui || ti.css(di.options.itemHoverStyle);
               }).on("mouseout", function() {
-                hi.chart.styledMode || Fe.css(Mi(ei.visible ? hi.itemStyle : hi.itemHiddenStyle)), Zi(""), Ei.removeClass(Pi), ei.setState();
+                di.chart.styledMode || ti.css(Mi(si.visible ? di.itemStyle : di.itemHiddenStyle)), Zi(""), Oi.removeClass(Li), si.setState();
               }).on("click", function(Bi) {
-                const si = function() {
-                  ei.setVisible && ei.setVisible(), Zi(ei.visible ? "inactive" : "");
+                const ni = function() {
+                  si.setVisible && si.setVisible(), Zi(si.visible ? "inactive" : "");
                 };
-                Ei.removeClass(Pi), Bi = { browserEvent: Bi }, ei.firePointEvent ? ei.firePointEvent("legendItemClick", Bi, si) : yi(ei, "legendItemClick", Bi, si);
+                Oi.removeClass(Li), Bi = { browserEvent: Bi }, si.firePointEvent ? si.firePointEvent("legendItemClick", Bi, ni) : Si(si, "legendItemClick", Bi, ni);
               });
           }
-          createCheckboxForItem(ei) {
-            ei.checkbox = Ri("input", {
+          createCheckboxForItem(si) {
+            si.checkbox = ji("input", {
               type: "checkbox",
               className: "highcharts-legend-checkbox",
-              checked: ei.selected,
-              defaultChecked: ei.selected
-            }, this.options.itemCheckboxStyle, this.chart.container), bi(ei.checkbox, "click", function(Fe) {
-              yi(ei.series || ei, "checkboxClick", { checked: Fe.target.checked, item: ei }, function() {
-                ei.select();
+              checked: si.selected,
+              defaultChecked: si.selected
+            }, this.options.itemCheckboxStyle, this.chart.container), Ai(si.checkbox, "click", function(ti) {
+              Si(si.series || si, "checkboxClick", { checked: ti.target.checked, item: si }, function() {
+                si.select();
               });
             });
           }
         }
-        return function(pi) {
-          const ei = [];
-          pi.compose = function(Fe) {
-            is.pushUnique(ei, Fe) && bi(Fe, "beforeMargins", function() {
-              this.legend = new pi(this, this.options.legend);
+        return function(fi) {
+          const si = [];
+          fi.compose = function(ti) {
+            es.pushUnique(si, ti) && Ai(ti, "beforeMargins", function() {
+              this.legend = new fi(this, this.options.legend);
             });
           };
-        }(di || (di = {})), di;
+        }(ui || (ui = {})), ui;
       }
-    ), ci(oi, "Core/Legend/LegendSymbol.js", [oi["Core/Utilities.js"]], function(Si) {
-      const { extend: ji, merge: qi, pick: ts } = Si;
-      var Qi;
-      return function(is) {
-        is.lineMarker = function(ss, Wi) {
-          Wi = this.legendItem = this.legendItem || {};
-          var Ki = this.options;
-          const Ui = ss.symbolWidth, ki = ss.symbolHeight, bi = ki / 2, Ri = this.chart.renderer, Ni = Wi.group;
-          ss = ss.baseline - Math.round(0.3 * ss.fontMetrics.b);
-          let fi = {}, Ci = Ki.marker, wi = 0;
-          this.chart.styledMode || (fi = { "stroke-width": Math.min(Ki.lineWidth || 0, 24) }, Ki.dashStyle ? fi.dashstyle = Ki.dashStyle : Ki.linecap !== "square" && (fi["stroke-linecap"] = "round")), Wi.line = Ri.path().addClass("highcharts-graph").attr(fi).add(Ni), fi["stroke-linecap"] && (wi = Math.min(
-            Wi.line.strokeWidth(),
-            Ui
-          ) / 2), Ui && Wi.line.attr({ d: [["M", wi, ss], ["L", Ui - wi, ss]] }), Ci && Ci.enabled !== !1 && Ui && (Ki = Math.min(ts(Ci.radius, bi), bi), this.symbol.indexOf("url") === 0 && (Ci = qi(Ci, { width: ki, height: ki }), Ki = 0), Wi.symbol = Wi = Ri.symbol(this.symbol, Ui / 2 - Ki, ss - Ki, 2 * Ki, 2 * Ki, ji({ context: "legend" }, Ci)).addClass("highcharts-point").add(Ni), Wi.isMarker = !0);
-        }, is.rectangle = function(ss, Wi) {
-          Wi = Wi.legendItem || {};
-          const Ki = ss.symbolHeight, Ui = ss.options.squareSymbol;
-          Wi.symbol = this.chart.renderer.rect(Ui ? (ss.symbolWidth - Ki) / 2 : 0, ss.baseline - Ki + 1, Ui ? Ki : ss.symbolWidth, Ki, ts(
-            ss.options.symbolRadius,
-            Ki / 2
-          )).addClass("highcharts-point").attr({ zIndex: 3 }).add(Wi.group);
+    ), ri(ii, "Core/Legend/LegendSymbol.js", [ii["Core/Utilities.js"]], function(li) {
+      const { extend: Ci, merge: zi, pick: Ki } = li;
+      var Yi;
+      return function(es) {
+        es.lineMarker = function(is, $i) {
+          $i = this.legendItem = this.legendItem || {};
+          var Vi = this.options;
+          const _i = is.symbolWidth, bi = is.symbolHeight, Ai = bi / 2, ji = this.chart.renderer, Ni = $i.group;
+          is = is.baseline - Math.round(0.3 * is.fontMetrics.b);
+          let gi = {}, ki = Vi.marker, wi = 0;
+          this.chart.styledMode || (gi = { "stroke-width": Math.min(Vi.lineWidth || 0, 24) }, Vi.dashStyle ? gi.dashstyle = Vi.dashStyle : Vi.linecap !== "square" && (gi["stroke-linecap"] = "round")), $i.line = ji.path().addClass("highcharts-graph").attr(gi).add(Ni), gi["stroke-linecap"] && (wi = Math.min(
+            $i.line.strokeWidth(),
+            _i
+          ) / 2), _i && $i.line.attr({ d: [["M", wi, is], ["L", _i - wi, is]] }), ki && ki.enabled !== !1 && _i && (Vi = Math.min(Ki(ki.radius, Ai), Ai), this.symbol.indexOf("url") === 0 && (ki = zi(ki, { width: bi, height: bi }), Vi = 0), $i.symbol = $i = ji.symbol(this.symbol, _i / 2 - Vi, is - Vi, 2 * Vi, 2 * Vi, Ci({ context: "legend" }, ki)).addClass("highcharts-point").add(Ni), $i.isMarker = !0);
+        }, es.rectangle = function(is, $i) {
+          $i = $i.legendItem || {};
+          const Vi = is.symbolHeight, _i = is.options.squareSymbol;
+          $i.symbol = this.chart.renderer.rect(_i ? (is.symbolWidth - Vi) / 2 : 0, is.baseline - Vi + 1, _i ? Vi : is.symbolWidth, Vi, Ki(
+            is.options.symbolRadius,
+            Vi / 2
+          )).addClass("highcharts-point").attr({ zIndex: 3 }).add($i.group);
         };
-      }(Qi || (Qi = {})), Qi;
-    }), ci(oi, "Core/Series/SeriesDefaults.js", [], function() {
+      }(Yi || (Yi = {})), Yi;
+    }), ri(ii, "Core/Series/SeriesDefaults.js", [], function() {
       return {
         lineWidth: 1,
         allowPointSelect: !1,
@@ -3959,8 +3958,8 @@ var highcharts = { exports: {} };
         marker: { enabledThreshold: 2, lineColor: "#ffffff", lineWidth: 0, radius: 4, states: { normal: { animation: !0 }, hover: { animation: { duration: 150 }, enabled: !0, radiusPlus: 2, lineWidthPlus: 1 }, select: { fillColor: "#cccccc", lineColor: "#000000", lineWidth: 2 } } },
         point: { events: {} },
         dataLabels: { animation: {}, align: "center", borderWidth: 0, defer: !0, formatter: function() {
-          const { numberFormatter: Si } = this.series.chart;
-          return typeof this.y != "number" ? "" : Si(this.y, -1);
+          const { numberFormatter: li } = this.series.chart;
+          return typeof this.y != "number" ? "" : li(this.y, -1);
         }, padding: 5, style: { fontSize: "0.7em", fontWeight: "bold", color: "contrast", textOutline: "1px contrast" }, verticalAlign: "bottom", x: 0, y: 0 },
         cropThreshold: 300,
         opacity: 1,
@@ -3976,130 +3975,130 @@ var highcharts = { exports: {} };
         turboThreshold: 1e3,
         findNearestPointBy: "x"
       };
-    }), ci(oi, "Core/Series/SeriesRegistry.js", [oi["Core/Globals.js"], oi["Core/Defaults.js"], oi["Core/Series/Point.js"], oi["Core/Utilities.js"]], function(Si, ji, qi, ts) {
-      const { defaultOptions: Qi } = ji, { extendClass: is, merge: ss } = ts;
-      var Wi;
-      return function(Ki) {
-        function Ui(ki, bi) {
-          const Ri = Qi.plotOptions || {}, Ni = bi.defaultOptions, fi = bi.prototype;
-          fi.type = ki, fi.pointClass || (fi.pointClass = qi), Ni && (Ri[ki] = Ni), Ki.seriesTypes[ki] = bi;
+    }), ri(ii, "Core/Series/SeriesRegistry.js", [ii["Core/Globals.js"], ii["Core/Defaults.js"], ii["Core/Series/Point.js"], ii["Core/Utilities.js"]], function(li, Ci, zi, Ki) {
+      const { defaultOptions: Yi } = Ci, { extendClass: es, merge: is } = Ki;
+      var $i;
+      return function(Vi) {
+        function _i(bi, Ai) {
+          const ji = Yi.plotOptions || {}, Ni = Ai.defaultOptions, gi = Ai.prototype;
+          gi.type = bi, gi.pointClass || (gi.pointClass = zi), Ni && (ji[bi] = Ni), Vi.seriesTypes[bi] = Ai;
         }
-        Ki.seriesTypes = Si.seriesTypes, Ki.registerSeriesType = Ui, Ki.seriesType = function(ki, bi, Ri, Ni, fi) {
-          const Ci = Qi.plotOptions || {};
-          return bi = bi || "", Ci[ki] = ss(Ci[bi], Ri), Ui(ki, is(Ki.seriesTypes[bi] || function() {
-          }, Ni)), Ki.seriesTypes[ki].prototype.type = ki, fi && (Ki.seriesTypes[ki].prototype.pointClass = is(qi, fi)), Ki.seriesTypes[ki];
+        Vi.seriesTypes = li.seriesTypes, Vi.registerSeriesType = _i, Vi.seriesType = function(bi, Ai, ji, Ni, gi) {
+          const ki = Yi.plotOptions || {};
+          return Ai = Ai || "", ki[bi] = is(ki[Ai], ji), _i(bi, es(Vi.seriesTypes[Ai] || function() {
+          }, Ni)), Vi.seriesTypes[bi].prototype.type = bi, gi && (Vi.seriesTypes[bi].prototype.pointClass = es(zi, gi)), Vi.seriesTypes[bi];
         };
-      }(Wi || (Wi = {})), Wi;
-    }), ci(oi, "Core/Series/Series.js", [
-      oi["Core/Animation/AnimationUtilities.js"],
-      oi["Core/Defaults.js"],
-      oi["Core/Foundation.js"],
-      oi["Core/Globals.js"],
-      oi["Core/Legend/LegendSymbol.js"],
-      oi["Core/Series/Point.js"],
-      oi["Core/Series/SeriesDefaults.js"],
-      oi["Core/Series/SeriesRegistry.js"],
-      oi["Core/Renderer/SVG/SVGElement.js"],
-      oi["Core/Utilities.js"]
-    ], function(Si, ji, qi, ts, Qi, is, ss, Wi, Ki, Ui) {
-      const { animObject: ki, setAnimation: bi } = Si, { defaultOptions: Ri } = ji, { registerEventOptions: Ni } = qi, { hasTouch: fi, svg: Ci, win: wi } = ts, { seriesTypes: yi } = Wi, {
+      }($i || ($i = {})), $i;
+    }), ri(ii, "Core/Series/Series.js", [
+      ii["Core/Animation/AnimationUtilities.js"],
+      ii["Core/Defaults.js"],
+      ii["Core/Foundation.js"],
+      ii["Core/Globals.js"],
+      ii["Core/Legend/LegendSymbol.js"],
+      ii["Core/Series/Point.js"],
+      ii["Core/Series/SeriesDefaults.js"],
+      ii["Core/Series/SeriesRegistry.js"],
+      ii["Core/Renderer/SVG/SVGElement.js"],
+      ii["Core/Utilities.js"]
+    ], function(li, Ci, zi, Ki, Yi, es, is, $i, Vi, _i) {
+      const { animObject: bi, setAnimation: Ai } = li, { defaultOptions: ji } = Ci, { registerEventOptions: Ni } = zi, { hasTouch: gi, svg: ki, win: wi } = Ki, { seriesTypes: Si } = $i, {
         arrayMax: Ti,
         arrayMin: Mi,
-        clamp: Oi,
-        correctFloat: ai,
-        defined: li,
-        diffObjects: xi,
-        erase: di,
-        error: pi,
-        extend: ei,
-        find: Fe,
-        fireEvent: ii,
-        getClosestDistance: hi,
-        getNestedProperty: gi,
-        insertItem: Ei,
-        isArray: ni,
-        isNumber: Pi,
-        isString: Fi,
+        clamp: Di,
+        correctFloat: ci,
+        defined: pi,
+        diffObjects: vi,
+        erase: ui,
+        error: fi,
+        extend: si,
+        find: ti,
+        fireEvent: oi,
+        getClosestDistance: di,
+        getNestedProperty: mi,
+        insertItem: Oi,
+        isArray: hi,
+        isNumber: Li,
+        isString: Ui,
         merge: Zi,
         objectEach: rs,
         pick: Bi,
-        removeEvent: si,
-        splat: Li,
+        removeEvent: ni,
+        splat: Pi,
         syncTimeout: Hi
-      } = Ui;
-      class Di {
+      } = _i;
+      class Ri {
         constructor() {
           this.zones = this.yAxis = this.xAxis = this.userOptions = this.tooltipOptions = this.processedYData = this.processedXData = this.points = this.options = this.linkedSeries = this.index = this.eventsToUnbind = this.eventOptions = this.data = this.chart = this._i = void 0;
         }
-        init(ri, mi) {
-          ii(this, "init", { options: mi });
-          const vi = this, zi = ri.series;
-          this.eventsToUnbind = [], vi.chart = ri, vi.options = vi.setOptions(mi), mi = vi.options, vi.linkedSeries = [], vi.bindAxes(), ei(vi, { name: mi.name, state: "", visible: mi.visible !== !1, selected: mi.selected === !0 }), Ni(this, mi);
-          const Xi = mi.events;
-          (Xi && Xi.click || mi.point && mi.point.events && mi.point.events.click || mi.allowPointSelect) && (ri.runTrackerClick = !0), vi.getColor(), vi.getSymbol(), vi.parallelArrays.forEach(function(Ji) {
-            vi[Ji + "Data"] || (vi[Ji + "Data"] = []);
-          }), vi.isCartesian && (ri.hasCartesianSeries = !0);
-          let Gi;
-          zi.length && (Gi = zi[zi.length - 1]), vi._i = Bi(Gi && Gi._i, -1) + 1, vi.opacity = vi.options.opacity, ri.orderItems("series", Ei(this, zi)), mi.dataSorting && mi.dataSorting.enabled ? vi.setDataSortingOptions() : vi.points || vi.data || vi.setData(mi.data, !1), ii(
+        init(ai, xi) {
+          oi(this, "init", { options: xi });
+          const yi = this, Gi = ai.series;
+          this.eventsToUnbind = [], yi.chart = ai, yi.options = yi.setOptions(xi), xi = yi.options, yi.linkedSeries = [], yi.bindAxes(), si(yi, { name: xi.name, state: "", visible: xi.visible !== !1, selected: xi.selected === !0 }), Ni(this, xi);
+          const Xi = xi.events;
+          (Xi && Xi.click || xi.point && xi.point.events && xi.point.events.click || xi.allowPointSelect) && (ai.runTrackerClick = !0), yi.getColor(), yi.getSymbol(), yi.parallelArrays.forEach(function(ts) {
+            yi[ts + "Data"] || (yi[ts + "Data"] = []);
+          }), yi.isCartesian && (ai.hasCartesianSeries = !0);
+          let Wi;
+          Gi.length && (Wi = Gi[Gi.length - 1]), yi._i = Bi(Wi && Wi._i, -1) + 1, yi.opacity = yi.options.opacity, ai.orderItems("series", Oi(this, Gi)), xi.dataSorting && xi.dataSorting.enabled ? yi.setDataSortingOptions() : yi.points || yi.data || yi.setData(xi.data, !1), oi(
             this,
             "afterInit"
           );
         }
-        is(ri) {
-          return yi[ri] && this instanceof yi[ri];
+        is(ai) {
+          return Si[ai] && this instanceof Si[ai];
         }
         bindAxes() {
-          const ri = this, mi = ri.options, vi = ri.chart;
-          let zi;
-          ii(this, "bindAxes", null, function() {
-            (ri.axisTypes || []).forEach(function(Xi) {
-              vi[Xi].forEach(function(Gi) {
-                zi = Gi.options, (Bi(mi[Xi], 0) === Gi.index || typeof mi[Xi] < "u" && mi[Xi] === zi.id) && (Ei(ri, Gi.series), ri[Xi] = Gi, Gi.isDirty = !0);
-              }), ri[Xi] || ri.optionalAxis === Xi || pi(18, !0, vi);
+          const ai = this, xi = ai.options, yi = ai.chart;
+          let Gi;
+          oi(this, "bindAxes", null, function() {
+            (ai.axisTypes || []).forEach(function(Xi) {
+              yi[Xi].forEach(function(Wi) {
+                Gi = Wi.options, (Bi(xi[Xi], 0) === Wi.index || typeof xi[Xi] < "u" && xi[Xi] === Gi.id) && (Oi(ai, Wi.series), ai[Xi] = Wi, Wi.isDirty = !0);
+              }), ai[Xi] || ai.optionalAxis === Xi || fi(18, !0, yi);
             });
-          }), ii(this, "afterBindAxes");
+          }), oi(this, "afterBindAxes");
         }
-        updateParallelArrays(ri, mi, vi) {
-          const zi = ri.series, Xi = Pi(mi) ? function(Gi) {
-            const Ji = Gi === "y" && zi.toYData ? zi.toYData(ri) : ri[Gi];
-            zi[Gi + "Data"][mi] = Ji;
-          } : function(Gi) {
-            Array.prototype[mi].apply(zi[Gi + "Data"], vi);
+        updateParallelArrays(ai, xi, yi) {
+          const Gi = ai.series, Xi = Li(xi) ? function(Wi) {
+            const ts = Wi === "y" && Gi.toYData ? Gi.toYData(ai) : ai[Wi];
+            Gi[Wi + "Data"][xi] = ts;
+          } : function(Wi) {
+            Array.prototype[xi].apply(Gi[Wi + "Data"], yi);
           };
-          zi.parallelArrays.forEach(Xi);
+          Gi.parallelArrays.forEach(Xi);
         }
         hasData() {
           return this.visible && typeof this.dataMax < "u" && typeof this.dataMin < "u" || this.visible && this.yData && 0 < this.yData.length;
         }
-        autoIncrement(ri) {
-          var mi = this.options;
-          const vi = mi.pointIntervalUnit, zi = mi.relativeXValue, Xi = this.chart.time;
-          let Gi = this.xIncrement, Ji;
-          return Gi = Bi(Gi, mi.pointStart, 0), this.pointInterval = Ji = Bi(this.pointInterval, mi.pointInterval, 1), zi && Pi(ri) && (Ji *= ri), vi && (mi = new Xi.Date(Gi), vi === "day" ? Xi.set("Date", mi, Xi.get(
+        autoIncrement(ai) {
+          var xi = this.options;
+          const yi = xi.pointIntervalUnit, Gi = xi.relativeXValue, Xi = this.chart.time;
+          let Wi = this.xIncrement, ts;
+          return Wi = Bi(Wi, xi.pointStart, 0), this.pointInterval = ts = Bi(this.pointInterval, xi.pointInterval, 1), Gi && Li(ai) && (ts *= ai), yi && (xi = new Xi.Date(Wi), yi === "day" ? Xi.set("Date", xi, Xi.get(
             "Date",
-            mi
-          ) + Ji) : vi === "month" ? Xi.set("Month", mi, Xi.get("Month", mi) + Ji) : vi === "year" && Xi.set("FullYear", mi, Xi.get("FullYear", mi) + Ji), Ji = mi.getTime() - Gi), zi && Pi(ri) ? Gi + Ji : (this.xIncrement = Gi + Ji, Gi);
+            xi
+          ) + ts) : yi === "month" ? Xi.set("Month", xi, Xi.get("Month", xi) + ts) : yi === "year" && Xi.set("FullYear", xi, Xi.get("FullYear", xi) + ts), ts = xi.getTime() - Wi), Gi && Li(ai) ? Wi + ts : (this.xIncrement = Wi + ts, Wi);
         }
         setDataSortingOptions() {
-          const ri = this.options;
-          ei(this, { requireSorting: !1, sorted: !1, enabledDataSorting: !0, allowDG: !1 }), li(ri.pointRange) || (ri.pointRange = 1);
+          const ai = this.options;
+          si(this, { requireSorting: !1, sorted: !1, enabledDataSorting: !0, allowDG: !1 }), pi(ai.pointRange) || (ai.pointRange = 1);
         }
-        setOptions(ri) {
-          var mi, vi;
-          const zi = this.chart;
-          var Xi = zi.options.plotOptions, Gi = zi.userOptions || {};
-          const Ji = Zi(ri);
-          ri = zi.styledMode;
-          const es = { plotOptions: Xi, userOptions: Ji };
-          ii(
+        setOptions(ai) {
+          var xi, yi;
+          const Gi = this.chart;
+          var Xi = Gi.options.plotOptions, Wi = Gi.userOptions || {};
+          const ts = Zi(ai);
+          ai = Gi.styledMode;
+          const ss = { plotOptions: Xi, userOptions: ts };
+          oi(
             this,
             "setOptions",
-            es
+            ss
           );
-          const os = es.plotOptions[this.type];
-          Gi = Gi.plotOptions || {};
-          const ns = Gi.series || {}, ls = Ri.plotOptions[this.type] || {}, Ii = Gi[this.type] || {};
-          return this.userOptions = es.userOptions, Xi = Zi(os, Xi.series, Ii, Ji), this.tooltipOptions = Zi(Ri.tooltip, (mi = Ri.plotOptions.series) === null || mi === void 0 ? void 0 : mi.tooltip, ls == null ? void 0 : ls.tooltip, zi.userOptions.tooltip, (vi = Gi.series) === null || vi === void 0 ? void 0 : vi.tooltip, Ii.tooltip, Ji.tooltip), this.stickyTracking = Bi(Ji.stickyTracking, Ii.stickyTracking, ns.stickyTracking, this.tooltipOptions.shared && !this.noSharedTooltip ? !0 : Xi.stickyTracking), os.marker === null && delete Xi.marker, this.zoneAxis = Xi.zoneAxis, vi = this.zones = (Xi.zones || []).slice(), !Xi.negativeColor && !Xi.negativeFillColor || Xi.zones || (mi = { value: Xi[this.zoneAxis + "Threshold"] || Xi.threshold || 0, className: "highcharts-negative" }, ri || (mi.color = Xi.negativeColor, mi.fillColor = Xi.negativeFillColor), vi.push(mi)), vi.length && li(vi[vi.length - 1].value) && vi.push(ri ? {} : { color: this.color, fillColor: this.fillColor }), ii(this, "afterSetOptions", { options: Xi }), Xi;
+          const os = ss.plotOptions[this.type];
+          Wi = Wi.plotOptions || {};
+          const ns = Wi.series || {}, ls = ji.plotOptions[this.type] || {}, Ii = Wi[this.type] || {};
+          return this.userOptions = ss.userOptions, Xi = Zi(os, Xi.series, Ii, ts), this.tooltipOptions = Zi(ji.tooltip, (xi = ji.plotOptions.series) === null || xi === void 0 ? void 0 : xi.tooltip, ls == null ? void 0 : ls.tooltip, Gi.userOptions.tooltip, (yi = Wi.series) === null || yi === void 0 ? void 0 : yi.tooltip, Ii.tooltip, ts.tooltip), this.stickyTracking = Bi(ts.stickyTracking, Ii.stickyTracking, ns.stickyTracking, this.tooltipOptions.shared && !this.noSharedTooltip ? !0 : Xi.stickyTracking), os.marker === null && delete Xi.marker, this.zoneAxis = Xi.zoneAxis, yi = this.zones = (Xi.zones || []).slice(), !Xi.negativeColor && !Xi.negativeFillColor || Xi.zones || (xi = { value: Xi[this.zoneAxis + "Threshold"] || Xi.threshold || 0, className: "highcharts-negative" }, ai || (xi.color = Xi.negativeColor, xi.fillColor = Xi.negativeFillColor), yi.push(xi)), yi.length && pi(yi[yi.length - 1].value) && yi.push(ai ? {} : { color: this.color, fillColor: this.fillColor }), oi(this, "afterSetOptions", { options: Xi }), Xi;
         }
         getName() {
           return Bi(
@@ -4107,18 +4106,18 @@ var highcharts = { exports: {} };
             "Series " + (this.index + 1)
           );
         }
-        getCyclic(ri, mi, vi) {
-          const zi = this.chart, Xi = `${ri}Index`, Gi = `${ri}Counter`, Ji = (vi == null ? void 0 : vi.length) || zi.options.chart.colorCount;
-          if (!mi) {
-            var es = Bi(ri === "color" ? this.options.colorIndex : void 0, this[Xi]);
-            li(es) || (zi.series.length || (zi[Gi] = 0), es = zi[Gi] % Ji, zi[Gi] += 1), vi && (mi = vi[es]);
+        getCyclic(ai, xi, yi) {
+          const Gi = this.chart, Xi = `${ai}Index`, Wi = `${ai}Counter`, ts = (yi == null ? void 0 : yi.length) || Gi.options.chart.colorCount;
+          if (!xi) {
+            var ss = Bi(ai === "color" ? this.options.colorIndex : void 0, this[Xi]);
+            pi(ss) || (Gi.series.length || (Gi[Wi] = 0), ss = Gi[Wi] % ts, Gi[Wi] += 1), yi && (xi = yi[ss]);
           }
-          typeof es < "u" && (this[Xi] = es), this[ri] = mi;
+          typeof ss < "u" && (this[Xi] = ss), this[ai] = xi;
         }
         getColor() {
           this.chart.styledMode ? this.getCyclic("color") : this.options.colorByPoint ? this.color = "#cccccc" : this.getCyclic(
             "color",
-            this.options.color || Ri.plotOptions[this.type].color,
+            this.options.color || ji.plotOptions[this.type].color,
             this.chart.options.colors
           );
         }
@@ -4128,520 +4127,520 @@ var highcharts = { exports: {} };
         getSymbol() {
           this.getCyclic("symbol", this.options.marker.symbol, this.chart.options.symbols);
         }
-        findPointIndex(ri, mi) {
-          const vi = ri.id, zi = ri.x, Xi = this.points;
-          var Gi = this.options.dataSorting, Ji;
-          let es, os;
-          if (vi)
-            Gi = this.chart.get(vi), Gi instanceof is && (Ji = Gi);
-          else if ((this.linkedParent || this.enabledDataSorting || this.options.relativeXValue) && (Ji = (ns) => !ns.touched && ns.index === ri.index, Gi && Gi.matchByName ? Ji = (ns) => !ns.touched && ns.name === ri.name : this.options.relativeXValue && (Ji = (ns) => !ns.touched && ns.options.x === ri.x), Ji = Fe(Xi, Ji), !Ji))
+        findPointIndex(ai, xi) {
+          const yi = ai.id, Gi = ai.x, Xi = this.points;
+          var Wi = this.options.dataSorting, ts;
+          let ss, os;
+          if (yi)
+            Wi = this.chart.get(yi), Wi instanceof es && (ts = Wi);
+          else if ((this.linkedParent || this.enabledDataSorting || this.options.relativeXValue) && (ts = (ns) => !ns.touched && ns.index === ai.index, Wi && Wi.matchByName ? ts = (ns) => !ns.touched && ns.name === ai.name : this.options.relativeXValue && (ts = (ns) => !ns.touched && ns.options.x === ai.x), ts = ti(Xi, ts), !ts))
             return;
-          return Ji && (os = Ji && Ji.index, typeof os < "u" && (es = !0)), typeof os > "u" && Pi(zi) && (os = this.xData.indexOf(zi, mi)), os !== -1 && typeof os < "u" && this.cropped && (os = os >= this.cropStart ? os - this.cropStart : os), !es && Pi(os) && Xi[os] && Xi[os].touched && (os = void 0), os;
+          return ts && (os = ts && ts.index, typeof os < "u" && (ss = !0)), typeof os > "u" && Li(Gi) && (os = this.xData.indexOf(Gi, xi)), os !== -1 && typeof os < "u" && this.cropped && (os = os >= this.cropStart ? os - this.cropStart : os), !ss && Li(os) && Xi[os] && Xi[os].touched && (os = void 0), os;
         }
-        updateData(ri, mi) {
-          const vi = this.options, zi = vi.dataSorting, Xi = this.points, Gi = [], Ji = this.requireSorting, es = ri.length === Xi.length;
+        updateData(ai, xi) {
+          const yi = this.options, Gi = yi.dataSorting, Xi = this.points, Wi = [], ts = this.requireSorting, ss = ai.length === Xi.length;
           let os, ns, ls, Ii = !0;
-          if (this.xIncrement = null, ri.forEach(function(Ai, $i) {
-            var Yi = li(Ai) && this.pointClass.prototype.optionsToObject.call({ series: this }, Ai) || {};
-            const _i = Yi.x;
-            Yi.id || Pi(_i) ? (Yi = this.findPointIndex(Yi, ls), Yi === -1 || typeof Yi > "u" ? Gi.push(Ai) : Xi[Yi] && Ai !== vi.data[Yi] ? (Xi[Yi].update(Ai, !1, null, !1), Xi[Yi].touched = !0, Ji && (ls = Yi + 1)) : Xi[Yi] && (Xi[Yi].touched = !0), (!es || $i !== Yi || zi && zi.enabled || this.hasDerivedData) && (os = !0)) : Gi.push(Ai);
+          if (this.xIncrement = null, ai.forEach(function(Ei, Ji) {
+            var Fi = pi(Ei) && this.pointClass.prototype.optionsToObject.call({ series: this }, Ei) || {};
+            const Qi = Fi.x;
+            Fi.id || Li(Qi) ? (Fi = this.findPointIndex(Fi, ls), Fi === -1 || typeof Fi > "u" ? Wi.push(Ei) : Xi[Fi] && Ei !== yi.data[Fi] ? (Xi[Fi].update(Ei, !1, null, !1), Xi[Fi].touched = !0, ts && (ls = Fi + 1)) : Xi[Fi] && (Xi[Fi].touched = !0), (!ss || Ji !== Fi || Gi && Gi.enabled || this.hasDerivedData) && (os = !0)) : Wi.push(Ei);
           }, this), os)
-            for (ri = Xi.length; ri--; )
-              (ns = Xi[ri]) && !ns.touched && ns.remove && ns.remove(!1, mi);
+            for (ai = Xi.length; ai--; )
+              (ns = Xi[ai]) && !ns.touched && ns.remove && ns.remove(!1, xi);
           else
-            !es || zi && zi.enabled ? Ii = !1 : (ri.forEach(function(Ai, $i) {
-              Ai === Xi[$i].y || Xi[$i].destroyed || Xi[$i].update(Ai, !1, null, !1);
-            }), Gi.length = 0);
-          return Xi.forEach(function(Ai) {
-            Ai && (Ai.touched = !1);
-          }), Ii ? (Gi.forEach(function(Ai) {
-            this.addPoint(Ai, !1, null, null, !1);
+            !ss || Gi && Gi.enabled ? Ii = !1 : (ai.forEach(function(Ei, Ji) {
+              Ei === Xi[Ji].y || Xi[Ji].destroyed || Xi[Ji].update(Ei, !1, null, !1);
+            }), Wi.length = 0);
+          return Xi.forEach(function(Ei) {
+            Ei && (Ei.touched = !1);
+          }), Ii ? (Wi.forEach(function(Ei) {
+            this.addPoint(Ei, !1, null, null, !1);
           }, this), this.xIncrement === null && this.xData && this.xData.length && (this.xIncrement = Ti(this.xData), this.autoIncrement()), !0) : !1;
         }
-        setData(ri, mi = !0, vi, zi) {
+        setData(ai, xi = !0, yi, Gi) {
           var Xi;
-          const Gi = this, Ji = Gi.points, es = Ji && Ji.length || 0, os = Gi.options, ns = Gi.chart, ls = os.dataSorting, Ii = Gi.xAxis, Ai = os.turboThreshold, $i = this.xData, Yi = this.yData;
-          var _i = Gi.pointArrayMap;
-          _i = _i && _i.length;
+          const Wi = this, ts = Wi.points, ss = ts && ts.length || 0, os = Wi.options, ns = Wi.chart, ls = os.dataSorting, Ii = Wi.xAxis, Ei = os.turboThreshold, Ji = this.xData, Fi = this.yData;
+          var Qi = Wi.pointArrayMap;
+          Qi = Qi && Qi.length;
           const hs = os.keys;
-          let as, us = 0, ps = 1, cs = null;
+          let as, ps = 0, us = 1, cs = null;
           if (!ns.options.chart.allowMutatingData) {
-            os.data && delete Gi.options.data, Gi.userOptions.data && delete Gi.userOptions.data;
-            var ds = Zi(!0, ri);
+            os.data && delete Wi.options.data, Wi.userOptions.data && delete Wi.userOptions.data;
+            var ds = Zi(!0, ai);
           }
-          if (ri = ds || ri || [], ds = ri.length, ls && ls.enabled && (ri = this.sortData(ri)), ns.options.chart.allowMutatingData && zi !== !1 && ds && es && !Gi.cropped && !Gi.hasGroupedData && Gi.visible && !Gi.boosted && (as = this.updateData(ri, vi)), !as) {
-            if (Gi.xIncrement = null, Gi.colorCounter = 0, this.parallelArrays.forEach(function(ms) {
-              Gi[ms + "Data"].length = 0;
-            }), Ai && ds > Ai)
-              if (cs = Gi.getFirstValidPoint(ri), Pi(cs))
-                for (vi = 0; vi < ds; vi++)
-                  $i[vi] = this.autoIncrement(), Yi[vi] = ri[vi];
-              else if (ni(cs))
-                if (_i)
-                  if (cs.length === _i)
-                    for (vi = 0; vi < ds; vi++)
-                      $i[vi] = this.autoIncrement(), Yi[vi] = ri[vi];
+          if (ai = ds || ai || [], ds = ai.length, ls && ls.enabled && (ai = this.sortData(ai)), ns.options.chart.allowMutatingData && Gi !== !1 && ds && ss && !Wi.cropped && !Wi.hasGroupedData && Wi.visible && !Wi.boosted && (as = this.updateData(ai, yi)), !as) {
+            if (Wi.xIncrement = null, Wi.colorCounter = 0, this.parallelArrays.forEach(function(ms) {
+              Wi[ms + "Data"].length = 0;
+            }), Ei && ds > Ei)
+              if (cs = Wi.getFirstValidPoint(ai), Li(cs))
+                for (yi = 0; yi < ds; yi++)
+                  Ji[yi] = this.autoIncrement(), Fi[yi] = ai[yi];
+              else if (hi(cs))
+                if (Qi)
+                  if (cs.length === Qi)
+                    for (yi = 0; yi < ds; yi++)
+                      Ji[yi] = this.autoIncrement(), Fi[yi] = ai[yi];
                   else
-                    for (vi = 0; vi < ds; vi++)
-                      zi = ri[vi], $i[vi] = zi[0], Yi[vi] = zi.slice(1, _i + 1);
-                else if (hs && (us = hs.indexOf("x"), ps = hs.indexOf("y"), us = 0 <= us ? us : 0, ps = 0 <= ps ? ps : 1), cs.length === 1 && (ps = 0), us === ps)
-                  for (vi = 0; vi < ds; vi++)
-                    $i[vi] = this.autoIncrement(), Yi[vi] = ri[vi][ps];
+                    for (yi = 0; yi < ds; yi++)
+                      Gi = ai[yi], Ji[yi] = Gi[0], Fi[yi] = Gi.slice(1, Qi + 1);
+                else if (hs && (ps = hs.indexOf("x"), us = hs.indexOf("y"), ps = 0 <= ps ? ps : 0, us = 0 <= us ? us : 1), cs.length === 1 && (us = 0), ps === us)
+                  for (yi = 0; yi < ds; yi++)
+                    Ji[yi] = this.autoIncrement(), Fi[yi] = ai[yi][us];
                 else
-                  for (vi = 0; vi < ds; vi++)
-                    zi = ri[vi], $i[vi] = zi[us], Yi[vi] = zi[ps];
+                  for (yi = 0; yi < ds; yi++)
+                    Gi = ai[yi], Ji[yi] = Gi[ps], Fi[yi] = Gi[us];
               else
-                pi(12, !1, ns);
+                fi(12, !1, ns);
             else
-              for (vi = 0; vi < ds; vi++)
-                zi = { series: Gi }, Gi.pointClass.prototype.applyOptions.apply(zi, [ri[vi]]), Gi.updateParallelArrays(zi, vi);
-            for (Yi && Fi(Yi[0]) && pi(
+              for (yi = 0; yi < ds; yi++)
+                Gi = { series: Wi }, Wi.pointClass.prototype.applyOptions.apply(Gi, [ai[yi]]), Wi.updateParallelArrays(Gi, yi);
+            for (Fi && Ui(Fi[0]) && fi(
               14,
               !0,
               ns
-            ), Gi.data = [], Gi.options.data = Gi.userOptions.data = ri, vi = es; vi--; )
-              (Xi = Ji[vi]) === null || Xi === void 0 || Xi.destroy();
-            Ii && (Ii.minRange = Ii.userMinRange), Gi.isDirty = ns.isDirtyBox = !0, Gi.isDirtyData = !!Ji, vi = !1;
+            ), Wi.data = [], Wi.options.data = Wi.userOptions.data = ai, yi = ss; yi--; )
+              (Xi = ts[yi]) === null || Xi === void 0 || Xi.destroy();
+            Ii && (Ii.minRange = Ii.userMinRange), Wi.isDirty = ns.isDirtyBox = !0, Wi.isDirtyData = !!ts, yi = !1;
           }
-          os.legendType === "point" && (this.processData(), this.generatePoints()), mi && ns.redraw(vi);
+          os.legendType === "point" && (this.processData(), this.generatePoints()), xi && ns.redraw(yi);
         }
-        sortData(ri) {
-          const mi = this, vi = mi.options.dataSorting.sortKey || "y", zi = function(Xi, Gi) {
-            return li(Gi) && Xi.pointClass.prototype.optionsToObject.call({ series: Xi }, Gi) || {};
+        sortData(ai) {
+          const xi = this, yi = xi.options.dataSorting.sortKey || "y", Gi = function(Xi, Wi) {
+            return pi(Wi) && Xi.pointClass.prototype.optionsToObject.call({ series: Xi }, Wi) || {};
           };
-          return ri.forEach(function(Xi, Gi) {
-            ri[Gi] = zi(mi, Xi), ri[Gi].index = Gi;
-          }, this), ri.concat().sort((Xi, Gi) => (Xi = gi(vi, Xi), Gi = gi(vi, Gi), Gi < Xi ? -1 : Gi > Xi ? 1 : 0)).forEach(function(Xi, Gi) {
-            Xi.x = Gi;
-          }, this), mi.linkedSeries && mi.linkedSeries.forEach(function(Xi) {
-            const Gi = Xi.options, Ji = Gi.data;
-            Gi.dataSorting && Gi.dataSorting.enabled || !Ji || (Ji.forEach(function(es, os) {
-              Ji[os] = zi(Xi, es), ri[os] && (Ji[os].x = ri[os].x, Ji[os].index = os);
-            }), Xi.setData(Ji, !1));
-          }), ri;
+          return ai.forEach(function(Xi, Wi) {
+            ai[Wi] = Gi(xi, Xi), ai[Wi].index = Wi;
+          }, this), ai.concat().sort((Xi, Wi) => (Xi = mi(yi, Xi), Wi = mi(yi, Wi), Wi < Xi ? -1 : Wi > Xi ? 1 : 0)).forEach(function(Xi, Wi) {
+            Xi.x = Wi;
+          }, this), xi.linkedSeries && xi.linkedSeries.forEach(function(Xi) {
+            const Wi = Xi.options, ts = Wi.data;
+            Wi.dataSorting && Wi.dataSorting.enabled || !ts || (ts.forEach(function(ss, os) {
+              ts[os] = Gi(Xi, ss), ai[os] && (ts[os].x = ai[os].x, ts[os].index = os);
+            }), Xi.setData(ts, !1));
+          }), ai;
         }
-        getProcessedData(ri) {
-          const mi = this;
-          var vi = mi.xAxis, zi = mi.options;
-          const Xi = zi.cropThreshold, Gi = ri || mi.getExtremesFromAll || zi.getExtremesFromAll, Ji = vi == null ? void 0 : vi.logarithmic, es = mi.isCartesian;
+        getProcessedData(ai) {
+          const xi = this;
+          var yi = xi.xAxis, Gi = xi.options;
+          const Xi = Gi.cropThreshold, Wi = ai || xi.getExtremesFromAll || Gi.getExtremesFromAll, ts = yi == null ? void 0 : yi.logarithmic, ss = xi.isCartesian;
           let os = 0, ns;
-          ri = mi.xData, zi = mi.yData;
+          ai = xi.xData, Gi = xi.yData;
           let ls = !1;
-          const Ii = ri.length;
-          if (vi) {
-            var Ai = vi.getExtremes();
-            ns = Ai.min, Ai = Ai.max, ls = !(!vi.categories || vi.names.length);
+          const Ii = ai.length;
+          if (yi) {
+            var Ei = yi.getExtremes();
+            ns = Ei.min, Ei = Ei.max, ls = !(!yi.categories || yi.names.length);
           }
-          if (es && mi.sorted && !Gi && (!Xi || Ii > Xi || mi.forceCrop)) {
-            if (ri[Ii - 1] < ns || ri[0] > Ai)
-              ri = [], zi = [];
-            else if (mi.yData && (ri[0] < ns || ri[Ii - 1] > Ai)) {
-              var $i = this.cropData(mi.xData, mi.yData, ns, Ai);
-              ri = $i.xData, zi = $i.yData, os = $i.start, $i = !0;
+          if (ss && xi.sorted && !Wi && (!Xi || Ii > Xi || xi.forceCrop)) {
+            if (ai[Ii - 1] < ns || ai[0] > Ei)
+              ai = [], Gi = [];
+            else if (xi.yData && (ai[0] < ns || ai[Ii - 1] > Ei)) {
+              var Ji = this.cropData(xi.xData, xi.yData, ns, Ei);
+              ai = Ji.xData, Gi = Ji.yData, os = Ji.start, Ji = !0;
             }
           }
-          return vi = hi([Ji ? ri.map(Ji.log2lin) : ri], () => mi.requireSorting && !ls && pi(15, !1, mi.chart)), { xData: ri, yData: zi, cropped: $i, cropStart: os, closestPointRange: vi };
+          return yi = di([ts ? ai.map(ts.log2lin) : ai], () => xi.requireSorting && !ls && fi(15, !1, xi.chart)), { xData: ai, yData: Gi, cropped: Ji, cropStart: os, closestPointRange: yi };
         }
-        processData(ri) {
-          const mi = this.xAxis;
-          if (this.isCartesian && !this.isDirty && !mi.isDirty && !this.yAxis.isDirty && !ri)
+        processData(ai) {
+          const xi = this.xAxis;
+          if (this.isCartesian && !this.isDirty && !xi.isDirty && !this.yAxis.isDirty && !ai)
             return !1;
-          ri = this.getProcessedData(), this.cropped = ri.cropped, this.cropStart = ri.cropStart, this.processedXData = ri.xData, this.processedYData = ri.yData, this.closestPointRange = this.basePointRange = ri.closestPointRange, ii(this, "afterProcessData");
+          ai = this.getProcessedData(), this.cropped = ai.cropped, this.cropStart = ai.cropStart, this.processedXData = ai.xData, this.processedYData = ai.yData, this.closestPointRange = this.basePointRange = ai.closestPointRange, oi(this, "afterProcessData");
         }
-        cropData(ri, mi, vi, zi, Xi) {
-          const Gi = ri.length;
-          let Ji, es = 0, os = Gi;
-          for (Xi = Bi(Xi, this.cropShoulder), Ji = 0; Ji < Gi; Ji++)
-            if (ri[Ji] >= vi) {
-              es = Math.max(0, Ji - Xi);
+        cropData(ai, xi, yi, Gi, Xi) {
+          const Wi = ai.length;
+          let ts, ss = 0, os = Wi;
+          for (Xi = Bi(Xi, this.cropShoulder), ts = 0; ts < Wi; ts++)
+            if (ai[ts] >= yi) {
+              ss = Math.max(0, ts - Xi);
               break;
             }
-          for (vi = Ji; vi < Gi; vi++)
-            if (ri[vi] > zi) {
-              os = vi + Xi;
+          for (yi = ts; yi < Wi; yi++)
+            if (ai[yi] > Gi) {
+              os = yi + Xi;
               break;
             }
           return {
-            xData: ri.slice(es, os),
-            yData: mi.slice(es, os),
-            start: es,
+            xData: ai.slice(ss, os),
+            yData: xi.slice(ss, os),
+            start: ss,
             end: os
           };
         }
         generatePoints() {
-          var ri = this.options;
-          const mi = this.processedData || ri.data, vi = this.processedXData, zi = this.processedYData, Xi = this.pointClass, Gi = vi.length, Ji = this.cropStart || 0, es = this.hasGroupedData, os = ri.keys, ns = [];
-          ri = ri.dataGrouping && ri.dataGrouping.groupAll ? Ji : 0;
-          let ls, Ii, Ai, $i = this.data;
-          if (!$i && !es) {
-            var Yi = [];
-            Yi.length = mi.length, $i = this.data = Yi;
+          var ai = this.options;
+          const xi = this.processedData || ai.data, yi = this.processedXData, Gi = this.processedYData, Xi = this.pointClass, Wi = yi.length, ts = this.cropStart || 0, ss = this.hasGroupedData, os = ai.keys, ns = [];
+          ai = ai.dataGrouping && ai.dataGrouping.groupAll ? ts : 0;
+          let ls, Ii, Ei, Ji = this.data;
+          if (!Ji && !ss) {
+            var Fi = [];
+            Fi.length = xi.length, Ji = this.data = Fi;
           }
-          for (os && es && (this.options.keys = !1), Ai = 0; Ai < Gi; Ai++)
-            Yi = Ji + Ai, es ? (Ii = new Xi().init(this, [vi[Ai]].concat(Li(zi[Ai]))), Ii.dataGroup = this.groupMap[ri + Ai], Ii.dataGroup.options && (Ii.options = Ii.dataGroup.options, ei(Ii, Ii.dataGroup.options), delete Ii.dataLabels)) : (Ii = $i[Yi]) || typeof mi[Yi] > "u" || ($i[Yi] = Ii = new Xi().init(this, mi[Yi], vi[Ai])), Ii && (Ii.index = es ? ri + Ai : Yi, ns[Ai] = Ii);
-          if (this.options.keys = os, $i && (Gi !== (ls = $i.length) || es))
-            for (Ai = 0; Ai < ls; Ai++)
-              Ai !== Ji || es || (Ai += Gi), $i[Ai] && ($i[Ai].destroyElements(), $i[Ai].plotX = void 0);
-          this.data = $i, this.points = ns, ii(this, "afterGeneratePoints");
+          for (os && ss && (this.options.keys = !1), Ei = 0; Ei < Wi; Ei++)
+            Fi = ts + Ei, ss ? (Ii = new Xi().init(this, [yi[Ei]].concat(Pi(Gi[Ei]))), Ii.dataGroup = this.groupMap[ai + Ei], Ii.dataGroup.options && (Ii.options = Ii.dataGroup.options, si(Ii, Ii.dataGroup.options), delete Ii.dataLabels)) : (Ii = Ji[Fi]) || typeof xi[Fi] > "u" || (Ji[Fi] = Ii = new Xi().init(this, xi[Fi], yi[Ei])), Ii && (Ii.index = ss ? ai + Ei : Fi, ns[Ei] = Ii);
+          if (this.options.keys = os, Ji && (Wi !== (ls = Ji.length) || ss))
+            for (Ei = 0; Ei < ls; Ei++)
+              Ei !== ts || ss || (Ei += Wi), Ji[Ei] && (Ji[Ei].destroyElements(), Ji[Ei].plotX = void 0);
+          this.data = Ji, this.points = ns, oi(this, "afterGeneratePoints");
         }
-        getXExtremes(ri) {
-          return { min: Mi(ri), max: Ti(ri) };
+        getXExtremes(ai) {
+          return { min: Mi(ai), max: Ti(ai) };
         }
-        getExtremes(ri, mi) {
-          const vi = this.xAxis;
-          var zi = this.yAxis;
-          const Xi = this.processedXData || this.xData, Gi = [], Ji = this.requireSorting ? this.cropShoulder : 0;
-          zi = zi ? zi.positiveValuesOnly : !1;
-          let es, os = 0, ns = 0, ls = 0;
-          ri = ri || this.stackedYData || this.processedYData || [];
-          const Ii = ri.length;
-          if (vi) {
-            var Ai = vi.getExtremes();
-            os = Ai.min, ns = Ai.max;
+        getExtremes(ai, xi) {
+          const yi = this.xAxis;
+          var Gi = this.yAxis;
+          const Xi = this.processedXData || this.xData, Wi = [], ts = this.requireSorting ? this.cropShoulder : 0;
+          Gi = Gi ? Gi.positiveValuesOnly : !1;
+          let ss, os = 0, ns = 0, ls = 0;
+          ai = ai || this.stackedYData || this.processedYData || [];
+          const Ii = ai.length;
+          if (yi) {
+            var Ei = yi.getExtremes();
+            os = Ei.min, ns = Ei.max;
           }
-          for (es = 0; es < Ii; es++) {
-            var $i = Xi[es];
-            Ai = ri[es];
-            var Yi = (Pi(Ai) || ni(Ai)) && (Ai.length || 0 < Ai || !zi);
-            if ($i = mi || this.getExtremesFromAll || this.options.getExtremesFromAll || this.cropped || !vi || (Xi[es + Ji] || $i) >= os && (Xi[es - Ji] || $i) <= ns, Yi && $i)
-              if (Yi = Ai.length)
-                for (; Yi--; )
-                  Pi(Ai[Yi]) && (Gi[ls++] = Ai[Yi]);
+          for (ss = 0; ss < Ii; ss++) {
+            var Ji = Xi[ss];
+            Ei = ai[ss];
+            var Fi = (Li(Ei) || hi(Ei)) && (Ei.length || 0 < Ei || !Gi);
+            if (Ji = xi || this.getExtremesFromAll || this.options.getExtremesFromAll || this.cropped || !yi || (Xi[ss + ts] || Ji) >= os && (Xi[ss - ts] || Ji) <= ns, Fi && Ji)
+              if (Fi = Ei.length)
+                for (; Fi--; )
+                  Li(Ei[Fi]) && (Wi[ls++] = Ei[Fi]);
               else
-                Gi[ls++] = Ai;
+                Wi[ls++] = Ei;
           }
-          return ri = { activeYData: Gi, dataMin: Mi(Gi), dataMax: Ti(Gi) }, ii(this, "afterGetExtremes", { dataExtremes: ri }), ri;
+          return ai = { activeYData: Wi, dataMin: Mi(Wi), dataMax: Ti(Wi) }, oi(this, "afterGetExtremes", { dataExtremes: ai }), ai;
         }
         applyExtremes() {
-          const ri = this.getExtremes();
-          return this.dataMin = ri.dataMin, this.dataMax = ri.dataMax, ri;
+          const ai = this.getExtremes();
+          return this.dataMin = ai.dataMin, this.dataMax = ai.dataMax, ai;
         }
-        getFirstValidPoint(ri) {
-          const mi = ri.length;
-          let vi = 0, zi = null;
-          for (; zi === null && vi < mi; )
-            zi = ri[vi], vi++;
-          return zi;
+        getFirstValidPoint(ai) {
+          const xi = ai.length;
+          let yi = 0, Gi = null;
+          for (; Gi === null && yi < xi; )
+            Gi = ai[yi], yi++;
+          return Gi;
         }
         translate() {
-          var ri;
+          var ai;
           this.processedXData || this.processData(), this.generatePoints();
-          var mi = this.options;
-          const vi = mi.stacking, zi = this.xAxis, Xi = zi.categories, Gi = this.enabledDataSorting, Ji = this.yAxis, es = this.points, os = es.length, ns = this.pointPlacementToXValue(), ls = !!ns, Ii = mi.threshold;
-          mi = mi.startFromThreshold ? Ii : 0;
-          let Ai, $i, Yi, _i, hs = Number.MAX_VALUE;
-          for (Ai = 0; Ai < os; Ai++) {
-            const as = es[Ai], us = as.x;
-            let ps, cs, ds = as.y, ms = as.low;
-            const fs = vi && ((ri = Ji.stacking) === null || ri === void 0 ? void 0 : ri.stacks[(this.negStacks && ds < (mi ? 0 : Ii) ? "-" : "") + this.stackKey]);
-            $i = zi.translate(us, !1, !1, !1, !0, ns), as.plotX = Pi($i) ? ai(Oi($i, -1e5, 1e5)) : void 0, vi && this.visible && fs && fs[us] && (_i = this.getStackIndicator(_i, us, this.index), !as.isNull && _i.key && (ps = fs[us], cs = ps.points[_i.key]), ps && ni(cs) && (ms = cs[0], ds = cs[1], ms === mi && _i.key === fs[us].base && (ms = Bi(Pi(Ii) ? Ii : Ji.min)), Ji.positiveValuesOnly && li(ms) && 0 >= ms && (ms = void 0), as.total = as.stackTotal = Bi(ps.total), as.percentage = li(as.y) && ps.total ? as.y / ps.total * 100 : void 0, as.stackY = ds, this.irregularWidths || ps.setOffset(this.pointXOffset || 0, this.barW || 0, void 0, void 0, void 0, this.xAxis))), as.yBottom = li(ms) ? Oi(Ji.translate(ms, !1, !0, !1, !0), -1e5, 1e5) : void 0, this.dataModify && (ds = this.dataModify.modifyValue(ds, Ai));
+          var xi = this.options;
+          const yi = xi.stacking, Gi = this.xAxis, Xi = Gi.categories, Wi = this.enabledDataSorting, ts = this.yAxis, ss = this.points, os = ss.length, ns = this.pointPlacementToXValue(), ls = !!ns, Ii = xi.threshold;
+          xi = xi.startFromThreshold ? Ii : 0;
+          let Ei, Ji, Fi, Qi, hs = Number.MAX_VALUE;
+          for (Ei = 0; Ei < os; Ei++) {
+            const as = ss[Ei], ps = as.x;
+            let us, cs, ds = as.y, ms = as.low;
+            const fs = yi && ((ai = ts.stacking) === null || ai === void 0 ? void 0 : ai.stacks[(this.negStacks && ds < (xi ? 0 : Ii) ? "-" : "") + this.stackKey]);
+            Ji = Gi.translate(ps, !1, !1, !1, !0, ns), as.plotX = Li(Ji) ? ci(Di(Ji, -1e5, 1e5)) : void 0, yi && this.visible && fs && fs[ps] && (Qi = this.getStackIndicator(Qi, ps, this.index), !as.isNull && Qi.key && (us = fs[ps], cs = us.points[Qi.key]), us && hi(cs) && (ms = cs[0], ds = cs[1], ms === xi && Qi.key === fs[ps].base && (ms = Bi(Li(Ii) ? Ii : ts.min)), ts.positiveValuesOnly && pi(ms) && 0 >= ms && (ms = void 0), as.total = as.stackTotal = Bi(us.total), as.percentage = pi(as.y) && us.total ? as.y / us.total * 100 : void 0, as.stackY = ds, this.irregularWidths || us.setOffset(this.pointXOffset || 0, this.barW || 0, void 0, void 0, void 0, this.xAxis))), as.yBottom = pi(ms) ? Di(ts.translate(ms, !1, !0, !1, !0), -1e5, 1e5) : void 0, this.dataModify && (ds = this.dataModify.modifyValue(ds, Ei));
             let gs;
-            Pi(ds) && as.plotX !== void 0 && (gs = Ji.translate(ds, !1, !0, !1, !0), gs = Pi(gs) ? Oi(gs, -1e5, 1e5) : void 0), as.plotY = gs, as.isInside = this.isPointInside(as), as.clientX = ls ? ai(zi.translate(us, !1, !1, !1, !0, ns)) : $i, as.negative = (as.y || 0) < (Ii || 0), as.category = Bi(Xi && Xi[as.x], as.x), as.isNull || as.visible === !1 || (typeof Yi < "u" && (hs = Math.min(hs, Math.abs($i - Yi))), Yi = $i), as.zone = this.zones.length ? as.getZone() : void 0, !as.graphic && this.group && Gi && (as.isNew = !0);
+            Li(ds) && as.plotX !== void 0 && (gs = ts.translate(ds, !1, !0, !1, !0), gs = Li(gs) ? Di(gs, -1e5, 1e5) : void 0), as.plotY = gs, as.isInside = this.isPointInside(as), as.clientX = ls ? ci(Gi.translate(ps, !1, !1, !1, !0, ns)) : Ji, as.negative = (as.y || 0) < (Ii || 0), as.category = Bi(Xi && Xi[as.x], as.x), as.isNull || as.visible === !1 || (typeof Fi < "u" && (hs = Math.min(hs, Math.abs(Ji - Fi))), Fi = Ji), as.zone = this.zones.length ? as.getZone() : void 0, !as.graphic && this.group && Wi && (as.isNew = !0);
           }
-          this.closestPointRangePx = hs, ii(this, "afterTranslate");
+          this.closestPointRangePx = hs, oi(this, "afterTranslate");
         }
-        getValidPoints(ri, mi, vi) {
-          const zi = this.chart;
-          return (ri || this.points || []).filter(function(Xi) {
-            const { plotX: Gi, plotY: Ji } = Xi;
-            return !vi && (Xi.isNull || !Pi(Ji)) || mi && !zi.isInsidePlot(Gi, Ji, { inverted: zi.inverted }) ? !1 : Xi.visible !== !1;
+        getValidPoints(ai, xi, yi) {
+          const Gi = this.chart;
+          return (ai || this.points || []).filter(function(Xi) {
+            const { plotX: Wi, plotY: ts } = Xi;
+            return !yi && (Xi.isNull || !Li(ts)) || xi && !Gi.isInsidePlot(Wi, ts, { inverted: Gi.inverted }) ? !1 : Xi.visible !== !1;
           });
         }
         getClipBox() {
-          const { chart: ri, xAxis: mi, yAxis: vi } = this, zi = Zi(ri.clipBox);
-          return mi && mi.len !== ri.plotSizeX && (zi.width = mi.len), vi && vi.len !== ri.plotSizeY && (zi.height = vi.len), zi;
+          const { chart: ai, xAxis: xi, yAxis: yi } = this, Gi = Zi(ai.clipBox);
+          return xi && xi.len !== ai.plotSizeX && (Gi.width = xi.len), yi && yi.len !== ai.plotSizeY && (Gi.height = yi.len), Gi;
         }
         getSharedClipKey() {
           return this.sharedClipKey = (this.options.xAxis || 0) + "," + (this.options.yAxis || 0);
         }
         setClip() {
-          const { chart: ri, group: mi, markerGroup: vi } = this, zi = ri.sharedClips, Xi = ri.renderer, Gi = this.getClipBox(), Ji = this.getSharedClipKey();
-          let es = zi[Ji];
-          es ? es.animate(Gi) : zi[Ji] = es = Xi.clipRect(Gi), mi && mi.clip(this.options.clip === !1 ? void 0 : es), vi && vi.clip();
+          const { chart: ai, group: xi, markerGroup: yi } = this, Gi = ai.sharedClips, Xi = ai.renderer, Wi = this.getClipBox(), ts = this.getSharedClipKey();
+          let ss = Gi[ts];
+          ss ? ss.animate(Wi) : Gi[ts] = ss = Xi.clipRect(Wi), xi && xi.clip(this.options.clip === !1 ? void 0 : ss), yi && yi.clip();
         }
-        animate(ri) {
-          const { chart: mi, group: vi, markerGroup: zi } = this, Xi = mi.inverted;
-          var Gi = ki(this.options.animation), Ji = [this.getSharedClipKey(), Gi.duration, Gi.easing, Gi.defer].join();
-          let es = mi.sharedClips[Ji], os = mi.sharedClips[Ji + "m"];
-          if (ri && vi)
-            Gi = this.getClipBox(), es ? es.attr("height", Gi.height) : (Gi.width = 0, Xi && (Gi.x = mi.plotHeight), es = mi.renderer.clipRect(Gi), mi.sharedClips[Ji] = es, os = mi.renderer.clipRect({ x: -99, y: -99, width: Xi ? mi.plotWidth + 199 : 99, height: Xi ? 99 : mi.plotHeight + 199 }), mi.sharedClips[Ji + "m"] = os), vi.clip(es), zi && zi.clip(os);
-          else if (es && !es.hasClass("highcharts-animating")) {
-            Ji = this.getClipBox();
-            const ns = Gi.step;
-            zi && zi.element.childNodes.length && (Gi.step = function(ls, Ii) {
+        animate(ai) {
+          const { chart: xi, group: yi, markerGroup: Gi } = this, Xi = xi.inverted;
+          var Wi = bi(this.options.animation), ts = [this.getSharedClipKey(), Wi.duration, Wi.easing, Wi.defer].join();
+          let ss = xi.sharedClips[ts], os = xi.sharedClips[ts + "m"];
+          if (ai && yi)
+            Wi = this.getClipBox(), ss ? ss.attr("height", Wi.height) : (Wi.width = 0, Xi && (Wi.x = xi.plotHeight), ss = xi.renderer.clipRect(Wi), xi.sharedClips[ts] = ss, os = xi.renderer.clipRect({ x: -99, y: -99, width: Xi ? xi.plotWidth + 199 : 99, height: Xi ? 99 : xi.plotHeight + 199 }), xi.sharedClips[ts + "m"] = os), yi.clip(ss), Gi && Gi.clip(os);
+          else if (ss && !ss.hasClass("highcharts-animating")) {
+            ts = this.getClipBox();
+            const ns = Wi.step;
+            Gi && Gi.element.childNodes.length && (Wi.step = function(ls, Ii) {
               ns && ns.apply(Ii, arguments), Ii.prop === "width" && os && os.element && os.attr(Xi ? "height" : "width", ls + 99);
-            }), es.addClass("highcharts-animating").animate(Ji, Gi);
+            }), ss.addClass("highcharts-animating").animate(ts, Wi);
           }
         }
         afterAnimate() {
-          this.setClip(), rs(this.chart.sharedClips, (ri, mi, vi) => {
-            ri && !this.chart.container.querySelector(`[clip-path="url(#${ri.id})"]`) && (ri.destroy(), delete vi[mi]);
-          }), this.finishedAnimating = !0, ii(this, "afterAnimate");
+          this.setClip(), rs(this.chart.sharedClips, (ai, xi, yi) => {
+            ai && !this.chart.container.querySelector(`[clip-path="url(#${ai.id})"]`) && (ai.destroy(), delete yi[xi]);
+          }), this.finishedAnimating = !0, oi(this, "afterAnimate");
         }
-        drawPoints(ri = this.points) {
-          const mi = this.chart, vi = mi.styledMode, { colorAxis: zi, options: Xi } = this, Gi = Xi.marker, Ji = this[this.specialGroup || "markerGroup"], es = this.xAxis, os = Bi(Gi.enabled, !es || es.isRadial ? !0 : null, this.closestPointRangePx >= Gi.enabledThreshold * Gi.radius);
-          let ns, ls, Ii, Ai, $i, Yi;
-          if (Gi.enabled !== !1 || this._hasPointMarkers)
-            for (ns = 0; ns < ri.length; ns++) {
-              ls = ri[ns], Ai = (Ii = ls.graphic) ? "animate" : "attr";
-              var _i = ls.marker || {};
-              if ($i = !!ls.marker, (os && typeof _i.enabled > "u" || _i.enabled) && !ls.isNull && ls.visible !== !1) {
-                const hs = Bi(_i.symbol, this.symbol, "rect");
-                Yi = this.markerAttribs(ls, ls.selected && "select"), this.enabledDataSorting && (ls.startXPos = es.reversed ? -(Yi.width || 0) : es.width);
+        drawPoints(ai = this.points) {
+          const xi = this.chart, yi = xi.styledMode, { colorAxis: Gi, options: Xi } = this, Wi = Xi.marker, ts = this[this.specialGroup || "markerGroup"], ss = this.xAxis, os = Bi(Wi.enabled, !ss || ss.isRadial ? !0 : null, this.closestPointRangePx >= Wi.enabledThreshold * Wi.radius);
+          let ns, ls, Ii, Ei, Ji, Fi;
+          if (Wi.enabled !== !1 || this._hasPointMarkers)
+            for (ns = 0; ns < ai.length; ns++) {
+              ls = ai[ns], Ei = (Ii = ls.graphic) ? "animate" : "attr";
+              var Qi = ls.marker || {};
+              if (Ji = !!ls.marker, (os && typeof Qi.enabled > "u" || Qi.enabled) && !ls.isNull && ls.visible !== !1) {
+                const hs = Bi(Qi.symbol, this.symbol, "rect");
+                Fi = this.markerAttribs(ls, ls.selected && "select"), this.enabledDataSorting && (ls.startXPos = ss.reversed ? -(Fi.width || 0) : ss.width);
                 const as = ls.isInside !== !1;
-                !Ii && as && (0 < (Yi.width || 0) || ls.hasImage) && (ls.graphic = Ii = mi.renderer.symbol(hs, Yi.x, Yi.y, Yi.width, Yi.height, $i ? _i : Gi).add(Ji), this.enabledDataSorting && mi.hasRendered && (Ii.attr({ x: ls.startXPos }), Ai = "animate")), Ii && Ai === "animate" && Ii[as ? "show" : "hide"](as).animate(Yi), Ii && (_i = this.pointAttribs(ls, vi || !ls.selected ? void 0 : "select"), vi ? zi && Ii.css({ fill: _i.fill }) : Ii[Ai](_i)), Ii && Ii.addClass(ls.getClassName(), !0);
+                !Ii && as && (0 < (Fi.width || 0) || ls.hasImage) && (ls.graphic = Ii = xi.renderer.symbol(hs, Fi.x, Fi.y, Fi.width, Fi.height, Ji ? Qi : Wi).add(ts), this.enabledDataSorting && xi.hasRendered && (Ii.attr({ x: ls.startXPos }), Ei = "animate")), Ii && Ei === "animate" && Ii[as ? "show" : "hide"](as).animate(Fi), Ii && (Qi = this.pointAttribs(ls, yi || !ls.selected ? void 0 : "select"), yi ? Gi && Ii.css({ fill: Qi.fill }) : Ii[Ei](Qi)), Ii && Ii.addClass(ls.getClassName(), !0);
               } else
                 Ii && (ls.graphic = Ii.destroy());
             }
         }
-        markerAttribs(ri, mi) {
-          const vi = this.options;
-          var zi = vi.marker;
-          const Xi = ri.marker || {}, Gi = Xi.symbol || zi.symbol, Ji = {};
-          let es = Bi(Xi.radius, zi && zi.radius);
-          return mi && (zi = zi.states[mi], mi = Xi.states && Xi.states[mi], es = Bi(mi && mi.radius, zi && zi.radius, es && es + (zi && zi.radiusPlus || 0))), ri.hasImage = Gi && Gi.indexOf("url") === 0, ri.hasImage && (es = 0), ri = ri.pos(), Pi(es) && ri && (Ji.x = ri[0] - es, Ji.y = ri[1] - es, vi.crisp && (Ji.x = Math.floor(Ji.x))), es && (Ji.width = Ji.height = 2 * es), Ji;
+        markerAttribs(ai, xi) {
+          const yi = this.options;
+          var Gi = yi.marker;
+          const Xi = ai.marker || {}, Wi = Xi.symbol || Gi.symbol, ts = {};
+          let ss = Bi(Xi.radius, Gi && Gi.radius);
+          return xi && (Gi = Gi.states[xi], xi = Xi.states && Xi.states[xi], ss = Bi(xi && xi.radius, Gi && Gi.radius, ss && ss + (Gi && Gi.radiusPlus || 0))), ai.hasImage = Wi && Wi.indexOf("url") === 0, ai.hasImage && (ss = 0), ai = ai.pos(), Li(ss) && ai && (ts.x = ai[0] - ss, ts.y = ai[1] - ss, yi.crisp && (ts.x = Math.floor(ts.x))), ss && (ts.width = ts.height = 2 * ss), ts;
         }
-        pointAttribs(ri, mi) {
-          var vi = this.options.marker, zi = ri && ri.options;
-          const Xi = zi && zi.marker || {};
-          var Gi = zi && zi.color, Ji = ri && ri.color;
-          const es = ri && ri.zone && ri.zone.color;
+        pointAttribs(ai, xi) {
+          var yi = this.options.marker, Gi = ai && ai.options;
+          const Xi = Gi && Gi.marker || {};
+          var Wi = Gi && Gi.color, ts = ai && ai.color;
+          const ss = ai && ai.zone && ai.zone.color;
           let os = this.color;
-          return ri = Bi(Xi.lineWidth, vi.lineWidth), zi = 1, os = Gi || es || Ji || os, Gi = Xi.fillColor || vi.fillColor || os, Ji = Xi.lineColor || vi.lineColor || os, mi = mi || "normal", vi = vi.states[mi] || {}, mi = Xi.states && Xi.states[mi] || {}, ri = Bi(mi.lineWidth, vi.lineWidth, ri + Bi(mi.lineWidthPlus, vi.lineWidthPlus, 0)), Gi = mi.fillColor || vi.fillColor || Gi, Ji = mi.lineColor || vi.lineColor || Ji, zi = Bi(mi.opacity, vi.opacity, zi), { stroke: Ji, "stroke-width": ri, fill: Gi, opacity: zi };
+          return ai = Bi(Xi.lineWidth, yi.lineWidth), Gi = 1, os = Wi || ss || ts || os, Wi = Xi.fillColor || yi.fillColor || os, ts = Xi.lineColor || yi.lineColor || os, xi = xi || "normal", yi = yi.states[xi] || {}, xi = Xi.states && Xi.states[xi] || {}, ai = Bi(xi.lineWidth, yi.lineWidth, ai + Bi(xi.lineWidthPlus, yi.lineWidthPlus, 0)), Wi = xi.fillColor || yi.fillColor || Wi, ts = xi.lineColor || yi.lineColor || ts, Gi = Bi(xi.opacity, yi.opacity, Gi), { stroke: ts, "stroke-width": ai, fill: Wi, opacity: Gi };
         }
-        destroy(ri) {
-          const mi = this, vi = mi.chart, zi = /AppleWebKit\/533/.test(wi.navigator.userAgent), Xi = mi.data || [];
-          let Gi, Ji, es, os;
-          for (ii(mi, "destroy", { keepEventsForUpdate: ri }), this.removeEvents(ri), (mi.axisTypes || []).forEach(function(ns) {
-            (os = mi[ns]) && os.series && (di(os.series, mi), os.isDirty = os.forceRedraw = !0);
-          }), mi.legendItem && mi.chart.legend.destroyItem(mi), Ji = Xi.length; Ji--; )
-            (es = Xi[Ji]) && es.destroy && es.destroy();
-          mi.clips && mi.clips.forEach((ns) => ns.destroy()), Ui.clearTimeout(mi.animationTimeout), rs(mi, function(ns, ls) {
-            ns instanceof Ki && !ns.survive && (Gi = zi && ls === "group" ? "hide" : "destroy", ns[Gi]());
-          }), vi.hoverSeries === mi && (vi.hoverSeries = void 0), di(vi.series, mi), vi.orderItems("series"), rs(mi, function(ns, ls) {
-            ri && ls === "hcEvents" || delete mi[ls];
+        destroy(ai) {
+          const xi = this, yi = xi.chart, Gi = /AppleWebKit\/533/.test(wi.navigator.userAgent), Xi = xi.data || [];
+          let Wi, ts, ss, os;
+          for (oi(xi, "destroy", { keepEventsForUpdate: ai }), this.removeEvents(ai), (xi.axisTypes || []).forEach(function(ns) {
+            (os = xi[ns]) && os.series && (ui(os.series, xi), os.isDirty = os.forceRedraw = !0);
+          }), xi.legendItem && xi.chart.legend.destroyItem(xi), ts = Xi.length; ts--; )
+            (ss = Xi[ts]) && ss.destroy && ss.destroy();
+          xi.clips && xi.clips.forEach((ns) => ns.destroy()), _i.clearTimeout(xi.animationTimeout), rs(xi, function(ns, ls) {
+            ns instanceof Vi && !ns.survive && (Wi = Gi && ls === "group" ? "hide" : "destroy", ns[Wi]());
+          }), yi.hoverSeries === xi && (yi.hoverSeries = void 0), ui(yi.series, xi), yi.orderItems("series"), rs(xi, function(ns, ls) {
+            ai && ls === "hcEvents" || delete xi[ls];
           });
         }
         applyZones() {
-          const ri = this, mi = this.chart, vi = mi.renderer, zi = this.zones, Xi = this.clips || [], Gi = this.graph, Ji = this.area, es = Math.max(mi.plotWidth, mi.plotHeight), os = this[(this.zoneAxis || "y") + "Axis"], ns = mi.inverted;
-          let ls, Ii, Ai, $i, Yi, _i, hs, as, us, ps, cs, ds = !1;
-          zi.length && (Gi || Ji) && os && typeof os.min < "u" ? (Yi = os.reversed, _i = os.horiz, Gi && !this.showLine && Gi.hide(), Ji && Ji.hide(), $i = os.getExtremes(), zi.forEach(function(ms, fs) {
-            ls = Yi ? _i ? mi.plotWidth : 0 : _i ? 0 : os.toPixels($i.min) || 0, ls = Oi(Bi(Ii, ls), 0, es), Ii = Oi(Math.round(os.toPixels(Bi(ms.value, $i.max), !0) || 0), 0, es), ds && (ls = Ii = os.toPixels($i.max)), hs = Math.abs(ls - Ii), as = Math.min(ls, Ii), us = Math.max(ls, Ii), os.isXAxis ? (Ai = { x: ns ? us : as, y: 0, width: hs, height: es }, _i || (Ai.x = mi.plotHeight - Ai.x)) : (Ai = { x: 0, y: ns ? us : as, width: es, height: hs }, _i && (Ai.y = mi.plotWidth - Ai.y)), Xi[fs] ? Xi[fs].animate(Ai) : Xi[fs] = vi.clipRect(Ai), ps = ri["zone-area-" + fs], cs = ri["zone-graph-" + fs], Gi && cs && cs.clip(Xi[fs]), Ji && ps && ps.clip(Xi[fs]), ds = ms.value > $i.max, ri.resetZones && Ii === 0 && (Ii = void 0);
-          }), this.clips = Xi) : ri.visible && (Gi && Gi.show(), Ji && Ji.show());
+          const ai = this, xi = this.chart, yi = xi.renderer, Gi = this.zones, Xi = this.clips || [], Wi = this.graph, ts = this.area, ss = Math.max(xi.plotWidth, xi.plotHeight), os = this[(this.zoneAxis || "y") + "Axis"], ns = xi.inverted;
+          let ls, Ii, Ei, Ji, Fi, Qi, hs, as, ps, us, cs, ds = !1;
+          Gi.length && (Wi || ts) && os && typeof os.min < "u" ? (Fi = os.reversed, Qi = os.horiz, Wi && !this.showLine && Wi.hide(), ts && ts.hide(), Ji = os.getExtremes(), Gi.forEach(function(ms, fs) {
+            ls = Fi ? Qi ? xi.plotWidth : 0 : Qi ? 0 : os.toPixels(Ji.min) || 0, ls = Di(Bi(Ii, ls), 0, ss), Ii = Di(Math.round(os.toPixels(Bi(ms.value, Ji.max), !0) || 0), 0, ss), ds && (ls = Ii = os.toPixels(Ji.max)), hs = Math.abs(ls - Ii), as = Math.min(ls, Ii), ps = Math.max(ls, Ii), os.isXAxis ? (Ei = { x: ns ? ps : as, y: 0, width: hs, height: ss }, Qi || (Ei.x = xi.plotHeight - Ei.x)) : (Ei = { x: 0, y: ns ? ps : as, width: ss, height: hs }, Qi && (Ei.y = xi.plotWidth - Ei.y)), Xi[fs] ? Xi[fs].animate(Ei) : Xi[fs] = yi.clipRect(Ei), us = ai["zone-area-" + fs], cs = ai["zone-graph-" + fs], Wi && cs && cs.clip(Xi[fs]), ts && us && us.clip(Xi[fs]), ds = ms.value > Ji.max, ai.resetZones && Ii === 0 && (Ii = void 0);
+          }), this.clips = Xi) : ai.visible && (Wi && Wi.show(), ts && ts.show());
         }
-        plotGroup(ri, mi, vi, zi, Xi) {
-          let Gi = this[ri];
-          const Ji = !Gi;
-          return vi = { visibility: vi, zIndex: zi || 0.1 }, typeof this.opacity > "u" || this.chart.styledMode || this.state === "inactive" || (vi.opacity = this.opacity), Ji && (this[ri] = Gi = this.chart.renderer.g().add(Xi)), Gi.addClass("highcharts-" + mi + " highcharts-series-" + this.index + " highcharts-" + this.type + "-series " + (li(this.colorIndex) ? "highcharts-color-" + this.colorIndex + " " : "") + (this.options.className || "") + (Gi.hasClass("highcharts-tracker") ? " highcharts-tracker" : ""), !0), Gi.attr(vi)[Ji ? "attr" : "animate"](this.getPlotBox(mi)), Gi;
+        plotGroup(ai, xi, yi, Gi, Xi) {
+          let Wi = this[ai];
+          const ts = !Wi;
+          return yi = { visibility: yi, zIndex: Gi || 0.1 }, typeof this.opacity > "u" || this.chart.styledMode || this.state === "inactive" || (yi.opacity = this.opacity), ts && (this[ai] = Wi = this.chart.renderer.g().add(Xi)), Wi.addClass("highcharts-" + xi + " highcharts-series-" + this.index + " highcharts-" + this.type + "-series " + (pi(this.colorIndex) ? "highcharts-color-" + this.colorIndex + " " : "") + (this.options.className || "") + (Wi.hasClass("highcharts-tracker") ? " highcharts-tracker" : ""), !0), Wi.attr(yi)[ts ? "attr" : "animate"](this.getPlotBox(xi)), Wi;
         }
-        getPlotBox(ri) {
-          let mi = this.xAxis, vi = this.yAxis;
-          const zi = this.chart;
-          return ri = zi.inverted && !zi.polar && mi && this.invertible !== !1 && ri === "series", zi.inverted && (mi = vi, vi = this.xAxis), { translateX: mi ? mi.left : zi.plotLeft, translateY: vi ? vi.top : zi.plotTop, rotation: ri ? 90 : 0, rotationOriginX: ri ? (mi.len - vi.len) / 2 : 0, rotationOriginY: ri ? (mi.len + vi.len) / 2 : 0, scaleX: ri ? -1 : 1, scaleY: 1 };
+        getPlotBox(ai) {
+          let xi = this.xAxis, yi = this.yAxis;
+          const Gi = this.chart;
+          return ai = Gi.inverted && !Gi.polar && xi && this.invertible !== !1 && ai === "series", Gi.inverted && (xi = yi, yi = this.xAxis), { translateX: xi ? xi.left : Gi.plotLeft, translateY: yi ? yi.top : Gi.plotTop, rotation: ai ? 90 : 0, rotationOriginX: ai ? (xi.len - yi.len) / 2 : 0, rotationOriginY: ai ? (xi.len + yi.len) / 2 : 0, scaleX: ai ? -1 : 1, scaleY: 1 };
         }
-        removeEvents(ri) {
-          ri || si(this), this.eventsToUnbind.length && (this.eventsToUnbind.forEach(function(mi) {
-            mi();
+        removeEvents(ai) {
+          ai || ni(this), this.eventsToUnbind.length && (this.eventsToUnbind.forEach(function(xi) {
+            xi();
           }), this.eventsToUnbind.length = 0);
         }
         render() {
-          const ri = this;
-          var mi = ri.chart;
-          const vi = ri.options, zi = ki(vi.animation), Xi = ri.visible ? "inherit" : "hidden", Gi = vi.zIndex, Ji = ri.hasRendered;
-          mi = mi.seriesGroup;
-          let es = ri.finishedAnimating ? 0 : zi.duration;
-          ii(this, "render"), ri.plotGroup("group", "series", Xi, Gi, mi), ri.markerGroup = ri.plotGroup("markerGroup", "markers", Xi, Gi, mi), vi.clip !== !1 && ri.setClip(), ri.animate && es && ri.animate(!0), ri.drawGraph && (ri.drawGraph(), ri.applyZones()), ri.visible && ri.drawPoints(), ri.drawDataLabels && ri.drawDataLabels(), ri.redrawPoints && ri.redrawPoints(), ri.drawTracker && vi.enableMouseTracking && ri.drawTracker(), ri.animate && es && ri.animate(), Ji || (es && zi.defer && (es += zi.defer), ri.animationTimeout = Hi(function() {
-            ri.afterAnimate();
-          }, es || 0)), ri.isDirty = !1, ri.hasRendered = !0, ii(ri, "afterRender");
+          const ai = this;
+          var xi = ai.chart;
+          const yi = ai.options, Gi = bi(yi.animation), Xi = ai.visible ? "inherit" : "hidden", Wi = yi.zIndex, ts = ai.hasRendered;
+          xi = xi.seriesGroup;
+          let ss = ai.finishedAnimating ? 0 : Gi.duration;
+          oi(this, "render"), ai.plotGroup("group", "series", Xi, Wi, xi), ai.markerGroup = ai.plotGroup("markerGroup", "markers", Xi, Wi, xi), yi.clip !== !1 && ai.setClip(), ai.animate && ss && ai.animate(!0), ai.drawGraph && (ai.drawGraph(), ai.applyZones()), ai.visible && ai.drawPoints(), ai.drawDataLabels && ai.drawDataLabels(), ai.redrawPoints && ai.redrawPoints(), ai.drawTracker && yi.enableMouseTracking && ai.drawTracker(), ai.animate && ss && ai.animate(), ts || (ss && Gi.defer && (ss += Gi.defer), ai.animationTimeout = Hi(function() {
+            ai.afterAnimate();
+          }, ss || 0)), ai.isDirty = !1, ai.hasRendered = !0, oi(ai, "afterRender");
         }
         redraw() {
-          const ri = this.isDirty || this.isDirtyData;
-          this.translate(), this.render(), ri && delete this.kdTree;
+          const ai = this.isDirty || this.isDirtyData;
+          this.translate(), this.render(), ai && delete this.kdTree;
         }
-        searchPoint(ri, mi) {
-          const vi = this.xAxis, zi = this.yAxis, Xi = this.chart.inverted;
-          return this.searchKDTree({ clientX: Xi ? vi.len - ri.chartY + vi.pos : ri.chartX - vi.pos, plotY: Xi ? zi.len - ri.chartX + zi.pos : ri.chartY - zi.pos }, mi, ri);
+        searchPoint(ai, xi) {
+          const yi = this.xAxis, Gi = this.yAxis, Xi = this.chart.inverted;
+          return this.searchKDTree({ clientX: Xi ? yi.len - ai.chartY + yi.pos : ai.chartX - yi.pos, plotY: Xi ? Gi.len - ai.chartX + Gi.pos : ai.chartY - Gi.pos }, xi, ai);
         }
-        buildKDTree(ri) {
-          function mi(Xi, Gi, Ji) {
-            var es = Xi && Xi.length;
+        buildKDTree(ai) {
+          function xi(Xi, Wi, ts) {
+            var ss = Xi && Xi.length;
             let os;
-            if (es)
-              return os = vi.kdAxisArray[Gi % Ji], Xi.sort(function(ns, ls) {
+            if (ss)
+              return os = yi.kdAxisArray[Wi % ts], Xi.sort(function(ns, ls) {
                 return ns[os] - ls[os];
-              }), es = Math.floor(es / 2), { point: Xi[es], left: mi(Xi.slice(0, es), Gi + 1, Ji), right: mi(Xi.slice(es + 1), Gi + 1, Ji) };
+              }), ss = Math.floor(ss / 2), { point: Xi[ss], left: xi(Xi.slice(0, ss), Wi + 1, ts), right: xi(Xi.slice(ss + 1), Wi + 1, ts) };
           }
           this.buildingKdTree = !0;
-          const vi = this, zi = -1 < vi.options.findNearestPointBy.indexOf("y") ? 2 : 1;
-          delete vi.kdTree, Hi(function() {
-            vi.kdTree = mi(vi.getValidPoints(null, !vi.directTouch), zi, zi), vi.buildingKdTree = !1;
-          }, vi.options.kdNow || ri && ri.type === "touchstart" ? 0 : 1);
+          const yi = this, Gi = -1 < yi.options.findNearestPointBy.indexOf("y") ? 2 : 1;
+          delete yi.kdTree, Hi(function() {
+            yi.kdTree = xi(yi.getValidPoints(null, !yi.directTouch), Gi, Gi), yi.buildingKdTree = !1;
+          }, yi.options.kdNow || ai && ai.type === "touchstart" ? 0 : 1);
         }
-        searchKDTree(ri, mi, vi) {
-          function zi(os, ns, ls, Ii) {
-            const Ai = ns.point;
-            var $i = Xi.kdAxisArray[ls % Ii];
-            let Yi = Ai;
-            var _i = li(os[Gi]) && li(Ai[Gi]) ? Math.pow(os[Gi] - Ai[Gi], 2) : null, hs = li(os[Ji]) && li(Ai[Ji]) ? Math.pow(os[Ji] - Ai[Ji], 2) : null;
-            return hs = (_i || 0) + (hs || 0), Ai.dist = li(hs) ? Math.sqrt(hs) : Number.MAX_VALUE, Ai.distX = li(_i) ? Math.sqrt(_i) : Number.MAX_VALUE, $i = os[$i] - Ai[$i], hs = 0 > $i ? "left" : "right", _i = 0 > $i ? "right" : "left", ns[hs] && (hs = zi(os, ns[hs], ls + 1, Ii), Yi = hs[es] < Yi[es] ? hs : Ai), ns[_i] && Math.sqrt($i * $i) < Yi[es] && (os = zi(os, ns[_i], ls + 1, Ii), Yi = os[es] < Yi[es] ? os : Yi), Yi;
+        searchKDTree(ai, xi, yi) {
+          function Gi(os, ns, ls, Ii) {
+            const Ei = ns.point;
+            var Ji = Xi.kdAxisArray[ls % Ii];
+            let Fi = Ei;
+            var Qi = pi(os[Wi]) && pi(Ei[Wi]) ? Math.pow(os[Wi] - Ei[Wi], 2) : null, hs = pi(os[ts]) && pi(Ei[ts]) ? Math.pow(os[ts] - Ei[ts], 2) : null;
+            return hs = (Qi || 0) + (hs || 0), Ei.dist = pi(hs) ? Math.sqrt(hs) : Number.MAX_VALUE, Ei.distX = pi(Qi) ? Math.sqrt(Qi) : Number.MAX_VALUE, Ji = os[Ji] - Ei[Ji], hs = 0 > Ji ? "left" : "right", Qi = 0 > Ji ? "right" : "left", ns[hs] && (hs = Gi(os, ns[hs], ls + 1, Ii), Fi = hs[ss] < Fi[ss] ? hs : Ei), ns[Qi] && Math.sqrt(Ji * Ji) < Fi[ss] && (os = Gi(os, ns[Qi], ls + 1, Ii), Fi = os[ss] < Fi[ss] ? os : Fi), Fi;
           }
-          const Xi = this, Gi = this.kdAxisArray[0], Ji = this.kdAxisArray[1], es = mi ? "distX" : "dist";
-          if (mi = -1 < Xi.options.findNearestPointBy.indexOf("y") ? 2 : 1, this.kdTree || this.buildingKdTree || this.buildKDTree(vi), this.kdTree)
-            return zi(
-              ri,
+          const Xi = this, Wi = this.kdAxisArray[0], ts = this.kdAxisArray[1], ss = xi ? "distX" : "dist";
+          if (xi = -1 < Xi.options.findNearestPointBy.indexOf("y") ? 2 : 1, this.kdTree || this.buildingKdTree || this.buildKDTree(yi), this.kdTree)
+            return Gi(
+              ai,
               this.kdTree,
-              mi,
-              mi
+              xi,
+              xi
             );
         }
         pointPlacementToXValue() {
-          const { options: { pointPlacement: ri, pointRange: mi }, xAxis: vi } = this;
-          let zi = ri;
-          return zi === "between" && (zi = vi.reversed ? -0.5 : 0.5), Pi(zi) ? zi * (mi || vi.pointRange) : 0;
+          const { options: { pointPlacement: ai, pointRange: xi }, xAxis: yi } = this;
+          let Gi = ai;
+          return Gi === "between" && (Gi = yi.reversed ? -0.5 : 0.5), Li(Gi) ? Gi * (xi || yi.pointRange) : 0;
         }
-        isPointInside(ri) {
-          const { chart: mi, xAxis: vi, yAxis: zi } = this;
-          return typeof ri.plotY < "u" && typeof ri.plotX < "u" && 0 <= ri.plotY && ri.plotY <= (zi ? zi.len : mi.plotHeight) && 0 <= ri.plotX && ri.plotX <= (vi ? vi.len : mi.plotWidth);
+        isPointInside(ai) {
+          const { chart: xi, xAxis: yi, yAxis: Gi } = this;
+          return typeof ai.plotY < "u" && typeof ai.plotX < "u" && 0 <= ai.plotY && ai.plotY <= (Gi ? Gi.len : xi.plotHeight) && 0 <= ai.plotX && ai.plotX <= (yi ? yi.len : xi.plotWidth);
         }
         drawTracker() {
-          const ri = this, mi = ri.options, vi = mi.trackByArea, zi = [].concat(vi ? ri.areaPath : ri.graphPath), Xi = ri.chart, Gi = Xi.pointer, Ji = Xi.renderer, es = Xi.options.tooltip.snap, os = ri.tracker, ns = function(Ii) {
-            mi.enableMouseTracking && Xi.hoverSeries !== ri && ri.onMouseOver();
-          }, ls = "rgba(192,192,192," + (Ci ? 1e-4 : 2e-3) + ")";
-          os ? os.attr({ d: zi }) : ri.graph && (ri.tracker = Ji.path(zi).attr({ visibility: ri.visible ? "inherit" : "hidden", zIndex: 2 }).addClass(vi ? "highcharts-tracker-area" : "highcharts-tracker-line").add(ri.group), Xi.styledMode || ri.tracker.attr({ "stroke-linecap": "round", "stroke-linejoin": "round", stroke: ls, fill: vi ? ls : "none", "stroke-width": ri.graph.strokeWidth() + (vi ? 0 : 2 * es) }), [
-            ri.tracker,
-            ri.markerGroup,
-            ri.dataLabelsGroup
+          const ai = this, xi = ai.options, yi = xi.trackByArea, Gi = [].concat(yi ? ai.areaPath : ai.graphPath), Xi = ai.chart, Wi = Xi.pointer, ts = Xi.renderer, ss = Xi.options.tooltip.snap, os = ai.tracker, ns = function(Ii) {
+            xi.enableMouseTracking && Xi.hoverSeries !== ai && ai.onMouseOver();
+          }, ls = "rgba(192,192,192," + (ki ? 1e-4 : 2e-3) + ")";
+          os ? os.attr({ d: Gi }) : ai.graph && (ai.tracker = ts.path(Gi).attr({ visibility: ai.visible ? "inherit" : "hidden", zIndex: 2 }).addClass(yi ? "highcharts-tracker-area" : "highcharts-tracker-line").add(ai.group), Xi.styledMode || ai.tracker.attr({ "stroke-linecap": "round", "stroke-linejoin": "round", stroke: ls, fill: yi ? ls : "none", "stroke-width": ai.graph.strokeWidth() + (yi ? 0 : 2 * ss) }), [
+            ai.tracker,
+            ai.markerGroup,
+            ai.dataLabelsGroup
           ].forEach(function(Ii) {
-            Ii && (Ii.addClass("highcharts-tracker").on("mouseover", ns).on("mouseout", function(Ai) {
-              Gi.onTrackerMouseOut(Ai);
-            }), mi.cursor && !Xi.styledMode && Ii.css({ cursor: mi.cursor }), fi) && Ii.on("touchstart", ns);
-          })), ii(this, "afterDrawTracker");
+            Ii && (Ii.addClass("highcharts-tracker").on("mouseover", ns).on("mouseout", function(Ei) {
+              Wi.onTrackerMouseOut(Ei);
+            }), xi.cursor && !Xi.styledMode && Ii.css({ cursor: xi.cursor }), gi) && Ii.on("touchstart", ns);
+          })), oi(this, "afterDrawTracker");
         }
-        addPoint(ri, mi, vi, zi, Xi) {
-          const Gi = this.options, Ji = this.data, es = this.chart;
+        addPoint(ai, xi, yi, Gi, Xi) {
+          const Wi = this.options, ts = this.data, ss = this.chart;
           var os = this.xAxis;
           os = os && os.hasNames && os.names;
-          const ns = Gi.data, ls = this.xData;
-          let Ii, Ai;
-          mi = Bi(mi, !0);
-          const $i = { series: this };
-          this.pointClass.prototype.applyOptions.apply($i, [ri]);
-          const Yi = $i.x;
-          if (Ai = ls.length, this.requireSorting && Yi < ls[Ai - 1])
-            for (Ii = !0; Ai && ls[Ai - 1] > Yi; )
-              Ai--;
-          this.updateParallelArrays($i, "splice", [Ai, 0, 0]), this.updateParallelArrays($i, Ai), os && $i.name && (os[Yi] = $i.name), ns.splice(Ai, 0, ri), (Ii || this.processedData) && (this.data.splice(Ai, 0, null), this.processData()), Gi.legendType === "point" && this.generatePoints(), vi && (Ji[0] && Ji[0].remove ? Ji[0].remove(!1) : (Ji.shift(), this.updateParallelArrays($i, "shift"), ns.shift())), Xi !== !1 && ii(this, "addPoint", { point: $i }), this.isDirtyData = this.isDirty = !0, mi && es.redraw(zi);
+          const ns = Wi.data, ls = this.xData;
+          let Ii, Ei;
+          xi = Bi(xi, !0);
+          const Ji = { series: this };
+          this.pointClass.prototype.applyOptions.apply(Ji, [ai]);
+          const Fi = Ji.x;
+          if (Ei = ls.length, this.requireSorting && Fi < ls[Ei - 1])
+            for (Ii = !0; Ei && ls[Ei - 1] > Fi; )
+              Ei--;
+          this.updateParallelArrays(Ji, "splice", [Ei, 0, 0]), this.updateParallelArrays(Ji, Ei), os && Ji.name && (os[Fi] = Ji.name), ns.splice(Ei, 0, ai), (Ii || this.processedData) && (this.data.splice(Ei, 0, null), this.processData()), Wi.legendType === "point" && this.generatePoints(), yi && (ts[0] && ts[0].remove ? ts[0].remove(!1) : (ts.shift(), this.updateParallelArrays(Ji, "shift"), ns.shift())), Xi !== !1 && oi(this, "addPoint", { point: Ji }), this.isDirtyData = this.isDirty = !0, xi && ss.redraw(Gi);
         }
-        removePoint(ri, mi, vi) {
-          const zi = this, Xi = zi.data, Gi = Xi[ri], Ji = zi.points, es = zi.chart, os = function() {
-            Ji && Ji.length === Xi.length && Ji.splice(ri, 1), Xi.splice(ri, 1), zi.options.data.splice(ri, 1), zi.updateParallelArrays(Gi || { series: zi }, "splice", [ri, 1]), Gi && Gi.destroy(), zi.isDirty = !0, zi.isDirtyData = !0, mi && es.redraw();
+        removePoint(ai, xi, yi) {
+          const Gi = this, Xi = Gi.data, Wi = Xi[ai], ts = Gi.points, ss = Gi.chart, os = function() {
+            ts && ts.length === Xi.length && ts.splice(ai, 1), Xi.splice(ai, 1), Gi.options.data.splice(ai, 1), Gi.updateParallelArrays(Wi || { series: Gi }, "splice", [ai, 1]), Wi && Wi.destroy(), Gi.isDirty = !0, Gi.isDirtyData = !0, xi && ss.redraw();
           };
-          bi(vi, es), mi = Bi(mi, !0), Gi ? Gi.firePointEvent("remove", null, os) : os();
+          Ai(yi, ss), xi = Bi(xi, !0), Wi ? Wi.firePointEvent("remove", null, os) : os();
         }
-        remove(ri, mi, vi, zi) {
+        remove(ai, xi, yi, Gi) {
           function Xi() {
-            Gi.destroy(zi), Ji.isDirtyLegend = Ji.isDirtyBox = !0, Ji.linkSeries(zi), Bi(ri, !0) && Ji.redraw(mi);
+            Wi.destroy(Gi), ts.isDirtyLegend = ts.isDirtyBox = !0, ts.linkSeries(Gi), Bi(ai, !0) && ts.redraw(xi);
           }
-          const Gi = this, Ji = Gi.chart;
-          vi !== !1 ? ii(Gi, "remove", null, Xi) : Xi();
+          const Wi = this, ts = Wi.chart;
+          yi !== !1 ? oi(Wi, "remove", null, Xi) : Xi();
         }
-        update(ri, mi) {
-          ri = xi(ri, this.userOptions), ii(this, "update", { options: ri });
-          const vi = this, zi = vi.chart;
-          var Xi = vi.userOptions;
-          const Gi = vi.initialType || vi.type;
-          var Ji = zi.options.plotOptions;
-          const es = yi[Gi].prototype;
-          var os = vi.finishedAnimating && { animation: !1 };
+        update(ai, xi) {
+          ai = vi(ai, this.userOptions), oi(this, "update", { options: ai });
+          const yi = this, Gi = yi.chart;
+          var Xi = yi.userOptions;
+          const Wi = yi.initialType || yi.type;
+          var ts = Gi.options.plotOptions;
+          const ss = Si[Wi].prototype;
+          var os = yi.finishedAnimating && { animation: !1 };
           const ns = {};
-          let ls, Ii = ["colorIndex", "eventOptions", "navigatorSeries", "symbolIndex", "baseSeries"], Ai = ri.type || Xi.type || zi.options.chart.type;
-          const $i = !(this.hasDerivedData || Ai && Ai !== this.type || typeof ri.pointStart < "u" || typeof ri.pointInterval < "u" || typeof ri.relativeXValue < "u" || ri.joinBy || ri.mapData || vi.hasOptionChanged("dataGrouping") || vi.hasOptionChanged("pointStart") || vi.hasOptionChanged("pointInterval") || vi.hasOptionChanged("pointIntervalUnit") || vi.hasOptionChanged("keys"));
-          if (Ai = Ai || Gi, $i && (Ii.push("data", "isDirtyData", "points", "processedData", "processedXData", "processedYData", "xIncrement", "cropped", "_hasPointMarkers", "_hasPointLabels", "clips", "nodes", "layout", "level", "mapMap", "mapData", "minY", "maxY", "minX", "maxX"), ri.visible !== !1 && Ii.push("area", "graph"), vi.parallelArrays.forEach(function(Yi) {
-            Ii.push(Yi + "Data");
-          }), ri.data && (ri.dataSorting && ei(vi.options.dataSorting, ri.dataSorting), this.setData(ri.data, !1))), ri = Zi(Xi, os, { index: typeof Xi.index > "u" ? vi.index : Xi.index, pointStart: Bi(Ji && Ji.series && Ji.series.pointStart, Xi.pointStart, vi.xData[0]) }, !$i && { data: vi.options.data }, ri), $i && ri.data && (ri.data = vi.options.data), Ii = ["group", "markerGroup", "dataLabelsGroup", "transformGroup"].concat(Ii), Ii.forEach(function(Yi) {
-            Ii[Yi] = vi[Yi], delete vi[Yi];
-          }), Ji = !1, yi[Ai]) {
-            if (Ji = Ai !== vi.type, vi.remove(!1, !1, !1, !0), Ji)
+          let ls, Ii = ["colorIndex", "eventOptions", "navigatorSeries", "symbolIndex", "baseSeries"], Ei = ai.type || Xi.type || Gi.options.chart.type;
+          const Ji = !(this.hasDerivedData || Ei && Ei !== this.type || typeof ai.pointStart < "u" || typeof ai.pointInterval < "u" || typeof ai.relativeXValue < "u" || ai.joinBy || ai.mapData || yi.hasOptionChanged("dataGrouping") || yi.hasOptionChanged("pointStart") || yi.hasOptionChanged("pointInterval") || yi.hasOptionChanged("pointIntervalUnit") || yi.hasOptionChanged("keys"));
+          if (Ei = Ei || Wi, Ji && (Ii.push("data", "isDirtyData", "points", "processedData", "processedXData", "processedYData", "xIncrement", "cropped", "_hasPointMarkers", "_hasPointLabels", "clips", "nodes", "layout", "level", "mapMap", "mapData", "minY", "maxY", "minX", "maxX"), ai.visible !== !1 && Ii.push("area", "graph"), yi.parallelArrays.forEach(function(Fi) {
+            Ii.push(Fi + "Data");
+          }), ai.data && (ai.dataSorting && si(yi.options.dataSorting, ai.dataSorting), this.setData(ai.data, !1))), ai = Zi(Xi, os, { index: typeof Xi.index > "u" ? yi.index : Xi.index, pointStart: Bi(ts && ts.series && ts.series.pointStart, Xi.pointStart, yi.xData[0]) }, !Ji && { data: yi.options.data }, ai), Ji && ai.data && (ai.data = yi.options.data), Ii = ["group", "markerGroup", "dataLabelsGroup", "transformGroup"].concat(Ii), Ii.forEach(function(Fi) {
+            Ii[Fi] = yi[Fi], delete yi[Fi];
+          }), ts = !1, Si[Ei]) {
+            if (ts = Ei !== yi.type, yi.remove(!1, !1, !1, !0), ts)
               if (Object.setPrototypeOf)
                 Object.setPrototypeOf(
-                  vi,
-                  yi[Ai].prototype
+                  yi,
+                  Si[Ei].prototype
                 );
               else {
-                os = Object.hasOwnProperty.call(vi, "hcEvents") && vi.hcEvents;
-                for (ls in es)
-                  vi[ls] = void 0;
-                ei(vi, yi[Ai].prototype), os ? vi.hcEvents = os : delete vi.hcEvents;
+                os = Object.hasOwnProperty.call(yi, "hcEvents") && yi.hcEvents;
+                for (ls in ss)
+                  yi[ls] = void 0;
+                si(yi, Si[Ei].prototype), os ? yi.hcEvents = os : delete yi.hcEvents;
               }
           } else
-            pi(17, !0, zi, { missingModuleFor: Ai });
-          if (Ii.forEach(function(Yi) {
-            vi[Yi] = Ii[Yi];
-          }), vi.init(zi, ri), $i && this.points) {
-            if (ri = vi.options, ri.visible === !1)
+            fi(17, !0, Gi, { missingModuleFor: Ei });
+          if (Ii.forEach(function(Fi) {
+            yi[Fi] = Ii[Fi];
+          }), yi.init(Gi, ai), Ji && this.points) {
+            if (ai = yi.options, ai.visible === !1)
               ns.graphic = 1, ns.dataLabel = 1;
-            else if (!vi._hasPointLabels) {
-              const { marker: Yi, dataLabels: _i } = ri;
-              Xi = Xi.marker || {}, !Yi || Yi.enabled !== !1 && Xi.symbol === Yi.symbol && Xi.height === Yi.height && Xi.width === Yi.width || (ns.graphic = 1), _i && _i.enabled === !1 && (ns.dataLabel = 1);
+            else if (!yi._hasPointLabels) {
+              const { marker: Fi, dataLabels: Qi } = ai;
+              Xi = Xi.marker || {}, !Fi || Fi.enabled !== !1 && Xi.symbol === Fi.symbol && Xi.height === Fi.height && Xi.width === Fi.width || (ns.graphic = 1), Qi && Qi.enabled === !1 && (ns.dataLabel = 1);
             }
-            for (const Yi of this.points)
-              Yi && Yi.series && (Yi.resolveColor(), Object.keys(ns).length && Yi.destroyElements(ns), ri.showInLegend === !1 && Yi.legendItem && zi.legend.destroyItem(Yi));
+            for (const Fi of this.points)
+              Fi && Fi.series && (Fi.resolveColor(), Object.keys(ns).length && Fi.destroyElements(ns), ai.showInLegend === !1 && Fi.legendItem && Gi.legend.destroyItem(Fi));
           }
-          vi.initialType = Gi, zi.linkSeries(), Ji && vi.linkedSeries.length && (vi.isDirtyData = !0), ii(this, "afterUpdate"), Bi(mi, !0) && zi.redraw($i ? void 0 : !1);
+          yi.initialType = Wi, Gi.linkSeries(), ts && yi.linkedSeries.length && (yi.isDirtyData = !0), oi(this, "afterUpdate"), Bi(xi, !0) && Gi.redraw(Ji ? void 0 : !1);
         }
-        setName(ri) {
-          this.name = this.options.name = this.userOptions.name = ri, this.chart.isDirtyLegend = !0;
+        setName(ai) {
+          this.name = this.options.name = this.userOptions.name = ai, this.chart.isDirtyLegend = !0;
         }
-        hasOptionChanged(ri) {
-          const mi = this.options[ri], vi = this.chart.options.plotOptions, zi = this.userOptions[ri];
-          return zi ? mi !== zi : mi !== Bi(vi && vi[this.type] && vi[this.type][ri], vi && vi.series && vi.series[ri], mi);
+        hasOptionChanged(ai) {
+          const xi = this.options[ai], yi = this.chart.options.plotOptions, Gi = this.userOptions[ai];
+          return Gi ? xi !== Gi : xi !== Bi(yi && yi[this.type] && yi[this.type][ai], yi && yi.series && yi.series[ai], xi);
         }
         onMouseOver() {
-          const ri = this.chart, mi = ri.hoverSeries;
-          ri.pointer.setHoverChartIndex(), mi && mi !== this && mi.onMouseOut(), this.options.events.mouseOver && ii(this, "mouseOver"), this.setState("hover"), ri.hoverSeries = this;
+          const ai = this.chart, xi = ai.hoverSeries;
+          ai.pointer.setHoverChartIndex(), xi && xi !== this && xi.onMouseOut(), this.options.events.mouseOver && oi(this, "mouseOver"), this.setState("hover"), ai.hoverSeries = this;
         }
         onMouseOut() {
-          const ri = this.options, mi = this.chart, vi = mi.tooltip, zi = mi.hoverPoint;
-          mi.hoverSeries = null, zi && zi.onMouseOut(), this && ri.events.mouseOut && ii(this, "mouseOut"), !vi || this.stickyTracking || vi.shared && !this.noSharedTooltip || vi.hide(), mi.series.forEach(function(Xi) {
+          const ai = this.options, xi = this.chart, yi = xi.tooltip, Gi = xi.hoverPoint;
+          xi.hoverSeries = null, Gi && Gi.onMouseOut(), this && ai.events.mouseOut && oi(this, "mouseOut"), !yi || this.stickyTracking || yi.shared && !this.noSharedTooltip || yi.hide(), xi.series.forEach(function(Xi) {
             Xi.setState(
               "",
               !0
             );
           });
         }
-        setState(ri, mi) {
-          const vi = this;
-          var zi = vi.options;
-          const Xi = vi.graph, Gi = zi.inactiveOtherPoints, Ji = zi.states, es = Bi(Ji[ri || "normal"] && Ji[ri || "normal"].animation, vi.chart.options.chart.animation);
-          let os = zi.lineWidth, ns = 0, ls = zi.opacity;
-          if (ri = ri || "", vi.state !== ri && ([vi.group, vi.markerGroup, vi.dataLabelsGroup].forEach(function(Ii) {
-            Ii && (vi.state && Ii.removeClass("highcharts-series-" + vi.state), ri && Ii.addClass("highcharts-series-" + ri));
-          }), vi.state = ri, !vi.chart.styledMode)) {
-            if (Ji[ri] && Ji[ri].enabled === !1)
+        setState(ai, xi) {
+          const yi = this;
+          var Gi = yi.options;
+          const Xi = yi.graph, Wi = Gi.inactiveOtherPoints, ts = Gi.states, ss = Bi(ts[ai || "normal"] && ts[ai || "normal"].animation, yi.chart.options.chart.animation);
+          let os = Gi.lineWidth, ns = 0, ls = Gi.opacity;
+          if (ai = ai || "", yi.state !== ai && ([yi.group, yi.markerGroup, yi.dataLabelsGroup].forEach(function(Ii) {
+            Ii && (yi.state && Ii.removeClass("highcharts-series-" + yi.state), ai && Ii.addClass("highcharts-series-" + ai));
+          }), yi.state = ai, !yi.chart.styledMode)) {
+            if (ts[ai] && ts[ai].enabled === !1)
               return;
-            if (ri && (os = Ji[ri].lineWidth || os + (Ji[ri].lineWidthPlus || 0), ls = Bi(Ji[ri].opacity, ls)), Xi && !Xi.dashstyle && Pi(os))
-              for (zi = { "stroke-width": os }, Xi.animate(zi, es); vi["zone-graph-" + ns]; )
-                vi["zone-graph-" + ns].animate(zi, es), ns += 1;
-            Gi || [vi.group, vi.markerGroup, vi.dataLabelsGroup, vi.labelBySeries].forEach(function(Ii) {
-              Ii && Ii.animate({ opacity: ls }, es);
+            if (ai && (os = ts[ai].lineWidth || os + (ts[ai].lineWidthPlus || 0), ls = Bi(ts[ai].opacity, ls)), Xi && !Xi.dashstyle && Li(os))
+              for (Gi = { "stroke-width": os }, Xi.animate(Gi, ss); yi["zone-graph-" + ns]; )
+                yi["zone-graph-" + ns].animate(Gi, ss), ns += 1;
+            Wi || [yi.group, yi.markerGroup, yi.dataLabelsGroup, yi.labelBySeries].forEach(function(Ii) {
+              Ii && Ii.animate({ opacity: ls }, ss);
             });
           }
-          mi && Gi && vi.points && vi.setAllPointsToState(ri || void 0);
+          xi && Wi && yi.points && yi.setAllPointsToState(ai || void 0);
         }
-        setAllPointsToState(ri) {
-          this.points.forEach(function(mi) {
-            mi.setState && mi.setState(ri);
+        setAllPointsToState(ai) {
+          this.points.forEach(function(xi) {
+            xi.setState && xi.setState(ai);
           });
         }
-        setVisible(ri, mi) {
-          const vi = this, zi = vi.chart, Xi = zi.options.chart.ignoreHiddenSeries, Gi = vi.visible, Ji = (vi.visible = ri = vi.options.visible = vi.userOptions.visible = typeof ri > "u" ? !Gi : ri) ? "show" : "hide";
-          ["group", "dataLabelsGroup", "markerGroup", "tracker", "tt"].forEach(function(es) {
-            vi[es] && vi[es][Ji]();
-          }), (zi.hoverSeries === vi || (zi.hoverPoint && zi.hoverPoint.series) === vi) && vi.onMouseOut(), vi.legendItem && zi.legend.colorizeItem(vi, ri), vi.isDirty = !0, vi.options.stacking && zi.series.forEach(function(es) {
-            es.options.stacking && es.visible && (es.isDirty = !0);
-          }), vi.linkedSeries.forEach(function(es) {
-            es.setVisible(ri, !1);
-          }), Xi && (zi.isDirtyBox = !0), ii(vi, Ji), mi !== !1 && zi.redraw();
+        setVisible(ai, xi) {
+          const yi = this, Gi = yi.chart, Xi = Gi.options.chart.ignoreHiddenSeries, Wi = yi.visible, ts = (yi.visible = ai = yi.options.visible = yi.userOptions.visible = typeof ai > "u" ? !Wi : ai) ? "show" : "hide";
+          ["group", "dataLabelsGroup", "markerGroup", "tracker", "tt"].forEach(function(ss) {
+            yi[ss] && yi[ss][ts]();
+          }), (Gi.hoverSeries === yi || (Gi.hoverPoint && Gi.hoverPoint.series) === yi) && yi.onMouseOut(), yi.legendItem && Gi.legend.colorizeItem(yi, ai), yi.isDirty = !0, yi.options.stacking && Gi.series.forEach(function(ss) {
+            ss.options.stacking && ss.visible && (ss.isDirty = !0);
+          }), yi.linkedSeries.forEach(function(ss) {
+            ss.setVisible(ai, !1);
+          }), Xi && (Gi.isDirtyBox = !0), oi(yi, ts), xi !== !1 && Gi.redraw();
         }
         show() {
           this.setVisible(!0);
@@ -4649,18 +4648,18 @@ var highcharts = { exports: {} };
         hide() {
           this.setVisible(!1);
         }
-        select(ri) {
-          this.selected = ri = this.options.selected = typeof ri > "u" ? !this.selected : ri, this.checkbox && (this.checkbox.checked = ri), ii(this, ri ? "select" : "unselect");
+        select(ai) {
+          this.selected = ai = this.options.selected = typeof ai > "u" ? !this.selected : ai, this.checkbox && (this.checkbox.checked = ai), oi(this, ai ? "select" : "unselect");
         }
-        shouldShowTooltip(ri, mi, vi = {}) {
-          return vi.series = this, vi.visiblePlotOnly = !0, this.chart.isInsidePlot(ri, mi, vi);
+        shouldShowTooltip(ai, xi, yi = {}) {
+          return yi.series = this, yi.visiblePlotOnly = !0, this.chart.isInsidePlot(ai, xi, yi);
         }
-        drawLegendSymbol(ri, mi) {
-          var vi;
-          (vi = Qi[this.options.legendSymbol || "rectangle"]) === null || vi === void 0 || vi.call(this, ri, mi);
+        drawLegendSymbol(ai, xi) {
+          var yi;
+          (yi = Yi[this.options.legendSymbol || "rectangle"]) === null || yi === void 0 || yi.call(this, ai, xi);
         }
       }
-      return Di.defaultOptions = ss, Di.types = Wi.seriesTypes, Di.registerType = Wi.registerSeriesType, ei(Di.prototype, {
+      return Ri.defaultOptions = is, Ri.types = $i.seriesTypes, Ri.registerType = $i.registerSeriesType, si(Ri.prototype, {
         axisTypes: ["xAxis", "yAxis"],
         coll: "series",
         colorCounter: 0,
@@ -4669,82 +4668,82 @@ var highcharts = { exports: {} };
         isCartesian: !0,
         kdAxisArray: ["clientX", "plotY"],
         parallelArrays: ["x", "y"],
-        pointClass: is,
+        pointClass: es,
         requireSorting: !0,
         sorted: !0
-      }), Wi.series = Di, Di;
-    }), ci(oi, "Core/Chart/Chart.js", [
-      oi["Core/Animation/AnimationUtilities.js"],
-      oi["Core/Axis/Axis.js"],
-      oi["Core/Defaults.js"],
-      oi["Core/Templating.js"],
-      oi["Core/Foundation.js"],
-      oi["Core/Globals.js"],
-      oi["Core/Renderer/RendererRegistry.js"],
-      oi["Core/Series/Series.js"],
-      oi["Core/Series/SeriesRegistry.js"],
-      oi["Core/Renderer/SVG/SVGRenderer.js"],
-      oi["Core/Time.js"],
-      oi["Core/Utilities.js"],
-      oi["Core/Renderer/HTML/AST.js"]
-    ], function(Si, ji, qi, ts, Qi, is, ss, Wi, Ki, Ui, ki, bi, Ri) {
-      const { animate: Ni, animObject: fi, setAnimation: Ci } = Si, { defaultOptions: wi, defaultTime: yi } = qi, { numberFormat: Ti } = ts, { registerEventOptions: Mi } = Qi, { charts: Oi, doc: ai, marginNames: li, svg: xi, win: di } = is, { seriesTypes: pi } = Ki, {
-        addEvent: ei,
-        attr: Fe,
-        createElement: ii,
-        css: hi,
-        defined: gi,
-        diffObjects: Ei,
-        discardElement: ni,
-        erase: Pi,
-        error: Fi,
+      }), $i.series = Ri, Ri;
+    }), ri(ii, "Core/Chart/Chart.js", [
+      ii["Core/Animation/AnimationUtilities.js"],
+      ii["Core/Axis/Axis.js"],
+      ii["Core/Defaults.js"],
+      ii["Core/Templating.js"],
+      ii["Core/Foundation.js"],
+      ii["Core/Globals.js"],
+      ii["Core/Renderer/RendererRegistry.js"],
+      ii["Core/Series/Series.js"],
+      ii["Core/Series/SeriesRegistry.js"],
+      ii["Core/Renderer/SVG/SVGRenderer.js"],
+      ii["Core/Time.js"],
+      ii["Core/Utilities.js"],
+      ii["Core/Renderer/HTML/AST.js"]
+    ], function(li, Ci, zi, Ki, Yi, es, is, $i, Vi, _i, bi, Ai, ji) {
+      const { animate: Ni, animObject: gi, setAnimation: ki } = li, { defaultOptions: wi, defaultTime: Si } = zi, { numberFormat: Ti } = Ki, { registerEventOptions: Mi } = Yi, { charts: Di, doc: ci, marginNames: pi, svg: vi, win: ui } = es, { seriesTypes: fi } = Vi, {
+        addEvent: si,
+        attr: ti,
+        createElement: oi,
+        css: di,
+        defined: mi,
+        diffObjects: Oi,
+        discardElement: hi,
+        erase: Li,
+        error: Ui,
         extend: Zi,
         find: rs,
         fireEvent: Bi,
-        getStyle: si,
-        isArray: Li,
+        getStyle: ni,
+        isArray: Pi,
         isNumber: Hi,
-        isObject: Di,
-        isString: Vi,
-        merge: ri,
-        objectEach: mi,
-        pick: vi,
-        pInt: zi,
+        isObject: Ri,
+        isString: qi,
+        merge: ai,
+        objectEach: xi,
+        pick: yi,
+        pInt: Gi,
         relativeLength: Xi,
-        removeEvent: Gi,
-        splat: Ji,
-        syncTimeout: es,
+        removeEvent: Wi,
+        splat: ts,
+        syncTimeout: ss,
         uniqueKey: os
-      } = bi;
+      } = Ai;
       class ns {
-        static chart(Ii, Ai, $i) {
-          return new ns(Ii, Ai, $i);
+        static chart(Ii, Ei, Ji) {
+          return new ns(Ii, Ei, Ji);
         }
-        constructor(Ii, Ai, $i) {
-          this.series = this.renderTo = this.renderer = this.pointer = this.pointCount = this.plotWidth = this.plotTop = this.plotLeft = this.plotHeight = this.plotBox = this.options = this.numberFormatter = this.margin = this.labelCollectors = this.isResizing = this.index = this.eventOptions = this.container = this.colorCounter = this.clipBox = this.chartWidth = this.chartHeight = this.bounds = this.axisOffset = this.axes = void 0, this.sharedClips = {}, this.zooming = this.yAxis = this.xAxis = this.userOptions = this.titleOffset = this.time = this.symbolCounter = this.spacingBox = this.spacing = void 0, this.getArgs(Ii, Ai, $i);
+        constructor(Ii, Ei, Ji) {
+          this.series = this.renderTo = this.renderer = this.pointer = this.pointCount = this.plotWidth = this.plotTop = this.plotLeft = this.plotHeight = this.plotBox = this.options = this.numberFormatter = this.margin = this.labelCollectors = this.isResizing = this.index = this.eventOptions = this.container = this.colorCounter = this.clipBox = this.chartWidth = this.chartHeight = this.bounds = this.axisOffset = this.axes = void 0, this.sharedClips = {}, this.zooming = this.yAxis = this.xAxis = this.userOptions = this.titleOffset = this.time = this.symbolCounter = this.spacingBox = this.spacing = void 0, this.getArgs(Ii, Ei, Ji);
         }
-        getArgs(Ii, Ai, $i) {
-          Vi(Ii) || Ii.nodeName ? (this.renderTo = Ii, this.init(Ai, $i)) : this.init(Ii, Ai);
+        getArgs(Ii, Ei, Ji) {
+          qi(Ii) || Ii.nodeName ? (this.renderTo = Ii, this.init(Ei, Ji)) : this.init(Ii, Ei);
         }
         setZoomOptions() {
-          const Ii = this.options.chart, Ai = Ii.zooming;
-          this.zooming = Object.assign(Object.assign({}, Ai), { type: vi(Ii.zoomType, Ai.type), key: vi(Ii.zoomKey, Ai.key), pinchType: vi(Ii.pinchType, Ai.pinchType), singleTouch: vi(
+          const Ii = this.options.chart, Ei = Ii.zooming;
+          this.zooming = Object.assign(Object.assign({}, Ei), { type: yi(Ii.zoomType, Ei.type), key: yi(Ii.zoomKey, Ei.key), pinchType: yi(Ii.pinchType, Ei.pinchType), singleTouch: yi(
             Ii.zoomBySingleTouch,
-            Ai.singleTouch,
+            Ei.singleTouch,
             !1
-          ), resetButton: ri(Ai.resetButton, Ii.resetZoomButton) });
+          ), resetButton: ai(Ei.resetButton, Ii.resetZoomButton) });
         }
-        init(Ii, Ai) {
+        init(Ii, Ei) {
           Bi(this, "init", { args: arguments }, function() {
-            const $i = ri(wi, Ii), Yi = $i.chart;
-            this.userOptions = Zi({}, Ii), this.margin = [], this.spacing = [], this.bounds = { h: {}, v: {} }, this.labelCollectors = [], this.callback = Ai, this.isResizing = 0, this.options = $i, this.axes = [], this.series = [], this.time = Ii.time && Object.keys(Ii.time).length ? new ki(Ii.time) : is.time, this.numberFormatter = Yi.numberFormatter || Ti, this.styledMode = Yi.styledMode, this.hasCartesianSeries = Yi.showAxes, this.index = Oi.length, Oi.push(this), is.chartCount++, Mi(this, Yi), this.xAxis = [], this.yAxis = [], this.pointCount = this.colorCounter = this.symbolCounter = 0, this.setZoomOptions(), Bi(this, "afterInit"), this.firstRender();
+            const Ji = ai(wi, Ii), Fi = Ji.chart;
+            this.userOptions = Zi({}, Ii), this.margin = [], this.spacing = [], this.bounds = { h: {}, v: {} }, this.labelCollectors = [], this.callback = Ei, this.isResizing = 0, this.options = Ji, this.axes = [], this.series = [], this.time = Ii.time && Object.keys(Ii.time).length ? new bi(Ii.time) : es.time, this.numberFormatter = Fi.numberFormatter || Ti, this.styledMode = Fi.styledMode, this.hasCartesianSeries = Fi.showAxes, this.index = Di.length, Di.push(this), es.chartCount++, Mi(this, Fi), this.xAxis = [], this.yAxis = [], this.pointCount = this.colorCounter = this.symbolCounter = 0, this.setZoomOptions(), Bi(this, "afterInit"), this.firstRender();
           });
         }
         initSeries(Ii) {
-          var Ai = this.options.chart;
-          Ai = Ii.type || Ai.type;
-          const $i = pi[Ai];
-          return $i || Fi(17, !0, this, { missingModuleFor: Ai }), Ai = new $i(), typeof Ai.init == "function" && Ai.init(this, Ii), Ai;
+          var Ei = this.options.chart;
+          Ei = Ii.type || Ei.type;
+          const Ji = fi[Ei];
+          return Ji || Ui(17, !0, this, { missingModuleFor: Ei }), Ei = new Ji(), typeof Ei.init == "function" && Ei.init(this, Ii), Ei;
         }
         setSeriesData() {
           this.getSeriesOrderByLinks().forEach(function(Ii) {
@@ -4752,87 +4751,87 @@ var highcharts = { exports: {} };
           });
         }
         getSeriesOrderByLinks() {
-          return this.series.concat().sort(function(Ii, Ai) {
-            return Ii.linkedSeries.length || Ai.linkedSeries.length ? Ai.linkedSeries.length - Ii.linkedSeries.length : 0;
+          return this.series.concat().sort(function(Ii, Ei) {
+            return Ii.linkedSeries.length || Ei.linkedSeries.length ? Ei.linkedSeries.length - Ii.linkedSeries.length : 0;
           });
         }
-        orderItems(Ii, Ai = 0) {
-          const $i = this[Ii], Yi = this.options[Ii] = Ji(this.options[Ii]).slice();
-          if (Ii = this.userOptions[Ii] = this.userOptions[Ii] ? Ji(this.userOptions[Ii]).slice() : [], this.hasRendered && (Yi.splice(Ai), Ii.splice(Ai)), $i)
-            for (let _i = Ai, hs = $i.length; _i < hs; ++_i)
-              (Ai = $i[_i]) && (Ai.index = _i, Ai instanceof Wi && (Ai.name = Ai.getName()), Ai.options.isInternal || (Yi[_i] = Ai.options, Ii[_i] = Ai.userOptions));
+        orderItems(Ii, Ei = 0) {
+          const Ji = this[Ii], Fi = this.options[Ii] = ts(this.options[Ii]).slice();
+          if (Ii = this.userOptions[Ii] = this.userOptions[Ii] ? ts(this.userOptions[Ii]).slice() : [], this.hasRendered && (Fi.splice(Ei), Ii.splice(Ei)), Ji)
+            for (let Qi = Ei, hs = Ji.length; Qi < hs; ++Qi)
+              (Ei = Ji[Qi]) && (Ei.index = Qi, Ei instanceof $i && (Ei.name = Ei.getName()), Ei.options.isInternal || (Fi[Qi] = Ei.options, Ii[Qi] = Ei.userOptions));
         }
-        isInsidePlot(Ii, Ai, $i = {}) {
+        isInsidePlot(Ii, Ei, Ji = {}) {
           const {
-            inverted: Yi,
-            plotBox: _i,
+            inverted: Fi,
+            plotBox: Qi,
             plotLeft: hs,
             plotTop: as,
-            scrollablePlotBox: us
+            scrollablePlotBox: ps
           } = this;
-          var ps = 0;
+          var us = 0;
           let cs = 0;
-          $i.visiblePlotOnly && this.scrollingContainer && ({ scrollLeft: ps, scrollTop: cs } = this.scrollingContainer);
-          const ds = $i.series, ms = $i.visiblePlotOnly && us || _i;
-          var fs = $i.inverted ? Ai : Ii;
-          if (Ai = $i.inverted ? Ii : Ai, Ii = { x: fs, y: Ai, isInsidePlot: !0, options: $i }, !$i.ignoreX) {
-            const gs = ds && (Yi && !this.polar ? ds.yAxis : ds.xAxis) || { pos: hs, len: 1 / 0 };
-            fs = $i.paneCoordinates ? gs.pos + fs : hs + fs, fs >= Math.max(ps + hs, gs.pos) && fs <= Math.min(ps + hs + ms.width, gs.pos + gs.len) || (Ii.isInsidePlot = !1);
+          Ji.visiblePlotOnly && this.scrollingContainer && ({ scrollLeft: us, scrollTop: cs } = this.scrollingContainer);
+          const ds = Ji.series, ms = Ji.visiblePlotOnly && ps || Qi;
+          var fs = Ji.inverted ? Ei : Ii;
+          if (Ei = Ji.inverted ? Ii : Ei, Ii = { x: fs, y: Ei, isInsidePlot: !0, options: Ji }, !Ji.ignoreX) {
+            const gs = ds && (Fi && !this.polar ? ds.yAxis : ds.xAxis) || { pos: hs, len: 1 / 0 };
+            fs = Ji.paneCoordinates ? gs.pos + fs : hs + fs, fs >= Math.max(us + hs, gs.pos) && fs <= Math.min(us + hs + ms.width, gs.pos + gs.len) || (Ii.isInsidePlot = !1);
           }
-          return !$i.ignoreY && Ii.isInsidePlot && (ps = !Yi && $i.axis && !$i.axis.isXAxis && $i.axis || ds && (Yi ? ds.xAxis : ds.yAxis) || { pos: as, len: 1 / 0 }, $i = $i.paneCoordinates ? ps.pos + Ai : as + Ai, $i >= Math.max(cs + as, ps.pos) && $i <= Math.min(cs + as + ms.height, ps.pos + ps.len) || (Ii.isInsidePlot = !1)), Bi(this, "afterIsInsidePlot", Ii), Ii.isInsidePlot;
+          return !Ji.ignoreY && Ii.isInsidePlot && (us = !Fi && Ji.axis && !Ji.axis.isXAxis && Ji.axis || ds && (Fi ? ds.xAxis : ds.yAxis) || { pos: as, len: 1 / 0 }, Ji = Ji.paneCoordinates ? us.pos + Ei : as + Ei, Ji >= Math.max(cs + as, us.pos) && Ji <= Math.min(cs + as + ms.height, us.pos + us.len) || (Ii.isInsidePlot = !1)), Bi(this, "afterIsInsidePlot", Ii), Ii.isInsidePlot;
         }
         redraw(Ii) {
           Bi(this, "beforeRedraw");
-          const Ai = this.hasCartesianSeries ? this.axes : this.colorAxis || [], $i = this.series, Yi = this.pointer, _i = this.legend, hs = this.userOptions.legend, as = this.renderer, us = as.isHidden(), ps = [];
+          const Ei = this.hasCartesianSeries ? this.axes : this.colorAxis || [], Ji = this.series, Fi = this.pointer, Qi = this.legend, hs = this.userOptions.legend, as = this.renderer, ps = as.isHidden(), us = [];
           let cs, ds, ms = this.isDirtyBox, fs = this.isDirtyLegend, gs;
-          for (as.rootFontSize = as.boxWrapper.getStyle("font-size"), this.setResponsive && this.setResponsive(!1), Ci(this.hasRendered ? Ii : !1, this), us && this.temporaryDisplay(), this.layOutTitles(!1), Ii = $i.length; Ii--; )
-            if (gs = $i[Ii], (gs.options.stacking || gs.options.centerInCategory) && (ds = !0, gs.isDirty)) {
+          for (as.rootFontSize = as.boxWrapper.getStyle("font-size"), this.setResponsive && this.setResponsive(!1), ki(this.hasRendered ? Ii : !1, this), ps && this.temporaryDisplay(), this.layOutTitles(!1), Ii = Ji.length; Ii--; )
+            if (gs = Ji[Ii], (gs.options.stacking || gs.options.centerInCategory) && (ds = !0, gs.isDirty)) {
               cs = !0;
               break;
             }
           if (cs)
-            for (Ii = $i.length; Ii--; )
-              gs = $i[Ii], gs.options.stacking && (gs.isDirty = !0);
-          $i.forEach(function(xs) {
+            for (Ii = Ji.length; Ii--; )
+              gs = Ji[Ii], gs.options.stacking && (gs.isDirty = !0);
+          Ji.forEach(function(xs) {
             xs.isDirty && (xs.options.legendType === "point" ? (typeof xs.updateTotals == "function" && xs.updateTotals(), fs = !0) : hs && (hs.labelFormatter || hs.labelFormat) && (fs = !0)), xs.isDirtyData && Bi(xs, "updatedData");
-          }), fs && _i && _i.options.enabled && (_i.render(), this.isDirtyLegend = !1), ds && this.getStacks(), Ai.forEach(function(xs) {
+          }), fs && Qi && Qi.options.enabled && (Qi.render(), this.isDirtyLegend = !1), ds && this.getStacks(), Ei.forEach(function(xs) {
             xs.updateNames(), xs.setScale();
-          }), this.getMargins(), Ai.forEach(function(xs) {
+          }), this.getMargins(), Ei.forEach(function(xs) {
             xs.isDirty && (ms = !0);
-          }), Ai.forEach(function(xs) {
+          }), Ei.forEach(function(xs) {
             const Ss = xs.min + "," + xs.max;
-            xs.extKey !== Ss && (xs.extKey = Ss, ps.push(function() {
+            xs.extKey !== Ss && (xs.extKey = Ss, us.push(function() {
               Bi(xs, "afterSetExtremes", Zi(xs.eventArgs, xs.getExtremes())), delete xs.eventArgs;
             })), (ms || ds) && xs.redraw();
-          }), ms && this.drawChartBox(), Bi(this, "predraw"), $i.forEach(function(xs) {
+          }), ms && this.drawChartBox(), Bi(this, "predraw"), Ji.forEach(function(xs) {
             (ms || xs.isDirty) && xs.visible && xs.redraw(), xs.isDirtyData = !1;
-          }), Yi && Yi.reset(!0), as.draw(), Bi(this, "redraw"), Bi(this, "render"), us && this.temporaryDisplay(!0), ps.forEach(function(xs) {
+          }), Fi && Fi.reset(!0), as.draw(), Bi(this, "redraw"), Bi(this, "render"), ps && this.temporaryDisplay(!0), us.forEach(function(xs) {
             xs.call();
           });
         }
         get(Ii) {
-          function Ai(_i) {
-            return _i.id === Ii || _i.options && _i.options.id === Ii;
+          function Ei(Qi) {
+            return Qi.id === Ii || Qi.options && Qi.options.id === Ii;
           }
-          const $i = this.series;
-          let Yi = rs(this.axes, Ai) || rs(this.series, Ai);
-          for (let _i = 0; !Yi && _i < $i.length; _i++)
-            Yi = rs($i[_i].points || [], Ai);
-          return Yi;
+          const Ji = this.series;
+          let Fi = rs(this.axes, Ei) || rs(this.series, Ei);
+          for (let Qi = 0; !Fi && Qi < Ji.length; Qi++)
+            Fi = rs(Ji[Qi].points || [], Ei);
+          return Fi;
         }
         getAxes() {
           const Ii = this.options;
           Bi(this, "getAxes");
-          for (const Ai of ["xAxis", "yAxis"]) {
-            const $i = Ii[Ai] = Ji(Ii[Ai] || {});
-            for (const Yi of $i)
-              new ji(this, Yi, Ai);
+          for (const Ei of ["xAxis", "yAxis"]) {
+            const Ji = Ii[Ei] = ts(Ii[Ei] || {});
+            for (const Fi of Ji)
+              new Ci(this, Fi, Ei);
           }
           Bi(this, "afterGetAxes");
         }
         getSelectedPoints() {
-          return this.series.reduce((Ii, Ai) => (Ai.getPointsCollection().forEach(($i) => {
-            vi($i.selectedStaging, $i.selected) && Ii.push($i);
+          return this.series.reduce((Ii, Ei) => (Ei.getPointsCollection().forEach((Ji) => {
+            yi(Ji.selectedStaging, Ji.selected) && Ii.push(Ji);
           }), Ii), []);
         }
         getSelectedSeries() {
@@ -4840,181 +4839,181 @@ var highcharts = { exports: {} };
             return Ii.selected;
           });
         }
-        setTitle(Ii, Ai, $i) {
-          this.applyDescription("title", Ii), this.applyDescription("subtitle", Ai), this.applyDescription("caption", void 0), this.layOutTitles($i);
+        setTitle(Ii, Ei, Ji) {
+          this.applyDescription("title", Ii), this.applyDescription("subtitle", Ei), this.applyDescription("caption", void 0), this.layOutTitles(Ji);
         }
-        applyDescription(Ii, Ai) {
-          const $i = this, Yi = this.options[Ii] = ri(this.options[Ii], Ai);
-          let _i = this[Ii];
-          _i && Ai && (this[Ii] = _i = _i.destroy()), Yi && !_i && (_i = this.renderer.text(Yi.text, 0, 0, Yi.useHTML).attr({
-            align: Yi.align,
+        applyDescription(Ii, Ei) {
+          const Ji = this, Fi = this.options[Ii] = ai(this.options[Ii], Ei);
+          let Qi = this[Ii];
+          Qi && Ei && (this[Ii] = Qi = Qi.destroy()), Fi && !Qi && (Qi = this.renderer.text(Fi.text, 0, 0, Fi.useHTML).attr({
+            align: Fi.align,
             class: "highcharts-" + Ii,
-            zIndex: Yi.zIndex || 4
-          }).add(), _i.update = function(hs, as) {
-            $i.applyDescription(Ii, hs), $i.layOutTitles(as);
-          }, this.styledMode || _i.css(Zi(Ii === "title" ? { fontSize: this.options.isStock ? "1em" : "1.2em" } : {}, Yi.style)), this[Ii] = _i);
+            zIndex: Fi.zIndex || 4
+          }).add(), Qi.update = function(hs, as) {
+            Ji.applyDescription(Ii, hs), Ji.layOutTitles(as);
+          }, this.styledMode || Qi.css(Zi(Ii === "title" ? { fontSize: this.options.isStock ? "1em" : "1.2em" } : {}, Fi.style)), this[Ii] = Qi);
         }
         layOutTitles(Ii = !0) {
-          const Ai = [0, 0, 0], $i = this.renderer, Yi = this.spacingBox;
+          const Ei = [0, 0, 0], Ji = this.renderer, Fi = this.spacingBox;
           ["title", "subtitle", "caption"].forEach(function(hs) {
-            const as = this[hs], us = this.options[hs], ps = us.verticalAlign || "top";
-            if (hs = hs === "title" ? ps === "top" ? -3 : 0 : ps === "top" ? Ai[0] + 2 : 0, as) {
-              as.css({ width: (us.width || Yi.width + (us.widthAdjust || 0)) + "px" });
-              const cs = $i.fontMetrics(as).b, ds = Math.round(as.getBBox(us.useHTML).height);
-              as.align(Zi({ y: ps === "bottom" ? cs : hs + cs, height: ds }, us), !1, "spacingBox"), us.floating || (ps === "top" ? Ai[0] = Math.ceil(Ai[0] + ds) : ps === "bottom" && (Ai[2] = Math.ceil(Ai[2] + ds)));
+            const as = this[hs], ps = this.options[hs], us = ps.verticalAlign || "top";
+            if (hs = hs === "title" ? us === "top" ? -3 : 0 : us === "top" ? Ei[0] + 2 : 0, as) {
+              as.css({ width: (ps.width || Fi.width + (ps.widthAdjust || 0)) + "px" });
+              const cs = Ji.fontMetrics(as).b, ds = Math.round(as.getBBox(ps.useHTML).height);
+              as.align(Zi({ y: us === "bottom" ? cs : hs + cs, height: ds }, ps), !1, "spacingBox"), ps.floating || (us === "top" ? Ei[0] = Math.ceil(Ei[0] + ds) : us === "bottom" && (Ei[2] = Math.ceil(Ei[2] + ds)));
             }
-          }, this), Ai[0] && (this.options.title.verticalAlign || "top") === "top" && (Ai[0] += this.options.title.margin), Ai[2] && this.options.caption.verticalAlign === "bottom" && (Ai[2] += this.options.caption.margin);
-          const _i = !this.titleOffset || this.titleOffset.join(",") !== Ai.join(",");
-          this.titleOffset = Ai, Bi(this, "afterLayOutTitles"), !this.isDirtyBox && _i && (this.isDirtyBox = this.isDirtyLegend = _i, this.hasRendered && Ii && this.isDirtyBox && this.redraw());
+          }, this), Ei[0] && (this.options.title.verticalAlign || "top") === "top" && (Ei[0] += this.options.title.margin), Ei[2] && this.options.caption.verticalAlign === "bottom" && (Ei[2] += this.options.caption.margin);
+          const Qi = !this.titleOffset || this.titleOffset.join(",") !== Ei.join(",");
+          this.titleOffset = Ei, Bi(this, "afterLayOutTitles"), !this.isDirtyBox && Qi && (this.isDirtyBox = this.isDirtyLegend = Qi, this.hasRendered && Ii && this.isDirtyBox && this.redraw());
         }
         getContainerBox() {
-          return { width: si(this.renderTo, "width", !0) || 0, height: si(this.renderTo, "height", !0) || 0 };
+          return { width: ni(this.renderTo, "width", !0) || 0, height: ni(this.renderTo, "height", !0) || 0 };
         }
         getChartSize() {
           var Ii = this.options.chart;
-          const Ai = Ii.width;
+          const Ei = Ii.width;
           Ii = Ii.height;
-          const $i = this.getContainerBox();
-          this.chartWidth = Math.max(0, Ai || $i.width || 600), this.chartHeight = Math.max(0, Xi(Ii, this.chartWidth) || (1 < $i.height ? $i.height : 400)), this.containerBox = $i;
+          const Ji = this.getContainerBox();
+          this.chartWidth = Math.max(0, Ei || Ji.width || 600), this.chartHeight = Math.max(0, Xi(Ii, this.chartWidth) || (1 < Ji.height ? Ji.height : 400)), this.containerBox = Ji;
         }
         temporaryDisplay(Ii) {
-          let Ai = this.renderTo;
+          let Ei = this.renderTo;
           if (Ii)
-            for (; Ai && Ai.style; )
-              Ai.hcOrigStyle && (hi(Ai, Ai.hcOrigStyle), delete Ai.hcOrigStyle), Ai.hcOrigDetached && (ai.body.removeChild(Ai), Ai.hcOrigDetached = !1), Ai = Ai.parentNode;
+            for (; Ei && Ei.style; )
+              Ei.hcOrigStyle && (di(Ei, Ei.hcOrigStyle), delete Ei.hcOrigStyle), Ei.hcOrigDetached && (ci.body.removeChild(Ei), Ei.hcOrigDetached = !1), Ei = Ei.parentNode;
           else
-            for (; Ai && Ai.style && (ai.body.contains(Ai) || Ai.parentNode || (Ai.hcOrigDetached = !0, ai.body.appendChild(Ai)), (si(Ai, "display", !1) === "none" || Ai.hcOricDetached) && (Ai.hcOrigStyle = { display: Ai.style.display, height: Ai.style.height, overflow: Ai.style.overflow }, Ii = { display: "block", overflow: "hidden" }, Ai !== this.renderTo && (Ii.height = 0), hi(Ai, Ii), Ai.offsetWidth || Ai.style.setProperty(
+            for (; Ei && Ei.style && (ci.body.contains(Ei) || Ei.parentNode || (Ei.hcOrigDetached = !0, ci.body.appendChild(Ei)), (ni(Ei, "display", !1) === "none" || Ei.hcOricDetached) && (Ei.hcOrigStyle = { display: Ei.style.display, height: Ei.style.height, overflow: Ei.style.overflow }, Ii = { display: "block", overflow: "hidden" }, Ei !== this.renderTo && (Ii.height = 0), di(Ei, Ii), Ei.offsetWidth || Ei.style.setProperty(
               "display",
               "block",
               "important"
-            )), Ai = Ai.parentNode, Ai !== ai.body); )
+            )), Ei = Ei.parentNode, Ei !== ci.body); )
               ;
         }
         setClassName(Ii) {
           this.container.className = "highcharts-container " + (Ii || "");
         }
         getContainer() {
-          const Ii = this.options, Ai = Ii.chart;
-          var $i = os();
-          let Yi, _i = this.renderTo;
-          _i || (this.renderTo = _i = Ai.renderTo), Vi(_i) && (this.renderTo = _i = ai.getElementById(_i)), _i || Fi(13, !0, this);
-          var hs = zi(Fe(_i, "data-highcharts-chart"));
-          Hi(hs) && Oi[hs] && Oi[hs].hasRendered && Oi[hs].destroy(), Fe(_i, "data-highcharts-chart", this.index), _i.innerHTML = Ri.emptyHTML, Ai.skipClone || _i.offsetWidth || this.temporaryDisplay(), this.getChartSize(), hs = this.chartWidth;
+          const Ii = this.options, Ei = Ii.chart;
+          var Ji = os();
+          let Fi, Qi = this.renderTo;
+          Qi || (this.renderTo = Qi = Ei.renderTo), qi(Qi) && (this.renderTo = Qi = ci.getElementById(Qi)), Qi || Ui(13, !0, this);
+          var hs = Gi(ti(Qi, "data-highcharts-chart"));
+          Hi(hs) && Di[hs] && Di[hs].hasRendered && Di[hs].destroy(), ti(Qi, "data-highcharts-chart", this.index), Qi.innerHTML = ji.emptyHTML, Ei.skipClone || Qi.offsetWidth || this.temporaryDisplay(), this.getChartSize(), hs = this.chartWidth;
           const as = this.chartHeight;
-          if (hi(_i, { overflow: "hidden" }), this.styledMode || (Yi = Zi({ position: "relative", overflow: "hidden", width: hs + "px", height: as + "px", textAlign: "left", lineHeight: "normal", zIndex: 0, "-webkit-tap-highlight-color": "rgba(0,0,0,0)", userSelect: "none", "touch-action": "manipulation", outline: "none" }, Ai.style || {})), this.container = $i = ii("div", { id: $i }, Yi, _i), this._cursor = $i.style.cursor, this.renderer = new (Ai.renderer || !xi ? ss.getRendererType(Ai.renderer) : Ui)(
-            $i,
+          if (di(Qi, { overflow: "hidden" }), this.styledMode || (Fi = Zi({ position: "relative", overflow: "hidden", width: hs + "px", height: as + "px", textAlign: "left", lineHeight: "normal", zIndex: 0, "-webkit-tap-highlight-color": "rgba(0,0,0,0)", userSelect: "none", "touch-action": "manipulation", outline: "none" }, Ei.style || {})), this.container = Ji = oi("div", { id: Ji }, Fi, Qi), this._cursor = Ji.style.cursor, this.renderer = new (Ei.renderer || !vi ? is.getRendererType(Ei.renderer) : _i)(
+            Ji,
             hs,
             as,
             void 0,
-            Ai.forExport,
+            Ei.forExport,
             Ii.exporting && Ii.exporting.allowHTML,
             this.styledMode
-          ), this.containerBox = this.getContainerBox(), Ci(void 0, this), this.setClassName(Ai.className), this.styledMode)
-            for (const us in Ii.defs)
-              this.renderer.definition(Ii.defs[us]);
+          ), this.containerBox = this.getContainerBox(), ki(void 0, this), this.setClassName(Ei.className), this.styledMode)
+            for (const ps in Ii.defs)
+              this.renderer.definition(Ii.defs[ps]);
           else
-            this.renderer.setStyle(Ai.style);
+            this.renderer.setStyle(Ei.style);
           this.renderer.chartIndex = this.index, Bi(this, "afterGetContainer");
         }
         getMargins(Ii) {
-          const { spacing: Ai, margin: $i, titleOffset: Yi } = this;
-          this.resetMargins(), Yi[0] && !gi($i[0]) && (this.plotTop = Math.max(this.plotTop, Yi[0] + Ai[0])), Yi[2] && !gi($i[2]) && (this.marginBottom = Math.max(
+          const { spacing: Ei, margin: Ji, titleOffset: Fi } = this;
+          this.resetMargins(), Fi[0] && !mi(Ji[0]) && (this.plotTop = Math.max(this.plotTop, Fi[0] + Ei[0])), Fi[2] && !mi(Ji[2]) && (this.marginBottom = Math.max(
             this.marginBottom,
-            Yi[2] + Ai[2]
-          )), this.legend && this.legend.display && this.legend.adjustMargins($i, Ai), Bi(this, "getMargins"), Ii || this.getAxisMargins();
+            Fi[2] + Ei[2]
+          )), this.legend && this.legend.display && this.legend.adjustMargins(Ji, Ei), Bi(this, "getMargins"), Ii || this.getAxisMargins();
         }
         getAxisMargins() {
-          const Ii = this, Ai = Ii.axisOffset = [0, 0, 0, 0], $i = Ii.colorAxis, Yi = Ii.margin, _i = function(hs) {
+          const Ii = this, Ei = Ii.axisOffset = [0, 0, 0, 0], Ji = Ii.colorAxis, Fi = Ii.margin, Qi = function(hs) {
             hs.forEach(function(as) {
               as.visible && as.getOffset();
             });
           };
-          Ii.hasCartesianSeries ? _i(Ii.axes) : $i && $i.length && _i($i), li.forEach(function(hs, as) {
-            gi(Yi[as]) || (Ii[hs] += Ai[as]);
+          Ii.hasCartesianSeries ? Qi(Ii.axes) : Ji && Ji.length && Qi(Ji), pi.forEach(function(hs, as) {
+            mi(Fi[as]) || (Ii[hs] += Ei[as]);
           }), Ii.setChartSize();
         }
         getOptions() {
-          return Ei(this.userOptions, wi);
+          return Oi(this.userOptions, wi);
         }
         reflow(Ii) {
-          const Ai = this;
-          var $i = Ai.options.chart;
-          $i = gi($i.width) && gi($i.height);
-          const Yi = Ai.containerBox, _i = Ai.getContainerBox();
-          delete Ai.pointer.chartPosition, !$i && !Ai.isPrinting && Yi && _i.width && ((_i.width !== Yi.width || _i.height !== Yi.height) && (bi.clearTimeout(Ai.reflowTimeout), Ai.reflowTimeout = es(function() {
-            Ai.container && Ai.setSize(void 0, void 0, !1);
-          }, Ii ? 100 : 0)), Ai.containerBox = _i);
+          const Ei = this;
+          var Ji = Ei.options.chart;
+          Ji = mi(Ji.width) && mi(Ji.height);
+          const Fi = Ei.containerBox, Qi = Ei.getContainerBox();
+          delete Ei.pointer.chartPosition, !Ji && !Ei.isPrinting && Fi && Qi.width && ((Qi.width !== Fi.width || Qi.height !== Fi.height) && (Ai.clearTimeout(Ei.reflowTimeout), Ei.reflowTimeout = ss(function() {
+            Ei.container && Ei.setSize(void 0, void 0, !1);
+          }, Ii ? 100 : 0)), Ei.containerBox = Qi);
         }
         setReflow() {
           const Ii = this;
-          var Ai = ($i) => {
-            var Yi;
-            !((Yi = Ii.options) === null || Yi === void 0) && Yi.chart.reflow && Ii.hasLoaded && Ii.reflow($i);
+          var Ei = (Ji) => {
+            var Fi;
+            !((Fi = Ii.options) === null || Fi === void 0) && Fi.chart.reflow && Ii.hasLoaded && Ii.reflow(Ji);
           };
-          typeof ResizeObserver == "function" ? new ResizeObserver(Ai).observe(Ii.renderTo) : (Ai = ei(di, "resize", Ai), ei(
+          typeof ResizeObserver == "function" ? new ResizeObserver(Ei).observe(Ii.renderTo) : (Ei = si(ui, "resize", Ei), si(
             this,
             "destroy",
-            Ai
+            Ei
           ));
         }
-        setSize(Ii, Ai, $i) {
-          const Yi = this, _i = Yi.renderer;
-          Yi.isResizing += 1, Ci($i, Yi), $i = _i.globalAnimation, Yi.oldChartHeight = Yi.chartHeight, Yi.oldChartWidth = Yi.chartWidth, typeof Ii < "u" && (Yi.options.chart.width = Ii), typeof Ai < "u" && (Yi.options.chart.height = Ai), Yi.getChartSize(), Yi.styledMode || ($i ? Ni : hi)(Yi.container, { width: Yi.chartWidth + "px", height: Yi.chartHeight + "px" }, $i), Yi.setChartSize(!0), _i.setSize(Yi.chartWidth, Yi.chartHeight, $i), Yi.axes.forEach(function(hs) {
+        setSize(Ii, Ei, Ji) {
+          const Fi = this, Qi = Fi.renderer;
+          Fi.isResizing += 1, ki(Ji, Fi), Ji = Qi.globalAnimation, Fi.oldChartHeight = Fi.chartHeight, Fi.oldChartWidth = Fi.chartWidth, typeof Ii < "u" && (Fi.options.chart.width = Ii), typeof Ei < "u" && (Fi.options.chart.height = Ei), Fi.getChartSize(), Fi.styledMode || (Ji ? Ni : di)(Fi.container, { width: Fi.chartWidth + "px", height: Fi.chartHeight + "px" }, Ji), Fi.setChartSize(!0), Qi.setSize(Fi.chartWidth, Fi.chartHeight, Ji), Fi.axes.forEach(function(hs) {
             hs.isDirty = !0, hs.setScale();
-          }), Yi.isDirtyLegend = !0, Yi.isDirtyBox = !0, Yi.layOutTitles(), Yi.getMargins(), Yi.redraw($i), Yi.oldChartHeight = null, Bi(Yi, "resize"), es(function() {
-            Yi && Bi(Yi, "endResize", null, function() {
-              --Yi.isResizing;
+          }), Fi.isDirtyLegend = !0, Fi.isDirtyBox = !0, Fi.layOutTitles(), Fi.getMargins(), Fi.redraw(Ji), Fi.oldChartHeight = null, Bi(Fi, "resize"), ss(function() {
+            Fi && Bi(Fi, "endResize", null, function() {
+              --Fi.isResizing;
             });
-          }, fi($i).duration);
+          }, gi(Ji).duration);
         }
         setChartSize(Ii) {
-          var Ai = this.inverted;
-          const $i = this.renderer;
-          var Yi = this.chartWidth, _i = this.chartHeight;
-          const hs = this.options.chart, as = this.spacing, us = this.clipOffset;
-          let ps, cs, ds, ms;
-          this.plotLeft = ps = Math.round(this.plotLeft), this.plotTop = cs = Math.round(this.plotTop), this.plotWidth = ds = Math.max(0, Math.round(Yi - ps - this.marginRight)), this.plotHeight = ms = Math.max(
+          var Ei = this.inverted;
+          const Ji = this.renderer;
+          var Fi = this.chartWidth, Qi = this.chartHeight;
+          const hs = this.options.chart, as = this.spacing, ps = this.clipOffset;
+          let us, cs, ds, ms;
+          this.plotLeft = us = Math.round(this.plotLeft), this.plotTop = cs = Math.round(this.plotTop), this.plotWidth = ds = Math.max(0, Math.round(Fi - us - this.marginRight)), this.plotHeight = ms = Math.max(
             0,
-            Math.round(_i - cs - this.marginBottom)
-          ), this.plotSizeX = Ai ? ms : ds, this.plotSizeY = Ai ? ds : ms, this.plotBorderWidth = hs.plotBorderWidth || 0, this.spacingBox = $i.spacingBox = { x: as[3], y: as[0], width: Yi - as[3] - as[1], height: _i - as[0] - as[2] }, this.plotBox = $i.plotBox = { x: ps, y: cs, width: ds, height: ms }, Ai = 2 * Math.floor(this.plotBorderWidth / 2), Yi = Math.ceil(Math.max(Ai, us[3]) / 2), _i = Math.ceil(Math.max(Ai, us[0]) / 2), this.clipBox = { x: Yi, y: _i, width: Math.floor(this.plotSizeX - Math.max(Ai, us[1]) / 2 - Yi), height: Math.max(0, Math.floor(this.plotSizeY - Math.max(Ai, us[2]) / 2 - _i)) }, Ii || (this.axes.forEach(function(fs) {
+            Math.round(Qi - cs - this.marginBottom)
+          ), this.plotSizeX = Ei ? ms : ds, this.plotSizeY = Ei ? ds : ms, this.plotBorderWidth = hs.plotBorderWidth || 0, this.spacingBox = Ji.spacingBox = { x: as[3], y: as[0], width: Fi - as[3] - as[1], height: Qi - as[0] - as[2] }, this.plotBox = Ji.plotBox = { x: us, y: cs, width: ds, height: ms }, Ei = 2 * Math.floor(this.plotBorderWidth / 2), Fi = Math.ceil(Math.max(Ei, ps[3]) / 2), Qi = Math.ceil(Math.max(Ei, ps[0]) / 2), this.clipBox = { x: Fi, y: Qi, width: Math.floor(this.plotSizeX - Math.max(Ei, ps[1]) / 2 - Fi), height: Math.max(0, Math.floor(this.plotSizeY - Math.max(Ei, ps[2]) / 2 - Qi)) }, Ii || (this.axes.forEach(function(fs) {
             fs.setAxisSize(), fs.setAxisTranslation();
-          }), $i.alignElements()), Bi(this, "afterSetChartSize", { skipAxes: Ii });
+          }), Ji.alignElements()), Bi(this, "afterSetChartSize", { skipAxes: Ii });
         }
         resetMargins() {
           Bi(this, "resetMargins");
-          const Ii = this, Ai = Ii.options.chart;
-          ["margin", "spacing"].forEach(function($i) {
-            const Yi = Ai[$i], _i = Di(Yi) ? Yi : [Yi, Yi, Yi, Yi];
+          const Ii = this, Ei = Ii.options.chart;
+          ["margin", "spacing"].forEach(function(Ji) {
+            const Fi = Ei[Ji], Qi = Ri(Fi) ? Fi : [Fi, Fi, Fi, Fi];
             ["Top", "Right", "Bottom", "Left"].forEach(function(hs, as) {
-              Ii[$i][as] = vi(Ai[$i + hs], _i[as]);
+              Ii[Ji][as] = yi(Ei[Ji + hs], Qi[as]);
             });
-          }), li.forEach(function($i, Yi) {
-            Ii[$i] = vi(Ii.margin[Yi], Ii.spacing[Yi]);
+          }), pi.forEach(function(Ji, Fi) {
+            Ii[Ji] = yi(Ii.margin[Fi], Ii.spacing[Fi]);
           }), Ii.axisOffset = [0, 0, 0, 0], Ii.clipOffset = [0, 0, 0, 0];
         }
         drawChartBox() {
-          const Ii = this.options.chart, Ai = this.renderer, $i = this.chartWidth, Yi = this.chartHeight, _i = this.styledMode, hs = this.plotBGImage;
+          const Ii = this.options.chart, Ei = this.renderer, Ji = this.chartWidth, Fi = this.chartHeight, Qi = this.styledMode, hs = this.plotBGImage;
           var as = Ii.backgroundColor;
-          const us = Ii.plotBackgroundColor, ps = Ii.plotBackgroundImage, cs = this.plotLeft, ds = this.plotTop, ms = this.plotWidth, fs = this.plotHeight, gs = this.plotBox, xs = this.clipRect, Ss = this.clipBox;
-          let vs = this.chartBackground, ws = this.plotBackground, ks = this.plotBorder, ys, Ms, Cs = "animate";
-          vs || (this.chartBackground = vs = Ai.rect().addClass("highcharts-background").add(), Cs = "attr"), _i ? ys = Ms = vs.strokeWidth() : (ys = Ii.borderWidth || 0, Ms = ys + (Ii.shadow ? 8 : 0), as = { fill: as || "none" }, (ys || vs["stroke-width"]) && (as.stroke = Ii.borderColor, as["stroke-width"] = ys), vs.attr(as).shadow(Ii.shadow)), vs[Cs]({ x: Ms / 2, y: Ms / 2, width: $i - Ms - ys % 2, height: Yi - Ms - ys % 2, r: Ii.borderRadius }), Cs = "animate", ws || (Cs = "attr", this.plotBackground = ws = Ai.rect().addClass("highcharts-plot-background").add()), ws[Cs](gs), _i || (ws.attr({ fill: us || "none" }).shadow(Ii.plotShadow), ps && (hs ? (ps !== hs.attr("href") && hs.attr("href", ps), hs.animate(gs)) : this.plotBGImage = Ai.image(ps, cs, ds, ms, fs).add())), xs ? xs.animate({ width: Ss.width, height: Ss.height }) : this.clipRect = Ai.clipRect(Ss), Cs = "animate", ks || (Cs = "attr", this.plotBorder = ks = Ai.rect().addClass("highcharts-plot-border").attr({ zIndex: 1 }).add()), _i || ks.attr({ stroke: Ii.plotBorderColor, "stroke-width": Ii.plotBorderWidth || 0, fill: "none" }), ks[Cs](ks.crisp({ x: cs, y: ds, width: ms, height: fs }, -ks.strokeWidth())), this.isDirtyBox = !1, Bi(this, "afterDrawChartBox");
+          const ps = Ii.plotBackgroundColor, us = Ii.plotBackgroundImage, cs = this.plotLeft, ds = this.plotTop, ms = this.plotWidth, fs = this.plotHeight, gs = this.plotBox, xs = this.clipRect, Ss = this.clipBox;
+          let vs = this.chartBackground, ws = this.plotBackground, bs = this.plotBorder, ys, ks, Cs = "animate";
+          vs || (this.chartBackground = vs = Ei.rect().addClass("highcharts-background").add(), Cs = "attr"), Qi ? ys = ks = vs.strokeWidth() : (ys = Ii.borderWidth || 0, ks = ys + (Ii.shadow ? 8 : 0), as = { fill: as || "none" }, (ys || vs["stroke-width"]) && (as.stroke = Ii.borderColor, as["stroke-width"] = ys), vs.attr(as).shadow(Ii.shadow)), vs[Cs]({ x: ks / 2, y: ks / 2, width: Ji - ks - ys % 2, height: Fi - ks - ys % 2, r: Ii.borderRadius }), Cs = "animate", ws || (Cs = "attr", this.plotBackground = ws = Ei.rect().addClass("highcharts-plot-background").add()), ws[Cs](gs), Qi || (ws.attr({ fill: ps || "none" }).shadow(Ii.plotShadow), us && (hs ? (us !== hs.attr("href") && hs.attr("href", us), hs.animate(gs)) : this.plotBGImage = Ei.image(us, cs, ds, ms, fs).add())), xs ? xs.animate({ width: Ss.width, height: Ss.height }) : this.clipRect = Ei.clipRect(Ss), Cs = "animate", bs || (Cs = "attr", this.plotBorder = bs = Ei.rect().addClass("highcharts-plot-border").attr({ zIndex: 1 }).add()), Qi || bs.attr({ stroke: Ii.plotBorderColor, "stroke-width": Ii.plotBorderWidth || 0, fill: "none" }), bs[Cs](bs.crisp({ x: cs, y: ds, width: ms, height: fs }, -bs.strokeWidth())), this.isDirtyBox = !1, Bi(this, "afterDrawChartBox");
         }
         propFromSeries() {
-          const Ii = this, Ai = Ii.options.chart, $i = Ii.options.series;
-          let Yi, _i, hs;
+          const Ii = this, Ei = Ii.options.chart, Ji = Ii.options.series;
+          let Fi, Qi, hs;
           ["inverted", "angular", "polar"].forEach(function(as) {
-            for (_i = pi[Ai.type], hs = Ai[as] || _i && _i.prototype[as], Yi = $i && $i.length; !hs && Yi--; )
-              (_i = pi[$i[Yi].type]) && _i.prototype[as] && (hs = !0);
+            for (Qi = fi[Ei.type], hs = Ei[as] || Qi && Qi.prototype[as], Fi = Ji && Ji.length; !hs && Fi--; )
+              (Qi = fi[Ji[Fi].type]) && Qi.prototype[as] && (hs = !0);
             Ii[as] = hs;
           });
         }
         linkSeries(Ii) {
-          const Ai = this, $i = Ai.series;
-          $i.forEach(function(Yi) {
-            Yi.linkedSeries.length = 0;
-          }), $i.forEach(function(Yi) {
-            let _i = Yi.options.linkedTo;
-            Vi(_i) && (_i = _i === ":previous" ? Ai.series[Yi.index - 1] : Ai.get(_i)) && _i.linkedParent !== Yi && (_i.linkedSeries.push(Yi), Yi.linkedParent = _i, _i.enabledDataSorting && Yi.setDataSortingOptions(), Yi.visible = vi(Yi.options.visible, _i.options.visible, Yi.visible));
+          const Ei = this, Ji = Ei.series;
+          Ji.forEach(function(Fi) {
+            Fi.linkedSeries.length = 0;
+          }), Ji.forEach(function(Fi) {
+            let Qi = Fi.options.linkedTo;
+            qi(Qi) && (Qi = Qi === ":previous" ? Ei.series[Fi.index - 1] : Ei.get(Qi)) && Qi.linkedParent !== Fi && (Qi.linkedSeries.push(Fi), Fi.linkedParent = Qi, Qi.enabledDataSorting && Fi.setDataSortingOptions(), Fi.visible = yi(Fi.options.visible, Qi.options.visible, Fi.visible));
           }), Bi(this, "afterLinkSeries", { isUpdating: Ii });
         }
         renderSeries() {
@@ -5023,155 +5022,155 @@ var highcharts = { exports: {} };
           });
         }
         render() {
-          const Ii = this.axes, Ai = this.colorAxis, $i = this.renderer, Yi = function(cs) {
+          const Ii = this.axes, Ei = this.colorAxis, Ji = this.renderer, Fi = function(cs) {
             cs.forEach(function(ds) {
               ds.visible && ds.render();
             });
           };
-          let _i = 0;
+          let Qi = 0;
           this.setTitle(), Bi(this, "beforeMargins"), this.getStacks && this.getStacks(), this.getMargins(!0), this.setChartSize();
           const hs = this.plotWidth;
           Ii.some(function(cs) {
             if (cs.horiz && cs.visible && cs.options.labels.enabled && cs.series.length)
-              return _i = 21, !0;
+              return Qi = 21, !0;
           });
-          const as = this.plotHeight = Math.max(this.plotHeight - _i, 0);
+          const as = this.plotHeight = Math.max(this.plotHeight - Qi, 0);
           Ii.forEach(function(cs) {
             cs.setScale();
           }), this.getAxisMargins();
-          const us = 1.1 < hs / this.plotWidth, ps = 1.05 < as / this.plotHeight;
-          (us || ps) && (Ii.forEach(function(cs) {
-            (cs.horiz && us || !cs.horiz && ps) && cs.setTickInterval(!0);
-          }), this.getMargins()), this.drawChartBox(), this.hasCartesianSeries ? Yi(Ii) : Ai && Ai.length && Yi(Ai), this.seriesGroup || (this.seriesGroup = $i.g("series-group").attr({ zIndex: 3 }).shadow(this.options.chart.seriesGroupShadow).add()), this.renderSeries(), this.addCredits(), this.setResponsive && this.setResponsive(), this.hasRendered = !0;
+          const ps = 1.1 < hs / this.plotWidth, us = 1.05 < as / this.plotHeight;
+          (ps || us) && (Ii.forEach(function(cs) {
+            (cs.horiz && ps || !cs.horiz && us) && cs.setTickInterval(!0);
+          }), this.getMargins()), this.drawChartBox(), this.hasCartesianSeries ? Fi(Ii) : Ei && Ei.length && Fi(Ei), this.seriesGroup || (this.seriesGroup = Ji.g("series-group").attr({ zIndex: 3 }).shadow(this.options.chart.seriesGroupShadow).add()), this.renderSeries(), this.addCredits(), this.setResponsive && this.setResponsive(), this.hasRendered = !0;
         }
         addCredits(Ii) {
-          const Ai = this, $i = ri(!0, this.options.credits, Ii);
-          $i.enabled && !this.credits && (this.credits = this.renderer.text($i.text + (this.mapCredits || ""), 0, 0).addClass("highcharts-credits").on("click", function() {
-            $i.href && (di.location.href = $i.href);
-          }).attr({ align: $i.position.align, zIndex: 8 }), Ai.styledMode || this.credits.css($i.style), this.credits.add().align($i.position), this.credits.update = function(Yi) {
-            Ai.credits = Ai.credits.destroy(), Ai.addCredits(Yi);
+          const Ei = this, Ji = ai(!0, this.options.credits, Ii);
+          Ji.enabled && !this.credits && (this.credits = this.renderer.text(Ji.text + (this.mapCredits || ""), 0, 0).addClass("highcharts-credits").on("click", function() {
+            Ji.href && (ui.location.href = Ji.href);
+          }).attr({ align: Ji.position.align, zIndex: 8 }), Ei.styledMode || this.credits.css(Ji.style), this.credits.add().align(Ji.position), this.credits.update = function(Fi) {
+            Ei.credits = Ei.credits.destroy(), Ei.addCredits(Fi);
           });
         }
         destroy() {
-          const Ii = this, Ai = Ii.axes, $i = Ii.series, Yi = Ii.container, _i = Yi && Yi.parentNode;
+          const Ii = this, Ei = Ii.axes, Ji = Ii.series, Fi = Ii.container, Qi = Fi && Fi.parentNode;
           let hs;
-          for (Bi(Ii, "destroy"), Ii.renderer.forExport ? Pi(Oi, Ii) : Oi[Ii.index] = void 0, is.chartCount--, Ii.renderTo.removeAttribute("data-highcharts-chart"), Gi(Ii), hs = Ai.length; hs--; )
-            Ai[hs] = Ai[hs].destroy();
-          for (this.scroller && this.scroller.destroy && this.scroller.destroy(), hs = $i.length; hs--; )
-            $i[hs] = $i[hs].destroy();
+          for (Bi(Ii, "destroy"), Ii.renderer.forExport ? Li(Di, Ii) : Di[Ii.index] = void 0, es.chartCount--, Ii.renderTo.removeAttribute("data-highcharts-chart"), Wi(Ii), hs = Ei.length; hs--; )
+            Ei[hs] = Ei[hs].destroy();
+          for (this.scroller && this.scroller.destroy && this.scroller.destroy(), hs = Ji.length; hs--; )
+            Ji[hs] = Ji[hs].destroy();
           "title subtitle chartBackground plotBackground plotBGImage plotBorder seriesGroup clipRect credits pointer rangeSelector legend resetZoomButton tooltip renderer".split(" ").forEach(function(as) {
-            const us = Ii[as];
-            us && us.destroy && (Ii[as] = us.destroy());
-          }), Yi && (Yi.innerHTML = Ri.emptyHTML, Gi(Yi), _i && ni(Yi)), mi(Ii, function(as, us) {
-            delete Ii[us];
+            const ps = Ii[as];
+            ps && ps.destroy && (Ii[as] = ps.destroy());
+          }), Fi && (Fi.innerHTML = ji.emptyHTML, Wi(Fi), Qi && hi(Fi)), xi(Ii, function(as, ps) {
+            delete Ii[ps];
           });
         }
         firstRender() {
-          const Ii = this, Ai = Ii.options;
+          const Ii = this, Ei = Ii.options;
           Ii.getContainer(), Ii.resetMargins(), Ii.setChartSize(), Ii.propFromSeries(), Ii.getAxes();
-          const $i = Li(Ai.series) ? Ai.series : [];
-          Ai.series = [], $i.forEach(function(Yi) {
-            Ii.initSeries(Yi);
+          const Ji = Pi(Ei.series) ? Ei.series : [];
+          Ei.series = [], Ji.forEach(function(Fi) {
+            Ii.initSeries(Fi);
           }), Ii.linkSeries(), Ii.setSeriesData(), Bi(Ii, "beforeRender"), Ii.render(), Ii.pointer.getChartPosition(), !Ii.renderer.imgCount && !Ii.hasLoaded && Ii.onload(), Ii.temporaryDisplay(!0);
         }
         onload() {
           this.callbacks.concat([this.callback]).forEach(function(Ii) {
             Ii && typeof this.index < "u" && Ii.apply(this, [this]);
-          }, this), Bi(this, "load"), Bi(this, "render"), gi(this.index) && this.setReflow(), this.warnIfA11yModuleNotLoaded(), this.hasLoaded = !0;
+          }, this), Bi(this, "load"), Bi(this, "render"), mi(this.index) && this.setReflow(), this.warnIfA11yModuleNotLoaded(), this.hasLoaded = !0;
         }
         warnIfA11yModuleNotLoaded() {
-          const { options: Ii, title: Ai } = this;
-          Ii && !this.accessibility && (this.renderer.boxWrapper.attr({ role: "img", "aria-label": (Ai && Ai.element.textContent || "").replace(/</g, "&lt;") }), Ii.accessibility && Ii.accessibility.enabled === !1 || Fi(
+          const { options: Ii, title: Ei } = this;
+          Ii && !this.accessibility && (this.renderer.boxWrapper.attr({ role: "img", "aria-label": (Ei && Ei.element.textContent || "").replace(/</g, "&lt;") }), Ii.accessibility && Ii.accessibility.enabled === !1 || Ui(
             'Highcharts warning: Consider including the "accessibility.js" module to make your chart more usable for people with disabilities. Set the "accessibility.enabled" option to false to remove this warning. See https://www.highcharts.com/docs/accessibility/accessibility-module.',
             !1,
             this
           ));
         }
-        addSeries(Ii, Ai, $i) {
-          const Yi = this;
-          let _i;
-          return Ii && (Ai = vi(Ai, !0), Bi(Yi, "addSeries", { options: Ii }, function() {
-            _i = Yi.initSeries(Ii), Yi.isDirtyLegend = !0, Yi.linkSeries(), _i.enabledDataSorting && _i.setData(Ii.data, !1), Bi(Yi, "afterAddSeries", { series: _i }), Ai && Yi.redraw($i);
-          })), _i;
+        addSeries(Ii, Ei, Ji) {
+          const Fi = this;
+          let Qi;
+          return Ii && (Ei = yi(Ei, !0), Bi(Fi, "addSeries", { options: Ii }, function() {
+            Qi = Fi.initSeries(Ii), Fi.isDirtyLegend = !0, Fi.linkSeries(), Qi.enabledDataSorting && Qi.setData(Ii.data, !1), Bi(Fi, "afterAddSeries", { series: Qi }), Ei && Fi.redraw(Ji);
+          })), Qi;
         }
-        addAxis(Ii, Ai, $i, Yi) {
-          return this.createAxis(Ai ? "xAxis" : "yAxis", { axis: Ii, redraw: $i, animation: Yi });
+        addAxis(Ii, Ei, Ji, Fi) {
+          return this.createAxis(Ei ? "xAxis" : "yAxis", { axis: Ii, redraw: Ji, animation: Fi });
         }
-        addColorAxis(Ii, Ai, $i) {
-          return this.createAxis("colorAxis", { axis: Ii, redraw: Ai, animation: $i });
+        addColorAxis(Ii, Ei, Ji) {
+          return this.createAxis("colorAxis", { axis: Ii, redraw: Ei, animation: Ji });
         }
-        createAxis(Ii, Ai) {
-          return Ii = new ji(this, Ai.axis, Ii), vi(Ai.redraw, !0) && this.redraw(Ai.animation), Ii;
+        createAxis(Ii, Ei) {
+          return Ii = new Ci(this, Ei.axis, Ii), yi(Ei.redraw, !0) && this.redraw(Ei.animation), Ii;
         }
         showLoading(Ii) {
-          const Ai = this, $i = Ai.options, Yi = $i.loading, _i = function() {
-            hs && hi(hs, { left: Ai.plotLeft + "px", top: Ai.plotTop + "px", width: Ai.plotWidth + "px", height: Ai.plotHeight + "px" });
+          const Ei = this, Ji = Ei.options, Fi = Ji.loading, Qi = function() {
+            hs && di(hs, { left: Ei.plotLeft + "px", top: Ei.plotTop + "px", width: Ei.plotWidth + "px", height: Ei.plotHeight + "px" });
           };
-          let hs = Ai.loadingDiv, as = Ai.loadingSpan;
-          hs || (Ai.loadingDiv = hs = ii("div", { className: "highcharts-loading highcharts-loading-hidden" }, null, Ai.container)), as || (Ai.loadingSpan = as = ii("span", { className: "highcharts-loading-inner" }, null, hs), ei(Ai, "redraw", _i)), hs.className = "highcharts-loading", Ri.setElementHTML(as, vi(Ii, $i.lang.loading, "")), Ai.styledMode || (hi(
+          let hs = Ei.loadingDiv, as = Ei.loadingSpan;
+          hs || (Ei.loadingDiv = hs = oi("div", { className: "highcharts-loading highcharts-loading-hidden" }, null, Ei.container)), as || (Ei.loadingSpan = as = oi("span", { className: "highcharts-loading-inner" }, null, hs), si(Ei, "redraw", Qi)), hs.className = "highcharts-loading", ji.setElementHTML(as, yi(Ii, Ji.lang.loading, "")), Ei.styledMode || (di(
             hs,
-            Zi(Yi.style, { zIndex: 10 })
-          ), hi(as, Yi.labelStyle), Ai.loadingShown || (hi(hs, { opacity: 0, display: "" }), Ni(hs, { opacity: Yi.style.opacity || 0.5 }, { duration: Yi.showDuration || 0 }))), Ai.loadingShown = !0, _i();
+            Zi(Fi.style, { zIndex: 10 })
+          ), di(as, Fi.labelStyle), Ei.loadingShown || (di(hs, { opacity: 0, display: "" }), Ni(hs, { opacity: Fi.style.opacity || 0.5 }, { duration: Fi.showDuration || 0 }))), Ei.loadingShown = !0, Qi();
         }
         hideLoading() {
-          const Ii = this.options, Ai = this.loadingDiv;
-          Ai && (Ai.className = "highcharts-loading highcharts-loading-hidden", this.styledMode || Ni(Ai, { opacity: 0 }, { duration: Ii.loading.hideDuration || 100, complete: function() {
-            hi(Ai, { display: "none" });
+          const Ii = this.options, Ei = this.loadingDiv;
+          Ei && (Ei.className = "highcharts-loading highcharts-loading-hidden", this.styledMode || Ni(Ei, { opacity: 0 }, { duration: Ii.loading.hideDuration || 100, complete: function() {
+            di(Ei, { display: "none" });
           } })), this.loadingShown = !1;
         }
-        update(Ii, Ai, $i, Yi) {
-          const _i = this, hs = {
+        update(Ii, Ei, Ji, Fi) {
+          const Qi = this, hs = {
             credits: "addCredits",
             title: "setTitle",
             subtitle: "setSubtitle",
             caption: "setCaption"
-          }, as = Ii.isResponsiveOptions, us = [];
-          let ps, cs;
-          Bi(_i, "update", { options: Ii }), as || _i.setResponsive(!1, !0), Ii = Ei(Ii, _i.options), _i.userOptions = ri(_i.userOptions, Ii);
+          }, as = Ii.isResponsiveOptions, ps = [];
+          let us, cs;
+          Bi(Qi, "update", { options: Ii }), as || Qi.setResponsive(!1, !0), Ii = Oi(Ii, Qi.options), Qi.userOptions = ai(Qi.userOptions, Ii);
           var ds = Ii.chart;
           if (ds) {
-            if (ri(!0, _i.options.chart, ds), this.setZoomOptions(), "className" in ds && _i.setClassName(ds.className), "inverted" in ds || "polar" in ds || "type" in ds) {
-              _i.propFromSeries();
+            if (ai(!0, Qi.options.chart, ds), this.setZoomOptions(), "className" in ds && Qi.setClassName(ds.className), "inverted" in ds || "polar" in ds || "type" in ds) {
+              Qi.propFromSeries();
               var ms = !0;
             }
-            "alignTicks" in ds && (ms = !0), "events" in ds && Mi(this, ds), mi(ds, function(fs, gs) {
-              _i.propsRequireUpdateSeries.indexOf("chart." + gs) !== -1 && (ps = !0), _i.propsRequireDirtyBox.indexOf(gs) !== -1 && (_i.isDirtyBox = !0), _i.propsRequireReflow.indexOf(gs) !== -1 && (as ? _i.isDirtyBox = !0 : cs = !0);
-            }), !_i.styledMode && ds.style && _i.renderer.setStyle(_i.options.chart.style || {});
+            "alignTicks" in ds && (ms = !0), "events" in ds && Mi(this, ds), xi(ds, function(fs, gs) {
+              Qi.propsRequireUpdateSeries.indexOf("chart." + gs) !== -1 && (us = !0), Qi.propsRequireDirtyBox.indexOf(gs) !== -1 && (Qi.isDirtyBox = !0), Qi.propsRequireReflow.indexOf(gs) !== -1 && (as ? Qi.isDirtyBox = !0 : cs = !0);
+            }), !Qi.styledMode && ds.style && Qi.renderer.setStyle(Qi.options.chart.style || {});
           }
-          !_i.styledMode && Ii.colors && (this.options.colors = Ii.colors), Ii.time && (this.time === yi && (this.time = new ki(Ii.time)), ri(!0, _i.options.time, Ii.time)), mi(Ii, function(fs, gs) {
-            _i[gs] && typeof _i[gs].update == "function" ? _i[gs].update(fs, !1) : typeof _i[hs[gs]] == "function" ? _i[hs[gs]](fs) : gs !== "colors" && _i.collectionsWithUpdate.indexOf(gs) === -1 && ri(!0, _i.options[gs], Ii[gs]), gs !== "chart" && _i.propsRequireUpdateSeries.indexOf(gs) !== -1 && (ps = !0);
+          !Qi.styledMode && Ii.colors && (this.options.colors = Ii.colors), Ii.time && (this.time === Si && (this.time = new bi(Ii.time)), ai(!0, Qi.options.time, Ii.time)), xi(Ii, function(fs, gs) {
+            Qi[gs] && typeof Qi[gs].update == "function" ? Qi[gs].update(fs, !1) : typeof Qi[hs[gs]] == "function" ? Qi[hs[gs]](fs) : gs !== "colors" && Qi.collectionsWithUpdate.indexOf(gs) === -1 && ai(!0, Qi.options[gs], Ii[gs]), gs !== "chart" && Qi.propsRequireUpdateSeries.indexOf(gs) !== -1 && (us = !0);
           }), this.collectionsWithUpdate.forEach(function(fs) {
-            Ii[fs] && (Ji(Ii[fs]).forEach(function(gs, xs) {
-              const Ss = gi(gs.id);
+            Ii[fs] && (ts(Ii[fs]).forEach(function(gs, xs) {
+              const Ss = mi(gs.id);
               let vs;
-              Ss && (vs = _i.get(gs.id)), !vs && _i[fs] && (vs = _i[fs][vi(gs.index, xs)]) && (Ss && gi(vs.options.id) || vs.options.isInternal) && (vs = void 0), vs && vs.coll === fs && (vs.update(gs, !1), $i && (vs.touched = !0)), !vs && $i && _i.collectionsWithInit[fs] && (_i.collectionsWithInit[fs][0].apply(_i, [gs].concat(_i.collectionsWithInit[fs][1] || []).concat([!1])).touched = !0);
-            }), $i && _i[fs].forEach(function(gs) {
-              gs.touched || gs.options.isInternal ? delete gs.touched : us.push(gs);
+              Ss && (vs = Qi.get(gs.id)), !vs && Qi[fs] && (vs = Qi[fs][yi(gs.index, xs)]) && (Ss && mi(vs.options.id) || vs.options.isInternal) && (vs = void 0), vs && vs.coll === fs && (vs.update(gs, !1), Ji && (vs.touched = !0)), !vs && Ji && Qi.collectionsWithInit[fs] && (Qi.collectionsWithInit[fs][0].apply(Qi, [gs].concat(Qi.collectionsWithInit[fs][1] || []).concat([!1])).touched = !0);
+            }), Ji && Qi[fs].forEach(function(gs) {
+              gs.touched || gs.options.isInternal ? delete gs.touched : ps.push(gs);
             }));
-          }), us.forEach(function(fs) {
+          }), ps.forEach(function(fs) {
             fs.chart && fs.remove && fs.remove(!1);
-          }), ms && _i.axes.forEach(function(fs) {
+          }), ms && Qi.axes.forEach(function(fs) {
             fs.update({}, !1);
-          }), ps && _i.getSeriesOrderByLinks().forEach(function(fs) {
+          }), us && Qi.getSeriesOrderByLinks().forEach(function(fs) {
             fs.chart && fs.update({}, !1);
-          }, this), ms = ds && ds.width, ds = ds && (Vi(ds.height) ? Xi(ds.height, ms || _i.chartWidth) : ds.height), cs || Hi(ms) && ms !== _i.chartWidth || Hi(ds) && ds !== _i.chartHeight ? _i.setSize(ms, ds, Yi) : vi(Ai, !0) && _i.redraw(Yi), Bi(_i, "afterUpdate", { options: Ii, redraw: Ai, animation: Yi });
+          }, this), ms = ds && ds.width, ds = ds && (qi(ds.height) ? Xi(ds.height, ms || Qi.chartWidth) : ds.height), cs || Hi(ms) && ms !== Qi.chartWidth || Hi(ds) && ds !== Qi.chartHeight ? Qi.setSize(ms, ds, Fi) : yi(Ei, !0) && Qi.redraw(Fi), Bi(Qi, "afterUpdate", { options: Ii, redraw: Ei, animation: Fi });
         }
-        setSubtitle(Ii, Ai) {
+        setSubtitle(Ii, Ei) {
           this.applyDescription(
             "subtitle",
             Ii
-          ), this.layOutTitles(Ai);
+          ), this.layOutTitles(Ei);
         }
-        setCaption(Ii, Ai) {
-          this.applyDescription("caption", Ii), this.layOutTitles(Ai);
+        setCaption(Ii, Ei) {
+          this.applyDescription("caption", Ii), this.layOutTitles(Ei);
         }
         showResetZoom() {
           function Ii() {
-            Ai.zoomOut();
+            Ei.zoomOut();
           }
-          const Ai = this, $i = wi.lang, Yi = Ai.zooming.resetButton, _i = Yi.theme, hs = Yi.relativeTo === "chart" || Yi.relativeTo === "spacingBox" ? null : "scrollablePlotBox";
+          const Ei = this, Ji = wi.lang, Fi = Ei.zooming.resetButton, Qi = Fi.theme, hs = Fi.relativeTo === "chart" || Fi.relativeTo === "spacingBox" ? null : "scrollablePlotBox";
           Bi(this, "beforeShowResetZoom", null, function() {
-            Ai.resetZoomButton = Ai.renderer.button($i.resetZoom, null, null, Ii, _i).attr({ align: Yi.position.align, title: $i.resetZoomTitle }).addClass("highcharts-reset-zoom").add().align(Yi.position, !1, hs);
+            Ei.resetZoomButton = Ei.renderer.button(Ji.resetZoom, null, null, Ii, Qi).attr({ align: Fi.position.align, title: Ji.resetZoomTitle }).addClass("highcharts-reset-zoom").add().align(Fi.position, !1, hs);
           }), Bi(
             this,
             "afterShowResetZoom"
@@ -5181,49 +5180,49 @@ var highcharts = { exports: {} };
           Bi(this, "selection", { resetSelection: !0 }, this.zoom);
         }
         zoom(Ii) {
-          const Ai = this, $i = Ai.pointer;
-          let Yi = !1, _i;
-          !Ii || Ii.resetSelection ? (Ai.axes.forEach(function(as) {
-            _i = as.zoom();
-          }), $i.initiated = !1) : Ii.xAxis.concat(Ii.yAxis).forEach(function(as) {
-            const us = as.axis;
-            ($i[us.isXAxis ? "zoomX" : "zoomY"] && gi($i.mouseDownX) && gi($i.mouseDownY) && Ai.isInsidePlot($i.mouseDownX - Ai.plotLeft, $i.mouseDownY - Ai.plotTop, { axis: us }) || !gi(Ai.inverted ? $i.mouseDownX : $i.mouseDownY)) && (_i = us.zoom(as.min, as.max), us.displayBtn && (Yi = !0));
+          const Ei = this, Ji = Ei.pointer;
+          let Fi = !1, Qi;
+          !Ii || Ii.resetSelection ? (Ei.axes.forEach(function(as) {
+            Qi = as.zoom();
+          }), Ji.initiated = !1) : Ii.xAxis.concat(Ii.yAxis).forEach(function(as) {
+            const ps = as.axis;
+            (Ji[ps.isXAxis ? "zoomX" : "zoomY"] && mi(Ji.mouseDownX) && mi(Ji.mouseDownY) && Ei.isInsidePlot(Ji.mouseDownX - Ei.plotLeft, Ji.mouseDownY - Ei.plotTop, { axis: ps }) || !mi(Ei.inverted ? Ji.mouseDownX : Ji.mouseDownY)) && (Qi = ps.zoom(as.min, as.max), ps.displayBtn && (Fi = !0));
           });
-          const hs = Ai.resetZoomButton;
-          Yi && !hs ? Ai.showResetZoom() : !Yi && Di(hs) && (Ai.resetZoomButton = hs.destroy()), _i && Ai.redraw(vi(Ai.options.chart.animation, Ii && Ii.animation, 100 > Ai.pointCount));
+          const hs = Ei.resetZoomButton;
+          Fi && !hs ? Ei.showResetZoom() : !Fi && Ri(hs) && (Ei.resetZoomButton = hs.destroy()), Qi && Ei.redraw(yi(Ei.options.chart.animation, Ii && Ii.animation, 100 > Ei.pointCount));
         }
-        pan(Ii, Ai) {
-          const $i = this, Yi = $i.hoverPoints;
-          Ai = typeof Ai == "object" ? Ai : { enabled: Ai, type: "x" };
-          const _i = $i.options.chart;
-          _i && _i.panning && (_i.panning = Ai);
-          const hs = Ai.type;
+        pan(Ii, Ei) {
+          const Ji = this, Fi = Ji.hoverPoints;
+          Ei = typeof Ei == "object" ? Ei : { enabled: Ei, type: "x" };
+          const Qi = Ji.options.chart;
+          Qi && Qi.panning && (Qi.panning = Ei);
+          const hs = Ei.type;
           let as;
           Bi(this, "pan", { originalEvent: Ii }, function() {
-            Yi && Yi.forEach(function(cs) {
+            Fi && Fi.forEach(function(cs) {
               cs.setState();
             });
-            let us = $i.xAxis;
-            hs === "xy" ? us = us.concat($i.yAxis) : hs === "y" && (us = $i.yAxis);
-            const ps = {};
-            us.forEach(function(cs) {
+            let ps = Ji.xAxis;
+            hs === "xy" ? ps = ps.concat(Ji.yAxis) : hs === "y" && (ps = Ji.yAxis);
+            const us = {};
+            ps.forEach(function(cs) {
               if (cs.options.panningEnabled && !cs.options.isInternal) {
                 var ds = cs.horiz, ms = Ii[ds ? "chartX" : "chartY"];
                 ds = ds ? "mouseDownX" : "mouseDownY";
-                var fs = $i[ds], gs = cs.minPointOffset || 0, xs = cs.reversed && !$i.inverted || !cs.reversed && $i.inverted ? -1 : 1, Ss = cs.getExtremes(), vs = cs.toValue(fs - ms, !0) + gs * xs, ws = cs.toValue(fs + cs.len - ms, !0) - (gs * xs || cs.isXAxis && cs.pointRangePadding || 0), ks = ws < vs;
-                xs = cs.hasVerticalPanning(), fs = ks ? ws : vs, vs = ks ? vs : ws;
+                var fs = Ji[ds], gs = cs.minPointOffset || 0, xs = cs.reversed && !Ji.inverted || !cs.reversed && Ji.inverted ? -1 : 1, Ss = cs.getExtremes(), vs = cs.toValue(fs - ms, !0) + gs * xs, ws = cs.toValue(fs + cs.len - ms, !0) - (gs * xs || cs.isXAxis && cs.pointRangePadding || 0), bs = ws < vs;
+                xs = cs.hasVerticalPanning(), fs = bs ? ws : vs, vs = bs ? vs : ws;
                 var ys = cs.panningState;
-                !xs || cs.isXAxis || ys && !ys.isDirty || cs.series.forEach(function(Ms) {
-                  var Cs = Ms.getProcessedData(!0);
-                  Cs = Ms.getExtremes(Cs.yData, !0), ys || (ys = {
+                !xs || cs.isXAxis || ys && !ys.isDirty || cs.series.forEach(function(ks) {
+                  var Cs = ks.getProcessedData(!0);
+                  Cs = ks.getExtremes(Cs.yData, !0), ys || (ys = {
                     startMin: Number.MAX_VALUE,
                     startMax: -Number.MAX_VALUE
-                  }), Hi(Cs.dataMin) && Hi(Cs.dataMax) && (ys.startMin = Math.min(vi(Ms.options.threshold, 1 / 0), Cs.dataMin, ys.startMin), ys.startMax = Math.max(vi(Ms.options.threshold, -1 / 0), Cs.dataMax, ys.startMax));
-                }), xs = Math.min(vi(ys && ys.startMin, Ss.dataMin), gs ? Ss.min : cs.toValue(cs.toPixels(Ss.min) - cs.minPixelPadding)), ws = Math.max(vi(ys && ys.startMax, Ss.dataMax), gs ? Ss.max : cs.toValue(cs.toPixels(Ss.max) + cs.minPixelPadding)), cs.panningState = ys, cs.isOrdinal || (gs = xs - fs, 0 < gs && (vs += gs, fs = xs), gs = vs - ws, 0 < gs && (vs = ws, fs -= gs), cs.series.length && fs !== Ss.min && vs !== Ss.max && fs >= xs && vs <= ws && (cs.setExtremes(fs, vs, !1, !1, { trigger: "pan" }), !$i.resetZoomButton && fs !== xs && vs !== ws && hs.match("y") && ($i.showResetZoom(), cs.displayBtn = !1), as = !0), ps[ds] = ms);
+                  }), Hi(Cs.dataMin) && Hi(Cs.dataMax) && (ys.startMin = Math.min(yi(ks.options.threshold, 1 / 0), Cs.dataMin, ys.startMin), ys.startMax = Math.max(yi(ks.options.threshold, -1 / 0), Cs.dataMax, ys.startMax));
+                }), xs = Math.min(yi(ys && ys.startMin, Ss.dataMin), gs ? Ss.min : cs.toValue(cs.toPixels(Ss.min) - cs.minPixelPadding)), ws = Math.max(yi(ys && ys.startMax, Ss.dataMax), gs ? Ss.max : cs.toValue(cs.toPixels(Ss.max) + cs.minPixelPadding)), cs.panningState = ys, cs.isOrdinal || (gs = xs - fs, 0 < gs && (vs += gs, fs = xs), gs = vs - ws, 0 < gs && (vs = ws, fs -= gs), cs.series.length && fs !== Ss.min && vs !== Ss.max && fs >= xs && vs <= ws && (cs.setExtremes(fs, vs, !1, !1, { trigger: "pan" }), !Ji.resetZoomButton && fs !== xs && vs !== ws && hs.match("y") && (Ji.showResetZoom(), cs.displayBtn = !1), as = !0), us[ds] = ms);
               }
-            }), mi(ps, (cs, ds) => {
-              $i[ds] = cs;
-            }), as && $i.redraw(!1), hi($i.container, { cursor: "move" });
+            }), xi(us, (cs, ds) => {
+              Ji[ds] = cs;
+            }), as && Ji.redraw(!1), di(Ji.container, { cursor: "move" });
           });
         }
       }
@@ -5235,674 +5234,674 @@ var highcharts = { exports: {} };
         propsRequireReflow: "margin marginTop marginRight marginBottom marginLeft spacing spacingTop spacingRight spacingBottom spacingLeft".split(" "),
         propsRequireUpdateSeries: "chart.inverted chart.polar chart.ignoreHiddenSeries chart.type colors plotOptions time tooltip".split(" ")
       }), ns;
-    }), ci(
-      oi,
+    }), ri(
+      ii,
       "Extensions/ScrollablePlotArea.js",
-      [oi["Core/Animation/AnimationUtilities.js"], oi["Core/Axis/Axis.js"], oi["Core/Chart/Chart.js"], oi["Core/Series/Series.js"], oi["Core/Renderer/RendererRegistry.js"], oi["Core/Utilities.js"]],
-      function(Si, ji, qi, ts, Qi, is) {
-        const { stop: ss } = Si, { addEvent: Wi, createElement: Ki, defined: Ui, merge: ki, pick: bi } = is;
-        Wi(qi, "afterSetChartSize", function(Ri) {
-          var Ni = this.options.chart.scrollablePlotArea, fi = Ni && Ni.minWidth;
+      [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Axis/Axis.js"], ii["Core/Chart/Chart.js"], ii["Core/Series/Series.js"], ii["Core/Renderer/RendererRegistry.js"], ii["Core/Utilities.js"]],
+      function(li, Ci, zi, Ki, Yi, es) {
+        const { stop: is } = li, { addEvent: $i, createElement: Vi, defined: _i, merge: bi, pick: Ai } = es;
+        $i(zi, "afterSetChartSize", function(ji) {
+          var Ni = this.options.chart.scrollablePlotArea, gi = Ni && Ni.minWidth;
           Ni = Ni && Ni.minHeight;
-          let Ci;
-          this.renderer.forExport || (fi ? (this.scrollablePixelsX = fi = Math.max(0, fi - this.chartWidth)) && (this.scrollablePlotBox = this.renderer.scrollablePlotBox = ki(this.plotBox), this.plotBox.width = this.plotWidth += fi, this.inverted ? this.clipBox.height += fi : this.clipBox.width += fi, Ci = { 1: { name: "right", value: fi } }) : Ni && (this.scrollablePixelsY = fi = Math.max(0, Ni - this.chartHeight), Ui(fi) && (this.scrollablePlotBox = this.renderer.scrollablePlotBox = ki(this.plotBox), this.plotBox.height = this.plotHeight += fi, this.inverted ? this.clipBox.width += fi : this.clipBox.height += fi, Ci = { 2: { name: "bottom", value: fi } })), Ci && !Ri.skipAxes && this.axes.forEach(function(wi) {
-            Ci[wi.side] ? wi.getPlotLinePath = function() {
-              let yi = Ci[wi.side].name, Ti = this[yi], Mi;
-              return this[yi] = Ti - Ci[wi.side].value, Mi = ji.prototype.getPlotLinePath.apply(this, arguments), this[yi] = Ti, Mi;
+          let ki;
+          this.renderer.forExport || (gi ? (this.scrollablePixelsX = gi = Math.max(0, gi - this.chartWidth)) && (this.scrollablePlotBox = this.renderer.scrollablePlotBox = bi(this.plotBox), this.plotBox.width = this.plotWidth += gi, this.inverted ? this.clipBox.height += gi : this.clipBox.width += gi, ki = { 1: { name: "right", value: gi } }) : Ni && (this.scrollablePixelsY = gi = Math.max(0, Ni - this.chartHeight), _i(gi) && (this.scrollablePlotBox = this.renderer.scrollablePlotBox = bi(this.plotBox), this.plotBox.height = this.plotHeight += gi, this.inverted ? this.clipBox.width += gi : this.clipBox.height += gi, ki = { 2: { name: "bottom", value: gi } })), ki && !ji.skipAxes && this.axes.forEach(function(wi) {
+            ki[wi.side] ? wi.getPlotLinePath = function() {
+              let Si = ki[wi.side].name, Ti = this[Si], Mi;
+              return this[Si] = Ti - ki[wi.side].value, Mi = Ci.prototype.getPlotLinePath.apply(this, arguments), this[Si] = Ti, Mi;
             } : (wi.setAxisSize(), wi.setAxisTranslation());
           }));
-        }), Wi(qi, "render", function() {
+        }), $i(zi, "render", function() {
           this.scrollablePixelsX || this.scrollablePixelsY ? (this.setUpScrolling && this.setUpScrolling(), this.applyFixed()) : this.fixedDiv && this.applyFixed();
-        }), qi.prototype.setUpScrolling = function() {
-          const Ri = { WebkitOverflowScrolling: "touch", overflowX: "hidden", overflowY: "hidden" };
-          this.scrollablePixelsX && (Ri.overflowX = "auto"), this.scrollablePixelsY && (Ri.overflowY = "auto"), this.scrollingParent = Ki("div", { className: "highcharts-scrolling-parent" }, { position: "relative" }, this.renderTo), this.scrollingContainer = Ki("div", { className: "highcharts-scrolling" }, Ri, this.scrollingParent);
+        }), zi.prototype.setUpScrolling = function() {
+          const ji = { WebkitOverflowScrolling: "touch", overflowX: "hidden", overflowY: "hidden" };
+          this.scrollablePixelsX && (ji.overflowX = "auto"), this.scrollablePixelsY && (ji.overflowY = "auto"), this.scrollingParent = Vi("div", { className: "highcharts-scrolling-parent" }, { position: "relative" }, this.renderTo), this.scrollingContainer = Vi("div", { className: "highcharts-scrolling" }, ji, this.scrollingParent);
           let Ni;
-          Wi(this.scrollingContainer, "scroll", () => {
+          $i(this.scrollingContainer, "scroll", () => {
             this.pointer && (delete this.pointer.chartPosition, this.hoverPoint && (Ni = this.hoverPoint), this.pointer.runPointActions(void 0, Ni, !0));
-          }), this.innerContainer = Ki("div", { className: "highcharts-inner-container" }, null, this.scrollingContainer), this.innerContainer.appendChild(this.container), this.setUpScrolling = null;
-        }, qi.prototype.moveFixedElements = function() {
-          let Ri = this.container, Ni = this.fixedRenderer, fi = ".highcharts-breadcrumbs-group .highcharts-contextbutton .highcharts-credits .highcharts-legend .highcharts-legend-checkbox .highcharts-navigator-series .highcharts-navigator-xaxis .highcharts-navigator-yaxis .highcharts-navigator .highcharts-reset-zoom .highcharts-drillup-button .highcharts-scrollbar .highcharts-subtitle .highcharts-title".split(" "), Ci;
-          this.scrollablePixelsX && !this.inverted ? Ci = ".highcharts-yaxis" : this.scrollablePixelsX && this.inverted || this.scrollablePixelsY && !this.inverted ? Ci = ".highcharts-xaxis" : this.scrollablePixelsY && this.inverted && (Ci = ".highcharts-yaxis"), Ci && fi.push(`${Ci}:not(.highcharts-radial-axis)`, `${Ci}-labels:not(.highcharts-radial-axis-labels)`), fi.forEach(function(wi) {
-            [].forEach.call(Ri.querySelectorAll(wi), function(yi) {
-              (yi.namespaceURI === Ni.SVG_NS ? Ni.box : Ni.box.parentNode).appendChild(yi), yi.style.pointerEvents = "auto";
+          }), this.innerContainer = Vi("div", { className: "highcharts-inner-container" }, null, this.scrollingContainer), this.innerContainer.appendChild(this.container), this.setUpScrolling = null;
+        }, zi.prototype.moveFixedElements = function() {
+          let ji = this.container, Ni = this.fixedRenderer, gi = ".highcharts-breadcrumbs-group .highcharts-contextbutton .highcharts-credits .highcharts-legend .highcharts-legend-checkbox .highcharts-navigator-series .highcharts-navigator-xaxis .highcharts-navigator-yaxis .highcharts-navigator .highcharts-reset-zoom .highcharts-drillup-button .highcharts-scrollbar .highcharts-subtitle .highcharts-title".split(" "), ki;
+          this.scrollablePixelsX && !this.inverted ? ki = ".highcharts-yaxis" : this.scrollablePixelsX && this.inverted || this.scrollablePixelsY && !this.inverted ? ki = ".highcharts-xaxis" : this.scrollablePixelsY && this.inverted && (ki = ".highcharts-yaxis"), ki && gi.push(`${ki}:not(.highcharts-radial-axis)`, `${ki}-labels:not(.highcharts-radial-axis-labels)`), gi.forEach(function(wi) {
+            [].forEach.call(ji.querySelectorAll(wi), function(Si) {
+              (Si.namespaceURI === Ni.SVG_NS ? Ni.box : Ni.box.parentNode).appendChild(Si), Si.style.pointerEvents = "auto";
             });
           });
-        }, qi.prototype.applyFixed = function() {
-          var Ri = !this.fixedDiv, Ni = this.options.chart, fi = Ni.scrollablePlotArea, Ci = Qi.getRendererType();
-          Ri ? (this.fixedDiv = Ki("div", { className: "highcharts-fixed" }, { position: "absolute", overflow: "hidden", pointerEvents: "none", zIndex: (Ni.style && Ni.style.zIndex || 0) + 2, top: 0 }, null, !0), this.scrollingContainer && this.scrollingContainer.parentNode.insertBefore(this.fixedDiv, this.scrollingContainer), this.renderTo.style.overflow = "visible", this.fixedRenderer = Ni = new Ci(this.fixedDiv, this.chartWidth, this.chartHeight, this.options.chart.style), this.scrollableMask = Ni.path().attr({ fill: this.options.chart.backgroundColor || "#fff", "fill-opacity": bi(
-            fi.opacity,
+        }, zi.prototype.applyFixed = function() {
+          var ji = !this.fixedDiv, Ni = this.options.chart, gi = Ni.scrollablePlotArea, ki = Yi.getRendererType();
+          ji ? (this.fixedDiv = Vi("div", { className: "highcharts-fixed" }, { position: "absolute", overflow: "hidden", pointerEvents: "none", zIndex: (Ni.style && Ni.style.zIndex || 0) + 2, top: 0 }, null, !0), this.scrollingContainer && this.scrollingContainer.parentNode.insertBefore(this.fixedDiv, this.scrollingContainer), this.renderTo.style.overflow = "visible", this.fixedRenderer = Ni = new ki(this.fixedDiv, this.chartWidth, this.chartHeight, this.options.chart.style), this.scrollableMask = Ni.path().attr({ fill: this.options.chart.backgroundColor || "#fff", "fill-opacity": Ai(
+            gi.opacity,
             0.85
-          ), zIndex: -1 }).addClass("highcharts-scrollable-mask").add(), Wi(this, "afterShowResetZoom", this.moveFixedElements), Wi(this, "afterApplyDrilldown", this.moveFixedElements), Wi(this, "afterLayOutTitles", this.moveFixedElements)) : this.fixedRenderer.setSize(this.chartWidth, this.chartHeight), (this.scrollableDirty || Ri) && (this.scrollableDirty = !1, this.moveFixedElements()), Ni = this.chartWidth + (this.scrollablePixelsX || 0), Ci = this.chartHeight + (this.scrollablePixelsY || 0), ss(this.container), this.container.style.width = Ni + "px", this.container.style.height = Ci + "px", this.renderer.boxWrapper.attr({ width: Ni, height: Ci, viewBox: [0, 0, Ni, Ci].join(" ") }), this.chartBackground.attr({ width: Ni, height: Ci }), this.scrollingContainer.style.height = this.chartHeight + "px", Ri && (fi.scrollPositionX && (this.scrollingContainer.scrollLeft = this.scrollablePixelsX * fi.scrollPositionX), fi.scrollPositionY && (this.scrollingContainer.scrollTop = this.scrollablePixelsY * fi.scrollPositionY)), Ci = this.axisOffset, Ri = this.plotTop - Ci[0] - 1, fi = this.plotLeft - Ci[3] - 1, Ni = this.plotTop + this.plotHeight + Ci[2] + 1, Ci = this.plotLeft + this.plotWidth + Ci[1] + 1;
-          let wi = this.plotLeft + this.plotWidth - (this.scrollablePixelsX || 0), yi = this.plotTop + this.plotHeight - (this.scrollablePixelsY || 0);
-          Ri = this.scrollablePixelsX ? [["M", 0, Ri], ["L", this.plotLeft - 1, Ri], ["L", this.plotLeft - 1, Ni], ["L", 0, Ni], ["Z"], ["M", wi, Ri], ["L", this.chartWidth, Ri], ["L", this.chartWidth, Ni], ["L", wi, Ni], ["Z"]] : this.scrollablePixelsY ? [["M", fi, 0], ["L", fi, this.plotTop - 1], ["L", Ci, this.plotTop - 1], ["L", Ci, 0], ["Z"], ["M", fi, yi], ["L", fi, this.chartHeight], ["L", Ci, this.chartHeight], [
+          ), zIndex: -1 }).addClass("highcharts-scrollable-mask").add(), $i(this, "afterShowResetZoom", this.moveFixedElements), $i(this, "afterApplyDrilldown", this.moveFixedElements), $i(this, "afterLayOutTitles", this.moveFixedElements)) : this.fixedRenderer.setSize(this.chartWidth, this.chartHeight), (this.scrollableDirty || ji) && (this.scrollableDirty = !1, this.moveFixedElements()), Ni = this.chartWidth + (this.scrollablePixelsX || 0), ki = this.chartHeight + (this.scrollablePixelsY || 0), is(this.container), this.container.style.width = Ni + "px", this.container.style.height = ki + "px", this.renderer.boxWrapper.attr({ width: Ni, height: ki, viewBox: [0, 0, Ni, ki].join(" ") }), this.chartBackground.attr({ width: Ni, height: ki }), this.scrollingContainer.style.height = this.chartHeight + "px", ji && (gi.scrollPositionX && (this.scrollingContainer.scrollLeft = this.scrollablePixelsX * gi.scrollPositionX), gi.scrollPositionY && (this.scrollingContainer.scrollTop = this.scrollablePixelsY * gi.scrollPositionY)), ki = this.axisOffset, ji = this.plotTop - ki[0] - 1, gi = this.plotLeft - ki[3] - 1, Ni = this.plotTop + this.plotHeight + ki[2] + 1, ki = this.plotLeft + this.plotWidth + ki[1] + 1;
+          let wi = this.plotLeft + this.plotWidth - (this.scrollablePixelsX || 0), Si = this.plotTop + this.plotHeight - (this.scrollablePixelsY || 0);
+          ji = this.scrollablePixelsX ? [["M", 0, ji], ["L", this.plotLeft - 1, ji], ["L", this.plotLeft - 1, Ni], ["L", 0, Ni], ["Z"], ["M", wi, ji], ["L", this.chartWidth, ji], ["L", this.chartWidth, Ni], ["L", wi, Ni], ["Z"]] : this.scrollablePixelsY ? [["M", gi, 0], ["L", gi, this.plotTop - 1], ["L", ki, this.plotTop - 1], ["L", ki, 0], ["Z"], ["M", gi, Si], ["L", gi, this.chartHeight], ["L", ki, this.chartHeight], [
             "L",
-            Ci,
-            yi
-          ], ["Z"]] : [["M", 0, 0]], this.redrawTrigger !== "adjustHeight" && this.scrollableMask.attr({ d: Ri });
-        }, Wi(ji, "afterInit", function() {
+            ki,
+            Si
+          ], ["Z"]] : [["M", 0, 0]], this.redrawTrigger !== "adjustHeight" && this.scrollableMask.attr({ d: ji });
+        }, $i(Ci, "afterInit", function() {
           this.chart.scrollableDirty = !0;
-        }), Wi(ts, "show", function() {
+        }), $i(Ki, "show", function() {
           this.chart.scrollableDirty = !0;
         });
       }
-    ), ci(oi, "Core/Axis/Stacking/StackItem.js", [oi["Core/Templating.js"], oi["Core/Series/SeriesRegistry.js"], oi["Core/Utilities.js"]], function(Si, ji, qi) {
-      const { format: ts } = Si, { series: Qi } = ji, { destroyObjectProperties: is, fireEvent: ss, isNumber: Wi, pick: Ki } = qi;
-      class Ui {
-        constructor(bi, Ri, Ni, fi, Ci) {
-          const wi = bi.chart.inverted, yi = bi.reversed;
-          this.axis = bi, bi = this.isNegative = !!Ni != !!yi, this.options = Ri = Ri || {}, this.x = fi, this.cumulative = this.total = null, this.points = {}, this.hasValidPoints = !1, this.stack = Ci, this.rightCliff = this.leftCliff = 0, this.alignOptions = { align: Ri.align || (wi ? bi ? "left" : "right" : "center"), verticalAlign: Ri.verticalAlign || (wi ? "middle" : bi ? "bottom" : "top"), y: Ri.y, x: Ri.x }, this.textAlign = Ri.textAlign || (wi ? bi ? "right" : "left" : "center");
+    ), ri(ii, "Core/Axis/Stacking/StackItem.js", [ii["Core/Templating.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+      const { format: Ki } = li, { series: Yi } = Ci, { destroyObjectProperties: es, fireEvent: is, isNumber: $i, pick: Vi } = zi;
+      class _i {
+        constructor(Ai, ji, Ni, gi, ki) {
+          const wi = Ai.chart.inverted, Si = Ai.reversed;
+          this.axis = Ai, Ai = this.isNegative = !!Ni != !!Si, this.options = ji = ji || {}, this.x = gi, this.cumulative = this.total = null, this.points = {}, this.hasValidPoints = !1, this.stack = ki, this.rightCliff = this.leftCliff = 0, this.alignOptions = { align: ji.align || (wi ? Ai ? "left" : "right" : "center"), verticalAlign: ji.verticalAlign || (wi ? "middle" : Ai ? "bottom" : "top"), y: ji.y, x: ji.x }, this.textAlign = ji.textAlign || (wi ? Ai ? "right" : "left" : "center");
         }
         destroy() {
-          is(this, this.axis);
+          es(this, this.axis);
         }
-        render(bi) {
-          const Ri = this.axis.chart, Ni = this.options;
-          var fi = Ni.format;
-          fi = fi ? ts(fi, this, Ri) : Ni.formatter.call(this), this.label ? this.label.attr({ text: fi, visibility: "hidden" }) : (this.label = Ri.renderer.label(fi, null, void 0, Ni.shape, void 0, void 0, Ni.useHTML, !1, "stack-labels"), fi = { r: Ni.borderRadius || 0, text: fi, padding: Ki(Ni.padding, 5), visibility: "hidden" }, Ri.styledMode || (fi.fill = Ni.backgroundColor, fi.stroke = Ni.borderColor, fi["stroke-width"] = Ni.borderWidth, this.label.css(Ni.style || {})), this.label.attr(fi), this.label.added || this.label.add(bi)), this.label.labelrank = Ri.plotSizeY, ss(this, "afterRender");
+        render(Ai) {
+          const ji = this.axis.chart, Ni = this.options;
+          var gi = Ni.format;
+          gi = gi ? Ki(gi, this, ji) : Ni.formatter.call(this), this.label ? this.label.attr({ text: gi, visibility: "hidden" }) : (this.label = ji.renderer.label(gi, null, void 0, Ni.shape, void 0, void 0, Ni.useHTML, !1, "stack-labels"), gi = { r: Ni.borderRadius || 0, text: gi, padding: Vi(Ni.padding, 5), visibility: "hidden" }, ji.styledMode || (gi.fill = Ni.backgroundColor, gi.stroke = Ni.borderColor, gi["stroke-width"] = Ni.borderWidth, this.label.css(Ni.style || {})), this.label.attr(gi), this.label.added || this.label.add(Ai)), this.label.labelrank = ji.plotSizeY, is(this, "afterRender");
         }
-        setOffset(bi, Ri, Ni, fi, Ci, wi) {
+        setOffset(Ai, ji, Ni, gi, ki, wi) {
           const {
-            alignOptions: yi,
+            alignOptions: Si,
             axis: Ti,
             label: Mi,
-            options: Oi,
-            textAlign: ai
-          } = this, li = Ti.chart;
-          Ni = this.getStackBox({ xOffset: bi, width: Ri, boxBottom: Ni, boxTop: fi, defaultX: Ci, xAxis: wi });
-          var { verticalAlign: xi } = yi;
+            options: Di,
+            textAlign: ci
+          } = this, pi = Ti.chart;
+          Ni = this.getStackBox({ xOffset: Ai, width: ji, boxBottom: Ni, boxTop: gi, defaultX: ki, xAxis: wi });
+          var { verticalAlign: vi } = Si;
           if (Mi && Ni) {
-            fi = Mi.getBBox(), Ci = Mi.padding, wi = Ki(Oi.overflow, "justify") === "justify", yi.x = Oi.x || 0, yi.y = Oi.y || 0;
-            const { x: di, y: pi } = this.adjustStackPosition({ labelBox: fi, verticalAlign: xi, textAlign: ai });
-            Ni.x -= di, Ni.y -= pi, Mi.align(yi, !1, Ni), (xi = li.isInsidePlot(Mi.alignAttr.x + yi.x + di, Mi.alignAttr.y + yi.y + pi)) || (wi = !1), wi && Qi.prototype.justifyDataLabel.call(Ti, Mi, yi, Mi.alignAttr, fi, Ni), Mi.attr({
+            gi = Mi.getBBox(), ki = Mi.padding, wi = Vi(Di.overflow, "justify") === "justify", Si.x = Di.x || 0, Si.y = Di.y || 0;
+            const { x: ui, y: fi } = this.adjustStackPosition({ labelBox: gi, verticalAlign: vi, textAlign: ci });
+            Ni.x -= ui, Ni.y -= fi, Mi.align(Si, !1, Ni), (vi = pi.isInsidePlot(Mi.alignAttr.x + Si.x + ui, Mi.alignAttr.y + Si.y + fi)) || (wi = !1), wi && Yi.prototype.justifyDataLabel.call(Ti, Mi, Si, Mi.alignAttr, gi, Ni), Mi.attr({
               x: Mi.alignAttr.x,
               y: Mi.alignAttr.y,
-              rotation: Oi.rotation,
-              rotationOriginX: fi.width / 2,
-              rotationOriginY: fi.height / 2
-            }), Ki(!wi && Oi.crop, !0) && (xi = Wi(Mi.x) && Wi(Mi.y) && li.isInsidePlot(Mi.x - Ci + Mi.width, Mi.y) && li.isInsidePlot(Mi.x + Ci, Mi.y)), Mi[xi ? "show" : "hide"]();
+              rotation: Di.rotation,
+              rotationOriginX: gi.width / 2,
+              rotationOriginY: gi.height / 2
+            }), Vi(!wi && Di.crop, !0) && (vi = $i(Mi.x) && $i(Mi.y) && pi.isInsidePlot(Mi.x - ki + Mi.width, Mi.y) && pi.isInsidePlot(Mi.x + ki, Mi.y)), Mi[vi ? "show" : "hide"]();
           }
-          ss(this, "afterSetOffset", { xOffset: bi, width: Ri });
+          is(this, "afterSetOffset", { xOffset: Ai, width: ji });
         }
-        adjustStackPosition({ labelBox: bi, verticalAlign: Ri, textAlign: Ni }) {
-          const fi = { bottom: 0, middle: 1, top: 2, right: 1, center: 0, left: -1 };
-          return { x: bi.width / 2 + bi.width / 2 * fi[Ni], y: bi.height / 2 * fi[Ri] };
+        adjustStackPosition({ labelBox: Ai, verticalAlign: ji, textAlign: Ni }) {
+          const gi = { bottom: 0, middle: 1, top: 2, right: 1, center: 0, left: -1 };
+          return { x: Ai.width / 2 + Ai.width / 2 * gi[Ni], y: Ai.height / 2 * gi[ji] };
         }
-        getStackBox(bi) {
-          var Ri = this.axis;
-          const Ni = Ri.chart, {
-            boxTop: fi,
-            defaultX: Ci,
+        getStackBox(Ai) {
+          var ji = this.axis;
+          const Ni = ji.chart, {
+            boxTop: gi,
+            defaultX: ki,
             xOffset: wi,
-            width: yi,
+            width: Si,
             boxBottom: Ti
-          } = bi;
-          var Mi = Ri.stacking.usePercentage ? 100 : Ki(fi, this.total, 0);
-          Mi = Ri.toPixels(Mi), bi = bi.xAxis || Ni.xAxis[0];
-          const Oi = Ki(Ci, bi.translate(this.x)) + wi;
-          Ri = Ri.toPixels(Ti || Wi(Ri.min) && Ri.logarithmic && Ri.logarithmic.lin2log(Ri.min) || 0), Ri = Math.abs(Mi - Ri);
-          const ai = this.isNegative;
-          return Ni.inverted ? { x: (ai ? Mi : Mi - Ri) - Ni.plotLeft, y: bi.height - Oi - yi, width: Ri, height: yi } : { x: Oi + bi.transB - Ni.plotLeft, y: (ai ? Mi - Ri : Mi) - Ni.plotTop, width: yi, height: Ri };
+          } = Ai;
+          var Mi = ji.stacking.usePercentage ? 100 : Vi(gi, this.total, 0);
+          Mi = ji.toPixels(Mi), Ai = Ai.xAxis || Ni.xAxis[0];
+          const Di = Vi(ki, Ai.translate(this.x)) + wi;
+          ji = ji.toPixels(Ti || $i(ji.min) && ji.logarithmic && ji.logarithmic.lin2log(ji.min) || 0), ji = Math.abs(Mi - ji);
+          const ci = this.isNegative;
+          return Ni.inverted ? { x: (ci ? Mi : Mi - ji) - Ni.plotLeft, y: Ai.height - Di - Si, width: ji, height: Si } : { x: Di + Ai.transB - Ni.plotLeft, y: (ci ? Mi - ji : Mi) - Ni.plotTop, width: Si, height: ji };
         }
       }
-      return Ui;
-    }), ci(oi, "Core/Axis/Stacking/StackingAxis.js", [
-      oi["Core/Animation/AnimationUtilities.js"],
-      oi["Core/Axis/Axis.js"],
-      oi["Core/Series/SeriesRegistry.js"],
-      oi["Core/Axis/Stacking/StackItem.js"],
-      oi["Core/Utilities.js"]
-    ], function(Si, ji, qi, ts, Qi) {
+      return _i;
+    }), ri(ii, "Core/Axis/Stacking/StackingAxis.js", [
+      ii["Core/Animation/AnimationUtilities.js"],
+      ii["Core/Axis/Axis.js"],
+      ii["Core/Series/SeriesRegistry.js"],
+      ii["Core/Axis/Stacking/StackItem.js"],
+      ii["Core/Utilities.js"]
+    ], function(li, Ci, zi, Ki, Yi) {
+      function es() {
+        const si = this, ti = si.inverted;
+        si.yAxis.forEach((oi) => {
+          oi.stacking && oi.stacking.stacks && oi.hasVisibleSeries && (oi.stacking.oldStacks = oi.stacking.stacks);
+        }), si.series.forEach((oi) => {
+          const di = oi.xAxis && oi.xAxis.options || {};
+          !oi.options.stacking || oi.visible !== !0 && si.options.chart.ignoreHiddenSeries !== !1 || (oi.stackKey = [oi.type, vi(oi.options.stack, ""), ti ? di.top : di.left, ti ? di.height : di.width].join());
+        });
+      }
       function is() {
-        const ei = this, Fe = ei.inverted;
-        ei.yAxis.forEach((ii) => {
-          ii.stacking && ii.stacking.stacks && ii.hasVisibleSeries && (ii.stacking.oldStacks = ii.stacking.stacks);
-        }), ei.series.forEach((ii) => {
-          const hi = ii.xAxis && ii.xAxis.options || {};
-          !ii.options.stacking || ii.visible !== !0 && ei.options.chart.ignoreHiddenSeries !== !1 || (ii.stackKey = [ii.type, xi(ii.options.stack, ""), Fe ? hi.top : hi.left, Fe ? hi.height : hi.width].join());
-        });
-      }
-      function ss() {
-        const ei = this.stacking;
-        if (ei) {
-          var Fe = ei.stacks;
-          li(Fe, function(ii, hi) {
-            Ti(ii), Fe[hi] = null;
-          }), ei && ei.stackTotalGroup && ei.stackTotalGroup.destroy();
+        const si = this.stacking;
+        if (si) {
+          var ti = si.stacks;
+          pi(ti, function(oi, di) {
+            Ti(oi), ti[di] = null;
+          }), si && si.stackTotalGroup && si.stackTotalGroup.destroy();
         }
       }
-      function Wi() {
-        this.coll !== "yAxis" || this.stacking || (this.stacking = new di(this));
+      function $i() {
+        this.coll !== "yAxis" || this.stacking || (this.stacking = new ui(this));
       }
-      function Ki(ei, Fe, ii, hi) {
-        return !yi(ei) || ei.x !== Fe || hi && ei.stackKey !== hi ? ei = { x: Fe, index: 0, key: hi, stackKey: hi } : ei.index++, ei.key = [ii, Fe, ei.index].join(), ei;
+      function Vi(si, ti, oi, di) {
+        return !Si(si) || si.x !== ti || di && si.stackKey !== di ? si = { x: ti, index: 0, key: di, stackKey: di } : si.index++, si.key = [oi, ti, si.index].join(), si;
       }
-      function Ui() {
-        const ei = this, Fe = ei.stackKey, ii = ei.yAxis.stacking.stacks, hi = ei.processedXData, gi = ei[ei.options.stacking + "Stacker"];
-        let Ei;
-        gi && [Fe, "-" + Fe].forEach((ni) => {
-          let Pi = hi.length, Fi;
-          for (; Pi--; ) {
-            var Zi = hi[Pi];
-            Ei = ei.getStackIndicator(Ei, Zi, ei.index, ni), (Fi = (Zi = ii[ni] && ii[ni][Zi]) && Zi.points[Ei.key]) && gi.call(ei, Fi, Zi, Pi);
+      function _i() {
+        const si = this, ti = si.stackKey, oi = si.yAxis.stacking.stacks, di = si.processedXData, mi = si[si.options.stacking + "Stacker"];
+        let Oi;
+        mi && [ti, "-" + ti].forEach((hi) => {
+          let Li = di.length, Ui;
+          for (; Li--; ) {
+            var Zi = di[Li];
+            Oi = si.getStackIndicator(Oi, Zi, si.index, hi), (Ui = (Zi = oi[hi] && oi[hi][Zi]) && Zi.points[Oi.key]) && mi.call(si, Ui, Zi, Li);
           }
         });
       }
-      function ki(ei, Fe, ii) {
-        Fe = Fe.total ? 100 / Fe.total : 0, ei[0] = wi(ei[0] * Fe), ei[1] = wi(ei[1] * Fe), this.stackedYData[ii] = ei[1];
+      function bi(si, ti, oi) {
+        ti = ti.total ? 100 / ti.total : 0, si[0] = wi(si[0] * ti), si[1] = wi(si[1] * ti), this.stackedYData[oi] = si[1];
       }
-      function bi() {
-        const ei = this.yAxis.stacking;
-        this.options.centerInCategory && (this.is("column") || this.is("columnrange")) && !this.options.stacking && 1 < this.chart.series.length ? fi.setStackedPoints.call(this, "group") : ei && li(ei.stacks, (Fe, ii) => {
-          ii.slice(-5) === "group" && (li(Fe, (hi) => hi.destroy()), delete ei.stacks[ii]);
+      function Ai() {
+        const si = this.yAxis.stacking;
+        this.options.centerInCategory && (this.is("column") || this.is("columnrange")) && !this.options.stacking && 1 < this.chart.series.length ? gi.setStackedPoints.call(this, "group") : si && pi(si.stacks, (ti, oi) => {
+          oi.slice(-5) === "group" && (pi(ti, (di) => di.destroy()), delete si.stacks[oi]);
         });
       }
-      function Ri(ei) {
-        var Fe = this.chart;
-        const ii = ei || this.options.stacking;
-        if (ii && (this.visible === !0 || Fe.options.chart.ignoreHiddenSeries === !1)) {
-          var hi = this.processedXData, gi = this.processedYData, Ei = [], ni = gi.length, Pi = this.options, Fi = Pi.threshold, Zi = xi(Pi.startFromThreshold && Fi, 0);
-          Pi = Pi.stack, ei = ei ? `${this.type},${ii}` : this.stackKey;
-          var rs = "-" + ei, Bi = this.negStacks;
-          Fe = ii === "group" ? Fe.yAxis[0] : this.yAxis;
-          var si = Fe.stacking.stacks, Li = Fe.stacking.oldStacks, Hi, Di;
-          for (Fe.stacking.stacksTouched += 1, Di = 0; Di < ni; Di++) {
-            var Vi = hi[Di], ri = gi[Di], mi = this.getStackIndicator(mi, Vi, this.index), vi = mi.key, zi = (Hi = Bi && ri < (Zi ? 0 : Fi)) ? rs : ei;
-            si[zi] || (si[zi] = {}), si[zi][Vi] || (Li[zi] && Li[zi][Vi] ? (si[zi][Vi] = Li[zi][Vi], si[zi][Vi].total = null) : si[zi][Vi] = new ts(Fe, Fe.options.stackLabels, !!Hi, Vi, Pi)), zi = si[zi][Vi], ri !== null ? (zi.points[vi] = zi.points[this.index] = [xi(zi.cumulative, Zi)], yi(zi.cumulative) || (zi.base = vi), zi.touched = Fe.stacking.stacksTouched, 0 < mi.index && this.singleStacks === !1 && (zi.points[vi][0] = zi.points[this.index + "," + Vi + ",0"][0])) : zi.points[vi] = zi.points[this.index] = null, ii === "percent" ? (Hi = Hi ? ei : rs, Bi && si[Hi] && si[Hi][Vi] ? (Hi = si[Hi][Vi], zi.total = Hi.total = Math.max(Hi.total, zi.total) + Math.abs(ri) || 0) : zi.total = wi(zi.total + (Math.abs(ri) || 0))) : ii === "group" ? (Oi(ri) && (ri = ri[0]), ri !== null && (zi.total = (zi.total || 0) + 1)) : zi.total = wi(zi.total + (ri || 0)), zi.cumulative = ii === "group" ? (zi.total || 1) - 1 : wi(xi(zi.cumulative, Zi) + (ri || 0)), ri !== null && (zi.points[vi].push(zi.cumulative), Ei[Di] = zi.cumulative, zi.hasValidPoints = !0);
+      function ji(si) {
+        var ti = this.chart;
+        const oi = si || this.options.stacking;
+        if (oi && (this.visible === !0 || ti.options.chart.ignoreHiddenSeries === !1)) {
+          var di = this.processedXData, mi = this.processedYData, Oi = [], hi = mi.length, Li = this.options, Ui = Li.threshold, Zi = vi(Li.startFromThreshold && Ui, 0);
+          Li = Li.stack, si = si ? `${this.type},${oi}` : this.stackKey;
+          var rs = "-" + si, Bi = this.negStacks;
+          ti = oi === "group" ? ti.yAxis[0] : this.yAxis;
+          var ni = ti.stacking.stacks, Pi = ti.stacking.oldStacks, Hi, Ri;
+          for (ti.stacking.stacksTouched += 1, Ri = 0; Ri < hi; Ri++) {
+            var qi = di[Ri], ai = mi[Ri], xi = this.getStackIndicator(xi, qi, this.index), yi = xi.key, Gi = (Hi = Bi && ai < (Zi ? 0 : Ui)) ? rs : si;
+            ni[Gi] || (ni[Gi] = {}), ni[Gi][qi] || (Pi[Gi] && Pi[Gi][qi] ? (ni[Gi][qi] = Pi[Gi][qi], ni[Gi][qi].total = null) : ni[Gi][qi] = new Ki(ti, ti.options.stackLabels, !!Hi, qi, Li)), Gi = ni[Gi][qi], ai !== null ? (Gi.points[yi] = Gi.points[this.index] = [vi(Gi.cumulative, Zi)], Si(Gi.cumulative) || (Gi.base = yi), Gi.touched = ti.stacking.stacksTouched, 0 < xi.index && this.singleStacks === !1 && (Gi.points[yi][0] = Gi.points[this.index + "," + qi + ",0"][0])) : Gi.points[yi] = Gi.points[this.index] = null, oi === "percent" ? (Hi = Hi ? si : rs, Bi && ni[Hi] && ni[Hi][qi] ? (Hi = ni[Hi][qi], Gi.total = Hi.total = Math.max(Hi.total, Gi.total) + Math.abs(ai) || 0) : Gi.total = wi(Gi.total + (Math.abs(ai) || 0))) : oi === "group" ? (Di(ai) && (ai = ai[0]), ai !== null && (Gi.total = (Gi.total || 0) + 1)) : Gi.total = wi(Gi.total + (ai || 0)), Gi.cumulative = oi === "group" ? (Gi.total || 1) - 1 : wi(vi(Gi.cumulative, Zi) + (ai || 0)), ai !== null && (Gi.points[yi].push(Gi.cumulative), Oi[Ri] = Gi.cumulative, Gi.hasValidPoints = !0);
           }
-          ii === "percent" && (Fe.stacking.usePercentage = !0), ii !== "group" && (this.stackedYData = Ei), Fe.stacking.oldStacks = {};
+          oi === "percent" && (ti.stacking.usePercentage = !0), oi !== "group" && (this.stackedYData = Oi), ti.stacking.oldStacks = {};
         }
       }
-      const { getDeferredAnimation: Ni } = Si, { series: { prototype: fi } } = qi, { addEvent: Ci, correctFloat: wi, defined: yi, destroyObjectProperties: Ti, fireEvent: Mi, isArray: Oi, isNumber: ai, objectEach: li, pick: xi } = Qi;
-      class di {
-        constructor(Fe) {
-          this.oldStacks = {}, this.stacks = {}, this.stacksTouched = 0, this.axis = Fe;
+      const { getDeferredAnimation: Ni } = li, { series: { prototype: gi } } = zi, { addEvent: ki, correctFloat: wi, defined: Si, destroyObjectProperties: Ti, fireEvent: Mi, isArray: Di, isNumber: ci, objectEach: pi, pick: vi } = Yi;
+      class ui {
+        constructor(ti) {
+          this.oldStacks = {}, this.stacks = {}, this.stacksTouched = 0, this.axis = ti;
         }
         buildStacks() {
-          const Fe = this.axis, ii = Fe.series, hi = Fe.options.reversedStacks, gi = ii.length;
-          let Ei, ni;
-          for (this.usePercentage = !1, ni = gi; ni--; )
-            Ei = ii[hi ? ni : gi - ni - 1], Ei.setStackedPoints(), Ei.setGroupedPoints();
-          for (ni = 0; ni < gi; ni++)
-            ii[ni].modifyStacks();
-          Mi(Fe, "afterBuildStacks");
+          const ti = this.axis, oi = ti.series, di = ti.options.reversedStacks, mi = oi.length;
+          let Oi, hi;
+          for (this.usePercentage = !1, hi = mi; hi--; )
+            Oi = oi[di ? hi : mi - hi - 1], Oi.setStackedPoints(), Oi.setGroupedPoints();
+          for (hi = 0; hi < mi; hi++)
+            oi[hi].modifyStacks();
+          Mi(ti, "afterBuildStacks");
         }
         cleanStacks() {
-          let Fe;
-          this.oldStacks && (Fe = this.stacks = this.oldStacks), li(Fe, function(ii) {
-            li(ii, function(hi) {
-              hi.cumulative = hi.total;
+          let ti;
+          this.oldStacks && (ti = this.stacks = this.oldStacks), pi(ti, function(oi) {
+            pi(oi, function(di) {
+              di.cumulative = di.total;
             });
           });
         }
         resetStacks() {
-          li(this.stacks, (Fe) => {
-            li(Fe, (ii, hi) => {
-              ai(ii.touched) && ii.touched < this.stacksTouched ? (ii.destroy(), delete Fe[hi]) : (ii.total = null, ii.cumulative = null);
+          pi(this.stacks, (ti) => {
+            pi(ti, (oi, di) => {
+              ci(oi.touched) && oi.touched < this.stacksTouched ? (oi.destroy(), delete ti[di]) : (oi.total = null, oi.cumulative = null);
             });
           });
         }
         renderStackTotals() {
-          var Fe = this.axis;
-          const ii = Fe.chart, hi = ii.renderer, gi = this.stacks;
-          Fe = Ni(ii, Fe.options.stackLabels && Fe.options.stackLabels.animation || !1);
-          const Ei = this.stackTotalGroup = this.stackTotalGroup || hi.g("stack-labels").attr({ zIndex: 6, opacity: 0 }).add();
-          Ei.translate(ii.plotLeft, ii.plotTop), li(gi, function(ni) {
-            li(ni, function(Pi) {
-              Pi.render(Ei);
+          var ti = this.axis;
+          const oi = ti.chart, di = oi.renderer, mi = this.stacks;
+          ti = Ni(oi, ti.options.stackLabels && ti.options.stackLabels.animation || !1);
+          const Oi = this.stackTotalGroup = this.stackTotalGroup || di.g("stack-labels").attr({ zIndex: 6, opacity: 0 }).add();
+          Oi.translate(oi.plotLeft, oi.plotTop), pi(mi, function(hi) {
+            pi(hi, function(Li) {
+              Li.render(Oi);
             });
-          }), Ei.animate({ opacity: 1 }, Fe);
+          }), Oi.animate({ opacity: 1 }, ti);
         }
       }
-      var pi;
-      return function(ei) {
-        const Fe = [];
-        ei.compose = function(ii, hi, gi) {
-          Qi.pushUnique(Fe, ii) && (Ci(ii, "init", Wi), Ci(ii, "destroy", ss)), Qi.pushUnique(Fe, hi) && (hi.prototype.getStacks = is), Qi.pushUnique(Fe, gi) && (ii = gi.prototype, ii.getStackIndicator = Ki, ii.modifyStacks = Ui, ii.percentStacker = ki, ii.setGroupedPoints = bi, ii.setStackedPoints = Ri);
+      var fi;
+      return function(si) {
+        const ti = [];
+        si.compose = function(oi, di, mi) {
+          Yi.pushUnique(ti, oi) && (ki(oi, "init", $i), ki(oi, "destroy", is)), Yi.pushUnique(ti, di) && (di.prototype.getStacks = es), Yi.pushUnique(ti, mi) && (oi = mi.prototype, oi.getStackIndicator = Vi, oi.modifyStacks = _i, oi.percentStacker = bi, oi.setGroupedPoints = Ai, oi.setStackedPoints = ji);
         };
-      }(pi || (pi = {})), pi;
-    }), ci(
-      oi,
+      }(fi || (fi = {})), fi;
+    }), ri(
+      ii,
       "Series/Line/LineSeries.js",
-      [oi["Core/Series/Series.js"], oi["Core/Series/SeriesRegistry.js"], oi["Core/Utilities.js"]],
-      function(Si, ji, qi) {
-        const { defined: ts, merge: Qi } = qi;
-        class is extends Si {
+      [ii["Core/Series/Series.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]],
+      function(li, Ci, zi) {
+        const { defined: Ki, merge: Yi } = zi;
+        class es extends li {
           constructor() {
             super(...arguments), this.points = this.options = this.data = void 0;
           }
           drawGraph() {
-            const Wi = this, Ki = this.options, Ui = (this.gappedPath || this.getGraphPath).call(this), ki = this.chart.styledMode;
-            let bi = [["graph", "highcharts-graph"]];
-            ki || bi[0].push(Ki.lineColor || this.color || "#cccccc", Ki.dashStyle), bi = Wi.getZonesGraphs(bi), bi.forEach(function(Ri, Ni) {
-              var fi = Ri[0];
-              let Ci = Wi[fi];
-              const wi = Ci ? "animate" : "attr";
-              Ci ? (Ci.endX = Wi.preventGraphAnimation ? null : Ui.xMap, Ci.animate({ d: Ui })) : Ui.length && (Wi[fi] = Ci = Wi.chart.renderer.path(Ui).addClass(Ri[1]).attr({ zIndex: 1 }).add(Wi.group)), Ci && !ki && (fi = { stroke: Ri[2], "stroke-width": Ki.lineWidth || 0, fill: Wi.fillGraph && Wi.color || "none" }, Ri[3] ? fi.dashstyle = Ri[3] : Ki.linecap !== "square" && (fi["stroke-linecap"] = fi["stroke-linejoin"] = "round"), Ci[wi](fi).shadow(2 > Ni && Ki.shadow)), Ci && (Ci.startX = Ui.xMap, Ci.isArea = Ui.isArea);
+            const $i = this, Vi = this.options, _i = (this.gappedPath || this.getGraphPath).call(this), bi = this.chart.styledMode;
+            let Ai = [["graph", "highcharts-graph"]];
+            bi || Ai[0].push(Vi.lineColor || this.color || "#cccccc", Vi.dashStyle), Ai = $i.getZonesGraphs(Ai), Ai.forEach(function(ji, Ni) {
+              var gi = ji[0];
+              let ki = $i[gi];
+              const wi = ki ? "animate" : "attr";
+              ki ? (ki.endX = $i.preventGraphAnimation ? null : _i.xMap, ki.animate({ d: _i })) : _i.length && ($i[gi] = ki = $i.chart.renderer.path(_i).addClass(ji[1]).attr({ zIndex: 1 }).add($i.group)), ki && !bi && (gi = { stroke: ji[2], "stroke-width": Vi.lineWidth || 0, fill: $i.fillGraph && $i.color || "none" }, ji[3] ? gi.dashstyle = ji[3] : Vi.linecap !== "square" && (gi["stroke-linecap"] = gi["stroke-linejoin"] = "round"), ki[wi](gi).shadow(2 > Ni && Vi.shadow)), ki && (ki.startX = _i.xMap, ki.isArea = _i.isArea);
             });
           }
-          getGraphPath(Wi, Ki, Ui) {
-            const ki = this, bi = ki.options, Ri = [], Ni = [];
-            let fi, Ci = bi.step;
-            Wi = Wi || ki.points;
-            const wi = Wi.reversed;
-            return wi && Wi.reverse(), (Ci = { right: 1, center: 2 }[Ci] || Ci && 3) && wi && (Ci = 4 - Ci), Wi = this.getValidPoints(Wi, !1, !(bi.connectNulls && !Ki && !Ui)), Wi.forEach(function(yi, Ti) {
-              const Mi = yi.plotX, Oi = yi.plotY, ai = Wi[Ti - 1], li = yi.isNull || typeof Oi != "number";
-              (yi.leftCliff || ai && ai.rightCliff) && !Ui && (fi = !0), li && !ts(Ki) && 0 < Ti ? fi = !bi.connectNulls : li && !Ki ? fi = !0 : (Ti === 0 || fi ? Ti = [["M", yi.plotX, yi.plotY]] : ki.getPointSpline ? Ti = [ki.getPointSpline(Wi, yi, Ti)] : Ci ? (Ti = Ci === 1 ? [["L", ai.plotX, Oi]] : Ci === 2 ? [["L", (ai.plotX + Mi) / 2, ai.plotY], ["L", (ai.plotX + Mi) / 2, Oi]] : [["L", Mi, ai.plotY]], Ti.push(["L", Mi, Oi])) : Ti = [["L", Mi, Oi]], Ni.push(yi.x), Ci && (Ni.push(yi.x), Ci === 2 && Ni.push(yi.x)), Ri.push.apply(Ri, Ti), fi = !1);
-            }), Ri.xMap = Ni, ki.graphPath = Ri;
+          getGraphPath($i, Vi, _i) {
+            const bi = this, Ai = bi.options, ji = [], Ni = [];
+            let gi, ki = Ai.step;
+            $i = $i || bi.points;
+            const wi = $i.reversed;
+            return wi && $i.reverse(), (ki = { right: 1, center: 2 }[ki] || ki && 3) && wi && (ki = 4 - ki), $i = this.getValidPoints($i, !1, !(Ai.connectNulls && !Vi && !_i)), $i.forEach(function(Si, Ti) {
+              const Mi = Si.plotX, Di = Si.plotY, ci = $i[Ti - 1], pi = Si.isNull || typeof Di != "number";
+              (Si.leftCliff || ci && ci.rightCliff) && !_i && (gi = !0), pi && !Ki(Vi) && 0 < Ti ? gi = !Ai.connectNulls : pi && !Vi ? gi = !0 : (Ti === 0 || gi ? Ti = [["M", Si.plotX, Si.plotY]] : bi.getPointSpline ? Ti = [bi.getPointSpline($i, Si, Ti)] : ki ? (Ti = ki === 1 ? [["L", ci.plotX, Di]] : ki === 2 ? [["L", (ci.plotX + Mi) / 2, ci.plotY], ["L", (ci.plotX + Mi) / 2, Di]] : [["L", Mi, ci.plotY]], Ti.push(["L", Mi, Di])) : Ti = [["L", Mi, Di]], Ni.push(Si.x), ki && (Ni.push(Si.x), ki === 2 && Ni.push(Si.x)), ji.push.apply(ji, Ti), gi = !1);
+            }), ji.xMap = Ni, bi.graphPath = ji;
           }
-          getZonesGraphs(Wi) {
-            return this.zones.forEach(function(Ki, Ui) {
-              Ui = ["zone-graph-" + Ui, "highcharts-graph highcharts-zone-graph-" + Ui + " " + (Ki.className || "")], this.chart.styledMode || Ui.push(Ki.color || this.color, Ki.dashStyle || this.options.dashStyle), Wi.push(Ui);
-            }, this), Wi;
+          getZonesGraphs($i) {
+            return this.zones.forEach(function(Vi, _i) {
+              _i = ["zone-graph-" + _i, "highcharts-graph highcharts-zone-graph-" + _i + " " + (Vi.className || "")], this.chart.styledMode || _i.push(Vi.color || this.color, Vi.dashStyle || this.options.dashStyle), $i.push(_i);
+            }, this), $i;
           }
         }
-        return is.defaultOptions = Qi(Si.defaultOptions, { legendSymbol: "lineMarker" }), ji.registerSeriesType("line", is), is;
+        return es.defaultOptions = Yi(li.defaultOptions, { legendSymbol: "lineMarker" }), Ci.registerSeriesType("line", es), es;
       }
-    ), ci(oi, "Series/Area/AreaSeries.js", [
-      oi["Core/Color/Color.js"],
-      oi["Core/Series/SeriesRegistry.js"],
-      oi["Core/Utilities.js"]
-    ], function(Si, ji, qi) {
-      const { seriesTypes: { line: ts } } = ji, { extend: Qi, merge: is, objectEach: ss, pick: Wi } = qi;
-      class Ki extends ts {
+    ), ri(ii, "Series/Area/AreaSeries.js", [
+      ii["Core/Color/Color.js"],
+      ii["Core/Series/SeriesRegistry.js"],
+      ii["Core/Utilities.js"]
+    ], function(li, Ci, zi) {
+      const { seriesTypes: { line: Ki } } = Ci, { extend: Yi, merge: es, objectEach: is, pick: $i } = zi;
+      class Vi extends Ki {
         constructor() {
           super(...arguments), this.points = this.options = this.data = void 0;
         }
         drawGraph() {
           this.areaPath = [], super.drawGraph.apply(this);
-          const ki = this, bi = this.areaPath, Ri = this.options, Ni = [["area", "highcharts-area", this.color, Ri.fillColor]];
-          this.zones.forEach(function(fi, Ci) {
-            Ni.push(["zone-area-" + Ci, "highcharts-area highcharts-zone-area-" + Ci + " " + fi.className, fi.color || ki.color, fi.fillColor || Ri.fillColor]);
-          }), Ni.forEach(function(fi) {
-            const Ci = fi[0], wi = {};
-            let yi = ki[Ci];
-            const Ti = yi ? "animate" : "attr";
-            yi ? (yi.endX = ki.preventGraphAnimation ? null : bi.xMap, yi.animate({ d: bi })) : (wi.zIndex = 0, yi = ki[Ci] = ki.chart.renderer.path(bi).addClass(fi[1]).add(ki.group), yi.isArea = !0), ki.chart.styledMode || (fi[3] ? wi.fill = fi[3] : (wi.fill = fi[2], wi["fill-opacity"] = Wi(Ri.fillOpacity, 0.75))), yi[Ti](wi), yi.startX = bi.xMap, yi.shiftUnit = Ri.step ? 2 : 1;
+          const bi = this, Ai = this.areaPath, ji = this.options, Ni = [["area", "highcharts-area", this.color, ji.fillColor]];
+          this.zones.forEach(function(gi, ki) {
+            Ni.push(["zone-area-" + ki, "highcharts-area highcharts-zone-area-" + ki + " " + gi.className, gi.color || bi.color, gi.fillColor || ji.fillColor]);
+          }), Ni.forEach(function(gi) {
+            const ki = gi[0], wi = {};
+            let Si = bi[ki];
+            const Ti = Si ? "animate" : "attr";
+            Si ? (Si.endX = bi.preventGraphAnimation ? null : Ai.xMap, Si.animate({ d: Ai })) : (wi.zIndex = 0, Si = bi[ki] = bi.chart.renderer.path(Ai).addClass(gi[1]).add(bi.group), Si.isArea = !0), bi.chart.styledMode || (gi[3] ? wi.fill = gi[3] : (wi.fill = gi[2], wi["fill-opacity"] = $i(ji.fillOpacity, 0.75))), Si[Ti](wi), Si.startX = Ai.xMap, Si.shiftUnit = ji.step ? 2 : 1;
           });
         }
-        getGraphPath(ki) {
-          var bi = ts.prototype.getGraphPath, Ri = this.options;
-          const Ni = Ri.stacking, fi = this.yAxis, Ci = [], wi = [], yi = this.index, Ti = fi.stacking.stacks[this.stackKey], Mi = Ri.threshold, Oi = Math.round(fi.getThreshold(Ri.threshold));
-          Ri = Wi(Ri.connectNulls, Ni === "percent");
-          var ai = function(pi, ei, Fe) {
-            var ii = ki[pi];
-            pi = Ni && Ti[ii.x].points[yi];
-            const hi = ii[Fe + "Null"] || 0;
-            Fe = ii[Fe + "Cliff"] || 0;
-            let gi, Ei;
-            ii = !0, Fe || hi ? (gi = (hi ? pi[0] : pi[1]) + Fe, Ei = pi[0] + Fe, ii = !!hi) : !Ni && ki[ei] && ki[ei].isNull && (gi = Ei = Mi), typeof gi < "u" && (wi.push({ plotX: li, plotY: gi === null ? Oi : fi.getThreshold(gi), isNull: ii, isCliff: !0 }), Ci.push({ plotX: li, plotY: Ei === null ? Oi : fi.getThreshold(Ei), doCurve: !1 }));
+        getGraphPath(bi) {
+          var Ai = Ki.prototype.getGraphPath, ji = this.options;
+          const Ni = ji.stacking, gi = this.yAxis, ki = [], wi = [], Si = this.index, Ti = gi.stacking.stacks[this.stackKey], Mi = ji.threshold, Di = Math.round(gi.getThreshold(ji.threshold));
+          ji = $i(ji.connectNulls, Ni === "percent");
+          var ci = function(fi, si, ti) {
+            var oi = bi[fi];
+            fi = Ni && Ti[oi.x].points[Si];
+            const di = oi[ti + "Null"] || 0;
+            ti = oi[ti + "Cliff"] || 0;
+            let mi, Oi;
+            oi = !0, ti || di ? (mi = (di ? fi[0] : fi[1]) + ti, Oi = fi[0] + ti, oi = !!di) : !Ni && bi[si] && bi[si].isNull && (mi = Oi = Mi), typeof mi < "u" && (wi.push({ plotX: pi, plotY: mi === null ? Di : gi.getThreshold(mi), isNull: oi, isCliff: !0 }), ki.push({ plotX: pi, plotY: Oi === null ? Di : gi.getThreshold(Oi), doCurve: !1 }));
           };
-          let li;
-          ki = ki || this.points, Ni && (ki = this.getStackPoints(ki));
-          for (let pi = 0, ei = ki.length; pi < ei; ++pi) {
-            Ni || (ki[pi].leftCliff = ki[pi].rightCliff = ki[pi].leftNull = ki[pi].rightNull = void 0);
-            var xi = ki[pi].isNull;
-            li = Wi(ki[pi].rectPlotX, ki[pi].plotX);
-            var di = Ni ? Wi(ki[pi].yBottom, Oi) : Oi;
-            (!xi || Ri) && (Ri || ai(pi, pi - 1, "left"), xi && !Ni && Ri || (wi.push(ki[pi]), Ci.push({ x: pi, plotX: li, plotY: di })), Ri || ai(pi, pi + 1, "right"));
+          let pi;
+          bi = bi || this.points, Ni && (bi = this.getStackPoints(bi));
+          for (let fi = 0, si = bi.length; fi < si; ++fi) {
+            Ni || (bi[fi].leftCliff = bi[fi].rightCliff = bi[fi].leftNull = bi[fi].rightNull = void 0);
+            var vi = bi[fi].isNull;
+            pi = $i(bi[fi].rectPlotX, bi[fi].plotX);
+            var ui = Ni ? $i(bi[fi].yBottom, Di) : Di;
+            (!vi || ji) && (ji || ci(fi, fi - 1, "left"), vi && !Ni && ji || (wi.push(bi[fi]), ki.push({ x: fi, plotX: pi, plotY: ui })), ji || ci(fi, fi + 1, "right"));
           }
-          return ai = bi.call(this, wi, !0, !0), Ci.reversed = !0, xi = bi.call(this, Ci, !0, !0), (di = xi[0]) && di[0] === "M" && (xi[0] = ["L", di[1], di[2]]), xi = ai.concat(xi), xi.length && xi.push(["Z"]), bi = bi.call(this, wi, !1, Ri), xi.xMap = ai.xMap, this.areaPath = xi, bi;
+          return ci = Ai.call(this, wi, !0, !0), ki.reversed = !0, vi = Ai.call(this, ki, !0, !0), (ui = vi[0]) && ui[0] === "M" && (vi[0] = ["L", ui[1], ui[2]]), vi = ci.concat(vi), vi.length && vi.push(["Z"]), Ai = Ai.call(this, wi, !1, ji), vi.xMap = ci.xMap, this.areaPath = vi, Ai;
         }
-        getStackPoints(ki) {
-          const bi = this, Ri = [], Ni = [], fi = this.xAxis, Ci = this.yAxis, wi = Ci.stacking.stacks[this.stackKey], yi = {}, Ti = Ci.series, Mi = Ti.length, Oi = Ci.options.reversedStacks ? 1 : -1, ai = Ti.indexOf(bi);
-          if (ki = ki || this.points, this.options.stacking) {
-            for (let xi = 0; xi < ki.length; xi++)
-              ki[xi].leftNull = ki[xi].rightNull = void 0, yi[ki[xi].x] = ki[xi];
-            ss(wi, function(xi, di) {
-              xi.total !== null && Ni.push(di);
-            }), Ni.sort(function(xi, di) {
-              return xi - di;
+        getStackPoints(bi) {
+          const Ai = this, ji = [], Ni = [], gi = this.xAxis, ki = this.yAxis, wi = ki.stacking.stacks[this.stackKey], Si = {}, Ti = ki.series, Mi = Ti.length, Di = ki.options.reversedStacks ? 1 : -1, ci = Ti.indexOf(Ai);
+          if (bi = bi || this.points, this.options.stacking) {
+            for (let vi = 0; vi < bi.length; vi++)
+              bi[vi].leftNull = bi[vi].rightNull = void 0, Si[bi[vi].x] = bi[vi];
+            is(wi, function(vi, ui) {
+              vi.total !== null && Ni.push(ui);
+            }), Ni.sort(function(vi, ui) {
+              return vi - ui;
             });
-            const li = Ti.map((xi) => xi.visible);
-            Ni.forEach(function(xi, di) {
-              let pi = 0, ei, Fe;
-              if (yi[xi] && !yi[xi].isNull)
-                Ri.push(yi[xi]), [-1, 1].forEach(function(ii) {
-                  const hi = ii === 1 ? "rightNull" : "leftNull", gi = wi[Ni[di + ii]];
-                  let Ei = 0;
-                  if (gi) {
-                    let ni = ai;
-                    for (; 0 <= ni && ni < Mi; ) {
-                      const Pi = Ti[ni].index;
-                      ei = gi.points[Pi], ei || (Pi === bi.index ? yi[xi][hi] = !0 : li[ni] && (Fe = wi[xi].points[Pi]) && (Ei -= Fe[1] - Fe[0])), ni += Oi;
+            const pi = Ti.map((vi) => vi.visible);
+            Ni.forEach(function(vi, ui) {
+              let fi = 0, si, ti;
+              if (Si[vi] && !Si[vi].isNull)
+                ji.push(Si[vi]), [-1, 1].forEach(function(oi) {
+                  const di = oi === 1 ? "rightNull" : "leftNull", mi = wi[Ni[ui + oi]];
+                  let Oi = 0;
+                  if (mi) {
+                    let hi = ci;
+                    for (; 0 <= hi && hi < Mi; ) {
+                      const Li = Ti[hi].index;
+                      si = mi.points[Li], si || (Li === Ai.index ? Si[vi][di] = !0 : pi[hi] && (ti = wi[vi].points[Li]) && (Oi -= ti[1] - ti[0])), hi += Di;
                     }
                   }
-                  yi[xi][ii === 1 ? "rightCliff" : "leftCliff"] = Ei;
+                  Si[vi][oi === 1 ? "rightCliff" : "leftCliff"] = Oi;
                 });
               else {
-                let ii = ai;
-                for (; 0 <= ii && ii < Mi; ) {
-                  if (ei = wi[xi].points[Ti[ii].index]) {
-                    pi = ei[1];
+                let oi = ci;
+                for (; 0 <= oi && oi < Mi; ) {
+                  if (si = wi[vi].points[Ti[oi].index]) {
+                    fi = si[1];
                     break;
                   }
-                  ii += Oi;
+                  oi += Di;
                 }
-                pi = Wi(pi, 0), pi = Ci.translate(pi, 0, 1, 0, 1), Ri.push({ isNull: !0, plotX: fi.translate(xi, 0, 0, 0, 1), x: xi, plotY: pi, yBottom: pi });
+                fi = $i(fi, 0), fi = ki.translate(fi, 0, 1, 0, 1), ji.push({ isNull: !0, plotX: gi.translate(vi, 0, 0, 0, 1), x: vi, plotY: fi, yBottom: fi });
               }
             });
           }
-          return Ri;
+          return ji;
         }
       }
-      return Ki.defaultOptions = is(ts.defaultOptions, { threshold: 0, legendSymbol: "rectangle" }), Qi(Ki.prototype, { singleStacks: !1 }), ji.registerSeriesType("area", Ki), Ki;
-    }), ci(oi, "Series/Spline/SplineSeries.js", [oi["Core/Series/SeriesRegistry.js"], oi["Core/Utilities.js"]], function(Si, ji) {
-      const { line: qi } = Si.seriesTypes, { merge: ts, pick: Qi } = ji;
-      class is extends qi {
+      return Vi.defaultOptions = es(Ki.defaultOptions, { threshold: 0, legendSymbol: "rectangle" }), Yi(Vi.prototype, { singleStacks: !1 }), Ci.registerSeriesType("area", Vi), Vi;
+    }), ri(ii, "Series/Spline/SplineSeries.js", [ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(li, Ci) {
+      const { line: zi } = li.seriesTypes, { merge: Ki, pick: Yi } = Ci;
+      class es extends zi {
         constructor() {
           super(...arguments), this.points = this.options = this.data = void 0;
         }
-        getPointSpline(Wi, Ki, Ui) {
-          const ki = Ki.plotX || 0, bi = Ki.plotY || 0, Ri = Wi[Ui - 1];
-          Ui = Wi[Ui + 1];
-          let Ni, fi, Ci;
-          if (Ri && !Ri.isNull && Ri.doCurve !== !1 && !Ki.isCliff && Ui && !Ui.isNull && Ui.doCurve !== !1 && !Ki.isCliff) {
-            Wi = Ri.plotY || 0;
-            var wi = Ui.plotX || 0;
-            Ui = Ui.plotY || 0;
-            let yi = 0;
-            Ni = (1.5 * ki + (Ri.plotX || 0)) / 2.5, fi = (1.5 * bi + Wi) / 2.5, wi = (1.5 * ki + wi) / 2.5, Ci = (1.5 * bi + Ui) / 2.5, wi !== Ni && (yi = (Ci - fi) * (wi - ki) / (wi - Ni) + bi - Ci), fi += yi, Ci += yi, fi > Wi && fi > bi ? (fi = Math.max(Wi, bi), Ci = 2 * bi - fi) : fi < Wi && fi < bi && (fi = Math.min(Wi, bi), Ci = 2 * bi - fi), Ci > Ui && Ci > bi ? (Ci = Math.max(Ui, bi), fi = 2 * bi - Ci) : Ci < Ui && Ci < bi && (Ci = Math.min(Ui, bi), fi = 2 * bi - Ci), Ki.rightContX = wi, Ki.rightContY = Ci;
+        getPointSpline($i, Vi, _i) {
+          const bi = Vi.plotX || 0, Ai = Vi.plotY || 0, ji = $i[_i - 1];
+          _i = $i[_i + 1];
+          let Ni, gi, ki;
+          if (ji && !ji.isNull && ji.doCurve !== !1 && !Vi.isCliff && _i && !_i.isNull && _i.doCurve !== !1 && !Vi.isCliff) {
+            $i = ji.plotY || 0;
+            var wi = _i.plotX || 0;
+            _i = _i.plotY || 0;
+            let Si = 0;
+            Ni = (1.5 * bi + (ji.plotX || 0)) / 2.5, gi = (1.5 * Ai + $i) / 2.5, wi = (1.5 * bi + wi) / 2.5, ki = (1.5 * Ai + _i) / 2.5, wi !== Ni && (Si = (ki - gi) * (wi - bi) / (wi - Ni) + Ai - ki), gi += Si, ki += Si, gi > $i && gi > Ai ? (gi = Math.max($i, Ai), ki = 2 * Ai - gi) : gi < $i && gi < Ai && (gi = Math.min($i, Ai), ki = 2 * Ai - gi), ki > _i && ki > Ai ? (ki = Math.max(_i, Ai), gi = 2 * Ai - ki) : ki < _i && ki < Ai && (ki = Math.min(_i, Ai), gi = 2 * Ai - ki), Vi.rightContX = wi, Vi.rightContY = ki;
           }
-          return Ki = ["C", Qi(Ri.rightContX, Ri.plotX, 0), Qi(Ri.rightContY, Ri.plotY, 0), Qi(Ni, ki, 0), Qi(fi, bi, 0), ki, bi], Ri.rightContX = Ri.rightContY = void 0, Ki;
+          return Vi = ["C", Yi(ji.rightContX, ji.plotX, 0), Yi(ji.rightContY, ji.plotY, 0), Yi(Ni, bi, 0), Yi(gi, Ai, 0), bi, Ai], ji.rightContX = ji.rightContY = void 0, Vi;
         }
       }
-      return is.defaultOptions = ts(qi.defaultOptions), Si.registerSeriesType(
+      return es.defaultOptions = Ki(zi.defaultOptions), li.registerSeriesType(
         "spline",
-        is
-      ), is;
-    }), ci(oi, "Series/AreaSpline/AreaSplineSeries.js", [oi["Series/Spline/SplineSeries.js"], oi["Core/Series/SeriesRegistry.js"], oi["Core/Utilities.js"]], function(Si, ji, qi) {
-      const { area: ts, area: { prototype: Qi } } = ji.seriesTypes, { extend: is, merge: ss } = qi;
-      class Wi extends Si {
+        es
+      ), es;
+    }), ri(ii, "Series/AreaSpline/AreaSplineSeries.js", [ii["Series/Spline/SplineSeries.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+      const { area: Ki, area: { prototype: Yi } } = Ci.seriesTypes, { extend: es, merge: is } = zi;
+      class $i extends li {
         constructor() {
           super(...arguments), this.options = this.points = this.data = void 0;
         }
       }
-      return Wi.defaultOptions = ss(Si.defaultOptions, ts.defaultOptions), is(Wi.prototype, { getGraphPath: Qi.getGraphPath, getStackPoints: Qi.getStackPoints, drawGraph: Qi.drawGraph }), ji.registerSeriesType(
+      return $i.defaultOptions = is(li.defaultOptions, Ki.defaultOptions), es($i.prototype, { getGraphPath: Yi.getGraphPath, getStackPoints: Yi.getStackPoints, drawGraph: Yi.drawGraph }), Ci.registerSeriesType(
         "areaspline",
-        Wi
-      ), Wi;
-    }), ci(oi, "Series/Column/ColumnSeriesDefaults.js", [], function() {
+        $i
+      ), $i;
+    }), ri(ii, "Series/Column/ColumnSeriesDefaults.js", [], function() {
       return { borderRadius: 3, centerInCategory: !1, groupPadding: 0.2, marker: null, pointPadding: 0.1, minPointLength: 0, cropThreshold: 50, pointRange: null, states: { hover: { halo: !1, brightness: 0.1 }, select: { color: "#cccccc", borderColor: "#000000" } }, dataLabels: { align: void 0, verticalAlign: void 0, y: void 0 }, startFromThreshold: !0, stickyTracking: !1, tooltip: { distance: 6 }, threshold: 0, borderColor: "#ffffff" };
-    }), ci(oi, "Series/Column/ColumnSeries.js", [
-      oi["Core/Animation/AnimationUtilities.js"],
-      oi["Core/Color/Color.js"],
-      oi["Series/Column/ColumnSeriesDefaults.js"],
-      oi["Core/Globals.js"],
-      oi["Core/Series/Series.js"],
-      oi["Core/Series/SeriesRegistry.js"],
-      oi["Core/Utilities.js"]
-    ], function(Si, ji, qi, ts, Qi, is, ss) {
-      const { animObject: Wi } = Si, { parse: Ki } = ji, { hasTouch: Ui, noop: ki } = ts, { clamp: bi, defined: Ri, extend: Ni, fireEvent: fi, isArray: Ci, isNumber: wi, merge: yi, pick: Ti, objectEach: Mi } = ss;
-      class Oi extends Qi {
+    }), ri(ii, "Series/Column/ColumnSeries.js", [
+      ii["Core/Animation/AnimationUtilities.js"],
+      ii["Core/Color/Color.js"],
+      ii["Series/Column/ColumnSeriesDefaults.js"],
+      ii["Core/Globals.js"],
+      ii["Core/Series/Series.js"],
+      ii["Core/Series/SeriesRegistry.js"],
+      ii["Core/Utilities.js"]
+    ], function(li, Ci, zi, Ki, Yi, es, is) {
+      const { animObject: $i } = li, { parse: Vi } = Ci, { hasTouch: _i, noop: bi } = Ki, { clamp: Ai, defined: ji, extend: Ni, fireEvent: gi, isArray: ki, isNumber: wi, merge: Si, pick: Ti, objectEach: Mi } = is;
+      class Di extends Yi {
         constructor() {
           super(...arguments), this.points = this.options = this.group = this.data = this.borderWidth = void 0;
         }
-        animate(li) {
-          const xi = this, di = this.yAxis, pi = di.pos, ei = xi.options, Fe = this.chart.inverted, ii = {}, hi = Fe ? "translateX" : "translateY";
-          let gi;
-          li ? (ii.scaleY = 1e-3, li = bi(di.toPixels(ei.threshold), pi, pi + di.len), Fe ? ii.translateX = li - di.len : ii.translateY = li, xi.clipBox && xi.setClip(), xi.group.attr(ii)) : (gi = Number(xi.group.attr(hi)), xi.group.animate({ scaleY: 1 }, Ni(Wi(xi.options.animation), { step: function(Ei, ni) {
-            xi.group && (ii[hi] = gi + ni.pos * (pi - gi), xi.group.attr(ii));
+        animate(pi) {
+          const vi = this, ui = this.yAxis, fi = ui.pos, si = vi.options, ti = this.chart.inverted, oi = {}, di = ti ? "translateX" : "translateY";
+          let mi;
+          pi ? (oi.scaleY = 1e-3, pi = Ai(ui.toPixels(si.threshold), fi, fi + ui.len), ti ? oi.translateX = pi - ui.len : oi.translateY = pi, vi.clipBox && vi.setClip(), vi.group.attr(oi)) : (mi = Number(vi.group.attr(di)), vi.group.animate({ scaleY: 1 }, Ni($i(vi.options.animation), { step: function(Oi, hi) {
+            vi.group && (oi[di] = mi + hi.pos * (fi - mi), vi.group.attr(oi));
           } })));
         }
-        init(li, xi) {
+        init(pi, vi) {
           super.init.apply(this, arguments);
-          const di = this;
-          li = di.chart, li.hasRendered && li.series.forEach(function(pi) {
-            pi.type === di.type && (pi.isDirty = !0);
+          const ui = this;
+          pi = ui.chart, pi.hasRendered && pi.series.forEach(function(fi) {
+            fi.type === ui.type && (fi.isDirty = !0);
           });
         }
         getColumnMetrics() {
-          const li = this;
-          var xi = li.options;
-          const di = li.xAxis, pi = li.yAxis;
-          var ei = di.options.reversedStacks;
-          ei = di.reversed && !ei || !di.reversed && ei;
-          const Fe = {};
-          let ii, hi = 0;
-          xi.grouping === !1 ? hi = 1 : li.chart.series.forEach(function(Pi) {
-            const Fi = Pi.yAxis, Zi = Pi.options;
+          const pi = this;
+          var vi = pi.options;
+          const ui = pi.xAxis, fi = pi.yAxis;
+          var si = ui.options.reversedStacks;
+          si = ui.reversed && !si || !ui.reversed && si;
+          const ti = {};
+          let oi, di = 0;
+          vi.grouping === !1 ? di = 1 : pi.chart.series.forEach(function(Li) {
+            const Ui = Li.yAxis, Zi = Li.options;
             let rs;
-            Pi.type !== li.type || !Pi.visible && li.chart.options.chart.ignoreHiddenSeries || pi.len !== Fi.len || pi.pos !== Fi.pos || (Zi.stacking && Zi.stacking !== "group" ? (ii = Pi.stackKey, typeof Fe[ii] > "u" && (Fe[ii] = hi++), rs = Fe[ii]) : Zi.grouping !== !1 && (rs = hi++), Pi.columnIndex = rs);
+            Li.type !== pi.type || !Li.visible && pi.chart.options.chart.ignoreHiddenSeries || fi.len !== Ui.len || fi.pos !== Ui.pos || (Zi.stacking && Zi.stacking !== "group" ? (oi = Li.stackKey, typeof ti[oi] > "u" && (ti[oi] = di++), rs = ti[oi]) : Zi.grouping !== !1 && (rs = di++), Li.columnIndex = rs);
           });
-          const gi = Math.min(Math.abs(di.transA) * (di.ordinal && di.ordinal.slope || xi.pointRange || di.closestPointRange || di.tickInterval || 1), di.len), Ei = gi * xi.groupPadding, ni = (gi - 2 * Ei) / (hi || 1);
-          return xi = Math.min(xi.maxPointWidth || di.len, Ti(xi.pointWidth, ni * (1 - 2 * xi.pointPadding))), li.columnMetrics = { width: xi, offset: (ni - xi) / 2 + (Ei + ((li.columnIndex || 0) + (ei ? 1 : 0)) * ni - gi / 2) * (ei ? -1 : 1), paddedWidth: ni, columnCount: hi }, li.columnMetrics;
+          const mi = Math.min(Math.abs(ui.transA) * (ui.ordinal && ui.ordinal.slope || vi.pointRange || ui.closestPointRange || ui.tickInterval || 1), ui.len), Oi = mi * vi.groupPadding, hi = (mi - 2 * Oi) / (di || 1);
+          return vi = Math.min(vi.maxPointWidth || ui.len, Ti(vi.pointWidth, hi * (1 - 2 * vi.pointPadding))), pi.columnMetrics = { width: vi, offset: (hi - vi) / 2 + (Oi + ((pi.columnIndex || 0) + (si ? 1 : 0)) * hi - mi / 2) * (si ? -1 : 1), paddedWidth: hi, columnCount: di }, pi.columnMetrics;
         }
-        crispCol(li, xi, di, pi) {
-          var ei = this.borderWidth, Fe = -(ei % 2 ? 0.5 : 0);
-          return ei = ei % 2 ? 0.5 : 1, this.options.crisp && (di = Math.round(li + di) + Fe, li = Math.round(li) + Fe, di -= li), pi = Math.round(xi + pi) + ei, Fe = 0.5 >= Math.abs(xi) && 0.5 < pi, xi = Math.round(xi) + ei, pi -= xi, Fe && pi && (--xi, pi += 1), { x: li, y: xi, width: di, height: pi };
+        crispCol(pi, vi, ui, fi) {
+          var si = this.borderWidth, ti = -(si % 2 ? 0.5 : 0);
+          return si = si % 2 ? 0.5 : 1, this.options.crisp && (ui = Math.round(pi + ui) + ti, pi = Math.round(pi) + ti, ui -= pi), fi = Math.round(vi + fi) + si, ti = 0.5 >= Math.abs(vi) && 0.5 < fi, vi = Math.round(vi) + si, fi -= vi, ti && fi && (--vi, fi += 1), { x: pi, y: vi, width: ui, height: fi };
         }
-        adjustForMissingColumns(li, xi, di, pi) {
-          const ei = this.options.stacking;
-          if (!di.isNull && 1 < pi.columnCount) {
-            const Fe = this.yAxis.options.reversedStacks;
-            let ii = 0, hi = Fe ? 0 : -pi.columnCount;
-            Mi(this.yAxis.stacking && this.yAxis.stacking.stacks, (gi) => {
-              if (typeof di.x == "number") {
-                const Ei = gi[di.x.toString()];
-                Ei && (gi = Ei.points[this.index], ei ? (gi && (ii = hi), Ei.hasValidPoints && (Fe ? hi++ : hi--)) : Ci(gi) && (gi = Object.keys(Ei.points).filter((ni) => !ni.match(",") && Ei.points[ni] && 1 < Ei.points[ni].length).map(parseFloat).sort((ni, Pi) => Pi - ni), ii = gi.indexOf(this.index), hi = gi.length));
+        adjustForMissingColumns(pi, vi, ui, fi) {
+          const si = this.options.stacking;
+          if (!ui.isNull && 1 < fi.columnCount) {
+            const ti = this.yAxis.options.reversedStacks;
+            let oi = 0, di = ti ? 0 : -fi.columnCount;
+            Mi(this.yAxis.stacking && this.yAxis.stacking.stacks, (mi) => {
+              if (typeof ui.x == "number") {
+                const Oi = mi[ui.x.toString()];
+                Oi && (mi = Oi.points[this.index], si ? (mi && (oi = di), Oi.hasValidPoints && (ti ? di++ : di--)) : ki(mi) && (mi = Object.keys(Oi.points).filter((hi) => !hi.match(",") && Oi.points[hi] && 1 < Oi.points[hi].length).map(parseFloat).sort((hi, Li) => Li - hi), oi = mi.indexOf(this.index), di = mi.length));
               }
-            }), li = (di.plotX || 0) + ((hi - 1) * pi.paddedWidth + xi) / 2 - xi - ii * pi.paddedWidth;
+            }), pi = (ui.plotX || 0) + ((di - 1) * fi.paddedWidth + vi) / 2 - vi - oi * fi.paddedWidth;
           }
-          return li;
+          return pi;
         }
         translate() {
-          const li = this, xi = li.chart, di = li.options;
-          var pi = li.dense = 2 > li.closestPointRange * li.xAxis.transA;
-          pi = li.borderWidth = Ti(di.borderWidth, pi ? 0 : 1);
-          const ei = li.xAxis, Fe = li.yAxis, ii = di.threshold, hi = Ti(di.minPointLength, 5), gi = li.getColumnMetrics(), Ei = gi.width, ni = li.pointXOffset = gi.offset, Pi = li.dataMin, Fi = li.dataMax;
-          let Zi = li.barW = Math.max(Ei, 1 + 2 * pi), rs = li.translatedThreshold = Fe.getThreshold(ii);
-          xi.inverted && (rs -= 0.5), di.pointPadding && (Zi = Math.ceil(Zi)), Qi.prototype.translate.apply(li), li.points.forEach(function(Bi) {
-            const si = Ti(Bi.yBottom, rs);
-            var Li = 999 + Math.abs(si), Hi = Bi.plotX || 0;
-            Li = bi(Bi.plotY, -Li, Fe.len + Li);
-            let Di = Math.min(Li, si), Vi = Math.max(Li, si) - Di, ri = Ei, mi = Hi + ni, vi = Zi;
-            hi && Math.abs(Vi) < hi && (Vi = hi, Hi = !Fe.reversed && !Bi.negative || Fe.reversed && Bi.negative, wi(ii) && wi(Fi) && Bi.y === ii && Fi <= ii && (Fe.min || 0) < ii && (Pi !== Fi || (Fe.max || 0) <= ii) && (Hi = !Hi, Bi.negative = !Bi.negative), Di = Math.abs(Di - rs) > hi ? si - hi : rs - (Hi ? hi : 0)), Ri(Bi.options.pointWidth) && (ri = vi = Math.ceil(Bi.options.pointWidth), mi -= Math.round((ri - Ei) / 2)), di.centerInCategory && (mi = li.adjustForMissingColumns(mi, ri, Bi, gi)), Bi.barX = mi, Bi.pointWidth = ri, Bi.tooltipPos = xi.inverted ? [bi(Fe.len + Fe.pos - xi.plotLeft - Li, Fe.pos - xi.plotLeft, Fe.len + Fe.pos - xi.plotLeft), ei.len + ei.pos - xi.plotTop - mi - vi / 2, Vi] : [ei.left - xi.plotLeft + mi + vi / 2, bi(Li + Fe.pos - xi.plotTop, Fe.pos - xi.plotTop, Fe.len + Fe.pos - xi.plotTop), Vi], Bi.shapeType = li.pointClass.prototype.shapeType || "roundedRect", Bi.shapeArgs = li.crispCol(mi, Bi.isNull ? rs : Di, vi, Bi.isNull ? 0 : Vi);
-          }), fi(this, "afterColumnTranslate");
+          const pi = this, vi = pi.chart, ui = pi.options;
+          var fi = pi.dense = 2 > pi.closestPointRange * pi.xAxis.transA;
+          fi = pi.borderWidth = Ti(ui.borderWidth, fi ? 0 : 1);
+          const si = pi.xAxis, ti = pi.yAxis, oi = ui.threshold, di = Ti(ui.minPointLength, 5), mi = pi.getColumnMetrics(), Oi = mi.width, hi = pi.pointXOffset = mi.offset, Li = pi.dataMin, Ui = pi.dataMax;
+          let Zi = pi.barW = Math.max(Oi, 1 + 2 * fi), rs = pi.translatedThreshold = ti.getThreshold(oi);
+          vi.inverted && (rs -= 0.5), ui.pointPadding && (Zi = Math.ceil(Zi)), Yi.prototype.translate.apply(pi), pi.points.forEach(function(Bi) {
+            const ni = Ti(Bi.yBottom, rs);
+            var Pi = 999 + Math.abs(ni), Hi = Bi.plotX || 0;
+            Pi = Ai(Bi.plotY, -Pi, ti.len + Pi);
+            let Ri = Math.min(Pi, ni), qi = Math.max(Pi, ni) - Ri, ai = Oi, xi = Hi + hi, yi = Zi;
+            di && Math.abs(qi) < di && (qi = di, Hi = !ti.reversed && !Bi.negative || ti.reversed && Bi.negative, wi(oi) && wi(Ui) && Bi.y === oi && Ui <= oi && (ti.min || 0) < oi && (Li !== Ui || (ti.max || 0) <= oi) && (Hi = !Hi, Bi.negative = !Bi.negative), Ri = Math.abs(Ri - rs) > di ? ni - di : rs - (Hi ? di : 0)), ji(Bi.options.pointWidth) && (ai = yi = Math.ceil(Bi.options.pointWidth), xi -= Math.round((ai - Oi) / 2)), ui.centerInCategory && (xi = pi.adjustForMissingColumns(xi, ai, Bi, mi)), Bi.barX = xi, Bi.pointWidth = ai, Bi.tooltipPos = vi.inverted ? [Ai(ti.len + ti.pos - vi.plotLeft - Pi, ti.pos - vi.plotLeft, ti.len + ti.pos - vi.plotLeft), si.len + si.pos - vi.plotTop - xi - yi / 2, qi] : [si.left - vi.plotLeft + xi + yi / 2, Ai(Pi + ti.pos - vi.plotTop, ti.pos - vi.plotTop, ti.len + ti.pos - vi.plotTop), qi], Bi.shapeType = pi.pointClass.prototype.shapeType || "roundedRect", Bi.shapeArgs = pi.crispCol(xi, Bi.isNull ? rs : Ri, yi, Bi.isNull ? 0 : qi);
+          }), gi(this, "afterColumnTranslate");
         }
         drawGraph() {
           this.group[this.dense ? "addClass" : "removeClass"]("highcharts-dense-data");
         }
-        pointAttribs(li, xi) {
-          const di = this.options;
-          var pi = this.pointAttrToOptions || {}, ei = pi.stroke || "borderColor";
-          const Fe = pi["stroke-width"] || "borderWidth";
-          let ii, hi = li && li.color || this.color, gi = li && li[ei] || di[ei] || hi;
-          pi = li && li.options.dashStyle || di.dashStyle;
-          let Ei = li && li[Fe] || di[Fe] || this[Fe] || 0, ni = Ti(li && li.opacity, di.opacity, 1);
-          return li && this.zones.length && (ii = li.getZone(), hi = li.options.color || ii && (ii.color || li.nonZonedColor) || this.color, ii && (gi = ii.borderColor || gi, pi = ii.dashStyle || pi, Ei = ii.borderWidth || Ei)), xi && li && (li = yi(
-            di.states[xi],
-            li.options.states && li.options.states[xi] || {}
-          ), xi = li.brightness, hi = li.color || typeof xi < "u" && Ki(hi).brighten(li.brightness).get() || hi, gi = li[ei] || gi, Ei = li[Fe] || Ei, pi = li.dashStyle || pi, ni = Ti(li.opacity, ni)), ei = { fill: hi, stroke: gi, "stroke-width": Ei, opacity: ni }, pi && (ei.dashstyle = pi), ei;
+        pointAttribs(pi, vi) {
+          const ui = this.options;
+          var fi = this.pointAttrToOptions || {}, si = fi.stroke || "borderColor";
+          const ti = fi["stroke-width"] || "borderWidth";
+          let oi, di = pi && pi.color || this.color, mi = pi && pi[si] || ui[si] || di;
+          fi = pi && pi.options.dashStyle || ui.dashStyle;
+          let Oi = pi && pi[ti] || ui[ti] || this[ti] || 0, hi = Ti(pi && pi.opacity, ui.opacity, 1);
+          return pi && this.zones.length && (oi = pi.getZone(), di = pi.options.color || oi && (oi.color || pi.nonZonedColor) || this.color, oi && (mi = oi.borderColor || mi, fi = oi.dashStyle || fi, Oi = oi.borderWidth || Oi)), vi && pi && (pi = Si(
+            ui.states[vi],
+            pi.options.states && pi.options.states[vi] || {}
+          ), vi = pi.brightness, di = pi.color || typeof vi < "u" && Vi(di).brighten(pi.brightness).get() || di, mi = pi[si] || mi, Oi = pi[ti] || Oi, fi = pi.dashStyle || fi, hi = Ti(pi.opacity, hi)), si = { fill: di, stroke: mi, "stroke-width": Oi, opacity: hi }, fi && (si.dashstyle = fi), si;
         }
-        drawPoints(li = this.points) {
-          const xi = this, di = this.chart, pi = xi.options, ei = di.renderer, Fe = pi.animationLimit || 250;
-          let ii;
-          li.forEach(function(hi) {
-            let gi = hi.graphic, Ei = !!gi, ni = gi && di.pointCount < Fe ? "animate" : "attr";
-            wi(hi.plotY) && hi.y !== null ? (ii = hi.shapeArgs, gi && hi.hasNewShapeType() && (gi = gi.destroy()), xi.enabledDataSorting && (hi.startXPos = xi.xAxis.reversed ? -(ii && ii.width || 0) : xi.xAxis.width), gi || (hi.graphic = gi = ei[hi.shapeType](ii).add(hi.group || xi.group)) && xi.enabledDataSorting && di.hasRendered && di.pointCount < Fe && (gi.attr({ x: hi.startXPos }), Ei = !0, ni = "animate"), gi && Ei && gi[ni](yi(ii)), di.styledMode || gi[ni](xi.pointAttribs(hi, hi.selected && "select")).shadow(hi.allowShadow !== !1 && pi.shadow), gi && (gi.addClass(hi.getClassName(), !0), gi.attr({ visibility: hi.visible ? "inherit" : "hidden" }))) : gi && (hi.graphic = gi.destroy());
+        drawPoints(pi = this.points) {
+          const vi = this, ui = this.chart, fi = vi.options, si = ui.renderer, ti = fi.animationLimit || 250;
+          let oi;
+          pi.forEach(function(di) {
+            let mi = di.graphic, Oi = !!mi, hi = mi && ui.pointCount < ti ? "animate" : "attr";
+            wi(di.plotY) && di.y !== null ? (oi = di.shapeArgs, mi && di.hasNewShapeType() && (mi = mi.destroy()), vi.enabledDataSorting && (di.startXPos = vi.xAxis.reversed ? -(oi && oi.width || 0) : vi.xAxis.width), mi || (di.graphic = mi = si[di.shapeType](oi).add(di.group || vi.group)) && vi.enabledDataSorting && ui.hasRendered && ui.pointCount < ti && (mi.attr({ x: di.startXPos }), Oi = !0, hi = "animate"), mi && Oi && mi[hi](Si(oi)), ui.styledMode || mi[hi](vi.pointAttribs(di, di.selected && "select")).shadow(di.allowShadow !== !1 && fi.shadow), mi && (mi.addClass(di.getClassName(), !0), mi.attr({ visibility: di.visible ? "inherit" : "hidden" }))) : mi && (di.graphic = mi.destroy());
           });
         }
-        drawTracker(li = this.points) {
-          const xi = this, di = xi.chart, pi = di.pointer, ei = function(ii) {
-            const hi = pi.getPointFromEvent(ii);
-            typeof hi < "u" && xi.options.enableMouseTracking && (pi.isDirectTouch = !0, hi.onMouseOver(ii));
+        drawTracker(pi = this.points) {
+          const vi = this, ui = vi.chart, fi = ui.pointer, si = function(oi) {
+            const di = fi.getPointFromEvent(oi);
+            typeof di < "u" && vi.options.enableMouseTracking && (fi.isDirectTouch = !0, di.onMouseOver(oi));
           };
-          let Fe;
-          li.forEach(function(ii) {
-            Fe = Ci(ii.dataLabels) ? ii.dataLabels : ii.dataLabel ? [ii.dataLabel] : [], ii.graphic && (ii.graphic.element.point = ii), Fe.forEach(function(hi) {
-              hi.div ? hi.div.point = ii : hi.element.point = ii;
+          let ti;
+          pi.forEach(function(oi) {
+            ti = ki(oi.dataLabels) ? oi.dataLabels : oi.dataLabel ? [oi.dataLabel] : [], oi.graphic && (oi.graphic.element.point = oi), ti.forEach(function(di) {
+              di.div ? di.div.point = oi : di.element.point = oi;
             });
-          }), xi._hasTracking || (xi.trackerGroups.forEach(function(ii) {
-            xi[ii] && (xi[ii].addClass("highcharts-tracker").on("mouseover", ei).on(
+          }), vi._hasTracking || (vi.trackerGroups.forEach(function(oi) {
+            vi[oi] && (vi[oi].addClass("highcharts-tracker").on("mouseover", si).on(
               "mouseout",
-              function(hi) {
-                pi.onTrackerMouseOut(hi);
+              function(di) {
+                fi.onTrackerMouseOut(di);
               }
-            ), Ui && xi[ii].on("touchstart", ei), !di.styledMode && xi.options.cursor && xi[ii].css({ cursor: xi.options.cursor }));
-          }), xi._hasTracking = !0), fi(this, "afterDrawTracker");
+            ), _i && vi[oi].on("touchstart", si), !ui.styledMode && vi.options.cursor && vi[oi].css({ cursor: vi.options.cursor }));
+          }), vi._hasTracking = !0), gi(this, "afterDrawTracker");
         }
         remove() {
-          const li = this, xi = li.chart;
-          xi.hasRendered && xi.series.forEach(function(di) {
-            di.type === li.type && (di.isDirty = !0);
-          }), Qi.prototype.remove.apply(li, arguments);
+          const pi = this, vi = pi.chart;
+          vi.hasRendered && vi.series.forEach(function(ui) {
+            ui.type === pi.type && (ui.isDirty = !0);
+          }), Yi.prototype.remove.apply(pi, arguments);
         }
       }
-      return Oi.defaultOptions = yi(Qi.defaultOptions, qi), Ni(Oi.prototype, { cropShoulder: 0, directTouch: !0, getSymbol: ki, negStacks: !0, trackerGroups: ["group", "dataLabelsGroup"] }), is.registerSeriesType(
+      return Di.defaultOptions = Si(Yi.defaultOptions, zi), Ni(Di.prototype, { cropShoulder: 0, directTouch: !0, getSymbol: bi, negStacks: !0, trackerGroups: ["group", "dataLabelsGroup"] }), es.registerSeriesType(
         "column",
-        Oi
-      ), Oi;
-    }), ci(oi, "Core/Series/DataLabel.js", [oi["Core/Animation/AnimationUtilities.js"], oi["Core/Templating.js"], oi["Core/Utilities.js"]], function(Si, ji, qi) {
-      const { getDeferredAnimation: ts } = Si, { format: Qi } = ji, { defined: is, extend: ss, fireEvent: Wi, isArray: Ki, isString: Ui, merge: ki, objectEach: bi, pick: Ri, splat: Ni } = qi;
-      var fi;
-      return function(Ci) {
-        function wi(pi, ei, Fe, ii, hi) {
-          const gi = this.chart;
-          var Ei = this.isCartesian && gi.inverted;
-          const ni = this.enabledDataSorting;
-          var Pi = pi.plotX, Fi = pi.plotY;
-          const Zi = Fe.rotation;
-          var rs = Fe.align;
-          Fi = is(Pi) && is(Fi) && gi.isInsidePlot(
-            Pi,
-            Math.round(Fi),
-            { inverted: Ei, paneCoordinates: !0, series: this }
+        Di
+      ), Di;
+    }), ri(ii, "Core/Series/DataLabel.js", [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Templating.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+      const { getDeferredAnimation: Ki } = li, { format: Yi } = Ci, { defined: es, extend: is, fireEvent: $i, isArray: Vi, isString: _i, merge: bi, objectEach: Ai, pick: ji, splat: Ni } = zi;
+      var gi;
+      return function(ki) {
+        function wi(fi, si, ti, oi, di) {
+          const mi = this.chart;
+          var Oi = this.isCartesian && mi.inverted;
+          const hi = this.enabledDataSorting;
+          var Li = fi.plotX, Ui = fi.plotY;
+          const Zi = ti.rotation;
+          var rs = ti.align;
+          Ui = es(Li) && es(Ui) && mi.isInsidePlot(
+            Li,
+            Math.round(Ui),
+            { inverted: Oi, paneCoordinates: !0, series: this }
           );
-          let Bi = Ri(Fe.overflow, ni ? "none" : "justify") === "justify";
-          if (Ei = this.visible && pi.visible !== !1 && is(Pi) && (pi.series.forceDL || ni && !Bi || Fi || Ri(Fe.inside, !!this.options.stacking) && ii && gi.isInsidePlot(Pi, Ei ? ii.x + 1 : ii.y + ii.height - 1, { inverted: Ei, paneCoordinates: !0, series: this })), Pi = pi.pos(), Ei && Pi) {
-            Zi && ei.attr({ align: rs }), rs = ei.getBBox(!0);
-            var si = [0, 0], Li = gi.renderer.fontMetrics(ei).b;
-            if (ii = ss({ x: Pi[0], y: Math.round(Pi[1]), width: 0, height: 0 }, ii), ss(Fe, { width: rs.width, height: rs.height }), Zi ? (Bi = !1, si = gi.renderer.rotCorr(Li, Zi), Li = { x: ii.x + (Fe.x || 0) + ii.width / 2 + si.x, y: ii.y + (Fe.y || 0) + { top: 0, middle: 0.5, bottom: 1 }[Fe.verticalAlign] * ii.height }, si = [rs.x - Number(ei.attr("x")), rs.y - Number(ei.attr("y"))], ni && this.xAxis && !Bi && this.setDataLabelStartPos(pi, ei, hi, Fi, Li), ei[hi ? "attr" : "animate"](Li)) : (ni && this.xAxis && !Bi && this.setDataLabelStartPos(pi, ei, hi, Fi, ii), ei.align(Fe, void 0, ii), Li = ei.alignAttr), Bi && 0 <= ii.height)
-              this.justifyDataLabel(ei, Fe, Li, rs, ii, hi);
-            else if (Ri(Fe.crop, !0)) {
-              let { x: Hi, y: Di } = Li;
-              Hi += si[0], Di += si[1], Ei = gi.isInsidePlot(Hi, Di, {
+          let Bi = ji(ti.overflow, hi ? "none" : "justify") === "justify";
+          if (Oi = this.visible && fi.visible !== !1 && es(Li) && (fi.series.forceDL || hi && !Bi || Ui || ji(ti.inside, !!this.options.stacking) && oi && mi.isInsidePlot(Li, Oi ? oi.x + 1 : oi.y + oi.height - 1, { inverted: Oi, paneCoordinates: !0, series: this })), Li = fi.pos(), Oi && Li) {
+            Zi && si.attr({ align: rs }), rs = si.getBBox(!0);
+            var ni = [0, 0], Pi = mi.renderer.fontMetrics(si).b;
+            if (oi = is({ x: Li[0], y: Math.round(Li[1]), width: 0, height: 0 }, oi), is(ti, { width: rs.width, height: rs.height }), Zi ? (Bi = !1, ni = mi.renderer.rotCorr(Pi, Zi), Pi = { x: oi.x + (ti.x || 0) + oi.width / 2 + ni.x, y: oi.y + (ti.y || 0) + { top: 0, middle: 0.5, bottom: 1 }[ti.verticalAlign] * oi.height }, ni = [rs.x - Number(si.attr("x")), rs.y - Number(si.attr("y"))], hi && this.xAxis && !Bi && this.setDataLabelStartPos(fi, si, di, Ui, Pi), si[di ? "attr" : "animate"](Pi)) : (hi && this.xAxis && !Bi && this.setDataLabelStartPos(fi, si, di, Ui, oi), si.align(ti, void 0, oi), Pi = si.alignAttr), Bi && 0 <= oi.height)
+              this.justifyDataLabel(si, ti, Pi, rs, oi, di);
+            else if (ji(ti.crop, !0)) {
+              let { x: Hi, y: Ri } = Pi;
+              Hi += ni[0], Ri += ni[1], Oi = mi.isInsidePlot(Hi, Ri, {
                 paneCoordinates: !0,
                 series: this
-              }) && gi.isInsidePlot(Hi + rs.width, Di + rs.height, { paneCoordinates: !0, series: this });
+              }) && mi.isInsidePlot(Hi + rs.width, Ri + rs.height, { paneCoordinates: !0, series: this });
             }
-            Fe.shape && !Zi && ei[hi ? "attr" : "animate"]({ anchorX: Pi[0], anchorY: Pi[1] });
+            ti.shape && !Zi && si[di ? "attr" : "animate"]({ anchorX: Li[0], anchorY: Li[1] });
           }
-          hi && ni && (ei.placed = !1), Ei || ni && !Bi ? ei.show() : (ei.hide(), ei.placed = !1);
+          di && hi && (si.placed = !1), Oi || hi && !Bi ? si.show() : (si.hide(), si.placed = !1);
         }
-        function yi(pi, ei) {
-          var Fe = ei.filter;
-          return Fe ? (ei = Fe.operator, pi = pi[Fe.property], Fe = Fe.value, ei === ">" && pi > Fe || ei === "<" && pi < Fe || ei === ">=" && pi >= Fe || ei === "<=" && pi <= Fe || ei === "==" && pi == Fe || ei === "===" && pi === Fe) : !0;
+        function Si(fi, si) {
+          var ti = si.filter;
+          return ti ? (si = ti.operator, fi = fi[ti.property], ti = ti.value, si === ">" && fi > ti || si === "<" && fi < ti || si === ">=" && fi >= ti || si === "<=" && fi <= ti || si === "==" && fi == ti || si === "===" && fi === ti) : !0;
         }
         function Ti() {
           return this.plotGroup("dataLabelsGroup", "data-labels", this.hasRendered ? "inherit" : "hidden", this.options.dataLabels.zIndex || 6);
         }
-        function Mi(pi) {
-          const ei = this.hasRendered || 0, Fe = this.initDataLabelsGroup().attr({ opacity: +ei });
-          return !ei && Fe && (this.visible && Fe.show(), this.options.animation ? Fe.animate({ opacity: 1 }, pi) : Fe.attr({ opacity: 1 })), Fe;
+        function Mi(fi) {
+          const si = this.hasRendered || 0, ti = this.initDataLabelsGroup().attr({ opacity: +si });
+          return !si && ti && (this.visible && ti.show(), this.options.animation ? ti.animate({ opacity: 1 }, fi) : ti.attr({ opacity: 1 })), ti;
         }
-        function Oi(pi = this.points) {
-          var ei, Fe;
-          const ii = this, hi = ii.chart, gi = ii.options, Ei = hi.renderer, { backgroundColor: ni, plotBackgroundColor: Pi } = hi.options.chart, Fi = hi.options.plotOptions, Zi = Ei.getContrast(Ui(Pi) && Pi || Ui(ni) && ni || "#000000");
-          let rs = gi.dataLabels, Bi, si;
-          var Li = Ni(rs)[0];
-          const Hi = Li.animation;
-          Li = Li.defer ? ts(hi, Hi, ii) : { defer: 0, duration: 0 }, rs = li(li((ei = Fi == null ? void 0 : Fi.series) === null || ei === void 0 ? void 0 : ei.dataLabels, (Fe = Fi == null ? void 0 : Fi[ii.type]) === null || Fe === void 0 ? void 0 : Fe.dataLabels), rs), Wi(this, "drawDataLabels"), (Ki(rs) || rs.enabled || ii._hasPointLabels) && (si = this.initDataLabels(Li), pi.forEach((Di) => {
-            var Vi;
-            const ri = Di.dataLabels || [];
-            for (Bi = Ni(li(rs, Di.dlOptions || ((Vi = Di.options) === null || Vi === void 0 ? void 0 : Vi.dataLabels))), Bi.forEach((mi, vi) => {
-              var zi, Xi = mi.enabled && (!Di.isNull || Di.dataLabelOnNull) && yi(Di, mi);
-              const Gi = Di.connectors ? Di.connectors[vi] : Di.connector, Ji = mi.style || {};
-              let es = {}, os = ri[vi], ns = !os;
-              const ls = Ri(mi.distance, Di.labelDistance);
+        function Di(fi = this.points) {
+          var si, ti;
+          const oi = this, di = oi.chart, mi = oi.options, Oi = di.renderer, { backgroundColor: hi, plotBackgroundColor: Li } = di.options.chart, Ui = di.options.plotOptions, Zi = Oi.getContrast(_i(Li) && Li || _i(hi) && hi || "#000000");
+          let rs = mi.dataLabels, Bi, ni;
+          var Pi = Ni(rs)[0];
+          const Hi = Pi.animation;
+          Pi = Pi.defer ? Ki(di, Hi, oi) : { defer: 0, duration: 0 }, rs = pi(pi((si = Ui == null ? void 0 : Ui.series) === null || si === void 0 ? void 0 : si.dataLabels, (ti = Ui == null ? void 0 : Ui[oi.type]) === null || ti === void 0 ? void 0 : ti.dataLabels), rs), $i(this, "drawDataLabels"), (Vi(rs) || rs.enabled || oi._hasPointLabels) && (ni = this.initDataLabels(Pi), fi.forEach((Ri) => {
+            var qi;
+            const ai = Ri.dataLabels || [];
+            for (Bi = Ni(pi(rs, Ri.dlOptions || ((qi = Ri.options) === null || qi === void 0 ? void 0 : qi.dataLabels))), Bi.forEach((xi, yi) => {
+              var Gi, Xi = xi.enabled && (!Ri.isNull || Ri.dataLabelOnNull) && Si(Ri, xi);
+              const Wi = Ri.connectors ? Ri.connectors[yi] : Ri.connector, ts = xi.style || {};
+              let ss = {}, os = ai[yi], ns = !os;
+              const ls = ji(xi.distance, Ri.labelDistance);
               if (Xi) {
-                var Ii = Ri(mi[Di.formatPrefix + "Format"], mi.format), Ai = Di.getLabelConfig();
-                if (Ai = is(Ii) ? Qi(Ii, Ai, hi) : (mi[Di.formatPrefix + "Formatter"] || mi.formatter).call(Ai, mi), Ii = mi.rotation, hi.styledMode || (Ji.color = Ri(mi.color, Ji.color, Ui(ii.color) ? ii.color : void 0, "#000000"), Ji.color === "contrast" ? (Di.contrastColor = Ei.getContrast(Di.color || ii.color), Ji.color = !is(ls) && mi.inside || 0 > (ls || 0) || gi.stacking ? Di.contrastColor : Zi) : delete Di.contrastColor, gi.cursor && (Ji.cursor = gi.cursor)), es = { r: mi.borderRadius || 0, rotation: Ii, padding: mi.padding, zIndex: 1 }, !hi.styledMode) {
-                  const { backgroundColor: $i, borderColor: Yi } = mi;
-                  es.fill = $i === "auto" ? Di.color : $i, es.stroke = Yi === "auto" ? Di.color : Yi, es["stroke-width"] = mi.borderWidth;
+                var Ii = ji(xi[Ri.formatPrefix + "Format"], xi.format), Ei = Ri.getLabelConfig();
+                if (Ei = es(Ii) ? Yi(Ii, Ei, di) : (xi[Ri.formatPrefix + "Formatter"] || xi.formatter).call(Ei, xi), Ii = xi.rotation, di.styledMode || (ts.color = ji(xi.color, ts.color, _i(oi.color) ? oi.color : void 0, "#000000"), ts.color === "contrast" ? (Ri.contrastColor = Oi.getContrast(Ri.color || oi.color), ts.color = !es(ls) && xi.inside || 0 > (ls || 0) || mi.stacking ? Ri.contrastColor : Zi) : delete Ri.contrastColor, mi.cursor && (ts.cursor = mi.cursor)), ss = { r: xi.borderRadius || 0, rotation: Ii, padding: xi.padding, zIndex: 1 }, !di.styledMode) {
+                  const { backgroundColor: Ji, borderColor: Fi } = xi;
+                  ss.fill = Ji === "auto" ? Ri.color : Ji, ss.stroke = Fi === "auto" ? Ri.color : Fi, ss["stroke-width"] = xi.borderWidth;
                 }
-                bi(es, ($i, Yi) => {
-                  typeof $i > "u" && delete es[Yi];
+                Ai(ss, (Ji, Fi) => {
+                  typeof Ji > "u" && delete ss[Fi];
                 });
               }
-              !os || Xi && is(Ai) && !!os.div == !!mi.useHTML && (os.rotation && mi.rotation || os.rotation === mi.rotation) || (os = void 0, ns = !0, Gi && Di.connector && (Di.connector = Di.connector.destroy(), Di.connectors && (Di.connectors.length === 1 ? delete Di.connectors : delete Di.connectors[vi]))), Xi && is(Ai) && (os ? es.text = Ai : (os = Ii ? Ei.text(Ai, 0, 0, mi.useHTML).addClass("highcharts-data-label") : Ei.label(Ai, 0, 0, mi.shape, void 0, void 0, mi.useHTML, void 0, "data-label")) && os.addClass(" highcharts-data-label-color-" + Di.colorIndex + " " + (mi.className || "") + (mi.useHTML ? " highcharts-tracker" : "")), os && (os.options = mi, os.attr(es), hi.styledMode || os.css(Ji).shadow(mi.shadow), (Xi = mi[Di.formatPrefix + "TextPath"] || mi.textPath) && !mi.useHTML && (os.setTextPath(((zi = Di.getDataLabelPath) === null || zi === void 0 ? void 0 : zi.call(Di, os)) || Di.graphic, Xi), Di.dataLabelPath && !Xi.enabled && (Di.dataLabelPath = Di.dataLabelPath.destroy())), os.added || os.add(si), ii.alignDataLabel(Di, os, mi, void 0, ns), os.isActive = !0, ri[vi] && ri[vi] !== os && ri[vi].destroy(), ri[vi] = os));
-            }), Vi = ri.length; Vi--; )
-              ri[Vi].isActive ? ri[Vi].isActive = !1 : (ri[Vi].destroy(), ri.splice(Vi, 1));
-            Di.dataLabel = ri[0], Di.dataLabels = ri;
-          })), Wi(this, "afterDrawDataLabels");
+              !os || Xi && es(Ei) && !!os.div == !!xi.useHTML && (os.rotation && xi.rotation || os.rotation === xi.rotation) || (os = void 0, ns = !0, Wi && Ri.connector && (Ri.connector = Ri.connector.destroy(), Ri.connectors && (Ri.connectors.length === 1 ? delete Ri.connectors : delete Ri.connectors[yi]))), Xi && es(Ei) && (os ? ss.text = Ei : (os = Ii ? Oi.text(Ei, 0, 0, xi.useHTML).addClass("highcharts-data-label") : Oi.label(Ei, 0, 0, xi.shape, void 0, void 0, xi.useHTML, void 0, "data-label")) && os.addClass(" highcharts-data-label-color-" + Ri.colorIndex + " " + (xi.className || "") + (xi.useHTML ? " highcharts-tracker" : "")), os && (os.options = xi, os.attr(ss), di.styledMode || os.css(ts).shadow(xi.shadow), (Xi = xi[Ri.formatPrefix + "TextPath"] || xi.textPath) && !xi.useHTML && (os.setTextPath(((Gi = Ri.getDataLabelPath) === null || Gi === void 0 ? void 0 : Gi.call(Ri, os)) || Ri.graphic, Xi), Ri.dataLabelPath && !Xi.enabled && (Ri.dataLabelPath = Ri.dataLabelPath.destroy())), os.added || os.add(ni), oi.alignDataLabel(Ri, os, xi, void 0, ns), os.isActive = !0, ai[yi] && ai[yi] !== os && ai[yi].destroy(), ai[yi] = os));
+            }), qi = ai.length; qi--; )
+              ai[qi].isActive ? ai[qi].isActive = !1 : (ai[qi].destroy(), ai.splice(qi, 1));
+            Ri.dataLabel = ai[0], Ri.dataLabels = ai;
+          })), $i(this, "afterDrawDataLabels");
         }
-        function ai(pi, ei, Fe, ii, hi, gi) {
-          const Ei = this.chart, ni = ei.align, Pi = ei.verticalAlign, Fi = pi.box ? 0 : pi.padding || 0;
-          let { x: Zi = 0, y: rs = 0 } = ei, Bi, si;
-          return Bi = (Fe.x || 0) + Fi, 0 > Bi && (ni === "right" && 0 <= Zi ? (ei.align = "left", ei.inside = !0) : Zi -= Bi, si = !0), Bi = (Fe.x || 0) + ii.width - Fi, Bi > Ei.plotWidth && (ni === "left" && 0 >= Zi ? (ei.align = "right", ei.inside = !0) : Zi += Ei.plotWidth - Bi, si = !0), Bi = Fe.y + Fi, 0 > Bi && (Pi === "bottom" && 0 <= rs ? (ei.verticalAlign = "top", ei.inside = !0) : rs -= Bi, si = !0), Bi = (Fe.y || 0) + ii.height - Fi, Bi > Ei.plotHeight && (Pi === "top" && 0 >= rs ? (ei.verticalAlign = "bottom", ei.inside = !0) : rs += Ei.plotHeight - Bi, si = !0), si && (ei.x = Zi, ei.y = rs, pi.placed = !gi, pi.align(ei, void 0, hi)), si;
+        function ci(fi, si, ti, oi, di, mi) {
+          const Oi = this.chart, hi = si.align, Li = si.verticalAlign, Ui = fi.box ? 0 : fi.padding || 0;
+          let { x: Zi = 0, y: rs = 0 } = si, Bi, ni;
+          return Bi = (ti.x || 0) + Ui, 0 > Bi && (hi === "right" && 0 <= Zi ? (si.align = "left", si.inside = !0) : Zi -= Bi, ni = !0), Bi = (ti.x || 0) + oi.width - Ui, Bi > Oi.plotWidth && (hi === "left" && 0 >= Zi ? (si.align = "right", si.inside = !0) : Zi += Oi.plotWidth - Bi, ni = !0), Bi = ti.y + Ui, 0 > Bi && (Li === "bottom" && 0 <= rs ? (si.verticalAlign = "top", si.inside = !0) : rs -= Bi, ni = !0), Bi = (ti.y || 0) + oi.height - Ui, Bi > Oi.plotHeight && (Li === "top" && 0 >= rs ? (si.verticalAlign = "bottom", si.inside = !0) : rs += Oi.plotHeight - Bi, ni = !0), ni && (si.x = Zi, si.y = rs, fi.placed = !mi, fi.align(si, void 0, di)), ni;
         }
-        function li(pi, ei) {
-          let Fe = [], ii;
-          if (Ki(pi) && !Ki(ei))
-            Fe = pi.map(function(hi) {
-              return ki(hi, ei);
+        function pi(fi, si) {
+          let ti = [], oi;
+          if (Vi(fi) && !Vi(si))
+            ti = fi.map(function(di) {
+              return bi(di, si);
             });
-          else if (Ki(ei) && !Ki(pi))
-            Fe = ei.map(function(hi) {
-              return ki(pi, hi);
+          else if (Vi(si) && !Vi(fi))
+            ti = si.map(function(di) {
+              return bi(fi, di);
             });
-          else if (!Ki(pi) && !Ki(ei))
-            Fe = ki(pi, ei);
-          else if (Ki(pi) && Ki(ei))
-            for (ii = Math.max(pi.length, ei.length); ii--; )
-              Fe[ii] = ki(pi[ii], ei[ii]);
-          return Fe;
+          else if (!Vi(fi) && !Vi(si))
+            ti = bi(fi, si);
+          else if (Vi(fi) && Vi(si))
+            for (oi = Math.max(fi.length, si.length); oi--; )
+              ti[oi] = bi(fi[oi], si[oi]);
+          return ti;
         }
-        function xi(pi, ei, Fe, ii, hi) {
-          const gi = this.chart, Ei = gi.inverted, ni = this.xAxis, Pi = ni.reversed, Fi = Ei ? ei.height / 2 : ei.width / 2;
-          pi = (pi = pi.pointWidth) ? pi / 2 : 0, ei.startXPos = Ei ? hi.x : Pi ? -Fi - pi : ni.width - Fi + pi, ei.startYPos = Ei ? Pi ? this.yAxis.height - Fi + pi : -Fi - pi : hi.y, ii ? ei.visibility === "hidden" && (ei.show(), ei.attr({ opacity: 0 }).animate({ opacity: 1 })) : ei.attr({ opacity: 1 }).animate({ opacity: 0 }, void 0, ei.hide), gi.hasRendered && (Fe && ei.attr({ x: ei.startXPos, y: ei.startYPos }), ei.placed = !0);
+        function vi(fi, si, ti, oi, di) {
+          const mi = this.chart, Oi = mi.inverted, hi = this.xAxis, Li = hi.reversed, Ui = Oi ? si.height / 2 : si.width / 2;
+          fi = (fi = fi.pointWidth) ? fi / 2 : 0, si.startXPos = Oi ? di.x : Li ? -Ui - fi : hi.width - Ui + fi, si.startYPos = Oi ? Li ? this.yAxis.height - Ui + fi : -Ui - fi : di.y, oi ? si.visibility === "hidden" && (si.show(), si.attr({ opacity: 0 }).animate({ opacity: 1 })) : si.attr({ opacity: 1 }).animate({ opacity: 0 }, void 0, si.hide), mi.hasRendered && (ti && si.attr({ x: si.startXPos, y: si.startYPos }), si.placed = !0);
         }
-        const di = [];
-        Ci.compose = function(pi) {
-          qi.pushUnique(di, pi) && (pi = pi.prototype, pi.initDataLabelsGroup = Ti, pi.initDataLabels = Mi, pi.alignDataLabel = wi, pi.drawDataLabels = Oi, pi.justifyDataLabel = ai, pi.setDataLabelStartPos = xi);
+        const ui = [];
+        ki.compose = function(fi) {
+          zi.pushUnique(ui, fi) && (fi = fi.prototype, fi.initDataLabelsGroup = Ti, fi.initDataLabels = Mi, fi.alignDataLabel = wi, fi.drawDataLabels = Di, fi.justifyDataLabel = ci, fi.setDataLabelStartPos = vi);
         };
-      }(fi || (fi = {})), fi;
-    }), ci(oi, "Series/Column/ColumnDataLabel.js", [oi["Core/Series/DataLabel.js"], oi["Core/Series/SeriesRegistry.js"], oi["Core/Utilities.js"]], function(Si, ji, qi) {
-      const { series: ts } = ji, { merge: Qi, pick: is } = qi;
-      var ss;
-      return function(Wi) {
-        function Ki(ki, bi, Ri, Ni, fi) {
-          let Ci = this.chart.inverted;
-          var wi = ki.series;
-          let yi = (wi.xAxis ? wi.xAxis.len : this.chart.plotSizeX) || 0;
+      }(gi || (gi = {})), gi;
+    }), ri(ii, "Series/Column/ColumnDataLabel.js", [ii["Core/Series/DataLabel.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+      const { series: Ki } = Ci, { merge: Yi, pick: es } = zi;
+      var is;
+      return function($i) {
+        function Vi(bi, Ai, ji, Ni, gi) {
+          let ki = this.chart.inverted;
+          var wi = bi.series;
+          let Si = (wi.xAxis ? wi.xAxis.len : this.chart.plotSizeX) || 0;
           wi = (wi.yAxis ? wi.yAxis.len : this.chart.plotSizeY) || 0;
-          var Ti = ki.dlBox || ki.shapeArgs;
-          let Mi = is(ki.below, ki.plotY > is(this.translatedThreshold, wi)), Oi = is(Ri.inside, !!this.options.stacking);
-          Ti && (Ni = Qi(Ti), 0 > Ni.y && (Ni.height += Ni.y, Ni.y = 0), Ti = Ni.y + Ni.height - wi, 0 < Ti && Ti < Ni.height && (Ni.height -= Ti), Ci && (Ni = { x: wi - Ni.y - Ni.height, y: yi - Ni.x - Ni.width, width: Ni.height, height: Ni.width }), Oi || (Ci ? (Ni.x += Mi ? 0 : Ni.width, Ni.width = 0) : (Ni.y += Mi ? Ni.height : 0, Ni.height = 0))), Ri.align = is(Ri.align, !Ci || Oi ? "center" : Mi ? "right" : "left"), Ri.verticalAlign = is(Ri.verticalAlign, Ci || Oi ? "middle" : Mi ? "top" : "bottom"), ts.prototype.alignDataLabel.call(this, ki, bi, Ri, Ni, fi), Ri.inside && ki.contrastColor && bi.css({ color: ki.contrastColor });
+          var Ti = bi.dlBox || bi.shapeArgs;
+          let Mi = es(bi.below, bi.plotY > es(this.translatedThreshold, wi)), Di = es(ji.inside, !!this.options.stacking);
+          Ti && (Ni = Yi(Ti), 0 > Ni.y && (Ni.height += Ni.y, Ni.y = 0), Ti = Ni.y + Ni.height - wi, 0 < Ti && Ti < Ni.height && (Ni.height -= Ti), ki && (Ni = { x: wi - Ni.y - Ni.height, y: Si - Ni.x - Ni.width, width: Ni.height, height: Ni.width }), Di || (ki ? (Ni.x += Mi ? 0 : Ni.width, Ni.width = 0) : (Ni.y += Mi ? Ni.height : 0, Ni.height = 0))), ji.align = es(ji.align, !ki || Di ? "center" : Mi ? "right" : "left"), ji.verticalAlign = es(ji.verticalAlign, ki || Di ? "middle" : Mi ? "top" : "bottom"), Ki.prototype.alignDataLabel.call(this, bi, Ai, ji, Ni, gi), ji.inside && bi.contrastColor && Ai.css({ color: bi.contrastColor });
         }
-        const Ui = [];
-        Wi.compose = function(ki) {
-          Si.compose(ts), qi.pushUnique(Ui, ki) && (ki.prototype.alignDataLabel = Ki);
+        const _i = [];
+        $i.compose = function(bi) {
+          li.compose(Ki), zi.pushUnique(_i, bi) && (bi.prototype.alignDataLabel = Vi);
         };
-      }(ss || (ss = {})), ss;
-    }), ci(oi, "Series/Bar/BarSeries.js", [oi["Series/Column/ColumnSeries.js"], oi["Core/Series/SeriesRegistry.js"], oi["Core/Utilities.js"]], function(Si, ji, qi) {
-      const { extend: ts, merge: Qi } = qi;
-      class is extends Si {
+      }(is || (is = {})), is;
+    }), ri(ii, "Series/Bar/BarSeries.js", [ii["Series/Column/ColumnSeries.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+      const { extend: Ki, merge: Yi } = zi;
+      class es extends li {
         constructor() {
           super(...arguments), this.points = this.options = this.data = void 0;
         }
       }
-      return is.defaultOptions = Qi(Si.defaultOptions, {}), ts(is.prototype, { inverted: !0 }), ji.registerSeriesType("bar", is), is;
-    }), ci(oi, "Series/Scatter/ScatterSeriesDefaults.js", [], function() {
+      return es.defaultOptions = Yi(li.defaultOptions, {}), Ki(es.prototype, { inverted: !0 }), Ci.registerSeriesType("bar", es), es;
+    }), ri(ii, "Series/Scatter/ScatterSeriesDefaults.js", [], function() {
       return { lineWidth: 0, findNearestPointBy: "xy", jitter: { x: 0, y: 0 }, marker: { enabled: !0 }, tooltip: { headerFormat: '<span style="color:{point.color}">●</span> <span style="font-size: 0.8em"> {series.name}</span><br/>', pointFormat: "x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>" } };
-    }), ci(
-      oi,
+    }), ri(
+      ii,
       "Series/Scatter/ScatterSeries.js",
-      [oi["Series/Scatter/ScatterSeriesDefaults.js"], oi["Core/Series/SeriesRegistry.js"], oi["Core/Utilities.js"]],
-      function(Si, ji, qi) {
-        const { column: ts, line: Qi } = ji.seriesTypes, { addEvent: is, extend: ss, merge: Wi } = qi;
-        class Ki extends Qi {
+      [ii["Series/Scatter/ScatterSeriesDefaults.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]],
+      function(li, Ci, zi) {
+        const { column: Ki, line: Yi } = Ci.seriesTypes, { addEvent: es, extend: is, merge: $i } = zi;
+        class Vi extends Yi {
           constructor() {
             super(...arguments), this.points = this.options = this.data = void 0;
           }
           applyJitter() {
-            const ki = this, bi = this.options.jitter, Ri = this.points.length;
-            bi && this.points.forEach(function(Ni, fi) {
-              ["x", "y"].forEach(function(Ci, wi) {
-                let yi = "plot" + Ci.toUpperCase(), Ti, Mi;
-                if (bi[Ci] && !Ni.isNull) {
-                  var Oi = ki[Ci + "Axis"];
-                  Mi = bi[Ci] * Oi.transA, Oi && !Oi.isLog && (Ti = Math.max(0, Ni[yi] - Mi), Oi = Math.min(Oi.len, Ni[yi] + Mi), wi = 1e4 * Math.sin(fi + wi * Ri), wi -= Math.floor(wi), Ni[yi] = Ti + (Oi - Ti) * wi, Ci === "x" && (Ni.clientX = Ni.plotX));
+            const bi = this, Ai = this.options.jitter, ji = this.points.length;
+            Ai && this.points.forEach(function(Ni, gi) {
+              ["x", "y"].forEach(function(ki, wi) {
+                let Si = "plot" + ki.toUpperCase(), Ti, Mi;
+                if (Ai[ki] && !Ni.isNull) {
+                  var Di = bi[ki + "Axis"];
+                  Mi = Ai[ki] * Di.transA, Di && !Di.isLog && (Ti = Math.max(0, Ni[Si] - Mi), Di = Math.min(Di.len, Ni[Si] + Mi), wi = 1e4 * Math.sin(gi + wi * ji), wi -= Math.floor(wi), Ni[Si] = Ti + (Di - Ti) * wi, ki === "x" && (Ni.clientX = Ni.plotX));
                 }
               });
             });
@@ -5911,93 +5910,93 @@ var highcharts = { exports: {} };
             this.options.lineWidth ? super.drawGraph() : this.graph && (this.graph = this.graph.destroy());
           }
         }
-        return Ki.defaultOptions = Wi(Qi.defaultOptions, Si), ss(Ki.prototype, { drawTracker: ts.prototype.drawTracker, sorted: !1, requireSorting: !1, noSharedTooltip: !0, trackerGroups: ["group", "markerGroup", "dataLabelsGroup"], takeOrdinalPosition: !1 }), is(Ki, "afterTranslate", function() {
+        return Vi.defaultOptions = $i(Yi.defaultOptions, li), is(Vi.prototype, { drawTracker: Ki.prototype.drawTracker, sorted: !1, requireSorting: !1, noSharedTooltip: !0, trackerGroups: ["group", "markerGroup", "dataLabelsGroup"], takeOrdinalPosition: !1 }), es(Vi, "afterTranslate", function() {
           this.applyJitter();
-        }), ji.registerSeriesType("scatter", Ki), Ki;
+        }), Ci.registerSeriesType("scatter", Vi), Vi;
       }
-    ), ci(oi, "Series/CenteredUtilities.js", [oi["Core/Globals.js"], oi["Core/Series/Series.js"], oi["Core/Utilities.js"]], function(Si, ji, qi) {
-      const { deg2rad: ts } = Si, { fireEvent: Qi, isNumber: is, pick: ss, relativeLength: Wi } = qi;
-      var Ki;
-      return function(Ui) {
-        Ui.getCenter = function() {
-          var ki = this.options, bi = this.chart;
-          const Ri = 2 * (ki.slicedOffset || 0), Ni = bi.plotWidth - 2 * Ri, fi = bi.plotHeight - 2 * Ri;
-          var Ci = ki.center;
-          const wi = Math.min(Ni, fi), yi = ki.thickness;
-          var Ti = ki.size;
-          let Mi = ki.innerSize || 0;
-          for (typeof Ti == "string" && (Ti = parseFloat(Ti)), typeof Mi == "string" && (Mi = parseFloat(Mi)), ki = [ss(Ci[0], "50%"), ss(Ci[1], "50%"), ss(Ti && 0 > Ti ? void 0 : ki.size, "100%"), ss(Mi && 0 > Mi ? void 0 : ki.innerSize || 0, "0%")], !bi.angular || this instanceof ji || (ki[3] = 0), Ci = 0; 4 > Ci; ++Ci)
-            Ti = ki[Ci], bi = 2 > Ci || Ci === 2 && /%$/.test(Ti), ki[Ci] = Wi(Ti, [Ni, fi, wi, ki[2]][Ci]) + (bi ? Ri : 0);
-          return ki[3] > ki[2] && (ki[3] = ki[2]), is(yi) && 2 * yi < ki[2] && 0 < yi && (ki[3] = ki[2] - 2 * yi), Qi(this, "afterGetCenter", { positions: ki }), ki;
-        }, Ui.getStartAndEndRadians = function(ki, bi) {
-          return ki = is(ki) ? ki : 0, bi = is(bi) && bi > ki && 360 > bi - ki ? bi : ki + 360, { start: ts * (ki + -90), end: ts * (bi + -90) };
+    ), ri(ii, "Series/CenteredUtilities.js", [ii["Core/Globals.js"], ii["Core/Series/Series.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+      const { deg2rad: Ki } = li, { fireEvent: Yi, isNumber: es, pick: is, relativeLength: $i } = zi;
+      var Vi;
+      return function(_i) {
+        _i.getCenter = function() {
+          var bi = this.options, Ai = this.chart;
+          const ji = 2 * (bi.slicedOffset || 0), Ni = Ai.plotWidth - 2 * ji, gi = Ai.plotHeight - 2 * ji;
+          var ki = bi.center;
+          const wi = Math.min(Ni, gi), Si = bi.thickness;
+          var Ti = bi.size;
+          let Mi = bi.innerSize || 0;
+          for (typeof Ti == "string" && (Ti = parseFloat(Ti)), typeof Mi == "string" && (Mi = parseFloat(Mi)), bi = [is(ki[0], "50%"), is(ki[1], "50%"), is(Ti && 0 > Ti ? void 0 : bi.size, "100%"), is(Mi && 0 > Mi ? void 0 : bi.innerSize || 0, "0%")], !Ai.angular || this instanceof Ci || (bi[3] = 0), ki = 0; 4 > ki; ++ki)
+            Ti = bi[ki], Ai = 2 > ki || ki === 2 && /%$/.test(Ti), bi[ki] = $i(Ti, [Ni, gi, wi, bi[2]][ki]) + (Ai ? ji : 0);
+          return bi[3] > bi[2] && (bi[3] = bi[2]), es(Si) && 2 * Si < bi[2] && 0 < Si && (bi[3] = bi[2] - 2 * Si), Yi(this, "afterGetCenter", { positions: bi }), bi;
+        }, _i.getStartAndEndRadians = function(bi, Ai) {
+          return bi = es(bi) ? bi : 0, Ai = es(Ai) && Ai > bi && 360 > Ai - bi ? Ai : bi + 360, { start: Ki * (bi + -90), end: Ki * (Ai + -90) };
         };
-      }(Ki || (Ki = {})), Ki;
-    }), ci(oi, "Series/Pie/PiePoint.js", [oi["Core/Animation/AnimationUtilities.js"], oi["Core/Series/Point.js"], oi["Core/Utilities.js"]], function(Si, ji, qi) {
-      const { setAnimation: ts } = Si, { addEvent: Qi, defined: is, extend: ss, isNumber: Wi, pick: Ki, relativeLength: Ui } = qi;
-      class ki extends ji {
+      }(Vi || (Vi = {})), Vi;
+    }), ri(ii, "Series/Pie/PiePoint.js", [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Series/Point.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+      const { setAnimation: Ki } = li, { addEvent: Yi, defined: es, extend: is, isNumber: $i, pick: Vi, relativeLength: _i } = zi;
+      class bi extends Ci {
         constructor() {
           super(...arguments), this.series = this.options = this.labelDistance = void 0;
         }
         getConnectorPath() {
-          const Ri = this.labelPosition, Ni = this.series.options.dataLabels, fi = this.connectorShapes;
-          let Ci = Ni.connectorShape;
-          return fi[Ci] && (Ci = fi[Ci]), Ci.call(
+          const ji = this.labelPosition, Ni = this.series.options.dataLabels, gi = this.connectorShapes;
+          let ki = Ni.connectorShape;
+          return gi[ki] && (ki = gi[ki]), ki.call(
             this,
-            { x: Ri.computed.x, y: Ri.computed.y, alignment: Ri.alignment },
-            Ri.connectorPosition,
+            { x: ji.computed.x, y: ji.computed.y, alignment: ji.alignment },
+            ji.connectorPosition,
             Ni
           );
         }
         getTranslate() {
           return this.sliced ? this.slicedTranslation : { translateX: 0, translateY: 0 };
         }
-        haloPath(Ri) {
+        haloPath(ji) {
           const Ni = this.shapeArgs;
-          return this.sliced || !this.visible ? [] : this.series.chart.renderer.symbols.arc(Ni.x, Ni.y, Ni.r + Ri, Ni.r + Ri, { innerR: Ni.r - 1, start: Ni.start, end: Ni.end, borderRadius: Ni.borderRadius });
+          return this.sliced || !this.visible ? [] : this.series.chart.renderer.symbols.arc(Ni.x, Ni.y, Ni.r + ji, Ni.r + ji, { innerR: Ni.r - 1, start: Ni.start, end: Ni.end, borderRadius: Ni.borderRadius });
         }
         init() {
-          super.init.apply(this, arguments), this.name = Ki(this.name, "Slice");
-          const Ri = (Ni) => {
+          super.init.apply(this, arguments), this.name = Vi(this.name, "Slice");
+          const ji = (Ni) => {
             this.slice(Ni.type === "select");
           };
-          return Qi(this, "select", Ri), Qi(
+          return Yi(this, "select", ji), Yi(
             this,
             "unselect",
-            Ri
+            ji
           ), this;
         }
         isValid() {
-          return Wi(this.y) && 0 <= this.y;
+          return $i(this.y) && 0 <= this.y;
         }
-        setVisible(Ri, Ni) {
-          const fi = this.series, Ci = fi.chart, wi = fi.options.ignoreHiddenPoint;
-          Ni = Ki(Ni, wi), Ri !== this.visible && (this.visible = this.options.visible = Ri = typeof Ri > "u" ? !this.visible : Ri, fi.options.data[fi.data.indexOf(this)] = this.options, ["graphic", "dataLabel", "connector"].forEach((yi) => {
-            this[yi] && this[yi][Ri ? "show" : "hide"](Ri);
-          }), this.legendItem && Ci.legend.colorizeItem(this, Ri), Ri || this.state !== "hover" || this.setState(""), wi && (fi.isDirty = !0), Ni && Ci.redraw());
+        setVisible(ji, Ni) {
+          const gi = this.series, ki = gi.chart, wi = gi.options.ignoreHiddenPoint;
+          Ni = Vi(Ni, wi), ji !== this.visible && (this.visible = this.options.visible = ji = typeof ji > "u" ? !this.visible : ji, gi.options.data[gi.data.indexOf(this)] = this.options, ["graphic", "dataLabel", "connector"].forEach((Si) => {
+            this[Si] && this[Si][ji ? "show" : "hide"](ji);
+          }), this.legendItem && ki.legend.colorizeItem(this, ji), ji || this.state !== "hover" || this.setState(""), wi && (gi.isDirty = !0), Ni && ki.redraw());
         }
-        slice(Ri, Ni, fi) {
-          const Ci = this.series;
-          ts(fi, Ci.chart), Ki(Ni, !0), this.sliced = this.options.sliced = is(Ri) ? Ri : !this.sliced, Ci.options.data[Ci.data.indexOf(this)] = this.options, this.graphic && this.graphic.animate(this.getTranslate());
+        slice(ji, Ni, gi) {
+          const ki = this.series;
+          Ki(gi, ki.chart), Vi(Ni, !0), this.sliced = this.options.sliced = es(ji) ? ji : !this.sliced, ki.options.data[ki.data.indexOf(this)] = this.options, this.graphic && this.graphic.animate(this.getTranslate());
         }
       }
-      return ss(ki.prototype, { connectorShapes: { fixedOffset: function(bi, Ri, Ni) {
-        const fi = Ri.breakAt;
-        return Ri = Ri.touchingSliceAt, [["M", bi.x, bi.y], Ni.softConnector ? ["C", bi.x + (bi.alignment === "left" ? -5 : 5), bi.y, 2 * fi.x - Ri.x, 2 * fi.y - Ri.y, fi.x, fi.y] : ["L", fi.x, fi.y], ["L", Ri.x, Ri.y]];
-      }, straight: function(bi, Ri) {
-        return Ri = Ri.touchingSliceAt, [
-          ["M", bi.x, bi.y],
-          ["L", Ri.x, Ri.y]
+      return is(bi.prototype, { connectorShapes: { fixedOffset: function(Ai, ji, Ni) {
+        const gi = ji.breakAt;
+        return ji = ji.touchingSliceAt, [["M", Ai.x, Ai.y], Ni.softConnector ? ["C", Ai.x + (Ai.alignment === "left" ? -5 : 5), Ai.y, 2 * gi.x - ji.x, 2 * gi.y - ji.y, gi.x, gi.y] : ["L", gi.x, gi.y], ["L", ji.x, ji.y]];
+      }, straight: function(Ai, ji) {
+        return ji = ji.touchingSliceAt, [
+          ["M", Ai.x, Ai.y],
+          ["L", ji.x, ji.y]
         ];
-      }, crookedLine: function(bi, Ri, Ni) {
-        const { breakAt: fi, touchingSliceAt: Ci } = Ri;
-        ({ series: Ri } = this);
-        const [wi, yi, Ti] = Ri.center, Mi = Ti / 2, Oi = Ri.chart.plotWidth, ai = Ri.chart.plotLeft;
-        Ri = bi.alignment === "left";
-        const { x: li, y: xi } = bi;
-        return Ni.crookDistance ? (bi = Ui(Ni.crookDistance, 1), bi = Ri ? wi + Mi + (Oi + ai - wi - Mi) * (1 - bi) : ai + (wi - Mi) * bi) : bi = wi + (yi - xi) * Math.tan((this.angle || 0) - Math.PI / 2), Ni = [["M", li, xi]], (Ri ? bi <= li && bi >= fi.x : bi >= li && bi <= fi.x) && Ni.push(["L", bi, xi]), Ni.push(["L", fi.x, fi.y], ["L", Ci.x, Ci.y]), Ni;
-      } } }), ki;
-    }), ci(oi, "Series/Pie/PieSeriesDefaults.js", [], function() {
+      }, crookedLine: function(Ai, ji, Ni) {
+        const { breakAt: gi, touchingSliceAt: ki } = ji;
+        ({ series: ji } = this);
+        const [wi, Si, Ti] = ji.center, Mi = Ti / 2, Di = ji.chart.plotWidth, ci = ji.chart.plotLeft;
+        ji = Ai.alignment === "left";
+        const { x: pi, y: vi } = Ai;
+        return Ni.crookDistance ? (Ai = _i(Ni.crookDistance, 1), Ai = ji ? wi + Mi + (Di + ci - wi - Mi) * (1 - Ai) : ci + (wi - Mi) * Ai) : Ai = wi + (Si - vi) * Math.tan((this.angle || 0) - Math.PI / 2), Ni = [["M", pi, vi]], (ji ? Ai <= pi && Ai >= gi.x : Ai >= pi && Ai <= gi.x) && Ni.push(["L", Ai, vi]), Ni.push(["L", gi.x, gi.y], ["L", ki.x, ki.y]), Ni;
+      } } }), bi;
+    }), ri(ii, "Series/Pie/PieSeriesDefaults.js", [], function() {
       return {
         borderRadius: 3,
         center: [null, null],
@@ -6021,32 +6020,32 @@ var highcharts = { exports: {} };
         lineWidth: void 0,
         states: { hover: { brightness: 0.1 } }
       };
-    }), ci(oi, "Series/Pie/PieSeries.js", [oi["Series/CenteredUtilities.js"], oi["Series/Column/ColumnSeries.js"], oi["Core/Globals.js"], oi["Series/Pie/PiePoint.js"], oi["Series/Pie/PieSeriesDefaults.js"], oi["Core/Series/Series.js"], oi["Core/Series/SeriesRegistry.js"], oi["Core/Renderer/SVG/Symbols.js"], oi["Core/Utilities.js"]], function(Si, ji, qi, ts, Qi, is, ss, Wi, Ki) {
-      const { getStartAndEndRadians: Ui } = Si;
-      ({ noop: qi } = qi);
-      const { clamp: ki, extend: bi, fireEvent: Ri, merge: Ni, pick: fi, relativeLength: Ci } = Ki;
-      class wi extends is {
+    }), ri(ii, "Series/Pie/PieSeries.js", [ii["Series/CenteredUtilities.js"], ii["Series/Column/ColumnSeries.js"], ii["Core/Globals.js"], ii["Series/Pie/PiePoint.js"], ii["Series/Pie/PieSeriesDefaults.js"], ii["Core/Series/Series.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Renderer/SVG/Symbols.js"], ii["Core/Utilities.js"]], function(li, Ci, zi, Ki, Yi, es, is, $i, Vi) {
+      const { getStartAndEndRadians: _i } = li;
+      ({ noop: zi } = zi);
+      const { clamp: bi, extend: Ai, fireEvent: ji, merge: Ni, pick: gi, relativeLength: ki } = Vi;
+      class wi extends es {
         constructor() {
           super(...arguments), this.points = this.options = this.maxLabelDistance = this.data = this.center = void 0;
         }
         animate(Ti) {
-          const Mi = this, Oi = Mi.points, ai = Mi.startAngleRad;
-          Ti || Oi.forEach(function(li) {
-            const xi = li.graphic, di = li.shapeArgs;
-            xi && di && (xi.attr({ r: fi(li.startR, Mi.center && Mi.center[3] / 2), start: ai, end: ai }), xi.animate({ r: di.r, start: di.start, end: di.end }, Mi.options.animation));
+          const Mi = this, Di = Mi.points, ci = Mi.startAngleRad;
+          Ti || Di.forEach(function(pi) {
+            const vi = pi.graphic, ui = pi.shapeArgs;
+            vi && ui && (vi.attr({ r: gi(pi.startR, Mi.center && Mi.center[3] / 2), start: ci, end: ci }), vi.animate({ r: ui.r, start: ui.start, end: ui.end }, Mi.options.animation));
           });
         }
         drawEmpty() {
-          const Ti = this.startAngleRad, Mi = this.endAngleRad, Oi = this.options;
-          let ai, li;
-          this.total === 0 && this.center ? (ai = this.center[0], li = this.center[1], this.graph || (this.graph = this.chart.renderer.arc(
-            ai,
-            li,
+          const Ti = this.startAngleRad, Mi = this.endAngleRad, Di = this.options;
+          let ci, pi;
+          this.total === 0 && this.center ? (ci = this.center[0], pi = this.center[1], this.graph || (this.graph = this.chart.renderer.arc(
+            ci,
+            pi,
             this.center[1] / 2,
             0,
             Ti,
             Mi
-          ).addClass("highcharts-empty-series").add(this.group)), this.graph.attr({ d: Wi.arc(ai, li, this.center[2] / 2, 0, { start: Ti, end: Mi, innerR: this.center[3] / 2 }) }), this.chart.styledMode || this.graph.attr({ "stroke-width": Oi.borderWidth, fill: Oi.fillColor || "none", stroke: Oi.color || "#cccccc" })) : this.graph && (this.graph = this.graph.destroy());
+          ).addClass("highcharts-empty-series").add(this.group)), this.graph.attr({ d: $i.arc(ci, pi, this.center[2] / 2, 0, { start: Ti, end: Mi, innerR: this.center[3] / 2 }) }), this.chart.styledMode || this.graph.attr({ "stroke-width": Di.borderWidth, fill: Di.fillColor || "none", stroke: Di.color || "#cccccc" })) : this.graph && (this.graph = this.graph.destroy());
         }
         drawPoints() {
           const Ti = this.chart.renderer;
@@ -6057,498 +6056,498 @@ var highcharts = { exports: {} };
         generatePoints() {
           super.generatePoints(), this.updateTotals();
         }
-        getX(Ti, Mi, Oi) {
-          const ai = this.center, li = this.radii ? this.radii[Oi.index] || 0 : ai[2] / 2;
-          return Ti = Math.asin(ki((Ti - ai[1]) / (li + Oi.labelDistance), -1, 1)), ai[0] + (Mi ? -1 : 1) * Math.cos(Ti) * (li + Oi.labelDistance) + (0 < Oi.labelDistance ? (Mi ? -1 : 1) * this.options.dataLabels.padding : 0);
+        getX(Ti, Mi, Di) {
+          const ci = this.center, pi = this.radii ? this.radii[Di.index] || 0 : ci[2] / 2;
+          return Ti = Math.asin(bi((Ti - ci[1]) / (pi + Di.labelDistance), -1, 1)), ci[0] + (Mi ? -1 : 1) * Math.cos(Ti) * (pi + Di.labelDistance) + (0 < Di.labelDistance ? (Mi ? -1 : 1) * this.options.dataLabels.padding : 0);
         }
         hasData() {
           return !!this.processedXData.length;
         }
         redrawPoints() {
           const Ti = this, Mi = Ti.chart;
-          let Oi, ai, li, xi;
-          this.drawEmpty(), Ti.group && !Mi.styledMode && Ti.group.shadow(Ti.options.shadow), Ti.points.forEach(function(di) {
-            const pi = {};
-            ai = di.graphic, !di.isNull && ai ? (xi = di.shapeArgs, Oi = di.getTranslate(), Mi.styledMode || (li = Ti.pointAttribs(di, di.selected && "select")), di.delayedRendering ? (ai.setRadialReference(Ti.center).attr(xi).attr(Oi), Mi.styledMode || ai.attr(li).attr({ "stroke-linejoin": "round" }), di.delayedRendering = !1) : (ai.setRadialReference(Ti.center), Mi.styledMode || Ni(!0, pi, li), Ni(!0, pi, xi, Oi), ai.animate(pi)), ai.attr({ visibility: di.visible ? "inherit" : "hidden" }), ai.addClass(di.getClassName(), !0)) : ai && (di.graphic = ai.destroy());
+          let Di, ci, pi, vi;
+          this.drawEmpty(), Ti.group && !Mi.styledMode && Ti.group.shadow(Ti.options.shadow), Ti.points.forEach(function(ui) {
+            const fi = {};
+            ci = ui.graphic, !ui.isNull && ci ? (vi = ui.shapeArgs, Di = ui.getTranslate(), Mi.styledMode || (pi = Ti.pointAttribs(ui, ui.selected && "select")), ui.delayedRendering ? (ci.setRadialReference(Ti.center).attr(vi).attr(Di), Mi.styledMode || ci.attr(pi).attr({ "stroke-linejoin": "round" }), ui.delayedRendering = !1) : (ci.setRadialReference(Ti.center), Mi.styledMode || Ni(!0, fi, pi), Ni(!0, fi, vi, Di), ci.animate(fi)), ci.attr({ visibility: ui.visible ? "inherit" : "hidden" }), ci.addClass(ui.getClassName(), !0)) : ci && (ui.graphic = ci.destroy());
           });
         }
         sortByAngle(Ti, Mi) {
-          Ti.sort(function(Oi, ai) {
-            return typeof Oi.angle < "u" && (ai.angle - Oi.angle) * Mi;
+          Ti.sort(function(Di, ci) {
+            return typeof Di.angle < "u" && (ci.angle - Di.angle) * Mi;
           });
         }
         translate(Ti) {
-          Ri(this, "translate"), this.generatePoints();
+          ji(this, "translate"), this.generatePoints();
           var Mi = this.options;
-          const Oi = Mi.slicedOffset, ai = Oi + (Mi.borderWidth || 0);
-          var li = Ui(Mi.startAngle, Mi.endAngle);
-          const xi = this.startAngleRad = li.start;
-          li = (this.endAngleRad = li.end) - xi;
-          const di = this.points, pi = Mi.dataLabels.distance;
+          const Di = Mi.slicedOffset, ci = Di + (Mi.borderWidth || 0);
+          var pi = _i(Mi.startAngle, Mi.endAngle);
+          const vi = this.startAngleRad = pi.start;
+          pi = (this.endAngleRad = pi.end) - vi;
+          const ui = this.points, fi = Mi.dataLabels.distance;
           Mi = Mi.ignoreHiddenPoint;
-          const ei = di.length;
-          let Fe, ii, hi, gi = 0;
-          for (Ti || (this.center = Ti = this.getCenter()), ii = 0; ii < ei; ii++) {
-            hi = di[ii];
-            var Ei = xi + gi * li;
-            !hi.isValid() || Mi && !hi.visible || (gi += hi.percentage / 100);
-            var ni = xi + gi * li, Pi = {
+          const si = ui.length;
+          let ti, oi, di, mi = 0;
+          for (Ti || (this.center = Ti = this.getCenter()), oi = 0; oi < si; oi++) {
+            di = ui[oi];
+            var Oi = vi + mi * pi;
+            !di.isValid() || Mi && !di.visible || (mi += di.percentage / 100);
+            var hi = vi + mi * pi, Li = {
               x: Ti[0],
               y: Ti[1],
               r: Ti[2] / 2,
               innerR: Ti[3] / 2,
-              start: Math.round(1e3 * Ei) / 1e3,
-              end: Math.round(1e3 * ni) / 1e3
+              start: Math.round(1e3 * Oi) / 1e3,
+              end: Math.round(1e3 * hi) / 1e3
             };
-            hi.shapeType = "arc", hi.shapeArgs = Pi, hi.labelDistance = fi(hi.options.dataLabels && hi.options.dataLabels.distance, pi), hi.labelDistance = Ci(hi.labelDistance, Pi.r), this.maxLabelDistance = Math.max(this.maxLabelDistance || 0, hi.labelDistance), ni = (ni + Ei) / 2, ni > 1.5 * Math.PI ? ni -= 2 * Math.PI : ni < -Math.PI / 2 && (ni += 2 * Math.PI), hi.slicedTranslation = { translateX: Math.round(Math.cos(ni) * Oi), translateY: Math.round(Math.sin(ni) * Oi) }, Pi = Math.cos(ni) * Ti[2] / 2, Fe = Math.sin(ni) * Ti[2] / 2, hi.tooltipPos = [Ti[0] + 0.7 * Pi, Ti[1] + 0.7 * Fe], hi.half = ni < -Math.PI / 2 || ni > Math.PI / 2 ? 1 : 0, hi.angle = ni, Ei = Math.min(ai, hi.labelDistance / 5), hi.labelPosition = { natural: { x: Ti[0] + Pi + Math.cos(ni) * hi.labelDistance, y: Ti[1] + Fe + Math.sin(ni) * hi.labelDistance }, computed: {}, alignment: 0 > hi.labelDistance ? "center" : hi.half ? "right" : "left", connectorPosition: { breakAt: { x: Ti[0] + Pi + Math.cos(ni) * Ei, y: Ti[1] + Fe + Math.sin(ni) * Ei }, touchingSliceAt: { x: Ti[0] + Pi, y: Ti[1] + Fe } } };
+            di.shapeType = "arc", di.shapeArgs = Li, di.labelDistance = gi(di.options.dataLabels && di.options.dataLabels.distance, fi), di.labelDistance = ki(di.labelDistance, Li.r), this.maxLabelDistance = Math.max(this.maxLabelDistance || 0, di.labelDistance), hi = (hi + Oi) / 2, hi > 1.5 * Math.PI ? hi -= 2 * Math.PI : hi < -Math.PI / 2 && (hi += 2 * Math.PI), di.slicedTranslation = { translateX: Math.round(Math.cos(hi) * Di), translateY: Math.round(Math.sin(hi) * Di) }, Li = Math.cos(hi) * Ti[2] / 2, ti = Math.sin(hi) * Ti[2] / 2, di.tooltipPos = [Ti[0] + 0.7 * Li, Ti[1] + 0.7 * ti], di.half = hi < -Math.PI / 2 || hi > Math.PI / 2 ? 1 : 0, di.angle = hi, Oi = Math.min(ci, di.labelDistance / 5), di.labelPosition = { natural: { x: Ti[0] + Li + Math.cos(hi) * di.labelDistance, y: Ti[1] + ti + Math.sin(hi) * di.labelDistance }, computed: {}, alignment: 0 > di.labelDistance ? "center" : di.half ? "right" : "left", connectorPosition: { breakAt: { x: Ti[0] + Li + Math.cos(hi) * Oi, y: Ti[1] + ti + Math.sin(hi) * Oi }, touchingSliceAt: { x: Ti[0] + Li, y: Ti[1] + ti } } };
           }
-          Ri(this, "afterTranslate");
+          ji(this, "afterTranslate");
         }
         updateTotals() {
-          const Ti = this.points, Mi = Ti.length, Oi = this.options.ignoreHiddenPoint;
-          let ai, li, xi = 0;
-          for (ai = 0; ai < Mi; ai++)
-            li = Ti[ai], !li.isValid() || Oi && !li.visible || (xi += li.y);
-          for (this.total = xi, ai = 0; ai < Mi; ai++)
-            li = Ti[ai], li.percentage = 0 < xi && (li.visible || !Oi) ? li.y / xi * 100 : 0, li.total = xi;
+          const Ti = this.points, Mi = Ti.length, Di = this.options.ignoreHiddenPoint;
+          let ci, pi, vi = 0;
+          for (ci = 0; ci < Mi; ci++)
+            pi = Ti[ci], !pi.isValid() || Di && !pi.visible || (vi += pi.y);
+          for (this.total = vi, ci = 0; ci < Mi; ci++)
+            pi = Ti[ci], pi.percentage = 0 < vi && (pi.visible || !Di) ? pi.y / vi * 100 : 0, pi.total = vi;
         }
       }
-      return wi.defaultOptions = Ni(is.defaultOptions, Qi), bi(wi.prototype, { axisTypes: [], directTouch: !0, drawGraph: void 0, drawTracker: ji.prototype.drawTracker, getCenter: Si.getCenter, getSymbol: qi, isCartesian: !1, noSharedTooltip: !0, pointAttribs: ji.prototype.pointAttribs, pointClass: ts, requireSorting: !1, searchPoint: qi, trackerGroups: ["group", "dataLabelsGroup"] }), ss.registerSeriesType(
+      return wi.defaultOptions = Ni(es.defaultOptions, Yi), Ai(wi.prototype, { axisTypes: [], directTouch: !0, drawGraph: void 0, drawTracker: Ci.prototype.drawTracker, getCenter: li.getCenter, getSymbol: zi, isCartesian: !1, noSharedTooltip: !0, pointAttribs: Ci.prototype.pointAttribs, pointClass: Ki, requireSorting: !1, searchPoint: zi, trackerGroups: ["group", "dataLabelsGroup"] }), is.registerSeriesType(
         "pie",
         wi
       ), wi;
-    }), ci(oi, "Series/Pie/PieDataLabel.js", [oi["Core/Series/DataLabel.js"], oi["Core/Globals.js"], oi["Core/Renderer/RendererUtilities.js"], oi["Core/Series/SeriesRegistry.js"], oi["Core/Utilities.js"]], function(Si, ji, qi, ts, Qi) {
-      const { noop: is } = ji, { distribute: ss } = qi, { series: Wi } = ts, { arrayMax: Ki, clamp: Ui, defined: ki, merge: bi, pick: Ri, relativeLength: Ni } = Qi;
-      var fi;
-      return function(Ci) {
+    }), ri(ii, "Series/Pie/PieDataLabel.js", [ii["Core/Series/DataLabel.js"], ii["Core/Globals.js"], ii["Core/Renderer/RendererUtilities.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(li, Ci, zi, Ki, Yi) {
+      const { noop: es } = Ci, { distribute: is } = zi, { series: $i } = Ki, { arrayMax: Vi, clamp: _i, defined: bi, merge: Ai, pick: ji, relativeLength: Ni } = Yi;
+      var gi;
+      return function(ki) {
         function wi() {
-          const ai = this, li = ai.data, xi = ai.chart, di = ai.options.dataLabels || {}, pi = di.connectorPadding, ei = xi.plotWidth, Fe = xi.plotHeight, ii = xi.plotLeft, hi = Math.round(xi.chartWidth / 3), gi = ai.center, Ei = gi[2] / 2, ni = gi[1], Pi = [[], []], Fi = [0, 0, 0, 0], Zi = ai.dataLabelPositioners;
-          let rs, Bi, si, Li, Hi, Di, Vi, ri, mi, vi, zi, Xi;
-          ai.visible && (di.enabled || ai._hasPointLabels) && (li.forEach(function(Gi) {
-            Gi.dataLabel && Gi.visible && Gi.dataLabel.shortened && (Gi.dataLabel.attr({ width: "auto" }).css({ width: "auto", textOverflow: "clip" }), Gi.dataLabel.shortened = !1);
-          }), Wi.prototype.drawDataLabels.apply(ai), li.forEach(function(Gi) {
-            Gi.dataLabel && (Gi.visible ? (Pi[Gi.half].push(Gi), Gi.dataLabel._pos = null, !ki(di.style.width) && !ki(Gi.options.dataLabels && Gi.options.dataLabels.style && Gi.options.dataLabels.style.width) && Gi.dataLabel.getBBox().width > hi && (Gi.dataLabel.css({ width: Math.round(0.7 * hi) + "px" }), Gi.dataLabel.shortened = !0)) : (Gi.dataLabel = Gi.dataLabel.destroy(), Gi.dataLabels && Gi.dataLabels.length === 1 && delete Gi.dataLabels));
-          }), Pi.forEach((Gi, Ji) => {
-            const es = Gi.length, os = [];
+          const ci = this, pi = ci.data, vi = ci.chart, ui = ci.options.dataLabels || {}, fi = ui.connectorPadding, si = vi.plotWidth, ti = vi.plotHeight, oi = vi.plotLeft, di = Math.round(vi.chartWidth / 3), mi = ci.center, Oi = mi[2] / 2, hi = mi[1], Li = [[], []], Ui = [0, 0, 0, 0], Zi = ci.dataLabelPositioners;
+          let rs, Bi, ni, Pi, Hi, Ri, qi, ai, xi, yi, Gi, Xi;
+          ci.visible && (ui.enabled || ci._hasPointLabels) && (pi.forEach(function(Wi) {
+            Wi.dataLabel && Wi.visible && Wi.dataLabel.shortened && (Wi.dataLabel.attr({ width: "auto" }).css({ width: "auto", textOverflow: "clip" }), Wi.dataLabel.shortened = !1);
+          }), $i.prototype.drawDataLabels.apply(ci), pi.forEach(function(Wi) {
+            Wi.dataLabel && (Wi.visible ? (Li[Wi.half].push(Wi), Wi.dataLabel._pos = null, !bi(ui.style.width) && !bi(Wi.options.dataLabels && Wi.options.dataLabels.style && Wi.options.dataLabels.style.width) && Wi.dataLabel.getBBox().width > di && (Wi.dataLabel.css({ width: Math.round(0.7 * di) + "px" }), Wi.dataLabel.shortened = !0)) : (Wi.dataLabel = Wi.dataLabel.destroy(), Wi.dataLabels && Wi.dataLabels.length === 1 && delete Wi.dataLabels));
+          }), Li.forEach((Wi, ts) => {
+            const ss = Wi.length, os = [];
             let ns, ls = 0;
-            if (es) {
-              if (ai.sortByAngle(Gi, Ji - 0.5), 0 < ai.maxLabelDistance) {
-                var Ii = Math.max(0, ni - Ei - ai.maxLabelDistance);
-                ns = Math.min(ni + Ei + ai.maxLabelDistance, xi.plotHeight), Gi.forEach(function(Ai) {
-                  0 < Ai.labelDistance && Ai.dataLabel && (Ai.top = Math.max(
+            if (ss) {
+              if (ci.sortByAngle(Wi, ts - 0.5), 0 < ci.maxLabelDistance) {
+                var Ii = Math.max(0, hi - Oi - ci.maxLabelDistance);
+                ns = Math.min(hi + Oi + ci.maxLabelDistance, vi.plotHeight), Wi.forEach(function(Ei) {
+                  0 < Ei.labelDistance && Ei.dataLabel && (Ei.top = Math.max(
                     0,
-                    ni - Ei - Ai.labelDistance
-                  ), Ai.bottom = Math.min(ni + Ei + Ai.labelDistance, xi.plotHeight), ls = Ai.dataLabel.getBBox().height || 21, Ai.distributeBox = { target: Ai.labelPosition.natural.y - Ai.top + ls / 2, size: ls, rank: Ai.y }, os.push(Ai.distributeBox));
-                }), Ii = ns + ls - Ii, ss(os, Ii, Ii / 5);
+                    hi - Oi - Ei.labelDistance
+                  ), Ei.bottom = Math.min(hi + Oi + Ei.labelDistance, vi.plotHeight), ls = Ei.dataLabel.getBBox().height || 21, Ei.distributeBox = { target: Ei.labelPosition.natural.y - Ei.top + ls / 2, size: ls, rank: Ei.y }, os.push(Ei.distributeBox));
+                }), Ii = ns + ls - Ii, is(os, Ii, Ii / 5);
               }
-              for (zi = 0; zi < es; zi++) {
-                if (rs = Gi[zi], Di = rs.labelPosition, Li = rs.dataLabel, vi = rs.visible === !1 ? "hidden" : "inherit", mi = Ii = Di.natural.y, os && ki(rs.distributeBox) && (typeof rs.distributeBox.pos > "u" ? vi = "hidden" : (Vi = rs.distributeBox.size, mi = Zi.radialDistributionY(rs))), delete rs.positionIndex, di.justify)
-                  ri = Zi.justify(rs, Ei, gi);
+              for (Gi = 0; Gi < ss; Gi++) {
+                if (rs = Wi[Gi], Ri = rs.labelPosition, Pi = rs.dataLabel, yi = rs.visible === !1 ? "hidden" : "inherit", xi = Ii = Ri.natural.y, os && bi(rs.distributeBox) && (typeof rs.distributeBox.pos > "u" ? yi = "hidden" : (qi = rs.distributeBox.size, xi = Zi.radialDistributionY(rs))), delete rs.positionIndex, ui.justify)
+                  ai = Zi.justify(rs, Oi, mi);
                 else
-                  switch (di.alignTo) {
+                  switch (ui.alignTo) {
                     case "connectors":
-                      ri = Zi.alignToConnectors(Gi, Ji, ei, ii);
+                      ai = Zi.alignToConnectors(Wi, ts, si, oi);
                       break;
                     case "plotEdges":
-                      ri = Zi.alignToPlotEdges(Li, Ji, ei, ii);
+                      ai = Zi.alignToPlotEdges(Pi, ts, si, oi);
                       break;
                     default:
-                      ri = Zi.radialDistributionX(ai, rs, mi, Ii);
+                      ai = Zi.radialDistributionX(ci, rs, xi, Ii);
                   }
-                Li._attr = { visibility: vi, align: Di.alignment }, Xi = rs.options.dataLabels || {}, Li._pos = { x: ri + Ri(Xi.x, di.x) + ({ left: pi, right: -pi }[Di.alignment] || 0), y: mi + Ri(Xi.y, di.y) - Li.getBBox().height / 2 }, Di && (Di.computed.x = ri, Di.computed.y = mi), Ri(di.crop, !0) && (Hi = Li.getBBox().width, Ii = null, ri - Hi < pi && Ji === 1 ? (Ii = Math.round(Hi - ri + pi), Fi[3] = Math.max(Ii, Fi[3])) : ri + Hi > ei - pi && Ji === 0 && (Ii = Math.round(ri + Hi - ei + pi), Fi[1] = Math.max(Ii, Fi[1])), 0 > mi - Vi / 2 ? Fi[0] = Math.max(Math.round(-mi + Vi / 2), Fi[0]) : mi + Vi / 2 > Fe && (Fi[2] = Math.max(Math.round(mi + Vi / 2 - Fe), Fi[2])), Li.sideOverflow = Ii);
+                Pi._attr = { visibility: yi, align: Ri.alignment }, Xi = rs.options.dataLabels || {}, Pi._pos = { x: ai + ji(Xi.x, ui.x) + ({ left: fi, right: -fi }[Ri.alignment] || 0), y: xi + ji(Xi.y, ui.y) - Pi.getBBox().height / 2 }, Ri && (Ri.computed.x = ai, Ri.computed.y = xi), ji(ui.crop, !0) && (Hi = Pi.getBBox().width, Ii = null, ai - Hi < fi && ts === 1 ? (Ii = Math.round(Hi - ai + fi), Ui[3] = Math.max(Ii, Ui[3])) : ai + Hi > si - fi && ts === 0 && (Ii = Math.round(ai + Hi - si + fi), Ui[1] = Math.max(Ii, Ui[1])), 0 > xi - qi / 2 ? Ui[0] = Math.max(Math.round(-xi + qi / 2), Ui[0]) : xi + qi / 2 > ti && (Ui[2] = Math.max(Math.round(xi + qi / 2 - ti), Ui[2])), Pi.sideOverflow = Ii);
               }
             }
-          }), Ki(Fi) === 0 || this.verifyDataLabelOverflow(Fi)) && (this.placeDataLabels(), this.points.forEach(function(Gi) {
-            if (Xi = bi(di, Gi.options.dataLabels), Bi = Ri(Xi.connectorWidth, 1)) {
-              let Ji;
-              si = Gi.connector, (Li = Gi.dataLabel) && Li._pos && Gi.visible && 0 < Gi.labelDistance ? (vi = Li._attr.visibility, (Ji = !si) && (Gi.connector = si = xi.renderer.path().addClass("highcharts-data-label-connector  highcharts-color-" + Gi.colorIndex + (Gi.className ? " " + Gi.className : "")).add(ai.dataLabelsGroup), xi.styledMode || si.attr({ "stroke-width": Bi, stroke: Xi.connectorColor || Gi.color || "#666666" })), si[Ji ? "attr" : "animate"]({ d: Gi.getConnectorPath() }), si.attr("visibility", vi)) : si && (Gi.connector = si.destroy());
+          }), Vi(Ui) === 0 || this.verifyDataLabelOverflow(Ui)) && (this.placeDataLabels(), this.points.forEach(function(Wi) {
+            if (Xi = Ai(ui, Wi.options.dataLabels), Bi = ji(Xi.connectorWidth, 1)) {
+              let ts;
+              ni = Wi.connector, (Pi = Wi.dataLabel) && Pi._pos && Wi.visible && 0 < Wi.labelDistance ? (yi = Pi._attr.visibility, (ts = !ni) && (Wi.connector = ni = vi.renderer.path().addClass("highcharts-data-label-connector  highcharts-color-" + Wi.colorIndex + (Wi.className ? " " + Wi.className : "")).add(ci.dataLabelsGroup), vi.styledMode || ni.attr({ "stroke-width": Bi, stroke: Xi.connectorColor || Wi.color || "#666666" })), ni[ts ? "attr" : "animate"]({ d: Wi.getConnectorPath() }), ni.attr("visibility", yi)) : ni && (Wi.connector = ni.destroy());
             }
           }));
         }
-        function yi() {
-          this.points.forEach(function(ai) {
-            let li = ai.dataLabel, xi;
-            li && ai.visible && ((xi = li._pos) ? (li.sideOverflow && (li._attr.width = Math.max(li.getBBox().width - li.sideOverflow, 0), li.css({ width: li._attr.width + "px", textOverflow: (this.options.dataLabels.style || {}).textOverflow || "ellipsis" }), li.shortened = !0), li.attr(li._attr), li[li.moved ? "animate" : "attr"](xi), li.moved = !0) : li && li.attr({ y: -9999 })), delete ai.distributeBox;
+        function Si() {
+          this.points.forEach(function(ci) {
+            let pi = ci.dataLabel, vi;
+            pi && ci.visible && ((vi = pi._pos) ? (pi.sideOverflow && (pi._attr.width = Math.max(pi.getBBox().width - pi.sideOverflow, 0), pi.css({ width: pi._attr.width + "px", textOverflow: (this.options.dataLabels.style || {}).textOverflow || "ellipsis" }), pi.shortened = !0), pi.attr(pi._attr), pi[pi.moved ? "animate" : "attr"](vi), pi.moved = !0) : pi && pi.attr({ y: -9999 })), delete ci.distributeBox;
           }, this);
         }
-        function Ti(ai) {
-          let li = this.center, xi = this.options, di = xi.center, pi = xi.minSize || 80, ei, Fe = xi.size !== null;
-          return Fe || (di[0] !== null ? ei = Math.max(li[2] - Math.max(ai[1], ai[3]), pi) : (ei = Math.max(li[2] - ai[1] - ai[3], pi), li[0] += (ai[3] - ai[1]) / 2), di[1] !== null ? ei = Ui(ei, pi, li[2] - Math.max(ai[0], ai[2])) : (ei = Ui(ei, pi, li[2] - ai[0] - ai[2]), li[1] += (ai[0] - ai[2]) / 2), ei < li[2] ? (li[2] = ei, li[3] = Math.min(xi.thickness ? Math.max(0, ei - 2 * xi.thickness) : Math.max(0, Ni(xi.innerSize || 0, ei)), ei), this.translate(li), this.drawDataLabels && this.drawDataLabels()) : Fe = !0), Fe;
+        function Ti(ci) {
+          let pi = this.center, vi = this.options, ui = vi.center, fi = vi.minSize || 80, si, ti = vi.size !== null;
+          return ti || (ui[0] !== null ? si = Math.max(pi[2] - Math.max(ci[1], ci[3]), fi) : (si = Math.max(pi[2] - ci[1] - ci[3], fi), pi[0] += (ci[3] - ci[1]) / 2), ui[1] !== null ? si = _i(si, fi, pi[2] - Math.max(ci[0], ci[2])) : (si = _i(si, fi, pi[2] - ci[0] - ci[2]), pi[1] += (ci[0] - ci[2]) / 2), si < pi[2] ? (pi[2] = si, pi[3] = Math.min(vi.thickness ? Math.max(0, si - 2 * vi.thickness) : Math.max(0, Ni(vi.innerSize || 0, si)), si), this.translate(pi), this.drawDataLabels && this.drawDataLabels()) : ti = !0), ti;
         }
-        const Mi = [], Oi = { radialDistributionY: function(ai) {
-          return ai.top + ai.distributeBox.pos;
-        }, radialDistributionX: function(ai, li, xi, di) {
-          return ai.getX(xi < li.top + 2 || xi > li.bottom - 2 ? di : xi, li.half, li);
-        }, justify: function(ai, li, xi) {
-          return xi[0] + (ai.half ? -1 : 1) * (li + ai.labelDistance);
-        }, alignToPlotEdges: function(ai, li, xi, di) {
-          return ai = ai.getBBox().width, li ? ai + di : xi - ai - di;
-        }, alignToConnectors: function(ai, li, xi, di) {
-          let pi = 0, ei;
-          return ai.forEach(function(Fe) {
-            ei = Fe.dataLabel.getBBox().width, ei > pi && (pi = ei);
-          }), li ? pi + di : xi - pi - di;
+        const Mi = [], Di = { radialDistributionY: function(ci) {
+          return ci.top + ci.distributeBox.pos;
+        }, radialDistributionX: function(ci, pi, vi, ui) {
+          return ci.getX(vi < pi.top + 2 || vi > pi.bottom - 2 ? ui : vi, pi.half, pi);
+        }, justify: function(ci, pi, vi) {
+          return vi[0] + (ci.half ? -1 : 1) * (pi + ci.labelDistance);
+        }, alignToPlotEdges: function(ci, pi, vi, ui) {
+          return ci = ci.getBBox().width, pi ? ci + ui : vi - ci - ui;
+        }, alignToConnectors: function(ci, pi, vi, ui) {
+          let fi = 0, si;
+          return ci.forEach(function(ti) {
+            si = ti.dataLabel.getBBox().width, si > fi && (fi = si);
+          }), pi ? fi + ui : vi - fi - ui;
         } };
-        Ci.compose = function(ai) {
-          Si.compose(Wi), Qi.pushUnique(Mi, ai) && (ai = ai.prototype, ai.dataLabelPositioners = Oi, ai.alignDataLabel = is, ai.drawDataLabels = wi, ai.placeDataLabels = yi, ai.verifyDataLabelOverflow = Ti);
+        ki.compose = function(ci) {
+          li.compose($i), Yi.pushUnique(Mi, ci) && (ci = ci.prototype, ci.dataLabelPositioners = Di, ci.alignDataLabel = es, ci.drawDataLabels = wi, ci.placeDataLabels = Si, ci.verifyDataLabelOverflow = Ti);
         };
-      }(fi || (fi = {})), fi;
-    }), ci(oi, "Extensions/OverlappingDataLabels.js", [oi["Core/Chart/Chart.js"], oi["Core/Utilities.js"]], function(Si, ji) {
-      function qi(Ui, ki) {
-        let bi, Ri = !1;
-        return Ui && (bi = Ui.newOpacity, Ui.oldOpacity !== bi && (Ui.alignAttr && Ui.placed ? (Ui[bi ? "removeClass" : "addClass"]("highcharts-data-label-hidden"), Ri = !0, Ui.alignAttr.opacity = bi, Ui[Ui.isOld ? "animate" : "attr"](Ui.alignAttr, null, function() {
-          ki.styledMode || Ui.css({ pointerEvents: bi ? "auto" : "none" });
-        }), Qi(ki, "afterHideOverlappingLabel")) : Ui.attr({ opacity: bi })), Ui.isOld = !0), Ri;
+      }(gi || (gi = {})), gi;
+    }), ri(ii, "Extensions/OverlappingDataLabels.js", [ii["Core/Chart/Chart.js"], ii["Core/Utilities.js"]], function(li, Ci) {
+      function zi(_i, bi) {
+        let Ai, ji = !1;
+        return _i && (Ai = _i.newOpacity, _i.oldOpacity !== Ai && (_i.alignAttr && _i.placed ? (_i[Ai ? "removeClass" : "addClass"]("highcharts-data-label-hidden"), ji = !0, _i.alignAttr.opacity = Ai, _i[_i.isOld ? "animate" : "attr"](_i.alignAttr, null, function() {
+          bi.styledMode || _i.css({ pointerEvents: Ai ? "auto" : "none" });
+        }), Yi(bi, "afterHideOverlappingLabel")) : _i.attr({ opacity: Ai })), _i.isOld = !0), ji;
       }
-      const { addEvent: ts, fireEvent: Qi, isArray: is, isNumber: ss, objectEach: Wi, pick: Ki } = ji;
-      ts(Si, "render", function() {
-        let Ui = this, ki = [];
-        (this.labelCollectors || []).forEach(function(bi) {
-          ki = ki.concat(bi());
-        }), (this.yAxis || []).forEach(function(bi) {
-          bi.stacking && bi.options.stackLabels && !bi.options.stackLabels.allowOverlap && Wi(bi.stacking.stacks, function(Ri) {
-            Wi(Ri, function(Ni) {
-              Ni.label && ki.push(Ni.label);
+      const { addEvent: Ki, fireEvent: Yi, isArray: es, isNumber: is, objectEach: $i, pick: Vi } = Ci;
+      Ki(li, "render", function() {
+        let _i = this, bi = [];
+        (this.labelCollectors || []).forEach(function(Ai) {
+          bi = bi.concat(Ai());
+        }), (this.yAxis || []).forEach(function(Ai) {
+          Ai.stacking && Ai.options.stackLabels && !Ai.options.stackLabels.allowOverlap && $i(Ai.stacking.stacks, function(ji) {
+            $i(ji, function(Ni) {
+              Ni.label && bi.push(Ni.label);
             });
           });
-        }), (this.series || []).forEach(function(bi) {
-          var Ri = bi.options.dataLabels;
-          bi.visible && (Ri.enabled !== !1 || bi._hasPointLabels) && (Ri = (Ni) => Ni.forEach((fi) => {
-            fi.visible && (is(fi.dataLabels) ? fi.dataLabels : fi.dataLabel ? [fi.dataLabel] : []).forEach(function(Ci) {
-              const wi = Ci.options;
-              Ci.labelrank = Ki(wi.labelrank, fi.labelrank, fi.shapeArgs && fi.shapeArgs.height), wi.allowOverlap ? (Ci.oldOpacity = Ci.opacity, Ci.newOpacity = 1, qi(Ci, Ui)) : ki.push(Ci);
+        }), (this.series || []).forEach(function(Ai) {
+          var ji = Ai.options.dataLabels;
+          Ai.visible && (ji.enabled !== !1 || Ai._hasPointLabels) && (ji = (Ni) => Ni.forEach((gi) => {
+            gi.visible && (es(gi.dataLabels) ? gi.dataLabels : gi.dataLabel ? [gi.dataLabel] : []).forEach(function(ki) {
+              const wi = ki.options;
+              ki.labelrank = Vi(wi.labelrank, gi.labelrank, gi.shapeArgs && gi.shapeArgs.height), wi.allowOverlap ? (ki.oldOpacity = ki.opacity, ki.newOpacity = 1, zi(ki, _i)) : bi.push(ki);
             });
-          }), Ri(bi.nodes || []), Ri(bi.points));
-        }), this.hideOverlappingLabels(ki);
-      }), Si.prototype.hideOverlappingLabels = function(Ui) {
-        let ki = this, bi = Ui.length, Ri = ki.renderer;
+          }), ji(Ai.nodes || []), ji(Ai.points));
+        }), this.hideOverlappingLabels(bi);
+      }), li.prototype.hideOverlappingLabels = function(_i) {
+        let bi = this, Ai = _i.length, ji = bi.renderer;
         var Ni;
-        let fi, Ci, wi, yi, Ti = !1;
-        var Mi = function(Oi) {
-          let ai, li;
-          var xi;
-          let di = Oi.box ? 0 : Oi.padding || 0, pi = xi = 0, ei, Fe;
-          if (Oi && (!Oi.alignAttr || Oi.placed))
-            return ai = Oi.alignAttr || { x: Oi.attr("x"), y: Oi.attr("y") }, li = Oi.parentGroup, Oi.width || (xi = Oi.getBBox(), Oi.width = xi.width, Oi.height = xi.height, xi = Ri.fontMetrics(Oi.element).h), ei = Oi.width - 2 * di, (Fe = { left: "0", center: "0.5", right: "1" }[Oi.alignValue]) ? pi = +Fe * ei : ss(Oi.x) && Math.round(Oi.x) !== Oi.translateX && (pi = Oi.x - Oi.translateX), { x: ai.x + (li.translateX || 0) + di - (pi || 0), y: ai.y + (li.translateY || 0) + di - xi, width: Oi.width - 2 * di, height: Oi.height - 2 * di };
+        let gi, ki, wi, Si, Ti = !1;
+        var Mi = function(Di) {
+          let ci, pi;
+          var vi;
+          let ui = Di.box ? 0 : Di.padding || 0, fi = vi = 0, si, ti;
+          if (Di && (!Di.alignAttr || Di.placed))
+            return ci = Di.alignAttr || { x: Di.attr("x"), y: Di.attr("y") }, pi = Di.parentGroup, Di.width || (vi = Di.getBBox(), Di.width = vi.width, Di.height = vi.height, vi = ji.fontMetrics(Di.element).h), si = Di.width - 2 * ui, (ti = { left: "0", center: "0.5", right: "1" }[Di.alignValue]) ? fi = +ti * si : is(Di.x) && Math.round(Di.x) !== Di.translateX && (fi = Di.x - Di.translateX), { x: ci.x + (pi.translateX || 0) + ui - (fi || 0), y: ci.y + (pi.translateY || 0) + ui - vi, width: Di.width - 2 * ui, height: Di.height - 2 * ui };
         };
-        for (fi = 0; fi < bi; fi++)
-          (Ni = Ui[fi]) && (Ni.oldOpacity = Ni.opacity, Ni.newOpacity = 1, Ni.absoluteBox = Mi(Ni));
-        for (Ui.sort(function(Oi, ai) {
-          return (ai.labelrank || 0) - (Oi.labelrank || 0);
-        }), fi = 0; fi < bi; fi++)
-          for (wi = (Mi = Ui[fi]) && Mi.absoluteBox, Ni = fi + 1; Ni < bi; ++Ni)
-            yi = (Ci = Ui[Ni]) && Ci.absoluteBox, !wi || !yi || Mi === Ci || Mi.newOpacity === 0 || Ci.newOpacity === 0 || Mi.visibility === "hidden" || Ci.visibility === "hidden" || yi.x >= wi.x + wi.width || yi.x + yi.width <= wi.x || yi.y >= wi.y + wi.height || yi.y + yi.height <= wi.y || ((Mi.labelrank < Ci.labelrank ? Mi : Ci).newOpacity = 0);
-        Ui.forEach(function(Oi) {
-          qi(Oi, ki) && (Ti = !0);
-        }), Ti && Qi(ki, "afterHideAllOverlappingLabels");
+        for (gi = 0; gi < Ai; gi++)
+          (Ni = _i[gi]) && (Ni.oldOpacity = Ni.opacity, Ni.newOpacity = 1, Ni.absoluteBox = Mi(Ni));
+        for (_i.sort(function(Di, ci) {
+          return (ci.labelrank || 0) - (Di.labelrank || 0);
+        }), gi = 0; gi < Ai; gi++)
+          for (wi = (Mi = _i[gi]) && Mi.absoluteBox, Ni = gi + 1; Ni < Ai; ++Ni)
+            Si = (ki = _i[Ni]) && ki.absoluteBox, !wi || !Si || Mi === ki || Mi.newOpacity === 0 || ki.newOpacity === 0 || Mi.visibility === "hidden" || ki.visibility === "hidden" || Si.x >= wi.x + wi.width || Si.x + Si.width <= wi.x || Si.y >= wi.y + wi.height || Si.y + Si.height <= wi.y || ((Mi.labelrank < ki.labelrank ? Mi : ki).newOpacity = 0);
+        _i.forEach(function(Di) {
+          zi(Di, bi) && (Ti = !0);
+        }), Ti && Yi(bi, "afterHideAllOverlappingLabels");
       };
-    }), ci(oi, "Extensions/BorderRadius.js", [oi["Core/Defaults.js"], oi["Core/Series/Series.js"], oi["Core/Series/SeriesRegistry.js"], oi["Core/Renderer/SVG/SVGElement.js"], oi["Core/Renderer/SVG/SVGRenderer.js"], oi["Core/Utilities.js"]], function(Si, ji, qi, ts, Qi, is) {
-      const { defaultOptions: ss } = Si;
-      ({ seriesTypes: Si } = qi);
-      const { addEvent: Wi, extend: Ki, isObject: Ui, merge: ki, relativeLength: bi } = is, Ri = {
+    }), ri(ii, "Extensions/BorderRadius.js", [ii["Core/Defaults.js"], ii["Core/Series/Series.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Renderer/SVG/SVGElement.js"], ii["Core/Renderer/SVG/SVGRenderer.js"], ii["Core/Utilities.js"]], function(li, Ci, zi, Ki, Yi, es) {
+      const { defaultOptions: is } = li;
+      ({ seriesTypes: li } = zi);
+      const { addEvent: $i, extend: Vi, isObject: _i, merge: bi, relativeLength: Ai } = es, ji = {
         radius: 0,
         scope: "stack",
         where: void 0
-      }, Ni = (fi, Ci) => (Ui(fi) || (fi = { radius: fi || 0 }), ki(Ri, Ci, fi));
-      if (ts.symbolCustomAttribs.indexOf("borderRadius") === -1) {
-        ts.symbolCustomAttribs.push("borderRadius", "brBoxHeight", "brBoxY");
-        const fi = Qi.prototype.symbols.arc;
-        Qi.prototype.symbols.arc = function(wi, yi, Ti, Mi, Oi = {}) {
-          wi = fi(wi, yi, Ti, Mi, Oi);
-          const { innerR: ai = 0, r: li = Ti, start: xi = 0, end: di = 0 } = Oi;
-          if (Oi.open || !Oi.borderRadius)
+      }, Ni = (gi, ki) => (_i(gi) || (gi = { radius: gi || 0 }), bi(ji, ki, gi));
+      if (Ki.symbolCustomAttribs.indexOf("borderRadius") === -1) {
+        Ki.symbolCustomAttribs.push("borderRadius", "brBoxHeight", "brBoxY");
+        const gi = Yi.prototype.symbols.arc;
+        Yi.prototype.symbols.arc = function(wi, Si, Ti, Mi, Di = {}) {
+          wi = gi(wi, Si, Ti, Mi, Di);
+          const { innerR: ci = 0, r: pi = Ti, start: vi = 0, end: ui = 0 } = Di;
+          if (Di.open || !Di.borderRadius)
             return wi;
-          for (Ti = di - xi, yi = Math.sin(Ti / 2), Oi = Math.max(Math.min(bi(Oi.borderRadius || 0, li - ai), (li - ai) / 2, li * yi / (1 + yi)), 0), Ti = Math.min(Oi, Ti / Math.PI * 2 * ai), yi = wi.length - 1; yi--; ) {
-            let Ei, ni, Pi;
+          for (Ti = ui - vi, Si = Math.sin(Ti / 2), Di = Math.max(Math.min(Ai(Di.borderRadius || 0, pi - ci), (pi - ci) / 2, pi * Si / (1 + Si)), 0), Ti = Math.min(Di, Ti / Math.PI * 2 * ci), Si = wi.length - 1; Si--; ) {
+            let Oi, hi, Li;
             Mi = wi;
-            var pi = yi, ei = 1 < yi ? Ti : Oi, Fe = Mi[pi], ii = Mi[pi + 1];
-            if (ii[0] === "Z" && (ii = Mi[0]), Fe[0] !== "M" && Fe[0] !== "L" || ii[0] !== "A" ? Fe[0] !== "A" || ii[0] !== "M" && ii[0] !== "L" || (Pi = ii, ni = Fe) : (Pi = Fe, ni = ii, Ei = !0), Pi && ni && ni.params) {
-              Fe = ni[1];
-              var hi = ni[5];
-              ii = ni.params;
-              const { start: Fi, end: Zi, cx: rs, cy: Bi } = ii;
-              var gi = hi ? Fe - ei : Fe + ei;
-              const si = gi ? Math.asin(ei / gi) : 0;
-              hi = hi ? si : -si, gi *= Math.cos(si), Ei ? (ii.start = Fi + hi, Pi[1] = rs + gi * Math.cos(Fi), Pi[2] = Bi + gi * Math.sin(Fi), Mi.splice(pi + 1, 0, ["A", ei, ei, 0, 0, 1, rs + Fe * Math.cos(ii.start), Bi + Fe * Math.sin(ii.start)])) : (ii.end = Zi - hi, ni[6] = rs + Fe * Math.cos(ii.end), ni[7] = Bi + Fe * Math.sin(ii.end), Mi.splice(pi + 1, 0, ["A", ei, ei, 0, 0, 1, rs + gi * Math.cos(Zi), Bi + gi * Math.sin(Zi)])), ni[4] = Math.abs(ii.end - ii.start) < Math.PI ? 0 : 1;
+            var fi = Si, si = 1 < Si ? Ti : Di, ti = Mi[fi], oi = Mi[fi + 1];
+            if (oi[0] === "Z" && (oi = Mi[0]), ti[0] !== "M" && ti[0] !== "L" || oi[0] !== "A" ? ti[0] !== "A" || oi[0] !== "M" && oi[0] !== "L" || (Li = oi, hi = ti) : (Li = ti, hi = oi, Oi = !0), Li && hi && hi.params) {
+              ti = hi[1];
+              var di = hi[5];
+              oi = hi.params;
+              const { start: Ui, end: Zi, cx: rs, cy: Bi } = oi;
+              var mi = di ? ti - si : ti + si;
+              const ni = mi ? Math.asin(si / mi) : 0;
+              di = di ? ni : -ni, mi *= Math.cos(ni), Oi ? (oi.start = Ui + di, Li[1] = rs + mi * Math.cos(Ui), Li[2] = Bi + mi * Math.sin(Ui), Mi.splice(fi + 1, 0, ["A", si, si, 0, 0, 1, rs + ti * Math.cos(oi.start), Bi + ti * Math.sin(oi.start)])) : (oi.end = Zi - di, hi[6] = rs + ti * Math.cos(oi.end), hi[7] = Bi + ti * Math.sin(oi.end), Mi.splice(fi + 1, 0, ["A", si, si, 0, 0, 1, rs + mi * Math.cos(Zi), Bi + mi * Math.sin(Zi)])), hi[4] = Math.abs(oi.end - oi.start) < Math.PI ? 0 : 1;
             }
           }
           return wi;
         };
-        const Ci = Qi.prototype.symbols.roundedRect;
-        Qi.prototype.symbols.roundedRect = function(wi, yi, Ti, Mi, Oi = {}) {
-          const ai = Ci(wi, yi, Ti, Mi, Oi), { r: li = 0, brBoxHeight: xi = Mi, brBoxY: di = yi } = Oi;
-          var pi = yi - di, ei = di + xi - (yi + Mi);
-          Oi = -0.1 < pi - li ? 0 : li;
-          const Fe = -0.1 < ei - li ? 0 : li;
-          var ii = Math.max(Oi && pi, 0);
-          const hi = Math.max(Fe && ei, 0);
-          ei = [wi + Oi, yi], pi = [wi + Ti - Oi, yi];
-          const gi = [wi + Ti, yi + Oi], Ei = [wi + Ti, yi + Mi - Fe], ni = [wi + Ti - Fe, yi + Mi], Pi = [wi + Fe, yi + Mi], Fi = [wi, yi + Mi - Fe], Zi = [wi, yi + Oi];
-          if (ii) {
-            const rs = Math.sqrt(Math.pow(Oi, 2) - Math.pow(Oi - ii, 2));
-            ei[0] -= rs, pi[0] += rs, gi[1] = Zi[1] = yi + Oi - ii;
+        const ki = Yi.prototype.symbols.roundedRect;
+        Yi.prototype.symbols.roundedRect = function(wi, Si, Ti, Mi, Di = {}) {
+          const ci = ki(wi, Si, Ti, Mi, Di), { r: pi = 0, brBoxHeight: vi = Mi, brBoxY: ui = Si } = Di;
+          var fi = Si - ui, si = ui + vi - (Si + Mi);
+          Di = -0.1 < fi - pi ? 0 : pi;
+          const ti = -0.1 < si - pi ? 0 : pi;
+          var oi = Math.max(Di && fi, 0);
+          const di = Math.max(ti && si, 0);
+          si = [wi + Di, Si], fi = [wi + Ti - Di, Si];
+          const mi = [wi + Ti, Si + Di], Oi = [wi + Ti, Si + Mi - ti], hi = [wi + Ti - ti, Si + Mi], Li = [wi + ti, Si + Mi], Ui = [wi, Si + Mi - ti], Zi = [wi, Si + Di];
+          if (oi) {
+            const rs = Math.sqrt(Math.pow(Di, 2) - Math.pow(Di - oi, 2));
+            si[0] -= rs, fi[0] += rs, mi[1] = Zi[1] = Si + Di - oi;
           }
-          return Mi < Oi - ii && (ii = Math.sqrt(Math.pow(Oi, 2) - Math.pow(Oi - ii - Mi, 2)), gi[0] = Ei[0] = wi + Ti - Oi + ii, ni[0] = Math.min(gi[0], ni[0]), Pi[0] = Math.max(Ei[0], Pi[0]), Fi[0] = Zi[0] = wi + Oi - ii, gi[1] = Zi[1] = yi + Mi), hi && (ii = Math.sqrt(Math.pow(Fe, 2) - Math.pow(Fe - hi, 2)), ni[0] += ii, Pi[0] -= ii, Ei[1] = Fi[1] = yi + Mi - Fe + hi), Mi < Fe - hi && (Mi = Math.sqrt(Math.pow(Fe, 2) - Math.pow(Fe - hi - Mi, 2)), gi[0] = Ei[0] = wi + Ti - Fe + Mi, pi[0] = Math.min(gi[0], pi[0]), ei[0] = Math.max(Ei[0], ei[0]), Fi[0] = Zi[0] = wi + Fe - Mi, Ei[1] = Fi[1] = yi), ai.length = 0, ai.push(["M", ...ei], ["L", ...pi], [
+          return Mi < Di - oi && (oi = Math.sqrt(Math.pow(Di, 2) - Math.pow(Di - oi - Mi, 2)), mi[0] = Oi[0] = wi + Ti - Di + oi, hi[0] = Math.min(mi[0], hi[0]), Li[0] = Math.max(Oi[0], Li[0]), Ui[0] = Zi[0] = wi + Di - oi, mi[1] = Zi[1] = Si + Mi), di && (oi = Math.sqrt(Math.pow(ti, 2) - Math.pow(ti - di, 2)), hi[0] += oi, Li[0] -= oi, Oi[1] = Ui[1] = Si + Mi - ti + di), Mi < ti - di && (Mi = Math.sqrt(Math.pow(ti, 2) - Math.pow(ti - di - Mi, 2)), mi[0] = Oi[0] = wi + Ti - ti + Mi, fi[0] = Math.min(mi[0], fi[0]), si[0] = Math.max(Oi[0], si[0]), Ui[0] = Zi[0] = wi + ti - Mi, Oi[1] = Ui[1] = Si), ci.length = 0, ci.push(["M", ...si], ["L", ...fi], [
             "A",
-            Oi,
-            Oi,
+            Di,
+            Di,
             0,
             0,
             1,
-            ...gi
-          ], ["L", ...Ei], ["A", Fe, Fe, 0, 0, 1, ...ni], ["L", ...Pi], ["A", Fe, Fe, 0, 0, 1, ...Fi], ["L", ...Zi], ["A", Oi, Oi, 0, 0, 1, ...ei], ["Z"]), ai;
-        }, Wi(Si.pie, "afterTranslate", function() {
+            ...mi
+          ], ["L", ...Oi], ["A", ti, ti, 0, 0, 1, ...hi], ["L", ...Li], ["A", ti, ti, 0, 0, 1, ...Ui], ["L", ...Zi], ["A", Di, Di, 0, 0, 1, ...si], ["Z"]), ci;
+        }, $i(li.pie, "afterTranslate", function() {
           const wi = Ni(this.options.borderRadius);
-          for (const yi of this.points) {
-            const Ti = yi.shapeArgs;
-            Ti && (Ti.borderRadius = bi(wi.radius, (Ti.r || 0) - (Ti.innerR || 0)));
+          for (const Si of this.points) {
+            const Ti = Si.shapeArgs;
+            Ti && (Ti.borderRadius = Ai(wi.radius, (Ti.r || 0) - (Ti.innerR || 0)));
           }
-        }), Wi(ji, "afterColumnTranslate", function() {
-          var wi, yi;
+        }), $i(Ci, "afterColumnTranslate", function() {
+          var wi, Si;
           if (this.options.borderRadius && (!this.chart.is3d || !this.chart.is3d())) {
-            const { options: ai, yAxis: li } = this, xi = ai.stacking === "percent";
-            var Ti = (yi = (wi = ss.plotOptions) === null || wi === void 0 ? void 0 : wi[this.type]) === null || yi === void 0 ? void 0 : yi.borderRadius;
-            wi = Ni(ai.borderRadius, Ui(Ti) ? Ti : {}), yi = li.options.reversed;
-            for (const di of this.points)
-              if ({ shapeArgs: Ti } = di, di.shapeType === "roundedRect" && Ti) {
-                const { width: pi = 0, height: ei = 0, y: Fe = 0 } = Ti;
-                var Mi = Fe, Oi = ei;
-                wi.scope === "stack" && di.stackTotal && (Mi = li.translate(xi ? 100 : di.stackTotal, !1, !0, !1, !0), Oi = li.translate(ai.threshold || 0, !1, !0, !1, !0), Oi = this.crispCol(0, Math.min(Mi, Oi), 0, Math.abs(Mi - Oi)), Mi = Oi.y, Oi = Oi.height);
-                const ii = (di.negative ? -1 : 1) * (yi ? -1 : 1) === -1;
-                let hi = wi.where;
-                !hi && this.is("waterfall") && Math.abs((di.yBottom || 0) - (this.translatedThreshold || 0)) > this.borderWidth && (hi = "all"), hi || (hi = "end");
-                const gi = Math.min(bi(wi.radius, pi), pi / 2, hi === "all" ? ei / 2 : 1 / 0) || 0;
-                hi === "end" && (ii && (Mi -= gi), Oi += gi), Ki(Ti, { brBoxHeight: Oi, brBoxY: Mi, r: gi });
+            const { options: ci, yAxis: pi } = this, vi = ci.stacking === "percent";
+            var Ti = (Si = (wi = is.plotOptions) === null || wi === void 0 ? void 0 : wi[this.type]) === null || Si === void 0 ? void 0 : Si.borderRadius;
+            wi = Ni(ci.borderRadius, _i(Ti) ? Ti : {}), Si = pi.options.reversed;
+            for (const ui of this.points)
+              if ({ shapeArgs: Ti } = ui, ui.shapeType === "roundedRect" && Ti) {
+                const { width: fi = 0, height: si = 0, y: ti = 0 } = Ti;
+                var Mi = ti, Di = si;
+                wi.scope === "stack" && ui.stackTotal && (Mi = pi.translate(vi ? 100 : ui.stackTotal, !1, !0, !1, !0), Di = pi.translate(ci.threshold || 0, !1, !0, !1, !0), Di = this.crispCol(0, Math.min(Mi, Di), 0, Math.abs(Mi - Di)), Mi = Di.y, Di = Di.height);
+                const oi = (ui.negative ? -1 : 1) * (Si ? -1 : 1) === -1;
+                let di = wi.where;
+                !di && this.is("waterfall") && Math.abs((ui.yBottom || 0) - (this.translatedThreshold || 0)) > this.borderWidth && (di = "all"), di || (di = "end");
+                const mi = Math.min(Ai(wi.radius, fi), fi / 2, di === "all" ? si / 2 : 1 / 0) || 0;
+                di === "end" && (oi && (Mi -= mi), Di += mi), Vi(Ti, { brBoxHeight: Di, brBoxY: Mi, r: mi });
               }
           }
         }, { order: 9 });
       }
-      return ji = { optionsToObject: Ni }, ji;
-    }), ci(oi, "Core/Responsive.js", [oi["Core/Utilities.js"]], function(Si) {
-      const { diffObjects: ji, extend: qi, find: ts, merge: Qi, pick: is, uniqueKey: ss } = Si;
-      var Wi;
-      return function(Ki) {
-        function Ui(Ri, Ni) {
-          const fi = Ri.condition;
-          (fi.callback || function() {
-            return this.chartWidth <= is(fi.maxWidth, Number.MAX_VALUE) && this.chartHeight <= is(fi.maxHeight, Number.MAX_VALUE) && this.chartWidth >= is(fi.minWidth, 0) && this.chartHeight >= is(fi.minHeight, 0);
-          }).call(this) && Ni.push(Ri._id);
+      return Ci = { optionsToObject: Ni }, Ci;
+    }), ri(ii, "Core/Responsive.js", [ii["Core/Utilities.js"]], function(li) {
+      const { diffObjects: Ci, extend: zi, find: Ki, merge: Yi, pick: es, uniqueKey: is } = li;
+      var $i;
+      return function(Vi) {
+        function _i(ji, Ni) {
+          const gi = ji.condition;
+          (gi.callback || function() {
+            return this.chartWidth <= es(gi.maxWidth, Number.MAX_VALUE) && this.chartHeight <= es(gi.maxHeight, Number.MAX_VALUE) && this.chartWidth >= es(gi.minWidth, 0) && this.chartHeight >= es(gi.minHeight, 0);
+          }).call(this) && Ni.push(ji._id);
         }
-        function ki(Ri, Ni) {
-          const fi = this.options.responsive;
-          var Ci = this.currentResponsive;
+        function bi(ji, Ni) {
+          const gi = this.options.responsive;
+          var ki = this.currentResponsive;
           let wi = [];
-          !Ni && fi && fi.rules && fi.rules.forEach((yi) => {
-            typeof yi._id > "u" && (yi._id = ss()), this.matchResponsiveRule(yi, wi);
-          }, this), Ni = Qi(...wi.map((yi) => ts((fi || {}).rules || [], (Ti) => Ti._id === yi)).map((yi) => yi && yi.chartOptions)), Ni.isResponsiveOptions = !0, wi = wi.toString() || void 0, wi !== (Ci && Ci.ruleIds) && (Ci && this.update(Ci.undoOptions, Ri, !0), wi ? (Ci = ji(Ni, this.options, !0, this.collectionsWithUpdate), Ci.isResponsiveOptions = !0, this.currentResponsive = { ruleIds: wi, mergedOptions: Ni, undoOptions: Ci }, this.update(Ni, Ri, !0)) : this.currentResponsive = void 0);
+          !Ni && gi && gi.rules && gi.rules.forEach((Si) => {
+            typeof Si._id > "u" && (Si._id = is()), this.matchResponsiveRule(Si, wi);
+          }, this), Ni = Yi(...wi.map((Si) => Ki((gi || {}).rules || [], (Ti) => Ti._id === Si)).map((Si) => Si && Si.chartOptions)), Ni.isResponsiveOptions = !0, wi = wi.toString() || void 0, wi !== (ki && ki.ruleIds) && (ki && this.update(ki.undoOptions, ji, !0), wi ? (ki = Ci(Ni, this.options, !0, this.collectionsWithUpdate), ki.isResponsiveOptions = !0, this.currentResponsive = { ruleIds: wi, mergedOptions: Ni, undoOptions: ki }, this.update(Ni, ji, !0)) : this.currentResponsive = void 0);
         }
-        const bi = [];
-        Ki.compose = function(Ri) {
-          return Si.pushUnique(bi, Ri) && qi(Ri.prototype, { matchResponsiveRule: Ui, setResponsive: ki }), Ri;
+        const Ai = [];
+        Vi.compose = function(ji) {
+          return li.pushUnique(Ai, ji) && zi(ji.prototype, { matchResponsiveRule: _i, setResponsive: bi }), ji;
         };
-      }(Wi || (Wi = {})), Wi;
-    }), ci(oi, "masters/highcharts.src.js", [
-      oi["Core/Globals.js"],
-      oi["Core/Utilities.js"],
-      oi["Core/Defaults.js"],
-      oi["Core/Animation/Fx.js"],
-      oi["Core/Animation/AnimationUtilities.js"],
-      oi["Core/Renderer/HTML/AST.js"],
-      oi["Core/Templating.js"],
-      oi["Core/Renderer/RendererUtilities.js"],
-      oi["Core/Renderer/SVG/SVGElement.js"],
-      oi["Core/Renderer/SVG/SVGRenderer.js"],
-      oi["Core/Renderer/HTML/HTMLElement.js"],
-      oi["Core/Renderer/HTML/HTMLRenderer.js"],
-      oi["Core/Axis/Axis.js"],
-      oi["Core/Axis/DateTimeAxis.js"],
-      oi["Core/Axis/LogarithmicAxis.js"],
-      oi["Core/Axis/PlotLineOrBand/PlotLineOrBand.js"],
-      oi["Core/Axis/Tick.js"],
-      oi["Core/Tooltip.js"],
-      oi["Core/Series/Point.js"],
-      oi["Core/Pointer.js"],
-      oi["Core/Legend/Legend.js"],
-      oi["Core/Chart/Chart.js"],
-      oi["Core/Axis/Stacking/StackingAxis.js"],
-      oi["Core/Axis/Stacking/StackItem.js"],
-      oi["Core/Series/Series.js"],
-      oi["Core/Series/SeriesRegistry.js"],
-      oi["Series/Column/ColumnSeries.js"],
-      oi["Series/Column/ColumnDataLabel.js"],
-      oi["Series/Pie/PieSeries.js"],
-      oi["Series/Pie/PieDataLabel.js"],
-      oi["Core/Series/DataLabel.js"],
-      oi["Core/Responsive.js"],
-      oi["Core/Color/Color.js"],
-      oi["Core/Time.js"]
-    ], function(Si, ji, qi, ts, Qi, is, ss, Wi, Ki, Ui, ki, bi, Ri, Ni, fi, Ci, wi, yi, Ti, Mi, Oi, ai, li, xi, di, pi, ei, Fe, ii, hi, gi, Ei, ni, Pi) {
-      return Si.animate = Qi.animate, Si.animObject = Qi.animObject, Si.getDeferredAnimation = Qi.getDeferredAnimation, Si.setAnimation = Qi.setAnimation, Si.stop = Qi.stop, Si.timers = ts.timers, Si.AST = is, Si.Axis = Ri, Si.Chart = ai, Si.chart = ai.chart, Si.Fx = ts, Si.Legend = Oi, Si.PlotLineOrBand = Ci, Si.Point = Ti, Si.Pointer = Mi, Si.Series = di, Si.StackItem = xi, Si.SVGElement = Ki, Si.SVGRenderer = Ui, Si.Templating = ss, Si.Tick = wi, Si.Time = Pi, Si.Tooltip = yi, Si.Color = ni, Si.color = ni.parse, bi.compose(Ui), ki.compose(Ki), Mi.compose(ai), Oi.compose(ai), Si.defaultOptions = qi.defaultOptions, Si.getOptions = qi.getOptions, Si.time = qi.defaultTime, Si.setOptions = qi.setOptions, Si.dateFormat = ss.dateFormat, Si.format = ss.format, Si.numberFormat = ss.numberFormat, Si.addEvent = ji.addEvent, Si.arrayMax = ji.arrayMax, Si.arrayMin = ji.arrayMin, Si.attr = ji.attr, Si.clearTimeout = ji.clearTimeout, Si.correctFloat = ji.correctFloat, Si.createElement = ji.createElement, Si.css = ji.css, Si.defined = ji.defined, Si.destroyObjectProperties = ji.destroyObjectProperties, Si.discardElement = ji.discardElement, Si.distribute = Wi.distribute, Si.erase = ji.erase, Si.error = ji.error, Si.extend = ji.extend, Si.extendClass = ji.extendClass, Si.find = ji.find, Si.fireEvent = ji.fireEvent, Si.getMagnitude = ji.getMagnitude, Si.getStyle = ji.getStyle, Si.inArray = ji.inArray, Si.isArray = ji.isArray, Si.isClass = ji.isClass, Si.isDOMElement = ji.isDOMElement, Si.isFunction = ji.isFunction, Si.isNumber = ji.isNumber, Si.isObject = ji.isObject, Si.isString = ji.isString, Si.keys = ji.keys, Si.merge = ji.merge, Si.normalizeTickInterval = ji.normalizeTickInterval, Si.objectEach = ji.objectEach, Si.offset = ji.offset, Si.pad = ji.pad, Si.pick = ji.pick, Si.pInt = ji.pInt, Si.relativeLength = ji.relativeLength, Si.removeEvent = ji.removeEvent, Si.seriesType = pi.seriesType, Si.splat = ji.splat, Si.stableSort = ji.stableSort, Si.syncTimeout = ji.syncTimeout, Si.timeUnits = ji.timeUnits, Si.uniqueKey = ji.uniqueKey, Si.useSerialIds = ji.useSerialIds, Si.wrap = ji.wrap, Fe.compose(ei), gi.compose(di), Ni.compose(Ri), fi.compose(Ri), hi.compose(ii), Ci.compose(Ri), Ei.compose(ai), li.compose(Ri, ai, di), yi.compose(Mi), Si;
-    }), oi["masters/highcharts.src.js"]._modules = oi, oi["masters/highcharts.src.js"];
+      }($i || ($i = {})), $i;
+    }), ri(ii, "masters/highcharts.src.js", [
+      ii["Core/Globals.js"],
+      ii["Core/Utilities.js"],
+      ii["Core/Defaults.js"],
+      ii["Core/Animation/Fx.js"],
+      ii["Core/Animation/AnimationUtilities.js"],
+      ii["Core/Renderer/HTML/AST.js"],
+      ii["Core/Templating.js"],
+      ii["Core/Renderer/RendererUtilities.js"],
+      ii["Core/Renderer/SVG/SVGElement.js"],
+      ii["Core/Renderer/SVG/SVGRenderer.js"],
+      ii["Core/Renderer/HTML/HTMLElement.js"],
+      ii["Core/Renderer/HTML/HTMLRenderer.js"],
+      ii["Core/Axis/Axis.js"],
+      ii["Core/Axis/DateTimeAxis.js"],
+      ii["Core/Axis/LogarithmicAxis.js"],
+      ii["Core/Axis/PlotLineOrBand/PlotLineOrBand.js"],
+      ii["Core/Axis/Tick.js"],
+      ii["Core/Tooltip.js"],
+      ii["Core/Series/Point.js"],
+      ii["Core/Pointer.js"],
+      ii["Core/Legend/Legend.js"],
+      ii["Core/Chart/Chart.js"],
+      ii["Core/Axis/Stacking/StackingAxis.js"],
+      ii["Core/Axis/Stacking/StackItem.js"],
+      ii["Core/Series/Series.js"],
+      ii["Core/Series/SeriesRegistry.js"],
+      ii["Series/Column/ColumnSeries.js"],
+      ii["Series/Column/ColumnDataLabel.js"],
+      ii["Series/Pie/PieSeries.js"],
+      ii["Series/Pie/PieDataLabel.js"],
+      ii["Core/Series/DataLabel.js"],
+      ii["Core/Responsive.js"],
+      ii["Core/Color/Color.js"],
+      ii["Core/Time.js"]
+    ], function(li, Ci, zi, Ki, Yi, es, is, $i, Vi, _i, bi, Ai, ji, Ni, gi, ki, wi, Si, Ti, Mi, Di, ci, pi, vi, ui, fi, si, ti, oi, di, mi, Oi, hi, Li) {
+      return li.animate = Yi.animate, li.animObject = Yi.animObject, li.getDeferredAnimation = Yi.getDeferredAnimation, li.setAnimation = Yi.setAnimation, li.stop = Yi.stop, li.timers = Ki.timers, li.AST = es, li.Axis = ji, li.Chart = ci, li.chart = ci.chart, li.Fx = Ki, li.Legend = Di, li.PlotLineOrBand = ki, li.Point = Ti, li.Pointer = Mi, li.Series = ui, li.StackItem = vi, li.SVGElement = Vi, li.SVGRenderer = _i, li.Templating = is, li.Tick = wi, li.Time = Li, li.Tooltip = Si, li.Color = hi, li.color = hi.parse, Ai.compose(_i), bi.compose(Vi), Mi.compose(ci), Di.compose(ci), li.defaultOptions = zi.defaultOptions, li.getOptions = zi.getOptions, li.time = zi.defaultTime, li.setOptions = zi.setOptions, li.dateFormat = is.dateFormat, li.format = is.format, li.numberFormat = is.numberFormat, li.addEvent = Ci.addEvent, li.arrayMax = Ci.arrayMax, li.arrayMin = Ci.arrayMin, li.attr = Ci.attr, li.clearTimeout = Ci.clearTimeout, li.correctFloat = Ci.correctFloat, li.createElement = Ci.createElement, li.css = Ci.css, li.defined = Ci.defined, li.destroyObjectProperties = Ci.destroyObjectProperties, li.discardElement = Ci.discardElement, li.distribute = $i.distribute, li.erase = Ci.erase, li.error = Ci.error, li.extend = Ci.extend, li.extendClass = Ci.extendClass, li.find = Ci.find, li.fireEvent = Ci.fireEvent, li.getMagnitude = Ci.getMagnitude, li.getStyle = Ci.getStyle, li.inArray = Ci.inArray, li.isArray = Ci.isArray, li.isClass = Ci.isClass, li.isDOMElement = Ci.isDOMElement, li.isFunction = Ci.isFunction, li.isNumber = Ci.isNumber, li.isObject = Ci.isObject, li.isString = Ci.isString, li.keys = Ci.keys, li.merge = Ci.merge, li.normalizeTickInterval = Ci.normalizeTickInterval, li.objectEach = Ci.objectEach, li.offset = Ci.offset, li.pad = Ci.pad, li.pick = Ci.pick, li.pInt = Ci.pInt, li.relativeLength = Ci.relativeLength, li.removeEvent = Ci.removeEvent, li.seriesType = fi.seriesType, li.splat = Ci.splat, li.stableSort = Ci.stableSort, li.syncTimeout = Ci.syncTimeout, li.timeUnits = Ci.timeUnits, li.uniqueKey = Ci.uniqueKey, li.useSerialIds = Ci.useSerialIds, li.wrap = Ci.wrap, ti.compose(si), mi.compose(ui), Ni.compose(ji), gi.compose(ji), di.compose(oi), ki.compose(ji), Oi.compose(ci), pi.compose(ji, ci, ui), Si.compose(Mi), li;
+    }), ii["masters/highcharts.src.js"]._modules = ii, ii["masters/highcharts.src.js"];
   });
 })(highcharts);
 var highchartsExports = highcharts.exports;
 const Highcharts = /* @__PURE__ */ getDefaultExportFromCjs(highchartsExports);
 var htmx_min = { exports: {} };
 (function(module) {
-  (function(ti, ui) {
-    module.exports ? module.exports = ui() : ti.htmx = ti.htmx || ui();
+  (function(Fe, ei) {
+    module.exports ? module.exports = ei() : Fe.htmx = Fe.htmx || ei();
   })(typeof self < "u" ? self : commonjsGlobal, function() {
     return function() {
-      var G = { onLoad: t, process: Nt, on: le, off: ue, trigger: oe, ajax: xr, find: b, findAll: f, closest: d, values: function(ti, ui) {
-        var ci = er(ti, ui || "post");
-        return ci.values;
-      }, remove: U, addClass: B, removeClass: n, toggleClass: V, takeClass: j, defineExtension: Rr, removeExtension: Or, logAll: X, logNone: F, logger: null, config: { historyEnabled: !0, historyCacheSize: 10, refreshOnHistoryMiss: !1, defaultSwapStyle: "innerHTML", defaultSwapDelay: 0, defaultSettleDelay: 20, includeIndicatorStyles: !0, indicatorClass: "htmx-indicator", requestClass: "htmx-request", addedClass: "htmx-added", settlingClass: "htmx-settling", swappingClass: "htmx-swapping", allowEval: !0, allowScriptTags: !0, inlineScriptNonce: "", attributesToSettle: ["class", "style", "width", "height"], withCredentials: !1, timeout: 0, wsReconnectDelay: "full-jitter", wsBinaryType: "blob", disableSelector: "[hx-disable], [data-hx-disable]", useTemplateFragments: !1, scrollBehavior: "smooth", defaultFocusScroll: !1, getCacheBusterParam: !1, globalViewTransitions: !1, methodsThatUseUrlParams: ["get"], selfRequestsOnly: !1 }, parseInterval: v, _: e, createEventSource: function(ti) {
-        return new EventSource(ti, { withCredentials: !0 });
-      }, createWebSocket: function(ti) {
-        var ui = new WebSocket(ti, []);
-        return ui.binaryType = G.config.wsBinaryType, ui;
-      }, version: "1.9.5" }, C = { addTriggerHandler: bt, bodyContains: re, canAccessLocalStorage: M, findThisElement: he, filterValues: ar, hasAttribute: o, getAttributeValue: Z, getClosestAttributeValue: Y, getClosestMatch: c, getExpressionVars: gr, getHeaders: ir, getInputValues: er, getInternalData: ee, getSwapSpecification: sr, getTriggerSpecs: Ge, getTarget: de, makeFragment: l, mergeObjects: ne, makeSettleInfo: S, oobSwap: me, querySelectorExt: ie, selectAndSwap: De, settleImmediately: Wt, shouldCancel: Qe, triggerEvent: oe, triggerErrorEvent: ae, withExtensions: w }, R = ["get", "post", "put", "delete", "patch"], O = R.map(function(ti) {
-        return "[hx-" + ti + "], [data-hx-" + ti + "]";
+      var G = { onLoad: t, process: Nt, on: le, off: ue, trigger: oe, ajax: xr, find: b, findAll: f, closest: d, values: function(Fe, ei) {
+        var ri = er(Fe, ei || "post");
+        return ri.values;
+      }, remove: U, addClass: B, removeClass: n, toggleClass: V, takeClass: j, defineExtension: Rr, removeExtension: Or, logAll: X, logNone: F, logger: null, config: { historyEnabled: !0, historyCacheSize: 10, refreshOnHistoryMiss: !1, defaultSwapStyle: "innerHTML", defaultSwapDelay: 0, defaultSettleDelay: 20, includeIndicatorStyles: !0, indicatorClass: "htmx-indicator", requestClass: "htmx-request", addedClass: "htmx-added", settlingClass: "htmx-settling", swappingClass: "htmx-swapping", allowEval: !0, allowScriptTags: !0, inlineScriptNonce: "", attributesToSettle: ["class", "style", "width", "height"], withCredentials: !1, timeout: 0, wsReconnectDelay: "full-jitter", wsBinaryType: "blob", disableSelector: "[hx-disable], [data-hx-disable]", useTemplateFragments: !1, scrollBehavior: "smooth", defaultFocusScroll: !1, getCacheBusterParam: !1, globalViewTransitions: !1, methodsThatUseUrlParams: ["get"], selfRequestsOnly: !1 }, parseInterval: v, _: e, createEventSource: function(Fe) {
+        return new EventSource(Fe, { withCredentials: !0 });
+      }, createWebSocket: function(Fe) {
+        var ei = new WebSocket(Fe, []);
+        return ei.binaryType = G.config.wsBinaryType, ei;
+      }, version: "1.9.5" }, C = { addTriggerHandler: bt, bodyContains: re, canAccessLocalStorage: M, findThisElement: he, filterValues: ar, hasAttribute: o, getAttributeValue: Z, getClosestAttributeValue: Y, getClosestMatch: c, getExpressionVars: gr, getHeaders: ir, getInputValues: er, getInternalData: ee, getSwapSpecification: sr, getTriggerSpecs: Ge, getTarget: de, makeFragment: l, mergeObjects: ne, makeSettleInfo: S, oobSwap: me, querySelectorExt: ie, selectAndSwap: De, settleImmediately: Wt, shouldCancel: Qe, triggerEvent: oe, triggerErrorEvent: ae, withExtensions: w }, R = ["get", "post", "put", "delete", "patch"], O = R.map(function(Fe) {
+        return "[hx-" + Fe + "], [data-hx-" + Fe + "]";
       }).join(", ");
-      function v(ti) {
-        if (ti != null)
-          return ti.slice(-2) == "ms" ? parseFloat(ti.slice(0, -2)) || void 0 : ti.slice(-1) == "s" ? parseFloat(ti.slice(0, -1)) * 1e3 || void 0 : ti.slice(-1) == "m" ? parseFloat(ti.slice(0, -1)) * 1e3 * 60 || void 0 : parseFloat(ti) || void 0;
+      function v(Fe) {
+        if (Fe != null)
+          return Fe.slice(-2) == "ms" ? parseFloat(Fe.slice(0, -2)) || void 0 : Fe.slice(-1) == "s" ? parseFloat(Fe.slice(0, -1)) * 1e3 || void 0 : Fe.slice(-1) == "m" ? parseFloat(Fe.slice(0, -1)) * 1e3 * 60 || void 0 : parseFloat(Fe) || void 0;
       }
-      function J(ti, ui) {
-        return ti.getAttribute && ti.getAttribute(ui);
+      function J(Fe, ei) {
+        return Fe.getAttribute && Fe.getAttribute(ei);
       }
-      function o(ti, ui) {
-        return ti.hasAttribute && (ti.hasAttribute(ui) || ti.hasAttribute("data-" + ui));
+      function o(Fe, ei) {
+        return Fe.hasAttribute && (Fe.hasAttribute(ei) || Fe.hasAttribute("data-" + ei));
       }
-      function Z(ti, ui) {
-        return J(ti, ui) || J(ti, "data-" + ui);
+      function Z(Fe, ei) {
+        return J(Fe, ei) || J(Fe, "data-" + ei);
       }
-      function u(ti) {
-        return ti.parentElement;
+      function u(Fe) {
+        return Fe.parentElement;
       }
       function K() {
         return document;
       }
-      function c(ti, ui) {
-        for (; ti && !ui(ti); )
-          ti = u(ti);
-        return ti || null;
+      function c(Fe, ei) {
+        for (; Fe && !ei(Fe); )
+          Fe = u(Fe);
+        return Fe || null;
       }
-      function T(ti, ui, ci) {
-        var oi = Z(ui, ci), Si = Z(ui, "hx-disinherit");
-        return ti !== ui && Si && (Si === "*" || Si.split(" ").indexOf(ci) >= 0) ? "unset" : oi;
+      function T(Fe, ei, ri) {
+        var ii = Z(ei, ri), li = Z(ei, "hx-disinherit");
+        return Fe !== ei && li && (li === "*" || li.split(" ").indexOf(ri) >= 0) ? "unset" : ii;
       }
-      function Y(ti, ui) {
-        var ci = null;
-        if (c(ti, function(oi) {
-          return ci = T(ti, oi, ui);
-        }), ci !== "unset")
-          return ci;
+      function Y(Fe, ei) {
+        var ri = null;
+        if (c(Fe, function(ii) {
+          return ri = T(Fe, ii, ei);
+        }), ri !== "unset")
+          return ri;
       }
-      function h(ti, ui) {
-        var ci = ti.matches || ti.matchesSelector || ti.msMatchesSelector || ti.mozMatchesSelector || ti.webkitMatchesSelector || ti.oMatchesSelector;
-        return ci && ci.call(ti, ui);
+      function h(Fe, ei) {
+        var ri = Fe.matches || Fe.matchesSelector || Fe.msMatchesSelector || Fe.mozMatchesSelector || Fe.webkitMatchesSelector || Fe.oMatchesSelector;
+        return ri && ri.call(Fe, ei);
       }
-      function q(ti) {
-        var ui = /<([a-z][^\/\0>\x20\t\r\n\f]*)/i, ci = ui.exec(ti);
-        return ci ? ci[1].toLowerCase() : "";
+      function q(Fe) {
+        var ei = /<([a-z][^\/\0>\x20\t\r\n\f]*)/i, ri = ei.exec(Fe);
+        return ri ? ri[1].toLowerCase() : "";
       }
-      function i(ti, ui) {
-        for (var ci = new DOMParser(), oi = ci.parseFromString(ti, "text/html"), Si = oi.body; ui > 0; )
-          ui--, Si = Si.firstChild;
-        return Si == null && (Si = K().createDocumentFragment()), Si;
+      function i(Fe, ei) {
+        for (var ri = new DOMParser(), ii = ri.parseFromString(Fe, "text/html"), li = ii.body; ei > 0; )
+          ei--, li = li.firstChild;
+        return li == null && (li = K().createDocumentFragment()), li;
       }
-      function H(ti) {
-        return ti.match(/<body/);
+      function H(Fe) {
+        return Fe.match(/<body/);
       }
-      function l(ti) {
-        var ui = !H(ti);
-        if (G.config.useTemplateFragments && ui) {
-          var ci = i("<body><template>" + ti + "</template></body>", 0);
-          return ci.querySelector("template").content;
+      function l(Fe) {
+        var ei = !H(Fe);
+        if (G.config.useTemplateFragments && ei) {
+          var ri = i("<body><template>" + Fe + "</template></body>", 0);
+          return ri.querySelector("template").content;
         } else {
-          var oi = q(ti);
-          switch (oi) {
+          var ii = q(Fe);
+          switch (ii) {
             case "thead":
             case "tbody":
             case "tfoot":
             case "colgroup":
             case "caption":
-              return i("<table>" + ti + "</table>", 1);
+              return i("<table>" + Fe + "</table>", 1);
             case "col":
-              return i("<table><colgroup>" + ti + "</colgroup></table>", 2);
+              return i("<table><colgroup>" + Fe + "</colgroup></table>", 2);
             case "tr":
-              return i("<table><tbody>" + ti + "</tbody></table>", 2);
+              return i("<table><tbody>" + Fe + "</tbody></table>", 2);
             case "td":
             case "th":
-              return i("<table><tbody><tr>" + ti + "</tr></tbody></table>", 3);
+              return i("<table><tbody><tr>" + Fe + "</tr></tbody></table>", 3);
             case "script":
-              return i("<div>" + ti + "</div>", 1);
+              return i("<div>" + Fe + "</div>", 1);
             default:
-              return i(ti, 0);
+              return i(Fe, 0);
           }
         }
       }
-      function Q(ti) {
-        ti && ti();
+      function Q(Fe) {
+        Fe && Fe();
       }
-      function L(ti, ui) {
-        return Object.prototype.toString.call(ti) === "[object " + ui + "]";
+      function L(Fe, ei) {
+        return Object.prototype.toString.call(Fe) === "[object " + ei + "]";
       }
-      function A(ti) {
-        return L(ti, "Function");
+      function A(Fe) {
+        return L(Fe, "Function");
       }
-      function N(ti) {
-        return L(ti, "Object");
+      function N(Fe) {
+        return L(Fe, "Object");
       }
-      function ee(ti) {
-        var ui = "htmx-internal-data", ci = ti[ui];
-        return ci || (ci = ti[ui] = {}), ci;
+      function ee(Fe) {
+        var ei = "htmx-internal-data", ri = Fe[ei];
+        return ri || (ri = Fe[ei] = {}), ri;
       }
-      function I(ti) {
-        var ui = [];
-        if (ti)
-          for (var ci = 0; ci < ti.length; ci++)
-            ui.push(ti[ci]);
-        return ui;
+      function I(Fe) {
+        var ei = [];
+        if (Fe)
+          for (var ri = 0; ri < Fe.length; ri++)
+            ei.push(Fe[ri]);
+        return ei;
       }
-      function te(ti, ui) {
-        if (ti)
-          for (var ci = 0; ci < ti.length; ci++)
-            ui(ti[ci]);
+      function te(Fe, ei) {
+        if (Fe)
+          for (var ri = 0; ri < Fe.length; ri++)
+            ei(Fe[ri]);
       }
-      function P(ti) {
-        var ui = ti.getBoundingClientRect(), ci = ui.top, oi = ui.bottom;
-        return ci < window.innerHeight && oi >= 0;
+      function P(Fe) {
+        var ei = Fe.getBoundingClientRect(), ri = ei.top, ii = ei.bottom;
+        return ri < window.innerHeight && ii >= 0;
       }
-      function re(ti) {
-        return ti.getRootNode && ti.getRootNode() instanceof window.ShadowRoot ? K().body.contains(ti.getRootNode().host) : K().body.contains(ti);
+      function re(Fe) {
+        return Fe.getRootNode && Fe.getRootNode() instanceof window.ShadowRoot ? K().body.contains(Fe.getRootNode().host) : K().body.contains(Fe);
       }
-      function k(ti) {
-        return ti.trim().split(/\s+/);
+      function k(Fe) {
+        return Fe.trim().split(/\s+/);
       }
-      function ne(ti, ui) {
-        for (var ci in ui)
-          ui.hasOwnProperty(ci) && (ti[ci] = ui[ci]);
-        return ti;
+      function ne(Fe, ei) {
+        for (var ri in ei)
+          ei.hasOwnProperty(ri) && (Fe[ri] = ei[ri]);
+        return Fe;
       }
-      function y(ti) {
+      function y(Fe) {
         try {
-          return JSON.parse(ti);
-        } catch (ui) {
-          return x(ui), null;
+          return JSON.parse(Fe);
+        } catch (ei) {
+          return x(ei), null;
         }
       }
       function M() {
-        var ti = "htmx:localStorageTest";
+        var Fe = "htmx:localStorageTest";
         try {
-          return localStorage.setItem(ti, ti), localStorage.removeItem(ti), !0;
+          return localStorage.setItem(Fe, Fe), localStorage.removeItem(Fe), !0;
         } catch {
           return !1;
         }
       }
-      function D(ti) {
+      function D(Fe) {
         try {
-          var ui = new URL(ti);
-          return ui && (ti = ui.pathname + ui.search), ti.match("^/$") || (ti = ti.replace(/\/+$/, "")), ti;
+          var ei = new URL(Fe);
+          return ei && (Fe = ei.pathname + ei.search), Fe.match("^/$") || (Fe = Fe.replace(/\/+$/, "")), Fe;
         } catch {
-          return ti;
+          return Fe;
         }
       }
       function e(e) {
@@ -6556,541 +6555,541 @@ var htmx_min = { exports: {} };
           return eval(e);
         });
       }
-      function t(ti) {
-        var ui = G.on("htmx:load", function(ci) {
-          ti(ci.detail.elt);
+      function t(Fe) {
+        var ei = G.on("htmx:load", function(ri) {
+          Fe(ri.detail.elt);
         });
-        return ui;
+        return ei;
       }
       function X() {
-        G.logger = function(ti, ui, ci) {
-          console && console.log(ui, ti, ci);
+        G.logger = function(Fe, ei, ri) {
+          console && console.log(ei, Fe, ri);
         };
       }
       function F() {
         G.logger = null;
       }
-      function b(ti, ui) {
-        return ui ? ti.querySelector(ui) : b(K(), ti);
+      function b(Fe, ei) {
+        return ei ? Fe.querySelector(ei) : b(K(), Fe);
       }
-      function f(ti, ui) {
-        return ui ? ti.querySelectorAll(ui) : f(K(), ti);
+      function f(Fe, ei) {
+        return ei ? Fe.querySelectorAll(ei) : f(K(), Fe);
       }
-      function U(ti, ui) {
-        ti = s(ti), ui ? setTimeout(function() {
-          U(ti), ti = null;
-        }, ui) : ti.parentElement.removeChild(ti);
+      function U(Fe, ei) {
+        Fe = s(Fe), ei ? setTimeout(function() {
+          U(Fe), Fe = null;
+        }, ei) : Fe.parentElement.removeChild(Fe);
       }
-      function B(ti, ui, ci) {
-        ti = s(ti), ci ? setTimeout(function() {
-          B(ti, ui), ti = null;
-        }, ci) : ti.classList && ti.classList.add(ui);
+      function B(Fe, ei, ri) {
+        Fe = s(Fe), ri ? setTimeout(function() {
+          B(Fe, ei), Fe = null;
+        }, ri) : Fe.classList && Fe.classList.add(ei);
       }
-      function n(ti, ui, ci) {
-        ti = s(ti), ci ? setTimeout(function() {
-          n(ti, ui), ti = null;
-        }, ci) : ti.classList && (ti.classList.remove(ui), ti.classList.length === 0 && ti.removeAttribute("class"));
+      function n(Fe, ei, ri) {
+        Fe = s(Fe), ri ? setTimeout(function() {
+          n(Fe, ei), Fe = null;
+        }, ri) : Fe.classList && (Fe.classList.remove(ei), Fe.classList.length === 0 && Fe.removeAttribute("class"));
       }
-      function V(ti, ui) {
-        ti = s(ti), ti.classList.toggle(ui);
+      function V(Fe, ei) {
+        Fe = s(Fe), Fe.classList.toggle(ei);
       }
-      function j(ti, ui) {
-        ti = s(ti), te(ti.parentElement.children, function(ci) {
-          n(ci, ui);
-        }), B(ti, ui);
+      function j(Fe, ei) {
+        Fe = s(Fe), te(Fe.parentElement.children, function(ri) {
+          n(ri, ei);
+        }), B(Fe, ei);
       }
-      function d(ti, ui) {
-        if (ti = s(ti), ti.closest)
-          return ti.closest(ui);
+      function d(Fe, ei) {
+        if (Fe = s(Fe), Fe.closest)
+          return Fe.closest(ei);
         do
-          if (ti == null || h(ti, ui))
-            return ti;
-        while (ti = ti && u(ti));
+          if (Fe == null || h(Fe, ei))
+            return Fe;
+        while (Fe = Fe && u(Fe));
         return null;
       }
-      function r(ti) {
-        var ui = ti.trim();
-        return ui.startsWith("<") && ui.endsWith("/>") ? ui.substring(1, ui.length - 2) : ui;
+      function r(Fe) {
+        var ei = Fe.trim();
+        return ei.startsWith("<") && ei.endsWith("/>") ? ei.substring(1, ei.length - 2) : ei;
       }
-      function W(ti, ui) {
-        return ui.indexOf("closest ") === 0 ? [d(ti, r(ui.substr(8)))] : ui.indexOf("find ") === 0 ? [b(ti, r(ui.substr(5)))] : ui.indexOf("next ") === 0 ? [_(ti, r(ui.substr(5)))] : ui.indexOf("previous ") === 0 ? [z(ti, r(ui.substr(9)))] : ui === "document" ? [document] : ui === "window" ? [window] : ui === "body" ? [document.body] : K().querySelectorAll(r(ui));
+      function W(Fe, ei) {
+        return ei.indexOf("closest ") === 0 ? [d(Fe, r(ei.substr(8)))] : ei.indexOf("find ") === 0 ? [b(Fe, r(ei.substr(5)))] : ei.indexOf("next ") === 0 ? [_(Fe, r(ei.substr(5)))] : ei.indexOf("previous ") === 0 ? [z(Fe, r(ei.substr(9)))] : ei === "document" ? [document] : ei === "window" ? [window] : ei === "body" ? [document.body] : K().querySelectorAll(r(ei));
       }
-      var _ = function(ti, ui) {
-        for (var ci = K().querySelectorAll(ui), oi = 0; oi < ci.length; oi++) {
-          var Si = ci[oi];
-          if (Si.compareDocumentPosition(ti) === Node.DOCUMENT_POSITION_PRECEDING)
-            return Si;
+      var _ = function(Fe, ei) {
+        for (var ri = K().querySelectorAll(ei), ii = 0; ii < ri.length; ii++) {
+          var li = ri[ii];
+          if (li.compareDocumentPosition(Fe) === Node.DOCUMENT_POSITION_PRECEDING)
+            return li;
         }
-      }, z = function(ti, ui) {
-        for (var ci = K().querySelectorAll(ui), oi = ci.length - 1; oi >= 0; oi--) {
-          var Si = ci[oi];
-          if (Si.compareDocumentPosition(ti) === Node.DOCUMENT_POSITION_FOLLOWING)
-            return Si;
+      }, z = function(Fe, ei) {
+        for (var ri = K().querySelectorAll(ei), ii = ri.length - 1; ii >= 0; ii--) {
+          var li = ri[ii];
+          if (li.compareDocumentPosition(Fe) === Node.DOCUMENT_POSITION_FOLLOWING)
+            return li;
         }
       };
-      function ie(ti, ui) {
-        return ui ? W(ti, ui)[0] : W(K().body, ti)[0];
+      function ie(Fe, ei) {
+        return ei ? W(Fe, ei)[0] : W(K().body, Fe)[0];
       }
-      function s(ti) {
-        return L(ti, "String") ? b(ti) : ti;
+      function s(Fe) {
+        return L(Fe, "String") ? b(Fe) : Fe;
       }
-      function $(ti, ui, ci) {
-        return A(ui) ? { target: K().body, event: ti, listener: ui } : { target: s(ti), event: ui, listener: ci };
+      function $(Fe, ei, ri) {
+        return A(ei) ? { target: K().body, event: Fe, listener: ei } : { target: s(Fe), event: ei, listener: ri };
       }
-      function le(ti, ui, ci) {
+      function le(Fe, ei, ri) {
         Hr(function() {
-          var Si = $(ti, ui, ci);
-          Si.target.addEventListener(Si.event, Si.listener);
+          var li = $(Fe, ei, ri);
+          li.target.addEventListener(li.event, li.listener);
         });
-        var oi = A(ui);
-        return oi ? ui : ci;
+        var ii = A(ei);
+        return ii ? ei : ri;
       }
-      function ue(ti, ui, ci) {
+      function ue(Fe, ei, ri) {
         return Hr(function() {
-          var oi = $(ti, ui, ci);
-          oi.target.removeEventListener(oi.event, oi.listener);
-        }), A(ui) ? ui : ci;
+          var ii = $(Fe, ei, ri);
+          ii.target.removeEventListener(ii.event, ii.listener);
+        }), A(ei) ? ei : ri;
       }
       var fe = K().createElement("output");
-      function ce(ti, ui) {
-        var ci = Y(ti, ui);
-        if (ci) {
-          if (ci === "this")
-            return [he(ti, ui)];
-          var oi = W(ti, ci);
-          return oi.length === 0 ? (x('The selector "' + ci + '" on ' + ui + " returned no matches!"), [fe]) : oi;
+      function ce(Fe, ei) {
+        var ri = Y(Fe, ei);
+        if (ri) {
+          if (ri === "this")
+            return [he(Fe, ei)];
+          var ii = W(Fe, ri);
+          return ii.length === 0 ? (x('The selector "' + ri + '" on ' + ei + " returned no matches!"), [fe]) : ii;
         }
       }
-      function he(ti, ui) {
-        return c(ti, function(ci) {
-          return Z(ci, ui) != null;
+      function he(Fe, ei) {
+        return c(Fe, function(ri) {
+          return Z(ri, ei) != null;
         });
       }
-      function de(ti) {
-        var ui = Y(ti, "hx-target");
-        if (ui)
-          return ui === "this" ? he(ti, "hx-target") : ie(ti, ui);
-        var ci = ee(ti);
-        return ci.boosted ? K().body : ti;
+      function de(Fe) {
+        var ei = Y(Fe, "hx-target");
+        if (ei)
+          return ei === "this" ? he(Fe, "hx-target") : ie(Fe, ei);
+        var ri = ee(Fe);
+        return ri.boosted ? K().body : Fe;
       }
-      function ve(ti) {
-        for (var ui = G.config.attributesToSettle, ci = 0; ci < ui.length; ci++)
-          if (ti === ui[ci])
+      function ve(Fe) {
+        for (var ei = G.config.attributesToSettle, ri = 0; ri < ei.length; ri++)
+          if (Fe === ei[ri])
             return !0;
         return !1;
       }
-      function ge(ti, ui) {
-        te(ti.attributes, function(ci) {
-          !ui.hasAttribute(ci.name) && ve(ci.name) && ti.removeAttribute(ci.name);
-        }), te(ui.attributes, function(ci) {
-          ve(ci.name) && ti.setAttribute(ci.name, ci.value);
+      function ge(Fe, ei) {
+        te(Fe.attributes, function(ri) {
+          !ei.hasAttribute(ri.name) && ve(ri.name) && Fe.removeAttribute(ri.name);
+        }), te(ei.attributes, function(ri) {
+          ve(ri.name) && Fe.setAttribute(ri.name, ri.value);
         });
       }
-      function pe(ti, ui) {
-        for (var ci = Tr(ui), oi = 0; oi < ci.length; oi++) {
-          var Si = ci[oi];
+      function pe(Fe, ei) {
+        for (var ri = Tr(ei), ii = 0; ii < ri.length; ii++) {
+          var li = ri[ii];
           try {
-            if (Si.isInlineSwap(ti))
+            if (li.isInlineSwap(Fe))
               return !0;
-          } catch (ji) {
-            x(ji);
+          } catch (Ci) {
+            x(Ci);
           }
         }
-        return ti === "outerHTML";
+        return Fe === "outerHTML";
       }
-      function me(ti, ui, ci) {
-        var oi = "#" + J(ui, "id"), Si = "outerHTML";
-        ti === "true" || (ti.indexOf(":") > 0 ? (Si = ti.substr(0, ti.indexOf(":")), oi = ti.substr(ti.indexOf(":") + 1, ti.length)) : Si = ti);
-        var ji = K().querySelectorAll(oi);
-        return ji ? (te(ji, function(qi) {
-          var ts, Qi = ui.cloneNode(!0);
-          ts = K().createDocumentFragment(), ts.appendChild(Qi), pe(Si, qi) || (ts = Qi);
-          var is = { shouldSwap: !0, target: qi, fragment: ts };
-          oe(qi, "htmx:oobBeforeSwap", is) && (qi = is.target, is.shouldSwap && ke(Si, qi, qi, ts, ci), te(ci.elts, function(ss) {
-            oe(ss, "htmx:oobAfterSwap", is);
+      function me(Fe, ei, ri) {
+        var ii = "#" + J(ei, "id"), li = "outerHTML";
+        Fe === "true" || (Fe.indexOf(":") > 0 ? (li = Fe.substr(0, Fe.indexOf(":")), ii = Fe.substr(Fe.indexOf(":") + 1, Fe.length)) : li = Fe);
+        var Ci = K().querySelectorAll(ii);
+        return Ci ? (te(Ci, function(zi) {
+          var Ki, Yi = ei.cloneNode(!0);
+          Ki = K().createDocumentFragment(), Ki.appendChild(Yi), pe(li, zi) || (Ki = Yi);
+          var es = { shouldSwap: !0, target: zi, fragment: Ki };
+          oe(zi, "htmx:oobBeforeSwap", es) && (zi = es.target, es.shouldSwap && ke(li, zi, zi, Ki, ri), te(ri.elts, function(is) {
+            oe(is, "htmx:oobAfterSwap", es);
           }));
-        }), ui.parentNode.removeChild(ui)) : (ui.parentNode.removeChild(ui), ae(K().body, "htmx:oobErrorNoTarget", { content: ui })), ti;
+        }), ei.parentNode.removeChild(ei)) : (ei.parentNode.removeChild(ei), ae(K().body, "htmx:oobErrorNoTarget", { content: ei })), Fe;
       }
-      function xe(ti, ui, ci) {
-        var oi = Y(ti, "hx-select-oob");
-        if (oi) {
-          var Si = oi.split(",");
-          for (let is = 0; is < Si.length; is++) {
-            var ji = Si[is].split(":", 2), qi = ji[0].trim();
-            qi.indexOf("#") === 0 && (qi = qi.substring(1));
-            var ts = ji[1] || "true", Qi = ui.querySelector("#" + qi);
-            Qi && me(ts, Qi, ci);
+      function xe(Fe, ei, ri) {
+        var ii = Y(Fe, "hx-select-oob");
+        if (ii) {
+          var li = ii.split(",");
+          for (let es = 0; es < li.length; es++) {
+            var Ci = li[es].split(":", 2), zi = Ci[0].trim();
+            zi.indexOf("#") === 0 && (zi = zi.substring(1));
+            var Ki = Ci[1] || "true", Yi = ei.querySelector("#" + zi);
+            Yi && me(Ki, Yi, ri);
           }
         }
-        te(f(ui, "[hx-swap-oob], [data-hx-swap-oob]"), function(is) {
-          var ss = Z(is, "hx-swap-oob");
-          ss != null && me(ss, is, ci);
+        te(f(ei, "[hx-swap-oob], [data-hx-swap-oob]"), function(es) {
+          var is = Z(es, "hx-swap-oob");
+          is != null && me(is, es, ri);
         });
       }
-      function ye(ti) {
-        te(f(ti, "[hx-preserve], [data-hx-preserve]"), function(ui) {
-          var ci = Z(ui, "id"), oi = K().getElementById(ci);
-          oi != null && ui.parentNode.replaceChild(oi, ui);
+      function ye(Fe) {
+        te(f(Fe, "[hx-preserve], [data-hx-preserve]"), function(ei) {
+          var ri = Z(ei, "id"), ii = K().getElementById(ri);
+          ii != null && ei.parentNode.replaceChild(ii, ei);
         });
       }
-      function be(ti, ui, ci) {
-        te(ui.querySelectorAll("[id]"), function(oi) {
-          var Si = J(oi, "id");
-          if (Si && Si.length > 0) {
-            var ji = Si.replace("'", "\\'"), qi = oi.tagName.replace(":", "\\:"), ts = ti.querySelector(qi + "[id='" + ji + "']");
-            if (ts && ts !== ti) {
-              var Qi = oi.cloneNode();
-              ge(oi, ts), ci.tasks.push(function() {
-                ge(oi, Qi);
+      function be(Fe, ei, ri) {
+        te(ei.querySelectorAll("[id]"), function(ii) {
+          var li = J(ii, "id");
+          if (li && li.length > 0) {
+            var Ci = li.replace("'", "\\'"), zi = ii.tagName.replace(":", "\\:"), Ki = Fe.querySelector(zi + "[id='" + Ci + "']");
+            if (Ki && Ki !== Fe) {
+              var Yi = ii.cloneNode();
+              ge(ii, Ki), ri.tasks.push(function() {
+                ge(ii, Yi);
               });
             }
           }
         });
       }
-      function we(ti) {
+      function we(Fe) {
         return function() {
-          n(ti, G.config.addedClass), Nt(ti), St(ti), Se(ti), oe(ti, "htmx:load");
+          n(Fe, G.config.addedClass), Nt(Fe), St(Fe), Se(Fe), oe(Fe, "htmx:load");
         };
       }
-      function Se(ti) {
-        var ui = "[autofocus]", ci = h(ti, ui) ? ti : ti.querySelector(ui);
-        ci != null && ci.focus();
+      function Se(Fe) {
+        var ei = "[autofocus]", ri = h(Fe, ei) ? Fe : Fe.querySelector(ei);
+        ri != null && ri.focus();
       }
-      function a(ti, ui, ci, oi) {
-        for (be(ti, ci, oi); ci.childNodes.length > 0; ) {
-          var Si = ci.firstChild;
-          B(Si, G.config.addedClass), ti.insertBefore(Si, ui), Si.nodeType !== Node.TEXT_NODE && Si.nodeType !== Node.COMMENT_NODE && oi.tasks.push(we(Si));
+      function a(Fe, ei, ri, ii) {
+        for (be(Fe, ri, ii); ri.childNodes.length > 0; ) {
+          var li = ri.firstChild;
+          B(li, G.config.addedClass), Fe.insertBefore(li, ei), li.nodeType !== Node.TEXT_NODE && li.nodeType !== Node.COMMENT_NODE && ii.tasks.push(we(li));
         }
       }
-      function Ee(ti, ui) {
-        for (var ci = 0; ci < ti.length; )
-          ui = (ui << 5) - ui + ti.charCodeAt(ci++) | 0;
-        return ui;
+      function Ee(Fe, ei) {
+        for (var ri = 0; ri < Fe.length; )
+          ei = (ei << 5) - ei + Fe.charCodeAt(ri++) | 0;
+        return ei;
       }
-      function Ce(ti) {
-        var ui = 0;
-        if (ti.attributes)
-          for (var ci = 0; ci < ti.attributes.length; ci++) {
-            var oi = ti.attributes[ci];
-            oi.value && (ui = Ee(oi.name, ui), ui = Ee(oi.value, ui));
+      function Ce(Fe) {
+        var ei = 0;
+        if (Fe.attributes)
+          for (var ri = 0; ri < Fe.attributes.length; ri++) {
+            var ii = Fe.attributes[ri];
+            ii.value && (ei = Ee(ii.name, ei), ei = Ee(ii.value, ei));
           }
-        return ui;
+        return ei;
       }
-      function Re(ti) {
-        var ui = ee(ti);
-        if (ui.onHandlers) {
-          for (let ci = 0; ci < ui.onHandlers.length; ci++) {
-            const oi = ui.onHandlers[ci];
-            ti.removeEventListener(oi.event, oi.listener);
+      function Re(Fe) {
+        var ei = ee(Fe);
+        if (ei.onHandlers) {
+          for (let ri = 0; ri < ei.onHandlers.length; ri++) {
+            const ii = ei.onHandlers[ri];
+            Fe.removeEventListener(ii.event, ii.listener);
           }
-          delete ui.onHandlers;
+          delete ei.onHandlers;
         }
       }
-      function Oe(ti) {
-        var ui = ee(ti);
-        ui.timeout && clearTimeout(ui.timeout), ui.webSocket && ui.webSocket.close(), ui.sseEventSource && ui.sseEventSource.close(), ui.listenerInfos && te(ui.listenerInfos, function(ci) {
-          ci.on && ci.on.removeEventListener(ci.trigger, ci.listener);
-        }), ui.initHash && (ui.initHash = null), Re(ti);
+      function Oe(Fe) {
+        var ei = ee(Fe);
+        ei.timeout && clearTimeout(ei.timeout), ei.webSocket && ei.webSocket.close(), ei.sseEventSource && ei.sseEventSource.close(), ei.listenerInfos && te(ei.listenerInfos, function(ri) {
+          ri.on && ri.on.removeEventListener(ri.trigger, ri.listener);
+        }), ei.initHash && (ei.initHash = null), Re(Fe);
       }
-      function g(ti) {
-        oe(ti, "htmx:beforeCleanupElement"), Oe(ti), ti.children && te(ti.children, function(ui) {
-          g(ui);
+      function g(Fe) {
+        oe(Fe, "htmx:beforeCleanupElement"), Oe(Fe), Fe.children && te(Fe.children, function(ei) {
+          g(ei);
         });
       }
-      function Te(ti, ui, ci) {
-        if (ti.tagName === "BODY")
-          return Ie(ti, ui, ci);
-        var oi, Si = ti.previousSibling;
-        for (a(u(ti), ti, ui, ci), Si == null ? oi = u(ti).firstChild : oi = Si.nextSibling, ee(ti).replacedWith = oi, ci.elts = ci.elts.filter(function(ji) {
-          return ji != ti;
-        }); oi && oi !== ti; )
-          oi.nodeType === Node.ELEMENT_NODE && ci.elts.push(oi), oi = oi.nextElementSibling;
-        g(ti), u(ti).removeChild(ti);
+      function Te(Fe, ei, ri) {
+        if (Fe.tagName === "BODY")
+          return Ie(Fe, ei, ri);
+        var ii, li = Fe.previousSibling;
+        for (a(u(Fe), Fe, ei, ri), li == null ? ii = u(Fe).firstChild : ii = li.nextSibling, ee(Fe).replacedWith = ii, ri.elts = ri.elts.filter(function(Ci) {
+          return Ci != Fe;
+        }); ii && ii !== Fe; )
+          ii.nodeType === Node.ELEMENT_NODE && ri.elts.push(ii), ii = ii.nextElementSibling;
+        g(Fe), u(Fe).removeChild(Fe);
       }
-      function qe(ti, ui, ci) {
-        return a(ti, ti.firstChild, ui, ci);
+      function qe(Fe, ei, ri) {
+        return a(Fe, Fe.firstChild, ei, ri);
       }
-      function He(ti, ui, ci) {
-        return a(u(ti), ti, ui, ci);
+      function He(Fe, ei, ri) {
+        return a(u(Fe), Fe, ei, ri);
       }
-      function Le(ti, ui, ci) {
-        return a(ti, null, ui, ci);
+      function Le(Fe, ei, ri) {
+        return a(Fe, null, ei, ri);
       }
-      function Ae(ti, ui, ci) {
-        return a(u(ti), ti.nextSibling, ui, ci);
+      function Ae(Fe, ei, ri) {
+        return a(u(Fe), Fe.nextSibling, ei, ri);
       }
-      function Ne(ti, ui, ci) {
-        return g(ti), u(ti).removeChild(ti);
+      function Ne(Fe, ei, ri) {
+        return g(Fe), u(Fe).removeChild(Fe);
       }
-      function Ie(ti, ui, ci) {
-        var oi = ti.firstChild;
-        if (a(ti, oi, ui, ci), oi) {
-          for (; oi.nextSibling; )
-            g(oi.nextSibling), ti.removeChild(oi.nextSibling);
-          g(oi), ti.removeChild(oi);
+      function Ie(Fe, ei, ri) {
+        var ii = Fe.firstChild;
+        if (a(Fe, ii, ei, ri), ii) {
+          for (; ii.nextSibling; )
+            g(ii.nextSibling), Fe.removeChild(ii.nextSibling);
+          g(ii), Fe.removeChild(ii);
         }
       }
-      function Pe(ti, ui, ci) {
-        var oi = ci || Y(ti, "hx-select");
-        if (oi) {
-          var Si = K().createDocumentFragment();
-          te(ui.querySelectorAll(oi), function(ji) {
-            Si.appendChild(ji);
-          }), ui = Si;
+      function Pe(Fe, ei, ri) {
+        var ii = ri || Y(Fe, "hx-select");
+        if (ii) {
+          var li = K().createDocumentFragment();
+          te(ei.querySelectorAll(ii), function(Ci) {
+            li.appendChild(Ci);
+          }), ei = li;
         }
-        return ui;
+        return ei;
       }
-      function ke(ti, ui, ci, oi, Si) {
-        switch (ti) {
+      function ke(Fe, ei, ri, ii, li) {
+        switch (Fe) {
           case "none":
             return;
           case "outerHTML":
-            Te(ci, oi, Si);
+            Te(ri, ii, li);
             return;
           case "afterbegin":
-            qe(ci, oi, Si);
+            qe(ri, ii, li);
             return;
           case "beforebegin":
-            He(ci, oi, Si);
+            He(ri, ii, li);
             return;
           case "beforeend":
-            Le(ci, oi, Si);
+            Le(ri, ii, li);
             return;
           case "afterend":
-            Ae(ci, oi, Si);
+            Ae(ri, ii, li);
             return;
           case "delete":
-            Ne(ci);
+            Ne(ri);
             return;
           default:
-            for (var ji = Tr(ui), qi = 0; qi < ji.length; qi++) {
-              var ts = ji[qi];
+            for (var Ci = Tr(ei), zi = 0; zi < Ci.length; zi++) {
+              var Ki = Ci[zi];
               try {
-                var Qi = ts.handleSwap(ti, ci, oi, Si);
-                if (Qi) {
-                  if (typeof Qi.length < "u")
-                    for (var is = 0; is < Qi.length; is++) {
-                      var ss = Qi[is];
-                      ss.nodeType !== Node.TEXT_NODE && ss.nodeType !== Node.COMMENT_NODE && Si.tasks.push(we(ss));
+                var Yi = Ki.handleSwap(Fe, ri, ii, li);
+                if (Yi) {
+                  if (typeof Yi.length < "u")
+                    for (var es = 0; es < Yi.length; es++) {
+                      var is = Yi[es];
+                      is.nodeType !== Node.TEXT_NODE && is.nodeType !== Node.COMMENT_NODE && li.tasks.push(we(is));
                     }
                   return;
                 }
-              } catch (Wi) {
-                x(Wi);
+              } catch ($i) {
+                x($i);
               }
             }
-            ti === "innerHTML" ? Ie(ci, oi, Si) : ke(G.config.defaultSwapStyle, ui, ci, oi, Si);
+            Fe === "innerHTML" ? Ie(ri, ii, li) : ke(G.config.defaultSwapStyle, ei, ri, ii, li);
         }
       }
-      function Me(ti) {
-        if (ti.indexOf("<title") > -1) {
-          var ui = ti.replace(/<svg(\s[^>]*>|>)([\s\S]*?)<\/svg>/gim, ""), ci = ui.match(/<title(\s[^>]*>|>)([\s\S]*?)<\/title>/im);
-          if (ci)
-            return ci[2];
+      function Me(Fe) {
+        if (Fe.indexOf("<title") > -1) {
+          var ei = Fe.replace(/<svg(\s[^>]*>|>)([\s\S]*?)<\/svg>/gim, ""), ri = ei.match(/<title(\s[^>]*>|>)([\s\S]*?)<\/title>/im);
+          if (ri)
+            return ri[2];
         }
       }
-      function De(ti, ui, ci, oi, Si, ji) {
-        Si.title = Me(oi);
-        var qi = l(oi);
-        if (qi)
-          return xe(ci, qi, Si), qi = Pe(ci, qi, ji), ye(qi), ke(ti, ci, ui, qi, Si);
+      function De(Fe, ei, ri, ii, li, Ci) {
+        li.title = Me(ii);
+        var zi = l(ii);
+        if (zi)
+          return xe(ri, zi, li), zi = Pe(ri, zi, Ci), ye(zi), ke(Fe, ri, ei, zi, li);
       }
-      function Xe(ti, ui, ci) {
-        var oi = ti.getResponseHeader(ui);
-        if (oi.indexOf("{") === 0) {
-          var Si = y(oi);
-          for (var ji in Si)
-            if (Si.hasOwnProperty(ji)) {
-              var qi = Si[ji];
-              N(qi) || (qi = { value: qi }), oe(ci, ji, qi);
+      function Xe(Fe, ei, ri) {
+        var ii = Fe.getResponseHeader(ei);
+        if (ii.indexOf("{") === 0) {
+          var li = y(ii);
+          for (var Ci in li)
+            if (li.hasOwnProperty(Ci)) {
+              var zi = li[Ci];
+              N(zi) || (zi = { value: zi }), oe(ri, Ci, zi);
             }
         } else
-          for (var ts = oi.split(","), Qi = 0; Qi < ts.length; Qi++)
-            oe(ci, ts[Qi].trim(), []);
+          for (var Ki = ii.split(","), Yi = 0; Yi < Ki.length; Yi++)
+            oe(ri, Ki[Yi].trim(), []);
       }
       var p = /[\s,]/, Ue = /[_$a-zA-Z]/, Be = /[_$a-zA-Z0-9]/, Ve = ['"', "'", "/"], je = /[^\s]/;
-      function We(ti) {
-        for (var ui = [], ci = 0; ci < ti.length; ) {
-          if (Ue.exec(ti.charAt(ci))) {
-            for (var oi = ci; Be.exec(ti.charAt(ci + 1)); )
-              ci++;
-            ui.push(ti.substr(oi, ci - oi + 1));
-          } else if (Ve.indexOf(ti.charAt(ci)) !== -1) {
-            var Si = ti.charAt(ci), oi = ci;
-            for (ci++; ci < ti.length && ti.charAt(ci) !== Si; )
-              ti.charAt(ci) === "\\" && ci++, ci++;
-            ui.push(ti.substr(oi, ci - oi + 1));
+      function We(Fe) {
+        for (var ei = [], ri = 0; ri < Fe.length; ) {
+          if (Ue.exec(Fe.charAt(ri))) {
+            for (var ii = ri; Be.exec(Fe.charAt(ri + 1)); )
+              ri++;
+            ei.push(Fe.substr(ii, ri - ii + 1));
+          } else if (Ve.indexOf(Fe.charAt(ri)) !== -1) {
+            var li = Fe.charAt(ri), ii = ri;
+            for (ri++; ri < Fe.length && Fe.charAt(ri) !== li; )
+              Fe.charAt(ri) === "\\" && ri++, ri++;
+            ei.push(Fe.substr(ii, ri - ii + 1));
           } else {
-            var ji = ti.charAt(ci);
-            ui.push(ji);
+            var Ci = Fe.charAt(ri);
+            ei.push(Ci);
           }
-          ci++;
+          ri++;
         }
-        return ui;
+        return ei;
       }
-      function _e(ti, ui, ci) {
-        return Ue.exec(ti.charAt(0)) && ti !== "true" && ti !== "false" && ti !== "this" && ti !== ci && ui !== ".";
+      function _e(Fe, ei, ri) {
+        return Ue.exec(Fe.charAt(0)) && Fe !== "true" && Fe !== "false" && Fe !== "this" && Fe !== ri && ei !== ".";
       }
-      function ze(ti, ui, ci) {
-        if (ui[0] === "[") {
-          ui.shift();
-          for (var oi = 1, Si = " return (function(" + ci + "){ return (", ji = null; ui.length > 0; ) {
-            var qi = ui[0];
-            if (qi === "]") {
-              if (oi--, oi === 0) {
-                ji === null && (Si = Si + "true"), ui.shift(), Si += ")})";
+      function ze(Fe, ei, ri) {
+        if (ei[0] === "[") {
+          ei.shift();
+          for (var ii = 1, li = " return (function(" + ri + "){ return (", Ci = null; ei.length > 0; ) {
+            var zi = ei[0];
+            if (zi === "]") {
+              if (ii--, ii === 0) {
+                Ci === null && (li = li + "true"), ei.shift(), li += ")})";
                 try {
-                  var ts = hr(ti, function() {
-                    return Function(Si)();
+                  var Ki = hr(Fe, function() {
+                    return Function(li)();
                   }, function() {
                     return !0;
                   });
-                  return ts.source = Si, ts;
-                } catch (Qi) {
-                  return ae(K().body, "htmx:syntax:error", { error: Qi, source: Si }), null;
+                  return Ki.source = li, Ki;
+                } catch (Yi) {
+                  return ae(K().body, "htmx:syntax:error", { error: Yi, source: li }), null;
                 }
               }
             } else
-              qi === "[" && oi++;
-            _e(qi, ji, ci) ? Si += "((" + ci + "." + qi + ") ? (" + ci + "." + qi + ") : (window." + qi + "))" : Si = Si + qi, ji = ui.shift();
+              zi === "[" && ii++;
+            _e(zi, Ci, ri) ? li += "((" + ri + "." + zi + ") ? (" + ri + "." + zi + ") : (window." + zi + "))" : li = li + zi, Ci = ei.shift();
           }
         }
       }
-      function m(ti, ui) {
-        for (var ci = ""; ti.length > 0 && !ti[0].match(ui); )
-          ci += ti.shift();
-        return ci;
+      function m(Fe, ei) {
+        for (var ri = ""; Fe.length > 0 && !Fe[0].match(ei); )
+          ri += Fe.shift();
+        return ri;
       }
       var $e = "input, textarea, select";
-      function Ge(ti) {
-        var ui = Z(ti, "hx-trigger"), ci = [];
-        if (ui) {
-          var oi = We(ui);
+      function Ge(Fe) {
+        var ei = Z(Fe, "hx-trigger"), ri = [];
+        if (ei) {
+          var ii = We(ei);
           do {
-            m(oi, je);
-            var Si = oi.length, ji = m(oi, /[,\[\s]/);
-            if (ji !== "")
-              if (ji === "every") {
-                var qi = { trigger: "every" };
-                m(oi, je), qi.pollInterval = v(m(oi, /[,\[\s]/)), m(oi, je);
-                var ts = ze(ti, oi, "event");
-                ts && (qi.eventFilter = ts), ci.push(qi);
-              } else if (ji.indexOf("sse:") === 0)
-                ci.push({ trigger: "sse", sseEvent: ji.substr(4) });
+            m(ii, je);
+            var li = ii.length, Ci = m(ii, /[,\[\s]/);
+            if (Ci !== "")
+              if (Ci === "every") {
+                var zi = { trigger: "every" };
+                m(ii, je), zi.pollInterval = v(m(ii, /[,\[\s]/)), m(ii, je);
+                var Ki = ze(Fe, ii, "event");
+                Ki && (zi.eventFilter = Ki), ri.push(zi);
+              } else if (Ci.indexOf("sse:") === 0)
+                ri.push({ trigger: "sse", sseEvent: Ci.substr(4) });
               else {
-                var Qi = { trigger: ji }, ts = ze(ti, oi, "event");
-                for (ts && (Qi.eventFilter = ts); oi.length > 0 && oi[0] !== ","; ) {
-                  m(oi, je);
-                  var is = oi.shift();
-                  if (is === "changed")
-                    Qi.changed = !0;
-                  else if (is === "once")
-                    Qi.once = !0;
-                  else if (is === "consume")
-                    Qi.consume = !0;
-                  else if (is === "delay" && oi[0] === ":")
-                    oi.shift(), Qi.delay = v(m(oi, p));
-                  else if (is === "from" && oi[0] === ":") {
-                    oi.shift();
-                    var ss = m(oi, p);
-                    (ss === "closest" || ss === "find" || ss === "next" || ss === "previous") && (oi.shift(), ss += " " + m(oi, p)), Qi.from = ss;
+                var Yi = { trigger: Ci }, Ki = ze(Fe, ii, "event");
+                for (Ki && (Yi.eventFilter = Ki); ii.length > 0 && ii[0] !== ","; ) {
+                  m(ii, je);
+                  var es = ii.shift();
+                  if (es === "changed")
+                    Yi.changed = !0;
+                  else if (es === "once")
+                    Yi.once = !0;
+                  else if (es === "consume")
+                    Yi.consume = !0;
+                  else if (es === "delay" && ii[0] === ":")
+                    ii.shift(), Yi.delay = v(m(ii, p));
+                  else if (es === "from" && ii[0] === ":") {
+                    ii.shift();
+                    var is = m(ii, p);
+                    (is === "closest" || is === "find" || is === "next" || is === "previous") && (ii.shift(), is += " " + m(ii, p)), Yi.from = is;
                   } else
-                    is === "target" && oi[0] === ":" ? (oi.shift(), Qi.target = m(oi, p)) : is === "throttle" && oi[0] === ":" ? (oi.shift(), Qi.throttle = v(m(oi, p))) : is === "queue" && oi[0] === ":" ? (oi.shift(), Qi.queue = m(oi, p)) : (is === "root" || is === "threshold") && oi[0] === ":" ? (oi.shift(), Qi[is] = m(oi, p)) : ae(ti, "htmx:syntax:error", { token: oi.shift() });
+                    es === "target" && ii[0] === ":" ? (ii.shift(), Yi.target = m(ii, p)) : es === "throttle" && ii[0] === ":" ? (ii.shift(), Yi.throttle = v(m(ii, p))) : es === "queue" && ii[0] === ":" ? (ii.shift(), Yi.queue = m(ii, p)) : (es === "root" || es === "threshold") && ii[0] === ":" ? (ii.shift(), Yi[es] = m(ii, p)) : ae(Fe, "htmx:syntax:error", { token: ii.shift() });
                 }
-                ci.push(Qi);
+                ri.push(Yi);
               }
-            oi.length === Si && ae(ti, "htmx:syntax:error", { token: oi.shift() }), m(oi, je);
-          } while (oi[0] === "," && oi.shift());
+            ii.length === li && ae(Fe, "htmx:syntax:error", { token: ii.shift() }), m(ii, je);
+          } while (ii[0] === "," && ii.shift());
         }
-        return ci.length > 0 ? ci : h(ti, "form") ? [{ trigger: "submit" }] : h(ti, 'input[type="button"], input[type="submit"]') ? [{ trigger: "click" }] : h(ti, $e) ? [{ trigger: "change" }] : [{ trigger: "click" }];
+        return ri.length > 0 ? ri : h(Fe, "form") ? [{ trigger: "submit" }] : h(Fe, 'input[type="button"], input[type="submit"]') ? [{ trigger: "click" }] : h(Fe, $e) ? [{ trigger: "change" }] : [{ trigger: "click" }];
       }
-      function Je(ti) {
-        ee(ti).cancelled = !0;
+      function Je(Fe) {
+        ee(Fe).cancelled = !0;
       }
-      function Ze(ti, ui, ci) {
-        var oi = ee(ti);
-        oi.timeout = setTimeout(function() {
-          re(ti) && oi.cancelled !== !0 && (tt(ci, ti, Pt("hx:poll:trigger", { triggerSpec: ci, target: ti })) || ui(ti), Ze(ti, ui, ci));
-        }, ci.pollInterval);
+      function Ze(Fe, ei, ri) {
+        var ii = ee(Fe);
+        ii.timeout = setTimeout(function() {
+          re(Fe) && ii.cancelled !== !0 && (tt(ri, Fe, Pt("hx:poll:trigger", { triggerSpec: ri, target: Fe })) || ei(Fe), Ze(Fe, ei, ri));
+        }, ri.pollInterval);
       }
-      function Ke(ti) {
-        return location.hostname === ti.hostname && J(ti, "href") && J(ti, "href").indexOf("#") !== 0;
+      function Ke(Fe) {
+        return location.hostname === Fe.hostname && J(Fe, "href") && J(Fe, "href").indexOf("#") !== 0;
       }
-      function Ye(ti, ui, ci) {
-        if (ti.tagName === "A" && Ke(ti) && (ti.target === "" || ti.target === "_self") || ti.tagName === "FORM") {
-          ui.boosted = !0;
-          var oi, Si;
-          if (ti.tagName === "A")
-            oi = "get", Si = ti.href;
+      function Ye(Fe, ei, ri) {
+        if (Fe.tagName === "A" && Ke(Fe) && (Fe.target === "" || Fe.target === "_self") || Fe.tagName === "FORM") {
+          ei.boosted = !0;
+          var ii, li;
+          if (Fe.tagName === "A")
+            ii = "get", li = Fe.href;
           else {
-            var ji = J(ti, "method");
-            oi = ji ? ji.toLowerCase() : "get", Si = J(ti, "action");
+            var Ci = J(Fe, "method");
+            ii = Ci ? Ci.toLowerCase() : "get", li = J(Fe, "action");
           }
-          ci.forEach(function(qi) {
-            rt(ti, function(ts, Qi) {
-              if (d(ts, G.config.disableSelector)) {
-                g(ts);
+          ri.forEach(function(zi) {
+            rt(Fe, function(Ki, Yi) {
+              if (d(Ki, G.config.disableSelector)) {
+                g(Ki);
                 return;
               }
-              se(oi, Si, ts, Qi);
-            }, ui, qi, !0);
+              se(ii, li, Ki, Yi);
+            }, ei, zi, !0);
           });
         }
       }
-      function Qe(ti, ui) {
-        return !!((ti.type === "submit" || ti.type === "click") && (ui.tagName === "FORM" || h(ui, 'input[type="submit"], button') && d(ui, "form") !== null || ui.tagName === "A" && ui.href && (ui.getAttribute("href") === "#" || ui.getAttribute("href").indexOf("#") !== 0)));
+      function Qe(Fe, ei) {
+        return !!((Fe.type === "submit" || Fe.type === "click") && (ei.tagName === "FORM" || h(ei, 'input[type="submit"], button') && d(ei, "form") !== null || ei.tagName === "A" && ei.href && (ei.getAttribute("href") === "#" || ei.getAttribute("href").indexOf("#") !== 0)));
       }
-      function et(ti, ui) {
-        return ee(ti).boosted && ti.tagName === "A" && ui.type === "click" && (ui.ctrlKey || ui.metaKey);
+      function et(Fe, ei) {
+        return ee(Fe).boosted && Fe.tagName === "A" && ei.type === "click" && (ei.ctrlKey || ei.metaKey);
       }
-      function tt(ti, ui, ci) {
-        var oi = ti.eventFilter;
-        if (oi)
+      function tt(Fe, ei, ri) {
+        var ii = Fe.eventFilter;
+        if (ii)
           try {
-            return oi.call(ui, ci) !== !0;
-          } catch (Si) {
-            return ae(K().body, "htmx:eventFilter:error", { error: Si, source: oi.source }), !0;
+            return ii.call(ei, ri) !== !0;
+          } catch (li) {
+            return ae(K().body, "htmx:eventFilter:error", { error: li, source: ii.source }), !0;
           }
         return !1;
       }
-      function rt(ti, ui, ci, oi, Si) {
-        var ji = ee(ti), qi;
-        oi.from ? qi = W(ti, oi.from) : qi = [ti], oi.changed && qi.forEach(function(ts) {
-          var Qi = ee(ts);
-          Qi.lastValue = ts.value;
-        }), te(qi, function(ts) {
-          var Qi = function(is) {
-            if (!re(ti)) {
-              ts.removeEventListener(oi.trigger, Qi);
+      function rt(Fe, ei, ri, ii, li) {
+        var Ci = ee(Fe), zi;
+        ii.from ? zi = W(Fe, ii.from) : zi = [Fe], ii.changed && zi.forEach(function(Ki) {
+          var Yi = ee(Ki);
+          Yi.lastValue = Ki.value;
+        }), te(zi, function(Ki) {
+          var Yi = function(es) {
+            if (!re(Fe)) {
+              Ki.removeEventListener(ii.trigger, Yi);
               return;
             }
-            if (!et(ti, is) && ((Si || Qe(is, ti)) && is.preventDefault(), !tt(oi, ti, is))) {
-              var ss = ee(is);
-              if (ss.triggerSpec = oi, ss.handledFor == null && (ss.handledFor = []), ss.handledFor.indexOf(ti) < 0) {
-                if (ss.handledFor.push(ti), oi.consume && is.stopPropagation(), oi.target && is.target && !h(is.target, oi.target))
+            if (!et(Fe, es) && ((li || Qe(es, Fe)) && es.preventDefault(), !tt(ii, Fe, es))) {
+              var is = ee(es);
+              if (is.triggerSpec = ii, is.handledFor == null && (is.handledFor = []), is.handledFor.indexOf(Fe) < 0) {
+                if (is.handledFor.push(Fe), ii.consume && es.stopPropagation(), ii.target && es.target && !h(es.target, ii.target))
                   return;
-                if (oi.once) {
-                  if (ji.triggeredOnce)
+                if (ii.once) {
+                  if (Ci.triggeredOnce)
                     return;
-                  ji.triggeredOnce = !0;
+                  Ci.triggeredOnce = !0;
                 }
-                if (oi.changed) {
-                  var Wi = ee(ts);
-                  if (Wi.lastValue === ts.value)
+                if (ii.changed) {
+                  var $i = ee(Ki);
+                  if ($i.lastValue === Ki.value)
                     return;
-                  Wi.lastValue = ts.value;
+                  $i.lastValue = Ki.value;
                 }
-                if (ji.delayed && clearTimeout(ji.delayed), ji.throttle)
+                if (Ci.delayed && clearTimeout(Ci.delayed), Ci.throttle)
                   return;
-                oi.throttle ? ji.throttle || (ui(ti, is), ji.throttle = setTimeout(function() {
-                  ji.throttle = null;
-                }, oi.throttle)) : oi.delay ? ji.delayed = setTimeout(function() {
-                  ui(ti, is);
-                }, oi.delay) : (oe(ti, "htmx:trigger"), ui(ti, is));
+                ii.throttle ? Ci.throttle || (ei(Fe, es), Ci.throttle = setTimeout(function() {
+                  Ci.throttle = null;
+                }, ii.throttle)) : ii.delay ? Ci.delayed = setTimeout(function() {
+                  ei(Fe, es);
+                }, ii.delay) : (oe(Fe, "htmx:trigger"), ei(Fe, es));
               }
             }
           };
-          ci.listenerInfos == null && (ci.listenerInfos = []), ci.listenerInfos.push({ trigger: oi.trigger, listener: Qi, on: ts }), ts.addEventListener(oi.trigger, Qi);
+          ri.listenerInfos == null && (ri.listenerInfos = []), ri.listenerInfos.push({ trigger: ii.trigger, listener: Yi, on: Ki }), Ki.addEventListener(ii.trigger, Yi);
         });
       }
       var nt = !1, it = null;
@@ -7098,965 +7097,965 @@ var htmx_min = { exports: {} };
         it || (it = function() {
           nt = !0;
         }, window.addEventListener("scroll", it), setInterval(function() {
-          nt && (nt = !1, te(K().querySelectorAll("[hx-trigger='revealed'],[data-hx-trigger='revealed']"), function(ti) {
-            ot(ti);
+          nt && (nt = !1, te(K().querySelectorAll("[hx-trigger='revealed'],[data-hx-trigger='revealed']"), function(Fe) {
+            ot(Fe);
           }));
         }, 200));
       }
-      function ot(ti) {
-        if (!o(ti, "data-hx-revealed") && P(ti)) {
-          ti.setAttribute("data-hx-revealed", "true");
-          var ui = ee(ti);
-          ui.initHash ? oe(ti, "revealed") : ti.addEventListener("htmx:afterProcessNode", function(ci) {
-            oe(ti, "revealed");
+      function ot(Fe) {
+        if (!o(Fe, "data-hx-revealed") && P(Fe)) {
+          Fe.setAttribute("data-hx-revealed", "true");
+          var ei = ee(Fe);
+          ei.initHash ? oe(Fe, "revealed") : Fe.addEventListener("htmx:afterProcessNode", function(ri) {
+            oe(Fe, "revealed");
           }, { once: !0 });
         }
       }
-      function st(ti, ui, ci) {
-        for (var oi = k(ci), Si = 0; Si < oi.length; Si++) {
-          var ji = oi[Si].split(/:(.+)/);
-          ji[0] === "connect" && lt(ti, ji[1], 0), ji[0] === "send" && ft(ti);
+      function st(Fe, ei, ri) {
+        for (var ii = k(ri), li = 0; li < ii.length; li++) {
+          var Ci = ii[li].split(/:(.+)/);
+          Ci[0] === "connect" && lt(Fe, Ci[1], 0), Ci[0] === "send" && ft(Fe);
         }
       }
-      function lt(ti, ui, ci) {
-        if (re(ti)) {
-          if (ui.indexOf("/") == 0) {
-            var oi = location.hostname + (location.port ? ":" + location.port : "");
-            location.protocol == "https:" ? ui = "wss://" + oi + ui : location.protocol == "http:" && (ui = "ws://" + oi + ui);
+      function lt(Fe, ei, ri) {
+        if (re(Fe)) {
+          if (ei.indexOf("/") == 0) {
+            var ii = location.hostname + (location.port ? ":" + location.port : "");
+            location.protocol == "https:" ? ei = "wss://" + ii + ei : location.protocol == "http:" && (ei = "ws://" + ii + ei);
           }
-          var Si = G.createWebSocket(ui);
-          Si.onerror = function(ji) {
-            ae(ti, "htmx:wsError", { error: ji, socket: Si }), ut(ti);
-          }, Si.onclose = function(ji) {
-            if ([1006, 1012, 1013].indexOf(ji.code) >= 0) {
-              var qi = ct(ci);
+          var li = G.createWebSocket(ei);
+          li.onerror = function(Ci) {
+            ae(Fe, "htmx:wsError", { error: Ci, socket: li }), ut(Fe);
+          }, li.onclose = function(Ci) {
+            if ([1006, 1012, 1013].indexOf(Ci.code) >= 0) {
+              var zi = ct(ri);
               setTimeout(function() {
-                lt(ti, ui, ci + 1);
-              }, qi);
+                lt(Fe, ei, ri + 1);
+              }, zi);
             }
-          }, Si.onopen = function(ji) {
-            ci = 0;
-          }, ee(ti).webSocket = Si, Si.addEventListener("message", function(ji) {
-            if (!ut(ti)) {
-              var qi = ji.data;
-              w(ti, function(Ki) {
-                qi = Ki.transformResponse(qi, null, ti);
+          }, li.onopen = function(Ci) {
+            ri = 0;
+          }, ee(Fe).webSocket = li, li.addEventListener("message", function(Ci) {
+            if (!ut(Fe)) {
+              var zi = Ci.data;
+              w(Fe, function(Vi) {
+                zi = Vi.transformResponse(zi, null, Fe);
               });
-              for (var ts = S(ti), Qi = l(qi), is = I(Qi.children), ss = 0; ss < is.length; ss++) {
-                var Wi = is[ss];
-                me(Z(Wi, "hx-swap-oob") || "true", Wi, ts);
+              for (var Ki = S(Fe), Yi = l(zi), es = I(Yi.children), is = 0; is < es.length; is++) {
+                var $i = es[is];
+                me(Z($i, "hx-swap-oob") || "true", $i, Ki);
               }
-              Wt(ts.tasks);
+              Wt(Ki.tasks);
             }
           });
         }
       }
-      function ut(ti) {
-        if (!re(ti))
-          return ee(ti).webSocket.close(), !0;
+      function ut(Fe) {
+        if (!re(Fe))
+          return ee(Fe).webSocket.close(), !0;
       }
-      function ft(ti) {
-        var ui = c(ti, function(ci) {
-          return ee(ci).webSocket != null;
+      function ft(Fe) {
+        var ei = c(Fe, function(ri) {
+          return ee(ri).webSocket != null;
         });
-        ui ? ti.addEventListener(Ge(ti)[0].trigger, function(ci) {
-          var oi = ee(ui).webSocket, Si = ir(ti, ui), ji = er(ti, "post"), qi = ji.errors, ts = ji.values, Qi = gr(ti), is = ne(ts, Qi), ss = ar(is, ti);
-          if (ss.HEADERS = Si, qi && qi.length > 0) {
-            oe(ti, "htmx:validation:halted", qi);
+        ei ? Fe.addEventListener(Ge(Fe)[0].trigger, function(ri) {
+          var ii = ee(ei).webSocket, li = ir(Fe, ei), Ci = er(Fe, "post"), zi = Ci.errors, Ki = Ci.values, Yi = gr(Fe), es = ne(Ki, Yi), is = ar(es, Fe);
+          if (is.HEADERS = li, zi && zi.length > 0) {
+            oe(Fe, "htmx:validation:halted", zi);
             return;
           }
-          oi.send(JSON.stringify(ss)), Qe(ci, ti) && ci.preventDefault();
-        }) : ae(ti, "htmx:noWebSocketSourceError");
+          ii.send(JSON.stringify(is)), Qe(ri, Fe) && ri.preventDefault();
+        }) : ae(Fe, "htmx:noWebSocketSourceError");
       }
-      function ct(ti) {
-        var ui = G.config.wsReconnectDelay;
-        if (typeof ui == "function")
-          return ui(ti);
-        if (ui === "full-jitter") {
-          var ci = Math.min(ti, 6), oi = 1e3 * Math.pow(2, ci);
-          return oi * Math.random();
+      function ct(Fe) {
+        var ei = G.config.wsReconnectDelay;
+        if (typeof ei == "function")
+          return ei(Fe);
+        if (ei === "full-jitter") {
+          var ri = Math.min(Fe, 6), ii = 1e3 * Math.pow(2, ri);
+          return ii * Math.random();
         }
         x('htmx.config.wsReconnectDelay must either be a function or the string "full-jitter"');
       }
-      function ht(ti, ui, ci) {
-        for (var oi = k(ci), Si = 0; Si < oi.length; Si++) {
-          var ji = oi[Si].split(/:(.+)/);
-          ji[0] === "connect" && dt(ti, ji[1]), ji[0] === "swap" && vt(ti, ji[1]);
+      function ht(Fe, ei, ri) {
+        for (var ii = k(ri), li = 0; li < ii.length; li++) {
+          var Ci = ii[li].split(/:(.+)/);
+          Ci[0] === "connect" && dt(Fe, Ci[1]), Ci[0] === "swap" && vt(Fe, Ci[1]);
         }
       }
-      function dt(ti, ui) {
-        var ci = G.createEventSource(ui);
-        ci.onerror = function(oi) {
-          ae(ti, "htmx:sseError", { error: oi, source: ci }), pt(ti);
-        }, ee(ti).sseEventSource = ci;
+      function dt(Fe, ei) {
+        var ri = G.createEventSource(ei);
+        ri.onerror = function(ii) {
+          ae(Fe, "htmx:sseError", { error: ii, source: ri }), pt(Fe);
+        }, ee(Fe).sseEventSource = ri;
       }
-      function vt(ti, ui) {
-        var ci = c(ti, mt);
-        if (ci) {
-          var oi = ee(ci).sseEventSource, Si = function(ji) {
-            if (!pt(ci)) {
-              if (!re(ti)) {
-                oi.removeEventListener(ui, Si);
+      function vt(Fe, ei) {
+        var ri = c(Fe, mt);
+        if (ri) {
+          var ii = ee(ri).sseEventSource, li = function(Ci) {
+            if (!pt(ri)) {
+              if (!re(Fe)) {
+                ii.removeEventListener(ei, li);
                 return;
               }
-              var qi = ji.data;
-              w(ti, function(ss) {
-                qi = ss.transformResponse(qi, null, ti);
+              var zi = Ci.data;
+              w(Fe, function(is) {
+                zi = is.transformResponse(zi, null, Fe);
               });
-              var ts = sr(ti), Qi = de(ti), is = S(ti);
-              De(ts.swapStyle, Qi, ti, qi, is), Wt(is.tasks), oe(ti, "htmx:sseMessage", ji);
+              var Ki = sr(Fe), Yi = de(Fe), es = S(Fe);
+              De(Ki.swapStyle, Yi, Fe, zi, es), Wt(es.tasks), oe(Fe, "htmx:sseMessage", Ci);
             }
           };
-          ee(ti).sseListener = Si, oi.addEventListener(ui, Si);
+          ee(Fe).sseListener = li, ii.addEventListener(ei, li);
         } else
-          ae(ti, "htmx:noSSESourceError");
+          ae(Fe, "htmx:noSSESourceError");
       }
-      function gt(ti, ui, ci) {
-        var oi = c(ti, mt);
-        if (oi) {
-          var Si = ee(oi).sseEventSource, ji = function() {
-            pt(oi) || (re(ti) ? ui(ti) : Si.removeEventListener(ci, ji));
+      function gt(Fe, ei, ri) {
+        var ii = c(Fe, mt);
+        if (ii) {
+          var li = ee(ii).sseEventSource, Ci = function() {
+            pt(ii) || (re(Fe) ? ei(Fe) : li.removeEventListener(ri, Ci));
           };
-          ee(ti).sseListener = ji, Si.addEventListener(ci, ji);
+          ee(Fe).sseListener = Ci, li.addEventListener(ri, Ci);
         } else
-          ae(ti, "htmx:noSSESourceError");
+          ae(Fe, "htmx:noSSESourceError");
       }
-      function pt(ti) {
-        if (!re(ti))
-          return ee(ti).sseEventSource.close(), !0;
+      function pt(Fe) {
+        if (!re(Fe))
+          return ee(Fe).sseEventSource.close(), !0;
       }
-      function mt(ti) {
-        return ee(ti).sseEventSource != null;
+      function mt(Fe) {
+        return ee(Fe).sseEventSource != null;
       }
-      function xt(ti, ui, ci, oi) {
-        var Si = function() {
-          ci.loaded || (ci.loaded = !0, ui(ti));
+      function xt(Fe, ei, ri, ii) {
+        var li = function() {
+          ri.loaded || (ri.loaded = !0, ei(Fe));
         };
-        oi ? setTimeout(Si, oi) : Si();
+        ii ? setTimeout(li, ii) : li();
       }
-      function yt(ti, ui, ci) {
-        var oi = !1;
-        return te(R, function(Si) {
-          if (o(ti, "hx-" + Si)) {
-            var ji = Z(ti, "hx-" + Si);
-            oi = !0, ui.path = ji, ui.verb = Si, ci.forEach(function(qi) {
-              bt(ti, qi, ui, function(ts, Qi) {
-                if (d(ts, G.config.disableSelector)) {
-                  g(ts);
+      function yt(Fe, ei, ri) {
+        var ii = !1;
+        return te(R, function(li) {
+          if (o(Fe, "hx-" + li)) {
+            var Ci = Z(Fe, "hx-" + li);
+            ii = !0, ei.path = Ci, ei.verb = li, ri.forEach(function(zi) {
+              bt(Fe, zi, ei, function(Ki, Yi) {
+                if (d(Ki, G.config.disableSelector)) {
+                  g(Ki);
                   return;
                 }
-                se(Si, ji, ts, Qi);
+                se(li, Ci, Ki, Yi);
               });
             });
           }
-        }), oi;
+        }), ii;
       }
-      function bt(ti, ui, ci, oi) {
-        if (ui.sseEvent)
-          gt(ti, oi, ui.sseEvent);
-        else if (ui.trigger === "revealed")
-          at(), rt(ti, oi, ci, ui), ot(ti);
-        else if (ui.trigger === "intersect") {
-          var Si = {};
-          ui.root && (Si.root = ie(ti, ui.root)), ui.threshold && (Si.threshold = parseFloat(ui.threshold));
-          var ji = new IntersectionObserver(function(qi) {
-            for (var ts = 0; ts < qi.length; ts++) {
-              var Qi = qi[ts];
-              if (Qi.isIntersecting) {
-                oe(ti, "intersect");
+      function bt(Fe, ei, ri, ii) {
+        if (ei.sseEvent)
+          gt(Fe, ii, ei.sseEvent);
+        else if (ei.trigger === "revealed")
+          at(), rt(Fe, ii, ri, ei), ot(Fe);
+        else if (ei.trigger === "intersect") {
+          var li = {};
+          ei.root && (li.root = ie(Fe, ei.root)), ei.threshold && (li.threshold = parseFloat(ei.threshold));
+          var Ci = new IntersectionObserver(function(zi) {
+            for (var Ki = 0; Ki < zi.length; Ki++) {
+              var Yi = zi[Ki];
+              if (Yi.isIntersecting) {
+                oe(Fe, "intersect");
                 break;
               }
             }
-          }, Si);
-          ji.observe(ti), rt(ti, oi, ci, ui);
+          }, li);
+          Ci.observe(Fe), rt(Fe, ii, ri, ei);
         } else
-          ui.trigger === "load" ? tt(ui, ti, Pt("load", { elt: ti })) || xt(ti, oi, ci, ui.delay) : ui.pollInterval ? (ci.polling = !0, Ze(ti, oi, ui)) : rt(ti, oi, ci, ui);
+          ei.trigger === "load" ? tt(ei, Fe, Pt("load", { elt: Fe })) || xt(Fe, ii, ri, ei.delay) : ei.pollInterval ? (ri.polling = !0, Ze(Fe, ii, ei)) : rt(Fe, ii, ri, ei);
       }
-      function wt(ti) {
-        if (G.config.allowScriptTags && (ti.type === "text/javascript" || ti.type === "module" || ti.type === "")) {
-          var ui = K().createElement("script");
-          te(ti.attributes, function(oi) {
-            ui.setAttribute(oi.name, oi.value);
-          }), ui.textContent = ti.textContent, ui.async = !1, G.config.inlineScriptNonce && (ui.nonce = G.config.inlineScriptNonce);
-          var ci = ti.parentElement;
+      function wt(Fe) {
+        if (G.config.allowScriptTags && (Fe.type === "text/javascript" || Fe.type === "module" || Fe.type === "")) {
+          var ei = K().createElement("script");
+          te(Fe.attributes, function(ii) {
+            ei.setAttribute(ii.name, ii.value);
+          }), ei.textContent = Fe.textContent, ei.async = !1, G.config.inlineScriptNonce && (ei.nonce = G.config.inlineScriptNonce);
+          var ri = Fe.parentElement;
           try {
-            ci.insertBefore(ui, ti);
-          } catch (oi) {
-            x(oi);
+            ri.insertBefore(ei, Fe);
+          } catch (ii) {
+            x(ii);
           } finally {
-            ti.parentElement && ti.parentElement.removeChild(ti);
+            Fe.parentElement && Fe.parentElement.removeChild(Fe);
           }
         }
       }
-      function St(ti) {
-        h(ti, "script") && wt(ti), te(f(ti, "script"), function(ui) {
-          wt(ui);
+      function St(Fe) {
+        h(Fe, "script") && wt(Fe), te(f(Fe, "script"), function(ei) {
+          wt(ei);
         });
       }
       function Et() {
         return document.querySelector("[hx-boost], [data-hx-boost]");
       }
-      function Ct(ti) {
+      function Ct(Fe) {
         if (!document.evaluate)
           return [];
-        let ui = null;
-        const ci = [], oi = document.evaluate('//*[@*[ starts-with(name(), "hx-on:") or starts-with(name(), "data-hx-on:") ]]', ti);
-        for (; ui = oi.iterateNext(); )
-          ci.push(ui);
-        return ci;
+        let ei = null;
+        const ri = [], ii = document.evaluate('//*[@*[ starts-with(name(), "hx-on:") or starts-with(name(), "data-hx-on:") ]]', Fe);
+        for (; ei = ii.iterateNext(); )
+          ri.push(ei);
+        return ri;
       }
-      function Rt(ti) {
-        if (ti.querySelectorAll) {
-          var ui = Et() ? ", a" : "", ci = ti.querySelectorAll(O + ui + ", form, [type='submit'], [hx-sse], [data-hx-sse], [hx-ws], [data-hx-ws], [hx-ext], [data-hx-ext], [hx-trigger], [data-hx-trigger], [hx-on], [data-hx-on]");
-          return ci;
+      function Rt(Fe) {
+        if (Fe.querySelectorAll) {
+          var ei = Et() ? ", a" : "", ri = Fe.querySelectorAll(O + ei + ", form, [type='submit'], [hx-sse], [data-hx-sse], [hx-ws], [data-hx-ws], [hx-ext], [data-hx-ext], [hx-trigger], [data-hx-trigger], [hx-on], [data-hx-on]");
+          return ri;
         } else
           return [];
       }
-      function Ot(ti) {
-        var ui = s("#" + J(ti, "form")) || d(ti, "form");
-        if (ui) {
-          var ci = function(oi) {
-            var Si = d(oi.target, "button, input[type='submit']");
-            if (Si !== null) {
-              var ji = ee(ui);
-              ji.lastButtonClicked = Si;
+      function Ot(Fe) {
+        var ei = s("#" + J(Fe, "form")) || d(Fe, "form");
+        if (ei) {
+          var ri = function(ii) {
+            var li = d(ii.target, "button, input[type='submit']");
+            if (li !== null) {
+              var Ci = ee(ei);
+              Ci.lastButtonClicked = li;
             }
           };
-          ti.addEventListener("click", ci), ti.addEventListener("focusin", ci), ti.addEventListener("focusout", function(oi) {
-            var Si = ee(ui);
-            Si.lastButtonClicked = null;
+          Fe.addEventListener("click", ri), Fe.addEventListener("focusin", ri), Fe.addEventListener("focusout", function(ii) {
+            var li = ee(ei);
+            li.lastButtonClicked = null;
           });
         }
       }
-      function Tt(ti) {
-        var ui = We(ti), ci = 0;
-        for (let oi = 0; oi < ui.length; oi++) {
-          const Si = ui[oi];
-          Si === "{" ? ci++ : Si === "}" && ci--;
+      function Tt(Fe) {
+        var ei = We(Fe), ri = 0;
+        for (let ii = 0; ii < ei.length; ii++) {
+          const li = ei[ii];
+          li === "{" ? ri++ : li === "}" && ri--;
         }
-        return ci;
+        return ri;
       }
-      function qt(ti, ui, ci) {
-        var oi = ee(ti);
-        oi.onHandlers = [];
-        var Si, ji = function(qi) {
-          return hr(ti, function() {
-            Si || (Si = new Function("event", ci)), Si.call(ti, qi);
+      function qt(Fe, ei, ri) {
+        var ii = ee(Fe);
+        ii.onHandlers = [];
+        var li, Ci = function(zi) {
+          return hr(Fe, function() {
+            li || (li = new Function("event", ri)), li.call(Fe, zi);
           });
         };
-        ti.addEventListener(ui, ji), oi.onHandlers.push({ event: ui, listener: ji });
+        Fe.addEventListener(ei, Ci), ii.onHandlers.push({ event: ei, listener: Ci });
       }
-      function Ht(ti) {
-        var ui = Z(ti, "hx-on");
-        if (ui) {
-          for (var ci = {}, oi = ui.split(`
-`), Si = null, ji = 0; oi.length > 0; ) {
-            var qi = oi.shift(), ts = qi.match(/^\s*([a-zA-Z:\-]+:)(.*)/);
-            ji === 0 && ts ? (qi.split(":"), Si = ts[1].slice(0, -1), ci[Si] = ts[2]) : ci[Si] += qi, ji += Tt(qi);
+      function Ht(Fe) {
+        var ei = Z(Fe, "hx-on");
+        if (ei) {
+          for (var ri = {}, ii = ei.split(`
+`), li = null, Ci = 0; ii.length > 0; ) {
+            var zi = ii.shift(), Ki = zi.match(/^\s*([a-zA-Z:\-]+:)(.*)/);
+            Ci === 0 && Ki ? (zi.split(":"), li = Ki[1].slice(0, -1), ri[li] = Ki[2]) : ri[li] += zi, Ci += Tt(zi);
           }
-          for (var Qi in ci)
-            qt(ti, Qi, ci[Qi]);
+          for (var Yi in ri)
+            qt(Fe, Yi, ri[Yi]);
         }
       }
-      function Lt(ti) {
-        Re(ti);
-        for (var ui = 0; ui < ti.attributes.length; ui++) {
-          var ci = ti.attributes[ui].name, oi = ti.attributes[ui].value;
-          if (ci.startsWith("hx-on:") || ci.startsWith("data-hx-on:")) {
-            let Si = ci.slice(ci.indexOf(":") + 1);
-            Si.startsWith(":") && (Si = "htmx" + Si), qt(ti, Si, oi);
+      function Lt(Fe) {
+        Re(Fe);
+        for (var ei = 0; ei < Fe.attributes.length; ei++) {
+          var ri = Fe.attributes[ei].name, ii = Fe.attributes[ei].value;
+          if (ri.startsWith("hx-on:") || ri.startsWith("data-hx-on:")) {
+            let li = ri.slice(ri.indexOf(":") + 1);
+            li.startsWith(":") && (li = "htmx" + li), qt(Fe, li, ii);
           }
         }
       }
-      function At(ti) {
-        if (d(ti, G.config.disableSelector)) {
-          g(ti);
+      function At(Fe) {
+        if (d(Fe, G.config.disableSelector)) {
+          g(Fe);
           return;
         }
-        var ui = ee(ti);
-        if (ui.initHash !== Ce(ti)) {
-          Oe(ti), ui.initHash = Ce(ti), Ht(ti), oe(ti, "htmx:beforeProcessNode"), ti.value && (ui.lastValue = ti.value);
-          var ci = Ge(ti), oi = yt(ti, ui, ci);
-          oi || (Y(ti, "hx-boost") === "true" ? Ye(ti, ui, ci) : o(ti, "hx-trigger") && ci.forEach(function(qi) {
-            bt(ti, qi, ui, function() {
+        var ei = ee(Fe);
+        if (ei.initHash !== Ce(Fe)) {
+          Oe(Fe), ei.initHash = Ce(Fe), Ht(Fe), oe(Fe, "htmx:beforeProcessNode"), Fe.value && (ei.lastValue = Fe.value);
+          var ri = Ge(Fe), ii = yt(Fe, ei, ri);
+          ii || (Y(Fe, "hx-boost") === "true" ? Ye(Fe, ei, ri) : o(Fe, "hx-trigger") && ri.forEach(function(zi) {
+            bt(Fe, zi, ei, function() {
             });
-          })), (ti.tagName === "FORM" || J(ti, "type") === "submit" && o(ti, "form")) && Ot(ti);
-          var Si = Z(ti, "hx-sse");
-          Si && ht(ti, ui, Si);
-          var ji = Z(ti, "hx-ws");
-          ji && st(ti, ui, ji), oe(ti, "htmx:afterProcessNode");
+          })), (Fe.tagName === "FORM" || J(Fe, "type") === "submit" && o(Fe, "form")) && Ot(Fe);
+          var li = Z(Fe, "hx-sse");
+          li && ht(Fe, ei, li);
+          var Ci = Z(Fe, "hx-ws");
+          Ci && st(Fe, ei, Ci), oe(Fe, "htmx:afterProcessNode");
         }
       }
-      function Nt(ti) {
-        if (ti = s(ti), d(ti, G.config.disableSelector)) {
-          g(ti);
+      function Nt(Fe) {
+        if (Fe = s(Fe), d(Fe, G.config.disableSelector)) {
+          g(Fe);
           return;
         }
-        At(ti), te(Rt(ti), function(ui) {
-          At(ui);
-        }), te(Ct(ti), Lt);
+        At(Fe), te(Rt(Fe), function(ei) {
+          At(ei);
+        }), te(Ct(Fe), Lt);
       }
-      function It(ti) {
-        return ti.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
+      function It(Fe) {
+        return Fe.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
       }
-      function Pt(ti, ui) {
-        var ci;
-        return window.CustomEvent && typeof window.CustomEvent == "function" ? ci = new CustomEvent(ti, { bubbles: !0, cancelable: !0, detail: ui }) : (ci = K().createEvent("CustomEvent"), ci.initCustomEvent(ti, !0, !0, ui)), ci;
+      function Pt(Fe, ei) {
+        var ri;
+        return window.CustomEvent && typeof window.CustomEvent == "function" ? ri = new CustomEvent(Fe, { bubbles: !0, cancelable: !0, detail: ei }) : (ri = K().createEvent("CustomEvent"), ri.initCustomEvent(Fe, !0, !0, ei)), ri;
       }
-      function ae(ti, ui, ci) {
-        oe(ti, ui, ne({ error: ui }, ci));
+      function ae(Fe, ei, ri) {
+        oe(Fe, ei, ne({ error: ei }, ri));
       }
-      function kt(ti) {
-        return ti === "htmx:afterProcessNode";
+      function kt(Fe) {
+        return Fe === "htmx:afterProcessNode";
       }
-      function w(ti, ui) {
-        te(Tr(ti), function(ci) {
+      function w(Fe, ei) {
+        te(Tr(Fe), function(ri) {
           try {
-            ui(ci);
-          } catch (oi) {
-            x(oi);
+            ei(ri);
+          } catch (ii) {
+            x(ii);
           }
         });
       }
-      function x(ti) {
-        console.error ? console.error(ti) : console.log && console.log("ERROR: ", ti);
+      function x(Fe) {
+        console.error ? console.error(Fe) : console.log && console.log("ERROR: ", Fe);
       }
-      function oe(ti, ui, ci) {
-        ti = s(ti), ci == null && (ci = {}), ci.elt = ti;
-        var oi = Pt(ui, ci);
-        G.logger && !kt(ui) && G.logger(ti, ui, ci), ci.error && (x(ci.error), oe(ti, "htmx:error", { errorInfo: ci }));
-        var Si = ti.dispatchEvent(oi), ji = It(ui);
-        if (Si && ji !== ui) {
-          var qi = Pt(ji, oi.detail);
-          Si = Si && ti.dispatchEvent(qi);
+      function oe(Fe, ei, ri) {
+        Fe = s(Fe), ri == null && (ri = {}), ri.elt = Fe;
+        var ii = Pt(ei, ri);
+        G.logger && !kt(ei) && G.logger(Fe, ei, ri), ri.error && (x(ri.error), oe(Fe, "htmx:error", { errorInfo: ri }));
+        var li = Fe.dispatchEvent(ii), Ci = It(ei);
+        if (li && Ci !== ei) {
+          var zi = Pt(Ci, ii.detail);
+          li = li && Fe.dispatchEvent(zi);
         }
-        return w(ti, function(ts) {
-          Si = Si && ts.onEvent(ui, oi) !== !1;
-        }), Si;
+        return w(Fe, function(Ki) {
+          li = li && Ki.onEvent(ei, ii) !== !1;
+        }), li;
       }
       var Mt = location.pathname + location.search;
       function Dt() {
-        var ti = K().querySelector("[hx-history-elt],[data-hx-history-elt]");
-        return ti || K().body;
+        var Fe = K().querySelector("[hx-history-elt],[data-hx-history-elt]");
+        return Fe || K().body;
       }
-      function Xt(ti, ui, ci, oi) {
+      function Xt(Fe, ei, ri, ii) {
         if (M()) {
-          ti = D(ti);
-          for (var Si = y(localStorage.getItem("htmx-history-cache")) || [], ji = 0; ji < Si.length; ji++)
-            if (Si[ji].url === ti) {
-              Si.splice(ji, 1);
+          Fe = D(Fe);
+          for (var li = y(localStorage.getItem("htmx-history-cache")) || [], Ci = 0; Ci < li.length; Ci++)
+            if (li[Ci].url === Fe) {
+              li.splice(Ci, 1);
               break;
             }
-          var qi = { url: ti, content: ui, title: ci, scroll: oi };
-          for (oe(K().body, "htmx:historyItemCreated", { item: qi, cache: Si }), Si.push(qi); Si.length > G.config.historyCacheSize; )
-            Si.shift();
-          for (; Si.length > 0; )
+          var zi = { url: Fe, content: ei, title: ri, scroll: ii };
+          for (oe(K().body, "htmx:historyItemCreated", { item: zi, cache: li }), li.push(zi); li.length > G.config.historyCacheSize; )
+            li.shift();
+          for (; li.length > 0; )
             try {
-              localStorage.setItem("htmx-history-cache", JSON.stringify(Si));
+              localStorage.setItem("htmx-history-cache", JSON.stringify(li));
               break;
-            } catch (ts) {
-              ae(K().body, "htmx:historyCacheError", { cause: ts, cache: Si }), Si.shift();
+            } catch (Ki) {
+              ae(K().body, "htmx:historyCacheError", { cause: Ki, cache: li }), li.shift();
             }
         }
       }
-      function Ft(ti) {
+      function Ft(Fe) {
         if (!M())
           return null;
-        ti = D(ti);
-        for (var ui = y(localStorage.getItem("htmx-history-cache")) || [], ci = 0; ci < ui.length; ci++)
-          if (ui[ci].url === ti)
-            return ui[ci];
+        Fe = D(Fe);
+        for (var ei = y(localStorage.getItem("htmx-history-cache")) || [], ri = 0; ri < ei.length; ri++)
+          if (ei[ri].url === Fe)
+            return ei[ri];
         return null;
       }
-      function Ut(ti) {
-        var ui = G.config.requestClass, ci = ti.cloneNode(!0);
-        return te(f(ci, "." + ui), function(oi) {
-          n(oi, ui);
-        }), ci.innerHTML;
+      function Ut(Fe) {
+        var ei = G.config.requestClass, ri = Fe.cloneNode(!0);
+        return te(f(ri, "." + ei), function(ii) {
+          n(ii, ei);
+        }), ri.innerHTML;
       }
       function Bt() {
-        var ti = Dt(), ui = Mt || location.pathname + location.search, ci = K().querySelector('[hx-history="false" i],[data-hx-history="false" i]');
-        ci || (oe(K().body, "htmx:beforeHistorySave", { path: ui, historyElt: ti }), Xt(ui, Ut(ti), K().title, window.scrollY)), G.config.historyEnabled && history.replaceState({ htmx: !0 }, K().title, window.location.href);
+        var Fe = Dt(), ei = Mt || location.pathname + location.search, ri = K().querySelector('[hx-history="false" i],[data-hx-history="false" i]');
+        ri || (oe(K().body, "htmx:beforeHistorySave", { path: ei, historyElt: Fe }), Xt(ei, Ut(Fe), K().title, window.scrollY)), G.config.historyEnabled && history.replaceState({ htmx: !0 }, K().title, window.location.href);
       }
-      function Vt(ti) {
-        G.config.getCacheBusterParam && (ti = ti.replace(/org\.htmx\.cache-buster=[^&]*&?/, ""), (ti.endsWith("&") || ti.endsWith("?")) && (ti = ti.slice(0, -1))), G.config.historyEnabled && history.pushState({ htmx: !0 }, "", ti), Mt = ti;
+      function Vt(Fe) {
+        G.config.getCacheBusterParam && (Fe = Fe.replace(/org\.htmx\.cache-buster=[^&]*&?/, ""), (Fe.endsWith("&") || Fe.endsWith("?")) && (Fe = Fe.slice(0, -1))), G.config.historyEnabled && history.pushState({ htmx: !0 }, "", Fe), Mt = Fe;
       }
-      function jt(ti) {
-        G.config.historyEnabled && history.replaceState({ htmx: !0 }, "", ti), Mt = ti;
+      function jt(Fe) {
+        G.config.historyEnabled && history.replaceState({ htmx: !0 }, "", Fe), Mt = Fe;
       }
-      function Wt(ti) {
-        te(ti, function(ui) {
-          ui.call();
+      function Wt(Fe) {
+        te(Fe, function(ei) {
+          ei.call();
         });
       }
-      function _t(ti) {
-        var ui = new XMLHttpRequest(), ci = { path: ti, xhr: ui };
-        oe(K().body, "htmx:historyCacheMiss", ci), ui.open("GET", ti, !0), ui.setRequestHeader("HX-History-Restore-Request", "true"), ui.onload = function() {
+      function _t(Fe) {
+        var ei = new XMLHttpRequest(), ri = { path: Fe, xhr: ei };
+        oe(K().body, "htmx:historyCacheMiss", ri), ei.open("GET", Fe, !0), ei.setRequestHeader("HX-History-Restore-Request", "true"), ei.onload = function() {
           if (this.status >= 200 && this.status < 400) {
-            oe(K().body, "htmx:historyCacheMissLoad", ci);
-            var oi = l(this.response);
-            oi = oi.querySelector("[hx-history-elt],[data-hx-history-elt]") || oi;
-            var Si = Dt(), ji = S(Si), qi = Me(this.response);
-            if (qi) {
-              var ts = b("title");
-              ts ? ts.innerHTML = qi : window.document.title = qi;
+            oe(K().body, "htmx:historyCacheMissLoad", ri);
+            var ii = l(this.response);
+            ii = ii.querySelector("[hx-history-elt],[data-hx-history-elt]") || ii;
+            var li = Dt(), Ci = S(li), zi = Me(this.response);
+            if (zi) {
+              var Ki = b("title");
+              Ki ? Ki.innerHTML = zi : window.document.title = zi;
             }
-            Ie(Si, oi, ji), Wt(ji.tasks), Mt = ti, oe(K().body, "htmx:historyRestore", { path: ti, cacheMiss: !0, serverResponse: this.response });
+            Ie(li, ii, Ci), Wt(Ci.tasks), Mt = Fe, oe(K().body, "htmx:historyRestore", { path: Fe, cacheMiss: !0, serverResponse: this.response });
           } else
-            ae(K().body, "htmx:historyCacheMissLoadError", ci);
-        }, ui.send();
+            ae(K().body, "htmx:historyCacheMissLoadError", ri);
+        }, ei.send();
       }
-      function zt(ti) {
-        Bt(), ti = ti || location.pathname + location.search;
-        var ui = Ft(ti);
-        if (ui) {
-          var ci = l(ui.content), oi = Dt(), Si = S(oi);
-          Ie(oi, ci, Si), Wt(Si.tasks), document.title = ui.title, setTimeout(function() {
-            window.scrollTo(0, ui.scroll);
-          }, 0), Mt = ti, oe(K().body, "htmx:historyRestore", { path: ti, item: ui });
+      function zt(Fe) {
+        Bt(), Fe = Fe || location.pathname + location.search;
+        var ei = Ft(Fe);
+        if (ei) {
+          var ri = l(ei.content), ii = Dt(), li = S(ii);
+          Ie(ii, ri, li), Wt(li.tasks), document.title = ei.title, setTimeout(function() {
+            window.scrollTo(0, ei.scroll);
+          }, 0), Mt = Fe, oe(K().body, "htmx:historyRestore", { path: Fe, item: ei });
         } else
-          G.config.refreshOnHistoryMiss ? window.location.reload(!0) : _t(ti);
+          G.config.refreshOnHistoryMiss ? window.location.reload(!0) : _t(Fe);
       }
-      function $t(ti) {
-        var ui = ce(ti, "hx-indicator");
-        return ui == null && (ui = [ti]), te(ui, function(ci) {
-          var oi = ee(ci);
-          oi.requestCount = (oi.requestCount || 0) + 1, ci.classList.add.call(ci.classList, G.config.requestClass);
-        }), ui;
+      function $t(Fe) {
+        var ei = ce(Fe, "hx-indicator");
+        return ei == null && (ei = [Fe]), te(ei, function(ri) {
+          var ii = ee(ri);
+          ii.requestCount = (ii.requestCount || 0) + 1, ri.classList.add.call(ri.classList, G.config.requestClass);
+        }), ei;
       }
-      function Gt(ti) {
-        te(ti, function(ui) {
-          var ci = ee(ui);
-          ci.requestCount = (ci.requestCount || 0) - 1, ci.requestCount === 0 && ui.classList.remove.call(ui.classList, G.config.requestClass);
+      function Gt(Fe) {
+        te(Fe, function(ei) {
+          var ri = ee(ei);
+          ri.requestCount = (ri.requestCount || 0) - 1, ri.requestCount === 0 && ei.classList.remove.call(ei.classList, G.config.requestClass);
         });
       }
-      function Jt(ti, ui) {
-        for (var ci = 0; ci < ti.length; ci++) {
-          var oi = ti[ci];
-          if (oi.isSameNode(ui))
+      function Jt(Fe, ei) {
+        for (var ri = 0; ri < Fe.length; ri++) {
+          var ii = Fe[ri];
+          if (ii.isSameNode(ei))
             return !0;
         }
         return !1;
       }
-      function Zt(ti) {
-        return ti.name === "" || ti.name == null || ti.disabled || ti.type === "button" || ti.type === "submit" || ti.tagName === "image" || ti.tagName === "reset" || ti.tagName === "file" ? !1 : ti.type === "checkbox" || ti.type === "radio" ? ti.checked : !0;
+      function Zt(Fe) {
+        return Fe.name === "" || Fe.name == null || Fe.disabled || Fe.type === "button" || Fe.type === "submit" || Fe.tagName === "image" || Fe.tagName === "reset" || Fe.tagName === "file" ? !1 : Fe.type === "checkbox" || Fe.type === "radio" ? Fe.checked : !0;
       }
-      function Kt(ti, ui, ci) {
-        if (ti != null && ui != null) {
-          var oi = ci[ti];
-          oi === void 0 ? ci[ti] = ui : Array.isArray(oi) ? Array.isArray(ui) ? ci[ti] = oi.concat(ui) : oi.push(ui) : Array.isArray(ui) ? ci[ti] = [oi].concat(ui) : ci[ti] = [oi, ui];
+      function Kt(Fe, ei, ri) {
+        if (Fe != null && ei != null) {
+          var ii = ri[Fe];
+          ii === void 0 ? ri[Fe] = ei : Array.isArray(ii) ? Array.isArray(ei) ? ri[Fe] = ii.concat(ei) : ii.push(ei) : Array.isArray(ei) ? ri[Fe] = [ii].concat(ei) : ri[Fe] = [ii, ei];
         }
       }
-      function Yt(ti, ui, ci, oi, Si) {
-        if (!(oi == null || Jt(ti, oi))) {
-          if (ti.push(oi), Zt(oi)) {
-            var ji = J(oi, "name"), qi = oi.value;
-            oi.multiple && (qi = I(oi.querySelectorAll("option:checked")).map(function(Qi) {
-              return Qi.value;
-            })), oi.files && (qi = I(oi.files)), Kt(ji, qi, ui), Si && Qt(oi, ci);
+      function Yt(Fe, ei, ri, ii, li) {
+        if (!(ii == null || Jt(Fe, ii))) {
+          if (Fe.push(ii), Zt(ii)) {
+            var Ci = J(ii, "name"), zi = ii.value;
+            ii.multiple && (zi = I(ii.querySelectorAll("option:checked")).map(function(Yi) {
+              return Yi.value;
+            })), ii.files && (zi = I(ii.files)), Kt(Ci, zi, ei), li && Qt(ii, ri);
           }
-          if (h(oi, "form")) {
-            var ts = oi.elements;
-            te(ts, function(Qi) {
-              Yt(ti, ui, ci, Qi, Si);
+          if (h(ii, "form")) {
+            var Ki = ii.elements;
+            te(Ki, function(Yi) {
+              Yt(Fe, ei, ri, Yi, li);
             });
           }
         }
       }
-      function Qt(ti, ui) {
-        ti.willValidate && (oe(ti, "htmx:validation:validate"), ti.checkValidity() || (ui.push({ elt: ti, message: ti.validationMessage, validity: ti.validity }), oe(ti, "htmx:validation:failed", { message: ti.validationMessage, validity: ti.validity })));
+      function Qt(Fe, ei) {
+        Fe.willValidate && (oe(Fe, "htmx:validation:validate"), Fe.checkValidity() || (ei.push({ elt: Fe, message: Fe.validationMessage, validity: Fe.validity }), oe(Fe, "htmx:validation:failed", { message: Fe.validationMessage, validity: Fe.validity })));
       }
-      function er(ti, ui) {
-        var ci = [], oi = {}, Si = {}, ji = [], qi = ee(ti), ts = h(ti, "form") && ti.noValidate !== !0 || Z(ti, "hx-validate") === "true";
-        if (qi.lastButtonClicked && (ts = ts && qi.lastButtonClicked.formNoValidate !== !0), ui !== "get" && Yt(ci, Si, ji, d(ti, "form"), ts), Yt(ci, oi, ji, ti, ts), qi.lastButtonClicked || ti.tagName === "BUTTON" || ti.tagName === "INPUT" && J(ti, "type") === "submit") {
-          var Qi = qi.lastButtonClicked || ti, is = J(Qi, "name");
-          Kt(is, Qi.value, Si);
+      function er(Fe, ei) {
+        var ri = [], ii = {}, li = {}, Ci = [], zi = ee(Fe), Ki = h(Fe, "form") && Fe.noValidate !== !0 || Z(Fe, "hx-validate") === "true";
+        if (zi.lastButtonClicked && (Ki = Ki && zi.lastButtonClicked.formNoValidate !== !0), ei !== "get" && Yt(ri, li, Ci, d(Fe, "form"), Ki), Yt(ri, ii, Ci, Fe, Ki), zi.lastButtonClicked || Fe.tagName === "BUTTON" || Fe.tagName === "INPUT" && J(Fe, "type") === "submit") {
+          var Yi = zi.lastButtonClicked || Fe, es = J(Yi, "name");
+          Kt(es, Yi.value, li);
         }
-        var ss = ce(ti, "hx-include");
-        return te(ss, function(Wi) {
-          Yt(ci, oi, ji, Wi, ts), h(Wi, "form") || te(Wi.querySelectorAll($e), function(Ki) {
-            Yt(ci, oi, ji, Ki, ts);
+        var is = ce(Fe, "hx-include");
+        return te(is, function($i) {
+          Yt(ri, ii, Ci, $i, Ki), h($i, "form") || te($i.querySelectorAll($e), function(Vi) {
+            Yt(ri, ii, Ci, Vi, Ki);
           });
-        }), oi = ne(oi, Si), { errors: ji, values: oi };
+        }), ii = ne(ii, li), { errors: Ci, values: ii };
       }
-      function tr(ti, ui, ci) {
-        ti !== "" && (ti += "&"), String(ci) === "[object Object]" && (ci = JSON.stringify(ci));
-        var oi = encodeURIComponent(ci);
-        return ti += encodeURIComponent(ui) + "=" + oi, ti;
+      function tr(Fe, ei, ri) {
+        Fe !== "" && (Fe += "&"), String(ri) === "[object Object]" && (ri = JSON.stringify(ri));
+        var ii = encodeURIComponent(ri);
+        return Fe += encodeURIComponent(ei) + "=" + ii, Fe;
       }
-      function rr(ti) {
-        var ui = "";
-        for (var ci in ti)
-          if (ti.hasOwnProperty(ci)) {
-            var oi = ti[ci];
-            Array.isArray(oi) ? te(oi, function(Si) {
-              ui = tr(ui, ci, Si);
-            }) : ui = tr(ui, ci, oi);
+      function rr(Fe) {
+        var ei = "";
+        for (var ri in Fe)
+          if (Fe.hasOwnProperty(ri)) {
+            var ii = Fe[ri];
+            Array.isArray(ii) ? te(ii, function(li) {
+              ei = tr(ei, ri, li);
+            }) : ei = tr(ei, ri, ii);
           }
-        return ui;
+        return ei;
       }
-      function nr(ti) {
-        var ui = new FormData();
-        for (var ci in ti)
-          if (ti.hasOwnProperty(ci)) {
-            var oi = ti[ci];
-            Array.isArray(oi) ? te(oi, function(Si) {
-              ui.append(ci, Si);
-            }) : ui.append(ci, oi);
+      function nr(Fe) {
+        var ei = new FormData();
+        for (var ri in Fe)
+          if (Fe.hasOwnProperty(ri)) {
+            var ii = Fe[ri];
+            Array.isArray(ii) ? te(ii, function(li) {
+              ei.append(ri, li);
+            }) : ei.append(ri, ii);
           }
-        return ui;
+        return ei;
       }
-      function ir(ti, ui, ci) {
-        var oi = { "HX-Request": "true", "HX-Trigger": J(ti, "id"), "HX-Trigger-Name": J(ti, "name"), "HX-Target": Z(ui, "id"), "HX-Current-URL": K().location.href };
-        return cr(ti, "hx-headers", !1, oi), ci !== void 0 && (oi["HX-Prompt"] = ci), ee(ti).boosted && (oi["HX-Boosted"] = "true"), oi;
+      function ir(Fe, ei, ri) {
+        var ii = { "HX-Request": "true", "HX-Trigger": J(Fe, "id"), "HX-Trigger-Name": J(Fe, "name"), "HX-Target": Z(ei, "id"), "HX-Current-URL": K().location.href };
+        return cr(Fe, "hx-headers", !1, ii), ri !== void 0 && (ii["HX-Prompt"] = ri), ee(Fe).boosted && (ii["HX-Boosted"] = "true"), ii;
       }
-      function ar(ti, ui) {
-        var ci = Y(ui, "hx-params");
-        if (ci) {
-          if (ci === "none")
+      function ar(Fe, ei) {
+        var ri = Y(ei, "hx-params");
+        if (ri) {
+          if (ri === "none")
             return {};
-          if (ci === "*")
-            return ti;
-          if (ci.indexOf("not ") === 0)
-            return te(ci.substr(4).split(","), function(Si) {
-              Si = Si.trim(), delete ti[Si];
-            }), ti;
-          var oi = {};
-          return te(ci.split(","), function(Si) {
-            Si = Si.trim(), oi[Si] = ti[Si];
-          }), oi;
+          if (ri === "*")
+            return Fe;
+          if (ri.indexOf("not ") === 0)
+            return te(ri.substr(4).split(","), function(li) {
+              li = li.trim(), delete Fe[li];
+            }), Fe;
+          var ii = {};
+          return te(ri.split(","), function(li) {
+            li = li.trim(), ii[li] = Fe[li];
+          }), ii;
         } else
-          return ti;
+          return Fe;
       }
-      function or(ti) {
-        return J(ti, "href") && J(ti, "href").indexOf("#") >= 0;
+      function or(Fe) {
+        return J(Fe, "href") && J(Fe, "href").indexOf("#") >= 0;
       }
-      function sr(ti, ui) {
-        var ci = ui || Y(ti, "hx-swap"), oi = { swapStyle: ee(ti).boosted ? "innerHTML" : G.config.defaultSwapStyle, swapDelay: G.config.defaultSwapDelay, settleDelay: G.config.defaultSettleDelay };
-        if (ee(ti).boosted && !or(ti) && (oi.show = "top"), ci) {
-          var Si = k(ci);
-          if (Si.length > 0) {
-            oi.swapStyle = Si[0];
-            for (var ji = 1; ji < Si.length; ji++) {
-              var qi = Si[ji];
-              if (qi.indexOf("swap:") === 0 && (oi.swapDelay = v(qi.substr(5))), qi.indexOf("settle:") === 0 && (oi.settleDelay = v(qi.substr(7))), qi.indexOf("transition:") === 0 && (oi.transition = qi.substr(11) === "true"), qi.indexOf("scroll:") === 0) {
-                var ts = qi.substr(7), Qi = ts.split(":"), is = Qi.pop(), ss = Qi.length > 0 ? Qi.join(":") : null;
-                oi.scroll = is, oi.scrollTarget = ss;
+      function sr(Fe, ei) {
+        var ri = ei || Y(Fe, "hx-swap"), ii = { swapStyle: ee(Fe).boosted ? "innerHTML" : G.config.defaultSwapStyle, swapDelay: G.config.defaultSwapDelay, settleDelay: G.config.defaultSettleDelay };
+        if (ee(Fe).boosted && !or(Fe) && (ii.show = "top"), ri) {
+          var li = k(ri);
+          if (li.length > 0) {
+            ii.swapStyle = li[0];
+            for (var Ci = 1; Ci < li.length; Ci++) {
+              var zi = li[Ci];
+              if (zi.indexOf("swap:") === 0 && (ii.swapDelay = v(zi.substr(5))), zi.indexOf("settle:") === 0 && (ii.settleDelay = v(zi.substr(7))), zi.indexOf("transition:") === 0 && (ii.transition = zi.substr(11) === "true"), zi.indexOf("scroll:") === 0) {
+                var Ki = zi.substr(7), Yi = Ki.split(":"), es = Yi.pop(), is = Yi.length > 0 ? Yi.join(":") : null;
+                ii.scroll = es, ii.scrollTarget = is;
               }
-              if (qi.indexOf("show:") === 0) {
-                var Wi = qi.substr(5), Qi = Wi.split(":"), Ki = Qi.pop(), ss = Qi.length > 0 ? Qi.join(":") : null;
-                oi.show = Ki, oi.showTarget = ss;
+              if (zi.indexOf("show:") === 0) {
+                var $i = zi.substr(5), Yi = $i.split(":"), Vi = Yi.pop(), is = Yi.length > 0 ? Yi.join(":") : null;
+                ii.show = Vi, ii.showTarget = is;
               }
-              if (qi.indexOf("focus-scroll:") === 0) {
-                var Ui = qi.substr(13);
-                oi.focusScroll = Ui == "true";
+              if (zi.indexOf("focus-scroll:") === 0) {
+                var _i = zi.substr(13);
+                ii.focusScroll = _i == "true";
               }
             }
           }
         }
-        return oi;
+        return ii;
       }
-      function lr(ti) {
-        return Y(ti, "hx-encoding") === "multipart/form-data" || h(ti, "form") && J(ti, "enctype") === "multipart/form-data";
+      function lr(Fe) {
+        return Y(Fe, "hx-encoding") === "multipart/form-data" || h(Fe, "form") && J(Fe, "enctype") === "multipart/form-data";
       }
-      function ur(ti, ui, ci) {
-        var oi = null;
-        return w(ui, function(Si) {
-          oi == null && (oi = Si.encodeParameters(ti, ci, ui));
-        }), oi ?? (lr(ui) ? nr(ci) : rr(ci));
+      function ur(Fe, ei, ri) {
+        var ii = null;
+        return w(ei, function(li) {
+          ii == null && (ii = li.encodeParameters(Fe, ri, ei));
+        }), ii ?? (lr(ei) ? nr(ri) : rr(ri));
       }
-      function S(ti) {
-        return { tasks: [], elts: [ti] };
+      function S(Fe) {
+        return { tasks: [], elts: [Fe] };
       }
-      function fr(ti, ui) {
-        var ci = ti[0], oi = ti[ti.length - 1];
-        if (ui.scroll) {
-          var Si = null;
-          ui.scrollTarget && (Si = ie(ci, ui.scrollTarget)), ui.scroll === "top" && (ci || Si) && (Si = Si || ci, Si.scrollTop = 0), ui.scroll === "bottom" && (oi || Si) && (Si = Si || oi, Si.scrollTop = Si.scrollHeight);
+      function fr(Fe, ei) {
+        var ri = Fe[0], ii = Fe[Fe.length - 1];
+        if (ei.scroll) {
+          var li = null;
+          ei.scrollTarget && (li = ie(ri, ei.scrollTarget)), ei.scroll === "top" && (ri || li) && (li = li || ri, li.scrollTop = 0), ei.scroll === "bottom" && (ii || li) && (li = li || ii, li.scrollTop = li.scrollHeight);
         }
-        if (ui.show) {
-          var Si = null;
-          if (ui.showTarget) {
-            var ji = ui.showTarget;
-            ui.showTarget === "window" && (ji = "body"), Si = ie(ci, ji);
+        if (ei.show) {
+          var li = null;
+          if (ei.showTarget) {
+            var Ci = ei.showTarget;
+            ei.showTarget === "window" && (Ci = "body"), li = ie(ri, Ci);
           }
-          ui.show === "top" && (ci || Si) && (Si = Si || ci, Si.scrollIntoView({ block: "start", behavior: G.config.scrollBehavior })), ui.show === "bottom" && (oi || Si) && (Si = Si || oi, Si.scrollIntoView({ block: "end", behavior: G.config.scrollBehavior }));
+          ei.show === "top" && (ri || li) && (li = li || ri, li.scrollIntoView({ block: "start", behavior: G.config.scrollBehavior })), ei.show === "bottom" && (ii || li) && (li = li || ii, li.scrollIntoView({ block: "end", behavior: G.config.scrollBehavior }));
         }
       }
-      function cr(ti, ui, ci, oi) {
-        if (oi == null && (oi = {}), ti == null)
-          return oi;
-        var Si = Z(ti, ui);
-        if (Si) {
-          var ji = Si.trim(), qi = ci;
-          if (ji === "unset")
+      function cr(Fe, ei, ri, ii) {
+        if (ii == null && (ii = {}), Fe == null)
+          return ii;
+        var li = Z(Fe, ei);
+        if (li) {
+          var Ci = li.trim(), zi = ri;
+          if (Ci === "unset")
             return null;
-          ji.indexOf("javascript:") === 0 ? (ji = ji.substr(11), qi = !0) : ji.indexOf("js:") === 0 && (ji = ji.substr(3), qi = !0), ji.indexOf("{") !== 0 && (ji = "{" + ji + "}");
-          var ts;
-          qi ? ts = hr(ti, function() {
-            return Function("return (" + ji + ")")();
-          }, {}) : ts = y(ji);
-          for (var Qi in ts)
-            ts.hasOwnProperty(Qi) && oi[Qi] == null && (oi[Qi] = ts[Qi]);
+          Ci.indexOf("javascript:") === 0 ? (Ci = Ci.substr(11), zi = !0) : Ci.indexOf("js:") === 0 && (Ci = Ci.substr(3), zi = !0), Ci.indexOf("{") !== 0 && (Ci = "{" + Ci + "}");
+          var Ki;
+          zi ? Ki = hr(Fe, function() {
+            return Function("return (" + Ci + ")")();
+          }, {}) : Ki = y(Ci);
+          for (var Yi in Ki)
+            Ki.hasOwnProperty(Yi) && ii[Yi] == null && (ii[Yi] = Ki[Yi]);
         }
-        return cr(u(ti), ui, ci, oi);
+        return cr(u(Fe), ei, ri, ii);
       }
-      function hr(ti, ui, ci) {
-        return G.config.allowEval ? ui() : (ae(ti, "htmx:evalDisallowedError"), ci);
+      function hr(Fe, ei, ri) {
+        return G.config.allowEval ? ei() : (ae(Fe, "htmx:evalDisallowedError"), ri);
       }
-      function dr(ti, ui) {
-        return cr(ti, "hx-vars", !0, ui);
+      function dr(Fe, ei) {
+        return cr(Fe, "hx-vars", !0, ei);
       }
-      function vr(ti, ui) {
-        return cr(ti, "hx-vals", !1, ui);
+      function vr(Fe, ei) {
+        return cr(Fe, "hx-vals", !1, ei);
       }
-      function gr(ti) {
-        return ne(dr(ti), vr(ti));
+      function gr(Fe) {
+        return ne(dr(Fe), vr(Fe));
       }
-      function pr(ti, ui, ci) {
-        if (ci !== null)
+      function pr(Fe, ei, ri) {
+        if (ri !== null)
           try {
-            ti.setRequestHeader(ui, ci);
+            Fe.setRequestHeader(ei, ri);
           } catch {
-            ti.setRequestHeader(ui, encodeURIComponent(ci)), ti.setRequestHeader(ui + "-URI-AutoEncoded", "true");
+            Fe.setRequestHeader(ei, encodeURIComponent(ri)), Fe.setRequestHeader(ei + "-URI-AutoEncoded", "true");
           }
       }
-      function mr(ti) {
-        if (ti.responseURL && typeof URL < "u")
+      function mr(Fe) {
+        if (Fe.responseURL && typeof URL < "u")
           try {
-            var ui = new URL(ti.responseURL);
-            return ui.pathname + ui.search;
+            var ei = new URL(Fe.responseURL);
+            return ei.pathname + ei.search;
           } catch {
-            ae(K().body, "htmx:badResponseUrl", { url: ti.responseURL });
+            ae(K().body, "htmx:badResponseUrl", { url: Fe.responseURL });
           }
       }
-      function E(ti, ui) {
-        return ti.getAllResponseHeaders().match(ui);
+      function E(Fe, ei) {
+        return Fe.getAllResponseHeaders().match(ei);
       }
-      function xr(ti, ui, ci) {
-        return ti = ti.toLowerCase(), ci ? ci instanceof Element || L(ci, "String") ? se(ti, ui, null, null, { targetOverride: s(ci), returnPromise: !0 }) : se(ti, ui, s(ci.source), ci.event, { handler: ci.handler, headers: ci.headers, values: ci.values, targetOverride: s(ci.target), swapOverride: ci.swap, returnPromise: !0 }) : se(ti, ui, null, null, { returnPromise: !0 });
+      function xr(Fe, ei, ri) {
+        return Fe = Fe.toLowerCase(), ri ? ri instanceof Element || L(ri, "String") ? se(Fe, ei, null, null, { targetOverride: s(ri), returnPromise: !0 }) : se(Fe, ei, s(ri.source), ri.event, { handler: ri.handler, headers: ri.headers, values: ri.values, targetOverride: s(ri.target), swapOverride: ri.swap, returnPromise: !0 }) : se(Fe, ei, null, null, { returnPromise: !0 });
       }
-      function yr(ti) {
-        for (var ui = []; ti; )
-          ui.push(ti), ti = ti.parentElement;
-        return ui;
+      function yr(Fe) {
+        for (var ei = []; Fe; )
+          ei.push(Fe), Fe = Fe.parentElement;
+        return ei;
       }
-      function br(ti, ui, ci) {
-        var oi = new URL(ui, document.location.href), Si = document.location.origin, ji = Si === oi.origin;
-        return G.config.selfRequestsOnly && !ji ? !1 : oe(ti, "htmx:validateUrl", ne({ url: oi, sameHost: ji }, ci));
+      function br(Fe, ei, ri) {
+        var ii = new URL(ei, document.location.href), li = document.location.origin, Ci = li === ii.origin;
+        return G.config.selfRequestsOnly && !Ci ? !1 : oe(Fe, "htmx:validateUrl", ne({ url: ii, sameHost: Ci }, ri));
       }
-      function se(ti, ui, ci, oi, Si, ji) {
-        var qi = null, ts = null;
-        if (Si = Si ?? {}, Si.returnPromise && typeof Promise < "u")
-          var Qi = new Promise(function(mi, vi) {
-            qi = mi, ts = vi;
+      function se(Fe, ei, ri, ii, li, Ci) {
+        var zi = null, Ki = null;
+        if (li = li ?? {}, li.returnPromise && typeof Promise < "u")
+          var Yi = new Promise(function(xi, yi) {
+            zi = xi, Ki = yi;
           });
-        ci == null && (ci = K().body);
-        var is = Si.handler || Sr;
-        if (re(ci)) {
-          var ss = Si.targetOverride || de(ci);
-          if (ss == null || ss == fe) {
-            ae(ci, "htmx:targetError", { target: Z(ci, "hx-target") });
+        ri == null && (ri = K().body);
+        var es = li.handler || Sr;
+        if (re(ri)) {
+          var is = li.targetOverride || de(ri);
+          if (is == null || is == fe) {
+            ae(ri, "htmx:targetError", { target: Z(ri, "hx-target") });
             return;
           }
-          if (!ji) {
-            var Wi = function() {
-              return se(ti, ui, ci, oi, Si, !0);
-            }, Ki = { target: ss, elt: ci, path: ui, verb: ti, triggeringEvent: oi, etc: Si, issueRequest: Wi };
-            if (oe(ci, "htmx:confirm", Ki) === !1)
+          if (!Ci) {
+            var $i = function() {
+              return se(Fe, ei, ri, ii, li, !0);
+            }, Vi = { target: is, elt: ri, path: ei, verb: Fe, triggeringEvent: ii, etc: li, issueRequest: $i };
+            if (oe(ri, "htmx:confirm", Vi) === !1)
               return;
           }
-          var Ui = ci, ki = ee(ci), bi = Y(ci, "hx-sync"), Ri = null, Ni = !1;
-          if (bi) {
-            var fi = bi.split(":"), Ci = fi[0].trim();
-            if (Ci === "this" ? Ui = he(ci, "hx-sync") : Ui = ie(ci, Ci), bi = (fi[1] || "drop").trim(), ki = ee(Ui), bi === "drop" && ki.xhr && ki.abortable !== !0)
+          var _i = ri, bi = ee(ri), Ai = Y(ri, "hx-sync"), ji = null, Ni = !1;
+          if (Ai) {
+            var gi = Ai.split(":"), ki = gi[0].trim();
+            if (ki === "this" ? _i = he(ri, "hx-sync") : _i = ie(ri, ki), Ai = (gi[1] || "drop").trim(), bi = ee(_i), Ai === "drop" && bi.xhr && bi.abortable !== !0)
               return;
-            if (bi === "abort") {
-              if (ki.xhr)
+            if (Ai === "abort") {
+              if (bi.xhr)
                 return;
               Ni = !0;
-            } else if (bi === "replace")
-              oe(Ui, "htmx:abort");
-            else if (bi.indexOf("queue") === 0) {
-              var wi = bi.split(" ");
-              Ri = (wi[1] || "last").trim();
+            } else if (Ai === "replace")
+              oe(_i, "htmx:abort");
+            else if (Ai.indexOf("queue") === 0) {
+              var wi = Ai.split(" ");
+              ji = (wi[1] || "last").trim();
             }
           }
-          if (ki.xhr)
-            if (ki.abortable)
-              oe(Ui, "htmx:abort");
+          if (bi.xhr)
+            if (bi.abortable)
+              oe(_i, "htmx:abort");
             else {
-              if (Ri == null) {
-                if (oi) {
-                  var yi = ee(oi);
-                  yi && yi.triggerSpec && yi.triggerSpec.queue && (Ri = yi.triggerSpec.queue);
+              if (ji == null) {
+                if (ii) {
+                  var Si = ee(ii);
+                  Si && Si.triggerSpec && Si.triggerSpec.queue && (ji = Si.triggerSpec.queue);
                 }
-                Ri == null && (Ri = "last");
+                ji == null && (ji = "last");
               }
-              ki.queuedRequests == null && (ki.queuedRequests = []), Ri === "first" && ki.queuedRequests.length === 0 ? ki.queuedRequests.push(function() {
-                se(ti, ui, ci, oi, Si);
-              }) : Ri === "all" ? ki.queuedRequests.push(function() {
-                se(ti, ui, ci, oi, Si);
-              }) : Ri === "last" && (ki.queuedRequests = [], ki.queuedRequests.push(function() {
-                se(ti, ui, ci, oi, Si);
+              bi.queuedRequests == null && (bi.queuedRequests = []), ji === "first" && bi.queuedRequests.length === 0 ? bi.queuedRequests.push(function() {
+                se(Fe, ei, ri, ii, li);
+              }) : ji === "all" ? bi.queuedRequests.push(function() {
+                se(Fe, ei, ri, ii, li);
+              }) : ji === "last" && (bi.queuedRequests = [], bi.queuedRequests.push(function() {
+                se(Fe, ei, ri, ii, li);
               }));
               return;
             }
           var Ti = new XMLHttpRequest();
-          ki.xhr = Ti, ki.abortable = Ni;
+          bi.xhr = Ti, bi.abortable = Ni;
           var Mi = function() {
-            if (ki.xhr = null, ki.abortable = !1, ki.queuedRequests != null && ki.queuedRequests.length > 0) {
-              var mi = ki.queuedRequests.shift();
-              mi();
+            if (bi.xhr = null, bi.abortable = !1, bi.queuedRequests != null && bi.queuedRequests.length > 0) {
+              var xi = bi.queuedRequests.shift();
+              xi();
             }
-          }, Oi = Y(ci, "hx-prompt");
-          if (Oi) {
-            var ai = prompt(Oi);
-            if (ai === null || !oe(ci, "htmx:prompt", { prompt: ai, target: ss }))
-              return Q(qi), Mi(), Qi;
+          }, Di = Y(ri, "hx-prompt");
+          if (Di) {
+            var ci = prompt(Di);
+            if (ci === null || !oe(ri, "htmx:prompt", { prompt: ci, target: is }))
+              return Q(zi), Mi(), Yi;
           }
-          var li = Y(ci, "hx-confirm");
-          if (li && !confirm(li))
-            return Q(qi), Mi(), Qi;
-          var xi = ir(ci, ss, ai);
-          Si.headers && (xi = ne(xi, Si.headers));
-          var di = er(ci, ti), pi = di.errors, ei = di.values;
-          Si.values && (ei = ne(ei, Si.values));
-          var Fe = gr(ci), ii = ne(ei, Fe), hi = ar(ii, ci);
-          ti !== "get" && !lr(ci) && (xi["Content-Type"] = "application/x-www-form-urlencoded"), G.config.getCacheBusterParam && ti === "get" && (hi["org.htmx.cache-buster"] = J(ss, "id") || "true"), (ui == null || ui === "") && (ui = K().location.href);
-          var gi = cr(ci, "hx-request"), Ei = ee(ci).boosted, ni = G.config.methodsThatUseUrlParams.indexOf(ti) >= 0, Pi = { boosted: Ei, useUrlParams: ni, parameters: hi, unfilteredParameters: ii, headers: xi, target: ss, verb: ti, errors: pi, withCredentials: Si.credentials || gi.credentials || G.config.withCredentials, timeout: Si.timeout || gi.timeout || G.config.timeout, path: ui, triggeringEvent: oi };
-          if (!oe(ci, "htmx:configRequest", Pi))
-            return Q(qi), Mi(), Qi;
-          if (ui = Pi.path, ti = Pi.verb, xi = Pi.headers, hi = Pi.parameters, pi = Pi.errors, ni = Pi.useUrlParams, pi && pi.length > 0)
-            return oe(ci, "htmx:validation:halted", Pi), Q(qi), Mi(), Qi;
-          var Fi = ui.split("#"), Zi = Fi[0], rs = Fi[1], Bi = ui;
-          if (ni) {
+          var pi = Y(ri, "hx-confirm");
+          if (pi && !confirm(pi))
+            return Q(zi), Mi(), Yi;
+          var vi = ir(ri, is, ci);
+          li.headers && (vi = ne(vi, li.headers));
+          var ui = er(ri, Fe), fi = ui.errors, si = ui.values;
+          li.values && (si = ne(si, li.values));
+          var ti = gr(ri), oi = ne(si, ti), di = ar(oi, ri);
+          Fe !== "get" && !lr(ri) && (vi["Content-Type"] = "application/x-www-form-urlencoded"), G.config.getCacheBusterParam && Fe === "get" && (di["org.htmx.cache-buster"] = J(is, "id") || "true"), (ei == null || ei === "") && (ei = K().location.href);
+          var mi = cr(ri, "hx-request"), Oi = ee(ri).boosted, hi = G.config.methodsThatUseUrlParams.indexOf(Fe) >= 0, Li = { boosted: Oi, useUrlParams: hi, parameters: di, unfilteredParameters: oi, headers: vi, target: is, verb: Fe, errors: fi, withCredentials: li.credentials || mi.credentials || G.config.withCredentials, timeout: li.timeout || mi.timeout || G.config.timeout, path: ei, triggeringEvent: ii };
+          if (!oe(ri, "htmx:configRequest", Li))
+            return Q(zi), Mi(), Yi;
+          if (ei = Li.path, Fe = Li.verb, vi = Li.headers, di = Li.parameters, fi = Li.errors, hi = Li.useUrlParams, fi && fi.length > 0)
+            return oe(ri, "htmx:validation:halted", Li), Q(zi), Mi(), Yi;
+          var Ui = ei.split("#"), Zi = Ui[0], rs = Ui[1], Bi = ei;
+          if (hi) {
             Bi = Zi;
-            var si = Object.keys(hi).length !== 0;
-            si && (Bi.indexOf("?") < 0 ? Bi += "?" : Bi += "&", Bi += rr(hi), rs && (Bi += "#" + rs));
+            var ni = Object.keys(di).length !== 0;
+            ni && (Bi.indexOf("?") < 0 ? Bi += "?" : Bi += "&", Bi += rr(di), rs && (Bi += "#" + rs));
           }
-          if (!br(ci, Bi, Pi)) {
-            ae(ci, "htmx:invalidPath", Pi);
+          if (!br(ri, Bi, Li)) {
+            ae(ri, "htmx:invalidPath", Li);
             return;
           }
-          if (Ti.open(ti.toUpperCase(), Bi, !0), Ti.overrideMimeType("text/html"), Ti.withCredentials = Pi.withCredentials, Ti.timeout = Pi.timeout, !gi.noHeaders) {
-            for (var Li in xi)
-              if (xi.hasOwnProperty(Li)) {
-                var Hi = xi[Li];
-                pr(Ti, Li, Hi);
+          if (Ti.open(Fe.toUpperCase(), Bi, !0), Ti.overrideMimeType("text/html"), Ti.withCredentials = Li.withCredentials, Ti.timeout = Li.timeout, !mi.noHeaders) {
+            for (var Pi in vi)
+              if (vi.hasOwnProperty(Pi)) {
+                var Hi = vi[Pi];
+                pr(Ti, Pi, Hi);
               }
           }
-          var Di = { xhr: Ti, target: ss, requestConfig: Pi, etc: Si, boosted: Ei, pathInfo: { requestPath: ui, finalRequestPath: Bi, anchor: rs } };
+          var Ri = { xhr: Ti, target: is, requestConfig: Li, etc: li, boosted: Oi, pathInfo: { requestPath: ei, finalRequestPath: Bi, anchor: rs } };
           if (Ti.onload = function() {
             try {
-              var mi = yr(ci);
-              if (Di.pathInfo.responsePath = mr(Ti), is(ci, Di), Gt(Vi), oe(ci, "htmx:afterRequest", Di), oe(ci, "htmx:afterOnLoad", Di), !re(ci)) {
-                for (var vi = null; mi.length > 0 && vi == null; ) {
-                  var zi = mi.shift();
-                  re(zi) && (vi = zi);
+              var xi = yr(ri);
+              if (Ri.pathInfo.responsePath = mr(Ti), es(ri, Ri), Gt(qi), oe(ri, "htmx:afterRequest", Ri), oe(ri, "htmx:afterOnLoad", Ri), !re(ri)) {
+                for (var yi = null; xi.length > 0 && yi == null; ) {
+                  var Gi = xi.shift();
+                  re(Gi) && (yi = Gi);
                 }
-                vi && (oe(vi, "htmx:afterRequest", Di), oe(vi, "htmx:afterOnLoad", Di));
+                yi && (oe(yi, "htmx:afterRequest", Ri), oe(yi, "htmx:afterOnLoad", Ri));
               }
-              Q(qi), Mi();
+              Q(zi), Mi();
             } catch (Xi) {
-              throw ae(ci, "htmx:onLoadError", ne({ error: Xi }, Di)), Xi;
+              throw ae(ri, "htmx:onLoadError", ne({ error: Xi }, Ri)), Xi;
             }
           }, Ti.onerror = function() {
-            Gt(Vi), ae(ci, "htmx:afterRequest", Di), ae(ci, "htmx:sendError", Di), Q(ts), Mi();
+            Gt(qi), ae(ri, "htmx:afterRequest", Ri), ae(ri, "htmx:sendError", Ri), Q(Ki), Mi();
           }, Ti.onabort = function() {
-            Gt(Vi), ae(ci, "htmx:afterRequest", Di), ae(ci, "htmx:sendAbort", Di), Q(ts), Mi();
+            Gt(qi), ae(ri, "htmx:afterRequest", Ri), ae(ri, "htmx:sendAbort", Ri), Q(Ki), Mi();
           }, Ti.ontimeout = function() {
-            Gt(Vi), ae(ci, "htmx:afterRequest", Di), ae(ci, "htmx:timeout", Di), Q(ts), Mi();
-          }, !oe(ci, "htmx:beforeRequest", Di))
-            return Q(qi), Mi(), Qi;
-          var Vi = $t(ci);
-          te(["loadstart", "loadend", "progress", "abort"], function(mi) {
-            te([Ti, Ti.upload], function(vi) {
-              vi.addEventListener(mi, function(zi) {
-                oe(ci, "htmx:xhr:" + mi, { lengthComputable: zi.lengthComputable, loaded: zi.loaded, total: zi.total });
+            Gt(qi), ae(ri, "htmx:afterRequest", Ri), ae(ri, "htmx:timeout", Ri), Q(Ki), Mi();
+          }, !oe(ri, "htmx:beforeRequest", Ri))
+            return Q(zi), Mi(), Yi;
+          var qi = $t(ri);
+          te(["loadstart", "loadend", "progress", "abort"], function(xi) {
+            te([Ti, Ti.upload], function(yi) {
+              yi.addEventListener(xi, function(Gi) {
+                oe(ri, "htmx:xhr:" + xi, { lengthComputable: Gi.lengthComputable, loaded: Gi.loaded, total: Gi.total });
               });
             });
-          }), oe(ci, "htmx:beforeSend", Di);
-          var ri = ni ? null : ur(Ti, ci, hi);
-          return Ti.send(ri), Qi;
+          }), oe(ri, "htmx:beforeSend", Ri);
+          var ai = hi ? null : ur(Ti, ri, di);
+          return Ti.send(ai), Yi;
         }
       }
-      function wr(ti, ui) {
-        var ci = ui.xhr, oi = null, Si = null;
-        if (E(ci, /HX-Push:/i) ? (oi = ci.getResponseHeader("HX-Push"), Si = "push") : E(ci, /HX-Push-Url:/i) ? (oi = ci.getResponseHeader("HX-Push-Url"), Si = "push") : E(ci, /HX-Replace-Url:/i) && (oi = ci.getResponseHeader("HX-Replace-Url"), Si = "replace"), oi)
-          return oi === "false" ? {} : { type: Si, path: oi };
-        var ji = ui.pathInfo.finalRequestPath, qi = ui.pathInfo.responsePath, ts = Y(ti, "hx-push-url"), Qi = Y(ti, "hx-replace-url"), is = ee(ti).boosted, ss = null, Wi = null;
-        return ts ? (ss = "push", Wi = ts) : Qi ? (ss = "replace", Wi = Qi) : is && (ss = "push", Wi = qi || ji), Wi ? Wi === "false" ? {} : (Wi === "true" && (Wi = qi || ji), ui.pathInfo.anchor && Wi.indexOf("#") === -1 && (Wi = Wi + "#" + ui.pathInfo.anchor), { type: ss, path: Wi }) : {};
+      function wr(Fe, ei) {
+        var ri = ei.xhr, ii = null, li = null;
+        if (E(ri, /HX-Push:/i) ? (ii = ri.getResponseHeader("HX-Push"), li = "push") : E(ri, /HX-Push-Url:/i) ? (ii = ri.getResponseHeader("HX-Push-Url"), li = "push") : E(ri, /HX-Replace-Url:/i) && (ii = ri.getResponseHeader("HX-Replace-Url"), li = "replace"), ii)
+          return ii === "false" ? {} : { type: li, path: ii };
+        var Ci = ei.pathInfo.finalRequestPath, zi = ei.pathInfo.responsePath, Ki = Y(Fe, "hx-push-url"), Yi = Y(Fe, "hx-replace-url"), es = ee(Fe).boosted, is = null, $i = null;
+        return Ki ? (is = "push", $i = Ki) : Yi ? (is = "replace", $i = Yi) : es && (is = "push", $i = zi || Ci), $i ? $i === "false" ? {} : ($i === "true" && ($i = zi || Ci), ei.pathInfo.anchor && $i.indexOf("#") === -1 && ($i = $i + "#" + ei.pathInfo.anchor), { type: is, path: $i }) : {};
       }
-      function Sr(ti, ui) {
-        var ci = ui.xhr, oi = ui.target, Si = ui.etc;
-        if (oe(ti, "htmx:beforeOnLoad", ui)) {
-          if (E(ci, /HX-Trigger:/i) && Xe(ci, "HX-Trigger", ti), E(ci, /HX-Location:/i)) {
+      function Sr(Fe, ei) {
+        var ri = ei.xhr, ii = ei.target, li = ei.etc;
+        if (oe(Fe, "htmx:beforeOnLoad", ei)) {
+          if (E(ri, /HX-Trigger:/i) && Xe(ri, "HX-Trigger", Fe), E(ri, /HX-Location:/i)) {
             Bt();
-            var ji = ci.getResponseHeader("HX-Location"), qi;
-            ji.indexOf("{") === 0 && (qi = y(ji), ji = qi.path, delete qi.path), xr("GET", ji, qi).then(function() {
-              Vt(ji);
+            var Ci = ri.getResponseHeader("HX-Location"), zi;
+            Ci.indexOf("{") === 0 && (zi = y(Ci), Ci = zi.path, delete zi.path), xr("GET", Ci, zi).then(function() {
+              Vt(Ci);
             });
             return;
           }
-          if (E(ci, /HX-Redirect:/i)) {
-            location.href = ci.getResponseHeader("HX-Redirect");
+          if (E(ri, /HX-Redirect:/i)) {
+            location.href = ri.getResponseHeader("HX-Redirect");
             return;
           }
-          if (E(ci, /HX-Refresh:/i) && ci.getResponseHeader("HX-Refresh") === "true") {
+          if (E(ri, /HX-Refresh:/i) && ri.getResponseHeader("HX-Refresh") === "true") {
             location.reload();
             return;
           }
-          E(ci, /HX-Retarget:/i) && (ui.target = K().querySelector(ci.getResponseHeader("HX-Retarget")));
-          var ts = wr(ti, ui), Qi = ci.status >= 200 && ci.status < 400 && ci.status !== 204, is = ci.response, ss = ci.status >= 400, Wi = ne({ shouldSwap: Qi, serverResponse: is, isError: ss }, ui);
-          if (oe(oi, "htmx:beforeSwap", Wi)) {
-            if (oi = Wi.target, is = Wi.serverResponse, ss = Wi.isError, ui.target = oi, ui.failed = ss, ui.successful = !ss, Wi.shouldSwap) {
-              ci.status === 286 && Je(ti), w(ti, function(wi) {
-                is = wi.transformResponse(is, ci, ti);
-              }), ts.type && Bt();
-              var Ki = Si.swapOverride;
-              E(ci, /HX-Reswap:/i) && (Ki = ci.getResponseHeader("HX-Reswap"));
-              var qi = sr(ti, Ki);
-              oi.classList.add(G.config.swappingClass);
-              var Ui = null, ki = null, bi = function() {
+          E(ri, /HX-Retarget:/i) && (ei.target = K().querySelector(ri.getResponseHeader("HX-Retarget")));
+          var Ki = wr(Fe, ei), Yi = ri.status >= 200 && ri.status < 400 && ri.status !== 204, es = ri.response, is = ri.status >= 400, $i = ne({ shouldSwap: Yi, serverResponse: es, isError: is }, ei);
+          if (oe(ii, "htmx:beforeSwap", $i)) {
+            if (ii = $i.target, es = $i.serverResponse, is = $i.isError, ei.target = ii, ei.failed = is, ei.successful = !is, $i.shouldSwap) {
+              ri.status === 286 && Je(Fe), w(Fe, function(wi) {
+                es = wi.transformResponse(es, ri, Fe);
+              }), Ki.type && Bt();
+              var Vi = li.swapOverride;
+              E(ri, /HX-Reswap:/i) && (Vi = ri.getResponseHeader("HX-Reswap"));
+              var zi = sr(Fe, Vi);
+              ii.classList.add(G.config.swappingClass);
+              var _i = null, bi = null, Ai = function() {
                 try {
-                  var wi = document.activeElement, yi = {};
+                  var wi = document.activeElement, Si = {};
                   try {
-                    yi = { elt: wi, start: wi ? wi.selectionStart : null, end: wi ? wi.selectionEnd : null };
+                    Si = { elt: wi, start: wi ? wi.selectionStart : null, end: wi ? wi.selectionEnd : null };
                   } catch {
                   }
                   var Ti;
-                  E(ci, /HX-Reselect:/i) && (Ti = ci.getResponseHeader("HX-Reselect"));
-                  var Mi = S(oi);
-                  if (De(qi.swapStyle, oi, ti, is, Mi, Ti), yi.elt && !re(yi.elt) && J(yi.elt, "id")) {
-                    var Oi = document.getElementById(J(yi.elt, "id")), ai = { preventScroll: qi.focusScroll !== void 0 ? !qi.focusScroll : !G.config.defaultFocusScroll };
-                    if (Oi) {
-                      if (yi.start && Oi.setSelectionRange)
+                  E(ri, /HX-Reselect:/i) && (Ti = ri.getResponseHeader("HX-Reselect"));
+                  var Mi = S(ii);
+                  if (De(zi.swapStyle, ii, Fe, es, Mi, Ti), Si.elt && !re(Si.elt) && J(Si.elt, "id")) {
+                    var Di = document.getElementById(J(Si.elt, "id")), ci = { preventScroll: zi.focusScroll !== void 0 ? !zi.focusScroll : !G.config.defaultFocusScroll };
+                    if (Di) {
+                      if (Si.start && Di.setSelectionRange)
                         try {
-                          Oi.setSelectionRange(yi.start, yi.end);
+                          Di.setSelectionRange(Si.start, Si.end);
                         } catch {
                         }
-                      Oi.focus(ai);
+                      Di.focus(ci);
                     }
                   }
-                  if (oi.classList.remove(G.config.swappingClass), te(Mi.elts, function(di) {
-                    di.classList && di.classList.add(G.config.settlingClass), oe(di, "htmx:afterSwap", ui);
-                  }), E(ci, /HX-Trigger-After-Swap:/i)) {
-                    var li = ti;
-                    re(ti) || (li = K().body), Xe(ci, "HX-Trigger-After-Swap", li);
+                  if (ii.classList.remove(G.config.swappingClass), te(Mi.elts, function(ui) {
+                    ui.classList && ui.classList.add(G.config.settlingClass), oe(ui, "htmx:afterSwap", ei);
+                  }), E(ri, /HX-Trigger-After-Swap:/i)) {
+                    var pi = Fe;
+                    re(Fe) || (pi = K().body), Xe(ri, "HX-Trigger-After-Swap", pi);
                   }
-                  var xi = function() {
-                    if (te(Mi.tasks, function(Fe) {
-                      Fe.call();
-                    }), te(Mi.elts, function(Fe) {
-                      Fe.classList && Fe.classList.remove(G.config.settlingClass), oe(Fe, "htmx:afterSettle", ui);
-                    }), ts.type && (ts.type === "push" ? (Vt(ts.path), oe(K().body, "htmx:pushedIntoHistory", { path: ts.path })) : (jt(ts.path), oe(K().body, "htmx:replacedInHistory", { path: ts.path }))), ui.pathInfo.anchor) {
-                      var di = b("#" + ui.pathInfo.anchor);
-                      di && di.scrollIntoView({ block: "start", behavior: "auto" });
+                  var vi = function() {
+                    if (te(Mi.tasks, function(ti) {
+                      ti.call();
+                    }), te(Mi.elts, function(ti) {
+                      ti.classList && ti.classList.remove(G.config.settlingClass), oe(ti, "htmx:afterSettle", ei);
+                    }), Ki.type && (Ki.type === "push" ? (Vt(Ki.path), oe(K().body, "htmx:pushedIntoHistory", { path: Ki.path })) : (jt(Ki.path), oe(K().body, "htmx:replacedInHistory", { path: Ki.path }))), ei.pathInfo.anchor) {
+                      var ui = b("#" + ei.pathInfo.anchor);
+                      ui && ui.scrollIntoView({ block: "start", behavior: "auto" });
                     }
                     if (Mi.title) {
-                      var pi = b("title");
-                      pi ? pi.innerHTML = Mi.title : window.document.title = Mi.title;
+                      var fi = b("title");
+                      fi ? fi.innerHTML = Mi.title : window.document.title = Mi.title;
                     }
-                    if (fr(Mi.elts, qi), E(ci, /HX-Trigger-After-Settle:/i)) {
-                      var ei = ti;
-                      re(ti) || (ei = K().body), Xe(ci, "HX-Trigger-After-Settle", ei);
+                    if (fr(Mi.elts, zi), E(ri, /HX-Trigger-After-Settle:/i)) {
+                      var si = Fe;
+                      re(Fe) || (si = K().body), Xe(ri, "HX-Trigger-After-Settle", si);
                     }
-                    Q(Ui);
+                    Q(_i);
                   };
-                  qi.settleDelay > 0 ? setTimeout(xi, qi.settleDelay) : xi();
-                } catch (di) {
-                  throw ae(ti, "htmx:swapError", ui), Q(ki), di;
+                  zi.settleDelay > 0 ? setTimeout(vi, zi.settleDelay) : vi();
+                } catch (ui) {
+                  throw ae(Fe, "htmx:swapError", ei), Q(bi), ui;
                 }
-              }, Ri = G.config.globalViewTransitions;
-              if (qi.hasOwnProperty("transition") && (Ri = qi.transition), Ri && oe(ti, "htmx:beforeTransition", ui) && typeof Promise < "u" && document.startViewTransition) {
-                var Ni = new Promise(function(wi, yi) {
-                  Ui = wi, ki = yi;
-                }), fi = bi;
-                bi = function() {
+              }, ji = G.config.globalViewTransitions;
+              if (zi.hasOwnProperty("transition") && (ji = zi.transition), ji && oe(Fe, "htmx:beforeTransition", ei) && typeof Promise < "u" && document.startViewTransition) {
+                var Ni = new Promise(function(wi, Si) {
+                  _i = wi, bi = Si;
+                }), gi = Ai;
+                Ai = function() {
                   document.startViewTransition(function() {
-                    return fi(), Ni;
+                    return gi(), Ni;
                   });
                 };
               }
-              qi.swapDelay > 0 ? setTimeout(bi, qi.swapDelay) : bi();
+              zi.swapDelay > 0 ? setTimeout(Ai, zi.swapDelay) : Ai();
             }
-            ss && ae(ti, "htmx:responseError", ne({ error: "Response Status Error Code " + ci.status + " from " + ui.pathInfo.requestPath }, ui));
+            is && ae(Fe, "htmx:responseError", ne({ error: "Response Status Error Code " + ri.status + " from " + ei.pathInfo.requestPath }, ei));
           }
         }
       }
       var Er = {};
       function Cr() {
-        return { init: function(ti) {
+        return { init: function(Fe) {
           return null;
-        }, onEvent: function(ti, ui) {
+        }, onEvent: function(Fe, ei) {
           return !0;
-        }, transformResponse: function(ti, ui, ci) {
-          return ti;
-        }, isInlineSwap: function(ti) {
+        }, transformResponse: function(Fe, ei, ri) {
+          return Fe;
+        }, isInlineSwap: function(Fe) {
           return !1;
-        }, handleSwap: function(ti, ui, ci, oi) {
+        }, handleSwap: function(Fe, ei, ri, ii) {
           return !1;
-        }, encodeParameters: function(ti, ui, ci) {
+        }, encodeParameters: function(Fe, ei, ri) {
           return null;
         } };
       }
-      function Rr(ti, ui) {
-        ui.init && ui.init(C), Er[ti] = ne(Cr(), ui);
+      function Rr(Fe, ei) {
+        ei.init && ei.init(C), Er[Fe] = ne(Cr(), ei);
       }
-      function Or(ti) {
-        delete Er[ti];
+      function Or(Fe) {
+        delete Er[Fe];
       }
-      function Tr(ti, ui, ci) {
-        if (ti == null)
-          return ui;
-        ui == null && (ui = []), ci == null && (ci = []);
-        var oi = Z(ti, "hx-ext");
-        return oi && te(oi.split(","), function(Si) {
-          if (Si = Si.replace(/ /g, ""), Si.slice(0, 7) == "ignore:") {
-            ci.push(Si.slice(7));
+      function Tr(Fe, ei, ri) {
+        if (Fe == null)
+          return ei;
+        ei == null && (ei = []), ri == null && (ri = []);
+        var ii = Z(Fe, "hx-ext");
+        return ii && te(ii.split(","), function(li) {
+          if (li = li.replace(/ /g, ""), li.slice(0, 7) == "ignore:") {
+            ri.push(li.slice(7));
             return;
           }
-          if (ci.indexOf(Si) < 0) {
-            var ji = Er[Si];
-            ji && ui.indexOf(ji) < 0 && ui.push(ji);
+          if (ri.indexOf(li) < 0) {
+            var Ci = Er[li];
+            Ci && ei.indexOf(Ci) < 0 && ei.push(Ci);
           }
-        }), Tr(u(ti), ui, ci);
+        }), Tr(u(Fe), ei, ri);
       }
       var qr = !1;
       K().addEventListener("DOMContentLoaded", function() {
         qr = !0;
       });
-      function Hr(ti) {
-        qr || K().readyState === "complete" ? ti() : K().addEventListener("DOMContentLoaded", ti);
+      function Hr(Fe) {
+        qr || K().readyState === "complete" ? Fe() : K().addEventListener("DOMContentLoaded", Fe);
       }
       function Lr() {
         G.config.includeIndicatorStyles !== !1 && K().head.insertAdjacentHTML("beforeend", "<style>                      ." + G.config.indicatorClass + "{opacity:0;transition: opacity 200ms ease-in;}                      ." + G.config.requestClass + " ." + G.config.indicatorClass + "{opacity:1}                      ." + G.config.requestClass + "." + G.config.indicatorClass + "{opacity:1}                    </style>");
       }
       function Ar() {
-        var ti = K().querySelector('meta[name="htmx-config"]');
-        return ti ? y(ti.content) : null;
+        var Fe = K().querySelector('meta[name="htmx-config"]');
+        return Fe ? y(Fe.content) : null;
       }
       function Nr() {
-        var ti = Ar();
-        ti && (G.config = ne(G.config, ti));
+        var Fe = Ar();
+        Fe && (G.config = ne(G.config, Fe));
       }
       return Hr(function() {
         Nr(), Lr();
-        var ti = K().body;
-        Nt(ti);
-        var ui = K().querySelectorAll("[hx-trigger='restored'],[data-hx-trigger='restored']");
-        ti.addEventListener("htmx:abort", function(oi) {
-          var Si = oi.target, ji = ee(Si);
-          ji && ji.xhr && ji.xhr.abort();
+        var Fe = K().body;
+        Nt(Fe);
+        var ei = K().querySelectorAll("[hx-trigger='restored'],[data-hx-trigger='restored']");
+        Fe.addEventListener("htmx:abort", function(ii) {
+          var li = ii.target, Ci = ee(li);
+          Ci && Ci.xhr && Ci.xhr.abort();
         });
-        var ci = window.onpopstate;
-        window.onpopstate = function(oi) {
-          oi.state && oi.state.htmx ? (zt(), te(ui, function(Si) {
-            oe(Si, "htmx:restored", { document: K(), triggerEvent: oe });
-          })) : ci && ci(oi);
+        var ri = window.onpopstate;
+        window.onpopstate = function(ii) {
+          ii.state && ii.state.htmx ? (zt(), te(ei, function(li) {
+            oe(li, "htmx:restored", { document: K(), triggerEvent: oe });
+          })) : ri && ri(ii);
         }, setTimeout(function() {
-          oe(ti, "htmx:load", {}), ti = null;
+          oe(Fe, "htmx:load", {}), Fe = null;
         }, 0);
       }), G;
     }();
@@ -8064,24 +8063,850 @@ var htmx_min = { exports: {} };
 })(htmx_min);
 var htmx_minExports = htmx_min.exports;
 const htmx = /* @__PURE__ */ getDefaultExportFromCjs(htmx_minExports);
-window.htmx = htmx;
-async function prices(ti) {
-  return fetch(`https://api.coincap.io/v2/assets/bitcoin/history?interval=m15&start=${Date.now() - 6048e5}&end=${Date.now()}`).then((ui) => ui.json()).then((ui) => ui.data.map((ci) => [ci.time, Number(ci.priceUsd)]));
+/**
+ * @license
+ * Copyright 2019 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+const t$1 = globalThis, e$2 = t$1.ShadowRoot && (t$1.ShadyCSS === void 0 || t$1.ShadyCSS.nativeShadow) && "adoptedStyleSheets" in Document.prototype && "replace" in CSSStyleSheet.prototype, s$2 = Symbol(), o$3 = /* @__PURE__ */ new WeakMap();
+let n$3 = class {
+  constructor(ei, ri, ii) {
+    if (this._$cssResult$ = !0, ii !== s$2)
+      throw Error("CSSResult is not constructable. Use `unsafeCSS` or `css` instead.");
+    this.cssText = ei, this.t = ri;
+  }
+  get styleSheet() {
+    let ei = this.o;
+    const ri = this.t;
+    if (e$2 && ei === void 0) {
+      const ii = ri !== void 0 && ri.length === 1;
+      ii && (ei = o$3.get(ri)), ei === void 0 && ((this.o = ei = new CSSStyleSheet()).replaceSync(this.cssText), ii && o$3.set(ri, ei));
+    }
+    return ei;
+  }
+  toString() {
+    return this.cssText;
+  }
+};
+const r$5 = (Fe) => new n$3(typeof Fe == "string" ? Fe : Fe + "", void 0, s$2), i$2 = (Fe, ...ei) => {
+  const ri = Fe.length === 1 ? Fe[0] : ei.reduce((ii, li, Ci) => ii + ((zi) => {
+    if (zi._$cssResult$ === !0)
+      return zi.cssText;
+    if (typeof zi == "number")
+      return zi;
+    throw Error("Value passed to 'css' function must be a 'css' function result: " + zi + ". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.");
+  })(li) + Fe[Ci + 1], Fe[0]);
+  return new n$3(ri, Fe, s$2);
+}, S$1 = (Fe, ei) => {
+  if (e$2)
+    Fe.adoptedStyleSheets = ei.map((ri) => ri instanceof CSSStyleSheet ? ri : ri.styleSheet);
+  else
+    for (const ri of ei) {
+      const ii = document.createElement("style"), li = t$1.litNonce;
+      li !== void 0 && ii.setAttribute("nonce", li), ii.textContent = ri.cssText, Fe.appendChild(ii);
+    }
+}, c$2 = e$2 ? (Fe) => Fe : (Fe) => Fe instanceof CSSStyleSheet ? ((ei) => {
+  let ri = "";
+  for (const ii of ei.cssRules)
+    ri += ii.cssText;
+  return r$5(ri);
+})(Fe) : Fe;
+/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+const { is: i$1, defineProperty: e$1, getOwnPropertyDescriptor: r$4, getOwnPropertyNames: h$1, getOwnPropertySymbols: o$2, getPrototypeOf: n$2 } = Object, a$1 = globalThis, c$1 = a$1.trustedTypes, l$1 = c$1 ? c$1.emptyScript : "", p$1 = a$1.reactiveElementPolyfillSupport, d$1 = (Fe, ei) => Fe, u$1 = { toAttribute(Fe, ei) {
+  switch (ei) {
+    case Boolean:
+      Fe = Fe ? l$1 : null;
+      break;
+    case Object:
+    case Array:
+      Fe = Fe == null ? Fe : JSON.stringify(Fe);
+  }
+  return Fe;
+}, fromAttribute(Fe, ei) {
+  let ri = Fe;
+  switch (ei) {
+    case Boolean:
+      ri = Fe !== null;
+      break;
+    case Number:
+      ri = Fe === null ? null : Number(Fe);
+      break;
+    case Object:
+    case Array:
+      try {
+        ri = JSON.parse(Fe);
+      } catch {
+        ri = null;
+      }
+  }
+  return ri;
+} }, f$1 = (Fe, ei) => !i$1(Fe, ei), y$1 = { attribute: !0, type: String, converter: u$1, reflect: !1, hasChanged: f$1 };
+Symbol.metadata ?? (Symbol.metadata = Symbol("metadata")), a$1.litPropertyMetadata ?? (a$1.litPropertyMetadata = /* @__PURE__ */ new WeakMap());
+class b extends HTMLElement {
+  static addInitializer(ei) {
+    this._$Ei(), (this.l ?? (this.l = [])).push(ei);
+  }
+  static get observedAttributes() {
+    return this.finalize(), this._$Eh && [...this._$Eh.keys()];
+  }
+  static createProperty(ei, ri = y$1) {
+    if (ri.state && (ri.attribute = !1), this._$Ei(), this.elementProperties.set(ei, ri), !ri.noAccessor) {
+      const ii = Symbol(), li = this.getPropertyDescriptor(ei, ii, ri);
+      li !== void 0 && e$1(this.prototype, ei, li);
+    }
+  }
+  static getPropertyDescriptor(ei, ri, ii) {
+    const { get: li, set: Ci } = r$4(this.prototype, ei) ?? { get() {
+      return this[ri];
+    }, set(zi) {
+      this[ri] = zi;
+    } };
+    return { get() {
+      return li == null ? void 0 : li.call(this);
+    }, set(zi) {
+      const Ki = li == null ? void 0 : li.call(this);
+      Ci.call(this, zi), this.requestUpdate(ei, Ki, ii);
+    }, configurable: !0, enumerable: !0 };
+  }
+  static getPropertyOptions(ei) {
+    return this.elementProperties.get(ei) ?? y$1;
+  }
+  static _$Ei() {
+    if (this.hasOwnProperty(d$1("elementProperties")))
+      return;
+    const ei = n$2(this);
+    ei.finalize(), ei.l !== void 0 && (this.l = [...ei.l]), this.elementProperties = new Map(ei.elementProperties);
+  }
+  static finalize() {
+    if (this.hasOwnProperty(d$1("finalized")))
+      return;
+    if (this.finalized = !0, this._$Ei(), this.hasOwnProperty(d$1("properties"))) {
+      const ri = this.properties, ii = [...h$1(ri), ...o$2(ri)];
+      for (const li of ii)
+        this.createProperty(li, ri[li]);
+    }
+    const ei = this[Symbol.metadata];
+    if (ei !== null) {
+      const ri = litPropertyMetadata.get(ei);
+      if (ri !== void 0)
+        for (const [ii, li] of ri)
+          this.elementProperties.set(ii, li);
+    }
+    this._$Eh = /* @__PURE__ */ new Map();
+    for (const [ri, ii] of this.elementProperties) {
+      const li = this._$Eu(ri, ii);
+      li !== void 0 && this._$Eh.set(li, ri);
+    }
+    this.elementStyles = this.finalizeStyles(this.styles);
+  }
+  static finalizeStyles(ei) {
+    const ri = [];
+    if (Array.isArray(ei)) {
+      const ii = new Set(ei.flat(1 / 0).reverse());
+      for (const li of ii)
+        ri.unshift(c$2(li));
+    } else
+      ei !== void 0 && ri.push(c$2(ei));
+    return ri;
+  }
+  static _$Eu(ei, ri) {
+    const ii = ri.attribute;
+    return ii === !1 ? void 0 : typeof ii == "string" ? ii : typeof ei == "string" ? ei.toLowerCase() : void 0;
+  }
+  constructor() {
+    super(), this._$Ep = void 0, this.isUpdatePending = !1, this.hasUpdated = !1, this._$Em = null, this._$Ev();
+  }
+  _$Ev() {
+    var ei;
+    this._$Eg = new Promise((ri) => this.enableUpdating = ri), this._$AL = /* @__PURE__ */ new Map(), this._$E_(), this.requestUpdate(), (ei = this.constructor.l) == null || ei.forEach((ri) => ri(this));
+  }
+  addController(ei) {
+    var ri;
+    (this._$ES ?? (this._$ES = [])).push(ei), this.renderRoot !== void 0 && this.isConnected && ((ri = ei.hostConnected) == null || ri.call(ei));
+  }
+  removeController(ei) {
+    var ri;
+    (ri = this._$ES) == null || ri.splice(this._$ES.indexOf(ei) >>> 0, 1);
+  }
+  _$E_() {
+    const ei = /* @__PURE__ */ new Map(), ri = this.constructor.elementProperties;
+    for (const ii of ri.keys())
+      this.hasOwnProperty(ii) && (ei.set(ii, this[ii]), delete this[ii]);
+    ei.size > 0 && (this._$Ep = ei);
+  }
+  createRenderRoot() {
+    const ei = this.shadowRoot ?? this.attachShadow(this.constructor.shadowRootOptions);
+    return S$1(ei, this.constructor.elementStyles), ei;
+  }
+  connectedCallback() {
+    var ei;
+    this.renderRoot ?? (this.renderRoot = this.createRenderRoot()), this.enableUpdating(!0), (ei = this._$ES) == null || ei.forEach((ri) => {
+      var ii;
+      return (ii = ri.hostConnected) == null ? void 0 : ii.call(ri);
+    });
+  }
+  enableUpdating(ei) {
+  }
+  disconnectedCallback() {
+    var ei;
+    (ei = this._$ES) == null || ei.forEach((ri) => {
+      var ii;
+      return (ii = ri.hostDisconnected) == null ? void 0 : ii.call(ri);
+    });
+  }
+  attributeChangedCallback(ei, ri, ii) {
+    this._$AK(ei, ii);
+  }
+  _$EO(ei, ri) {
+    var Ci;
+    const ii = this.constructor.elementProperties.get(ei), li = this.constructor._$Eu(ei, ii);
+    if (li !== void 0 && ii.reflect === !0) {
+      const zi = (((Ci = ii.converter) == null ? void 0 : Ci.toAttribute) !== void 0 ? ii.converter : u$1).toAttribute(ri, ii.type);
+      this._$Em = ei, zi == null ? this.removeAttribute(li) : this.setAttribute(li, zi), this._$Em = null;
+    }
+  }
+  _$AK(ei, ri) {
+    var Ci;
+    const ii = this.constructor, li = ii._$Eh.get(ei);
+    if (li !== void 0 && this._$Em !== li) {
+      const zi = ii.getPropertyOptions(li), Ki = typeof zi.converter == "function" ? { fromAttribute: zi.converter } : ((Ci = zi.converter) == null ? void 0 : Ci.fromAttribute) !== void 0 ? zi.converter : u$1;
+      this._$Em = li, this[li] = Ki.fromAttribute(ri, zi.type), this._$Em = null;
+    }
+  }
+  requestUpdate(ei, ri, ii, li = !1, Ci) {
+    if (ei !== void 0) {
+      if (ii ?? (ii = this.constructor.getPropertyOptions(ei)), !(ii.hasChanged ?? f$1)(li ? Ci : this[ei], ri))
+        return;
+      this.C(ei, ri, ii);
+    }
+    this.isUpdatePending === !1 && (this._$Eg = this._$EP());
+  }
+  C(ei, ri, ii) {
+    this._$AL.has(ei) || this._$AL.set(ei, ri), ii.reflect === !0 && this._$Em !== ei && (this._$Ej ?? (this._$Ej = /* @__PURE__ */ new Set())).add(ei);
+  }
+  async _$EP() {
+    this.isUpdatePending = !0;
+    try {
+      await this._$Eg;
+    } catch (ri) {
+      Promise.reject(ri);
+    }
+    const ei = this.scheduleUpdate();
+    return ei != null && await ei, !this.isUpdatePending;
+  }
+  scheduleUpdate() {
+    return this.performUpdate();
+  }
+  performUpdate() {
+    var ii;
+    if (!this.isUpdatePending)
+      return;
+    if (!this.hasUpdated) {
+      if (this._$Ep) {
+        for (const [Ci, zi] of this._$Ep)
+          this[Ci] = zi;
+        this._$Ep = void 0;
+      }
+      const li = this.constructor.elementProperties;
+      if (li.size > 0)
+        for (const [Ci, zi] of li)
+          zi.wrapped !== !0 || this._$AL.has(Ci) || this[Ci] === void 0 || this.C(Ci, this[Ci], zi);
+    }
+    let ei = !1;
+    const ri = this._$AL;
+    try {
+      ei = this.shouldUpdate(ri), ei ? (this.willUpdate(ri), (ii = this._$ES) == null || ii.forEach((li) => {
+        var Ci;
+        return (Ci = li.hostUpdate) == null ? void 0 : Ci.call(li);
+      }), this.update(ri)) : this._$ET();
+    } catch (li) {
+      throw ei = !1, this._$ET(), li;
+    }
+    ei && this._$AE(ri);
+  }
+  willUpdate(ei) {
+  }
+  _$AE(ei) {
+    var ri;
+    (ri = this._$ES) == null || ri.forEach((ii) => {
+      var li;
+      return (li = ii.hostUpdated) == null ? void 0 : li.call(ii);
+    }), this.hasUpdated || (this.hasUpdated = !0, this.firstUpdated(ei)), this.updated(ei);
+  }
+  _$ET() {
+    this._$AL = /* @__PURE__ */ new Map(), this.isUpdatePending = !1;
+  }
+  get updateComplete() {
+    return this.getUpdateComplete();
+  }
+  getUpdateComplete() {
+    return this._$Eg;
+  }
+  shouldUpdate(ei) {
+    return !0;
+  }
+  update(ei) {
+    this._$Ej && (this._$Ej = this._$Ej.forEach((ri) => this._$EO(ri, this[ri]))), this._$ET();
+  }
+  updated(ei) {
+  }
+  firstUpdated(ei) {
+  }
 }
-window.addEventListener("DOMContentLoaded", async function() {
-  Highcharts.chart("chart", {
+b.elementStyles = [], b.shadowRootOptions = { mode: "open" }, b[d$1("elementProperties")] = /* @__PURE__ */ new Map(), b[d$1("finalized")] = /* @__PURE__ */ new Map(), p$1 == null || p$1({ ReactiveElement: b }), (a$1.reactiveElementVersions ?? (a$1.reactiveElementVersions = [])).push("2.0.0");
+/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+const t = globalThis, i = t.trustedTypes, s$1 = i ? i.createPolicy("lit-html", { createHTML: (Fe) => Fe }) : void 0, e = "$lit$", h = `lit$${(Math.random() + "").slice(9)}$`, o$1 = "?" + h, n$1 = `<${o$1}>`, r$3 = document, l = () => r$3.createComment(""), c = (Fe) => Fe === null || typeof Fe != "object" && typeof Fe != "function", a = Array.isArray, u = (Fe) => a(Fe) || typeof (Fe == null ? void 0 : Fe[Symbol.iterator]) == "function", d = `[ 	
+\f\r]`, f = /<(?:(!--|\/[^a-zA-Z])|(\/?[a-zA-Z][^>\s]*)|(\/?$))/g, v = /-->/g, _ = />/g, m = RegExp(`>|${d}(?:([^\\s"'>=/]+)(${d}*=${d}*(?:[^ 	
+\f\r"'\`<>=]|("|')|))|$)`, "g"), p = /'/g, g = /"/g, $ = /^(?:script|style|textarea|title)$/i, y = (Fe) => (ei, ...ri) => ({ _$litType$: Fe, strings: ei, values: ri }), x = y(1), w = Symbol.for("lit-noChange"), T = Symbol.for("lit-nothing"), A = /* @__PURE__ */ new WeakMap(), E = r$3.createTreeWalker(r$3, 129);
+function C(Fe, ei) {
+  if (!Array.isArray(Fe) || !Fe.hasOwnProperty("raw"))
+    throw Error("invalid template strings array");
+  return s$1 !== void 0 ? s$1.createHTML(ei) : ei;
+}
+const P = (Fe, ei) => {
+  const ri = Fe.length - 1, ii = [];
+  let li, Ci = ei === 2 ? "<svg>" : "", zi = f;
+  for (let Ki = 0; Ki < ri; Ki++) {
+    const Yi = Fe[Ki];
+    let es, is, $i = -1, Vi = 0;
+    for (; Vi < Yi.length && (zi.lastIndex = Vi, is = zi.exec(Yi), is !== null); )
+      Vi = zi.lastIndex, zi === f ? is[1] === "!--" ? zi = v : is[1] !== void 0 ? zi = _ : is[2] !== void 0 ? ($.test(is[2]) && (li = RegExp("</" + is[2], "g")), zi = m) : is[3] !== void 0 && (zi = m) : zi === m ? is[0] === ">" ? (zi = li ?? f, $i = -1) : is[1] === void 0 ? $i = -2 : ($i = zi.lastIndex - is[2].length, es = is[1], zi = is[3] === void 0 ? m : is[3] === '"' ? g : p) : zi === g || zi === p ? zi = m : zi === v || zi === _ ? zi = f : (zi = m, li = void 0);
+    const _i = zi === m && Fe[Ki + 1].startsWith("/>") ? " " : "";
+    Ci += zi === f ? Yi + n$1 : $i >= 0 ? (ii.push(es), Yi.slice(0, $i) + e + Yi.slice($i) + h + _i) : Yi + h + ($i === -2 ? Ki : _i);
+  }
+  return [C(Fe, Ci + (Fe[ri] || "<?>") + (ei === 2 ? "</svg>" : "")), ii];
+};
+class V {
+  constructor({ strings: ei, _$litType$: ri }, ii) {
+    let li;
+    this.parts = [];
+    let Ci = 0, zi = 0;
+    const Ki = ei.length - 1, Yi = this.parts, [es, is] = P(ei, ri);
+    if (this.el = V.createElement(es, ii), E.currentNode = this.el.content, ri === 2) {
+      const $i = this.el.content.firstChild;
+      $i.replaceWith(...$i.childNodes);
+    }
+    for (; (li = E.nextNode()) !== null && Yi.length < Ki; ) {
+      if (li.nodeType === 1) {
+        if (li.hasAttributes())
+          for (const $i of li.getAttributeNames())
+            if ($i.endsWith(e)) {
+              const Vi = is[zi++], _i = li.getAttribute($i).split(h), bi = /([.?@])?(.*)/.exec(Vi);
+              Yi.push({ type: 1, index: Ci, name: bi[2], strings: _i, ctor: bi[1] === "." ? k : bi[1] === "?" ? H : bi[1] === "@" ? I : R }), li.removeAttribute($i);
+            } else
+              $i.startsWith(h) && (Yi.push({ type: 6, index: Ci }), li.removeAttribute($i));
+        if ($.test(li.tagName)) {
+          const $i = li.textContent.split(h), Vi = $i.length - 1;
+          if (Vi > 0) {
+            li.textContent = i ? i.emptyScript : "";
+            for (let _i = 0; _i < Vi; _i++)
+              li.append($i[_i], l()), E.nextNode(), Yi.push({ type: 2, index: ++Ci });
+            li.append($i[Vi], l());
+          }
+        }
+      } else if (li.nodeType === 8)
+        if (li.data === o$1)
+          Yi.push({ type: 2, index: Ci });
+        else {
+          let $i = -1;
+          for (; ($i = li.data.indexOf(h, $i + 1)) !== -1; )
+            Yi.push({ type: 7, index: Ci }), $i += h.length - 1;
+        }
+      Ci++;
+    }
+  }
+  static createElement(ei, ri) {
+    const ii = r$3.createElement("template");
+    return ii.innerHTML = ei, ii;
+  }
+}
+function N(Fe, ei, ri = Fe, ii) {
+  var zi, Ki;
+  if (ei === w)
+    return ei;
+  let li = ii !== void 0 ? (zi = ri._$Co) == null ? void 0 : zi[ii] : ri._$Cl;
+  const Ci = c(ei) ? void 0 : ei._$litDirective$;
+  return (li == null ? void 0 : li.constructor) !== Ci && ((Ki = li == null ? void 0 : li._$AO) == null || Ki.call(li, !1), Ci === void 0 ? li = void 0 : (li = new Ci(Fe), li._$AT(Fe, ri, ii)), ii !== void 0 ? (ri._$Co ?? (ri._$Co = []))[ii] = li : ri._$Cl = li), li !== void 0 && (ei = N(Fe, li._$AS(Fe, ei.values), li, ii)), ei;
+}
+class S {
+  constructor(ei, ri) {
+    this._$AV = [], this._$AN = void 0, this._$AD = ei, this._$AM = ri;
+  }
+  get parentNode() {
+    return this._$AM.parentNode;
+  }
+  get _$AU() {
+    return this._$AM._$AU;
+  }
+  u(ei) {
+    const { el: { content: ri }, parts: ii } = this._$AD, li = ((ei == null ? void 0 : ei.creationScope) ?? r$3).importNode(ri, !0);
+    E.currentNode = li;
+    let Ci = E.nextNode(), zi = 0, Ki = 0, Yi = ii[0];
+    for (; Yi !== void 0; ) {
+      if (zi === Yi.index) {
+        let es;
+        Yi.type === 2 ? es = new M(Ci, Ci.nextSibling, this, ei) : Yi.type === 1 ? es = new Yi.ctor(Ci, Yi.name, Yi.strings, this, ei) : Yi.type === 6 && (es = new L(Ci, this, ei)), this._$AV.push(es), Yi = ii[++Ki];
+      }
+      zi !== (Yi == null ? void 0 : Yi.index) && (Ci = E.nextNode(), zi++);
+    }
+    return E.currentNode = r$3, li;
+  }
+  p(ei) {
+    let ri = 0;
+    for (const ii of this._$AV)
+      ii !== void 0 && (ii.strings !== void 0 ? (ii._$AI(ei, ii, ri), ri += ii.strings.length - 2) : ii._$AI(ei[ri])), ri++;
+  }
+}
+class M {
+  get _$AU() {
+    var ei;
+    return ((ei = this._$AM) == null ? void 0 : ei._$AU) ?? this._$Cv;
+  }
+  constructor(ei, ri, ii, li) {
+    this.type = 2, this._$AH = T, this._$AN = void 0, this._$AA = ei, this._$AB = ri, this._$AM = ii, this.options = li, this._$Cv = (li == null ? void 0 : li.isConnected) ?? !0;
+  }
+  get parentNode() {
+    let ei = this._$AA.parentNode;
+    const ri = this._$AM;
+    return ri !== void 0 && (ei == null ? void 0 : ei.nodeType) === 11 && (ei = ri.parentNode), ei;
+  }
+  get startNode() {
+    return this._$AA;
+  }
+  get endNode() {
+    return this._$AB;
+  }
+  _$AI(ei, ri = this) {
+    ei = N(this, ei, ri), c(ei) ? ei === T || ei == null || ei === "" ? (this._$AH !== T && this._$AR(), this._$AH = T) : ei !== this._$AH && ei !== w && this._(ei) : ei._$litType$ !== void 0 ? this.g(ei) : ei.nodeType !== void 0 ? this.$(ei) : u(ei) ? this.T(ei) : this._(ei);
+  }
+  k(ei) {
+    return this._$AA.parentNode.insertBefore(ei, this._$AB);
+  }
+  $(ei) {
+    this._$AH !== ei && (this._$AR(), this._$AH = this.k(ei));
+  }
+  _(ei) {
+    this._$AH !== T && c(this._$AH) ? this._$AA.nextSibling.data = ei : this.$(r$3.createTextNode(ei)), this._$AH = ei;
+  }
+  g(ei) {
+    var Ci;
+    const { values: ri, _$litType$: ii } = ei, li = typeof ii == "number" ? this._$AC(ei) : (ii.el === void 0 && (ii.el = V.createElement(C(ii.h, ii.h[0]), this.options)), ii);
+    if (((Ci = this._$AH) == null ? void 0 : Ci._$AD) === li)
+      this._$AH.p(ri);
+    else {
+      const zi = new S(li, this), Ki = zi.u(this.options);
+      zi.p(ri), this.$(Ki), this._$AH = zi;
+    }
+  }
+  _$AC(ei) {
+    let ri = A.get(ei.strings);
+    return ri === void 0 && A.set(ei.strings, ri = new V(ei)), ri;
+  }
+  T(ei) {
+    a(this._$AH) || (this._$AH = [], this._$AR());
+    const ri = this._$AH;
+    let ii, li = 0;
+    for (const Ci of ei)
+      li === ri.length ? ri.push(ii = new M(this.k(l()), this.k(l()), this, this.options)) : ii = ri[li], ii._$AI(Ci), li++;
+    li < ri.length && (this._$AR(ii && ii._$AB.nextSibling, li), ri.length = li);
+  }
+  _$AR(ei = this._$AA.nextSibling, ri) {
+    var ii;
+    for ((ii = this._$AP) == null ? void 0 : ii.call(this, !1, !0, ri); ei && ei !== this._$AB; ) {
+      const li = ei.nextSibling;
+      ei.remove(), ei = li;
+    }
+  }
+  setConnected(ei) {
+    var ri;
+    this._$AM === void 0 && (this._$Cv = ei, (ri = this._$AP) == null || ri.call(this, ei));
+  }
+}
+class R {
+  get tagName() {
+    return this.element.tagName;
+  }
+  get _$AU() {
+    return this._$AM._$AU;
+  }
+  constructor(ei, ri, ii, li, Ci) {
+    this.type = 1, this._$AH = T, this._$AN = void 0, this.element = ei, this.name = ri, this._$AM = li, this.options = Ci, ii.length > 2 || ii[0] !== "" || ii[1] !== "" ? (this._$AH = Array(ii.length - 1).fill(new String()), this.strings = ii) : this._$AH = T;
+  }
+  _$AI(ei, ri = this, ii, li) {
+    const Ci = this.strings;
+    let zi = !1;
+    if (Ci === void 0)
+      ei = N(this, ei, ri, 0), zi = !c(ei) || ei !== this._$AH && ei !== w, zi && (this._$AH = ei);
+    else {
+      const Ki = ei;
+      let Yi, es;
+      for (ei = Ci[0], Yi = 0; Yi < Ci.length - 1; Yi++)
+        es = N(this, Ki[ii + Yi], ri, Yi), es === w && (es = this._$AH[Yi]), zi || (zi = !c(es) || es !== this._$AH[Yi]), es === T ? ei = T : ei !== T && (ei += (es ?? "") + Ci[Yi + 1]), this._$AH[Yi] = es;
+    }
+    zi && !li && this.j(ei);
+  }
+  j(ei) {
+    ei === T ? this.element.removeAttribute(this.name) : this.element.setAttribute(this.name, ei ?? "");
+  }
+}
+class k extends R {
+  constructor() {
+    super(...arguments), this.type = 3;
+  }
+  j(ei) {
+    this.element[this.name] = ei === T ? void 0 : ei;
+  }
+}
+class H extends R {
+  constructor() {
+    super(...arguments), this.type = 4;
+  }
+  j(ei) {
+    this.element.toggleAttribute(this.name, !!ei && ei !== T);
+  }
+}
+class I extends R {
+  constructor(ei, ri, ii, li, Ci) {
+    super(ei, ri, ii, li, Ci), this.type = 5;
+  }
+  _$AI(ei, ri = this) {
+    if ((ei = N(this, ei, ri, 0) ?? T) === w)
+      return;
+    const ii = this._$AH, li = ei === T && ii !== T || ei.capture !== ii.capture || ei.once !== ii.once || ei.passive !== ii.passive, Ci = ei !== T && (ii === T || li);
+    li && this.element.removeEventListener(this.name, this, ii), Ci && this.element.addEventListener(this.name, this, ei), this._$AH = ei;
+  }
+  handleEvent(ei) {
+    var ri;
+    typeof this._$AH == "function" ? this._$AH.call(((ri = this.options) == null ? void 0 : ri.host) ?? this.element, ei) : this._$AH.handleEvent(ei);
+  }
+}
+class L {
+  constructor(ei, ri, ii) {
+    this.element = ei, this.type = 6, this._$AN = void 0, this._$AM = ri, this.options = ii;
+  }
+  get _$AU() {
+    return this._$AM._$AU;
+  }
+  _$AI(ei) {
+    N(this, ei);
+  }
+}
+const Z = t.litHtmlPolyfillSupport;
+Z == null || Z(V, M), (t.litHtmlVersions ?? (t.litHtmlVersions = [])).push("3.0.0");
+const j = (Fe, ei, ri) => {
+  const ii = (ri == null ? void 0 : ri.renderBefore) ?? ei;
+  let li = ii._$litPart$;
+  if (li === void 0) {
+    const Ci = (ri == null ? void 0 : ri.renderBefore) ?? null;
+    ii._$litPart$ = li = new M(ei.insertBefore(l(), Ci), Ci, void 0, ri ?? {});
+  }
+  return li._$AI(Fe), li;
+};
+/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+class s extends b {
+  constructor() {
+    super(...arguments), this.renderOptions = { host: this }, this._$Do = void 0;
+  }
+  createRenderRoot() {
+    var ri;
+    const ei = super.createRenderRoot();
+    return (ri = this.renderOptions).renderBefore ?? (ri.renderBefore = ei.firstChild), ei;
+  }
+  update(ei) {
+    const ri = this.render();
+    this.hasUpdated || (this.renderOptions.isConnected = this.isConnected), super.update(ei), this._$Do = j(ri, this.renderRoot, this.renderOptions);
+  }
+  connectedCallback() {
+    var ei;
+    super.connectedCallback(), (ei = this._$Do) == null || ei.setConnected(!0);
+  }
+  disconnectedCallback() {
+    var ei;
+    super.disconnectedCallback(), (ei = this._$Do) == null || ei.setConnected(!1);
+  }
+  render() {
+    return w;
+  }
+}
+var Ms;
+s._$litElement$ = !0, s.finalized = !0, (Ms = globalThis.litElementHydrateSupport) == null || Ms.call(globalThis, { LitElement: s });
+const r$2 = globalThis.litElementPolyfillSupport;
+r$2 == null || r$2({ LitElement: s });
+(globalThis.litElementVersions ?? (globalThis.litElementVersions = [])).push("4.0.0");
+/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+const o = { attribute: !0, type: String, converter: u$1, reflect: !1, hasChanged: f$1 }, r$1 = (Fe = o, ei, ri) => {
+  const { kind: ii, metadata: li } = ri;
+  let Ci = globalThis.litPropertyMetadata.get(li);
+  if (Ci === void 0 && globalThis.litPropertyMetadata.set(li, Ci = /* @__PURE__ */ new Map()), Ci.set(ri.name, Fe), ii === "accessor") {
+    const { name: zi } = ri;
+    return { set(Ki) {
+      const Yi = ei.get.call(this);
+      ei.set.call(this, Ki), this.requestUpdate(zi, Yi, Fe);
+    }, init(Ki) {
+      return Ki !== void 0 && this.C(zi, void 0, Fe), Ki;
+    } };
+  }
+  if (ii === "setter") {
+    const { name: zi } = ri;
+    return function(Ki) {
+      const Yi = this[zi];
+      ei.call(this, Ki), this.requestUpdate(zi, Yi, Fe);
+    };
+  }
+  throw Error("Unsupported decorator location: " + ii);
+};
+function n(Fe) {
+  return (ei, ri) => typeof ri == "object" ? r$1(Fe, ei, ri) : ((ii, li, Ci) => {
+    const zi = li.hasOwnProperty(Ci);
+    return li.constructor.createProperty(Ci, zi ? { ...ii, wrapped: !0 } : ii), zi ? Object.getOwnPropertyDescriptor(li, Ci) : void 0;
+  })(Fe, ei, ri);
+}
+/**
+ * @license
+ * Copyright 2017 Google LLC
+ * SPDX-License-Identifier: BSD-3-Clause
+ */
+function r(Fe) {
+  return n({ ...Fe, state: !0, attribute: !1 });
+}
+var __defProp = Object.defineProperty, __getOwnPropDesc = Object.getOwnPropertyDescriptor, __decorateClass = (Fe, ei, ri, ii) => {
+  for (var li = ii > 1 ? void 0 : ii ? __getOwnPropDesc(ei, ri) : ei, Ci = Fe.length - 1, zi; Ci >= 0; Ci--)
+    (zi = Fe[Ci]) && (li = (ii ? zi(ei, ri, li) : zi(li)) || li);
+  return ii && li && __defProp(ei, ri, li), li;
+};
+class QuantitySelector extends s {
+  constructor() {
+    super(), this.symbol = "", this.balance = 0, this.sell = !1, this.coin_value = 0, this.pecentage = 0, this.coin_price = 0, this.value = this.coin_value * this.coin_price;
+  }
+  ignore(ei) {
+    (ei.key == "e" || ei.key == "+" || ei.key == "-") && (ei.preventDefault(), ei.stopPropagation());
+  }
+  slide(ei) {
+    let ri = Number(ei.target.value);
+    this.pecentage = ri, this.coin_value = this.balance * (ri / 100), this.value = this.coin_value * this.coin_price;
+  }
+  update_slide() {
+    let ei = this.coin_value / this.balance * 100;
+    ei = Math.round(ei), ei >= 0 && ei <= 100 && (this.pecentage = ei);
+  }
+  coin_value_change(ei) {
+    let ri = Number(ei.target.value);
+    this.sell && ri * this.coin_price > this.balance * this.coin_price && (ri = this.balance), this.coin_value = ri, this.value = ri * this.coin_price, this.update_slide();
+  }
+  value_change(ei) {
+    let ri = Number(ei.target.value);
+    this.sell && ri > this.balance * this.coin_price && (ri = this.balance * this.coin_price), this.value = ri, this.coin_value = ri / this.coin_price, this.update_slide(), ei.target.value = ri;
+  }
+  render() {
+    return x`
+			<div class="quantity-selector">
+				${this.sell ? x`
+							<div class="slider">
+								<input
+									@input=${this.slide}
+									type="range"
+									min="0"
+									max="100"
+									value="0"
+									percentage="${this.pecentage}%"
+									style="--percentage: ${this.pecentage}%"
+								/>
+							</div>
+					  ` : ""}
+				<div class="value">
+					<div class="input">
+						<input
+							@keydown=${this.ignore}
+							@input=${this.coin_value_change}
+							type="number"
+							.value=${this.coin_value.toString()}
+						/>
+						<span class="suffix">${this.symbol.toUpperCase()}</span>
+					</div>
+					<div class="input">
+						<input
+							@keydown=${this.ignore}
+							@input=${this.value_change}
+							type="number"
+							.value=${this.value.toFixed(2)}
+						/>
+						<span class="suffix">$</span>
+					</div>
+				</div>
+			</div>
+		`;
+  }
+}
+QuantitySelector.styles = i$2`
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		* {
+			box-sizing: border-box;
+		}
+
+		input[type="number"] {
+			-moz-appearance: textfield;
+		}
+
+		.quantity-selector {
+			display: flex;
+			flex-direction: column;
+			gap: 12px;
+      font-size: 12.8px;
+		}
+
+		.value {
+			display: flex;
+			gap: 12px;
+      flex-direction: column;
+		}
+
+		.slider {
+			display: flex;
+			justify-content: center;
+			background-color: var(--background-color);
+			color: var(--color);
+			border: solid var(--color) 2px;
+			border-radius: 0.75rem;
+			padding: 12px;
+			font-size: 14px;
+			padding-left: 20px;
+			padding-right: 30px;
+			flex-direction: column;
+      align-items: center;
+      height: 40px;
+		}
+
+		.slider input {
+			all: unset;
+		}
+
+		.slider input {
+			width: 100%;
+			height: 100%;
+			align-items: center;
+			position: relative;
+		}
+
+		/* Hide the default browser thumb */
+		input[type="range"]::-webkit-slider-thumb {
+			appearance: none;
+			width: 0;
+			height: 0;
+		}
+
+		input[type="range"]::-moz-range-thumb {
+			appearance: none;
+			width: 0;
+			height: 0;
+		}
+		/* Style the custom thumb */
+		input[type="range"]::after {
+			content: attr(percentage);
+			display: block;
+			position: absolute;
+			left: var(--percentage);
+			transform: translateX(-50%);
+			color: var(--color);
+		}
+
+		.input {
+			display: flex;
+			background-color: var(--background-color);
+			color: var(--color);
+			border: solid var(--color) 2px;
+			border-radius: 0.75rem;
+			padding: 12px;
+      width: 100%;
+			gap: 12px;
+      height: 40px;
+      align-items: center;
+		}
+
+		.input input {
+			all: unset;
+			appearance: none;
+			width: 100%;
+			height: 100%;
+		}
+
+		.input span {
+			pointer-events: none;
+			font-weight: bolder;
+			top: 0;
+		}
+
+    @media screen and (min-width: 1600px) {
+      .value {
+        flex-direction: row;
+      }
+    }
+	`;
+__decorateClass([
+  n({ type: Number })
+], QuantitySelector.prototype, "coin_price", 2);
+__decorateClass([
+  n({ type: Boolean })
+], QuantitySelector.prototype, "sell", 2);
+__decorateClass([
+  n({ type: String })
+], QuantitySelector.prototype, "symbol", 2);
+__decorateClass([
+  n({ type: Number })
+], QuantitySelector.prototype, "balance", 2);
+__decorateClass([
+  r()
+], QuantitySelector.prototype, "coin_value", 2);
+__decorateClass([
+  r()
+], QuantitySelector.prototype, "pecentage", 2);
+__decorateClass([
+  r()
+], QuantitySelector.prototype, "value", 2);
+window.htmx = htmx;
+customElements.define("quantity-selector", QuantitySelector);
+async function prices(Fe) {
+  return fetch(`https://api.coincap.io/v2/assets/${Fe}/history?interval=m15&start=${Date.now() - 6048e5}&end=${Date.now()}`).then((ei) => ei.json()).then((ei) => ei.data.map((ri) => [ri.time, Number(ri.priceUsd)]));
+}
+window.load_chart = async function(Fe) {
+  Highcharts.chart("chart-" + Fe, {
     chart: {
       type: "line",
       backgroundColor: "var(--background-color)",
-      numberFormatter: function(ti) {
-        return ti.toFixed(0);
+      numberFormatter: function(ei) {
+        if (ei >= 100)
+          return ei.toFixed(0);
+        if (ei < 0.1) {
+          const ri = ei.toString().split(".")[1];
+          for (let ii = 0; ii < ri.length; ii++)
+            if (ri[ii] != "0")
+              return ei.toFixed(ii + 3);
+        }
+        return ei.toFixed(2);
       }
     },
     title: {
-      text: "bitcoin price chart",
-      style: {
-        color: "var(--color)"
-      }
+      text: ""
     },
     legend: {
       enabled: !1
@@ -8113,8 +8938,8 @@ window.addEventListener("DOMContentLoaded", async function() {
     series: [{
       type: "line",
       name: "$",
-      data: await prices(),
+      data: await prices(Fe),
       color: "var(--purple)"
     }]
   });
-});
+};

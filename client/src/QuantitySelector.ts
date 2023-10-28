@@ -1,38 +1,35 @@
 import { LitElement, html, css } from "lit"
 import { property, state } from "lit/decorators.js"
+import { formatFloat, toFixed, trimFloat } from "./helpers"
 
 export default class QuantitySelector extends LitElement {
+	@property({ type: Number }) coin_price = 0
+	@property({ type: Boolean }) sell = false
+	@property({ type: String }) symbol = ""
+	@property({ type: Number }) balance = 0
+
+	@state() amount: number = 0
+	@state() pecentage: number = 0
+	@state() value: number = 0
+
 	constructor() {
 		super()
-		this.symbol = ""
-		this.balance = 0
-		this.sell = false
-		this.coin_value = 0
-		this.pecentage = 0
-		this.coin_price = 0.0
-		this.value = this.coin_value * this.coin_price
 	}
 
-	@property({ type: Number })
-	coin_price
+	connectedCallback() {
+		super.connectedCallback()
 
-	@property({ type: Boolean })
-	sell
+		const self = this
+		const form = this.closest("form")
 
-	@property({ type: String })
-	symbol: ""
+		if (!form) {
+			return
+		}
 
-	@property({ type: Number })
-	balance: number
-
-	@state()
-	coin_value: number
-
-	@state()
-	pecentage: number
-
-	@state()
-	value: number
+		form.addEventListener("formdata", function (e: FormDataEvent) {
+			e.formData.set("amount", String(self.amount))
+		})
+	}
 
 	private ignore(e: KeyboardEvent) {
 		if (e.key == "e" || e.key == "+" || e.key == "-") {
@@ -45,12 +42,12 @@ export default class QuantitySelector extends LitElement {
 		//@ts-ignore
 		let value = Number(e.target.value)
 		this.pecentage = value
-		this.coin_value = this.balance * (value / 100)
-		this.value = this.coin_value * this.coin_price
+		this.amount = this.balance * (value / 100)
+		this.value = this.amount * this.coin_price
 	}
 
 	private update_slide() {
-		let percentage = (this.coin_value / this.balance) * 100
+		let percentage = (this.amount / this.balance) * 100
 		percentage = Math.round(percentage)
 
 		if (percentage >= 0 && percentage <= 100) {
@@ -66,12 +63,15 @@ export default class QuantitySelector extends LitElement {
 			this.sell &&
 			value * this.coin_price > this.balance * this.coin_price
 		) {
-			value = this.balance
+			value = this.value	
 		}
 
-		this.coin_value = value
+		this.amount = value
 		this.value = value * this.coin_price
 		this.update_slide()
+
+		//@ts-ignore
+		e.target.value = value
 	}
 
 	private value_change(e: InputEvent) {
@@ -83,7 +83,7 @@ export default class QuantitySelector extends LitElement {
 		}
 
 		this.value = value
-		this.coin_value = value / this.coin_price
+		this.amount = value / this.coin_price
 		this.update_slide()
 
 		//@ts-ignore
@@ -97,6 +97,9 @@ export default class QuantitySelector extends LitElement {
 					? html`
 							<div class="slider">
 								<input
+									autocomplete="off"
+									aria-autocomplete="none"
+									name="balance_percentage"
 									@input=${this.slide}
 									type="range"
 									min="0"
@@ -111,19 +114,25 @@ export default class QuantitySelector extends LitElement {
 				<div class="value">
 					<div class="input">
 						<input
+							autocomplete="off"
+							aria-autocomplete="none"
+							name="amount"
 							@keydown=${this.ignore}
-							@input=${this.coin_value_change}
+							@change=${this.coin_value_change}
 							type="number"
-							.value=${this.coin_value.toString()}
+							.value=${trimFloat(toFixed(this.amount, 10))}
 						/>
 						<span class="suffix">${this.symbol.toUpperCase()}</span>
 					</div>
 					<div class="input">
 						<input
+							autocomplete="off"
+							aria-autocomplete="none"
+							name="value"
 							@keydown=${this.ignore}
-							@input=${this.value_change}
+							@change=${this.value_change}
 							type="number"
-							.value=${this.value.toFixed(2)}
+							.value=${formatFloat(this.value)}
 						/>
 						<span class="suffix">$</span>
 					</div>
@@ -151,13 +160,13 @@ export default class QuantitySelector extends LitElement {
 			display: flex;
 			flex-direction: column;
 			gap: 12px;
-      font-size: 12.8px;
+			font-size: 12.8px;
 		}
 
 		.value {
 			display: flex;
 			gap: 12px;
-      flex-direction: column;
+			flex-direction: column;
 		}
 
 		.slider {
@@ -172,8 +181,8 @@ export default class QuantitySelector extends LitElement {
 			padding-left: 20px;
 			padding-right: 30px;
 			flex-direction: column;
-      align-items: center;
-      height: 40px;
+			align-items: center;
+			height: 40px;
 		}
 
 		.slider input {
@@ -216,10 +225,10 @@ export default class QuantitySelector extends LitElement {
 			border: solid var(--color) 2px;
 			border-radius: 0.75rem;
 			padding: 12px;
-      width: 100%;
+			width: 100%;
 			gap: 12px;
-      height: 40px;
-      align-items: center;
+			height: 40px;
+			align-items: center;
 		}
 
 		.input input {
@@ -235,10 +244,10 @@ export default class QuantitySelector extends LitElement {
 			top: 0;
 		}
 
-    @media screen and (min-width: 1600px) {
-      .value {
-        flex-direction: row;
-      }
-    }
+		@media screen and (min-width: 1600px) {
+			.value {
+				flex-direction: row;
+			}
+		}
 	`
 }

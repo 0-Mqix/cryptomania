@@ -1,4 +1,4 @@
-<div class="overview" coin="{{.Coin}}" hx-swap="outerHTML">
+<div class="overview" coin="{{.Coin}}">
 	<div class="top">
 		<div class="name">
 			<div class="symbol">{{.Asset.Symbol}}</div>
@@ -27,32 +27,32 @@
 	{{ $value := .Asset.Balance}} 
 	{{ if ne $value 0.0}}
 		<div class="balance">
-			<label>Balance</label>
+			<h2>Balance</h2>
 			<span>{{ $value }} {{ .Asset.Symbol}}</span>
 			<span>{{calculate_balance $value .Asset.PriceUsd }}</span>
 		</div>
 	{{end}}
 
 	<div class="actions">
-		<div class="action">
-			<label>Buy</label>
+		<form class="action" hx-post="/buy/{{ .Coin }}" hx-swap="none">
+			<h2>Buy</h2>
 			<quantity-selector
 				coin_price="{{.Asset.PriceUsd}}"
 				symbol="{{.Asset.Symbol}}"
 			></quantity-selector>
-			<button class="buy button">buy</button>
-		</div>
+			<button type="submit" class="buy button">buy</button>
+		</form>
 		{{ if ne $value 0.0}}
-			<div class="action">
-				<label>Sell</label>
+			<form class="action" hx-post="/sell/{{ .Coin }}" hx-swap="none">
+				<h2>Sell</h2>
 				<quantity-selector
 					coin_price="{{.Asset.PriceUsd}}"
 					symbol="{{.Asset.Symbol}}"
 					sell
 					balance="{{$value}}"
 				></quantity-selector>
-				<button class="sell button">sell</button>
-			</div>
+				<button type="submit" class="sell button">sell</button>
+			</form>
 		{{end}}
 	</div>
 
@@ -62,7 +62,7 @@
 </div>
 
 <style>
-	label {
+	h2 {
 		margin: 0;
 		font-weight: bold;
 	}
@@ -90,7 +90,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: start;
-		> label {
+		> h2 {
 			padding-bottom: 8px;
 		}
 		> span {

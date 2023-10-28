@@ -11,7 +11,7 @@
 
 
 <main>
-    <div class="assets" hx-swap="outerHTML"> 
+    <div class="assets" hx-swap="outerHTML settle:0.3s"> 
         {{ range .Assets }}
             {{template "asset" . }}
         {{ end }}
@@ -45,6 +45,15 @@
 <style>
     %g :root {
         --header-size: 80px;
+    }
+
+    %g .overview, .asset {
+        opacity: 1; 
+        transition: opacity 0.5s;
+    }
+
+    %g .overview.htmx-settling, .asset.htmx-settling {
+        opacity: 0.3;
     }
 
     header {
@@ -130,7 +139,12 @@
             }
         }
     }
-
+    
+    @media (hover: none) {
+        .asset:hover {
+            font-size: 100%;
+        }
+    }
     @media screen and (max-width: 600px) {
         header>div {
             min-width: unset;

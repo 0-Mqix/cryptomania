@@ -2,6 +2,7 @@ import Highcharts from "highcharts"
 import htmx from "htmx.org"
 
 import QuantitySelector from "./QuantitySelector";
+import { formatFloat } from "./helpers"
 
 //@ts-ignore
 window.htmx = htmx
@@ -24,22 +25,7 @@ window.load_chart = async function (coin: string) {
         chart: {
             type: 'line',
             backgroundColor: "var(--background-color)",
-            numberFormatter: function(x) {
-                if (x >= 100) { return x.toFixed(0) }
-
-                if (x < 0.1) {
-                    const decimals = x.toString().split(".")[1]
-                    
-                    for (let i = 0; i < decimals.length; i++) {
-                        if (decimals[i] == '0') {
-                            continue
-                        }
-                        return x.toFixed(i+3)
-                    }
-                }
-
-                return x.toFixed(2)
-            }
+            numberFormatter: formatFloat,
         },
         title: {
             text: "",
@@ -79,3 +65,26 @@ window.load_chart = async function (coin: string) {
         }],
     });
 };
+
+// hack to make htmx emit 'formdata' event
+window.addEventListener('htmx:configRequest', (event: any) => {
+  if (event.target instanceof HTMLFormElement) {
+    
+    const formData = new FormData(event.target); // this triggers a formdata event, which is handled by shoelace
+
+    // add the form data as request parameters
+    for (const pair of formData.entries()) {
+      const name = pair[0];
+      const value = pair[1];
+
+      const parameters = event.detail.parameters;
+
+      // for multivalued form fields, FormData.entries() may contain multiple entries with the same name
+      if (parameters[name] == null) {
+        parameters[name] = [value]; // single element array
+      } else if (Array.isArray(parameters[name]) && !parameters[name].includes(value)) {
+        parameters[name].push(value);
+      }
+    }
+  }
+});

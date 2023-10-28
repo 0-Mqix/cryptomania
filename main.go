@@ -18,9 +18,8 @@ import (
 
 func formatFloat(number float64) string {
 	var str string
-	if number >= 100 {
-		str = fmt.Sprintf("%.0f", number)
-	} else if number < 0.1 {
+
+	if number < 0.1 {
 		decimals := strings.Split(strconv.FormatFloat(number, 'f', -1, 64), ".")[1]
 		for i := 0; i < len(decimals); i++ {
 			if decimals[i] == '0' {
@@ -29,6 +28,9 @@ func formatFloat(number float64) string {
 			str = fmt.Sprintf("%."+strconv.Itoa(i+3)+"f", number)
 			break
 		}
+
+	} else if number < 10 {
+		str = fmt.Sprintf("%.3f", number)
 	} else {
 		str = fmt.Sprintf("%.2f", number)
 	}
@@ -142,6 +144,16 @@ func main() {
 		root.Write(w, nil, func(w io.Writer) {
 			templates.WriteIndex(w, r, data)
 		})
+	})
+
+	r.Post("/buy/{coin}", func(w http.ResponseWriter, r *http.Request) {
+		body, _ := io.ReadAll(r.Body)
+		fmt.Println("buy:", string(body))
+	})
+
+	r.Post("/sell/{coin}", func(w http.ResponseWriter, r *http.Request) {
+		body, _ := io.ReadAll(r.Body)
+		fmt.Println("sell:", string(body))
 	})
 
 	r.Get("/overview/{coin}", func(w http.ResponseWriter, r *http.Request) {

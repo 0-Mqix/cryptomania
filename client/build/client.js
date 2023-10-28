@@ -7,43 +7,43 @@ var highcharts = { exports: {} };
   (function(ei, ri) {
     Fe.exports ? (ri.default = ri, Fe.exports = ei.document ? ri(ei) : ri) : (ei.Highcharts && ei.Highcharts.error(16, !0), ei.Highcharts = ri(ei));
   })(typeof window < "u" ? window : commonjsGlobal, function(ei) {
-    function ri(li, Ci, zi, Ki) {
-      li.hasOwnProperty(Ci) || (li[Ci] = Ki.apply(null, zi), typeof CustomEvent == "function" && ei.dispatchEvent(new CustomEvent("HighchartsModuleLoaded", { detail: { path: Ci, module: li[Ci] } })));
+    function ri(hi, wi, zi, Ki) {
+      hi.hasOwnProperty(wi) || (hi[wi] = Ki.apply(null, zi), typeof CustomEvent == "function" && ei.dispatchEvent(new CustomEvent("HighchartsModuleLoaded", { detail: { path: wi, module: hi[wi] } })));
     }
     var ii = {};
     return ri(ii, "Core/Globals.js", [], function() {
-      var li;
-      return function(Ci) {
-        Ci.SVG_NS = "http://www.w3.org/2000/svg", Ci.product = "Highcharts", Ci.version = "11.1.0", Ci.win = typeof ei < "u" ? ei : {}, Ci.doc = Ci.win.document, Ci.svg = Ci.doc && Ci.doc.createElementNS && !!Ci.doc.createElementNS(Ci.SVG_NS, "svg").createSVGRect, Ci.userAgent = Ci.win.navigator && Ci.win.navigator.userAgent || "", Ci.isChrome = Ci.userAgent.indexOf("Chrome") !== -1, Ci.isFirefox = Ci.userAgent.indexOf("Firefox") !== -1, Ci.isMS = /(edge|msie|trident)/i.test(Ci.userAgent) && !Ci.win.opera, Ci.isSafari = !Ci.isChrome && Ci.userAgent.indexOf("Safari") !== -1, Ci.isTouchDevice = /(Mobile|Android|Windows Phone)/.test(Ci.userAgent), Ci.isWebKit = Ci.userAgent.indexOf("AppleWebKit") !== -1, Ci.deg2rad = 2 * Math.PI / 360, Ci.hasBidiBug = Ci.isFirefox && 4 > parseInt(Ci.userAgent.split("Firefox/")[1], 10), Ci.hasTouch = !!Ci.win.TouchEvent, Ci.marginNames = ["plotTop", "marginRight", "marginBottom", "plotLeft"], Ci.noop = function() {
-        }, Ci.supportsPassiveEvents = function() {
+      var hi;
+      return function(wi) {
+        wi.SVG_NS = "http://www.w3.org/2000/svg", wi.product = "Highcharts", wi.version = "11.1.0", wi.win = typeof ei < "u" ? ei : {}, wi.doc = wi.win.document, wi.svg = wi.doc && wi.doc.createElementNS && !!wi.doc.createElementNS(wi.SVG_NS, "svg").createSVGRect, wi.userAgent = wi.win.navigator && wi.win.navigator.userAgent || "", wi.isChrome = wi.userAgent.indexOf("Chrome") !== -1, wi.isFirefox = wi.userAgent.indexOf("Firefox") !== -1, wi.isMS = /(edge|msie|trident)/i.test(wi.userAgent) && !wi.win.opera, wi.isSafari = !wi.isChrome && wi.userAgent.indexOf("Safari") !== -1, wi.isTouchDevice = /(Mobile|Android|Windows Phone)/.test(wi.userAgent), wi.isWebKit = wi.userAgent.indexOf("AppleWebKit") !== -1, wi.deg2rad = 2 * Math.PI / 360, wi.hasBidiBug = wi.isFirefox && 4 > parseInt(wi.userAgent.split("Firefox/")[1], 10), wi.hasTouch = !!wi.win.TouchEvent, wi.marginNames = ["plotTop", "marginRight", "marginBottom", "plotLeft"], wi.noop = function() {
+        }, wi.supportsPassiveEvents = function() {
           let zi = !1;
-          if (!Ci.isMS) {
+          if (!wi.isMS) {
             const Ki = Object.defineProperty({}, "passive", { get: function() {
               zi = !0;
             } });
-            Ci.win.addEventListener && Ci.win.removeEventListener && (Ci.win.addEventListener("testPassive", Ci.noop, Ki), Ci.win.removeEventListener("testPassive", Ci.noop, Ki));
+            wi.win.addEventListener && wi.win.removeEventListener && (wi.win.addEventListener("testPassive", wi.noop, Ki), wi.win.removeEventListener("testPassive", wi.noop, Ki));
           }
           return zi;
-        }(), Ci.charts = [], Ci.dateFormats = {}, Ci.seriesTypes = {}, Ci.symbolSizes = {}, Ci.chartCount = 0;
-      }(li || (li = {})), li;
-    }), ri(ii, "Core/Utilities.js", [ii["Core/Globals.js"]], function(li) {
-      function Ci(ti, oi, di, mi) {
+        }(), wi.charts = [], wi.dateFormats = {}, wi.seriesTypes = {}, wi.symbolSizes = {}, wi.chartCount = 0;
+      }(hi || (hi = {})), hi;
+    }), ri(ii, "Core/Utilities.js", [ii["Core/Globals.js"]], function(hi) {
+      function wi(ti, oi, di, mi) {
         const Oi = oi ? "Highcharts error" : "Highcharts warning";
         ti === 32 && (ti = `${Oi}: Deprecated member`);
-        const hi = Vi(ti);
-        let Li = hi ? `${Oi} #${ti}: www.highcharts.com/errors/${ti}/` : ti.toString();
+        const li = Vi(ti);
+        let Li = li ? `${Oi} #${ti}: www.highcharts.com/errors/${ti}/` : ti.toString();
         if (typeof mi < "u") {
           let Ui = "";
-          hi && (Li += "?"), Ti(mi, function(Zi, rs) {
+          li && (Li += "?"), Ti(mi, function(Zi, rs) {
             Ui += `
- - ${rs}: ${Zi}`, hi && (Li += encodeURI(rs) + "=" + encodeURI(Zi));
+ - ${rs}: ${Zi}`, li && (Li += encodeURI(rs) + "=" + encodeURI(Zi));
           }), Li += Ui;
         }
-        Di(li, "displayError", { chart: di, code: ti, message: Li, params: mi }, function() {
+        Di(hi, "displayError", { chart: di, code: ti, message: Li, params: mi }, function() {
           if (oi)
             throw Error(Li);
-          vi.console && Ci.messages.indexOf(Li) === -1 && console.warn(Li);
-        }), Ci.messages.push(Li);
+          vi.console && wi.messages.indexOf(Li) === -1 && console.warn(Li);
+        }), wi.messages.push(Li);
       }
       function zi(ti, oi) {
         return parseInt(ti, oi || 10);
@@ -73,10 +73,10 @@ var highcharts = { exports: {} };
       function bi(ti, oi, di) {
         const mi = Ki(oi) && !_i(di);
         let Oi;
-        const hi = (Li, Ui) => {
+        const li = (Li, Ui) => {
           _i(Li) ? ti.setAttribute(Ui, Li) : mi ? (Oi = ti.getAttribute(Ui)) || Ui !== "class" || (Oi = ti.getAttribute(Ui + "Name")) : ti.removeAttribute(Ui);
         };
-        return Ki(oi) ? hi(di, oi) : Ti(oi, hi), Oi;
+        return Ki(oi) ? li(di, oi) : Ti(oi, li), Oi;
       }
       function Ai(ti) {
         return Yi(ti) ? ti : [ti];
@@ -97,12 +97,12 @@ var highcharts = { exports: {} };
         }
       }
       function gi(ti, oi) {
-        li.isMS && !li.svg && oi && _i(oi.opacity) && (oi.filter = `alpha(opacity=${100 * oi.opacity})`), ji(ti.style, oi);
+        hi.isMS && !hi.svg && oi && _i(oi.opacity) && (oi.filter = `alpha(opacity=${100 * oi.opacity})`), ji(ti.style, oi);
       }
       function ki(ti) {
         return Math.pow(10, Math.floor(Math.log(ti) / Math.LN10));
       }
-      function wi(ti, oi) {
+      function Ci(ti, oi) {
         return 1e14 < ti ? ti : parseFloat(ti.toPrecision(oi || 14));
       }
       function Si(ti, oi, di) {
@@ -129,33 +129,33 @@ var highcharts = { exports: {} };
                 mi(Bi, Li[Bi][Zi].fn);
           }));
         }
-        var hi = typeof ti == "function" && ti.prototype || ti;
-        if (Object.hasOwnProperty.call(hi, "hcEvents")) {
-          const Li = hi.hcEvents;
-          oi ? (hi = Li[oi] || [], di ? (Li[oi] = hi.filter(function(Ui) {
+        var li = typeof ti == "function" && ti.prototype || ti;
+        if (Object.hasOwnProperty.call(li, "hcEvents")) {
+          const Li = li.hcEvents;
+          oi ? (li = Li[oi] || [], di ? (Li[oi] = li.filter(function(Ui) {
             return di !== Ui.fn;
-          }), mi(oi, di)) : (Oi(Li), Li[oi] = [])) : (Oi(Li), delete hi.hcEvents);
+          }), mi(oi, di)) : (Oi(Li), Li[oi] = [])) : (Oi(Li), delete li.hcEvents);
         }
       }
       function Di(ti, oi, di, mi) {
-        if (di = di || {}, pi.createEvent && (ti.dispatchEvent || ti.fireEvent && ti !== li)) {
+        if (di = di || {}, pi.createEvent && (ti.dispatchEvent || ti.fireEvent && ti !== hi)) {
           var Oi = pi.createEvent("Events");
           Oi.initEvent(oi, !0, !0), di = ji(Oi, di), ti.dispatchEvent ? ti.dispatchEvent(di) : ti.fireEvent(oi, di);
         } else if (ti.hcEvents) {
           di.target || ji(di, { preventDefault: function() {
             di.defaultPrevented = !0;
           }, target: ti, type: oi }), Oi = [];
-          let hi = ti, Li = !1;
-          for (; hi.hcEvents; )
-            Object.hasOwnProperty.call(hi, "hcEvents") && hi.hcEvents[oi] && (Oi.length && (Li = !0), Oi.unshift.apply(Oi, hi.hcEvents[oi])), hi = Object.getPrototypeOf(hi);
+          let li = ti, Li = !1;
+          for (; li.hcEvents; )
+            Object.hasOwnProperty.call(li, "hcEvents") && li.hcEvents[oi] && (Oi.length && (Li = !0), Oi.unshift.apply(Oi, li.hcEvents[oi])), li = Object.getPrototypeOf(li);
           Li && Oi.sort((Ui, Zi) => Ui.order - Zi.order), Oi.forEach((Ui) => {
             Ui.fn.call(ti, di) === !1 && di.preventDefault();
           });
         }
         mi && !di.defaultPrevented && mi.call(ti, di);
       }
-      const { charts: ci, doc: pi, win: vi } = li;
-      (Ci || (Ci = {})).messages = [], Math.easeInOutSine = function(ti) {
+      const { charts: ci, doc: pi, win: vi } = hi;
+      (wi || (wi = {})).messages = [], Math.easeInOutSine = function(ti) {
         return -0.5 * (Math.cos(Math.PI * ti) - 1);
       };
       var ui = Array.prototype.find ? function(ti, oi) {
@@ -168,8 +168,8 @@ var highcharts = { exports: {} };
             return ti[di];
       };
       Ti({ map: "map", each: "forEach", grep: "filter", reduce: "reduce", some: "some" }, function(ti, oi) {
-        li[oi] = function(di) {
-          return Ci(32, !1, void 0, { [`Highcharts.${oi}`]: `use Array.${ti}` }), Array.prototype[ti].apply(di, [].slice.call(
+        hi[oi] = function(di) {
+          return wi(32, !1, void 0, { [`Highcharts.${oi}`]: `use Array.${ti}` }), Array.prototype[ti].apply(di, [].slice.call(
             arguments,
             1
           ));
@@ -186,12 +186,12 @@ var highcharts = { exports: {} };
       return vi.jQuery && (vi.jQuery.fn.highcharts = function() {
         const ti = [].slice.call(arguments);
         if (this[0])
-          return ti[0] ? (new li[Ki(ti[0]) ? ti.shift() : "Chart"](this[0], ti[0], ti[1]), this) : ci[bi(this[0], "data-highcharts-chart")];
+          return ti[0] ? (new hi[Ki(ti[0]) ? ti.shift() : "Chart"](this[0], ti[0], ti[1]), this) : ci[bi(this[0], "data-highcharts-chart")];
       }), ui = { addEvent: function(ti, oi, di, mi = {}) {
         var Oi = typeof ti == "function" && ti.prototype || ti;
-        Object.hasOwnProperty.call(Oi, "hcEvents") || (Oi.hcEvents = {}), Oi = Oi.hcEvents, li.Point && ti instanceof li.Point && ti.series && ti.series.chart && (ti.series.chart.runTrackerClick = !0);
-        const hi = ti.addEventListener;
-        return hi && hi.call(ti, oi, di, li.supportsPassiveEvents ? { passive: mi.passive === void 0 ? oi.indexOf("touch") !== -1 : mi.passive, capture: !1 } : !1), Oi[oi] || (Oi[oi] = []), Oi[oi].push({ fn: di, order: typeof mi.order == "number" ? mi.order : 1 / 0 }), Oi[oi].sort((Li, Ui) => Li.order - Ui.order), function() {
+        Object.hasOwnProperty.call(Oi, "hcEvents") || (Oi.hcEvents = {}), Oi = Oi.hcEvents, hi.Point && ti instanceof hi.Point && ti.series && ti.series.chart && (ti.series.chart.runTrackerClick = !0);
+        const li = ti.addEventListener;
+        return li && li.call(ti, oi, di, hi.supportsPassiveEvents ? { passive: mi.passive === void 0 ? oi.indexOf("touch") !== -1 : mi.passive, capture: !1 } : !1), Oi[oi] || (Oi[oi] = []), Oi[oi].push({ fn: di, order: typeof mi.order == "number" ? mi.order : 1 / 0 }), Oi[oi].sort((Li, Ui) => Li.order - Ui.order), function() {
           Mi(ti, oi, di);
         };
       }, arrayMax: function(ti) {
@@ -208,7 +208,7 @@ var highcharts = { exports: {} };
         return ti > oi ? ti < di ? ti : di : oi;
       }, clearTimeout: function(ti) {
         _i(ti) && clearTimeout(ti);
-      }, correctFloat: wi, createElement: function(ti, oi, di, mi, Oi) {
+      }, correctFloat: Ci, createElement: function(ti, oi, di, mi, Oi) {
         return ti = pi.createElement(ti), oi && ji(ti, oi), Oi && gi(ti, { padding: "0", border: "none", margin: "0" }), di && gi(ti, di), mi && mi.appendChild(ti), ti;
       }, css: gi, defined: _i, destroyObjectProperties: function(ti, oi) {
         Ti(ti, function(di, mi) {
@@ -226,8 +226,8 @@ var highcharts = { exports: {} };
               es(ni, !0) && !ni.nodeType ? (Zi[Pi] = Yi(ni) ? [] : {}, Oi(ni, Ui[Pi] || {}, Zi[Pi], rs + 1), Object.keys(Zi[Pi]).length !== 0 || Pi === "colorAxis" && rs === 0 || delete Zi[Pi]) : (Li[Pi] !== Ui[Pi] || Pi in Li && !(Pi in Ui)) && (Zi[Pi] = Bi[Pi]);
           });
         }
-        const hi = {};
-        return Oi(ti, oi, hi, 0), hi;
+        const li = {};
+        return Oi(ti, oi, li, 0), li;
       }, discardElement: function(ti) {
         ti && ti.parentElement && ti.parentElement.removeChild(ti);
       }, erase: function(ti, oi) {
@@ -237,17 +237,17 @@ var highcharts = { exports: {} };
             ti.splice(di, 1);
             break;
           }
-      }, error: Ci, extend: ji, extendClass: function(ti, oi) {
+      }, error: wi, extend: ji, extendClass: function(ti, oi) {
         const di = function() {
         };
         return di.prototype = new ti(), ji(di.prototype, oi), di;
       }, find: ui, fireEvent: Di, getClosestDistance: function(ti, oi) {
         const di = !oi;
-        let mi, Oi, hi;
+        let mi, Oi, li;
         return ti.forEach((Li) => {
           if (1 < Li.length)
-            for (hi = Li.length - 1; 0 < hi; hi--)
-              Oi = Li[hi] - Li[hi - 1], 0 > Oi && !di ? (oi == null || oi(), oi = void 0) : Oi && (typeof mi > "u" || Oi < mi) && (mi = Oi);
+            for (li = Li.length - 1; 0 < li; li--)
+              Oi = Li[li] - Li[li - 1], 0 > Oi && !di ? (oi == null || oi(), oi = void 0) : Oi && (typeof mi > "u" || Oi < mi) && (mi = Oi);
         }), mi;
       }, getMagnitude: ki, getNestedProperty: function(ti, oi) {
         for (ti = ti.split("."); ti.length && _i(oi); ) {
@@ -263,7 +263,7 @@ var highcharts = { exports: {} };
         }
         return oi;
       }, getStyle: Si, inArray: function(ti, oi, di) {
-        return Ci(32, !1, void 0, { "Highcharts.inArray": "use Array.indexOf" }), oi.indexOf(ti, di);
+        return wi(32, !1, void 0, { "Highcharts.inArray": "use Array.indexOf" }), oi.indexOf(ti, di);
       }, insertItem: function(ti, oi) {
         const di = ti.options.index, mi = oi.length;
         let Oi;
@@ -280,13 +280,13 @@ var highcharts = { exports: {} };
       }, isArray: Yi, isClass: $i, isDOMElement: is, isFunction: function(ti) {
         return typeof ti == "function";
       }, isNumber: Vi, isObject: es, isString: Ki, keys: function(ti) {
-        return Ci(32, !1, void 0, { "Highcharts.keys": "use Object.keys" }), Object.keys(ti);
+        return wi(32, !1, void 0, { "Highcharts.keys": "use Object.keys" }), Object.keys(ti);
       }, merge: function() {
         let ti, oi = arguments, di = {};
-        const mi = function(hi, Li) {
-          return typeof hi != "object" && (hi = {}), Ti(Li, function(Ui, Zi) {
-            Zi !== "__proto__" && Zi !== "constructor" && (!es(Ui, !0) || $i(Ui) || is(Ui) ? hi[Zi] = Li[Zi] : hi[Zi] = mi(hi[Zi] || {}, Ui));
-          }), hi;
+        const mi = function(li, Li) {
+          return typeof li != "object" && (li = {}), Ti(Li, function(Ui, Zi) {
+            Zi !== "__proto__" && Zi !== "constructor" && (!es(Ui, !0) || $i(Ui) || is(Ui) ? li[Zi] = Li[Zi] : li[Zi] = mi(li[Zi] || {}, Ui));
+          }), li;
         };
         oi[0] === !0 && (di = oi[1], oi = Array.prototype.slice.call(oi, 2));
         const Oi = oi.length;
@@ -294,14 +294,14 @@ var highcharts = { exports: {} };
           di = mi(di, oi[ti]);
         return di;
       }, normalizeTickInterval: function(ti, oi, di, mi, Oi) {
-        let hi = ti;
+        let li = ti;
         di = Ni(di, ki(ti));
         const Li = ti / di;
         for (oi || (oi = Oi ? [1, 1.2, 1.5, 2, 2.5, 3, 4, 5, 6, 8, 10] : [1, 2, 2.5, 5, 10], mi === !1 && (di === 1 ? oi = oi.filter(function(Ui) {
           return Ui % 1 === 0;
-        }) : 0.1 >= di && (oi = [1 / di]))), mi = 0; mi < oi.length && (hi = oi[mi], !(Oi && hi * di >= ti || !Oi && Li <= (oi[mi] + (oi[mi + 1] || oi[mi])) / 2)); mi++)
+        }) : 0.1 >= di && (oi = [1 / di]))), mi = 0; mi < oi.length && (li = oi[mi], !(Oi && li * di >= ti || !Oi && Li <= (oi[mi] + (oi[mi + 1] || oi[mi])) / 2)); mi++)
           ;
-        return hi = wi(hi * di, -Math.round(Math.log(1e-3) / Math.LN10));
+        return li = Ci(li * di, -Math.round(Math.log(1e-3) / Math.LN10));
       }, objectEach: Ti, offset: function(ti) {
         const oi = pi.documentElement;
         return ti = ti.parentElement || ti.parentNode ? ti.getBoundingClientRect() : {
@@ -321,8 +321,8 @@ var highcharts = { exports: {} };
         let mi, Oi;
         for (Oi = 0; Oi < di; Oi++)
           ti[Oi].safeI = Oi;
-        for (ti.sort(function(hi, Li) {
-          return mi = oi(hi, Li), mi === 0 ? hi.safeI - Li.safeI : mi;
+        for (ti.sort(function(li, Li) {
+          return mi = oi(li, Li), mi === 0 ? li.safeI - Li.safeI : mi;
         }), Oi = 0; Oi < di; Oi++)
           delete ti[Oi].safeI;
       }, syncTimeout: function(ti, oi, di) {
@@ -332,10 +332,10 @@ var highcharts = { exports: {} };
       }, wrap: function(ti, oi, di) {
         const mi = ti[oi];
         ti[oi] = function() {
-          const Oi = arguments, hi = this;
+          const Oi = arguments, li = this;
           return di.apply(this, [function() {
             return mi.apply(
-              hi,
+              li,
               arguments.length ? arguments : Oi
             );
           }].concat([].slice.call(arguments)));
@@ -361,15 +361,15 @@ var highcharts = { exports: {} };
         backgroundColor: "#ffffff",
         plotBorderColor: "#cccccc"
       };
-    }), ri(ii, "Core/Color/Color.js", [ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci) {
-      const { isNumber: zi, merge: Ki, pInt: Yi } = Ci;
+    }), ri(ii, "Core/Color/Color.js", [ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(hi, wi) {
+      const { isNumber: zi, merge: Ki, pInt: Yi } = wi;
       class es {
         static parse($i) {
           return $i ? new es($i) : es.None;
         }
         constructor($i) {
           this.rgba = [NaN, NaN, NaN, NaN], this.input = $i;
-          const Vi = li.Color;
+          const Vi = hi.Color;
           if (Vi && Vi !== es)
             return new Vi($i);
           this.init($i);
@@ -433,8 +433,8 @@ var highcharts = { exports: {} };
       } }], es.None = new es(""), es;
     }), ri(ii, "Core/Color/Palettes.js", [], function() {
       return { colors: "#2caffe #544fc5 #00e272 #fe6a35 #6b8abc #d568fb #2ee0ca #fa4b42 #feb56a #91e8e1".split(" ") };
-    }), ri(ii, "Core/Time.js", [ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci) {
-      const { win: zi } = li, { defined: Ki, error: Yi, extend: es, isObject: is, merge: $i, objectEach: Vi, pad: _i, pick: bi, splat: Ai, timeUnits: ji } = Ci, Ni = li.isSafari && zi.Intl && zi.Intl.DateTimeFormat.prototype.formatRange, gi = li.isSafari && zi.Intl && !zi.Intl.DateTimeFormat.prototype.formatRange;
+    }), ri(ii, "Core/Time.js", [ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(hi, wi) {
+      const { win: zi } = hi, { defined: Ki, error: Yi, extend: es, isObject: is, merge: $i, objectEach: Vi, pad: _i, pick: bi, splat: Ai, timeUnits: ji } = wi, Ni = hi.isSafari && zi.Intl && zi.Intl.DateTimeFormat.prototype.formatRange, gi = hi.isSafari && zi.Intl && !zi.Intl.DateTimeFormat.prototype.formatRange;
       class ki {
         constructor(Si) {
           this.options = {}, this.variableTimezone = this.useUTC = !1, this.Date = zi.Date, this.getTimezoneOffset = this.timezoneOffsetFunction(), this.update(Si);
@@ -484,12 +484,12 @@ var highcharts = { exports: {} };
         }
         dateFormat(Si, Ti, Mi) {
           if (!Ki(Ti) || isNaN(Ti))
-            return li.defaultOptions.lang && li.defaultOptions.lang.invalidDate || "";
+            return hi.defaultOptions.lang && hi.defaultOptions.lang.invalidDate || "";
           Si = bi(Si, "%Y-%m-%d %H:%M:%S");
           const Di = this;
           var ci = new this.Date(Ti);
-          const pi = this.get("Hours", ci), vi = this.get("Day", ci), ui = this.get("Date", ci), fi = this.get("Month", ci), si = this.get("FullYear", ci), ti = li.defaultOptions.lang, oi = ti && ti.weekdays, di = ti && ti.shortWeekdays;
-          return ci = es({ a: di ? di[vi] : oi[vi].substr(0, 3), A: oi[vi], d: _i(ui), e: _i(ui, 2, " "), w: vi, b: ti.shortMonths[fi], B: ti.months[fi], m: _i(fi + 1), o: fi + 1, y: si.toString().substr(2, 2), Y: si, H: _i(pi), k: pi, I: _i(pi % 12 || 12), l: pi % 12 || 12, M: _i(this.get("Minutes", ci)), p: 12 > pi ? "AM" : "PM", P: 12 > pi ? "am" : "pm", S: _i(ci.getSeconds()), L: _i(Math.floor(Ti % 1e3), 3) }, li.dateFormats), Vi(ci, function(mi, Oi) {
+          const pi = this.get("Hours", ci), vi = this.get("Day", ci), ui = this.get("Date", ci), fi = this.get("Month", ci), si = this.get("FullYear", ci), ti = hi.defaultOptions.lang, oi = ti && ti.weekdays, di = ti && ti.shortWeekdays;
+          return ci = es({ a: di ? di[vi] : oi[vi].substr(0, 3), A: oi[vi], d: _i(ui), e: _i(ui, 2, " "), w: vi, b: ti.shortMonths[fi], B: ti.months[fi], m: _i(fi + 1), o: fi + 1, y: si.toString().substr(2, 2), Y: si, H: _i(pi), k: pi, I: _i(pi % 12 || 12), l: pi % 12 || 12, M: _i(this.get("Minutes", ci)), p: 12 > pi ? "AM" : "PM", P: 12 > pi ? "am" : "pm", S: _i(ci.getSeconds()), L: _i(Math.floor(Ti % 1e3), 3) }, hi.dateFormats), Vi(ci, function(mi, Oi) {
             for (; Si.indexOf("%" + Oi) !== -1; )
               Si = Si.replace("%" + Oi, typeof mi == "function" ? mi.call(Di, Ti) : mi);
           }), Mi ? Si.substr(0, 1).toUpperCase() + Si.substr(1) : Si;
@@ -547,7 +547,7 @@ var highcharts = { exports: {} };
         }
       }
       return ki;
-    }), ri(ii, "Core/Defaults.js", [ii["Core/Chart/ChartDefaults.js"], ii["Core/Color/Color.js"], ii["Core/Globals.js"], ii["Core/Color/Palettes.js"], ii["Core/Time.js"], ii["Core/Utilities.js"]], function(li, Ci, zi, Ki, Yi, es) {
+    }), ri(ii, "Core/Defaults.js", [ii["Core/Chart/ChartDefaults.js"], ii["Core/Color/Color.js"], ii["Core/Globals.js"], ii["Core/Color/Palettes.js"], ii["Core/Time.js"], ii["Core/Utilities.js"]], function(hi, wi, zi, Ki, Yi, es) {
       const { isTouchDevice: is, svg: $i } = zi, { merge: Vi } = es, _i = {
         colors: Ki.colors,
         symbols: [
@@ -566,7 +566,7 @@ var highcharts = { exports: {} };
           timezoneOffset: 0,
           useUTC: !0
         },
-        chart: li,
+        chart: hi,
         title: { style: { color: "#333333", fontWeight: "bold" }, text: "Chart title", align: "center", margin: 15, widthAdjust: -44 },
         subtitle: { style: { color: "#666666", fontSize: "0.8em" }, text: "", align: "center", widthAdjust: -44 },
         caption: { margin: 15, style: { color: "#666666", fontSize: "0.8em" }, text: "", align: "left", verticalAlign: "bottom" },
@@ -629,13 +629,13 @@ var highcharts = { exports: {} };
       };
       _i.chart.styledMode = !1;
       const bi = new Yi(_i.time);
-      return li = { defaultOptions: _i, defaultTime: bi, getOptions: function() {
+      return hi = { defaultOptions: _i, defaultTime: bi, getOptions: function() {
         return _i;
       }, setOptions: function(Ai) {
         return Vi(!0, _i, Ai), (Ai.time || Ai.global) && (zi.time ? zi.time.update(Vi(_i.global, _i.time, Ai.global, Ai.time)) : zi.time = bi), _i;
-      } }, li;
-    }), ri(ii, "Core/Animation/Fx.js", [ii["Core/Color/Color.js"], ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
-      const { parse: Ki } = li, { win: Yi } = Ci, { isNumber: es, objectEach: is } = zi;
+      } }, hi;
+    }), ri(ii, "Core/Animation/Fx.js", [ii["Core/Color/Color.js"], ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(hi, wi, zi) {
+      const { parse: Ki } = hi, { win: Yi } = wi, { isNumber: es, objectEach: is } = zi;
       class $i {
         constructor(_i, bi, Ai) {
           this.pos = NaN, this.options = bi, this.elem = _i, this.prop = Ai;
@@ -649,12 +649,12 @@ var highcharts = { exports: {} };
           if (Ai !== 1 && bi && _i)
             if (bi.length === _i.length && 1 > Ai)
               for (let Ni = 0; Ni < _i.length; Ni++) {
-                const gi = bi[Ni], ki = _i[Ni], wi = [];
+                const gi = bi[Ni], ki = _i[Ni], Ci = [];
                 for (let Si = 0; Si < ki.length; Si++) {
                   const Ti = gi[Si], Mi = ki[Si];
-                  es(Ti) && es(Mi) && (ki[0] !== "A" || Si !== 4 && Si !== 5) ? wi[Si] = Ti + Ai * (Mi - Ti) : wi[Si] = Mi;
+                  es(Ti) && es(Mi) && (ki[0] !== "A" || Si !== 4 && Si !== 5) ? Ci[Si] = Ti + Ai * (Mi - Ti) : Ci[Si] = Mi;
                 }
-                ji.push(wi);
+                ji.push(Ci);
               }
             else
               ji = _i;
@@ -671,31 +671,31 @@ var highcharts = { exports: {} };
             return gi.stopped ? !1 : ji.step(Si);
           }, ki = Yi.requestAnimationFrame || function(Si) {
             setTimeout(Si, 13);
-          }, wi = function() {
+          }, Ci = function() {
             for (let Si = 0; Si < $i.timers.length; Si++)
               $i.timers[Si]() || $i.timers.splice(Si--, 1);
-            $i.timers.length && ki(wi);
+            $i.timers.length && ki(Ci);
           };
-          _i !== bi || this.elem["forceAnimate:" + this.prop] ? (this.startTime = +/* @__PURE__ */ new Date(), this.start = _i, this.end = bi, this.unit = Ai, this.now = this.start, this.pos = 0, gi.elem = this.elem, gi.prop = this.prop, gi() && $i.timers.push(gi) === 1 && ki(wi)) : (delete Ni.curAnim[this.prop], Ni.complete && Object.keys(Ni.curAnim).length === 0 && Ni.complete.call(this.elem));
+          _i !== bi || this.elem["forceAnimate:" + this.prop] ? (this.startTime = +/* @__PURE__ */ new Date(), this.start = _i, this.end = bi, this.unit = Ai, this.now = this.start, this.pos = 0, gi.elem = this.elem, gi.prop = this.prop, gi() && $i.timers.push(gi) === 1 && ki(Ci)) : (delete Ni.curAnim[this.prop], Ni.complete && Object.keys(Ni.curAnim).length === 0 && Ni.complete.call(this.elem));
         }
         step(_i) {
           const bi = +/* @__PURE__ */ new Date(), Ai = this.options, ji = this.elem, Ni = Ai.complete, gi = Ai.duration, ki = Ai.curAnim;
-          let wi;
-          return ji.attr && !ji.element ? _i = !1 : _i || bi >= gi + this.startTime ? (this.now = this.end, this.pos = 1, this.update(), wi = ki[this.prop] = !0, is(ki, function(Si) {
-            Si !== !0 && (wi = !1);
-          }), wi && Ni && Ni.call(ji), _i = !1) : (this.pos = Ai.easing((bi - this.startTime) / gi), this.now = this.start + (this.end - this.start) * this.pos, this.update(), _i = !0), _i;
+          let Ci;
+          return ji.attr && !ji.element ? _i = !1 : _i || bi >= gi + this.startTime ? (this.now = this.end, this.pos = 1, this.update(), Ci = ki[this.prop] = !0, is(ki, function(Si) {
+            Si !== !0 && (Ci = !1);
+          }), Ci && Ni && Ni.call(ji), _i = !1) : (this.pos = Ai.easing((bi - this.startTime) / gi), this.now = this.start + (this.end - this.start) * this.pos, this.update(), _i = !0), _i;
         }
         initPath(_i, bi, Ai) {
           function ji(ci, pi) {
             for (; ci.length < Mi; ) {
               var vi = ci[0];
               const ui = pi[Mi - ci.length];
-              ui && vi[0] === "M" && (ci[0] = ui[0] === "C" ? ["C", vi[1], vi[2], vi[1], vi[2], vi[1], vi[2]] : ["L", vi[1], vi[2]]), ci.unshift(vi), wi && (vi = ci.pop(), ci.push(ci[ci.length - 1], vi));
+              ui && vi[0] === "M" && (ci[0] = ui[0] === "C" ? ["C", vi[1], vi[2], vi[1], vi[2], vi[1], vi[2]] : ["L", vi[1], vi[2]]), ci.unshift(vi), Ci && (vi = ci.pop(), ci.push(ci[ci.length - 1], vi));
             }
           }
           function Ni(ci, pi) {
             for (; ci.length < Mi; )
-              if (pi = ci[Math.floor(ci.length / Si) - 1].slice(), pi[0] === "C" && (pi[1] = pi[5], pi[2] = pi[6]), wi) {
+              if (pi = ci[Math.floor(ci.length / Si) - 1].slice(), pi[0] === "C" && (pi[1] = pi[5], pi[2] = pi[6]), Ci) {
                 const vi = ci[Math.floor(ci.length / Si)].slice();
                 ci.splice(ci.length / 2, 0, pi, vi);
               } else
@@ -703,7 +703,7 @@ var highcharts = { exports: {} };
           }
           const gi = _i.startX, ki = _i.endX;
           Ai = Ai.slice();
-          const wi = _i.isArea, Si = wi ? 2 : 1;
+          const Ci = _i.isArea, Si = Ci ? 2 : 1;
           let Ti, Mi, Di;
           if (bi = bi && bi.slice(), !bi)
             return [
@@ -738,38 +738,38 @@ var highcharts = { exports: {} };
       ii,
       "Core/Animation/AnimationUtilities.js",
       [ii["Core/Animation/Fx.js"], ii["Core/Utilities.js"]],
-      function(li, Ci) {
+      function(hi, wi) {
         function zi(ji) {
           return Vi(ji) ? _i({ duration: 500, defer: 0 }, ji) : { duration: ji ? 500 : 0, defer: 0 };
         }
         function Ki(ji, Ni) {
-          let gi = li.timers.length;
+          let gi = hi.timers.length;
           for (; gi--; )
-            li.timers[gi].elem !== ji || Ni && Ni !== li.timers[gi].prop || (li.timers[gi].stopped = !0);
+            hi.timers[gi].elem !== ji || Ni && Ni !== hi.timers[gi].prop || (hi.timers[gi].stopped = !0);
         }
-        const { defined: Yi, getStyle: es, isArray: is, isNumber: $i, isObject: Vi, merge: _i, objectEach: bi, pick: Ai } = Ci;
+        const { defined: Yi, getStyle: es, isArray: is, isNumber: $i, isObject: Vi, merge: _i, objectEach: bi, pick: Ai } = wi;
         return { animate: function(ji, Ni, gi) {
-          let ki, wi = "", Si, Ti, Mi;
+          let ki, Ci = "", Si, Ti, Mi;
           Vi(gi) || (Mi = arguments, gi = { duration: Mi[2], easing: Mi[3], complete: Mi[4] }), $i(gi.duration) || (gi.duration = 400), gi.easing = typeof gi.easing == "function" ? gi.easing : Math[gi.easing] || Math.easeInOutSine, gi.curAnim = _i(Ni), bi(Ni, function(Di, ci) {
-            Ki(ji, ci), Ti = new li(ji, gi, ci), Si = void 0, ci === "d" && is(Ni.d) ? (Ti.paths = Ti.initPath(ji, ji.pathArray, Ni.d), Ti.toD = Ni.d, ki = 0, Si = 1) : ji.attr ? ki = ji.attr(ci) : (ki = parseFloat(es(ji, ci)) || 0, ci !== "opacity" && (wi = "px")), Si || (Si = Di), typeof Si == "string" && Si.match("px") && (Si = Si.replace(/px/g, "")), Ti.run(ki, Si, wi);
+            Ki(ji, ci), Ti = new hi(ji, gi, ci), Si = void 0, ci === "d" && is(Ni.d) ? (Ti.paths = Ti.initPath(ji, ji.pathArray, Ni.d), Ti.toD = Ni.d, ki = 0, Si = 1) : ji.attr ? ki = ji.attr(ci) : (ki = parseFloat(es(ji, ci)) || 0, ci !== "opacity" && (Ci = "px")), Si || (Si = Di), typeof Si == "string" && Si.match("px") && (Si = Si.replace(/px/g, "")), Ti.run(ki, Si, Ci);
           });
         }, animObject: zi, getDeferredAnimation: function(ji, Ni, gi) {
           const ki = zi(Ni);
-          let wi = 0, Si = 0;
+          let Ci = 0, Si = 0;
           return (gi ? [gi] : ji.series).forEach((Ti) => {
-            Ti = zi(Ti.options.animation), wi = Ni && Yi(Ni.defer) ? ki.defer : Math.max(wi, Ti.duration + Ti.defer), Si = Math.min(ki.duration, Ti.duration);
-          }), ji.renderer.forExport && (wi = 0), { defer: Math.max(0, wi - Si), duration: Math.min(wi, Si) };
+            Ti = zi(Ti.options.animation), Ci = Ni && Yi(Ni.defer) ? ki.defer : Math.max(Ci, Ti.duration + Ti.defer), Si = Math.min(ki.duration, Ti.duration);
+          }), ji.renderer.forExport && (Ci = 0), { defer: Math.max(0, Ci - Si), duration: Math.min(Ci, Si) };
         }, setAnimation: function(ji, Ni) {
           Ni.renderer.globalAnimation = Ai(ji, Ni.options.chart.animation, !0);
         }, stop: Ki };
       }
-    ), ri(ii, "Core/Renderer/HTML/AST.js", [ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci) {
-      const { SVG_NS: zi, win: Ki } = li, { attr: Yi, createElement: es, css: is, error: $i, isFunction: Vi, isString: _i, objectEach: bi, splat: Ai } = Ci;
-      ({ trustedTypes: Ci } = Ki);
-      const ji = Ci && Vi(Ci.createPolicy) && Ci.createPolicy("highcharts", { createHTML: (wi) => wi });
-      Ci = ji ? ji.createHTML("") : "";
+    ), ri(ii, "Core/Renderer/HTML/AST.js", [ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(hi, wi) {
+      const { SVG_NS: zi, win: Ki } = hi, { attr: Yi, createElement: es, css: is, error: $i, isFunction: Vi, isString: _i, objectEach: bi, splat: Ai } = wi;
+      ({ trustedTypes: wi } = Ki);
+      const ji = wi && Vi(wi.createPolicy) && wi.createPolicy("highcharts", { createHTML: (Ci) => Ci });
+      wi = ji ? ji.createHTML("") : "";
       try {
-        var Ni = !!new DOMParser().parseFromString(Ci, "text/html");
+        var Ni = !!new DOMParser().parseFromString(wi, "text/html");
       } catch {
         Ni = !1;
       }
@@ -802,13 +802,13 @@ var highcharts = { exports: {} };
             let ci;
             return Ai(Mi).forEach(function(pi) {
               var vi = pi.tagName;
-              const ui = pi.textContent ? li.doc.createTextNode(pi.textContent) : void 0, fi = ki.bypassHTMLFiltering;
+              const ui = pi.textContent ? hi.doc.createTextNode(pi.textContent) : void 0, fi = ki.bypassHTMLFiltering;
               let si;
               if (vi)
                 if (vi === "#text")
                   si = ui;
                 else if (ki.allowedTags.indexOf(vi) !== -1 || fi) {
-                  vi = li.doc.createElementNS(vi === "svg" ? zi : Di.namespaceURI || zi, vi);
+                  vi = hi.doc.createElementNS(vi === "svg" ? zi : Di.namespaceURI || zi, vi);
                   const ti = pi.attributes || {};
                   bi(pi, function(oi, di) {
                     di !== "tagName" && di !== "attributes" && di !== "children" && di !== "style" && di !== "textContent" && (ti[di] = oi);
@@ -851,17 +851,17 @@ var highcharts = { exports: {} };
           return [].forEach.call(Si.body.childNodes, (Di) => Mi(Di, Ti)), Ti;
         }
       }
-      return ki.allowedAttributes = "alt aria-controls aria-describedby aria-expanded aria-haspopup aria-hidden aria-label aria-labelledby aria-live aria-pressed aria-readonly aria-roledescription aria-selected class clip-path color colspan cx cy d dx dy disabled fill flood-color flood-opacity height href id in markerHeight markerWidth offset opacity orient padding paddingLeft paddingRight patternUnits r refX refY role scope slope src startOffset stdDeviation stroke stroke-linecap stroke-width style tableValues result rowspan summary target tabindex text-align text-anchor textAnchor textLength title type valign width x x1 x2 xlink:href y y1 y2 zIndex".split(" "), ki.allowedReferences = "https:// http:// mailto: / ../ ./ #".split(" "), ki.allowedTags = "a abbr b br button caption circle clipPath code dd defs div dl dt em feComponentTransfer feDropShadow feFuncA feFuncB feFuncG feFuncR feGaussianBlur feOffset feMerge feMergeNode filter h1 h2 h3 h4 h5 h6 hr i img li linearGradient marker ol p path pattern pre rect small span stop strong style sub sup svg table text textPath thead title tbody tspan td th tr u ul #text".split(" "), ki.emptyHTML = Ci, ki.bypassHTMLFiltering = !1, ki;
-    }), ri(ii, "Core/Templating.js", [ii["Core/Defaults.js"], ii["Core/Utilities.js"]], function(li, Ci) {
-      function zi(gi = "", ki, wi) {
-        const Si = /\{([a-zA-Z0-9:\.,;\-\/<>%_@"'= #\(\)]+)\}/g, Ti = /\(([a-zA-Z0-9:\.,;\-\/<>%_@"'= ]+)\)/g, Mi = [], Di = /f$/, ci = /\.([0-9])/, pi = Yi.lang, vi = wi && wi.time || es, ui = wi && wi.numberFormatter || Ki, fi = (hi = "") => {
+      return ki.allowedAttributes = "alt aria-controls aria-describedby aria-expanded aria-haspopup aria-hidden aria-label aria-labelledby aria-live aria-pressed aria-readonly aria-roledescription aria-selected class clip-path color colspan cx cy d dx dy disabled fill flood-color flood-opacity height href id in markerHeight markerWidth offset opacity orient padding paddingLeft paddingRight patternUnits r refX refY role scope slope src startOffset stdDeviation stroke stroke-linecap stroke-width style tableValues result rowspan summary target tabindex text-align text-anchor textAnchor textLength title type valign width x x1 x2 xlink:href y y1 y2 zIndex".split(" "), ki.allowedReferences = "https:// http:// mailto: / ../ ./ #".split(" "), ki.allowedTags = "a abbr b br button caption circle clipPath code dd defs div dl dt em feComponentTransfer feDropShadow feFuncA feFuncB feFuncG feFuncR feGaussianBlur feOffset feMerge feMergeNode filter h1 h2 h3 h4 h5 h6 hr i img li linearGradient marker ol p path pattern pre rect small span stop strong style sub sup svg table text textPath thead title tbody tspan td th tr u ul #text".split(" "), ki.emptyHTML = wi, ki.bypassHTMLFiltering = !1, ki;
+    }), ri(ii, "Core/Templating.js", [ii["Core/Defaults.js"], ii["Core/Utilities.js"]], function(hi, wi) {
+      function zi(gi = "", ki, Ci) {
+        const Si = /\{([a-zA-Z0-9:\.,;\-\/<>%_@"'= #\(\)]+)\}/g, Ti = /\(([a-zA-Z0-9:\.,;\-\/<>%_@"'= ]+)\)/g, Mi = [], Di = /f$/, ci = /\.([0-9])/, pi = Yi.lang, vi = Ci && Ci.time || es, ui = Ci && Ci.numberFormatter || Ki, fi = (li = "") => {
           let Li;
-          return hi === "true" ? !0 : hi === "false" ? !1 : (Li = Number(hi)).toString() === hi ? Li : $i(hi, ki);
+          return li === "true" ? !0 : li === "false" ? !1 : (Li = Number(li)).toString() === li ? Li : $i(li, ki);
         };
         let si, ti, oi = 0, di;
         for (; (si = Si.exec(gi)) !== null; ) {
-          const hi = Ti.exec(si[1]);
-          hi && (si = hi, di = !0), ti && ti.isBlock || (ti = {
+          const li = Ti.exec(si[1]);
+          li && (si = li, di = !0), ti && ti.isBlock || (ti = {
             ctx: ki,
             expression: si[1],
             find: si[0],
@@ -880,23 +880,23 @@ var highcharts = { exports: {} };
             }
           else
             ti.isBlock || Mi.push(ti);
-          if (hi && (ti == null || !ti.isBlock))
+          if (li && (ti == null || !ti.isBlock))
             break;
         }
-        return Mi.forEach((hi) => {
-          const { body: Li, elseBody: Ui, expression: Zi, fn: rs } = hi;
+        return Mi.forEach((li) => {
+          const { body: Li, elseBody: Ui, expression: Zi, fn: rs } = li;
           var Bi;
           if (rs) {
-            var ni = [hi], Pi = Zi.split(" ");
+            var ni = [li], Pi = Zi.split(" ");
             for (Bi = Ni[rs].length; Bi--; )
               ni.unshift(fi(Pi[Bi + 1]));
-            Bi = Ni[rs].apply(ki, ni), hi.isBlock && typeof Bi == "boolean" && (Bi = zi(Bi ? Li : Ui, ki));
+            Bi = Ni[rs].apply(ki, ni), li.isBlock && typeof Bi == "boolean" && (Bi = zi(Bi ? Li : Ui, ki));
           } else
             ni = Zi.split(":"), Bi = fi(ni.shift() || ""), ni.length && typeof Bi == "number" && (ni = ni.join(":"), Di.test(ni) ? (Pi = parseInt((ni.match(ci) || ["", "-1"])[1], 10), Bi !== null && (Bi = ui(Bi, Pi, pi.decimalPoint, -1 < ni.indexOf(",") ? pi.thousandsSep : ""))) : Bi = vi.dateFormat(ni, Bi));
-          gi = gi.replace(hi.find, Ai(Bi, ""));
-        }), di ? zi(gi, ki, wi) : gi;
+          gi = gi.replace(li.find, Ai(Bi, ""));
+        }), di ? zi(gi, ki, Ci) : gi;
       }
-      function Ki(gi, ki, wi, Si) {
+      function Ki(gi, ki, Ci, Si) {
         gi = +gi || 0, ki = +ki;
         const Ti = Yi.lang;
         var Mi = (gi.toString().split(".")[1] || "").split("e")[0].length;
@@ -911,38 +911,38 @@ var highcharts = { exports: {} };
         }
         pi = (Math.abs(Di[1] ? Di[0] : gi) + Math.pow(10, -Math.max(ki, Mi) - 1)).toFixed(ki), Mi = String(ji(pi));
         const vi = 3 < Mi.length ? Mi.length % 3 : 0;
-        return wi = Ai(wi, Ti.decimalPoint), Si = Ai(Si, Ti.thousandsSep), gi = (0 > gi ? "-" : "") + (vi ? Mi.substr(0, vi) + Si : ""), gi = 0 > +Di[1] && !ci ? "0" : gi + Mi.substr(vi).replace(/(\d{3})(?=\d)/g, "$1" + Si), ki && (gi += wi + pi.slice(-ki)), Di[1] && +gi != 0 && (gi += "e" + Di[1]), gi;
+        return Ci = Ai(Ci, Ti.decimalPoint), Si = Ai(Si, Ti.thousandsSep), gi = (0 > gi ? "-" : "") + (vi ? Mi.substr(0, vi) + Si : ""), gi = 0 > +Di[1] && !ci ? "0" : gi + Mi.substr(vi).replace(/(\d{3})(?=\d)/g, "$1" + Si), ki && (gi += Ci + pi.slice(-ki)), Di[1] && +gi != 0 && (gi += "e" + Di[1]), gi;
       }
-      const { defaultOptions: Yi, defaultTime: es } = li, { extend: is, getNestedProperty: $i, isArray: Vi, isNumber: _i, isObject: bi, pick: Ai, pInt: ji } = Ci, Ni = { add: (gi, ki) => gi + ki, divide: (gi, ki) => ki !== 0 ? gi / ki : "", eq: (gi, ki) => gi == ki, each: function(gi) {
+      const { defaultOptions: Yi, defaultTime: es } = hi, { extend: is, getNestedProperty: $i, isArray: Vi, isNumber: _i, isObject: bi, pick: Ai, pInt: ji } = wi, Ni = { add: (gi, ki) => gi + ki, divide: (gi, ki) => ki !== 0 ? gi / ki : "", eq: (gi, ki) => gi == ki, each: function(gi) {
         const ki = arguments[arguments.length - 1];
-        return Vi(gi) ? gi.map((wi, Si) => zi(ki.body, is(bi(wi) ? wi : { "@this": wi }, { "@index": Si, "@first": Si === 0, "@last": Si === gi.length - 1 }))).join("") : !1;
+        return Vi(gi) ? gi.map((Ci, Si) => zi(ki.body, is(bi(Ci) ? Ci : { "@this": Ci }, { "@index": Si, "@first": Si === 0, "@last": Si === gi.length - 1 }))).join("") : !1;
       }, ge: (gi, ki) => gi >= ki, gt: (gi, ki) => gi > ki, if: (gi) => !!gi, le: (gi, ki) => gi <= ki, lt: (gi, ki) => gi < ki, multiply: (gi, ki) => gi * ki, ne: (gi, ki) => gi != ki, subtract: (gi, ki) => gi - ki, unless: (gi) => !gi };
-      return { dateFormat: function(gi, ki, wi) {
-        return es.dateFormat(gi, ki, wi);
+      return { dateFormat: function(gi, ki, Ci) {
+        return es.dateFormat(gi, ki, Ci);
       }, format: zi, helpers: Ni, numberFormat: Ki };
-    }), ri(ii, "Core/Renderer/RendererUtilities.js", [ii["Core/Utilities.js"]], function(li) {
-      const { clamp: Ci, pick: zi, stableSort: Ki } = li;
+    }), ri(ii, "Core/Renderer/RendererUtilities.js", [ii["Core/Utilities.js"]], function(hi) {
+      const { clamp: wi, pick: zi, stableSort: Ki } = hi;
       var Yi;
       return function(es) {
         function is($i, Vi, _i) {
           const bi = $i;
           var Ai = bi.reducedLen || Vi, ji = (Ti, Mi) => (Mi.rank || 0) - (Ti.rank || 0);
           const Ni = (Ti, Mi) => Ti.target - Mi.target;
-          let gi, ki = !0, wi = [], Si = 0;
+          let gi, ki = !0, Ci = [], Si = 0;
           for (gi = $i.length; gi--; )
             Si += $i[gi].size;
           if (Si > Ai) {
             for (Ki($i, ji), Si = gi = 0; Si <= Ai; )
               Si += $i[gi].size, gi++;
-            wi = $i.splice(gi - 1, $i.length);
+            Ci = $i.splice(gi - 1, $i.length);
           }
           for (Ki($i, Ni), $i = $i.map((Ti) => ({ size: Ti.size, targets: [Ti.target], align: zi(Ti.align, 0.5) })); ki; ) {
             for (gi = $i.length; gi--; )
-              Ai = $i[gi], ji = (Math.min.apply(0, Ai.targets) + Math.max.apply(0, Ai.targets)) / 2, Ai.pos = Ci(ji - Ai.size * Ai.align, 0, Vi - Ai.size);
+              Ai = $i[gi], ji = (Math.min.apply(0, Ai.targets) + Math.max.apply(0, Ai.targets)) / 2, Ai.pos = wi(ji - Ai.size * Ai.align, 0, Vi - Ai.size);
             for (gi = $i.length, ki = !1; gi--; )
               0 < gi && $i[gi - 1].pos + $i[gi - 1].size > $i[gi].pos && ($i[gi - 1].size += $i[gi].size, $i[gi - 1].targets = $i[gi - 1].targets.concat($i[gi].targets), $i[gi - 1].align = 0.5, $i[gi - 1].pos + $i[gi - 1].size > Vi && ($i[gi - 1].pos = Vi - $i[gi - 1].size), $i.splice(gi, 1), ki = !0);
           }
-          return bi.push.apply(bi, wi), gi = 0, $i.some((Ti) => {
+          return bi.push.apply(bi, Ci), gi = 0, $i.some((Ti) => {
             let Mi = 0;
             return (Ti.targets || []).some(() => (bi[gi].pos = Ti.pos + Mi, typeof _i < "u" && Math.abs(bi[gi].pos - bi[gi].target) > _i ? (bi.slice(0, gi + 1).forEach((Di) => delete Di.pos), bi.reducedLen = (bi.reducedLen || Vi) - 0.1 * Vi, bi.reducedLen > 0.1 * Vi && is(bi, Vi, _i), !0) : (Mi += bi[gi].size, gi++, !1)));
           }), Ki(bi, Ni), bi;
@@ -954,92 +954,92 @@ var highcharts = { exports: {} };
       ii["Core/Color/Color.js"],
       ii["Core/Globals.js"],
       ii["Core/Utilities.js"]
-    ], function(li, Ci, zi, Ki) {
-      const { animate: Yi, animObject: es, stop: is } = li, { deg2rad: $i, doc: Vi, svg: _i, SVG_NS: bi, win: Ai } = zi, { addEvent: ji, attr: Ni, createElement: gi, css: ki, defined: wi, erase: Si, extend: Ti, fireEvent: Mi, isArray: Di, isFunction: ci, isObject: pi, isString: vi, merge: ui, objectEach: fi, pick: si, pInt: ti, syncTimeout: oi, uniqueKey: di } = Ki;
+    ], function(hi, wi, zi, Ki) {
+      const { animate: Yi, animObject: es, stop: is } = hi, { deg2rad: $i, doc: Vi, svg: _i, SVG_NS: bi, win: Ai } = zi, { addEvent: ji, attr: Ni, createElement: gi, css: ki, defined: Ci, erase: Si, extend: Ti, fireEvent: Mi, isArray: Di, isFunction: ci, isObject: pi, isString: vi, merge: ui, objectEach: fi, pick: si, pInt: ti, syncTimeout: oi, uniqueKey: di } = Ki;
       class mi {
         constructor() {
           this.element = void 0, this.onEvents = {}, this.opacity = 1, this.renderer = void 0, this.SVG_NS = bi;
         }
-        _defaultGetter(hi) {
-          return hi = si(this[hi + "Value"], this[hi], this.element ? this.element.getAttribute(hi) : null, 0), /^[\-0-9\.]+$/.test(hi) && (hi = parseFloat(hi)), hi;
+        _defaultGetter(li) {
+          return li = si(this[li + "Value"], this[li], this.element ? this.element.getAttribute(li) : null, 0), /^[\-0-9\.]+$/.test(li) && (li = parseFloat(li)), li;
         }
-        _defaultSetter(hi, Li, Ui) {
-          Ui.setAttribute(Li, hi);
+        _defaultSetter(li, Li, Ui) {
+          Ui.setAttribute(Li, li);
         }
-        add(hi) {
+        add(li) {
           const Li = this.renderer, Ui = this.element;
           let Zi;
-          return hi && (this.parentGroup = hi), typeof this.textStr < "u" && this.element.nodeName === "text" && Li.buildText(this), this.added = !0, (!hi || hi.handleZ || this.zIndex) && (Zi = this.zIndexSetter()), Zi || (hi ? hi.element : Li.box).appendChild(Ui), this.onAdd && this.onAdd(), this;
+          return li && (this.parentGroup = li), typeof this.textStr < "u" && this.element.nodeName === "text" && Li.buildText(this), this.added = !0, (!li || li.handleZ || this.zIndex) && (Zi = this.zIndexSetter()), Zi || (li ? li.element : Li.box).appendChild(Ui), this.onAdd && this.onAdd(), this;
         }
-        addClass(hi, Li) {
+        addClass(li, Li) {
           const Ui = Li ? "" : this.attr("class") || "";
-          return hi = (hi || "").split(/ /g).reduce(function(Zi, rs) {
+          return li = (li || "").split(/ /g).reduce(function(Zi, rs) {
             return Ui.indexOf(rs) === -1 && Zi.push(rs), Zi;
-          }, Ui ? [Ui] : []).join(" "), hi !== Ui && this.attr("class", hi), this;
+          }, Ui ? [Ui] : []).join(" "), li !== Ui && this.attr("class", li), this;
         }
         afterSetters() {
           this.doTransform && (this.updateTransform(), this.doTransform = !1);
         }
-        align(hi, Li, Ui) {
+        align(li, Li, Ui) {
           const Zi = {};
           var rs = this.renderer, Bi = rs.alignedObjects, ni;
           let Pi, Hi;
-          hi ? (this.alignOptions = hi, this.alignByTranslate = Li, (!Ui || vi(Ui)) && (this.alignTo = ni = Ui || "renderer", Si(Bi, this), Bi.push(this), Ui = void 0)) : (hi = this.alignOptions, Li = this.alignByTranslate, ni = this.alignTo), Ui = si(Ui, rs[ni], ni === "scrollablePlotBox" ? rs.plotBox : void 0, rs), ni = hi.align;
-          const Ri = hi.verticalAlign;
-          return rs = (Ui.x || 0) + (hi.x || 0), Bi = (Ui.y || 0) + (hi.y || 0), ni === "right" ? Pi = 1 : ni === "center" && (Pi = 2), Pi && (rs += (Ui.width - (hi.width || 0)) / Pi), Zi[Li ? "translateX" : "x"] = Math.round(rs), Ri === "bottom" ? Hi = 1 : Ri === "middle" && (Hi = 2), Hi && (Bi += (Ui.height - (hi.height || 0)) / Hi), Zi[Li ? "translateY" : "y"] = Math.round(Bi), this[this.placed ? "animate" : "attr"](Zi), this.placed = !0, this.alignAttr = Zi, this;
+          li ? (this.alignOptions = li, this.alignByTranslate = Li, (!Ui || vi(Ui)) && (this.alignTo = ni = Ui || "renderer", Si(Bi, this), Bi.push(this), Ui = void 0)) : (li = this.alignOptions, Li = this.alignByTranslate, ni = this.alignTo), Ui = si(Ui, rs[ni], ni === "scrollablePlotBox" ? rs.plotBox : void 0, rs), ni = li.align;
+          const Ri = li.verticalAlign;
+          return rs = (Ui.x || 0) + (li.x || 0), Bi = (Ui.y || 0) + (li.y || 0), ni === "right" ? Pi = 1 : ni === "center" && (Pi = 2), Pi && (rs += (Ui.width - (li.width || 0)) / Pi), Zi[Li ? "translateX" : "x"] = Math.round(rs), Ri === "bottom" ? Hi = 1 : Ri === "middle" && (Hi = 2), Hi && (Bi += (Ui.height - (li.height || 0)) / Hi), Zi[Li ? "translateY" : "y"] = Math.round(Bi), this[this.placed ? "animate" : "attr"](Zi), this.placed = !0, this.alignAttr = Zi, this;
         }
-        alignSetter(hi) {
+        alignSetter(li) {
           const Li = { left: "start", center: "middle", right: "end" };
-          Li[hi] && (this.alignValue = hi, this.element.setAttribute("text-anchor", Li[hi]));
+          Li[li] && (this.alignValue = li, this.element.setAttribute("text-anchor", Li[li]));
         }
-        animate(hi, Li, Ui) {
+        animate(li, Li, Ui) {
           const Zi = es(si(Li, this.renderer.globalAnimation, !0));
           return Li = Zi.defer, Vi.hidden && (Zi.duration = 0), Zi.duration !== 0 ? (Ui && (Zi.complete = Ui), oi(() => {
-            this.element && Yi(this, hi, Zi);
-          }, Li)) : (this.attr(hi, void 0, Ui || Zi.complete), fi(hi, function(rs, Bi) {
+            this.element && Yi(this, li, Zi);
+          }, Li)) : (this.attr(li, void 0, Ui || Zi.complete), fi(li, function(rs, Bi) {
             Zi.step && Zi.step.call(this, rs, { prop: Bi, pos: 1, elem: this });
           }, this)), this;
         }
-        applyTextOutline(hi) {
+        applyTextOutline(li) {
           const Li = this.element;
-          hi.indexOf("contrast") !== -1 && (hi = hi.replace(/contrast/g, this.renderer.getContrast(Li.style.fill)));
-          var Ui = hi.split(" ");
-          if (hi = Ui[Ui.length - 1], (Ui = Ui[0]) && Ui !== "none" && zi.svg) {
+          li.indexOf("contrast") !== -1 && (li = li.replace(/contrast/g, this.renderer.getContrast(Li.style.fill)));
+          var Ui = li.split(" ");
+          if (li = Ui[Ui.length - 1], (Ui = Ui[0]) && Ui !== "none" && zi.svg) {
             this.fakeTS = !0, Ui = Ui.replace(/(^[\d\.]+)(.*?)$/g, function(Bi, ni, Pi) {
               return 2 * Number(ni) + Pi;
             }), this.removeTextOutline();
             const Zi = Vi.createElementNS(bi, "tspan");
-            Ni(Zi, { class: "highcharts-text-outline", fill: hi, stroke: hi, "stroke-width": Ui, "stroke-linejoin": "round" }), hi = Li.querySelector("textPath") || Li, [].forEach.call(hi.childNodes, (Bi) => {
+            Ni(Zi, { class: "highcharts-text-outline", fill: li, stroke: li, "stroke-width": Ui, "stroke-linejoin": "round" }), li = Li.querySelector("textPath") || Li, [].forEach.call(li.childNodes, (Bi) => {
               const ni = Bi.cloneNode(!0);
               ni.removeAttribute && ["fill", "stroke", "stroke-width", "stroke"].forEach((Pi) => ni.removeAttribute(Pi)), Zi.appendChild(ni);
             });
             let rs = 0;
-            [].forEach.call(hi.querySelectorAll("text tspan"), (Bi) => {
+            [].forEach.call(li.querySelectorAll("text tspan"), (Bi) => {
               rs += Number(Bi.getAttribute("dy"));
-            }), Ui = Vi.createElementNS(bi, "tspan"), Ui.textContent = "​", Ni(Ui, { x: Number(Li.getAttribute("x")), dy: -rs }), Zi.appendChild(Ui), hi.insertBefore(Zi, hi.firstChild);
+            }), Ui = Vi.createElementNS(bi, "tspan"), Ui.textContent = "​", Ni(Ui, { x: Number(Li.getAttribute("x")), dy: -rs }), Zi.appendChild(Ui), li.insertBefore(Zi, li.firstChild);
           }
         }
-        attr(hi, Li, Ui, Zi) {
+        attr(li, Li, Ui, Zi) {
           const rs = this.element, Bi = mi.symbolCustomAttribs;
           let ni, Pi, Hi = this, Ri, qi;
-          return typeof hi == "string" && typeof Li < "u" && (ni = hi, hi = {}, hi[ni] = Li), typeof hi == "string" ? Hi = (this[hi + "Getter"] || this._defaultGetter).call(this, hi, rs) : (fi(hi, function(ai, xi) {
-            Ri = !1, Zi || is(this, xi), this.symbolName && Bi.indexOf(xi) !== -1 && (Pi || (this.symbolAttr(hi), Pi = !0), Ri = !0), !this.rotation || xi !== "x" && xi !== "y" || (this.doTransform = !0), Ri || (qi = this[xi + "Setter"] || this._defaultSetter, qi.call(this, ai, xi, rs));
+          return typeof li == "string" && typeof Li < "u" && (ni = li, li = {}, li[ni] = Li), typeof li == "string" ? Hi = (this[li + "Getter"] || this._defaultGetter).call(this, li, rs) : (fi(li, function(ai, xi) {
+            Ri = !1, Zi || is(this, xi), this.symbolName && Bi.indexOf(xi) !== -1 && (Pi || (this.symbolAttr(li), Pi = !0), Ri = !0), !this.rotation || xi !== "x" && xi !== "y" || (this.doTransform = !0), Ri || (qi = this[xi + "Setter"] || this._defaultSetter, qi.call(this, ai, xi, rs));
           }, this), this.afterSetters()), Ui && Ui.call(this), Hi;
         }
-        clip(hi) {
-          return this.attr("clip-path", hi ? "url(" + this.renderer.url + "#" + hi.id + ")" : "none");
+        clip(li) {
+          return this.attr("clip-path", li ? "url(" + this.renderer.url + "#" + li.id + ")" : "none");
         }
-        crisp(hi, Li) {
-          Li = Li || hi.strokeWidth || 0;
+        crisp(li, Li) {
+          Li = Li || li.strokeWidth || 0;
           const Ui = Math.round(Li) % 2 / 2;
-          return hi.x = Math.floor(hi.x || this.x || 0) + Ui, hi.y = Math.floor(hi.y || this.y || 0) + Ui, hi.width = Math.floor((hi.width || this.width || 0) - 2 * Ui), hi.height = Math.floor((hi.height || this.height || 0) - 2 * Ui), wi(hi.strokeWidth) && (hi.strokeWidth = Li), hi;
+          return li.x = Math.floor(li.x || this.x || 0) + Ui, li.y = Math.floor(li.y || this.y || 0) + Ui, li.width = Math.floor((li.width || this.width || 0) - 2 * Ui), li.height = Math.floor((li.height || this.height || 0) - 2 * Ui), Ci(li.strokeWidth) && (li.strokeWidth = Li), li;
         }
-        complexColor(hi, Li, Ui) {
+        complexColor(li, Li, Ui) {
           const Zi = this.renderer;
           let rs, Bi, ni, Pi, Hi, Ri, qi, ai, xi, yi, Gi = [], Xi;
           Mi(this.renderer, "complexColor", { args: arguments }, function() {
-            if (hi.radialGradient ? Bi = "radialGradient" : hi.linearGradient && (Bi = "linearGradient"), Bi) {
-              if (ni = hi[Bi], Hi = Zi.gradients, Ri = hi.stops, xi = Ui.radialReference, Di(ni) && (hi[Bi] = ni = { x1: ni[0], y1: ni[1], x2: ni[2], y2: ni[3], gradientUnits: "userSpaceOnUse" }), Bi === "radialGradient" && xi && !wi(ni.gradientUnits) && (Pi = ni, ni = ui(ni, Zi.getRadialAttr(xi, Pi), { gradientUnits: "userSpaceOnUse" })), fi(ni, function(Wi, ts) {
+            if (li.radialGradient ? Bi = "radialGradient" : li.linearGradient && (Bi = "linearGradient"), Bi) {
+              if (ni = li[Bi], Hi = Zi.gradients, Ri = li.stops, xi = Ui.radialReference, Di(ni) && (li[Bi] = ni = { x1: ni[0], y1: ni[1], x2: ni[2], y2: ni[3], gradientUnits: "userSpaceOnUse" }), Bi === "radialGradient" && xi && !Ci(ni.gradientUnits) && (Pi = ni, ni = ui(ni, Zi.getRadialAttr(xi, Pi), { gradientUnits: "userSpaceOnUse" })), fi(ni, function(Wi, ts) {
                 ts !== "id" && Gi.push(ts, Wi);
               }), fi(Ri, function(Wi) {
                 Gi.push(Wi);
@@ -1049,87 +1049,87 @@ var highcharts = { exports: {} };
                 ni.id = yi = di();
                 const Wi = Hi[Gi] = Zi.createElement(Bi).attr(ni).add(Zi.defs);
                 Wi.radAttr = Pi, Wi.stops = [], Ri.forEach(function(ts) {
-                  ts[1].indexOf("rgba") === 0 ? (rs = Ci.parse(ts[1]), qi = rs.get("rgb"), ai = rs.get("a")) : (qi = ts[1], ai = 1), ts = Zi.createElement("stop").attr({ offset: ts[0], "stop-color": qi, "stop-opacity": ai }).add(Wi), Wi.stops.push(ts);
+                  ts[1].indexOf("rgba") === 0 ? (rs = wi.parse(ts[1]), qi = rs.get("rgb"), ai = rs.get("a")) : (qi = ts[1], ai = 1), ts = Zi.createElement("stop").attr({ offset: ts[0], "stop-color": qi, "stop-opacity": ai }).add(Wi), Wi.stops.push(ts);
                 });
               }
-              Xi = "url(" + Zi.url + "#" + yi + ")", Ui.setAttribute(Li, Xi), Ui.gradient = Gi, hi.toString = function() {
+              Xi = "url(" + Zi.url + "#" + yi + ")", Ui.setAttribute(Li, Xi), Ui.gradient = Gi, li.toString = function() {
                 return Xi;
               };
             }
           });
         }
-        css(hi) {
+        css(li) {
           const Li = this.styles, Ui = {}, Zi = this.element;
           let rs, Bi = !Li;
-          if (Li && fi(hi, function(ni, Pi) {
+          if (Li && fi(li, function(ni, Pi) {
             Li && Li[Pi] !== ni && (Ui[Pi] = ni, Bi = !0);
           }), Bi) {
-            Li && (hi = Ti(Li, Ui)), hi.width === null || hi.width === "auto" ? delete this.textWidth : Zi.nodeName.toLowerCase() === "text" && hi.width && (rs = this.textWidth = ti(hi.width)), this.styles = hi, rs && !_i && this.renderer.forExport && delete hi.width;
-            const ni = ui(hi);
+            Li && (li = Ti(Li, Ui)), li.width === null || li.width === "auto" ? delete this.textWidth : Zi.nodeName.toLowerCase() === "text" && li.width && (rs = this.textWidth = ti(li.width)), this.styles = li, rs && !_i && this.renderer.forExport && delete li.width;
+            const ni = ui(li);
             Zi.namespaceURI === this.SVG_NS && (["textOutline", "textOverflow", "width"].forEach((Pi) => ni && delete ni[Pi]), ni.color && (ni.fill = ni.color)), ki(Zi, ni);
           }
-          return this.added && (this.element.nodeName === "text" && this.renderer.buildText(this), hi.textOutline && this.applyTextOutline(hi.textOutline)), this;
+          return this.added && (this.element.nodeName === "text" && this.renderer.buildText(this), li.textOutline && this.applyTextOutline(li.textOutline)), this;
         }
-        dashstyleSetter(hi) {
+        dashstyleSetter(li) {
           let Li = this["stroke-width"];
-          if (Li === "inherit" && (Li = 1), hi = hi && hi.toLowerCase()) {
-            const Ui = hi.replace("shortdashdotdot", "3,1,1,1,1,1,").replace("shortdashdot", "3,1,1,1").replace("shortdot", "1,1,").replace("shortdash", "3,1,").replace("longdash", "8,3,").replace(/dot/g, "1,3,").replace("dash", "4,3,").replace(/,$/, "").split(",");
-            for (hi = Ui.length; hi--; )
-              Ui[hi] = "" + ti(Ui[hi]) * si(Li, NaN);
-            hi = Ui.join(",").replace(/NaN/g, "none"), this.element.setAttribute(
+          if (Li === "inherit" && (Li = 1), li = li && li.toLowerCase()) {
+            const Ui = li.replace("shortdashdotdot", "3,1,1,1,1,1,").replace("shortdashdot", "3,1,1,1").replace("shortdot", "1,1,").replace("shortdash", "3,1,").replace("longdash", "8,3,").replace(/dot/g, "1,3,").replace("dash", "4,3,").replace(/,$/, "").split(",");
+            for (li = Ui.length; li--; )
+              Ui[li] = "" + ti(Ui[li]) * si(Li, NaN);
+            li = Ui.join(",").replace(/NaN/g, "none"), this.element.setAttribute(
               "stroke-dasharray",
-              hi
+              li
             );
           }
         }
         destroy() {
-          const hi = this;
-          var Li = hi.element || {};
-          const Ui = hi.renderer;
+          const li = this;
+          var Li = li.element || {};
+          const Ui = li.renderer;
           var Zi = Li.ownerSVGElement;
-          let rs = Li.nodeName === "SPAN" && hi.parentGroup || void 0;
-          if (Li.onclick = Li.onmouseout = Li.onmouseover = Li.onmousemove = Li.point = null, is(hi), hi.clipPath && Zi) {
-            const Bi = hi.clipPath;
+          let rs = Li.nodeName === "SPAN" && li.parentGroup || void 0;
+          if (Li.onclick = Li.onmouseout = Li.onmouseover = Li.onmousemove = Li.point = null, is(li), li.clipPath && Zi) {
+            const Bi = li.clipPath;
             [].forEach.call(Zi.querySelectorAll("[clip-path],[CLIP-PATH]"), function(ni) {
               -1 < ni.getAttribute("clip-path").indexOf(Bi.element.id) && ni.removeAttribute("clip-path");
-            }), hi.clipPath = Bi.destroy();
+            }), li.clipPath = Bi.destroy();
           }
-          if (hi.stops) {
-            for (Zi = 0; Zi < hi.stops.length; Zi++)
-              hi.stops[Zi].destroy();
-            hi.stops.length = 0, hi.stops = void 0;
+          if (li.stops) {
+            for (Zi = 0; Zi < li.stops.length; Zi++)
+              li.stops[Zi].destroy();
+            li.stops.length = 0, li.stops = void 0;
           }
-          for (hi.safeRemoveChild(Li); rs && rs.div && rs.div.childNodes.length === 0; )
-            Li = rs.parentGroup, hi.safeRemoveChild(rs.div), delete rs.div, rs = Li;
-          hi.alignTo && Si(Ui.alignedObjects, hi), fi(hi, function(Bi, ni) {
-            hi[ni] && hi[ni].parentGroup === hi && hi[ni].destroy && hi[ni].destroy(), delete hi[ni];
+          for (li.safeRemoveChild(Li); rs && rs.div && rs.div.childNodes.length === 0; )
+            Li = rs.parentGroup, li.safeRemoveChild(rs.div), delete rs.div, rs = Li;
+          li.alignTo && Si(Ui.alignedObjects, li), fi(li, function(Bi, ni) {
+            li[ni] && li[ni].parentGroup === li && li[ni].destroy && li[ni].destroy(), delete li[ni];
           });
         }
-        dSetter(hi, Li, Ui) {
-          Di(hi) && (typeof hi[0] == "string" && (hi = this.renderer.pathToSegments(hi)), this.pathArray = hi, hi = hi.reduce((Zi, rs, Bi) => rs && rs.join ? (Bi ? Zi + " " : "") + rs.join(" ") : (rs || "").toString(), "")), /(NaN| {2}|^$)/.test(hi) && (hi = "M 0 0"), this[Li] !== hi && (Ui.setAttribute(
+        dSetter(li, Li, Ui) {
+          Di(li) && (typeof li[0] == "string" && (li = this.renderer.pathToSegments(li)), this.pathArray = li, li = li.reduce((Zi, rs, Bi) => rs && rs.join ? (Bi ? Zi + " " : "") + rs.join(" ") : (rs || "").toString(), "")), /(NaN| {2}|^$)/.test(li) && (li = "M 0 0"), this[Li] !== li && (Ui.setAttribute(
             Li,
-            hi
-          ), this[Li] = hi);
+            li
+          ), this[Li] = li);
         }
-        fadeOut(hi) {
+        fadeOut(li) {
           const Li = this;
-          Li.animate({ opacity: 0 }, { duration: si(hi, 150), complete: function() {
+          Li.animate({ opacity: 0 }, { duration: si(li, 150), complete: function() {
             Li.hide();
           } });
         }
-        fillSetter(hi, Li, Ui) {
-          typeof hi == "string" ? Ui.setAttribute(Li, hi) : hi && this.complexColor(hi, Li, Ui);
+        fillSetter(li, Li, Ui) {
+          typeof li == "string" ? Ui.setAttribute(Li, li) : li && this.complexColor(li, Li, Ui);
         }
-        getBBox(hi, Li) {
+        getBBox(li, Li) {
           const { alignValue: Ui, element: Zi, renderer: rs, styles: Bi, textStr: ni } = this, { cache: Pi, cacheKeys: Hi } = rs;
           var Ri = Zi.namespaceURI === this.SVG_NS;
           Li = si(Li, this.rotation, 0);
           var qi = rs.styledMode ? Zi && mi.prototype.getStyle.call(Zi, "font-size") : Bi && Bi.fontSize;
           let ai, xi;
-          if (wi(ni) && (xi = ni.toString(), xi.indexOf("<") === -1 && (xi = xi.replace(
+          if (Ci(ni) && (xi = ni.toString(), xi.indexOf("<") === -1 && (xi = xi.replace(
             /[0-9]/g,
             "0"
-          )), xi += ["", rs.rootFontSize, qi, Li, this.textWidth, Ui, Bi && Bi.textOverflow, Bi && Bi.fontWeight].join()), xi && !hi && (ai = Pi[xi]), !ai) {
+          )), xi += ["", rs.rootFontSize, qi, Li, this.textWidth, Ui, Bi && Bi.textOverflow, Bi && Bi.fontWeight].join()), xi && !li && (ai = Pi[xi]), !ai) {
             if (Ri || rs.forExport) {
               try {
                 var yi = this.fakeTS && function(ss) {
@@ -1142,12 +1142,12 @@ var highcharts = { exports: {} };
               (!ai || 0 > ai.width) && (ai = { x: 0, y: 0, width: 0, height: 0 });
             } else
               ai = this.htmlGetBBox();
-            if (yi = ai.width, hi = ai.height, Ri && (ai.height = hi = { "11px,17": 14, "13px,20": 16 }[`${qi || ""},${Math.round(hi)}`] || hi), Li) {
+            if (yi = ai.width, li = ai.height, Ri && (ai.height = li = { "11px,17": 14, "13px,20": 16 }[`${qi || ""},${Math.round(li)}`] || li), Li) {
               Ri = Number(Zi.getAttribute("y") || 0) - ai.y, qi = { right: 1, center: 0.5 }[Ui || 0] || 0;
               var Gi = Li * $i, Xi = (Li - 90) * $i, Wi = yi * Math.cos(Gi);
               Li = yi * Math.sin(Gi);
               var ts = Math.cos(Xi);
-              Gi = Math.sin(Xi), yi = ai.x + qi * (yi - Wi) + Ri * ts, Xi = yi + Wi, ts = Xi - hi * ts, Wi = ts - Wi, Ri = ai.y + Ri - qi * Li + Ri * Gi, qi = Ri + Li, hi = qi - hi * Gi, Li = hi - Li, ai.x = Math.min(yi, Xi, ts, Wi), ai.y = Math.min(Ri, qi, hi, Li), ai.width = Math.max(yi, Xi, ts, Wi) - ai.x, ai.height = Math.max(Ri, qi, hi, Li) - ai.y;
+              Gi = Math.sin(Xi), yi = ai.x + qi * (yi - Wi) + Ri * ts, Xi = yi + Wi, ts = Xi - li * ts, Wi = ts - Wi, Ri = ai.y + Ri - qi * Li + Ri * Gi, qi = Ri + Li, li = qi - li * Gi, Li = li - Li, ai.x = Math.min(yi, Xi, ts, Wi), ai.y = Math.min(Ri, qi, li, Li), ai.width = Math.max(yi, Xi, ts, Wi) - ai.x, ai.height = Math.max(Ri, qi, li, Li) - ai.y;
             }
           }
           if (xi && (ni === "" || 0 < ai.height)) {
@@ -1157,11 +1157,11 @@ var highcharts = { exports: {} };
           }
           return ai;
         }
-        getStyle(hi) {
-          return Ai.getComputedStyle(this.element || this, "").getPropertyValue(hi);
+        getStyle(li) {
+          return Ai.getComputedStyle(this.element || this, "").getPropertyValue(li);
         }
-        hasClass(hi) {
-          return ("" + this.attr("class")).split(" ").indexOf(hi) !== -1;
+        hasClass(li) {
+          return ("" + this.attr("class")).split(" ").indexOf(li) !== -1;
         }
         hide() {
           return this.attr({ visibility: "hidden" });
@@ -1169,71 +1169,71 @@ var highcharts = { exports: {} };
         htmlGetBBox() {
           return { height: 0, width: 0, x: 0, y: 0 };
         }
-        init(hi, Li) {
-          this.element = Li === "span" ? gi(Li) : Vi.createElementNS(this.SVG_NS, Li), this.renderer = hi, Mi(this, "afterInit");
+        init(li, Li) {
+          this.element = Li === "span" ? gi(Li) : Vi.createElementNS(this.SVG_NS, Li), this.renderer = li, Mi(this, "afterInit");
         }
-        on(hi, Li) {
+        on(li, Li) {
           const { onEvents: Ui } = this;
-          return Ui[hi] && Ui[hi](), Ui[hi] = ji(this.element, hi, Li), this;
+          return Ui[li] && Ui[li](), Ui[li] = ji(this.element, li, Li), this;
         }
-        opacitySetter(hi, Li, Ui) {
-          this.opacity = hi = Number(Number(hi).toFixed(3)), Ui.setAttribute(Li, hi);
+        opacitySetter(li, Li, Ui) {
+          this.opacity = li = Number(Number(li).toFixed(3)), Ui.setAttribute(Li, li);
         }
-        removeClass(hi) {
+        removeClass(li) {
           return this.attr(
             "class",
-            ("" + this.attr("class")).replace(vi(hi) ? new RegExp(`(^| )${hi}( |$)`) : hi, " ").replace(/ +/g, " ").trim()
+            ("" + this.attr("class")).replace(vi(li) ? new RegExp(`(^| )${li}( |$)`) : li, " ").replace(/ +/g, " ").trim()
           );
         }
         removeTextOutline() {
-          const hi = this.element.querySelector("tspan.highcharts-text-outline");
-          hi && this.safeRemoveChild(hi);
+          const li = this.element.querySelector("tspan.highcharts-text-outline");
+          li && this.safeRemoveChild(li);
         }
-        safeRemoveChild(hi) {
-          const Li = hi.parentNode;
-          Li && Li.removeChild(hi);
+        safeRemoveChild(li) {
+          const Li = li.parentNode;
+          Li && Li.removeChild(li);
         }
-        setRadialReference(hi) {
+        setRadialReference(li) {
           const Li = this.element.gradient && this.renderer.gradients[this.element.gradient];
-          return this.element.radialReference = hi, Li && Li.radAttr && Li.animate(this.renderer.getRadialAttr(hi, Li.radAttr)), this;
+          return this.element.radialReference = li, Li && Li.radAttr && Li.animate(this.renderer.getRadialAttr(li, Li.radAttr)), this;
         }
-        setTextPath(hi, Li) {
+        setTextPath(li, Li) {
           Li = ui(!0, { enabled: !0, attributes: { dy: -5, startOffset: "50%", textAnchor: "middle" } }, Li);
           const Ui = this.renderer.url, Zi = this.text || this, rs = Zi.textPath, { attributes: Bi, enabled: ni } = Li;
-          return hi = hi || rs && rs.path, rs && rs.undo(), hi && ni ? (Li = ji(Zi, "afterModifyTree", (Pi) => {
-            if (hi && ni) {
-              let Ri = hi.attr("id");
-              Ri || hi.attr("id", Ri = di());
+          return li = li || rs && rs.path, rs && rs.undo(), li && ni ? (Li = ji(Zi, "afterModifyTree", (Pi) => {
+            if (li && ni) {
+              let Ri = li.attr("id");
+              Ri || li.attr("id", Ri = di());
               var Hi = { x: 0, y: 0 };
-              wi(Bi.dx) && (Hi.dx = Bi.dx, delete Bi.dx), wi(Bi.dy) && (Hi.dy = Bi.dy, delete Bi.dy), Zi.attr(Hi), this.attr({ transform: "" }), this.box && (this.box = this.box.destroy()), Hi = Pi.nodes.slice(0), Pi.nodes.length = 0, Pi.nodes[0] = { tagName: "textPath", attributes: Ti(
+              Ci(Bi.dx) && (Hi.dx = Bi.dx, delete Bi.dx), Ci(Bi.dy) && (Hi.dy = Bi.dy, delete Bi.dy), Zi.attr(Hi), this.attr({ transform: "" }), this.box && (this.box = this.box.destroy()), Hi = Pi.nodes.slice(0), Pi.nodes.length = 0, Pi.nodes[0] = { tagName: "textPath", attributes: Ti(
                 Bi,
                 { "text-anchor": Bi.textAnchor, href: `${Ui}#${Ri}` }
               ), children: Hi };
             }
-          }), Zi.textPath = { path: hi, undo: Li }) : (Zi.attr({ dx: 0, dy: 0 }), delete Zi.textPath), this.added && (Zi.textCache = "", this.renderer.buildText(Zi)), this;
+          }), Zi.textPath = { path: li, undo: Li }) : (Zi.attr({ dx: 0, dy: 0 }), delete Zi.textPath), this.added && (Zi.textCache = "", this.renderer.buildText(Zi)), this;
         }
-        shadow(hi) {
+        shadow(li) {
           var Li;
-          const { renderer: Ui } = this, Zi = ui(((Li = this.parentGroup) === null || Li === void 0 ? void 0 : Li.rotation) === 90 ? { offsetX: -1, offsetY: -1 } : {}, pi(hi) ? hi : {});
-          return Li = Ui.shadowDefinition(Zi), this.attr({ filter: hi ? `url(${Ui.url}#${Li})` : "none" });
+          const { renderer: Ui } = this, Zi = ui(((Li = this.parentGroup) === null || Li === void 0 ? void 0 : Li.rotation) === 90 ? { offsetX: -1, offsetY: -1 } : {}, pi(li) ? li : {});
+          return Li = Ui.shadowDefinition(Zi), this.attr({ filter: li ? `url(${Ui.url}#${Li})` : "none" });
         }
-        show(hi = !0) {
-          return this.attr({ visibility: hi ? "inherit" : "visible" });
+        show(li = !0) {
+          return this.attr({ visibility: li ? "inherit" : "visible" });
         }
-        "stroke-widthSetter"(hi, Li, Ui) {
-          this[Li] = hi, Ui.setAttribute(Li, hi);
+        "stroke-widthSetter"(li, Li, Ui) {
+          this[Li] = li, Ui.setAttribute(Li, li);
         }
         strokeWidth() {
           if (!this.renderer.styledMode)
             return this["stroke-width"] || 0;
-          const hi = this.getStyle("stroke-width");
+          const li = this.getStyle("stroke-width");
           let Li = 0, Ui;
-          return hi.indexOf("px") === hi.length - 2 ? Li = ti(hi) : hi !== "" && (Ui = Vi.createElementNS(bi, "rect"), Ni(Ui, { width: hi, "stroke-width": 0 }), this.element.parentNode.appendChild(Ui), Li = Ui.getBBox().width, Ui.parentNode.removeChild(Ui)), Li;
+          return li.indexOf("px") === li.length - 2 ? Li = ti(li) : li !== "" && (Ui = Vi.createElementNS(bi, "rect"), Ni(Ui, { width: li, "stroke-width": 0 }), this.element.parentNode.appendChild(Ui), Li = Ui.getBBox().width, Ui.parentNode.removeChild(Ui)), Li;
         }
-        symbolAttr(hi) {
+        symbolAttr(li) {
           const Li = this;
           mi.symbolCustomAttribs.forEach(function(Ui) {
-            Li[Ui] = si(hi[Ui], Li[Ui]);
+            Li[Ui] = si(li[Ui], Li[Ui]);
           }), Li.attr({ d: Li.renderer.symbols[Li.symbolName](
             Li.x,
             Li.y,
@@ -1242,67 +1242,67 @@ var highcharts = { exports: {} };
             Li
           ) });
         }
-        textSetter(hi) {
-          hi !== this.textStr && (delete this.textPxLength, this.textStr = hi, this.added && this.renderer.buildText(this));
+        textSetter(li) {
+          li !== this.textStr && (delete this.textPxLength, this.textStr = li, this.added && this.renderer.buildText(this));
         }
-        titleSetter(hi) {
+        titleSetter(li) {
           const Li = this.element, Ui = Li.getElementsByTagName("title")[0] || Vi.createElementNS(this.SVG_NS, "title");
-          Li.insertBefore ? Li.insertBefore(Ui, Li.firstChild) : Li.appendChild(Ui), Ui.textContent = String(si(hi, "")).replace(/<[^>]*>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+          Li.insertBefore ? Li.insertBefore(Ui, Li.firstChild) : Li.appendChild(Ui), Ui.textContent = String(si(li, "")).replace(/<[^>]*>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
         }
         toFront() {
-          const hi = this.element;
-          return hi.parentNode.appendChild(hi), this;
+          const li = this.element;
+          return li.parentNode.appendChild(li), this;
         }
-        translate(hi, Li) {
+        translate(li, Li) {
           return this.attr({
-            translateX: hi,
+            translateX: li,
             translateY: Li
           });
         }
         updateTransform() {
-          const { element: hi, matrix: Li, rotation: Ui = 0, scaleX: Zi, scaleY: rs, translateX: Bi = 0, translateY: ni = 0 } = this, Pi = ["translate(" + Bi + "," + ni + ")"];
-          wi(Li) && Pi.push("matrix(" + Li.join(",") + ")"), Ui && Pi.push("rotate(" + Ui + " " + si(this.rotationOriginX, hi.getAttribute("x"), 0) + " " + si(this.rotationOriginY, hi.getAttribute("y") || 0) + ")"), (wi(Zi) || wi(rs)) && Pi.push("scale(" + si(Zi, 1) + " " + si(rs, 1) + ")"), Pi.length && !(this.text || this).textPath && hi.setAttribute("transform", Pi.join(" "));
+          const { element: li, matrix: Li, rotation: Ui = 0, scaleX: Zi, scaleY: rs, translateX: Bi = 0, translateY: ni = 0 } = this, Pi = ["translate(" + Bi + "," + ni + ")"];
+          Ci(Li) && Pi.push("matrix(" + Li.join(",") + ")"), Ui && Pi.push("rotate(" + Ui + " " + si(this.rotationOriginX, li.getAttribute("x"), 0) + " " + si(this.rotationOriginY, li.getAttribute("y") || 0) + ")"), (Ci(Zi) || Ci(rs)) && Pi.push("scale(" + si(Zi, 1) + " " + si(rs, 1) + ")"), Pi.length && !(this.text || this).textPath && li.setAttribute("transform", Pi.join(" "));
         }
-        visibilitySetter(hi, Li, Ui) {
-          hi === "inherit" ? Ui.removeAttribute(Li) : this[Li] !== hi && Ui.setAttribute(Li, hi), this[Li] = hi;
+        visibilitySetter(li, Li, Ui) {
+          li === "inherit" ? Ui.removeAttribute(Li) : this[Li] !== li && Ui.setAttribute(Li, li), this[Li] = li;
         }
-        xGetter(hi) {
-          return this.element.nodeName === "circle" && (hi === "x" ? hi = "cx" : hi === "y" && (hi = "cy")), this._defaultGetter(hi);
+        xGetter(li) {
+          return this.element.nodeName === "circle" && (li === "x" ? li = "cx" : li === "y" && (li = "cy")), this._defaultGetter(li);
         }
-        zIndexSetter(hi, Li) {
+        zIndexSetter(li, Li) {
           var Ui = this.renderer, Zi = this.parentGroup;
           const rs = (Zi || Ui).element || Ui.box, Bi = this.element;
           Ui = rs === Ui.box;
           let ni = !1, Pi;
           var Hi = this.added;
           let Ri;
-          if (wi(hi) ? (Bi.setAttribute("data-z-index", hi), hi = +hi, this[Li] === hi && (Hi = !1)) : wi(this[Li]) && Bi.removeAttribute("data-z-index"), this[Li] = hi, Hi) {
-            for ((hi = this.zIndex) && Zi && (Zi.handleZ = !0), Li = rs.childNodes, Ri = Li.length - 1; 0 <= Ri && !ni; Ri--)
-              Zi = Li[Ri], Hi = Zi.getAttribute("data-z-index"), Pi = !wi(Hi), Zi !== Bi && (0 > hi && Pi && !Ui && !Ri ? (rs.insertBefore(Bi, Li[Ri]), ni = !0) : (ti(Hi) <= hi || Pi && (!wi(hi) || 0 <= hi)) && (rs.insertBefore(Bi, Li[Ri + 1]), ni = !0));
+          if (Ci(li) ? (Bi.setAttribute("data-z-index", li), li = +li, this[Li] === li && (Hi = !1)) : Ci(this[Li]) && Bi.removeAttribute("data-z-index"), this[Li] = li, Hi) {
+            for ((li = this.zIndex) && Zi && (Zi.handleZ = !0), Li = rs.childNodes, Ri = Li.length - 1; 0 <= Ri && !ni; Ri--)
+              Zi = Li[Ri], Hi = Zi.getAttribute("data-z-index"), Pi = !Ci(Hi), Zi !== Bi && (0 > li && Pi && !Ui && !Ri ? (rs.insertBefore(Bi, Li[Ri]), ni = !0) : (ti(Hi) <= li || Pi && (!Ci(li) || 0 <= li)) && (rs.insertBefore(Bi, Li[Ri + 1]), ni = !0));
             ni || (rs.insertBefore(Bi, Li[Ui ? 3 : 0]), ni = !0);
           }
           return ni;
         }
       }
-      return mi.symbolCustomAttribs = "anchorX anchorY clockwise end height innerR r start width x y".split(" "), mi.prototype.strokeSetter = mi.prototype.fillSetter, mi.prototype.yGetter = mi.prototype.xGetter, mi.prototype.matrixSetter = mi.prototype.rotationOriginXSetter = mi.prototype.rotationOriginYSetter = mi.prototype.rotationSetter = mi.prototype.scaleXSetter = mi.prototype.scaleYSetter = mi.prototype.translateXSetter = mi.prototype.translateYSetter = mi.prototype.verticalAlignSetter = function(Oi, hi) {
-        this[hi] = Oi, this.doTransform = !0;
+      return mi.symbolCustomAttribs = "anchorX anchorY clockwise end height innerR r start width x y".split(" "), mi.prototype.strokeSetter = mi.prototype.fillSetter, mi.prototype.yGetter = mi.prototype.xGetter, mi.prototype.matrixSetter = mi.prototype.rotationOriginXSetter = mi.prototype.rotationOriginYSetter = mi.prototype.rotationSetter = mi.prototype.scaleXSetter = mi.prototype.scaleYSetter = mi.prototype.translateXSetter = mi.prototype.translateYSetter = mi.prototype.verticalAlignSetter = function(Oi, li) {
+        this[li] = Oi, this.doTransform = !0;
       }, mi;
-    }), ri(ii, "Core/Renderer/RendererRegistry.js", [ii["Core/Globals.js"]], function(li) {
-      var Ci;
+    }), ri(ii, "Core/Renderer/RendererRegistry.js", [ii["Core/Globals.js"]], function(hi) {
+      var wi;
       return function(zi) {
         zi.rendererTypes = {};
         let Ki;
         zi.getRendererType = function(Yi = Ki) {
           return zi.rendererTypes[Yi] || zi.rendererTypes[Ki];
         }, zi.registerRendererType = function(Yi, es, is) {
-          zi.rendererTypes[Yi] = es, (!Ki || is) && (Ki = Yi, li.Renderer = es);
+          zi.rendererTypes[Yi] = es, (!Ki || is) && (Ki = Yi, hi.Renderer = es);
         };
-      }(Ci || (Ci = {})), Ci;
-    }), ri(ii, "Core/Renderer/SVG/SVGLabel.js", [ii["Core/Renderer/SVG/SVGElement.js"], ii["Core/Utilities.js"]], function(li, Ci) {
-      const { defined: zi, extend: Ki, isNumber: Yi, merge: es, pick: is, removeEvent: $i } = Ci;
-      class Vi extends li {
-        constructor(bi, Ai, ji, Ni, gi, ki, wi, Si, Ti, Mi) {
-          super(), this.paddingRightSetter = this.paddingLeftSetter = this.paddingSetter, this.init(bi, "g"), this.textStr = Ai, this.x = ji, this.y = Ni, this.anchorX = ki, this.anchorY = wi, this.baseline = Ti, this.className = Mi, this.addClass(Mi === "button" ? "highcharts-no-tooltip" : "highcharts-label"), Mi && this.addClass("highcharts-" + Mi), this.text = bi.text(void 0, 0, 0, Si).attr({ zIndex: 1 });
+      }(wi || (wi = {})), wi;
+    }), ri(ii, "Core/Renderer/SVG/SVGLabel.js", [ii["Core/Renderer/SVG/SVGElement.js"], ii["Core/Utilities.js"]], function(hi, wi) {
+      const { defined: zi, extend: Ki, isNumber: Yi, merge: es, pick: is, removeEvent: $i } = wi;
+      class Vi extends hi {
+        constructor(bi, Ai, ji, Ni, gi, ki, Ci, Si, Ti, Mi) {
+          super(), this.paddingRightSetter = this.paddingLeftSetter = this.paddingSetter, this.init(bi, "g"), this.textStr = Ai, this.x = ji, this.y = Ni, this.anchorX = ki, this.anchorY = Ci, this.baseline = Ti, this.className = Mi, this.addClass(Mi === "button" ? "highcharts-no-tooltip" : "highcharts-label"), Mi && this.addClass("highcharts-" + Mi), this.text = bi.text(void 0, 0, 0, Si).attr({ zIndex: 1 });
           let Di;
           typeof gi == "string" && ((Di = /^url\((.*?)\)$/.test(gi)) || this.renderer.symbols[gi]) && (this.symbolKey = gi), this.bBox = Vi.emptyBBox, this.padding = 3, this.baselineOffset = 0, this.needsBox = bi.styledMode || Di, this.deferredAttr = {}, this.alignFactor = 0;
         }
@@ -1325,10 +1325,10 @@ var highcharts = { exports: {} };
               typeof bi[ji] < "u" && (Ai[ji] = bi[ji], delete bi[ji]);
             }), this.text.css(Ai), "fontSize" in Ai || "fontWeight" in Ai ? this.updateTextPadding() : ("width" in Ai || "textOverflow" in Ai) && this.updateBoxSize();
           }
-          return li.prototype.css.call(this, bi);
+          return hi.prototype.css.call(this, bi);
         }
         destroy() {
-          $i(this.element, "mouseenter"), $i(this.element, "mouseleave"), this.text && this.text.destroy(), this.box && (this.box = this.box.destroy()), li.prototype.destroy.call(this);
+          $i(this.element, "mouseenter"), $i(this.element, "mouseleave"), this.text && this.text.destroy(), this.box && (this.box = this.box.destroy()), hi.prototype.destroy.call(this);
         }
         fillSetter(bi, Ai) {
           bi && (this.needsBox = !0), this.fill = bi, this.boxAttr(Ai, bi);
@@ -1400,15 +1400,15 @@ var highcharts = { exports: {} };
         }
       }
       return Vi.emptyBBox = { width: 0, height: 0, x: 0, y: 0 }, Vi.textProps = "color direction fontFamily fontSize fontStyle fontWeight lineHeight textAlign textDecoration textOutline textOverflow whiteSpace width".split(" "), Vi;
-    }), ri(ii, "Core/Renderer/SVG/Symbols.js", [ii["Core/Utilities.js"]], function(li) {
-      function Ci($i, Vi, _i, bi, Ai) {
+    }), ri(ii, "Core/Renderer/SVG/Symbols.js", [ii["Core/Utilities.js"]], function(hi) {
+      function wi($i, Vi, _i, bi, Ai) {
         const ji = [];
         if (Ai) {
           const Ni = Ai.start || 0, gi = is(Ai.r, _i);
           _i = is(Ai.r, bi || _i), bi = (Ai.end || 0) - 1e-3;
-          const ki = Ai.innerR, wi = is(Ai.open, 1e-3 > Math.abs((Ai.end || 0) - Ni - 2 * Math.PI)), Si = Math.cos(Ni), Ti = Math.sin(Ni), Mi = Math.cos(bi), Di = Math.sin(bi), ci = is(Ai.longArc, 1e-3 > bi - Ni - Math.PI ? 0 : 1);
+          const ki = Ai.innerR, Ci = is(Ai.open, 1e-3 > Math.abs((Ai.end || 0) - Ni - 2 * Math.PI)), Si = Math.cos(Ni), Ti = Math.sin(Ni), Mi = Math.cos(bi), Di = Math.sin(bi), ci = is(Ai.longArc, 1e-3 > bi - Ni - Math.PI ? 0 : 1);
           let pi = ["A", gi, _i, 0, ci, is(Ai.clockwise, 1), $i + gi * Mi, Vi + _i * Di];
-          pi.params = { start: Ni, end: bi, cx: $i, cy: Vi }, ji.push(["M", $i + gi * Si, Vi + _i * Ti], pi), Yi(ki) && (pi = ["A", ki, ki, 0, ci, Yi(Ai.clockwise) ? 1 - Ai.clockwise : 0, $i + ki * Si, Vi + ki * Ti], pi.params = { start: bi, end: Ni, cx: $i, cy: Vi }, ji.push(wi ? ["M", $i + ki * Mi, Vi + ki * Di] : ["L", $i + ki * Mi, Vi + ki * Di], pi)), wi || ji.push(["Z"]);
+          pi.params = { start: Ni, end: bi, cx: $i, cy: Vi }, ji.push(["M", $i + gi * Si, Vi + _i * Ti], pi), Yi(ki) && (pi = ["A", ki, ki, 0, ci, Yi(Ai.clockwise) ? 1 - Ai.clockwise : 0, $i + ki * Si, Vi + ki * Ti], pi.params = { start: bi, end: Ni, cx: $i, cy: Vi }, ji.push(Ci ? ["M", $i + ki * Mi, Vi + ki * Di] : ["L", $i + ki * Mi, Vi + ki * Di], pi)), Ci || ji.push(["Z"]);
         }
         return ji;
       }
@@ -1418,8 +1418,8 @@ var highcharts = { exports: {} };
       function Ki($i, Vi, _i, bi, Ai) {
         return Ai = (Ai == null ? void 0 : Ai.r) || 0, [["M", $i + Ai, Vi], ["L", $i + _i - Ai, Vi], ["A", Ai, Ai, 0, 0, 1, $i + _i, Vi + Ai], ["L", $i + _i, Vi + bi - Ai], ["A", Ai, Ai, 0, 0, 1, $i + _i - Ai, Vi + bi], ["L", $i + Ai, Vi + bi], ["A", Ai, Ai, 0, 0, 1, $i, Vi + bi - Ai], ["L", $i, Vi + Ai], ["A", Ai, Ai, 0, 0, 1, $i + Ai, Vi], ["Z"]];
       }
-      const { defined: Yi, isNumber: es, pick: is } = li;
-      return { arc: Ci, callout: function($i, Vi, _i, bi, Ai) {
+      const { defined: Yi, isNumber: es, pick: is } = hi;
+      return { arc: wi, callout: function($i, Vi, _i, bi, Ai) {
         const ji = Math.min(Ai && Ai.r || 0, _i, bi), Ni = ji + 6, gi = Ai && Ai.anchorX;
         Ai = Ai && Ai.anchorY || 0;
         const ki = Ki($i, Vi, _i, bi, { r: ji });
@@ -1429,7 +1429,7 @@ var highcharts = { exports: {} };
           Vi + bi
         ], ["L", gi, Vi + bi + 6], ["L", gi - 6, Vi + bi], ["L", $i + ji, Vi + bi]) : Ai && 0 > Ai && gi > $i + Ni && gi < $i + _i - Ni && ki.splice(1, 1, ["L", gi - 6, Vi], ["L", gi, Vi - 6], ["L", gi + 6, Vi], ["L", _i - ji, Vi])), ki;
       }, circle: function($i, Vi, _i, bi) {
-        return Ci($i + _i / 2, Vi + bi / 2, _i / 2, bi / 2, { start: 0.5 * Math.PI, end: 2.5 * Math.PI, open: !1 });
+        return wi($i + _i / 2, Vi + bi / 2, _i / 2, bi / 2, { start: 0.5 * Math.PI, end: 2.5 * Math.PI, open: !1 });
       }, diamond: function($i, Vi, _i, bi) {
         return [["M", $i + _i / 2, Vi], ["L", $i + _i, Vi + bi / 2], ["L", $i + _i / 2, Vi + bi], ["L", $i, Vi + bi / 2], ["Z"]];
       }, rect: zi, roundedRect: Ki, square: zi, triangle: function($i, Vi, _i, bi) {
@@ -1441,8 +1441,8 @@ var highcharts = { exports: {} };
           Vi
         ], ["L", $i + _i, Vi], ["L", $i + _i / 2, Vi + bi], ["Z"]];
       } };
-    }), ri(ii, "Core/Renderer/SVG/TextBuilder.js", [ii["Core/Renderer/HTML/AST.js"], ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
-      const { doc: Ki, SVG_NS: Yi, win: es } = Ci, { attr: is, extend: $i, fireEvent: Vi, isString: _i, objectEach: bi, pick: Ai } = zi;
+    }), ri(ii, "Core/Renderer/SVG/TextBuilder.js", [ii["Core/Renderer/HTML/AST.js"], ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(hi, wi, zi) {
+      const { doc: Ki, SVG_NS: Yi, win: es } = wi, { attr: is, extend: $i, fireEvent: Vi, isString: _i, objectEach: bi, pick: Ai } = zi;
       class ji {
         constructor(gi) {
           const ki = gi.styles;
@@ -1450,23 +1450,23 @@ var highcharts = { exports: {} };
         }
         buildSVG() {
           const gi = this.svgElement, ki = gi.element;
-          var wi = gi.renderer, Si = Ai(gi.textStr, "").toString();
+          var Ci = gi.renderer, Si = Ai(gi.textStr, "").toString();
           const Ti = Si.indexOf("<") !== -1, Mi = ki.childNodes;
-          wi = !gi.added && wi.box;
+          Ci = !gi.added && Ci.box;
           const Di = /<br.*?>/g;
           var ci = [Si, this.ellipsis, this.noWrap, this.textLineHeight, this.textOutline, gi.getStyle("font-size"), this.width].join();
           if (ci !== gi.textCache) {
             for (gi.textCache = ci, delete gi.actualWidth, ci = Mi.length; ci--; )
               ki.removeChild(Mi[ci]);
-            Ti || this.ellipsis || this.width || gi.textPath || Si.indexOf(" ") !== -1 && (!this.noWrap || Di.test(Si)) ? Si !== "" && (wi && wi.appendChild(ki), Si = new li(Si), this.modifyTree(Si.nodes), Si.addToDOM(ki), this.modifyDOM(), this.ellipsis && (ki.textContent || "").indexOf("…") !== -1 && gi.attr("title", this.unescapeEntities(gi.textStr || "", ["&lt;", "&gt;"])), wi && wi.removeChild(ki)) : ki.appendChild(Ki.createTextNode(this.unescapeEntities(Si))), _i(this.textOutline) && gi.applyTextOutline && gi.applyTextOutline(this.textOutline);
+            Ti || this.ellipsis || this.width || gi.textPath || Si.indexOf(" ") !== -1 && (!this.noWrap || Di.test(Si)) ? Si !== "" && (Ci && Ci.appendChild(ki), Si = new hi(Si), this.modifyTree(Si.nodes), Si.addToDOM(ki), this.modifyDOM(), this.ellipsis && (ki.textContent || "").indexOf("…") !== -1 && gi.attr("title", this.unescapeEntities(gi.textStr || "", ["&lt;", "&gt;"])), Ci && Ci.removeChild(ki)) : ki.appendChild(Ki.createTextNode(this.unescapeEntities(Si))), _i(this.textOutline) && gi.applyTextOutline && gi.applyTextOutline(this.textOutline);
           }
         }
         modifyDOM() {
           const gi = this.svgElement, ki = is(gi.element, "x");
           gi.firstLineMetrics = void 0;
-          let wi;
-          for (; (wi = gi.element.firstChild) && /^[\s\u200B]*$/.test(wi.textContent || " "); )
-            gi.element.removeChild(wi);
+          let Ci;
+          for (; (Ci = gi.element.firstChild) && /^[\s\u200B]*$/.test(Ci.textContent || " "); )
+            gi.element.removeChild(Ci);
           [].forEach.call(gi.element.querySelectorAll("tspan.highcharts-br"), (Di, ci) => {
             Di.nextSibling && Di.previousSibling && (ci === 0 && Di.previousSibling.nodeType === 1 && (gi.firstLineMetrics = gi.renderer.fontMetrics(Di.previousSibling)), is(Di, { dy: this.getLineHeight(Di.nextSibling), x: ki }));
           });
@@ -1503,33 +1503,33 @@ var highcharts = { exports: {} };
           return gi = gi.nodeType === es.Node.TEXT_NODE ? gi.parentElement : gi, this.textLineHeight ? parseInt(this.textLineHeight.toString(), 10) : this.renderer.fontMetrics(gi || this.svgElement.element).h;
         }
         modifyTree(gi) {
-          const ki = (wi, Si) => {
-            const { attributes: Ti = {}, children: Mi, style: Di = {}, tagName: ci } = wi, pi = this.renderer.styledMode;
-            ci === "b" || ci === "strong" ? pi ? Ti.class = "highcharts-strong" : Di.fontWeight = "bold" : (ci === "i" || ci === "em") && (pi ? Ti.class = "highcharts-emphasized" : Di.fontStyle = "italic"), Di && Di.color && (Di.fill = Di.color), ci === "br" ? (Ti.class = "highcharts-br", wi.textContent = "​", (Si = gi[Si + 1]) && Si.textContent && (Si.textContent = Si.textContent.replace(/^ +/gm, ""))) : ci === "a" && Mi && Mi.some((vi) => vi.tagName === "#text") && (wi.children = [{ children: Mi, tagName: "tspan" }]), ci !== "#text" && ci !== "a" && (wi.tagName = "tspan"), $i(wi, { attributes: Ti, style: Di }), Mi && Mi.filter((vi) => vi.tagName !== "#text").forEach(ki);
+          const ki = (Ci, Si) => {
+            const { attributes: Ti = {}, children: Mi, style: Di = {}, tagName: ci } = Ci, pi = this.renderer.styledMode;
+            ci === "b" || ci === "strong" ? pi ? Ti.class = "highcharts-strong" : Di.fontWeight = "bold" : (ci === "i" || ci === "em") && (pi ? Ti.class = "highcharts-emphasized" : Di.fontStyle = "italic"), Di && Di.color && (Di.fill = Di.color), ci === "br" ? (Ti.class = "highcharts-br", Ci.textContent = "​", (Si = gi[Si + 1]) && Si.textContent && (Si.textContent = Si.textContent.replace(/^ +/gm, ""))) : ci === "a" && Mi && Mi.some((vi) => vi.tagName === "#text") && (Ci.children = [{ children: Mi, tagName: "tspan" }]), ci !== "#text" && ci !== "a" && (Ci.tagName = "tspan"), $i(Ci, { attributes: Ti, style: Di }), Mi && Mi.filter((vi) => vi.tagName !== "#text").forEach(ki);
           };
           gi.forEach(ki), Vi(this.svgElement, "afterModifyTree", { nodes: gi });
         }
-        truncate(gi, ki, wi, Si, Ti, Mi) {
+        truncate(gi, ki, Ci, Si, Ti, Mi) {
           const Di = this.svgElement, { rotation: ci } = Di, pi = [];
-          let vi = wi ? 1 : 0, ui = (ki || wi || "").length, fi = ui, si, ti;
+          let vi = Ci ? 1 : 0, ui = (ki || Ci || "").length, fi = ui, si, ti;
           const oi = function(di, mi) {
             if (di = mi || di, (mi = gi.parentNode) && typeof pi[di] > "u" && mi.getSubStringLength)
               try {
-                pi[di] = Si + mi.getSubStringLength(0, wi ? di + 1 : di);
+                pi[di] = Si + mi.getSubStringLength(0, Ci ? di + 1 : di);
               } catch {
               }
             return pi[di];
           };
           if (Di.rotation = 0, ti = oi(gi.textContent.length), Si + ti > Ti) {
             for (; vi <= ui; )
-              fi = Math.ceil((vi + ui) / 2), wi && (si = Mi(wi, fi)), ti = oi(fi, si && si.length - 1), vi === ui ? vi = ui + 1 : ti > Ti ? ui = fi - 1 : vi = fi;
-            ui === 0 ? gi.textContent = "" : ki && ui === ki.length - 1 || (gi.textContent = si || Mi(ki || wi, fi));
+              fi = Math.ceil((vi + ui) / 2), Ci && (si = Mi(Ci, fi)), ti = oi(fi, si && si.length - 1), vi === ui ? vi = ui + 1 : ti > Ti ? ui = fi - 1 : vi = fi;
+            ui === 0 ? gi.textContent = "" : ki && ui === ki.length - 1 || (gi.textContent = si || Mi(ki || Ci, fi));
           }
-          wi && wi.splice(0, fi), Di.actualWidth = ti, Di.rotation = ci;
+          Ci && Ci.splice(0, fi), Di.actualWidth = ti, Di.rotation = ci;
         }
         unescapeEntities(gi, ki) {
-          return bi(this.renderer.escapes, function(wi, Si) {
-            ki && ki.indexOf(wi) !== -1 || (gi = gi.toString().replace(new RegExp(wi, "g"), Si));
+          return bi(this.renderer.escapes, function(Ci, Si) {
+            ki && ki.indexOf(Ci) !== -1 || (gi = gi.toString().replace(new RegExp(Ci, "g"), Si));
           }), gi;
         }
       }
@@ -1544,8 +1544,8 @@ var highcharts = { exports: {} };
       ii["Core/Renderer/SVG/Symbols.js"],
       ii["Core/Renderer/SVG/TextBuilder.js"],
       ii["Core/Utilities.js"]
-    ], function(li, Ci, zi, Ki, Yi, es, is, $i, Vi) {
-      const { charts: _i, deg2rad: bi, doc: Ai, isFirefox: ji, isMS: Ni, isWebKit: gi, noop: ki, SVG_NS: wi, symbolSizes: Si, win: Ti } = zi, { addEvent: Mi, attr: Di, createElement: ci, css: pi, defined: vi, destroyObjectProperties: ui, extend: fi, isArray: si, isNumber: ti, isObject: oi, isString: di, merge: mi, pick: Oi, pInt: hi, uniqueKey: Li } = Vi;
+    ], function(hi, wi, zi, Ki, Yi, es, is, $i, Vi) {
+      const { charts: _i, deg2rad: bi, doc: Ai, isFirefox: ji, isMS: Ni, isWebKit: gi, noop: ki, SVG_NS: Ci, symbolSizes: Si, win: Ti } = zi, { addEvent: Mi, attr: Di, createElement: ci, css: pi, defined: vi, destroyObjectProperties: ui, extend: fi, isArray: si, isNumber: ti, isObject: oi, isString: di, merge: mi, pick: Oi, pInt: li, uniqueKey: Li } = Vi;
       let Ui;
       class Zi {
         constructor(Bi, ni, Pi, Hi, Ri, qi, ai) {
@@ -1560,13 +1560,13 @@ var highcharts = { exports: {} };
           }, ni(), this.unSubPixelFix = Mi(Ti, "resize", ni));
         }
         definition(Bi) {
-          return new li([Bi]).addToDOM(this.defs.element);
+          return new hi([Bi]).addToDOM(this.defs.element);
         }
         getReferenceURL() {
           if ((ji || gi) && Ai.getElementsByTagName("base").length) {
             if (!vi(Ui)) {
               var Bi = Li();
-              Bi = new li([{ tagName: "svg", attributes: { width: 8, height: 8 }, children: [{ tagName: "defs", children: [{ tagName: "clipPath", attributes: { id: Bi }, children: [{ tagName: "rect", attributes: { width: 4, height: 4 } }] }] }, { tagName: "rect", attributes: { id: "hitme", width: 8, height: 8, "clip-path": `url(#${Bi})`, fill: "rgba(0,0,0,0.001)" } }] }]).addToDOM(Ai.body), pi(Bi, { position: "fixed", top: 0, left: 0, zIndex: 9e5 });
+              Bi = new hi([{ tagName: "svg", attributes: { width: 8, height: 8 }, children: [{ tagName: "defs", children: [{ tagName: "clipPath", attributes: { id: Bi }, children: [{ tagName: "rect", attributes: { width: 4, height: 4 } }] }] }, { tagName: "rect", attributes: { id: "hitme", width: 8, height: 8, "clip-path": `url(#${Bi})`, fill: "rgba(0,0,0,0.001)" } }] }]).addToDOM(Ai.body), pi(Bi, { position: "fixed", top: 0, left: 0, zIndex: 9e5 });
               const ni = Ai.elementFromPoint(6, 6);
               Ui = (ni && ni.id) === "hitme", Ai.body.removeChild(Bi);
             }
@@ -1609,7 +1609,7 @@ var highcharts = { exports: {} };
           new $i(Bi).buildSVG();
         }
         getContrast(Bi) {
-          return Bi = Ci.parse(Bi).rgba.map((ni) => (ni /= 255, 0.03928 >= ni ? ni / 12.92 : Math.pow((ni + 0.055) / 1.055, 2.4))), Bi = 0.2126 * Bi[0] + 0.7152 * Bi[1] + 0.0722 * Bi[2], 1.05 / (Bi + 0.05) > (Bi + 0.05) / 0.05 ? "#FFFFFF" : "#000000";
+          return Bi = wi.parse(Bi).rgba.map((ni) => (ni /= 255, 0.03928 >= ni ? ni / 12.92 : Math.pow((ni + 0.055) / 1.055, 2.4))), Bi = 0.2126 * Bi[0] + 0.7152 * Bi[1] + 0.0722 * Bi[2], 1.05 / (Bi + 0.05) > (Bi + 0.05) / 0.05 ? "#FFFFFF" : "#000000";
         }
         button(Bi, ni, Pi, Hi, Ri = {}, qi, ai, xi, yi, Gi) {
           const Xi = this.label(Bi, ni, Pi, yi, void 0, void 0, Gi, void 0, "button"), Wi = this.styledMode;
@@ -1618,13 +1618,13 @@ var highcharts = { exports: {} };
           Ri = mi(Ri), delete Ri.states;
           const ss = mi({ color: "#333333", cursor: "pointer", fontSize: "0.8em", fontWeight: "normal" }, Ri.style);
           delete Ri.style;
-          let os = li.filterUserAttributes(Ri);
+          let os = hi.filterUserAttributes(Ri);
           Xi.attr(mi({ padding: 8, r: 2 }, os));
           let ns, ls, Ii;
-          return Wi || (os = mi({ fill: "#f7f7f7", stroke: "#cccccc", "stroke-width": 1 }, os), qi = mi(os, { fill: "#e6e6e6" }, li.filterUserAttributes(qi || Bi.hover || {})), ns = qi.style, delete qi.style, ai = mi(os, { fill: "#e6e9ff", style: {
+          return Wi || (os = mi({ fill: "#f7f7f7", stroke: "#cccccc", "stroke-width": 1 }, os), qi = mi(os, { fill: "#e6e6e6" }, hi.filterUserAttributes(qi || Bi.hover || {})), ns = qi.style, delete qi.style, ai = mi(os, { fill: "#e6e9ff", style: {
             color: "#000000",
             fontWeight: "bold"
-          } }, li.filterUserAttributes(ai || Bi.select || {})), ls = ai.style, delete ai.style, xi = mi(os, { style: { color: "#cccccc" } }, li.filterUserAttributes(xi || Bi.disabled || {})), Ii = xi.style, delete xi.style), Mi(Xi.element, Ni ? "mouseover" : "mouseenter", function() {
+          } }, hi.filterUserAttributes(ai || Bi.select || {})), ls = ai.style, delete ai.style, xi = mi(os, { style: { color: "#cccccc" } }, hi.filterUserAttributes(xi || Bi.disabled || {})), Ii = xi.style, delete xi.style), Mi(Xi.element, Ni ? "mouseover" : "mouseenter", function() {
             ts !== 3 && Xi.setState(1);
           }), Mi(Xi.element, Ni ? "mouseout" : "mouseleave", function() {
             ts !== 3 && Xi.setState(ts);
@@ -1732,7 +1732,7 @@ var highcharts = { exports: {} };
           }), Bi);
         }
         fontMetrics(Bi) {
-          Bi = hi(Yi.prototype.getStyle.call(Bi, "font-size") || 0);
+          Bi = li(Yi.prototype.getStyle.call(Bi, "font-size") || 0);
           const ni = 24 > Bi ? Bi + 3 : Math.round(1.2 * Bi);
           return { h: ni, b: Math.round(0.8 * ni), f: Bi };
         }
@@ -1755,28 +1755,28 @@ var highcharts = { exports: {} };
       }
       return fi(Zi.prototype, {
         Element: Yi,
-        SVG_NS: wi,
+        SVG_NS: Ci,
         escapes: { "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" },
         symbols: is,
         draw: ki
       }), Ki.registerRendererType("svg", Zi, !0), Zi;
-    }), ri(ii, "Core/Renderer/HTML/HTMLElement.js", [ii["Core/Globals.js"], ii["Core/Renderer/SVG/SVGElement.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
-      const { isFirefox: Ki, isMS: Yi, isWebKit: es, win: is } = li, { css: $i, defined: Vi, extend: _i, pick: bi, pInt: Ai } = zi, ji = [];
-      class Ni extends Ci {
+    }), ri(ii, "Core/Renderer/HTML/HTMLElement.js", [ii["Core/Globals.js"], ii["Core/Renderer/SVG/SVGElement.js"], ii["Core/Utilities.js"]], function(hi, wi, zi) {
+      const { isFirefox: Ki, isMS: Yi, isWebKit: es, win: is } = hi, { css: $i, defined: Vi, extend: _i, pick: bi, pInt: Ai } = zi, ji = [];
+      class Ni extends wi {
         static compose(ki) {
           if (zi.pushUnique(ji, ki)) {
-            const wi = Ni.prototype, Si = ki.prototype;
-            Si.getSpanCorrection = wi.getSpanCorrection, Si.htmlCss = wi.htmlCss, Si.htmlGetBBox = wi.htmlGetBBox, Si.htmlUpdateTransform = wi.htmlUpdateTransform, Si.setSpanRotation = wi.setSpanRotation;
+            const Ci = Ni.prototype, Si = ki.prototype;
+            Si.getSpanCorrection = Ci.getSpanCorrection, Si.htmlCss = Ci.htmlCss, Si.htmlGetBBox = Ci.htmlGetBBox, Si.htmlUpdateTransform = Ci.htmlUpdateTransform, Si.setSpanRotation = Ci.setSpanRotation;
           }
           return ki;
         }
-        getSpanCorrection(ki, wi, Si) {
-          this.xCorr = -ki * Si, this.yCorr = -wi;
+        getSpanCorrection(ki, Ci, Si) {
+          this.xCorr = -ki * Si, this.yCorr = -Ci;
         }
         htmlCss(ki) {
-          const wi = this.element.tagName === "SPAN" && ki && "width" in ki, Si = bi(wi && ki.width, void 0);
+          const Ci = this.element.tagName === "SPAN" && ki && "width" in ki, Si = bi(Ci && ki.width, void 0);
           let Ti;
-          return wi && (delete ki.width, this.textWidth = Si, Ti = !0), ki && ki.textOverflow === "ellipsis" && (ki.whiteSpace = "nowrap", ki.overflow = "hidden"), this.styles = _i(this.styles, ki), $i(this.element, ki), Ti && this.htmlUpdateTransform(), this;
+          return Ci && (delete ki.width, this.textWidth = Si, Ti = !0), ki && ki.textOverflow === "ellipsis" && (ki.whiteSpace = "nowrap", ki.overflow = "hidden"), this.styles = _i(this.styles, ki), $i(this.element, ki), Ti && this.htmlUpdateTransform(), this;
         }
         htmlGetBBox() {
           const ki = this.element;
@@ -1784,26 +1784,26 @@ var highcharts = { exports: {} };
         }
         htmlUpdateTransform() {
           if (this.added) {
-            var ki = this.renderer, wi = this.element, Si = this.x || 0, Ti = this.y || 0, Mi = this.textAlign || "left", Di = { left: 0, center: 0.5, right: 1 }[Mi], ci = this.styles, pi = ci && ci.whiteSpace;
-            if ($i(wi, { marginLeft: this.translateX || 0, marginTop: this.translateY || 0 }), wi.tagName === "SPAN") {
+            var ki = this.renderer, Ci = this.element, Si = this.x || 0, Ti = this.y || 0, Mi = this.textAlign || "left", Di = { left: 0, center: 0.5, right: 1 }[Mi], ci = this.styles, pi = ci && ci.whiteSpace;
+            if ($i(Ci, { marginLeft: this.translateX || 0, marginTop: this.translateY || 0 }), Ci.tagName === "SPAN") {
               ci = this.rotation;
-              const ui = this.textWidth && Ai(this.textWidth), fi = [ci, Mi, wi.innerHTML, this.textWidth, this.textAlign].join();
+              const ui = this.textWidth && Ai(this.textWidth), fi = [ci, Mi, Ci.innerHTML, this.textWidth, this.textAlign].join();
               let si = !1;
               if (ui !== this.oldTextWidth) {
                 if (this.textPxLength)
                   var vi = this.textPxLength;
                 else
-                  $i(wi, { width: "", whiteSpace: pi || "nowrap" }), vi = wi.offsetWidth;
-                (ui > this.oldTextWidth || vi > ui) && (/[ \-]/.test(wi.textContent || wi.innerText) || wi.style.textOverflow === "ellipsis") && ($i(wi, { width: vi > ui || ci ? ui + "px" : "auto", display: "block", whiteSpace: pi || "normal" }), this.oldTextWidth = ui, si = !0);
+                  $i(Ci, { width: "", whiteSpace: pi || "nowrap" }), vi = Ci.offsetWidth;
+                (ui > this.oldTextWidth || vi > ui) && (/[ \-]/.test(Ci.textContent || Ci.innerText) || Ci.style.textOverflow === "ellipsis") && ($i(Ci, { width: vi > ui || ci ? ui + "px" : "auto", display: "block", whiteSpace: pi || "normal" }), this.oldTextWidth = ui, si = !0);
               }
-              this.hasBoxWidthChanged = si, fi !== this.cTT && (ki = ki.fontMetrics(wi).b, !Vi(ci) || ci === (this.oldRotation || 0) && Mi === this.oldAlign || this.setSpanRotation(ci, Di, ki), this.getSpanCorrection(!Vi(ci) && this.textPxLength || wi.offsetWidth, ki, Di, ci, Mi)), $i(wi, { left: Si + (this.xCorr || 0) + "px", top: Ti + (this.yCorr || 0) + "px" }), this.cTT = fi, this.oldRotation = ci, this.oldAlign = Mi;
+              this.hasBoxWidthChanged = si, fi !== this.cTT && (ki = ki.fontMetrics(Ci).b, !Vi(ci) || ci === (this.oldRotation || 0) && Mi === this.oldAlign || this.setSpanRotation(ci, Di, ki), this.getSpanCorrection(!Vi(ci) && this.textPxLength || Ci.offsetWidth, ki, Di, ci, Mi)), $i(Ci, { left: Si + (this.xCorr || 0) + "px", top: Ti + (this.yCorr || 0) + "px" }), this.cTT = fi, this.oldRotation = ci, this.oldAlign = Mi;
             }
           } else
             this.alignOnAdd = !0;
         }
-        setSpanRotation(ki, wi, Si) {
+        setSpanRotation(ki, Ci, Si) {
           const Ti = {}, Mi = Yi && !/Edge/.test(is.navigator.userAgent) ? "-ms-transform" : es ? "-webkit-transform" : Ki ? "MozTransform" : is.opera ? "-o-transform" : void 0;
-          Mi && (Ti[Mi] = Ti.transform = "rotate(" + ki + "deg)", Ti[Mi + (Ki ? "Origin" : "-origin")] = Ti.transformOrigin = 100 * wi + "% " + Si + "px", $i(this.element, Ti));
+          Mi && (Ti[Mi] = Ti.transform = "rotate(" + ki + "deg)", Ti[Mi + (Ki ? "Origin" : "-origin")] = Ti.transformOrigin = 100 * Ci + "% " + Si + "px", $i(this.element, Ti));
         }
       }
       return Ni;
@@ -1812,29 +1812,29 @@ var highcharts = { exports: {} };
       ii["Core/Renderer/SVG/SVGElement.js"],
       ii["Core/Renderer/SVG/SVGRenderer.js"],
       ii["Core/Utilities.js"]
-    ], function(li, Ci, zi, Ki) {
+    ], function(hi, wi, zi, Ki) {
       const { attr: Yi, createElement: es, extend: is, pick: $i } = Ki, Vi = [];
       class _i extends zi {
         static compose(Ai) {
           return Ki.pushUnique(Vi, Ai) && (Ai.prototype.html = _i.prototype.html), Ai;
         }
         html(Ai, ji, Ni) {
-          const gi = this.createElement("span"), ki = gi.element, wi = gi.renderer, Si = function(Ti, Mi) {
+          const gi = this.createElement("span"), ki = gi.element, Ci = gi.renderer, Si = function(Ti, Mi) {
             ["opacity", "visibility"].forEach(function(Di) {
               Ti[Di + "Setter"] = function(ci, pi, vi) {
                 const ui = Ti.div ? Ti.div.style : Mi;
-                Ci.prototype[Di + "Setter"].call(this, ci, pi, vi), ui && (ui[pi] = ci);
+                wi.prototype[Di + "Setter"].call(this, ci, pi, vi), ui && (ui[pi] = ci);
               };
             }), Ti.addedSetters = !0;
           };
           return gi.textSetter = function(Ti) {
-            Ti !== this.textStr && (delete this.bBox, delete this.oldTextWidth, li.setElementHTML(this.element, $i(Ti, "")), this.textStr = Ti, gi.doTransform = !0);
+            Ti !== this.textStr && (delete this.bBox, delete this.oldTextWidth, hi.setElementHTML(this.element, $i(Ti, "")), this.textStr = Ti, gi.doTransform = !0);
           }, Si(gi, gi.element.style), gi.xSetter = gi.ySetter = gi.alignSetter = gi.rotationSetter = function(Ti, Mi) {
             Mi === "align" ? gi.alignValue = gi.textAlign = Ti : gi[Mi] = Ti, gi.doTransform = !0;
           }, gi.afterSetters = function() {
             this.doTransform && (this.htmlUpdateTransform(), this.doTransform = !1);
-          }, gi.attr({ text: Ai, x: Math.round(ji), y: Math.round(Ni) }).css({ position: "absolute" }), wi.styledMode || gi.css({ fontFamily: this.style.fontFamily, fontSize: this.style.fontSize }), ki.style.whiteSpace = "nowrap", gi.css = gi.htmlCss, gi.add = function(Ti) {
-            const Mi = wi.box.parentNode, Di = [];
+          }, gi.attr({ text: Ai, x: Math.round(ji), y: Math.round(Ni) }).css({ position: "absolute" }), Ci.styledMode || gi.css({ fontFamily: this.style.fontFamily, fontSize: this.style.fontSize }), ki.style.whiteSpace = "nowrap", gi.css = gi.htmlCss, gi.add = function(Ti) {
+            const Mi = Ci.box.parentNode, Di = [];
             let ci;
             if (this.parentGroup = Ti) {
               if (ci = Ti.div, !ci) {
@@ -1868,9 +1868,9 @@ var highcharts = { exports: {} };
       }
       return _i;
     }), ri(ii, "Core/Axis/AxisDefaults.js", [], function() {
-      var li;
-      return function(Ci) {
-        Ci.defaultXAxisOptions = {
+      var hi;
+      return function(wi) {
+        wi.defaultXAxisOptions = {
           alignTicks: !0,
           allowDecimals: void 0,
           panningEnabled: !0,
@@ -1912,7 +1912,7 @@ var highcharts = { exports: {} };
           gridLineColor: "#e6e6e6",
           gridLineWidth: void 0,
           tickColor: "#333333"
-        }, Ci.defaultYAxisOptions = {
+        }, wi.defaultYAxisOptions = {
           reversedStacks: !0,
           endOnTick: !0,
           maxPadding: 0.05,
@@ -1928,128 +1928,128 @@ var highcharts = { exports: {} };
           }, style: { color: "#000000", fontSize: "0.7em", fontWeight: "bold", textOutline: "1px contrast" } },
           gridLineWidth: 1,
           lineWidth: 0
-        }, Ci.defaultLeftAxisOptions = { title: { rotation: 270 } }, Ci.defaultRightAxisOptions = { title: { rotation: 90 } }, Ci.defaultBottomAxisOptions = { labels: { autoRotation: [-45] }, margin: 15, title: { rotation: 0 } }, Ci.defaultTopAxisOptions = { labels: { autoRotation: [-45] }, margin: 15, title: { rotation: 0 } };
-      }(li || (li = {})), li;
-    }), ri(ii, "Core/Foundation.js", [ii["Core/Utilities.js"]], function(li) {
-      const { addEvent: Ci, isFunction: zi, objectEach: Ki, removeEvent: Yi } = li;
+        }, wi.defaultLeftAxisOptions = { title: { rotation: 270 } }, wi.defaultRightAxisOptions = { title: { rotation: 90 } }, wi.defaultBottomAxisOptions = { labels: { autoRotation: [-45] }, margin: 15, title: { rotation: 0 } }, wi.defaultTopAxisOptions = { labels: { autoRotation: [-45] }, margin: 15, title: { rotation: 0 } };
+      }(hi || (hi = {})), hi;
+    }), ri(ii, "Core/Foundation.js", [ii["Core/Utilities.js"]], function(hi) {
+      const { addEvent: wi, isFunction: zi, objectEach: Ki, removeEvent: Yi } = hi;
       var es;
       return function(is) {
         is.registerEventOptions = function($i, Vi) {
           $i.eventOptions = $i.eventOptions || {}, Ki(Vi.events, function(_i, bi) {
-            $i.eventOptions[bi] !== _i && ($i.eventOptions[bi] && (Yi($i, bi, $i.eventOptions[bi]), delete $i.eventOptions[bi]), zi(_i) && ($i.eventOptions[bi] = _i, Ci($i, bi, _i, { order: 0 })));
+            $i.eventOptions[bi] !== _i && ($i.eventOptions[bi] && (Yi($i, bi, $i.eventOptions[bi]), delete $i.eventOptions[bi]), zi(_i) && ($i.eventOptions[bi] = _i, wi($i, bi, _i, { order: 0 })));
           });
         };
       }(es || (es = {})), es;
-    }), ri(ii, "Core/Axis/Tick.js", [ii["Core/Templating.js"], ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
-      const { deg2rad: Ki } = Ci, { clamp: Yi, correctFloat: es, defined: is, destroyObjectProperties: $i, extend: Vi, fireEvent: _i, isNumber: bi, merge: Ai, objectEach: ji, pick: Ni } = zi;
+    }), ri(ii, "Core/Axis/Tick.js", [ii["Core/Templating.js"], ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(hi, wi, zi) {
+      const { deg2rad: Ki } = wi, { clamp: Yi, correctFloat: es, defined: is, destroyObjectProperties: $i, extend: Vi, fireEvent: _i, isNumber: bi, merge: Ai, objectEach: ji, pick: Ni } = zi;
       class gi {
-        constructor(wi, Si, Ti, Mi, Di) {
-          this.isNewLabel = this.isNew = !0, this.axis = wi, this.pos = Si, this.type = Ti || "", this.parameters = Di || {}, this.tickmarkOffset = this.parameters.tickmarkOffset, this.options = this.parameters.options, _i(this, "init"), Ti || Mi || this.addLabel();
+        constructor(Ci, Si, Ti, Mi, Di) {
+          this.isNewLabel = this.isNew = !0, this.axis = Ci, this.pos = Si, this.type = Ti || "", this.parameters = Di || {}, this.tickmarkOffset = this.parameters.tickmarkOffset, this.options = this.parameters.options, _i(this, "init"), Ti || Mi || this.addLabel();
         }
         addLabel() {
-          const wi = this, Si = wi.axis;
+          const Ci = this, Si = Ci.axis;
           var Ti = Si.options;
           const Mi = Si.chart;
           var Di = Si.categories;
-          const ci = Si.logarithmic, pi = Si.names, vi = wi.pos, ui = Ni(wi.options && wi.options.labels, Ti.labels);
+          const ci = Si.logarithmic, pi = Si.names, vi = Ci.pos, ui = Ni(Ci.options && Ci.options.labels, Ti.labels);
           var fi = Si.tickPositions;
           const si = vi === fi[0], ti = vi === fi[fi.length - 1], oi = (!ui.step || ui.step === 1) && Si.tickInterval === 1;
           fi = fi.info;
-          let di = wi.label, mi, Oi, hi;
-          Di = this.parameters.category || (Di ? Ni(Di[vi], pi[vi], vi) : vi), ci && bi(Di) && (Di = es(ci.lin2log(Di))), Si.dateTime && (fi ? (Oi = Mi.time.resolveDTLFormat(Ti.dateTimeLabelFormats[!Ti.grid && fi.higherRanks[vi] || fi.unitName]), mi = Oi.main) : bi(Di) && (mi = Si.dateTime.getXDateFormat(Di, Ti.dateTimeLabelFormats || {}))), wi.isFirst = si, wi.isLast = ti;
-          const Li = { axis: Si, chart: Mi, dateTimeLabelFormat: mi, isFirst: si, isLast: ti, pos: vi, tick: wi, tickPositionInfo: fi, value: Di };
+          let di = Ci.label, mi, Oi, li;
+          Di = this.parameters.category || (Di ? Ni(Di[vi], pi[vi], vi) : vi), ci && bi(Di) && (Di = es(ci.lin2log(Di))), Si.dateTime && (fi ? (Oi = Mi.time.resolveDTLFormat(Ti.dateTimeLabelFormats[!Ti.grid && fi.higherRanks[vi] || fi.unitName]), mi = Oi.main) : bi(Di) && (mi = Si.dateTime.getXDateFormat(Di, Ti.dateTimeLabelFormats || {}))), Ci.isFirst = si, Ci.isLast = ti;
+          const Li = { axis: Si, chart: Mi, dateTimeLabelFormat: mi, isFirst: si, isLast: ti, pos: vi, tick: Ci, tickPositionInfo: fi, value: Di };
           _i(this, "labelFormat", Li);
-          const Ui = (rs) => ui.formatter ? ui.formatter.call(rs, rs) : ui.format ? (rs.text = Si.defaultLabelFormatter.call(rs, rs), li.format(ui.format, rs, Mi)) : Si.defaultLabelFormatter.call(rs, rs);
+          const Ui = (rs) => ui.formatter ? ui.formatter.call(rs, rs) : ui.format ? (rs.text = Si.defaultLabelFormatter.call(rs, rs), hi.format(ui.format, rs, Mi)) : Si.defaultLabelFormatter.call(rs, rs);
           Ti = Ui.call(Li, Li);
           const Zi = Oi && Oi.list;
-          wi.shortenLabel = Zi ? function() {
-            for (hi = 0; hi < Zi.length; hi++)
+          Ci.shortenLabel = Zi ? function() {
+            for (li = 0; li < Zi.length; li++)
               if (Vi(
                 Li,
-                { dateTimeLabelFormat: Zi[hi] }
-              ), di.attr({ text: Ui.call(Li, Li) }), di.getBBox().width < Si.getSlotWidth(wi) - 2 * ui.padding)
+                { dateTimeLabelFormat: Zi[li] }
+              ), di.attr({ text: Ui.call(Li, Li) }), di.getBBox().width < Si.getSlotWidth(Ci) - 2 * ui.padding)
                 return;
             di.attr({ text: "" });
-          } : void 0, oi && Si._addedPlotLB && wi.moveLabel(Ti, ui), is(di) || wi.movedLabel ? di && di.textStr !== Ti && !oi && (!di.textWidth || ui.style.width || di.styles.width || di.css({ width: null }), di.attr({ text: Ti }), di.textPxLength = di.getBBox().width) : (wi.label = di = wi.createLabel({ x: 0, y: 0 }, Ti, ui), wi.rotation = 0);
+          } : void 0, oi && Si._addedPlotLB && Ci.moveLabel(Ti, ui), is(di) || Ci.movedLabel ? di && di.textStr !== Ti && !oi && (!di.textWidth || ui.style.width || di.styles.width || di.css({ width: null }), di.attr({ text: Ti }), di.textPxLength = di.getBBox().width) : (Ci.label = di = Ci.createLabel({ x: 0, y: 0 }, Ti, ui), Ci.rotation = 0);
         }
-        createLabel(wi, Si, Ti) {
+        createLabel(Ci, Si, Ti) {
           const Mi = this.axis, Di = Mi.chart;
-          return (wi = is(Si) && Ti.enabled ? Di.renderer.text(Si, wi.x, wi.y, Ti.useHTML).add(Mi.labelGroup) : null) && (Di.styledMode || wi.css(Ai(Ti.style)), wi.textPxLength = wi.getBBox().width), wi;
+          return (Ci = is(Si) && Ti.enabled ? Di.renderer.text(Si, Ci.x, Ci.y, Ti.useHTML).add(Mi.labelGroup) : null) && (Di.styledMode || Ci.css(Ai(Ti.style)), Ci.textPxLength = Ci.getBBox().width), Ci;
         }
         destroy() {
           $i(this, this.axis);
         }
-        getPosition(wi, Si, Ti, Mi) {
+        getPosition(Ci, Si, Ti, Mi) {
           const Di = this.axis, ci = Di.chart, pi = Mi && ci.oldChartHeight || ci.chartHeight;
-          return wi = { x: wi ? es(Di.translate(Si + Ti, void 0, void 0, Mi) + Di.transB) : Di.left + Di.offset + (Di.opposite ? (Mi && ci.oldChartWidth || ci.chartWidth) - Di.right - Di.left : 0), y: wi ? pi - Di.bottom + Di.offset - (Di.opposite ? Di.height : 0) : es(pi - Di.translate(Si + Ti, void 0, void 0, Mi) - Di.transB) }, wi.y = Yi(wi.y, -1e5, 1e5), _i(this, "afterGetPosition", { pos: wi }), wi;
+          return Ci = { x: Ci ? es(Di.translate(Si + Ti, void 0, void 0, Mi) + Di.transB) : Di.left + Di.offset + (Di.opposite ? (Mi && ci.oldChartWidth || ci.chartWidth) - Di.right - Di.left : 0), y: Ci ? pi - Di.bottom + Di.offset - (Di.opposite ? Di.height : 0) : es(pi - Di.translate(Si + Ti, void 0, void 0, Mi) - Di.transB) }, Ci.y = Yi(Ci.y, -1e5, 1e5), _i(this, "afterGetPosition", { pos: Ci }), Ci;
         }
-        getLabelPosition(wi, Si, Ti, Mi, Di, ci, pi, vi) {
+        getLabelPosition(Ci, Si, Ti, Mi, Di, ci, pi, vi) {
           const ui = this.axis, fi = ui.transA, si = ui.isLinked && ui.linkedParent ? ui.linkedParent.reversed : ui.reversed, ti = ui.staggerLines, oi = ui.tickRotCorr || { x: 0, y: 0 }, di = Mi || ui.reserveSpaceDefault ? 0 : -ui.labelOffset * (ui.labelAlign === "center" ? 0.5 : 1), mi = Di.distance, Oi = {};
-          return Ti = ui.side === 0 ? Ti.rotation ? -mi : -Ti.getBBox().height : ui.side === 2 ? oi.y + mi : Math.cos(Ti.rotation * Ki) * (oi.y - Ti.getBBox(!1, 0).height / 2), is(Di.y) && (Ti = ui.side === 0 && ui.horiz ? Di.y + Ti : Di.y), wi = wi + Ni(Di.x, [0, 1, 0, -1][ui.side] * mi) + di + oi.x - (ci && Mi ? ci * fi * (si ? -1 : 1) : 0), Si = Si + Ti - (ci && !Mi ? ci * fi * (si ? 1 : -1) : 0), ti && (Mi = pi / (vi || 1) % ti, ui.opposite && (Mi = ti - Mi - 1), Si += ui.labelOffset / ti * Mi), Oi.x = wi, Oi.y = Math.round(Si), _i(this, "afterGetLabelPosition", { pos: Oi, tickmarkOffset: ci, index: pi }), Oi;
+          return Ti = ui.side === 0 ? Ti.rotation ? -mi : -Ti.getBBox().height : ui.side === 2 ? oi.y + mi : Math.cos(Ti.rotation * Ki) * (oi.y - Ti.getBBox(!1, 0).height / 2), is(Di.y) && (Ti = ui.side === 0 && ui.horiz ? Di.y + Ti : Di.y), Ci = Ci + Ni(Di.x, [0, 1, 0, -1][ui.side] * mi) + di + oi.x - (ci && Mi ? ci * fi * (si ? -1 : 1) : 0), Si = Si + Ti - (ci && !Mi ? ci * fi * (si ? 1 : -1) : 0), ti && (Mi = pi / (vi || 1) % ti, ui.opposite && (Mi = ti - Mi - 1), Si += ui.labelOffset / ti * Mi), Oi.x = Ci, Oi.y = Math.round(Si), _i(this, "afterGetLabelPosition", { pos: Oi, tickmarkOffset: ci, index: pi }), Oi;
         }
         getLabelSize() {
           return this.label ? this.label.getBBox()[this.axis.horiz ? "height" : "width"] : 0;
         }
-        getMarkPath(wi, Si, Ti, Mi, Di, ci) {
-          return ci.crispLine([["M", wi, Si], ["L", wi + (Di ? 0 : -Ti), Si + (Di ? Ti : 0)]], Mi);
+        getMarkPath(Ci, Si, Ti, Mi, Di, ci) {
+          return ci.crispLine([["M", Ci, Si], ["L", Ci + (Di ? 0 : -Ti), Si + (Di ? Ti : 0)]], Mi);
         }
-        handleOverflow(wi) {
-          const Si = this.axis, Ti = Si.options.labels, Mi = wi.x;
+        handleOverflow(Ci) {
+          const Si = this.axis, Ti = Si.options.labels, Mi = Ci.x;
           var Di = Si.chart.chartWidth, ci = Si.chart.spacing;
           const pi = Ni(Si.labelLeft, Math.min(Si.pos, ci[3]));
           ci = Ni(Si.labelRight, Math.max(Si.isRadial ? 0 : Si.pos + Si.len, Di - ci[1]));
           const vi = this.label, ui = this.rotation, fi = { left: 0, center: 0.5, right: 1 }[Si.labelAlign || vi.attr("align")], si = vi.getBBox().width, ti = Si.getSlotWidth(this), oi = {};
           let di = ti, mi = 1, Oi;
-          ui || Ti.overflow !== "justify" ? 0 > ui && Mi - fi * si < pi ? Oi = Math.round(Mi / Math.cos(ui * Ki) - pi) : 0 < ui && Mi + fi * si > ci && (Oi = Math.round((Di - Mi) / Math.cos(ui * Ki))) : (Di = Mi + (1 - fi) * si, Mi - fi * si < pi ? di = wi.x + di * (1 - fi) - pi : Di > ci && (di = ci - wi.x + di * fi, mi = -1), di = Math.min(ti, di), di < ti && Si.labelAlign === "center" && (wi.x += mi * (ti - di - fi * (ti - Math.min(si, di)))), (si > di || Si.autoRotation && (vi.styles || {}).width) && (Oi = di)), Oi && (this.shortenLabel ? this.shortenLabel() : (oi.width = Math.floor(Oi) + "px", (Ti.style || {}).textOverflow || (oi.textOverflow = "ellipsis"), vi.css(oi)));
+          ui || Ti.overflow !== "justify" ? 0 > ui && Mi - fi * si < pi ? Oi = Math.round(Mi / Math.cos(ui * Ki) - pi) : 0 < ui && Mi + fi * si > ci && (Oi = Math.round((Di - Mi) / Math.cos(ui * Ki))) : (Di = Mi + (1 - fi) * si, Mi - fi * si < pi ? di = Ci.x + di * (1 - fi) - pi : Di > ci && (di = ci - Ci.x + di * fi, mi = -1), di = Math.min(ti, di), di < ti && Si.labelAlign === "center" && (Ci.x += mi * (ti - di - fi * (ti - Math.min(si, di)))), (si > di || Si.autoRotation && (vi.styles || {}).width) && (Oi = di)), Oi && (this.shortenLabel ? this.shortenLabel() : (oi.width = Math.floor(Oi) + "px", (Ti.style || {}).textOverflow || (oi.textOverflow = "ellipsis"), vi.css(oi)));
         }
-        moveLabel(wi, Si) {
+        moveLabel(Ci, Si) {
           const Ti = this;
           var Mi = Ti.label;
           const Di = Ti.axis;
           let ci = !1;
-          Mi && Mi.textStr === wi ? (Ti.movedLabel = Mi, ci = !0, delete Ti.label) : ji(Di.ticks, function(pi) {
-            ci || pi.isNew || pi === Ti || !pi.label || pi.label.textStr !== wi || (Ti.movedLabel = pi.label, ci = !0, pi.labelPos = Ti.movedLabel.xy, delete pi.label);
-          }), ci || !Ti.labelPos && !Mi || (Mi = Ti.labelPos || Mi.xy, Ti.movedLabel = Ti.createLabel(Mi, wi, Si), Ti.movedLabel && Ti.movedLabel.attr({ opacity: 0 }));
+          Mi && Mi.textStr === Ci ? (Ti.movedLabel = Mi, ci = !0, delete Ti.label) : ji(Di.ticks, function(pi) {
+            ci || pi.isNew || pi === Ti || !pi.label || pi.label.textStr !== Ci || (Ti.movedLabel = pi.label, ci = !0, pi.labelPos = Ti.movedLabel.xy, delete pi.label);
+          }), ci || !Ti.labelPos && !Mi || (Mi = Ti.labelPos || Mi.xy, Ti.movedLabel = Ti.createLabel(Mi, Ci, Si), Ti.movedLabel && Ti.movedLabel.attr({ opacity: 0 }));
         }
-        render(wi, Si, Ti) {
+        render(Ci, Si, Ti) {
           var Mi = this.axis, Di = Mi.horiz, ci = this.pos, pi = Ni(this.tickmarkOffset, Mi.tickmarkOffset);
           ci = this.getPosition(Di, ci, pi, Si), pi = ci.x;
           const vi = ci.y;
-          Mi = Di && pi === Mi.pos + Mi.len || !Di && vi === Mi.pos ? -1 : 1, Di = Ni(Ti, this.label && this.label.newOpacity, 1), Ti = Ni(Ti, 1), this.isActive = !0, this.renderGridLine(Si, Ti, Mi), this.renderMark(ci, Ti, Mi), this.renderLabel(ci, Si, Di, wi), this.isNew = !1, _i(this, "afterRender");
+          Mi = Di && pi === Mi.pos + Mi.len || !Di && vi === Mi.pos ? -1 : 1, Di = Ni(Ti, this.label && this.label.newOpacity, 1), Ti = Ni(Ti, 1), this.isActive = !0, this.renderGridLine(Si, Ti, Mi), this.renderMark(ci, Ti, Mi), this.renderLabel(ci, Si, Di, Ci), this.isNew = !1, _i(this, "afterRender");
         }
-        renderGridLine(wi, Si, Ti) {
+        renderGridLine(Ci, Si, Ti) {
           const Mi = this.axis, Di = Mi.options, ci = {}, pi = this.pos, vi = this.type, ui = Ni(this.tickmarkOffset, Mi.tickmarkOffset), fi = Mi.chart.renderer;
           let si = this.gridLine, ti = Di.gridLineWidth, oi = Di.gridLineColor, di = Di.gridLineDashStyle;
-          this.type === "minor" && (ti = Di.minorGridLineWidth, oi = Di.minorGridLineColor, di = Di.minorGridLineDashStyle), si || (Mi.chart.styledMode || (ci.stroke = oi, ci["stroke-width"] = ti || 0, ci.dashstyle = di), vi || (ci.zIndex = 1), wi && (Si = 0), this.gridLine = si = fi.path().attr(ci).addClass("highcharts-" + (vi ? vi + "-" : "") + "grid-line").add(Mi.gridGroup)), si && (Ti = Mi.getPlotLinePath({ value: pi + ui, lineWidth: si.strokeWidth() * Ti, force: "pass", old: wi, acrossPanes: !1 })) && si[wi || this.isNew ? "attr" : "animate"]({ d: Ti, opacity: Si });
+          this.type === "minor" && (ti = Di.minorGridLineWidth, oi = Di.minorGridLineColor, di = Di.minorGridLineDashStyle), si || (Mi.chart.styledMode || (ci.stroke = oi, ci["stroke-width"] = ti || 0, ci.dashstyle = di), vi || (ci.zIndex = 1), Ci && (Si = 0), this.gridLine = si = fi.path().attr(ci).addClass("highcharts-" + (vi ? vi + "-" : "") + "grid-line").add(Mi.gridGroup)), si && (Ti = Mi.getPlotLinePath({ value: pi + ui, lineWidth: si.strokeWidth() * Ti, force: "pass", old: Ci, acrossPanes: !1 })) && si[Ci || this.isNew ? "attr" : "animate"]({ d: Ti, opacity: Si });
         }
-        renderMark(wi, Si, Ti) {
+        renderMark(Ci, Si, Ti) {
           const Mi = this.axis;
           var Di = Mi.options;
-          const ci = Mi.chart.renderer, pi = this.type, vi = Mi.tickSize(pi ? pi + "Tick" : "tick"), ui = wi.x;
-          wi = wi.y;
+          const ci = Mi.chart.renderer, pi = this.type, vi = Mi.tickSize(pi ? pi + "Tick" : "tick"), ui = Ci.x;
+          Ci = Ci.y;
           const fi = Ni(Di[pi !== "minor" ? "tickWidth" : "minorTickWidth"], !pi && Mi.isXAxis ? 1 : 0);
           Di = Di[pi !== "minor" ? "tickColor" : "minorTickColor"];
           let si = this.mark;
           const ti = !si;
-          vi && (Mi.opposite && (vi[0] = -vi[0]), si || (this.mark = si = ci.path().addClass("highcharts-" + (pi ? pi + "-" : "") + "tick").add(Mi.axisGroup), Mi.chart.styledMode || si.attr({ stroke: Di, "stroke-width": fi })), si[ti ? "attr" : "animate"]({ d: this.getMarkPath(ui, wi, vi[0], si.strokeWidth() * Ti, Mi.horiz, ci), opacity: Si }));
+          vi && (Mi.opposite && (vi[0] = -vi[0]), si || (this.mark = si = ci.path().addClass("highcharts-" + (pi ? pi + "-" : "") + "tick").add(Mi.axisGroup), Mi.chart.styledMode || si.attr({ stroke: Di, "stroke-width": fi })), si[ti ? "attr" : "animate"]({ d: this.getMarkPath(ui, Ci, vi[0], si.strokeWidth() * Ti, Mi.horiz, ci), opacity: Si }));
         }
-        renderLabel(wi, Si, Ti, Mi) {
+        renderLabel(Ci, Si, Ti, Mi) {
           var Di = this.axis;
           const ci = Di.horiz, pi = Di.options, vi = this.label, ui = pi.labels, fi = ui.step;
           Di = Ni(this.tickmarkOffset, Di.tickmarkOffset);
-          const si = wi.x;
-          wi = wi.y;
+          const si = Ci.x;
+          Ci = Ci.y;
           let ti = !0;
-          vi && bi(si) && (vi.xy = wi = this.getLabelPosition(si, wi, vi, ci, ui, Di, Mi, fi), this.isFirst && !this.isLast && !pi.showFirstLabel || this.isLast && !this.isFirst && !pi.showLastLabel ? ti = !1 : !ci || ui.step || ui.rotation || Si || Ti === 0 || this.handleOverflow(wi), fi && Mi % fi && (ti = !1), ti && bi(wi.y) ? (wi.opacity = Ti, vi[this.isNewLabel ? "attr" : "animate"](wi).show(!0), this.isNewLabel = !1) : (vi.hide(), this.isNewLabel = !0));
+          vi && bi(si) && (vi.xy = Ci = this.getLabelPosition(si, Ci, vi, ci, ui, Di, Mi, fi), this.isFirst && !this.isLast && !pi.showFirstLabel || this.isLast && !this.isFirst && !pi.showLastLabel ? ti = !1 : !ci || ui.step || ui.rotation || Si || Ti === 0 || this.handleOverflow(Ci), fi && Mi % fi && (ti = !1), ti && bi(Ci.y) ? (Ci.opacity = Ti, vi[this.isNewLabel ? "attr" : "animate"](Ci).show(!0), this.isNewLabel = !1) : (vi.hide(), this.isNewLabel = !0));
         }
         replaceMovedLabel() {
-          const wi = this.label, Si = this.axis;
-          wi && !this.isNew && (wi.animate({ opacity: 0 }, void 0, wi.destroy), delete this.label), Si.isDirty = !0, this.label = this.movedLabel, delete this.movedLabel;
+          const Ci = this.label, Si = this.axis;
+          Ci && !this.isNew && (Ci.animate({ opacity: 0 }, void 0, Ci.destroy), delete this.label), Si.isDirty = !0, this.label = this.movedLabel, delete this.movedLabel;
         }
       }
       return gi;
-    }), ri(ii, "Core/Axis/Axis.js", [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Axis/AxisDefaults.js"], ii["Core/Color/Color.js"], ii["Core/Defaults.js"], ii["Core/Foundation.js"], ii["Core/Globals.js"], ii["Core/Axis/Tick.js"], ii["Core/Utilities.js"]], function(li, Ci, zi, Ki, Yi, es, is, $i) {
-      const { animObject: Vi } = li, { defaultOptions: _i } = Ki, { registerEventOptions: bi } = Yi, { deg2rad: Ai } = es, { arrayMax: ji, arrayMin: Ni, clamp: gi, correctFloat: ki, defined: wi, destroyObjectProperties: Si, erase: Ti, error: Mi, extend: Di, fireEvent: ci, getClosestDistance: pi, insertItem: vi, isArray: ui, isNumber: fi, isString: si, merge: ti, normalizeTickInterval: oi, objectEach: di, pick: mi, relativeLength: Oi, removeEvent: hi, splat: Li, syncTimeout: Ui } = $i, Zi = (Bi, ni) => oi(ni, void 0, void 0, mi(Bi.options.allowDecimals, 0.5 > ni || Bi.tickAmount !== void 0), !!Bi.tickAmount);
+    }), ri(ii, "Core/Axis/Axis.js", [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Axis/AxisDefaults.js"], ii["Core/Color/Color.js"], ii["Core/Defaults.js"], ii["Core/Foundation.js"], ii["Core/Globals.js"], ii["Core/Axis/Tick.js"], ii["Core/Utilities.js"]], function(hi, wi, zi, Ki, Yi, es, is, $i) {
+      const { animObject: Vi } = hi, { defaultOptions: _i } = Ki, { registerEventOptions: bi } = Yi, { deg2rad: Ai } = es, { arrayMax: ji, arrayMin: Ni, clamp: gi, correctFloat: ki, defined: Ci, destroyObjectProperties: Si, erase: Ti, error: Mi, extend: Di, fireEvent: ci, getClosestDistance: pi, insertItem: vi, isArray: ui, isNumber: fi, isString: si, merge: ti, normalizeTickInterval: oi, objectEach: di, pick: mi, relativeLength: Oi, removeEvent: li, splat: Li, syncTimeout: Ui } = $i, Zi = (Bi, ni) => oi(ni, void 0, void 0, mi(Bi.options.allowDecimals, 0.5 > ni || Bi.tickAmount !== void 0), !!Bi.tickAmount);
       class rs {
         constructor(ni, Pi, Hi) {
           this.zoomEnabled = this.width = this.visible = this.userOptions = this.translationSlope = this.transB = this.transA = this.top = this.ticks = this.tickRotCorr = this.tickPositions = this.tickmarkOffset = this.tickInterval = this.tickAmount = this.side = this.series = this.right = this.positiveValuesOnly = this.pos = this.pointRangePadding = this.pointRange = this.plotLinesAndBandsGroups = this.plotLinesAndBands = this.paddedTicks = this.overlap = this.options = this.offset = this.names = this.minPixelPadding = this.minorTicks = this.minorTickInterval = this.min = this.maxLabelLength = this.max = this.len = this.left = this.labelFormatter = this.labelEdge = this.isLinked = this.index = this.height = this.hasVisibleSeries = this.hasNames = this.eventOptions = this.coll = this.closestPointRange = this.chart = this.bottom = this.alternateBands = void 0, this.init(ni, Pi, Hi);
@@ -2058,10 +2058,10 @@ var highcharts = { exports: {} };
           const Ri = Hi === "xAxis";
           this.chart = ni, this.horiz = this.isZAxis || (ni.inverted ? !Ri : Ri), this.isXAxis = Ri, this.coll = Hi, ci(this, "init", { userOptions: Pi }), this.opposite = mi(Pi.opposite, this.opposite), this.side = mi(Pi.side, this.side, this.horiz ? this.opposite ? 0 : 2 : this.opposite ? 1 : 3), this.setOptions(Pi), Hi = this.options;
           const qi = Hi.labels, ai = Hi.type;
-          this.userOptions = Pi, this.minPixelPadding = 0, this.reversed = mi(Hi.reversed, this.reversed), this.visible = Hi.visible, this.zoomEnabled = Hi.zoomEnabled, this.hasNames = ai === "category" || Hi.categories === !0, this.categories = Hi.categories || (this.hasNames ? [] : void 0), this.names || (this.names = [], this.names.keys = {}), this.plotLinesAndBandsGroups = {}, this.positiveValuesOnly = !!this.logarithmic, this.isLinked = wi(Hi.linkedTo), this.ticks = {}, this.labelEdge = [], this.minorTicks = {}, this.plotLinesAndBands = [], this.alternateBands = {}, this.len = 0, this.minRange = this.userMinRange = Hi.minRange || Hi.maxZoom, this.range = Hi.range, this.offset = Hi.offset || 0, this.min = this.max = null, Pi = mi(Hi.crosshair, Li(ni.options.tooltip.crosshairs)[Ri ? 0 : 1]), this.crosshair = Pi === !0 ? {} : Pi, ni.axes.indexOf(this) === -1 && (Ri ? ni.axes.splice(ni.xAxis.length, 0, this) : ni.axes.push(this), vi(this, ni[this.coll])), ni.orderItems(this.coll), this.series = this.series || [], ni.inverted && !this.isZAxis && Ri && typeof this.reversed > "u" && (this.reversed = !0), this.labelRotation = fi(qi.rotation) ? qi.rotation : void 0, bi(this, Hi), ci(this, "afterInit");
+          this.userOptions = Pi, this.minPixelPadding = 0, this.reversed = mi(Hi.reversed, this.reversed), this.visible = Hi.visible, this.zoomEnabled = Hi.zoomEnabled, this.hasNames = ai === "category" || Hi.categories === !0, this.categories = Hi.categories || (this.hasNames ? [] : void 0), this.names || (this.names = [], this.names.keys = {}), this.plotLinesAndBandsGroups = {}, this.positiveValuesOnly = !!this.logarithmic, this.isLinked = Ci(Hi.linkedTo), this.ticks = {}, this.labelEdge = [], this.minorTicks = {}, this.plotLinesAndBands = [], this.alternateBands = {}, this.len = 0, this.minRange = this.userMinRange = Hi.minRange || Hi.maxZoom, this.range = Hi.range, this.offset = Hi.offset || 0, this.min = this.max = null, Pi = mi(Hi.crosshair, Li(ni.options.tooltip.crosshairs)[Ri ? 0 : 1]), this.crosshair = Pi === !0 ? {} : Pi, ni.axes.indexOf(this) === -1 && (Ri ? ni.axes.splice(ni.xAxis.length, 0, this) : ni.axes.push(this), vi(this, ni[this.coll])), ni.orderItems(this.coll), this.series = this.series || [], ni.inverted && !this.isZAxis && Ri && typeof this.reversed > "u" && (this.reversed = !0), this.labelRotation = fi(qi.rotation) ? qi.rotation : void 0, bi(this, Hi), ci(this, "afterInit");
         }
         setOptions(ni) {
-          this.options = ti(Ci.defaultXAxisOptions, this.coll === "yAxis" && Ci.defaultYAxisOptions, [Ci.defaultTopAxisOptions, Ci.defaultRightAxisOptions, Ci.defaultBottomAxisOptions, Ci.defaultLeftAxisOptions][this.side], ti(_i[this.coll], ni)), ci(this, "afterSetOptions", { userOptions: ni });
+          this.options = ti(wi.defaultXAxisOptions, this.coll === "yAxis" && wi.defaultYAxisOptions, [wi.defaultTopAxisOptions, wi.defaultRightAxisOptions, wi.defaultBottomAxisOptions, wi.defaultLeftAxisOptions][this.side], ti(_i[this.coll], ni)), ci(this, "afterSetOptions", { userOptions: ni });
         }
         defaultLabelFormatter(ni) {
           var Pi = this.axis;
@@ -2092,7 +2092,7 @@ var highcharts = { exports: {} };
                 ni.hasVisibleSeries = !0, ni.positiveValuesOnly && 0 >= ai && (ai = null), ni.isXAxis ? (qi = Ri.xData) && qi.length && (qi = ni.logarithmic ? qi.filter((Gi) => 0 < Gi) : qi, Hi = Ri.getXExtremes(qi), xi = Hi.min, yi = Hi.max, fi(xi) || xi instanceof Date || (qi = qi.filter(fi), Hi = Ri.getXExtremes(qi), xi = Hi.min, yi = Hi.max), qi.length && (ni.dataMin = Math.min(mi(ni.dataMin, xi), xi), ni.dataMax = Math.max(mi(
                   ni.dataMax,
                   yi
-                ), yi))) : (Ri = Ri.applyExtremes(), fi(Ri.dataMin) && (xi = Ri.dataMin, ni.dataMin = Math.min(mi(ni.dataMin, xi), xi)), fi(Ri.dataMax) && (yi = Ri.dataMax, ni.dataMax = Math.max(mi(ni.dataMax, yi), yi)), wi(ai) && (ni.threshold = ai), (!qi.softThreshold || ni.positiveValuesOnly) && (ni.softThreshold = !1));
+                ), yi))) : (Ri = Ri.applyExtremes(), fi(Ri.dataMin) && (xi = Ri.dataMin, ni.dataMin = Math.min(mi(ni.dataMin, xi), xi)), fi(Ri.dataMax) && (yi = Ri.dataMax, ni.dataMax = Math.max(mi(ni.dataMax, yi), yi)), Ci(ai) && (ni.threshold = ai), (!qi.softThreshold || ni.positiveValuesOnly) && (ni.softThreshold = !1));
               }
             });
           }), ci(this, "afterGetSeriesExtremes");
@@ -2165,7 +2165,7 @@ var highcharts = { exports: {} };
           var Ri = this.max;
           let qi, ai;
           if (this.isXAxis && typeof this.minRange > "u" && !Pi)
-            if (wi(ni.min) || wi(ni.max) || wi(ni.floor) || wi(ni.ceiling))
+            if (Ci(ni.min) || Ci(ni.max) || Ci(ni.floor) || Ci(ni.ceiling))
               this.minRange = null;
             else {
               var xi = pi(this.series.map((yi) => {
@@ -2185,7 +2185,7 @@ var highcharts = { exports: {} };
             this.series.forEach(function(Ri) {
               var qi;
               const ai = Ri.closestPointRange, xi = Ri.visible || !Ri.chart.options.chart.ignoreHiddenSeries;
-              ((qi = Ri.xData) === null || qi === void 0 ? void 0 : qi.length) === 1 ? Hi.push(Ri.xData[0]) : !Ri.noSharedTooltip && wi(ai) && xi && (Pi = wi(Pi) ? Math.min(Pi, ai) : ai);
+              ((qi = Ri.xData) === null || qi === void 0 ? void 0 : qi.length) === 1 ? Hi.push(Ri.xData[0]) : !Ri.noSharedTooltip && Ci(ai) && xi && (Pi = Ci(Pi) ? Math.min(Pi, ai) : ai);
             }), Hi.length && (Hi.sort((Ri, qi) => Ri - qi), ni = pi([Hi]));
           }
           return ni && Pi ? Math.min(ni, Pi) : ni || Pi;
@@ -2193,7 +2193,7 @@ var highcharts = { exports: {} };
         nameToX(ni) {
           const Pi = ui(this.options.categories), Hi = Pi ? this.categories : this.names;
           let Ri = ni.options.x, qi;
-          return ni.series.requireSorting = !1, wi(Ri) || (Ri = this.options.uniqueNames && Hi ? Pi ? Hi.indexOf(ni.name) : mi(Hi.keys[ni.name], -1) : ni.series.autoIncrement()), Ri === -1 ? !Pi && Hi && (qi = Hi.length) : qi = Ri, typeof qi < "u" ? (this.names[qi] = ni.name, this.names.keys[ni.name] = qi) : ni.x && (qi = ni.x), qi;
+          return ni.series.requireSorting = !1, Ci(Ri) || (Ri = this.options.uniqueNames && Hi ? Pi ? Hi.indexOf(ni.name) : mi(Hi.keys[ni.name], -1) : ni.series.autoIncrement()), Ri === -1 ? !Pi && Hi && (qi = Hi.length) : qi = Ri, typeof qi < "u" ? (this.names[qi] = ni.name, this.names.keys[ni.name] = qi) : ni.x && (qi = ni.x), qi;
         }
         updateNames() {
           const ni = this, Pi = this.names;
@@ -2228,11 +2228,11 @@ var highcharts = { exports: {} };
             var Ii = this.linkedParent.getExtremes();
             this.min = mi(Ii.min, Ii.dataMin), this.max = mi(Ii.max, Ii.dataMax), Ri.type !== this.linkedParent.options.type && Mi(11, 1, Pi);
           } else
-            Gi && wi(ss) && (this.dataMin >= ss ? (Ii = ss, Wi = 0) : this.dataMax <= ss && (os = ss, Xi = 0)), this.min = mi(ns, Ii, this.dataMin), this.max = mi(ls, os, this.dataMax);
+            Gi && Ci(ss) && (this.dataMin >= ss ? (Ii = ss, Wi = 0) : this.dataMax <= ss && (os = ss, Xi = 0)), this.min = mi(ns, Ii, this.dataMin), this.max = mi(ls, os, this.dataMax);
           if (Hi && (this.positiveValuesOnly && !ni && 0 >= Math.min(this.min, mi(
             this.dataMin,
             this.min
-          )) && Mi(10, 1, Pi), this.min = ki(Hi.log2lin(this.min), 16), this.max = ki(Hi.log2lin(this.max), 16)), this.range && wi(this.max) && (this.userMin = this.min = ns = Math.max(this.dataMin, this.minFromRange()), this.userMax = ls = this.max, this.range = null), ci(this, "foundExtremes"), this.beforePadding && this.beforePadding(), this.adjustForMinRange(), !fi(this.userMin) && fi(Ri.softMin) && Ri.softMin < this.min && (this.min = ns = Ri.softMin), !fi(this.userMax) && fi(Ri.softMax) && Ri.softMax > this.max && (this.max = ls = Ri.softMax), !(yi || this.axisPointRange || this.stacking && this.stacking.usePercentage || ai) && wi(this.min) && wi(this.max) && (Pi = this.max - this.min) && (!wi(ns) && Wi && (this.min -= Pi * Wi), !wi(ls) && Xi && (this.max += Pi * Xi)), !fi(this.userMin) && fi(Ri.floor) && (this.min = Math.max(this.min, Ri.floor)), !fi(this.userMax) && fi(Ri.ceiling) && (this.max = Math.min(this.max, Ri.ceiling)), Gi && wi(this.dataMin) && (ss = ss || 0, !wi(ns) && this.min < ss && this.dataMin >= ss ? this.min = this.options.minRange ? Math.min(ss, this.max - this.minRange) : ss : !wi(ls) && this.max > ss && this.dataMax <= ss && (this.max = this.options.minRange ? Math.max(ss, this.min + this.minRange) : ss)), fi(this.min) && fi(this.max) && !this.chart.polar && this.min > this.max && (wi(this.options.min) ? this.max = this.min : wi(this.options.max) && (this.min = this.max)), this.tickInterval = this.min === this.max || typeof this.min > "u" || typeof this.max > "u" ? 1 : ai && this.linkedParent && !ts && xi === this.linkedParent.options.tickPixelInterval ? ts = this.linkedParent.tickInterval : mi(ts, this.tickAmount ? (this.max - this.min) / Math.max(this.tickAmount - 1, 1) : void 0, yi ? 1 : (this.max - this.min) * xi / Math.max(this.len, xi)), qi && !ni) {
+          )) && Mi(10, 1, Pi), this.min = ki(Hi.log2lin(this.min), 16), this.max = ki(Hi.log2lin(this.max), 16)), this.range && Ci(this.max) && (this.userMin = this.min = ns = Math.max(this.dataMin, this.minFromRange()), this.userMax = ls = this.max, this.range = null), ci(this, "foundExtremes"), this.beforePadding && this.beforePadding(), this.adjustForMinRange(), !fi(this.userMin) && fi(Ri.softMin) && Ri.softMin < this.min && (this.min = ns = Ri.softMin), !fi(this.userMax) && fi(Ri.softMax) && Ri.softMax > this.max && (this.max = ls = Ri.softMax), !(yi || this.axisPointRange || this.stacking && this.stacking.usePercentage || ai) && Ci(this.min) && Ci(this.max) && (Pi = this.max - this.min) && (!Ci(ns) && Wi && (this.min -= Pi * Wi), !Ci(ls) && Xi && (this.max += Pi * Xi)), !fi(this.userMin) && fi(Ri.floor) && (this.min = Math.max(this.min, Ri.floor)), !fi(this.userMax) && fi(Ri.ceiling) && (this.max = Math.min(this.max, Ri.ceiling)), Gi && Ci(this.dataMin) && (ss = ss || 0, !Ci(ns) && this.min < ss && this.dataMin >= ss ? this.min = this.options.minRange ? Math.min(ss, this.max - this.minRange) : ss : !Ci(ls) && this.max > ss && this.dataMax <= ss && (this.max = this.options.minRange ? Math.max(ss, this.min + this.minRange) : ss)), fi(this.min) && fi(this.max) && !this.chart.polar && this.min > this.max && (Ci(this.options.min) ? this.max = this.min : Ci(this.options.max) && (this.min = this.max)), this.tickInterval = this.min === this.max || typeof this.min > "u" || typeof this.max > "u" ? 1 : ai && this.linkedParent && !ts && xi === this.linkedParent.options.tickPixelInterval ? ts = this.linkedParent.tickInterval : mi(ts, this.tickAmount ? (this.max - this.min) / Math.max(this.tickAmount - 1, 1) : void 0, yi ? 1 : (this.max - this.min) * xi / Math.max(this.len, xi)), qi && !ni) {
             const Ei = this.min !== (this.old && this.old.min) || this.max !== (this.old && this.old.max);
             this.series.forEach(function(Ji) {
               Ji.forceCrop = Ji.forceCropping && Ji.forceCropping(), Ji.processData(Ei);
@@ -2247,7 +2247,7 @@ var highcharts = { exports: {} };
           const xi = (ai || !qi) && ni.startOnTick;
           qi = (ai || !qi) && ni.endOnTick, ai = [];
           let yi;
-          if (this.tickmarkOffset = this.categories && ni.tickmarkPlacement === "between" && this.tickInterval === 1 ? 0.5 : 0, this.minorTickInterval = Ri === "auto" && this.tickInterval ? this.tickInterval / ni.minorTicksPerMajor : Ri, this.single = this.min === this.max && wi(this.min) && !this.tickAmount && (parseInt(this.min, 10) === this.min || ni.allowDecimals !== !1), Pi)
+          if (this.tickmarkOffset = this.categories && ni.tickmarkPlacement === "between" && this.tickInterval === 1 ? 0.5 : 0, this.minorTickInterval = Ri === "auto" && this.tickInterval ? this.tickInterval / ni.minorTicksPerMajor : Ri, this.single = this.min === this.max && Ci(this.min) && !this.tickAmount && (parseInt(this.min, 10) === this.min || ni.allowDecimals !== !1), Pi)
             ai = Pi.slice();
           else if (fi(this.min) && fi(this.max)) {
             if (this.ordinal && this.ordinal.positions || !((this.max - this.min) / this.tickInterval > Math.max(2 * this.len, 200)))
@@ -2285,7 +2285,7 @@ var highcharts = { exports: {} };
             else
               for (; this.max + ai < ni[ni.length - 1]; )
                 ni.pop();
-            ni.length === 0 && wi(Ri) && !this.options.tickPositions && ni.push((qi + Ri) / 2);
+            ni.length === 0 && Ci(Ri) && !this.options.tickPositions && ni.push((qi + Ri) / 2);
           }
         }
         alignToOthers() {
@@ -2319,7 +2319,7 @@ var highcharts = { exports: {} };
         getTickAmount() {
           const ni = this.options, Pi = ni.tickPixelInterval;
           let Hi = ni.tickAmount;
-          !wi(ni.tickInterval) && !Hi && this.len < Pi && !this.isRadial && !this.logarithmic && ni.startOnTick && ni.endOnTick && (Hi = 2), !Hi && this.alignToOthers() && (Hi = Math.ceil(this.len / Pi) + 1), 4 > Hi && (this.finalTickAmt = Hi, Hi = 5), this.tickAmount = Hi;
+          !Ci(ni.tickInterval) && !Hi && this.len < Pi && !this.isRadial && !this.logarithmic && ni.startOnTick && ni.endOnTick && (Hi = 2), !Hi && this.alignToOthers() && (Hi = Math.ceil(this.len / Pi) + 1), 4 > Hi && (this.finalTickAmt = Hi, Hi = 5), this.tickAmount = Hi;
         }
         adjustTickAmount() {
           const ni = this, { finalTickAmt: Pi, max: Hi, min: Ri, options: qi, tickPositions: ai, tickAmount: xi, thresholdAlignment: yi } = ni, Gi = ai && ai.length;
@@ -2343,7 +2343,7 @@ var highcharts = { exports: {} };
                 ai.length % 2 || Ri === Xi ? ai.push(ki(ai[ai.length - 1] + Wi)) : ai.unshift(ki(ai[0] - Wi));
               ss();
             }
-            if (wi(Pi)) {
+            if (Ci(Pi)) {
               for (Wi = Xi = ai.length; Wi--; )
                 (Pi === 3 && Wi % 2 === 1 || 2 >= Pi && 0 < Wi && Wi < Xi - 1) && ai.splice(Wi, 1);
               ni.finalTickAmt = void 0;
@@ -2370,7 +2370,7 @@ var highcharts = { exports: {} };
           const Hi = this, Ri = this.dataMin, qi = this.dataMax, ai = this.options, xi = Math.min(Ri, mi(ai.min, Ri)), yi = Math.max(qi, mi(ai.max, qi));
           return ni = { newMin: ni, newMax: Pi }, ci(this, "zoom", ni, function(Gi) {
             let Xi = Gi.newMin, Wi = Gi.newMax;
-            (Xi !== Hi.min || Wi !== Hi.max) && (Hi.allowZoomOutside || (wi(Ri) && (Xi < xi && (Xi = xi), Xi > yi && (Xi = yi)), wi(qi) && (Wi < xi && (Wi = xi), Wi > yi && (Wi = yi))), Hi.displayBtn = typeof Xi < "u" || typeof Wi < "u", Hi.setExtremes(Xi, Wi, !1, void 0, { trigger: "zoom" })), Gi.zoomed = !0;
+            (Xi !== Hi.min || Wi !== Hi.max) && (Hi.allowZoomOutside || (Ci(Ri) && (Xi < xi && (Xi = xi), Xi > yi && (Xi = yi)), Ci(qi) && (Wi < xi && (Wi = xi), Wi > yi && (Wi = yi))), Hi.displayBtn = typeof Xi < "u" || typeof Wi < "u", Hi.setExtremes(Xi, Wi, !1, void 0, { trigger: "zoom" })), Gi.zoomed = !0;
           }), ni.zoomed;
         }
         setAxisSize() {
@@ -2472,7 +2472,7 @@ var highcharts = { exports: {} };
         hasData() {
           return this.series.some(function(ni) {
             return ni.hasData();
-          }) || this.options.showEmpty && wi(this.min) && wi(this.max);
+          }) || this.options.showEmpty && Ci(this.min) && Ci(this.max);
         }
         addTitle(ni) {
           const Pi = this.chart.renderer, Hi = this.horiz, Ri = this.opposite, qi = this.options.title, ai = this.chart.styledMode;
@@ -2512,7 +2512,7 @@ var highcharts = { exports: {} };
             ps = Math.max(ai[us].getLabelSize(), ps);
           }), ni.staggerLines && (ps *= ni.staggerLines), ni.labelOffset = ps * (ni.opposite ? -1 : 1)) : di(ai, function(us, cs) {
             us.destroy(), delete ai[cs];
-          }), ss && ss.text && ss.enabled !== !1 && (ni.addTitle(Fi), Fi && !ns && ss.reserveSpace !== !1 && (ni.titleOffset = Qi = ni.axisTitle.getBBox()[Hi ? "height" : "width"], hs = ss.offset, as = wi(hs) ? 0 : mi(ss.margin, Hi ? 5 : 10))), ni.renderLine(), ni.offset = Ei * mi(Ri.offset, ls[qi] ? ls[qi] + (Ri.margin || 0) : 0), ni.tickRotCorr = ni.tickRotCorr || { x: 0, y: 0 }, ts = qi === 0 ? -ni.labelMetrics().h : qi === 2 ? ni.tickRotCorr.y : 0, as = Math.abs(ps) + as, ps && (as = as - ts + Ei * (Hi ? mi(os.y, ni.tickRotCorr.y + Ei * os.distance) : mi(os.x, Ei * os.distance))), ni.axisTitleMargin = mi(hs, as), ni.getMaxLabelDimensions && (ni.maxLabelDimensions = ni.getMaxLabelDimensions(ai, xi)), yi !== "colorAxis" && (os = this.tickSize("tick"), ls[qi] = Math.max(ls[qi], (ni.axisTitleMargin || 0) + Qi + Ei * ni.offset, as, xi && xi.length && os ? os[0] + Ei * ni.offset : 0), ls = !ni.axisLine || Ri.offset ? 0 : 2 * Math.floor(ni.axisLine.strokeWidth() / 2), Ii[Wi] = Math.max(Ii[Wi], ls)), ci(this, "afterGetOffset");
+          }), ss && ss.text && ss.enabled !== !1 && (ni.addTitle(Fi), Fi && !ns && ss.reserveSpace !== !1 && (ni.titleOffset = Qi = ni.axisTitle.getBBox()[Hi ? "height" : "width"], hs = ss.offset, as = Ci(hs) ? 0 : mi(ss.margin, Hi ? 5 : 10))), ni.renderLine(), ni.offset = Ei * mi(Ri.offset, ls[qi] ? ls[qi] + (Ri.margin || 0) : 0), ni.tickRotCorr = ni.tickRotCorr || { x: 0, y: 0 }, ts = qi === 0 ? -ni.labelMetrics().h : qi === 2 ? ni.tickRotCorr.y : 0, as = Math.abs(ps) + as, ps && (as = as - ts + Ei * (Hi ? mi(os.y, ni.tickRotCorr.y + Ei * os.distance) : mi(os.x, Ei * os.distance))), ni.axisTitleMargin = mi(hs, as), ni.getMaxLabelDimensions && (ni.maxLabelDimensions = ni.getMaxLabelDimensions(ai, xi)), yi !== "colorAxis" && (os = this.tickSize("tick"), ls[qi] = Math.max(ls[qi], (ni.axisTitleMargin || 0) + Qi + Ei * ni.offset, as, xi && xi.length && os ? os[0] + Ei * ni.offset : 0), ls = !ni.axisLine || Ri.offset ? 0 : 2 * Math.floor(ni.axisLine.strokeWidth() / 2), Ii[Wi] = Math.max(Ii[Wi], ls)), ci(this, "afterGetOffset");
         }
         getLinePath(ni) {
           const Pi = this.chart, Hi = this.opposite;
@@ -2589,7 +2589,7 @@ var highcharts = { exports: {} };
         }
         destroy(ni) {
           const Pi = this, Hi = Pi.plotLinesAndBands, Ri = this.eventOptions;
-          if (ci(this, "destroy", { keepEvents: ni }), ni || hi(Pi), [Pi.ticks, Pi.minorTicks, Pi.alternateBands].forEach(function(qi) {
+          if (ci(this, "destroy", { keepEvents: ni }), ni || li(Pi), [Pi.ticks, Pi.minorTicks, Pi.alternateBands].forEach(function(qi) {
             Si(qi);
           }), Hi)
             for (ni = Hi.length; ni--; )
@@ -2608,12 +2608,12 @@ var highcharts = { exports: {} };
           var Ri = mi(Hi && Hi.snap, !0);
           const qi = this.chart;
           let ai, xi = this.cross;
-          if (ci(this, "drawCrosshair", { e: ni, point: Pi }), ni || (ni = this.cross && this.cross.e), Hi && (wi(Pi) || !Ri) !== !1) {
-            if (Ri ? wi(Pi) && (ai = mi(this.coll !== "colorAxis" ? Pi.crosshairPos : null, this.isXAxis ? Pi.plotX : this.len - Pi.plotY)) : ai = ni && (this.horiz ? ni.chartX - this.pos : this.len - ni.chartY + this.pos), wi(ai)) {
+          if (ci(this, "drawCrosshair", { e: ni, point: Pi }), ni || (ni = this.cross && this.cross.e), Hi && (Ci(Pi) || !Ri) !== !1) {
+            if (Ri ? Ci(Pi) && (ai = mi(this.coll !== "colorAxis" ? Pi.crosshairPos : null, this.isXAxis ? Pi.plotX : this.len - Pi.plotY)) : ai = ni && (this.horiz ? ni.chartX - this.pos : this.len - ni.chartY + this.pos), Ci(ai)) {
               var yi = { value: Pi && (this.isXAxis ? Pi.x : mi(Pi.stackY, Pi.y)), translatedValue: ai };
               qi.polar && Di(yi, { isCrosshair: !0, chartX: ni && ni.chartX, chartY: ni && ni.chartY, point: Pi }), yi = this.getPlotLinePath(yi) || null;
             }
-            if (!wi(yi)) {
+            if (!Ci(yi)) {
               this.hideCrosshair();
               return;
             }
@@ -2650,13 +2650,13 @@ var highcharts = { exports: {} };
           this.update({ categories: ni }, Pi);
         }
       }
-      return rs.defaultOptions = Ci.defaultXAxisOptions, rs.keepProps = "coll extKey hcEvents names series userMax userMin".split(" "), rs;
+      return rs.defaultOptions = wi.defaultXAxisOptions, rs.keepProps = "coll extKey hcEvents names series userMax userMin".split(" "), rs;
     }), ri(
       ii,
       "Core/Axis/DateTimeAxis.js",
       [ii["Core/Utilities.js"]],
-      function(li) {
-        const { addEvent: Ci, getMagnitude: zi, normalizeTickInterval: Ki, timeUnits: Yi } = li;
+      function(hi) {
+        const { addEvent: wi, getMagnitude: zi, normalizeTickInterval: Ki, timeUnits: Yi } = hi;
         var es;
         return function(is) {
           function $i() {
@@ -2667,7 +2667,7 @@ var highcharts = { exports: {} };
           }
           const _i = [];
           is.compose = function(Ai) {
-            return li.pushUnique(_i, Ai) && (Ai.keepProps.push("dateTime"), Ai.prototype.getTimeTicks = $i, Ci(Ai, "init", Vi)), Ai;
+            return hi.pushUnique(_i, Ai) && (Ai.keepProps.push("dateTime"), Ai.prototype.getTimeTicks = $i, wi(Ai, "init", Vi)), Ai;
           };
           class bi {
             constructor(ji) {
@@ -2676,10 +2676,10 @@ var highcharts = { exports: {} };
             normalizeTimeTickInterval(ji, Ni) {
               const gi = Ni || [["millisecond", [1, 2, 5, 10, 20, 25, 50, 100, 200, 500]], ["second", [1, 2, 5, 10, 15, 30]], ["minute", [1, 2, 5, 10, 15, 30]], ["hour", [1, 2, 3, 4, 6, 8, 12]], ["day", [1, 2]], ["week", [1, 2]], ["month", [1, 2, 3, 4, 6]], ["year", null]];
               Ni = gi[gi.length - 1];
-              let ki = Yi[Ni[0]], wi = Ni[1], Si;
-              for (Si = 0; Si < gi.length && (Ni = gi[Si], ki = Yi[Ni[0]], wi = Ni[1], !(gi[Si + 1] && ji <= (ki * wi[wi.length - 1] + Yi[gi[Si + 1][0]]) / 2)); Si++)
+              let ki = Yi[Ni[0]], Ci = Ni[1], Si;
+              for (Si = 0; Si < gi.length && (Ni = gi[Si], ki = Yi[Ni[0]], Ci = Ni[1], !(gi[Si + 1] && ji <= (ki * Ci[Ci.length - 1] + Yi[gi[Si + 1][0]]) / 2)); Si++)
                 ;
-              return ki === Yi.year && ji < 5 * ki && (wi = [1, 2, 5]), ji = Ki(ji / ki, wi, Ni[0] === "year" ? Math.max(zi(ji / ki), 1) : 1), { unitRange: ki, count: ji, unitName: Ni[0] };
+              return ki === Yi.year && ji < 5 * ki && (Ci = [1, 2, 5]), ji = Ki(ji / ki, Ci, Ni[0] === "year" ? Math.max(zi(ji / ki), 1) : 1), { unitRange: ki, count: ji, unitName: Ni[0] };
             }
             getXDateFormat(ji, Ni) {
               const { axis: gi } = this, ki = gi.chart.time;
@@ -2689,8 +2689,8 @@ var highcharts = { exports: {} };
           is.Additions = bi;
         }(es || (es = {})), es;
       }
-    ), ri(ii, "Core/Axis/LogarithmicAxis.js", [ii["Core/Utilities.js"]], function(li) {
-      const { addEvent: Ci, normalizeTickInterval: zi, pick: Ki } = li;
+    ), ri(ii, "Core/Axis/LogarithmicAxis.js", [ii["Core/Utilities.js"]], function(hi) {
+      const { addEvent: wi, normalizeTickInterval: zi, pick: Ki } = hi;
       var Yi;
       return function(es) {
         function is(bi) {
@@ -2707,7 +2707,7 @@ var highcharts = { exports: {} };
         }
         const Vi = [];
         es.compose = function(bi) {
-          return li.pushUnique(Vi, bi) && (bi.keepProps.push("logarithmic"), Ci(bi, "init", is), Ci(bi, "afterInit", $i)), bi;
+          return hi.pushUnique(Vi, bi) && (bi.keepProps.push("logarithmic"), wi(bi, "init", is), wi(bi, "afterInit", $i)), bi;
         };
         class _i {
           constructor(Ai) {
@@ -2715,18 +2715,18 @@ var highcharts = { exports: {} };
           }
           getLogTickPositions(Ai, ji, Ni, gi) {
             const ki = this.axis;
-            var wi = ki.len, Si = ki.options;
+            var Ci = ki.len, Si = ki.options;
             let Ti = [];
             if (gi || (this.minorAutoInterval = void 0), 0.5 <= Ai)
               Ai = Math.round(Ai), Ti = ki.getLinearTickPositions(Ai, ji, Ni);
             else if (0.08 <= Ai) {
               Si = Math.floor(ji);
               let Mi, Di, ci, pi, vi;
-              for (wi = 0.3 < Ai ? [1, 2, 4] : 0.15 < Ai ? [1, 2, 4, 6, 8] : [1, 2, 3, 4, 5, 6, 7, 8, 9]; Si < Ni + 1 && !vi; Si++)
-                for (Di = wi.length, Mi = 0; Mi < Di && !vi; Mi++)
-                  ci = this.log2lin(this.lin2log(Si) * wi[Mi]), ci > ji && (!gi || pi <= Ni) && typeof pi < "u" && Ti.push(pi), pi > Ni && (vi = !0), pi = ci;
+              for (Ci = 0.3 < Ai ? [1, 2, 4] : 0.15 < Ai ? [1, 2, 4, 6, 8] : [1, 2, 3, 4, 5, 6, 7, 8, 9]; Si < Ni + 1 && !vi; Si++)
+                for (Di = Ci.length, Mi = 0; Mi < Di && !vi; Mi++)
+                  ci = this.log2lin(this.lin2log(Si) * Ci[Mi]), ci > ji && (!gi || pi <= Ni) && typeof pi < "u" && Ti.push(pi), pi > Ni && (vi = !0), pi = ci;
             } else
-              ji = this.lin2log(ji), Ni = this.lin2log(Ni), Ai = gi ? ki.getMinorTickInterval() : Si.tickInterval, Ai = Ki(Ai === "auto" ? null : Ai, this.minorAutoInterval, Si.tickPixelInterval / (gi ? 5 : 1) * (Ni - ji) / ((gi ? wi / ki.tickPositions.length : wi) || 1)), Ai = zi(Ai), Ti = ki.getLinearTickPositions(Ai, ji, Ni).map(this.log2lin), gi || (this.minorAutoInterval = Ai / 5);
+              ji = this.lin2log(ji), Ni = this.lin2log(Ni), Ai = gi ? ki.getMinorTickInterval() : Si.tickInterval, Ai = Ki(Ai === "auto" ? null : Ai, this.minorAutoInterval, Si.tickPixelInterval / (gi ? 5 : 1) * (Ni - ji) / ((gi ? Ci / ki.tickPositions.length : Ci) || 1)), Ai = zi(Ai), Ti = ki.getLinearTickPositions(Ai, ji, Ni).map(this.log2lin), gi || (this.minorAutoInterval = Ai / 5);
             return gi || (ki.tickInterval = Ai), Ti;
           }
           lin2log(Ai) {
@@ -2741,22 +2741,22 @@ var highcharts = { exports: {} };
         }
         es.Additions = _i;
       }(Yi || (Yi = {})), Yi;
-    }), ri(ii, "Core/Axis/PlotLineOrBand/PlotLineOrBandAxis.js", [ii["Core/Utilities.js"]], function(li) {
-      const { erase: Ci, extend: zi, isNumber: Ki } = li;
+    }), ri(ii, "Core/Axis/PlotLineOrBand/PlotLineOrBandAxis.js", [ii["Core/Utilities.js"]], function(hi) {
+      const { erase: wi, extend: zi, isNumber: Ki } = hi;
       var Yi;
       return function(es) {
         function is(ki) {
           return this.addPlotBandOrLine(ki, "plotBands");
         }
-        function $i(ki, wi) {
+        function $i(ki, Ci) {
           const Si = this.userOptions;
           let Ti = new gi(this, ki);
           if (this.visible && (Ti = Ti.render()), Ti) {
             if (this._addedPlotLB || (this._addedPlotLB = !0, (Si.plotLines || []).concat(Si.plotBands || []).forEach((Mi) => {
               this.addPlotBandOrLine(Mi);
-            })), wi) {
-              const Mi = Si[wi] || [];
-              Mi.push(ki), Si[wi] = Mi;
+            })), Ci) {
+              const Mi = Si[Ci] || [];
+              Mi.push(ki), Si[Ci] = Mi;
             }
             this.plotLinesAndBands.push(Ti);
           }
@@ -2765,13 +2765,13 @@ var highcharts = { exports: {} };
         function Vi(ki) {
           return this.addPlotBandOrLine(ki, "plotLines");
         }
-        function _i(ki, wi, Si = this.options) {
-          const Ti = this.getPlotLinePath({ value: wi, force: !0, acrossPanes: Si.acrossPanes }), Mi = [], Di = this.horiz;
-          wi = !Ki(this.min) || !Ki(this.max) || ki < this.min && wi < this.min || ki > this.max && wi > this.max, ki = this.getPlotLinePath({ value: ki, force: !0, acrossPanes: Si.acrossPanes }), Si = 1;
+        function _i(ki, Ci, Si = this.options) {
+          const Ti = this.getPlotLinePath({ value: Ci, force: !0, acrossPanes: Si.acrossPanes }), Mi = [], Di = this.horiz;
+          Ci = !Ki(this.min) || !Ki(this.max) || ki < this.min && Ci < this.min || ki > this.max && Ci > this.max, ki = this.getPlotLinePath({ value: ki, force: !0, acrossPanes: Si.acrossPanes }), Si = 1;
           let ci;
           if (ki && Ti)
-            for (wi && (ci = ki.toString() === Ti.toString(), Si = 0), wi = 0; wi < ki.length; wi += 2) {
-              const pi = ki[wi], vi = ki[wi + 1], ui = Ti[wi], fi = Ti[wi + 1];
+            for (Ci && (ci = ki.toString() === Ti.toString(), Si = 0), Ci = 0; Ci < ki.length; Ci += 2) {
+              const pi = ki[Ci], vi = ki[Ci + 1], ui = Ti[Ci], fi = Ti[Ci + 1];
               pi[0] !== "M" && pi[0] !== "L" || vi[0] !== "M" && vi[0] !== "L" || ui[0] !== "M" && ui[0] !== "L" || fi[0] !== "M" && fi[0] !== "L" || (Di && ui[1] === pi[1] ? (ui[1] += Si, fi[1] += Si) : Di || ui[2] !== pi[2] || (ui[2] += Si, fi[2] += Si), Mi.push(["M", pi[1], pi[2]], ["L", vi[1], vi[2]], ["L", fi[1], fi[2]], ["L", ui[1], ui[2]], ["Z"])), Mi.isFlat = ci;
             }
           return Mi;
@@ -2780,11 +2780,11 @@ var highcharts = { exports: {} };
           this.removePlotBandOrLine(ki);
         }
         function Ai(ki) {
-          const wi = this.plotLinesAndBands, Si = this.options, Ti = this.userOptions;
-          if (wi) {
-            let Mi = wi.length;
+          const Ci = this.plotLinesAndBands, Si = this.options, Ti = this.userOptions;
+          if (Ci) {
+            let Mi = Ci.length;
             for (; Mi--; )
-              wi[Mi].id === ki && wi[Mi].destroy();
+              Ci[Mi].id === ki && Ci[Mi].destroy();
             [
               Si.plotLines || [],
               Ti.plotLines || [],
@@ -2792,7 +2792,7 @@ var highcharts = { exports: {} };
               Ti.plotBands || []
             ].forEach(function(Di) {
               for (Mi = Di.length; Mi--; )
-                (Di[Mi] || {}).id === ki && Ci(Di, Di[Mi]);
+                (Di[Mi] || {}).id === ki && wi(Di, Di[Mi]);
             });
           }
         }
@@ -2801,19 +2801,19 @@ var highcharts = { exports: {} };
         }
         const Ni = [];
         let gi;
-        es.compose = function(ki, wi) {
-          return gi || (gi = ki), li.pushUnique(Ni, wi) && zi(wi.prototype, { addPlotBand: is, addPlotLine: Vi, addPlotBandOrLine: $i, getPlotBandPath: _i, removePlotBand: bi, removePlotLine: ji, removePlotBandOrLine: Ai }), wi;
+        es.compose = function(ki, Ci) {
+          return gi || (gi = ki), hi.pushUnique(Ni, Ci) && zi(Ci.prototype, { addPlotBand: is, addPlotLine: Vi, addPlotBandOrLine: $i, getPlotBandPath: _i, removePlotBand: bi, removePlotLine: ji, removePlotBandOrLine: Ai }), Ci;
         };
       }(Yi || (Yi = {})), Yi;
     }), ri(
       ii,
       "Core/Axis/PlotLineOrBand/PlotLineOrBand.js",
       [ii["Core/Axis/PlotLineOrBand/PlotLineOrBandAxis.js"], ii["Core/Utilities.js"]],
-      function(li, Ci) {
-        const { arrayMax: zi, arrayMin: Ki, defined: Yi, destroyObjectProperties: es, erase: is, fireEvent: $i, merge: Vi, objectEach: _i, pick: bi } = Ci;
+      function(hi, wi) {
+        const { arrayMax: zi, arrayMin: Ki, defined: Yi, destroyObjectProperties: es, erase: is, fireEvent: $i, merge: Vi, objectEach: _i, pick: bi } = wi;
         class Ai {
           static compose(Ni) {
-            return li.compose(Ai, Ni);
+            return hi.compose(Ai, Ni);
           }
           constructor(Ni, gi) {
             this.axis = Ni, gi && (this.options = gi, this.id = gi.id);
@@ -2821,15 +2821,15 @@ var highcharts = { exports: {} };
           render() {
             $i(this, "render");
             const Ni = this, gi = Ni.axis, ki = gi.horiz;
-            var wi = gi.logarithmic;
+            var Ci = gi.logarithmic;
             const Si = Ni.options, Ti = Si.color, Mi = bi(Si.zIndex, 0), Di = Si.events, ci = {}, pi = gi.chart.renderer;
             let vi = Si.label, ui = Ni.label, fi = Si.to, si = Si.from, ti = Si.value, oi = Ni.svgElem;
             var di = [];
             const mi = Yi(si) && Yi(fi);
             di = Yi(ti);
-            const Oi = !oi, hi = { class: "highcharts-plot-" + (mi ? "band " : "line ") + (Si.className || "") };
+            const Oi = !oi, li = { class: "highcharts-plot-" + (mi ? "band " : "line ") + (Si.className || "") };
             let Li = mi ? "bands" : "lines";
-            if (wi && (si = wi.log2lin(si), fi = wi.log2lin(fi), ti = wi.log2lin(ti)), gi.chart.styledMode || (di ? (hi.stroke = Ti || "#999999", hi["stroke-width"] = bi(Si.width, 1), Si.dashStyle && (hi.dashstyle = Si.dashStyle)) : mi && (hi.fill = Ti || "#e6e9ff", Si.borderWidth && (hi.stroke = Si.borderColor, hi["stroke-width"] = Si.borderWidth))), ci.zIndex = Mi, Li += "-" + Mi, (wi = gi.plotLinesAndBandsGroups[Li]) || (gi.plotLinesAndBandsGroups[Li] = wi = pi.g("plot-" + Li).attr(ci).add()), Oi && (Ni.svgElem = oi = pi.path().attr(hi).add(wi)), di)
+            if (Ci && (si = Ci.log2lin(si), fi = Ci.log2lin(fi), ti = Ci.log2lin(ti)), gi.chart.styledMode || (di ? (li.stroke = Ti || "#999999", li["stroke-width"] = bi(Si.width, 1), Si.dashStyle && (li.dashstyle = Si.dashStyle)) : mi && (li.fill = Ti || "#e6e9ff", Si.borderWidth && (li.stroke = Si.borderColor, li["stroke-width"] = Si.borderWidth))), ci.zIndex = Mi, Li += "-" + Mi, (Ci = gi.plotLinesAndBandsGroups[Li]) || (gi.plotLinesAndBandsGroups[Li] = Ci = pi.g("plot-" + Li).attr(ci).add()), Oi && (Ni.svgElem = oi = pi.path().attr(li).add(Ci)), di)
               di = gi.getPlotLinePath({ value: ti, lineWidth: oi.strokeWidth(), acrossPanes: Si.acrossPanes });
             else if (mi)
               di = gi.getPlotBandPath(si, fi, Si);
@@ -2841,11 +2841,11 @@ var highcharts = { exports: {} };
               });
             }), Ni.eventsAdded = !0), (Oi || !oi.d) && di && di.length ? oi.attr({ d: di }) : oi && (di ? (oi.show(), oi.animate({ d: di })) : oi.d && (oi.hide(), ui && (Ni.label = ui = ui.destroy()))), vi && (Yi(vi.text) || Yi(vi.formatter)) && di && di.length && 0 < gi.width && 0 < gi.height && !di.isFlat ? (vi = Vi({ align: ki && mi && "center", x: ki ? !mi && 4 : 10, verticalAlign: !ki && mi && "middle", y: ki ? mi ? 16 : 10 : mi ? 6 : -4, rotation: ki && !mi && 90 }, vi), this.renderLabel(vi, di, mi, Mi)) : ui && ui.hide(), Ni;
           }
-          renderLabel(Ni, gi, ki, wi) {
+          renderLabel(Ni, gi, ki, Ci) {
             const Si = this.axis;
             var Ti = Si.chart.renderer;
             let Mi = this.label;
-            Mi || (this.label = Mi = Ti.text(this.getLabelText(Ni), 0, 0, Ni.useHTML).attr({ align: Ni.textAlign || Ni.align, rotation: Ni.rotation, class: "highcharts-plot-" + (ki ? "band" : "line") + "-label " + (Ni.className || ""), zIndex: wi }).add(), Si.chart.styledMode || Mi.css(Vi({ fontSize: "0.8em", textOverflow: "ellipsis" }, Ni.style))), wi = gi.xBounds || [gi[0][1], gi[1][1], ki ? gi[2][1] : gi[0][1]], gi = gi.yBounds || [gi[0][2], gi[1][2], ki ? gi[2][2] : gi[0][2]], ki = Ki(wi), Ti = Ki(gi), Mi.align(Ni, !1, { x: ki, y: Ti, width: zi(wi) - ki, height: zi(gi) - Ti }), Mi.alignValue && Mi.alignValue !== "left" || (Ni = Ni.clip ? Si.width : Si.chart.chartWidth, Mi.css({ width: (Mi.rotation === 90 ? Si.height - (Mi.alignAttr.y - Si.top) : Ni - (Mi.alignAttr.x - Si.left)) + "px" })), Mi.show(!0);
+            Mi || (this.label = Mi = Ti.text(this.getLabelText(Ni), 0, 0, Ni.useHTML).attr({ align: Ni.textAlign || Ni.align, rotation: Ni.rotation, class: "highcharts-plot-" + (ki ? "band" : "line") + "-label " + (Ni.className || ""), zIndex: Ci }).add(), Si.chart.styledMode || Mi.css(Vi({ fontSize: "0.8em", textOverflow: "ellipsis" }, Ni.style))), Ci = gi.xBounds || [gi[0][1], gi[1][1], ki ? gi[2][1] : gi[0][1]], gi = gi.yBounds || [gi[0][2], gi[1][2], ki ? gi[2][2] : gi[0][2]], ki = Ki(Ci), Ti = Ki(gi), Mi.align(Ni, !1, { x: ki, y: Ti, width: zi(Ci) - ki, height: zi(gi) - Ti }), Mi.alignValue && Mi.alignValue !== "left" || (Ni = Ni.clip ? Si.width : Si.chart.chartWidth, Mi.css({ width: (Mi.rotation === 90 ? Si.height - (Mi.alignAttr.y - Si.top) : Ni - (Mi.alignAttr.x - Si.left)) + "px" })), Mi.show(!0);
           }
           getLabelText(Ni) {
             return Yi(Ni.formatter) ? Ni.formatter.call(this) : Ni.text;
@@ -2862,8 +2862,8 @@ var highcharts = { exports: {} };
       ii["Core/Renderer/RendererUtilities.js"],
       ii["Core/Renderer/RendererRegistry.js"],
       ii["Core/Utilities.js"]
-    ], function(li, Ci, zi, Ki, Yi) {
-      const { format: es } = li, { doc: is, isSafari: $i } = Ci, { distribute: Vi } = zi, { addEvent: _i, clamp: bi, css: Ai, discardElement: ji, extend: Ni, fireEvent: gi, isArray: ki, isNumber: wi, isString: Si, merge: Ti, pick: Mi, splat: Di, syncTimeout: ci } = Yi;
+    ], function(hi, wi, zi, Ki, Yi) {
+      const { format: es } = hi, { doc: is, isSafari: $i } = wi, { distribute: Vi } = zi, { addEvent: _i, clamp: bi, css: Ai, discardElement: ji, extend: Ni, fireEvent: gi, isArray: ki, isNumber: Ci, isString: Si, merge: Ti, pick: Mi, splat: Di, syncTimeout: ci } = Yi;
       class pi {
         constructor(ui, fi) {
           this.allowShared = !0, this.container = void 0, this.crosshairs = [], this.distance = 0, this.isHidden = !0, this.isSticky = !1, this.now = {}, this.options = {}, this.outside = !1, this.chart = ui, this.init(ui, fi);
@@ -2900,8 +2900,8 @@ var highcharts = { exports: {} };
             ui = ui[0].tooltipPos;
           else {
             let mi = 0, Oi = 0;
-            ui.forEach(function(hi) {
-              (hi = hi.pos(!0)) && (mi += hi[0], Oi += hi[1]);
+            ui.forEach(function(li) {
+              (li = li.pos(!0)) && (mi += li[0], Oi += li[1]);
             }), mi /= ui.length, Oi /= ui.length, this.shared && 1 < ui.length && fi && (oi ? mi = fi.chartX : Oi = fi.chartY), ui = [mi - si, Oi - di];
           }
           return ui.map(Math.round);
@@ -2923,18 +2923,18 @@ var highcharts = { exports: {} };
           if (!this.label) {
             if (this.outside) {
               Oi = this.chart.options.chart.style;
-              const hi = Ki.getRendererType();
-              this.container = di = Ci.doc.createElement("div"), di.className = "highcharts-tooltip-container", Ai(di, { position: "absolute", top: "1px", pointerEvents: oi, zIndex: Math.max(this.options.style.zIndex || 0, (Oi && Oi.zIndex || 0) + 3) }), Ci.doc.body.appendChild(di), this.renderer = mi = new hi(di, 0, 0, Oi, void 0, void 0, mi.styledMode);
+              const li = Ki.getRendererType();
+              this.container = di = wi.doc.createElement("div"), di.className = "highcharts-tooltip-container", Ai(di, { position: "absolute", top: "1px", pointerEvents: oi, zIndex: Math.max(this.options.style.zIndex || 0, (Oi && Oi.zIndex || 0) + 3) }), wi.doc.body.appendChild(di), this.renderer = mi = new li(di, 0, 0, Oi, void 0, void 0, mi.styledMode);
             }
             if (ti ? this.label = mi.g("tooltip") : (this.label = mi.label("", 0, 0, si.shape, void 0, void 0, si.useHTML, void 0, "tooltip").attr({ padding: si.padding, r: si.borderRadius }), fi || this.label.attr({ fill: si.backgroundColor, "stroke-width": si.borderWidth || 0 }).css(si.style).css({ pointerEvents: oi })), ui.outside) {
-              const hi = this.label, {
+              const li = this.label, {
                 xSetter: Li,
                 ySetter: Ui
-              } = hi;
-              hi.xSetter = function(Zi) {
-                Li.call(hi, ui.distance), di.style.left = Zi + "px";
-              }, hi.ySetter = function(Zi) {
-                Ui.call(hi, ui.distance), di.style.top = Zi + "px";
+              } = li;
+              li.xSetter = function(Zi) {
+                Li.call(li, ui.distance), di.style.left = Zi + "px";
+              }, li.ySetter = function(Zi) {
+                Ui.call(li, ui.distance), di.style.top = Zi + "px";
               };
             }
             this.label.attr({ zIndex: 8 }).shadow(si.shadow).add();
@@ -2947,15 +2947,15 @@ var highcharts = { exports: {} };
         }
         getPosition(ui, fi, si) {
           const ti = this.chart, oi = this.distance, di = {}, mi = ti.inverted && si.h || 0, Oi = this.outside;
-          var hi = this.getPlayingField();
-          const Li = hi.width, Ui = hi.height, Zi = ti.pointer.getChartPosition();
-          hi = (xi) => {
+          var li = this.getPlayingField();
+          const Li = li.width, Ui = li.height, Zi = ti.pointer.getChartPosition();
+          li = (xi) => {
             const yi = xi === "x";
             return [xi, yi ? Li : Ui, yi ? ui : fi].concat(Oi ? [yi ? ui * Zi.scaleX : fi * Zi.scaleY, yi ? Zi.left - oi + (si.plotX + ti.plotLeft) * Zi.scaleX : Zi.top - oi + (si.plotY + ti.plotTop) * Zi.scaleY, 0, yi ? Li : Ui] : [yi ? ui : fi, yi ? si.plotX + ti.plotLeft : si.plotY + ti.plotTop, yi ? ti.plotLeft : ti.plotTop, yi ? ti.plotLeft + ti.plotWidth : ti.plotTop + ti.plotHeight]);
           };
-          let rs = hi("y"), Bi = hi("x"), ni;
-          hi = !!si.negative, !ti.polar && ti.hoverSeries && ti.hoverSeries.yAxis && ti.hoverSeries.yAxis.reversed && (hi = !hi);
-          const Pi = !this.followPointer && Mi(si.ttBelow, !ti.inverted === hi), Hi = function(xi, yi, Gi, Xi, Wi, ts, ss) {
+          let rs = li("y"), Bi = li("x"), ni;
+          li = !!si.negative, !ti.polar && ti.hoverSeries && ti.hoverSeries.yAxis && ti.hoverSeries.yAxis.reversed && (li = !li);
+          const Pi = !this.followPointer && Mi(si.ttBelow, !ti.inverted === li), Hi = function(xi, yi, Gi, Xi, Wi, ts, ss) {
             const os = Oi ? xi === "y" ? oi * Zi.scaleY : oi * Zi.scaleX : oi, ns = (Gi - Xi) / 2, ls = Xi < Wi - oi, Ii = Wi + oi + Xi < yi, Ei = Wi - os - Gi + ns;
             if (Wi = Wi + os - ns, Pi && Ii)
               di[xi] = Wi;
@@ -2998,7 +2998,7 @@ var highcharts = { exports: {} };
         }
         refresh(ui, fi) {
           const si = this.chart, ti = this.options, oi = si.pointer, di = Di(ui), mi = di[0], Oi = [];
-          var hi = ti.format, Li = ti.formatter || this.defaultFormatter;
+          var li = ti.format, Li = ti.formatter || this.defaultFormatter;
           const Ui = this.shared, Zi = si.styledMode;
           let rs = {};
           if (ti.enabled && mi.series) {
@@ -3006,18 +3006,18 @@ var highcharts = { exports: {} };
             var Bi = ui[0], ni = ui[1];
             if (Ui && this.allowShared ? (oi.applyInactiveState(di), di.forEach(function(Pi) {
               Pi.setState("hover"), Oi.push(Pi.getLabelConfig());
-            }), rs = mi.getLabelConfig(), rs.points = Oi) : rs = mi.getLabelConfig(), this.len = Oi.length, hi = Si(hi) ? es(hi, rs, si) : Li.call(rs, this), Li = mi.series, this.distance = Mi(Li.tooltipOptions.distance, 16), hi === !1)
+            }), rs = mi.getLabelConfig(), rs.points = Oi) : rs = mi.getLabelConfig(), this.len = Oi.length, li = Si(li) ? es(li, rs, si) : Li.call(rs, this), Li = mi.series, this.distance = Mi(Li.tooltipOptions.distance, 16), li === !1)
               this.hide();
             else {
               if (this.split && this.allowShared)
-                this.renderSplit(hi, di);
+                this.renderSplit(li, di);
               else {
                 let Pi = Bi, Hi = ni;
                 if (fi && oi.isDirectTouch && (Pi = fi.chartX - si.plotLeft, Hi = fi.chartY - si.plotTop), si.polar || Li.options.clip === !1 || di.some((Ri) => oi.isDirectTouch || Ri.series.shouldShowTooltip(
                   Pi,
                   Hi
                 )))
-                  fi = this.getLabel(), ti.style.width && !Zi || fi.css({ width: (this.outside ? this.getPlayingField() : si.spacingBox).width + "px" }), fi.attr({ text: hi && hi.join ? hi.join("") : hi }), fi.addClass(this.getClassName(mi), !0), Zi || fi.attr({ stroke: ti.borderColor || mi.color || Li.color || "#666666" }), this.updatePosition({ plotX: Bi, plotY: ni, negative: mi.negative, ttBelow: mi.ttBelow, h: ui[2] || 0 });
+                  fi = this.getLabel(), ti.style.width && !Zi || fi.css({ width: (this.outside ? this.getPlayingField() : si.spacingBox).width + "px" }), fi.attr({ text: li && li.join ? li.join("") : li }), fi.addClass(this.getClassName(mi), !0), Zi || fi.attr({ stroke: ti.borderColor || mi.color || Li.color || "#666666" }), this.updatePosition({ plotX: Bi, plotY: ni, negative: mi.negative, ttBelow: mi.ttBelow, h: ui[2] || 0 });
                 else {
                   this.hide();
                   return;
@@ -3032,7 +3032,7 @@ var highcharts = { exports: {} };
           function si(Fi, Qi, hs, as, ps = !0) {
             return hs ? (Qi = Gi ? 0 : os, Fi = bi(Fi - as / 2, ai.left, ai.right - as - (ti.outside ? Xi : 0))) : (Qi -= ts, Fi = ps ? Fi - as - Hi : Fi + Hi, Fi = bi(Fi, ps ? Fi : ai.left, ai.right)), { x: Fi, y: Qi };
           }
-          const ti = this, { chart: oi, chart: { chartWidth: di, chartHeight: mi, plotHeight: Oi, plotLeft: hi, plotTop: Li, pointer: Ui, scrollablePixelsY: Zi = 0, scrollablePixelsX: rs, scrollingContainer: { scrollLeft: Bi, scrollTop: ni } = { scrollLeft: 0, scrollTop: 0 }, styledMode: Pi }, distance: Hi, options: Ri, options: { positioner: qi } } = ti, ai = ti.outside && typeof rs != "number" ? is.documentElement.getBoundingClientRect() : {
+          const ti = this, { chart: oi, chart: { chartWidth: di, chartHeight: mi, plotHeight: Oi, plotLeft: li, plotTop: Li, pointer: Ui, scrollablePixelsY: Zi = 0, scrollablePixelsX: rs, scrollingContainer: { scrollLeft: Bi, scrollTop: ni } = { scrollLeft: 0, scrollTop: 0 }, styledMode: Pi }, distance: Hi, options: Ri, options: { positioner: qi } } = ti, ai = ti.outside && typeof rs != "number" ? is.documentElement.getBoundingClientRect() : {
             left: Bi,
             right: Bi + di,
             top: ni,
@@ -3055,7 +3055,7 @@ var highcharts = { exports: {} };
               {
                 const { isHeader: xs, plotX: Ss = 0, plotY: vs = 0, series: ws } = hs;
                 if (xs) {
-                  Qi = hi + Ss;
+                  Qi = li + Ss;
                   var ds = Li + Oi / 2;
                 } else {
                   const { xAxis: bs, yAxis: ys } = ws;
@@ -3127,10 +3127,10 @@ var highcharts = { exports: {} };
           const di = oi && oi.dateTime;
           oi = { isFooter: fi, labelConfig: ui };
           let mi = ti.xDateFormat, Oi = ti[fi ? "footerFormat" : "headerFormat"];
-          return gi(this, "headerFormatter", oi, function(hi) {
-            di && !mi && wi(ui.key) && (mi = di.getXDateFormat(ui.key, ti.dateTimeLabelFormats)), di && mi && (ui.point && ui.point.tooltipDateKeys || ["key"]).forEach(function(Li) {
+          return gi(this, "headerFormatter", oi, function(li) {
+            di && !mi && Ci(ui.key) && (mi = di.getXDateFormat(ui.key, ti.dateTimeLabelFormats)), di && mi && (ui.point && ui.point.tooltipDateKeys || ["key"]).forEach(function(Li) {
               Oi = Oi.replace("{point." + Li + "}", "{point." + Li + ":" + mi + "}");
-            }), si.chart.styledMode && (Oi = this.styledModeFormat(Oi)), hi.text = es(Oi, { point: ui, series: si }, this.chart);
+            }), si.chart.styledMode && (Oi = this.styledModeFormat(Oi)), li.text = es(Oi, { point: ui, series: si }, this.chart);
           }), oi.text;
         }
         update(ui) {
@@ -3139,12 +3139,12 @@ var highcharts = { exports: {} };
         updatePosition(ui) {
           const { chart: fi, distance: si, options: ti } = this;
           var oi = fi.pointer;
-          const di = this.getLabel(), { left: mi, top: Oi, scaleX: hi, scaleY: Li } = oi.getChartPosition();
+          const di = this.getLabel(), { left: mi, top: Oi, scaleX: li, scaleY: Li } = oi.getChartPosition();
           oi = (ti.positioner || this.getPosition).call(this, di.width, di.height, ui);
           let Ui = (ui.plotX || 0) + fi.plotLeft;
           ui = (ui.plotY || 0) + fi.plotTop;
           let Zi;
-          this.outside && (ti.positioner && (oi.x += mi - si, oi.y += Oi - si), Zi = (ti.borderWidth || 0) + 2 * si, this.renderer.setSize(di.width + Zi, di.height + Zi, !1), (hi !== 1 || Li !== 1) && (Ai(this.container, { transform: `scale(${hi}, ${Li})` }), Ui *= hi, ui *= Li), Ui += mi - oi.x, ui += Oi - oi.y), this.move(Math.round(oi.x), Math.round(oi.y || 0), Ui, ui);
+          this.outside && (ti.positioner && (oi.x += mi - si, oi.y += Oi - si), Zi = (ti.borderWidth || 0) + 2 * si, this.renderer.setSize(di.width + Zi, di.height + Zi, !1), (li !== 1 || Li !== 1) && (Ai(this.container, { transform: `scale(${li}, ${Li})` }), Ui *= li, ui *= Li), Ui += mi - oi.x, ui += Oi - oi.y), this.move(Math.round(oi.x), Math.round(oi.y || 0), Ui, ui);
         }
       }
       return function(vi) {
@@ -3162,8 +3162,8 @@ var highcharts = { exports: {} };
       ii["Core/Defaults.js"],
       ii["Core/Templating.js"],
       ii["Core/Utilities.js"]
-    ], function(li, Ci, zi, Ki, Yi) {
-      const { animObject: es } = Ci, { defaultOptions: is } = zi, { format: $i } = Ki, { addEvent: Vi, defined: _i, erase: bi, extend: Ai, fireEvent: ji, getNestedProperty: Ni, isArray: gi, isFunction: ki, isNumber: wi, isObject: Si, merge: Ti, objectEach: Mi, pick: Di, syncTimeout: ci, removeEvent: pi, uniqueKey: vi } = Yi;
+    ], function(hi, wi, zi, Ki, Yi) {
+      const { animObject: es } = wi, { defaultOptions: is } = zi, { format: $i } = Ki, { addEvent: Vi, defined: _i, erase: bi, extend: Ai, fireEvent: ji, getNestedProperty: Ni, isArray: gi, isFunction: ki, isNumber: Ci, isObject: Si, merge: Ti, objectEach: Mi, pick: Di, syncTimeout: ci, removeEvent: pi, uniqueKey: vi } = Yi;
       class ui {
         constructor() {
           this.category = void 0, this.destroyed = !1, this.formatPrefix = "point", this.id = void 0, this.isNull = !1, this.percentage = this.options = this.name = void 0, this.selected = !1, this.total = this.shapeArgs = this.series = void 0, this.visible = !0, this.x = void 0;
@@ -3180,7 +3180,7 @@ var highcharts = { exports: {} };
         }
         applyOptions(si, ti) {
           const oi = this.series, di = oi.options.pointValKey || oi.pointValKey;
-          return si = ui.prototype.optionsToObject.call(this, si), Ai(this, si), this.options = this.options ? Ai(this.options, si) : si, si.group && delete this.group, si.dataLabels && delete this.dataLabels, di && (this.y = ui.prototype.getNestedProperty.call(this, di)), this.formatPrefix = (this.isNull = this.isValid && !this.isValid()) ? "null" : "point", this.selected && (this.state = "select"), "name" in this && typeof ti > "u" && oi.xAxis && oi.xAxis.hasNames && (this.x = oi.xAxis.nameToX(this)), typeof this.x > "u" && oi ? this.x = typeof ti > "u" ? oi.autoIncrement() : ti : wi(si.x) && oi.options.relativeXValue && (this.x = oi.autoIncrement(si.x)), this;
+          return si = ui.prototype.optionsToObject.call(this, si), Ai(this, si), this.options = this.options ? Ai(this.options, si) : si, si.group && delete this.group, si.dataLabels && delete this.dataLabels, di && (this.y = ui.prototype.getNestedProperty.call(this, di)), this.formatPrefix = (this.isNull = this.isValid && !this.isValid()) ? "null" : "point", this.selected && (this.state = "select"), "name" in this && typeof ti > "u" && oi.xAxis && oi.xAxis.hasNames && (this.x = oi.xAxis.nameToX(this)), typeof this.x > "u" && oi ? this.x = typeof ti > "u" ? oi.autoIncrement() : ti : Ci(si.x) && oi.options.relativeXValue && (this.x = oi.autoIncrement(si.x)), this;
         }
         destroy() {
           if (!this.destroyed) {
@@ -3190,8 +3190,8 @@ var highcharts = { exports: {} };
             si = si.options.dataSorting;
             const di = oi.hoverPoints, mi = es(ti.series.chart.renderer.globalAnimation), Oi = () => {
               (ti.graphic || ti.graphics || ti.dataLabel || ti.dataLabels) && (pi(ti), ti.destroyElements());
-              for (const hi in ti)
-                delete ti[hi];
+              for (const li in ti)
+                delete ti[li];
             };
             ti.legendItem && oi.legend.destroyItem(ti), di && (ti.setState(), bi(di, ti), di.length || (oi.hoverPoints = null)), ti === oi.hoverPoint && ti.onMouseOut(), si && si.enabled ? (this.animateBeforeDestroy(), ci(Oi, mi.duration)) : Oi(), oi.pointCount--;
           }
@@ -3221,9 +3221,9 @@ var highcharts = { exports: {} };
           let mi, Oi;
           for (si = si || { graphic: 1, dataLabel: 1 }, si.graphic && oi.push("graphic"), si.dataLabel && oi.push("dataLabel", "dataLabelPath", "dataLabelUpper", "connector"), Oi = oi.length; Oi--; )
             mi = oi[Oi], ti[mi] && di.singular.push(mi);
-          return ["graphic", "dataLabel", "connector"].forEach(function(hi) {
-            const Li = hi + "s";
-            si[hi] && ti[Li] && di.plural.push(Li);
+          return ["graphic", "dataLabel", "connector"].forEach(function(li) {
+            const Li = li + "s";
+            si[li] && ti[Li] && di.plural.push(Li);
           }), di;
         }
         getLabelConfig() {
@@ -3249,27 +3249,27 @@ var highcharts = { exports: {} };
           return this.series = si, this.applyOptions(ti, oi), this.id = _i(this.id) ? this.id : vi(), this.resolveColor(), si.chart.pointCount++, ji(this, "afterInit"), this;
         }
         isValid() {
-          return this.x !== null && wi(this.y);
+          return this.x !== null && Ci(this.y);
         }
         optionsToObject(si) {
           var ti = this.series;
           const oi = ti.options.keys, di = oi || ti.pointArrayMap || ["y"], mi = di.length;
-          let Oi = {}, hi = 0, Li = 0;
-          if (wi(si) || si === null)
+          let Oi = {}, li = 0, Li = 0;
+          if (Ci(si) || si === null)
             Oi[di[0]] = si;
           else if (gi(si))
-            for (!oi && si.length > mi && (ti = typeof si[0], ti === "string" ? Oi.name = si[0] : ti === "number" && (Oi.x = si[0]), hi++); Li < mi; )
-              oi && typeof si[hi] > "u" || (0 < di[Li].indexOf(".") ? ui.prototype.setNestedProperty(Oi, si[hi], di[Li]) : Oi[di[Li]] = si[hi]), hi++, Li++;
+            for (!oi && si.length > mi && (ti = typeof si[0], ti === "string" ? Oi.name = si[0] : ti === "number" && (Oi.x = si[0]), li++); Li < mi; )
+              oi && typeof si[li] > "u" || (0 < di[Li].indexOf(".") ? ui.prototype.setNestedProperty(Oi, si[li], di[Li]) : Oi[di[Li]] = si[li]), li++, Li++;
           else
             typeof si == "object" && (Oi = si, si.dataLabels && (ti._hasPointLabels = !0), si.marker && (ti._hasPointMarkers = !0));
           return Oi;
         }
         pos(si, ti = this.plotY) {
           if (!this.destroyed) {
-            const { plotX: oi, series: di } = this, { chart: mi, xAxis: Oi, yAxis: hi } = di;
+            const { plotX: oi, series: di } = this, { chart: mi, xAxis: Oi, yAxis: li } = di;
             let Li = 0, Ui = 0;
-            if (wi(oi) && wi(ti))
-              return si && (Li = Oi ? Oi.pos : mi.plotLeft, Ui = hi ? hi.pos : mi.plotTop), mi.inverted && Oi && hi ? [hi.len - ti + Ui, Oi.len - oi + Li] : [oi + Li, ti + Ui];
+            if (Ci(oi) && Ci(ti))
+              return si && (Li = Oi ? Oi.pos : mi.plotLeft, Ui = li ? li.pos : mi.plotTop), mi.inverted && Oi && li ? [li.len - ti + Ui, Oi.len - oi + Li] : [oi + Li, ti + Ui];
           }
         }
         resolveColor() {
@@ -3280,8 +3280,8 @@ var highcharts = { exports: {} };
           delete this.nonZonedColor, si.options.colorByPoint ? (ti || (di = si.options.colors || si.chart.options.colors, oi = di[si.colorCounter], di = di.length), ti = si.colorCounter, si.colorCounter++, si.colorCounter === di && (si.colorCounter = 0)) : (ti || (oi = si.color), ti = si.colorIndex), this.colorIndex = Di(this.options.colorIndex, ti), this.color = Di(this.options.color, oi);
         }
         setNestedProperty(si, ti, oi) {
-          return oi.split(".").reduce(function(di, mi, Oi, hi) {
-            return di[mi] = hi.length - 1 === Oi ? ti : Si(di[mi], !0) ? di[mi] : {}, di[mi];
+          return oi.split(".").reduce(function(di, mi, Oi, li) {
+            return di[mi] = li.length - 1 === Oi ? ti : Si(di[mi], !0) ? di[mi] : {}, di[mi];
           }, si), si;
         }
         shouldDraw() {
@@ -3289,17 +3289,17 @@ var highcharts = { exports: {} };
         }
         tooltipFormatter(si) {
           const ti = this.series, oi = ti.tooltipOptions, di = Di(oi.valueDecimals, ""), mi = oi.valuePrefix || "", Oi = oi.valueSuffix || "";
-          return ti.chart.styledMode && (si = ti.chart.tooltip.styledModeFormat(si)), (ti.pointArrayMap || ["y"]).forEach(function(hi) {
-            hi = "{point." + hi, (mi || Oi) && (si = si.replace(RegExp(hi + "}", "g"), mi + hi + "}" + Oi)), si = si.replace(RegExp(hi + "}", "g"), hi + ":,." + di + "f}");
+          return ti.chart.styledMode && (si = ti.chart.tooltip.styledModeFormat(si)), (ti.pointArrayMap || ["y"]).forEach(function(li) {
+            li = "{point." + li, (mi || Oi) && (si = si.replace(RegExp(li + "}", "g"), mi + li + "}" + Oi)), si = si.replace(RegExp(li + "}", "g"), li + ":,." + di + "f}");
           }), $i(si, { point: this, series: this.series }, ti.chart);
         }
         update(si, ti, oi, di) {
           function mi() {
             Oi.applyOptions(si);
             var Bi = Li && Oi.hasMockGraphic;
-            Bi = Oi.y === null ? !Bi : Bi, Li && Bi && (Oi.graphic = Li.destroy(), delete Oi.hasMockGraphic), Si(si, !0) && (Li && Li.element && si && si.marker && typeof si.marker.symbol < "u" && (Oi.graphic = Li.destroy()), si && si.dataLabels && Oi.dataLabel && (Oi.dataLabel = Oi.dataLabel.destroy()), Oi.connector && (Oi.connector = Oi.connector.destroy())), rs = Oi.index, hi.updateParallelArrays(Oi, rs), Zi.data[rs] = Si(Zi.data[rs], !0) || Si(si, !0) ? Oi.options : Di(si, Zi.data[rs]), hi.isDirty = hi.isDirtyData = !0, !hi.fixedBox && hi.hasCartesianSeries && (Ui.isDirtyBox = !0), Zi.legendType === "point" && (Ui.isDirtyLegend = !0), ti && Ui.redraw(oi);
+            Bi = Oi.y === null ? !Bi : Bi, Li && Bi && (Oi.graphic = Li.destroy(), delete Oi.hasMockGraphic), Si(si, !0) && (Li && Li.element && si && si.marker && typeof si.marker.symbol < "u" && (Oi.graphic = Li.destroy()), si && si.dataLabels && Oi.dataLabel && (Oi.dataLabel = Oi.dataLabel.destroy()), Oi.connector && (Oi.connector = Oi.connector.destroy())), rs = Oi.index, li.updateParallelArrays(Oi, rs), Zi.data[rs] = Si(Zi.data[rs], !0) || Si(si, !0) ? Oi.options : Di(si, Zi.data[rs]), li.isDirty = li.isDirtyData = !0, !li.fixedBox && li.hasCartesianSeries && (Ui.isDirtyBox = !0), Zi.legendType === "point" && (Ui.isDirtyLegend = !0), ti && Ui.redraw(oi);
           }
-          const Oi = this, hi = Oi.series, Li = Oi.graphic, Ui = hi.chart, Zi = hi.options;
+          const Oi = this, li = Oi.series, Li = Oi.graphic, Ui = li.chart, Zi = li.options;
           let rs;
           ti = Di(ti, !0), di === !1 ? mi() : Oi.firePointEvent("update", { options: si }, mi);
         }
@@ -3314,8 +3314,8 @@ var highcharts = { exports: {} };
           const oi = this, di = oi.series, mi = di.chart;
           this.selectedStaging = si = Di(si, !oi.selected), oi.firePointEvent(si ? "select" : "unselect", { accumulate: ti }, function() {
             oi.selected = oi.options.selected = si, di.options.data[di.data.indexOf(oi)] = oi.options, oi.setState(si && "select"), ti || mi.getSelectedPoints().forEach(function(Oi) {
-              const hi = Oi.series;
-              Oi.selected && Oi !== oi && (Oi.selected = Oi.options.selected = !1, hi.options.data[hi.data.indexOf(Oi)] = Oi.options, Oi.setState(mi.hoverPoints && hi.options.inactiveOtherPoints ? "inactive" : ""), Oi.firePointEvent("unselect"));
+              const li = Oi.series;
+              Oi.selected && Oi !== oi && (Oi.selected = Oi.options.selected = !1, li.options.data[li.data.indexOf(Oi)] = Oi.options, Oi.setState(mi.hoverPoints && li.options.inactiveOtherPoints ? "inactive" : ""), Oi.firePointEvent("unselect"));
             });
           }), delete this.selectedStaging;
         }
@@ -3340,17 +3340,17 @@ var highcharts = { exports: {} };
         setState(si, ti) {
           const oi = this.series;
           var di = this.state, mi = oi.options.states[si || "normal"] || {}, Oi = is.plotOptions[oi.type].marker && oi.options.marker;
-          const hi = Oi && Oi.enabled === !1, Li = Oi && Oi.states && Oi.states[si || "normal"] || {}, Ui = Li.enabled === !1, Zi = this.marker || {}, rs = oi.chart, Bi = Oi && oi.markerAttribs;
+          const li = Oi && Oi.enabled === !1, Li = Oi && Oi.states && Oi.states[si || "normal"] || {}, Ui = Li.enabled === !1, Zi = this.marker || {}, rs = oi.chart, Bi = Oi && oi.markerAttribs;
           let ni = oi.halo;
           var Pi;
           let Hi;
           var Ri = oi.stateMarkerGraphic;
-          if (si = si || "", !(si === this.state && !ti || this.selected && si !== "select" || mi.enabled === !1 || si && (Ui || hi && Li.enabled === !1) || si && Zi.states && Zi.states[si] && Zi.states[si].enabled === !1)) {
+          if (si = si || "", !(si === this.state && !ti || this.selected && si !== "select" || mi.enabled === !1 || si && (Ui || li && Li.enabled === !1) || si && Zi.states && Zi.states[si] && Zi.states[si].enabled === !1)) {
             if (this.state = si, Bi && (Pi = oi.markerAttribs(this, si)), this.graphic && !this.hasMockGraphic) {
               if (di && this.graphic.removeClass("highcharts-point-" + di), si && this.graphic.addClass("highcharts-point-" + si), !rs.styledMode) {
                 di = oi.pointAttribs(this, si), Hi = Di(rs.options.chart.animation, mi.animation);
                 const qi = di.opacity;
-                oi.options.inactiveOtherPoints && wi(qi) && ((this.dataLabels || []).forEach(function(ai) {
+                oi.options.inactiveOtherPoints && Ci(qi) && ((this.dataLabels || []).forEach(function(ai) {
                   ai && !ai.hasClass("highcharts-data-label-hidden") && ai.animate({ opacity: qi }, Hi);
                 }), this.connector && this.connector.animate({ opacity: qi }, Hi)), this.graphic.animate(
                   di,
@@ -3360,7 +3360,7 @@ var highcharts = { exports: {} };
               Pi && this.graphic.animate(Pi, Di(rs.options.chart.animation, Li.animation, Oi.animation)), Ri && Ri.hide();
             } else
               si && Li && (Oi = Zi.symbol || oi.symbol, Ri && Ri.currentSymbol !== Oi && (Ri = Ri.destroy()), Pi && (Ri ? Ri[ti ? "animate" : "attr"]({ x: Pi.x, y: Pi.y }) : Oi && (oi.stateMarkerGraphic = Ri = rs.renderer.symbol(Oi, Pi.x, Pi.y, Pi.width, Pi.height).add(oi.markerGroup), Ri.currentSymbol = Oi)), !rs.styledMode && Ri && this.state !== "inactive" && Ri.attr(oi.pointAttribs(this, si))), Ri && (Ri[si && this.isInside ? "show" : "hide"](), Ri.element.point = this, Ri.addClass(this.getClassName(), !0));
-            mi = mi.halo, Pi = (Ri = this.graphic || Ri) && Ri.visibility || "inherit", mi && mi.size && Ri && Pi !== "hidden" && !this.isCluster ? (ni || (oi.halo = ni = rs.renderer.path().add(Ri.parentGroup)), ni.show()[ti ? "animate" : "attr"]({ d: this.haloPath(mi.size) }), ni.attr({ class: "highcharts-halo highcharts-color-" + Di(this.colorIndex, oi.colorIndex) + (this.className ? " " + this.className : ""), visibility: Pi, zIndex: -1 }), ni.point = this, rs.styledMode || ni.attr(Ai({ fill: this.color || oi.color, "fill-opacity": mi.opacity }, li.filterUserAttributes(mi.attributes || {})))) : ni && ni.point && ni.point.haloPath && ni.animate({ d: ni.point.haloPath(0) }, null, ni.hide), ji(this, "afterSetState", { state: si });
+            mi = mi.halo, Pi = (Ri = this.graphic || Ri) && Ri.visibility || "inherit", mi && mi.size && Ri && Pi !== "hidden" && !this.isCluster ? (ni || (oi.halo = ni = rs.renderer.path().add(Ri.parentGroup)), ni.show()[ti ? "animate" : "attr"]({ d: this.haloPath(mi.size) }), ni.attr({ class: "highcharts-halo highcharts-color-" + Di(this.colorIndex, oi.colorIndex) + (this.className ? " " + this.className : ""), visibility: Pi, zIndex: -1 }), ni.point = this, rs.styledMode || ni.attr(Ai({ fill: this.color || oi.color, "fill-opacity": mi.opacity }, hi.filterUserAttributes(mi.attributes || {})))) : ni && ni.point && ni.point.haloPath && ni.animate({ d: ni.point.haloPath(0) }, null, ni.hide), ji(this, "afterSetState", { state: si });
           }
         }
         haloPath(si) {
@@ -3369,8 +3369,8 @@ var highcharts = { exports: {} };
         }
       }
       return ui;
-    }), ri(ii, "Core/Pointer.js", [ii["Core/Color/Color.js"], ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
-      const { parse: Ki } = li, { charts: Yi, noop: es } = Ci, { addEvent: is, attr: $i, css: Vi, defined: _i, extend: bi, find: Ai, fireEvent: ji, isNumber: Ni, isObject: gi, objectEach: ki, offset: wi, pick: Si, splat: Ti } = zi;
+    }), ri(ii, "Core/Pointer.js", [ii["Core/Color/Color.js"], ii["Core/Globals.js"], ii["Core/Utilities.js"]], function(hi, wi, zi) {
+      const { parse: Ki } = hi, { charts: Yi, noop: es } = wi, { addEvent: is, attr: $i, css: Vi, defined: _i, extend: bi, find: Ai, fireEvent: ji, isNumber: Ni, isObject: gi, objectEach: ki, offset: Ci, pick: Si, splat: Ti } = zi;
       class Mi {
         constructor(ci, pi) {
           this.lastValidTouch = {}, this.pinchDown = [], this.runChartClick = !1, this.eventsToUnbind = [], this.chart = ci, this.hasDragged = !1, this.options = pi, this.init(ci, pi);
@@ -3385,7 +3385,7 @@ var highcharts = { exports: {} };
         }
         destroy() {
           const ci = this;
-          this.eventsToUnbind.forEach((pi) => pi()), this.eventsToUnbind = [], Ci.chartCount || (Mi.unbindDocumentMouseUp && (Mi.unbindDocumentMouseUp = Mi.unbindDocumentMouseUp()), Mi.unbindDocumentTouchEnd && (Mi.unbindDocumentTouchEnd = Mi.unbindDocumentTouchEnd())), clearInterval(ci.tooltipTimeout), ki(ci, function(pi, vi) {
+          this.eventsToUnbind.forEach((pi) => pi()), this.eventsToUnbind = [], wi.chartCount || (Mi.unbindDocumentMouseUp && (Mi.unbindDocumentMouseUp = Mi.unbindDocumentMouseUp()), Mi.unbindDocumentTouchEnd && (Mi.unbindDocumentTouchEnd = Mi.unbindDocumentTouchEnd())), clearInterval(ci.tooltipTimeout), ki(ci, function(pi, vi) {
             ci[vi] = void 0;
           });
         }
@@ -3402,10 +3402,10 @@ var highcharts = { exports: {} };
           const pi = this.chart, vi = pi.options.chart;
           var ui = pi.plotLeft;
           const fi = pi.plotTop, si = pi.plotWidth, ti = pi.plotHeight, oi = this.mouseDownX || 0, di = this.mouseDownY || 0, mi = gi(vi.panning) ? vi.panning && vi.panning.enabled : vi.panning, Oi = vi.panKey && ci[vi.panKey + "Key"];
-          let hi = ci.chartX, Li = ci.chartY, Ui = this.selectionMarker;
-          if ((!Ui || !Ui.touch) && (hi < ui ? hi = ui : hi > ui + si && (hi = ui + si), Li < fi ? Li = fi : Li > fi + ti && (Li = fi + ti), this.hasDragged = Math.sqrt(Math.pow(oi - hi, 2) + Math.pow(di - Li, 2)), 10 < this.hasDragged)) {
+          let li = ci.chartX, Li = ci.chartY, Ui = this.selectionMarker;
+          if ((!Ui || !Ui.touch) && (li < ui ? li = ui : li > ui + si && (li = ui + si), Li < fi ? Li = fi : Li > fi + ti && (Li = fi + ti), this.hasDragged = Math.sqrt(Math.pow(oi - li, 2) + Math.pow(di - Li, 2)), 10 < this.hasDragged)) {
             ui = pi.isInsidePlot(oi - ui, di - fi, { visiblePlotOnly: !0 });
-            const { shapeType: Zi, attrs: rs } = this.getSelectionMarkerAttrs(hi, Li);
+            const { shapeType: Zi, attrs: rs } = this.getSelectionMarkerAttrs(li, Li);
             !pi.hasCartesianSeries && !pi.mapView || !this.zoomX && !this.zoomY || !ui || Oi || Ui || (this.selectionMarker = Ui = pi.renderer[Zi](), Ui.attr({ class: "highcharts-selection-marker", zIndex: 7 }).add(), pi.styledMode || Ui.attr({ fill: vi.selectionMarkerFill || Ki("#334eff").setOpacity(0.25).get() })), Ui && Ui.attr(rs), ui && !Ui && mi && pi.pan(ci, vi.panning);
           }
         }
@@ -3431,9 +3431,9 @@ var highcharts = { exports: {} };
             let mi = !!vi.mapView;
             (this.hasDragged || ui) && (vi.axes.forEach(function(Oi) {
               if (Oi.zoomEnabled && _i(Oi.min) && (ui || pi[{ xAxis: "zoomX", yAxis: "zoomY" }[Oi.coll]]) && Ni(fi) && Ni(si) && Ni(ti) && Ni(oi)) {
-                var hi = Oi.horiz;
-                const Li = ci.type === "touchend" ? Oi.minPixelPadding : 0, Ui = Oi.toValue((hi ? fi : si) + Li);
-                hi = Oi.toValue((hi ? fi + ti : si + oi) - Li), di[Oi.coll].push({ axis: Oi, min: Math.min(Ui, hi), max: Math.max(Ui, hi) }), mi = !0;
+                var li = Oi.horiz;
+                const Li = ci.type === "touchend" ? Oi.minPixelPadding : 0, Ui = Oi.toValue((li ? fi : si) + Li);
+                li = Oi.toValue((li ? fi + ti : si + oi) - Li), di[Oi.coll].push({ axis: Oi, min: Math.min(Ui, li), max: Math.max(Ui, li) }), mi = !0;
               }
             }), mi && ji(vi, "selection", di, function(Oi) {
               vi.zoom(bi(
@@ -3475,7 +3475,7 @@ var highcharts = { exports: {} };
           if (this.chartPosition)
             return this.chartPosition;
           var { container: ci } = this.chart;
-          const pi = wi(ci);
+          const pi = Ci(ci);
           this.chartPosition = { left: pi.left, top: pi.top, scaleX: 1, scaleY: 1 };
           const vi = ci.offsetWidth;
           return ci = ci.offsetHeight, 2 < vi && 2 < ci && (this.chartPosition.scaleX = pi.width / vi, this.chartPosition.scaleY = pi.height / ci), this.chartPosition;
@@ -3489,19 +3489,19 @@ var highcharts = { exports: {} };
         getHoverData(ci, pi, vi, ui, fi, si) {
           const ti = [];
           ui = !(!ui || !ci);
-          const oi = function(hi) {
-            return hi.visible && !(!fi && hi.directTouch) && Si(hi.options.enableMouseTracking, !0);
+          const oi = function(li) {
+            return li.visible && !(!fi && li.directTouch) && Si(li.options.enableMouseTracking, !0);
           };
           let di, mi = { chartX: si ? si.chartX : void 0, chartY: si ? si.chartY : void 0, shared: fi };
-          ji(this, "beforeGetHoverData", mi), di = pi && !pi.stickyTracking ? [pi] : vi.filter((hi) => hi.stickyTracking && (mi.filter || oi)(hi));
+          ji(this, "beforeGetHoverData", mi), di = pi && !pi.stickyTracking ? [pi] : vi.filter((li) => li.stickyTracking && (mi.filter || oi)(li));
           const Oi = ui || !si ? ci : this.findNearestKDPoint(di, fi, si);
-          return pi = Oi && Oi.series, Oi && (fi && !pi.noSharedTooltip ? (di = vi.filter(function(hi) {
-            return mi.filter ? mi.filter(hi) : oi(hi) && !hi.noSharedTooltip;
-          }), di.forEach(function(hi) {
-            let Li = Ai(hi.points, function(Ui) {
+          return pi = Oi && Oi.series, Oi && (fi && !pi.noSharedTooltip ? (di = vi.filter(function(li) {
+            return mi.filter ? mi.filter(li) : oi(li) && !li.noSharedTooltip;
+          }), di.forEach(function(li) {
+            let Li = Ai(li.points, function(Ui) {
               return Ui.x === Oi.x && !Ui.isNull;
             });
-            gi(Li) && (hi.boosted && hi.boost && (Li = hi.boost.getPoint(Li)), ti.push(Li));
+            gi(Li) && (li.boosted && li.boost && (Li = li.boost.getPoint(Li)), ti.push(Li));
           })) : ti.push(Oi)), mi = { hoverPoint: Oi }, ji(this, "afterGetHoverData", mi), { hoverPoint: mi.hoverPoint, hoverSeries: pi, hoverPoints: ti };
         }
         getPointFromEvent(ci) {
@@ -3543,7 +3543,7 @@ var highcharts = { exports: {} };
         }
         onContainerMouseDown(ci) {
           const pi = ((ci.buttons || ci.button) & 1) === 1;
-          ci = this.normalize(ci), Ci.isFirefox && ci.button !== 0 && this.onContainerMouseMove(ci), (typeof ci.button > "u" || pi) && (this.zoomOption(ci), pi && ci.preventDefault && ci.preventDefault(), this.dragStart(ci));
+          ci = this.normalize(ci), wi.isFirefox && ci.button !== 0 && this.onContainerMouseMove(ci), (typeof ci.button > "u" || pi) && (this.zoomOption(ci), pi && ci.preventDefault && ci.preventDefault(), this.dragStart(ci));
         }
         onContainerMouseLeave(ci) {
           const pi = Yi[Si(Mi.hoverChartIndex, -1)];
@@ -3576,10 +3576,10 @@ var highcharts = { exports: {} };
         }
         pinch(ci) {
           const pi = this, vi = pi.chart, ui = pi.pinchDown, fi = ci.touches || [], si = fi.length, ti = pi.lastValidTouch, oi = pi.hasZoom, di = {}, mi = si === 1 && (pi.inClass(ci.target, "highcharts-tracker") && vi.runTrackerClick || pi.runChartClick), Oi = {};
-          var hi = pi.chart.tooltip;
-          hi = si === 1 && Si(hi && hi.options.followTouchMove, !0);
+          var li = pi.chart.tooltip;
+          li = si === 1 && Si(li && li.options.followTouchMove, !0);
           let Li = pi.selectionMarker;
-          1 < si ? pi.initiated = !0 : hi && (pi.initiated = !1), oi && pi.initiated && !mi && ci.cancelable !== !1 && ci.preventDefault(), [].map.call(fi, function(Ui) {
+          1 < si ? pi.initiated = !0 : li && (pi.initiated = !1), oi && pi.initiated && !mi && ci.cancelable !== !1 && ci.preventDefault(), [].map.call(fi, function(Ui) {
             return pi.normalize(Ui);
           }), ci.type === "touchstart" ? ([].forEach.call(fi, function(Ui, Zi) {
             ui[Zi] = { chartX: Ui.chartX, chartY: Ui.chartY };
@@ -3588,7 +3588,7 @@ var highcharts = { exports: {} };
               const Zi = vi.bounds[Ui.horiz ? "h" : "v"], rs = Ui.minPixelPadding, Bi = Ui.toPixels(Math.min(Si(Ui.options.min, Ui.dataMin), Ui.dataMin)), ni = Ui.toPixels(Math.max(Si(Ui.options.max, Ui.dataMax), Ui.dataMax)), Pi = Math.max(Bi, ni);
               Zi.min = Math.min(Ui.pos, Math.min(Bi, ni) - rs), Zi.max = Math.max(Ui.pos + Ui.len, Pi + rs);
             }
-          }), pi.res = !0) : hi ? this.runPointActions(pi.normalize(ci)) : ui.length && (ji(vi, "touchpan", { originalEvent: ci }, () => {
+          }), pi.res = !0) : li ? this.runPointActions(pi.normalize(ci)) : ui.length && (ji(vi, "touchpan", { originalEvent: ci }, () => {
             Li || (pi.selectionMarker = Li = bi({ destroy: es, touch: !0 }, vi.plotBox)), pi.pinchTranslate(ui, fi, di, Li, Oi, ti), pi.hasPinched = oi, pi.scaleGroups(di, Oi);
           }), pi.res && (pi.res = !1, this.reset(
             !1,
@@ -3599,11 +3599,11 @@ var highcharts = { exports: {} };
           this.zoomHor && this.pinchTranslateDirection(!0, ci, pi, vi, ui, fi, si), this.zoomVert && this.pinchTranslateDirection(!1, ci, pi, vi, ui, fi, si);
         }
         pinchTranslateDirection(ci, pi, vi, ui, fi, si, ti, oi) {
-          const di = this.chart, mi = ci ? "x" : "y", Oi = ci ? "X" : "Y", hi = "chart" + Oi, Li = ci ? "width" : "height", Ui = di["plot" + (ci ? "Left" : "Top")], Zi = di.inverted, rs = di.bounds[ci ? "h" : "v"], Bi = pi.length === 1, ni = pi[0][hi], Pi = !Bi && pi[1][hi];
+          const di = this.chart, mi = ci ? "x" : "y", Oi = ci ? "X" : "Y", li = "chart" + Oi, Li = ci ? "width" : "height", Ui = di["plot" + (ci ? "Left" : "Top")], Zi = di.inverted, rs = di.bounds[ci ? "h" : "v"], Bi = pi.length === 1, ni = pi[0][li], Pi = !Bi && pi[1][li];
           pi = function() {
             typeof xi == "number" && 20 < Math.abs(ni - Pi) && (qi = oi || Math.abs(ai - xi) / Math.abs(ni - Pi)), Ri = (Ui - ai) / qi + ni, Hi = di["plot" + (ci ? "Width" : "Height")] / qi;
           };
-          let Hi, Ri, qi = oi || 1, ai = vi[0][hi], xi = !Bi && vi[1][hi], yi;
+          let Hi, Ri, qi = oi || 1, ai = vi[0][li], xi = !Bi && vi[1][li], yi;
           pi(), vi = Ri, vi < rs.min ? (vi = rs.min, yi = !0) : vi + Hi > rs.max && (vi = rs.max - Hi, yi = !0), yi ? (ai -= 0.8 * (ai - ti[mi][0]), typeof xi == "number" && (xi -= 0.8 * (xi - ti[mi][1])), pi()) : ti[mi] = [ai, xi], Zi || (si[mi] = Ri - Ui, si[Li] = Hi), si = Zi ? 1 / qi : qi, fi[Li] = Hi, fi[mi] = vi, ui[Zi ? ci ? "scaleY" : "scaleX" : "scale" + Oi] = qi, ui["translate" + Oi] = si * Ui + (ai - si * ni);
         }
         reset(ci, pi) {
@@ -3643,12 +3643,12 @@ var highcharts = { exports: {} };
               plotY: vi[1]
             }));
           this.unDocMouseMove || (this.unDocMouseMove = is(ui.container.ownerDocument, "mousemove", function(Oi) {
-            const hi = Yi[Mi.hoverChartIndex];
-            hi && hi.pointer.onDocumentMouseMove(Oi);
+            const li = Yi[Mi.hoverChartIndex];
+            li && li.pointer.onDocumentMouseMove(Oi);
           }), this.eventsToUnbind.push(this.unDocMouseMove)), ui.axes.forEach(function(Oi) {
-            const hi = Si((Oi.crosshair || {}).snap, !0);
+            const li = Si((Oi.crosshair || {}).snap, !0);
             let Li;
-            hi && ((Li = ui.hoverPoint) && Li.series[Oi.coll] === Oi || (Li = Ai(di, (Ui) => Ui.series && Ui.series[Oi.coll] === Oi))), Li || !hi ? Oi.drawCrosshair(ci, Li) : Oi.hideCrosshair();
+            li && ((Li = ui.hoverPoint) && Li.series[Oi.coll] === Oi || (Li = Ai(di, (Ui) => Ui.series && Ui.series[Oi.coll] === Oi))), Li || !li ? Oi.drawCrosshair(ci, Li) : Oi.hideCrosshair();
           });
         }
         scaleGroups(ci, pi) {
@@ -3666,7 +3666,7 @@ var highcharts = { exports: {} };
             this.eventsToUnbind.push(is(vi, "scroll", () => {
               delete this.chartPosition;
             })), vi = vi.parentElement;
-          Ci.hasTouch && (this.eventsToUnbind.push(is(ci, "touchstart", this.onContainerTouchStart.bind(this), { passive: !1 })), this.eventsToUnbind.push(is(
+          wi.hasTouch && (this.eventsToUnbind.push(is(ci, "touchstart", this.onContainerTouchStart.bind(this), { passive: !1 })), this.eventsToUnbind.push(is(
             ci,
             "touchmove",
             this.onContainerTouchMove.bind(this),
@@ -3674,7 +3674,7 @@ var highcharts = { exports: {} };
           )), Mi.unbindDocumentTouchEnd || (Mi.unbindDocumentTouchEnd = is(pi, "touchend", this.onDocumentTouchEnd.bind(this), { passive: !1 })));
         }
         setHoverChartIndex() {
-          const ci = this.chart, pi = Ci.charts[Si(Mi.hoverChartIndex, -1)];
+          const ci = this.chart, pi = wi.charts[Si(Mi.hoverChartIndex, -1)];
           pi && pi !== ci && pi.pointer.onContainerMouseLeave({ relatedTarget: ci.container }), pi && pi.mouseIsDown || (Mi.hoverChartIndex = ci.index);
         }
         touch(ci, pi) {
@@ -3707,8 +3707,8 @@ var highcharts = { exports: {} };
       ii,
       "Core/Legend/Legend.js",
       [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Templating.js"], ii["Core/Globals.js"], ii["Core/Series/Point.js"], ii["Core/Renderer/RendererUtilities.js"], ii["Core/Utilities.js"]],
-      function(li, Ci, zi, Ki, Yi, es) {
-        const { animObject: is, setAnimation: $i } = li, { format: Vi } = Ci, { marginNames: _i } = zi, { distribute: bi } = Yi, { addEvent: Ai, createElement: ji, css: Ni, defined: gi, discardElement: ki, find: wi, fireEvent: Si, isNumber: Ti, merge: Mi, pick: Di, relativeLength: ci, stableSort: pi, syncTimeout: vi } = es;
+      function(hi, wi, zi, Ki, Yi, es) {
+        const { animObject: is, setAnimation: $i } = hi, { format: Vi } = wi, { marginNames: _i } = zi, { distribute: bi } = Yi, { addEvent: Ai, createElement: ji, css: Ni, defined: gi, discardElement: ki, find: Ci, fireEvent: Si, isNumber: Ti, merge: Mi, pick: Di, relativeLength: ci, stableSort: pi, syncTimeout: vi } = es;
         class ui {
           constructor(si, ti) {
             this.allItems = [], this.contentGroup = this.box = void 0, this.display = !1, this.group = void 0, this.offsetWidth = this.maxLegendWidth = this.maxItemWidth = this.legendWidth = this.legendHeight = this.lastLineHeight = this.lastItemY = this.itemY = this.itemX = this.itemMarginTop = this.itemMarginBottom = this.itemHeight = this.initialItemY = 0, this.options = void 0, this.padding = 0, this.pages = [], this.proximate = !1, this.scrollGroup = void 0, this.widthOption = this.totalItemWidth = this.titleHeight = this.symbolWidth = this.symbolHeight = 0, this.chart = si, this.init(si, ti);
@@ -3731,9 +3731,9 @@ var highcharts = { exports: {} };
           colorizeItem(si, ti) {
             const { group: oi, label: di, line: mi, symbol: Oi } = si.legendItem || {};
             if (oi && oi[ti ? "removeClass" : "addClass"]("highcharts-legend-item-hidden"), !this.chart.styledMode) {
-              const { itemHiddenStyle: hi } = this, Li = hi.color, Ui = ti && si.color || Li, Zi = si.options && si.options.marker;
+              const { itemHiddenStyle: li } = this, Li = li.color, Ui = ti && si.color || Li, Zi = si.options && si.options.marker;
               let rs = { fill: Ui };
-              di == null || di.css(Mi(ti ? this.itemStyle : hi)), mi == null || mi.attr({ stroke: Ui }), Oi && (Zi && Oi.isMarker && (rs = si.pointAttribs(), ti || (rs.stroke = rs.fill = Li)), Oi.attr(rs));
+              di == null || di.css(Mi(ti ? this.itemStyle : li)), mi == null || mi.attr({ stroke: Ui }), Oi && (Zi && Oi.isMarker && (rs = si.pointAttribs(), ti || (rs.stroke = rs.fill = Li)), Oi.attr(rs));
             }
             Si(this, "afterColorizeItem", { item: si, visible: ti });
           }
@@ -3743,8 +3743,8 @@ var highcharts = { exports: {} };
           positionItem(si) {
             const { group: ti, x: oi = 0, y: di = 0 } = si.legendItem || {};
             var mi = this.options, Oi = mi.symbolPadding;
-            const hi = !mi.rtl;
-            mi = si.checkbox, ti && ti.element && (Oi = { translateX: hi ? oi : this.legendWidth - oi - 2 * Oi - 4, translateY: di }, ti[gi(ti.translateY) ? "animate" : "attr"](Oi, void 0, () => {
+            const li = !mi.rtl;
+            mi = si.checkbox, ti && ti.element && (Oi = { translateX: li ? oi : this.legendWidth - oi - 2 * Oi - 4, translateY: di }, ti[gi(ti.translateY) ? "animate" : "attr"](Oi, void 0, () => {
               Si(this, "afterPositionItem", { item: si });
             })), mi && (mi.x = oi, mi.y = di);
           }
@@ -3766,8 +3766,8 @@ var highcharts = { exports: {} };
             let di;
             si && (di = si.translateY, this.allItems.forEach(function(mi) {
               const Oi = mi.checkbox;
-              let hi;
-              Oi && (hi = di + oi + Oi.y + (this.scrollOffset || 0) + 3, Ni(Oi, { left: si.translateX + mi.checkboxOffset + Oi.x - 20 + "px", top: hi + "px", display: this.proximate || hi > di - 6 && hi < di + ti - 6 ? "" : "none" }));
+              let li;
+              Oi && (li = di + oi + Oi.y + (this.scrollOffset || 0) + 3, Ni(Oi, { left: si.translateX + mi.checkboxOffset + Oi.x - 20 + "px", top: li + "px", display: this.proximate || li > di - 6 && li < di + ti - 6 ? "" : "none" }));
             }, this));
           }
           renderTitle() {
@@ -3783,21 +3783,21 @@ var highcharts = { exports: {} };
           renderItem(si) {
             const ti = si.legendItem = si.legendItem || {};
             var oi = this.chart, di = oi.renderer;
-            const mi = this.options, Oi = this.symbolWidth, hi = mi.symbolPadding || 0, Li = this.itemStyle, Ui = this.itemHiddenStyle, Zi = mi.layout === "horizontal" ? Di(mi.itemDistance, 20) : 0, rs = !mi.rtl, Bi = !si.series, ni = !Bi && si.series.drawLegendSymbol ? si.series : si;
+            const mi = this.options, Oi = this.symbolWidth, li = mi.symbolPadding || 0, Li = this.itemStyle, Ui = this.itemHiddenStyle, Zi = mi.layout === "horizontal" ? Di(mi.itemDistance, 20) : 0, rs = !mi.rtl, Bi = !si.series, ni = !Bi && si.series.drawLegendSymbol ? si.series : si;
             var Pi = ni.options;
             const Hi = this.createCheckboxForItem && Pi && Pi.showCheckbox, Ri = mi.useHTML, qi = si.options.className;
             let ai = ti.label;
-            Pi = Oi + hi + Zi + (Hi ? 20 : 0), ai || (ti.group = di.g("legend-item").addClass("highcharts-" + ni.type + "-series highcharts-color-" + si.colorIndex + (qi ? " " + qi : "") + (Bi ? " highcharts-series-" + si.index : "")).attr({ zIndex: 1 }).add(this.scrollGroup), ti.label = ai = di.text("", rs ? Oi + hi : -hi, this.baseline || 0, Ri), oi.styledMode || ai.css(Mi(si.visible ? Li : Ui)), ai.attr({ align: rs ? "left" : "right", zIndex: 2 }).add(ti.group), this.baseline || (this.fontMetrics = di.fontMetrics(ai), this.baseline = this.fontMetrics.f + 3 + this.itemMarginTop, ai.attr("y", this.baseline), this.symbolHeight = Di(mi.symbolHeight, this.fontMetrics.f), mi.squareSymbol && (this.symbolWidth = Di(mi.symbolWidth, Math.max(this.symbolHeight, 16)), Pi = this.symbolWidth + hi + Zi + (Hi ? 20 : 0), rs && ai.attr("x", this.symbolWidth + hi))), ni.drawLegendSymbol(this, si), this.setItemEvents && this.setItemEvents(si, ai, Ri)), Hi && !si.checkbox && this.createCheckboxForItem && this.createCheckboxForItem(si), this.colorizeItem(
+            Pi = Oi + li + Zi + (Hi ? 20 : 0), ai || (ti.group = di.g("legend-item").addClass("highcharts-" + ni.type + "-series highcharts-color-" + si.colorIndex + (qi ? " " + qi : "") + (Bi ? " highcharts-series-" + si.index : "")).attr({ zIndex: 1 }).add(this.scrollGroup), ti.label = ai = di.text("", rs ? Oi + li : -li, this.baseline || 0, Ri), oi.styledMode || ai.css(Mi(si.visible ? Li : Ui)), ai.attr({ align: rs ? "left" : "right", zIndex: 2 }).add(ti.group), this.baseline || (this.fontMetrics = di.fontMetrics(ai), this.baseline = this.fontMetrics.f + 3 + this.itemMarginTop, ai.attr("y", this.baseline), this.symbolHeight = Di(mi.symbolHeight, this.fontMetrics.f), mi.squareSymbol && (this.symbolWidth = Di(mi.symbolWidth, Math.max(this.symbolHeight, 16)), Pi = this.symbolWidth + li + Zi + (Hi ? 20 : 0), rs && ai.attr("x", this.symbolWidth + li))), ni.drawLegendSymbol(this, si), this.setItemEvents && this.setItemEvents(si, ai, Ri)), Hi && !si.checkbox && this.createCheckboxForItem && this.createCheckboxForItem(si), this.colorizeItem(
               si,
               si.visible
             ), !oi.styledMode && Li.width || ai.css({ width: (mi.itemWidth || this.widthOption || oi.spacingBox.width) - Pi + "px" }), this.setText(si), oi = ai.getBBox(), di = this.fontMetrics && this.fontMetrics.h || 0, si.itemWidth = si.checkboxOffset = mi.itemWidth || ti.labelWidth || oi.width + Pi, this.maxItemWidth = Math.max(this.maxItemWidth, si.itemWidth), this.totalItemWidth += si.itemWidth, this.itemHeight = si.itemHeight = Math.round(ti.labelHeight || (oi.height > 1.5 * di ? oi.height : di));
           }
           layoutItem(si) {
             var ti = this.options;
-            const oi = this.padding, di = ti.layout === "horizontal", mi = si.itemHeight, Oi = this.itemMarginBottom, hi = this.itemMarginTop, Li = di ? Di(ti.itemDistance, 20) : 0, Ui = this.maxLegendWidth;
+            const oi = this.padding, di = ti.layout === "horizontal", mi = si.itemHeight, Oi = this.itemMarginBottom, li = this.itemMarginTop, Li = di ? Di(ti.itemDistance, 20) : 0, Ui = this.maxLegendWidth;
             ti = ti.alignColumns && this.totalItemWidth > Ui ? this.maxItemWidth : si.itemWidth;
             const Zi = si.legendItem || {};
-            di && this.itemX - oi + ti > Ui && (this.itemX = oi, this.lastLineHeight && (this.itemY += hi + this.lastLineHeight + Oi), this.lastLineHeight = 0), this.lastItemY = hi + this.itemY + Oi, this.lastLineHeight = Math.max(mi, this.lastLineHeight), Zi.x = this.itemX, Zi.y = this.itemY, di ? this.itemX += ti : (this.itemY += hi + mi + Oi, this.lastLineHeight = mi), this.offsetWidth = this.widthOption || Math.max((di ? this.itemX - oi - (si.checkbox ? 0 : Li) : ti) + oi, this.offsetWidth);
+            di && this.itemX - oi + ti > Ui && (this.itemX = oi, this.lastLineHeight && (this.itemY += li + this.lastLineHeight + Oi), this.lastLineHeight = 0), this.lastItemY = li + this.itemY + Oi, this.lastLineHeight = Math.max(mi, this.lastLineHeight), Zi.x = this.itemX, Zi.y = this.itemY, di ? this.itemX += ti : (this.itemY += li + mi + Oi, this.lastLineHeight = mi), this.offsetWidth = this.widthOption || Math.max((di ? this.itemX - oi - (si.checkbox ? 0 : Li) : ti) + oi, this.offsetWidth);
           }
           getAllItems() {
             let si = [];
@@ -3812,18 +3812,18 @@ var highcharts = { exports: {} };
           }
           adjustMargins(si, ti) {
             const oi = this.chart, di = this.options, mi = this.getAlignment();
-            mi && [/(lth|ct|rth)/, /(rtv|rm|rbv)/, /(rbh|cb|lbh)/, /(lbv|lm|ltv)/].forEach(function(Oi, hi) {
-              Oi.test(mi) && !gi(si[hi]) && (oi[_i[hi]] = Math.max(oi[_i[hi]], oi.legend[(hi + 1) % 2 ? "legendHeight" : "legendWidth"] + [1, -1, -1, 1][hi] * di[hi % 2 ? "x" : "y"] + Di(di.margin, 12) + ti[hi] + (oi.titleOffset[hi] || 0)));
+            mi && [/(lth|ct|rth)/, /(rtv|rm|rbv)/, /(rbh|cb|lbh)/, /(lbv|lm|ltv)/].forEach(function(Oi, li) {
+              Oi.test(mi) && !gi(si[li]) && (oi[_i[li]] = Math.max(oi[_i[li]], oi.legend[(li + 1) % 2 ? "legendHeight" : "legendWidth"] + [1, -1, -1, 1][li] * di[li % 2 ? "x" : "y"] + Di(di.margin, 12) + ti[li] + (oi.titleOffset[li] || 0)));
             });
           }
           proximatePositions() {
             const si = this.chart, ti = [], oi = this.options.align === "left";
             this.allItems.forEach(function(mi) {
-              var Oi, hi = oi;
+              var Oi, li = oi;
               let Li;
-              mi.yAxis && (mi.xAxis.options.reversed && (hi = !hi), mi.points && (Oi = wi(hi ? mi.points : mi.points.slice(0).reverse(), function(Ui) {
+              mi.yAxis && (mi.xAxis.options.reversed && (li = !li), mi.points && (Oi = Ci(li ? mi.points : mi.points.slice(0).reverse(), function(Ui) {
                 return Ti(Ui.plotY);
-              })), hi = this.itemMarginTop + mi.legendItem.label.getBBox().height + this.itemMarginBottom, Li = mi.yAxis.top - si.plotTop, mi.visible ? (Oi = Oi ? Oi.plotY : mi.yAxis.height, Oi += Li - 0.3 * hi) : Oi = Li + mi.yAxis.height, ti.push({ target: Oi, size: hi, item: mi }));
+              })), li = this.itemMarginTop + mi.legendItem.label.getBBox().height + this.itemMarginBottom, Li = mi.yAxis.top - si.plotTop, mi.visible ? (Oi = Oi ? Oi.plotY : mi.yAxis.height, Oi += Li - 0.3 * li) : Oi = Li + mi.yAxis.height, ti.push({ target: Oi, size: li, item: mi }));
             }, this);
             let di;
             for (const mi of bi(ti, si.plotHeight))
@@ -3832,14 +3832,14 @@ var highcharts = { exports: {} };
           render() {
             const si = this.chart, ti = si.renderer, oi = this.options, di = this.padding;
             var mi = this.getAllItems();
-            let Oi, hi = this.group, Li = this.box;
+            let Oi, li = this.group, Li = this.box;
             this.itemX = di, this.itemY = this.initialItemY, this.lastItemY = this.offsetWidth = 0, this.widthOption = ci(oi.width, si.spacingBox.width - di);
             var Ui = si.spacingBox.width - 2 * di - oi.x;
-            -1 < ["rm", "lm"].indexOf(this.getAlignment().substring(0, 2)) && (Ui /= 2), this.maxLegendWidth = this.widthOption || Ui, hi || (this.group = hi = ti.g("legend").addClass(oi.className || "").attr({ zIndex: 7 }).add(), this.contentGroup = ti.g().attr({ zIndex: 1 }).add(hi), this.scrollGroup = ti.g().add(this.contentGroup)), this.renderTitle(), pi(mi, (Zi, rs) => (Zi.options && Zi.options.legendIndex || 0) - (rs.options && rs.options.legendIndex || 0)), oi.reversed && mi.reverse(), this.allItems = mi, this.display = Ui = !!mi.length, this.itemHeight = this.totalItemWidth = this.maxItemWidth = this.lastLineHeight = 0, mi.forEach(this.renderItem, this), mi.forEach(this.layoutItem, this), mi = (this.widthOption || this.offsetWidth) + di, Oi = this.lastItemY + this.lastLineHeight + this.titleHeight, Oi = this.handleOverflow(Oi), Oi += di, Li || (this.box = Li = ti.rect().addClass("highcharts-legend-box").attr({ r: oi.borderRadius }).add(hi)), si.styledMode || Li.attr({
+            -1 < ["rm", "lm"].indexOf(this.getAlignment().substring(0, 2)) && (Ui /= 2), this.maxLegendWidth = this.widthOption || Ui, li || (this.group = li = ti.g("legend").addClass(oi.className || "").attr({ zIndex: 7 }).add(), this.contentGroup = ti.g().attr({ zIndex: 1 }).add(li), this.scrollGroup = ti.g().add(this.contentGroup)), this.renderTitle(), pi(mi, (Zi, rs) => (Zi.options && Zi.options.legendIndex || 0) - (rs.options && rs.options.legendIndex || 0)), oi.reversed && mi.reverse(), this.allItems = mi, this.display = Ui = !!mi.length, this.itemHeight = this.totalItemWidth = this.maxItemWidth = this.lastLineHeight = 0, mi.forEach(this.renderItem, this), mi.forEach(this.layoutItem, this), mi = (this.widthOption || this.offsetWidth) + di, Oi = this.lastItemY + this.lastLineHeight + this.titleHeight, Oi = this.handleOverflow(Oi), Oi += di, Li || (this.box = Li = ti.rect().addClass("highcharts-legend-box").attr({ r: oi.borderRadius }).add(li)), si.styledMode || Li.attr({
               stroke: oi.borderColor,
               "stroke-width": oi.borderWidth || 0,
               fill: oi.backgroundColor || "none"
-            }).shadow(oi.shadow), 0 < mi && 0 < Oi && Li[Li.placed ? "animate" : "attr"](Li.crisp.call({}, { x: 0, y: 0, width: mi, height: Oi }, Li.strokeWidth())), hi[Ui ? "show" : "hide"](), si.styledMode && hi.getStyle("display") === "none" && (mi = Oi = 0), this.legendWidth = mi, this.legendHeight = Oi, Ui && this.align(), this.proximate || this.positionItems(), Si(this, "afterRender");
+            }).shadow(oi.shadow), 0 < mi && 0 < Oi && Li[Li.placed ? "animate" : "attr"](Li.crisp.call({}, { x: 0, y: 0, width: mi, height: Oi }, Li.strokeWidth())), li[Ui ? "show" : "hide"](), si.styledMode && li.getStyle("display") === "none" && (mi = Oi = 0), this.legendWidth = mi, this.legendHeight = Oi, Ui && this.align(), this.proximate || this.positionItems(), Si(this, "afterRender");
           }
           align(si = this.chart.spacingBox) {
             const ti = this.chart, oi = this.options;
@@ -3849,13 +3849,13 @@ var highcharts = { exports: {} };
           handleOverflow(si) {
             const ti = this, oi = this.chart, di = oi.renderer, mi = this.options;
             var Oi = mi.y;
-            const hi = mi.verticalAlign === "top", Li = this.padding, Ui = mi.maxHeight, Zi = mi.navigation, rs = Di(Zi.animation, !0), Bi = Zi.arrowSize || 12, ni = this.pages, Pi = this.allItems, Hi = function(Xi) {
+            const li = mi.verticalAlign === "top", Li = this.padding, Ui = mi.maxHeight, Zi = mi.navigation, rs = Di(Zi.animation, !0), Bi = Zi.arrowSize || 12, ni = this.pages, Pi = this.allItems, Hi = function(Xi) {
               typeof Xi == "number" ? Gi.attr({ height: Xi }) : Gi && (ti.clipRect = Gi.destroy(), ti.contentGroup.clip()), ti.contentGroup.div && (ti.contentGroup.div.style.clip = Xi ? "rect(" + Li + "px,9999px," + (Li + Xi) + "px,0)" : "auto");
             }, Ri = function(Xi) {
               return ti[Xi] = di.circle(0, 0, 1.3 * Bi).translate(Bi / 2, Bi / 2).add(yi), oi.styledMode || ti[Xi].attr("fill", "rgba(0,0,0,0.0001)"), ti[Xi];
             };
             let qi, ai, xi;
-            Oi = oi.spacingBox.height + (hi ? -Oi : Oi) - Li;
+            Oi = oi.spacingBox.height + (li ? -Oi : Oi) - Li;
             let yi = this.nav, Gi = this.clipRect;
             return mi.layout !== "horizontal" || mi.verticalAlign === "middle" || mi.floating || (Oi /= 2), Ui && (Oi = Math.min(Oi, Ui)), ni.length = 0, si && 0 < Oi && si > Oi && Zi.enabled !== !1 ? (this.clipHeight = qi = Math.max(Oi - 20 - this.titleHeight - Li, 0), this.currentPage = Di(this.currentPage, 1), this.fullHeight = si, Pi.forEach((Xi, Wi) => {
               xi = Xi.legendItem || {}, Xi = xi.y || 0;
@@ -3869,23 +3869,23 @@ var highcharts = { exports: {} };
             })), ti.scroll(0), si = Oi) : yi && (Hi(), this.nav = yi.destroy(), this.scrollGroup.attr({ translateY: 1 }), this.clipHeight = 0), si;
           }
           scroll(si, ti) {
-            const oi = this.chart, di = this.pages, mi = di.length, Oi = this.clipHeight, hi = this.options.navigation, Li = this.pager, Ui = this.padding;
+            const oi = this.chart, di = this.pages, mi = di.length, Oi = this.clipHeight, li = this.options.navigation, Li = this.pager, Ui = this.padding;
             let Zi = this.currentPage + si;
             Zi > mi && (Zi = mi), 0 < Zi && (typeof ti < "u" && $i(ti, oi), this.nav.attr({ translateX: Ui, translateY: Oi + this.padding + 7 + this.titleHeight, visibility: "inherit" }), [this.up, this.upTracker].forEach(function(rs) {
               rs.attr({ class: Zi === 1 ? "highcharts-legend-nav-inactive" : "highcharts-legend-nav-active" });
             }), Li.attr({ text: Zi + "/" + mi }), [this.down, this.downTracker].forEach(function(rs) {
               rs.attr({ x: 18 + this.pager.getBBox().width, class: Zi === mi ? "highcharts-legend-nav-inactive" : "highcharts-legend-nav-active" });
-            }, this), oi.styledMode || (this.up.attr({ fill: Zi === 1 ? hi.inactiveColor : hi.activeColor }), this.upTracker.css({ cursor: Zi === 1 ? "default" : "pointer" }), this.down.attr({ fill: Zi === mi ? hi.inactiveColor : hi.activeColor }), this.downTracker.css({ cursor: Zi === mi ? "default" : "pointer" })), this.scrollOffset = -di[Zi - 1] + this.initialItemY, this.scrollGroup.animate({ translateY: this.scrollOffset }), this.currentPage = Zi, this.positionCheckboxes(), si = is(Di(ti, oi.renderer.globalAnimation, !0)), vi(() => {
+            }, this), oi.styledMode || (this.up.attr({ fill: Zi === 1 ? li.inactiveColor : li.activeColor }), this.upTracker.css({ cursor: Zi === 1 ? "default" : "pointer" }), this.down.attr({ fill: Zi === mi ? li.inactiveColor : li.activeColor }), this.downTracker.css({ cursor: Zi === mi ? "default" : "pointer" })), this.scrollOffset = -di[Zi - 1] + this.initialItemY, this.scrollGroup.animate({ translateY: this.scrollOffset }), this.currentPage = Zi, this.positionCheckboxes(), si = is(Di(ti, oi.renderer.globalAnimation, !0)), vi(() => {
               Si(this, "afterScroll", { currentPage: Zi });
             }, si.duration));
           }
           setItemEvents(si, ti, oi) {
-            const di = this, mi = si.legendItem || {}, Oi = di.chart.renderer.boxWrapper, hi = si instanceof Ki, Li = "highcharts-legend-" + (hi ? "point" : "series") + "-active", Ui = di.chart.styledMode;
+            const di = this, mi = si.legendItem || {}, Oi = di.chart.renderer.boxWrapper, li = si instanceof Ki, Li = "highcharts-legend-" + (li ? "point" : "series") + "-active", Ui = di.chart.styledMode;
             oi = oi ? [ti, mi.symbol] : [mi.group];
             const Zi = (rs) => {
               di.allItems.forEach((Bi) => {
                 si !== Bi && [Bi].concat(Bi.linkedSeries || []).forEach((ni) => {
-                  ni.setState(rs, !hi);
+                  ni.setState(rs, !li);
                 });
               });
             };
@@ -3923,8 +3923,8 @@ var highcharts = { exports: {} };
           };
         }(ui || (ui = {})), ui;
       }
-    ), ri(ii, "Core/Legend/LegendSymbol.js", [ii["Core/Utilities.js"]], function(li) {
-      const { extend: Ci, merge: zi, pick: Ki } = li;
+    ), ri(ii, "Core/Legend/LegendSymbol.js", [ii["Core/Utilities.js"]], function(hi) {
+      const { extend: wi, merge: zi, pick: Ki } = hi;
       var Yi;
       return function(es) {
         es.lineMarker = function(is, $i) {
@@ -3932,11 +3932,11 @@ var highcharts = { exports: {} };
           var Vi = this.options;
           const _i = is.symbolWidth, bi = is.symbolHeight, Ai = bi / 2, ji = this.chart.renderer, Ni = $i.group;
           is = is.baseline - Math.round(0.3 * is.fontMetrics.b);
-          let gi = {}, ki = Vi.marker, wi = 0;
-          this.chart.styledMode || (gi = { "stroke-width": Math.min(Vi.lineWidth || 0, 24) }, Vi.dashStyle ? gi.dashstyle = Vi.dashStyle : Vi.linecap !== "square" && (gi["stroke-linecap"] = "round")), $i.line = ji.path().addClass("highcharts-graph").attr(gi).add(Ni), gi["stroke-linecap"] && (wi = Math.min(
+          let gi = {}, ki = Vi.marker, Ci = 0;
+          this.chart.styledMode || (gi = { "stroke-width": Math.min(Vi.lineWidth || 0, 24) }, Vi.dashStyle ? gi.dashstyle = Vi.dashStyle : Vi.linecap !== "square" && (gi["stroke-linecap"] = "round")), $i.line = ji.path().addClass("highcharts-graph").attr(gi).add(Ni), gi["stroke-linecap"] && (Ci = Math.min(
             $i.line.strokeWidth(),
             _i
-          ) / 2), _i && $i.line.attr({ d: [["M", wi, is], ["L", _i - wi, is]] }), ki && ki.enabled !== !1 && _i && (Vi = Math.min(Ki(ki.radius, Ai), Ai), this.symbol.indexOf("url") === 0 && (ki = zi(ki, { width: bi, height: bi }), Vi = 0), $i.symbol = $i = ji.symbol(this.symbol, _i / 2 - Vi, is - Vi, 2 * Vi, 2 * Vi, Ci({ context: "legend" }, ki)).addClass("highcharts-point").add(Ni), $i.isMarker = !0);
+          ) / 2), _i && $i.line.attr({ d: [["M", Ci, is], ["L", _i - Ci, is]] }), ki && ki.enabled !== !1 && _i && (Vi = Math.min(Ki(ki.radius, Ai), Ai), this.symbol.indexOf("url") === 0 && (ki = zi(ki, { width: bi, height: bi }), Vi = 0), $i.symbol = $i = ji.symbol(this.symbol, _i / 2 - Vi, is - Vi, 2 * Vi, 2 * Vi, wi({ context: "legend" }, ki)).addClass("highcharts-point").add(Ni), $i.isMarker = !0);
         }, es.rectangle = function(is, $i) {
           $i = $i.legendItem || {};
           const Vi = is.symbolHeight, _i = is.options.squareSymbol;
@@ -3958,8 +3958,8 @@ var highcharts = { exports: {} };
         marker: { enabledThreshold: 2, lineColor: "#ffffff", lineWidth: 0, radius: 4, states: { normal: { animation: !0 }, hover: { animation: { duration: 150 }, enabled: !0, radiusPlus: 2, lineWidthPlus: 1 }, select: { fillColor: "#cccccc", lineColor: "#000000", lineWidth: 2 } } },
         point: { events: {} },
         dataLabels: { animation: {}, align: "center", borderWidth: 0, defer: !0, formatter: function() {
-          const { numberFormatter: li } = this.series.chart;
-          return typeof this.y != "number" ? "" : li(this.y, -1);
+          const { numberFormatter: hi } = this.series.chart;
+          return typeof this.y != "number" ? "" : hi(this.y, -1);
         }, padding: 5, style: { fontSize: "0.7em", fontWeight: "bold", color: "contrast", textOutline: "1px contrast" }, verticalAlign: "bottom", x: 0, y: 0 },
         cropThreshold: 300,
         opacity: 1,
@@ -3975,15 +3975,15 @@ var highcharts = { exports: {} };
         turboThreshold: 1e3,
         findNearestPointBy: "x"
       };
-    }), ri(ii, "Core/Series/SeriesRegistry.js", [ii["Core/Globals.js"], ii["Core/Defaults.js"], ii["Core/Series/Point.js"], ii["Core/Utilities.js"]], function(li, Ci, zi, Ki) {
-      const { defaultOptions: Yi } = Ci, { extendClass: es, merge: is } = Ki;
+    }), ri(ii, "Core/Series/SeriesRegistry.js", [ii["Core/Globals.js"], ii["Core/Defaults.js"], ii["Core/Series/Point.js"], ii["Core/Utilities.js"]], function(hi, wi, zi, Ki) {
+      const { defaultOptions: Yi } = wi, { extendClass: es, merge: is } = Ki;
       var $i;
       return function(Vi) {
         function _i(bi, Ai) {
           const ji = Yi.plotOptions || {}, Ni = Ai.defaultOptions, gi = Ai.prototype;
           gi.type = bi, gi.pointClass || (gi.pointClass = zi), Ni && (ji[bi] = Ni), Vi.seriesTypes[bi] = Ai;
         }
-        Vi.seriesTypes = li.seriesTypes, Vi.registerSeriesType = _i, Vi.seriesType = function(bi, Ai, ji, Ni, gi) {
+        Vi.seriesTypes = hi.seriesTypes, Vi.registerSeriesType = _i, Vi.seriesType = function(bi, Ai, ji, Ni, gi) {
           const ki = Yi.plotOptions || {};
           return Ai = Ai || "", ki[bi] = is(ki[Ai], ji), _i(bi, es(Vi.seriesTypes[Ai] || function() {
           }, Ni)), Vi.seriesTypes[bi].prototype.type = bi, gi && (Vi.seriesTypes[bi].prototype.pointClass = es(zi, gi)), Vi.seriesTypes[bi];
@@ -4000,8 +4000,8 @@ var highcharts = { exports: {} };
       ii["Core/Series/SeriesRegistry.js"],
       ii["Core/Renderer/SVG/SVGElement.js"],
       ii["Core/Utilities.js"]
-    ], function(li, Ci, zi, Ki, Yi, es, is, $i, Vi, _i) {
-      const { animObject: bi, setAnimation: Ai } = li, { defaultOptions: ji } = Ci, { registerEventOptions: Ni } = zi, { hasTouch: gi, svg: ki, win: wi } = Ki, { seriesTypes: Si } = $i, {
+    ], function(hi, wi, zi, Ki, Yi, es, is, $i, Vi, _i) {
+      const { animObject: bi, setAnimation: Ai } = hi, { defaultOptions: ji } = wi, { registerEventOptions: Ni } = zi, { hasTouch: gi, svg: ki, win: Ci } = Ki, { seriesTypes: Si } = $i, {
         arrayMax: Ti,
         arrayMin: Mi,
         clamp: Di,
@@ -4016,7 +4016,7 @@ var highcharts = { exports: {} };
         getClosestDistance: di,
         getNestedProperty: mi,
         insertItem: Oi,
-        isArray: hi,
+        isArray: li,
         isNumber: Li,
         isString: Ui,
         merge: Zi,
@@ -4175,7 +4175,7 @@ var highcharts = { exports: {} };
               if (cs = Wi.getFirstValidPoint(ai), Li(cs))
                 for (yi = 0; yi < ds; yi++)
                   Ji[yi] = this.autoIncrement(), Fi[yi] = ai[yi];
-              else if (hi(cs))
+              else if (li(cs))
                 if (Qi)
                   if (cs.length === Qi)
                     for (yi = 0; yi < ds; yi++)
@@ -4301,7 +4301,7 @@ var highcharts = { exports: {} };
           for (ss = 0; ss < Ii; ss++) {
             var Ji = Xi[ss];
             Ei = ai[ss];
-            var Fi = (Li(Ei) || hi(Ei)) && (Ei.length || 0 < Ei || !Gi);
+            var Fi = (Li(Ei) || li(Ei)) && (Ei.length || 0 < Ei || !Gi);
             if (Ji = xi || this.getExtremesFromAll || this.options.getExtremesFromAll || this.cropped || !yi || (Xi[ss + ts] || Ji) >= os && (Xi[ss - ts] || Ji) <= ns, Fi && Ji)
               if (Fi = Ei.length)
                 for (; Fi--; )
@@ -4333,7 +4333,7 @@ var highcharts = { exports: {} };
             const as = ss[Ei], ps = as.x;
             let us, cs, ds = as.y, ms = as.low;
             const fs = yi && ((ai = ts.stacking) === null || ai === void 0 ? void 0 : ai.stacks[(this.negStacks && ds < (xi ? 0 : Ii) ? "-" : "") + this.stackKey]);
-            Ji = Gi.translate(ps, !1, !1, !1, !0, ns), as.plotX = Li(Ji) ? ci(Di(Ji, -1e5, 1e5)) : void 0, yi && this.visible && fs && fs[ps] && (Qi = this.getStackIndicator(Qi, ps, this.index), !as.isNull && Qi.key && (us = fs[ps], cs = us.points[Qi.key]), us && hi(cs) && (ms = cs[0], ds = cs[1], ms === xi && Qi.key === fs[ps].base && (ms = Bi(Li(Ii) ? Ii : ts.min)), ts.positiveValuesOnly && pi(ms) && 0 >= ms && (ms = void 0), as.total = as.stackTotal = Bi(us.total), as.percentage = pi(as.y) && us.total ? as.y / us.total * 100 : void 0, as.stackY = ds, this.irregularWidths || us.setOffset(this.pointXOffset || 0, this.barW || 0, void 0, void 0, void 0, this.xAxis))), as.yBottom = pi(ms) ? Di(ts.translate(ms, !1, !0, !1, !0), -1e5, 1e5) : void 0, this.dataModify && (ds = this.dataModify.modifyValue(ds, Ei));
+            Ji = Gi.translate(ps, !1, !1, !1, !0, ns), as.plotX = Li(Ji) ? ci(Di(Ji, -1e5, 1e5)) : void 0, yi && this.visible && fs && fs[ps] && (Qi = this.getStackIndicator(Qi, ps, this.index), !as.isNull && Qi.key && (us = fs[ps], cs = us.points[Qi.key]), us && li(cs) && (ms = cs[0], ds = cs[1], ms === xi && Qi.key === fs[ps].base && (ms = Bi(Li(Ii) ? Ii : ts.min)), ts.positiveValuesOnly && pi(ms) && 0 >= ms && (ms = void 0), as.total = as.stackTotal = Bi(us.total), as.percentage = pi(as.y) && us.total ? as.y / us.total * 100 : void 0, as.stackY = ds, this.irregularWidths || us.setOffset(this.pointXOffset || 0, this.barW || 0, void 0, void 0, void 0, this.xAxis))), as.yBottom = pi(ms) ? Di(ts.translate(ms, !1, !0, !1, !0), -1e5, 1e5) : void 0, this.dataModify && (ds = this.dataModify.modifyValue(ds, Ei));
             let gs;
             Li(ds) && as.plotX !== void 0 && (gs = ts.translate(ds, !1, !0, !1, !0), gs = Li(gs) ? Di(gs, -1e5, 1e5) : void 0), as.plotY = gs, as.isInside = this.isPointInside(as), as.clientX = ls ? ci(Gi.translate(ps, !1, !1, !1, !0, ns)) : Ji, as.negative = (as.y || 0) < (Ii || 0), as.category = Bi(Xi && Xi[as.x], as.x), as.isNull || as.visible === !1 || (typeof Fi < "u" && (hs = Math.min(hs, Math.abs(Ji - Fi))), Fi = Ji), as.zone = this.zones.length ? as.getZone() : void 0, !as.graphic && this.group && Wi && (as.isNew = !0);
           }
@@ -4409,7 +4409,7 @@ var highcharts = { exports: {} };
           return ai = Bi(Xi.lineWidth, yi.lineWidth), Gi = 1, os = Wi || ss || ts || os, Wi = Xi.fillColor || yi.fillColor || os, ts = Xi.lineColor || yi.lineColor || os, xi = xi || "normal", yi = yi.states[xi] || {}, xi = Xi.states && Xi.states[xi] || {}, ai = Bi(xi.lineWidth, yi.lineWidth, ai + Bi(xi.lineWidthPlus, yi.lineWidthPlus, 0)), Wi = xi.fillColor || yi.fillColor || Wi, ts = xi.lineColor || yi.lineColor || ts, Gi = Bi(xi.opacity, yi.opacity, Gi), { stroke: ts, "stroke-width": ai, fill: Wi, opacity: Gi };
         }
         destroy(ai) {
-          const xi = this, yi = xi.chart, Gi = /AppleWebKit\/533/.test(wi.navigator.userAgent), Xi = xi.data || [];
+          const xi = this, yi = xi.chart, Gi = /AppleWebKit\/533/.test(Ci.navigator.userAgent), Xi = xi.data || [];
           let Wi, ts, ss, os;
           for (oi(xi, "destroy", { keepEventsForUpdate: ai }), this.removeEvents(ai), (xi.axisTypes || []).forEach(function(ns) {
             (os = xi[ns]) && os.series && (ui(os.series, xi), os.isDirty = os.forceRedraw = !0);
@@ -4686,15 +4686,15 @@ var highcharts = { exports: {} };
       ii["Core/Time.js"],
       ii["Core/Utilities.js"],
       ii["Core/Renderer/HTML/AST.js"]
-    ], function(li, Ci, zi, Ki, Yi, es, is, $i, Vi, _i, bi, Ai, ji) {
-      const { animate: Ni, animObject: gi, setAnimation: ki } = li, { defaultOptions: wi, defaultTime: Si } = zi, { numberFormat: Ti } = Ki, { registerEventOptions: Mi } = Yi, { charts: Di, doc: ci, marginNames: pi, svg: vi, win: ui } = es, { seriesTypes: fi } = Vi, {
+    ], function(hi, wi, zi, Ki, Yi, es, is, $i, Vi, _i, bi, Ai, ji) {
+      const { animate: Ni, animObject: gi, setAnimation: ki } = hi, { defaultOptions: Ci, defaultTime: Si } = zi, { numberFormat: Ti } = Ki, { registerEventOptions: Mi } = Yi, { charts: Di, doc: ci, marginNames: pi, svg: vi, win: ui } = es, { seriesTypes: fi } = Vi, {
         addEvent: si,
         attr: ti,
         createElement: oi,
         css: di,
         defined: mi,
         diffObjects: Oi,
-        discardElement: hi,
+        discardElement: li,
         erase: Li,
         error: Ui,
         extend: Zi,
@@ -4735,7 +4735,7 @@ var highcharts = { exports: {} };
         }
         init(Ii, Ei) {
           Bi(this, "init", { args: arguments }, function() {
-            const Ji = ai(wi, Ii), Fi = Ji.chart;
+            const Ji = ai(Ci, Ii), Fi = Ji.chart;
             this.userOptions = Zi({}, Ii), this.margin = [], this.spacing = [], this.bounds = { h: {}, v: {} }, this.labelCollectors = [], this.callback = Ei, this.isResizing = 0, this.options = Ji, this.axes = [], this.series = [], this.time = Ii.time && Object.keys(Ii.time).length ? new bi(Ii.time) : es.time, this.numberFormatter = Fi.numberFormatter || Ti, this.styledMode = Fi.styledMode, this.hasCartesianSeries = Fi.showAxes, this.index = Di.length, Di.push(this), es.chartCount++, Mi(this, Fi), this.xAxis = [], this.yAxis = [], this.pointCount = this.colorCounter = this.symbolCounter = 0, this.setZoomOptions(), Bi(this, "afterInit"), this.firstRender();
           });
         }
@@ -4825,7 +4825,7 @@ var highcharts = { exports: {} };
           for (const Ei of ["xAxis", "yAxis"]) {
             const Ji = Ii[Ei] = ts(Ii[Ei] || {});
             for (const Fi of Ji)
-              new Ci(this, Fi, Ei);
+              new wi(this, Fi, Ei);
           }
           Bi(this, "afterGetAxes");
         }
@@ -4933,7 +4933,7 @@ var highcharts = { exports: {} };
           }), Ii.setChartSize();
         }
         getOptions() {
-          return Oi(this.userOptions, wi);
+          return Oi(this.userOptions, Ci);
         }
         reflow(Ii) {
           const Ei = this;
@@ -5061,7 +5061,7 @@ var highcharts = { exports: {} };
           "title subtitle chartBackground plotBackground plotBGImage plotBorder seriesGroup clipRect credits pointer rangeSelector legend resetZoomButton tooltip renderer".split(" ").forEach(function(as) {
             const ps = Ii[as];
             ps && ps.destroy && (Ii[as] = ps.destroy());
-          }), Fi && (Fi.innerHTML = ji.emptyHTML, Wi(Fi), Qi && hi(Fi)), xi(Ii, function(as, ps) {
+          }), Fi && (Fi.innerHTML = ji.emptyHTML, Wi(Fi), Qi && li(Fi)), xi(Ii, function(as, ps) {
             delete Ii[ps];
           });
         }
@@ -5100,7 +5100,7 @@ var highcharts = { exports: {} };
           return this.createAxis("colorAxis", { axis: Ii, redraw: Ei, animation: Ji });
         }
         createAxis(Ii, Ei) {
-          return Ii = new Ci(this, Ei.axis, Ii), yi(Ei.redraw, !0) && this.redraw(Ei.animation), Ii;
+          return Ii = new wi(this, Ei.axis, Ii), yi(Ei.redraw, !0) && this.redraw(Ei.animation), Ii;
         }
         showLoading(Ii) {
           const Ei = this, Ji = Ei.options, Fi = Ji.loading, Qi = function() {
@@ -5168,7 +5168,7 @@ var highcharts = { exports: {} };
           function Ii() {
             Ei.zoomOut();
           }
-          const Ei = this, Ji = wi.lang, Fi = Ei.zooming.resetButton, Qi = Fi.theme, hs = Fi.relativeTo === "chart" || Fi.relativeTo === "spacingBox" ? null : "scrollablePlotBox";
+          const Ei = this, Ji = Ci.lang, Fi = Ei.zooming.resetButton, Qi = Fi.theme, hs = Fi.relativeTo === "chart" || Fi.relativeTo === "spacingBox" ? null : "scrollablePlotBox";
           Bi(this, "beforeShowResetZoom", null, function() {
             Ei.resetZoomButton = Ei.renderer.button(Ji.resetZoom, null, null, Ii, Qi).attr({ align: Fi.position.align, title: Ji.resetZoomTitle }).addClass("highcharts-reset-zoom").add().align(Fi.position, !1, hs);
           }), Bi(
@@ -5238,17 +5238,17 @@ var highcharts = { exports: {} };
       ii,
       "Extensions/ScrollablePlotArea.js",
       [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Axis/Axis.js"], ii["Core/Chart/Chart.js"], ii["Core/Series/Series.js"], ii["Core/Renderer/RendererRegistry.js"], ii["Core/Utilities.js"]],
-      function(li, Ci, zi, Ki, Yi, es) {
-        const { stop: is } = li, { addEvent: $i, createElement: Vi, defined: _i, merge: bi, pick: Ai } = es;
+      function(hi, wi, zi, Ki, Yi, es) {
+        const { stop: is } = hi, { addEvent: $i, createElement: Vi, defined: _i, merge: bi, pick: Ai } = es;
         $i(zi, "afterSetChartSize", function(ji) {
           var Ni = this.options.chart.scrollablePlotArea, gi = Ni && Ni.minWidth;
           Ni = Ni && Ni.minHeight;
           let ki;
-          this.renderer.forExport || (gi ? (this.scrollablePixelsX = gi = Math.max(0, gi - this.chartWidth)) && (this.scrollablePlotBox = this.renderer.scrollablePlotBox = bi(this.plotBox), this.plotBox.width = this.plotWidth += gi, this.inverted ? this.clipBox.height += gi : this.clipBox.width += gi, ki = { 1: { name: "right", value: gi } }) : Ni && (this.scrollablePixelsY = gi = Math.max(0, Ni - this.chartHeight), _i(gi) && (this.scrollablePlotBox = this.renderer.scrollablePlotBox = bi(this.plotBox), this.plotBox.height = this.plotHeight += gi, this.inverted ? this.clipBox.width += gi : this.clipBox.height += gi, ki = { 2: { name: "bottom", value: gi } })), ki && !ji.skipAxes && this.axes.forEach(function(wi) {
-            ki[wi.side] ? wi.getPlotLinePath = function() {
-              let Si = ki[wi.side].name, Ti = this[Si], Mi;
-              return this[Si] = Ti - ki[wi.side].value, Mi = Ci.prototype.getPlotLinePath.apply(this, arguments), this[Si] = Ti, Mi;
-            } : (wi.setAxisSize(), wi.setAxisTranslation());
+          this.renderer.forExport || (gi ? (this.scrollablePixelsX = gi = Math.max(0, gi - this.chartWidth)) && (this.scrollablePlotBox = this.renderer.scrollablePlotBox = bi(this.plotBox), this.plotBox.width = this.plotWidth += gi, this.inverted ? this.clipBox.height += gi : this.clipBox.width += gi, ki = { 1: { name: "right", value: gi } }) : Ni && (this.scrollablePixelsY = gi = Math.max(0, Ni - this.chartHeight), _i(gi) && (this.scrollablePlotBox = this.renderer.scrollablePlotBox = bi(this.plotBox), this.plotBox.height = this.plotHeight += gi, this.inverted ? this.clipBox.width += gi : this.clipBox.height += gi, ki = { 2: { name: "bottom", value: gi } })), ki && !ji.skipAxes && this.axes.forEach(function(Ci) {
+            ki[Ci.side] ? Ci.getPlotLinePath = function() {
+              let Si = ki[Ci.side].name, Ti = this[Si], Mi;
+              return this[Si] = Ti - ki[Ci.side].value, Mi = wi.prototype.getPlotLinePath.apply(this, arguments), this[Si] = Ti, Mi;
+            } : (Ci.setAxisSize(), Ci.setAxisTranslation());
           }));
         }), $i(zi, "render", function() {
           this.scrollablePixelsX || this.scrollablePixelsY ? (this.setUpScrolling && this.setUpScrolling(), this.applyFixed()) : this.fixedDiv && this.applyFixed();
@@ -5261,8 +5261,8 @@ var highcharts = { exports: {} };
           }), this.innerContainer = Vi("div", { className: "highcharts-inner-container" }, null, this.scrollingContainer), this.innerContainer.appendChild(this.container), this.setUpScrolling = null;
         }, zi.prototype.moveFixedElements = function() {
           let ji = this.container, Ni = this.fixedRenderer, gi = ".highcharts-breadcrumbs-group .highcharts-contextbutton .highcharts-credits .highcharts-legend .highcharts-legend-checkbox .highcharts-navigator-series .highcharts-navigator-xaxis .highcharts-navigator-yaxis .highcharts-navigator .highcharts-reset-zoom .highcharts-drillup-button .highcharts-scrollbar .highcharts-subtitle .highcharts-title".split(" "), ki;
-          this.scrollablePixelsX && !this.inverted ? ki = ".highcharts-yaxis" : this.scrollablePixelsX && this.inverted || this.scrollablePixelsY && !this.inverted ? ki = ".highcharts-xaxis" : this.scrollablePixelsY && this.inverted && (ki = ".highcharts-yaxis"), ki && gi.push(`${ki}:not(.highcharts-radial-axis)`, `${ki}-labels:not(.highcharts-radial-axis-labels)`), gi.forEach(function(wi) {
-            [].forEach.call(ji.querySelectorAll(wi), function(Si) {
+          this.scrollablePixelsX && !this.inverted ? ki = ".highcharts-yaxis" : this.scrollablePixelsX && this.inverted || this.scrollablePixelsY && !this.inverted ? ki = ".highcharts-xaxis" : this.scrollablePixelsY && this.inverted && (ki = ".highcharts-yaxis"), ki && gi.push(`${ki}:not(.highcharts-radial-axis)`, `${ki}-labels:not(.highcharts-radial-axis-labels)`), gi.forEach(function(Ci) {
+            [].forEach.call(ji.querySelectorAll(Ci), function(Si) {
               (Si.namespaceURI === Ni.SVG_NS ? Ni.box : Ni.box.parentNode).appendChild(Si), Si.style.pointerEvents = "auto";
             });
           });
@@ -5272,24 +5272,24 @@ var highcharts = { exports: {} };
             gi.opacity,
             0.85
           ), zIndex: -1 }).addClass("highcharts-scrollable-mask").add(), $i(this, "afterShowResetZoom", this.moveFixedElements), $i(this, "afterApplyDrilldown", this.moveFixedElements), $i(this, "afterLayOutTitles", this.moveFixedElements)) : this.fixedRenderer.setSize(this.chartWidth, this.chartHeight), (this.scrollableDirty || ji) && (this.scrollableDirty = !1, this.moveFixedElements()), Ni = this.chartWidth + (this.scrollablePixelsX || 0), ki = this.chartHeight + (this.scrollablePixelsY || 0), is(this.container), this.container.style.width = Ni + "px", this.container.style.height = ki + "px", this.renderer.boxWrapper.attr({ width: Ni, height: ki, viewBox: [0, 0, Ni, ki].join(" ") }), this.chartBackground.attr({ width: Ni, height: ki }), this.scrollingContainer.style.height = this.chartHeight + "px", ji && (gi.scrollPositionX && (this.scrollingContainer.scrollLeft = this.scrollablePixelsX * gi.scrollPositionX), gi.scrollPositionY && (this.scrollingContainer.scrollTop = this.scrollablePixelsY * gi.scrollPositionY)), ki = this.axisOffset, ji = this.plotTop - ki[0] - 1, gi = this.plotLeft - ki[3] - 1, Ni = this.plotTop + this.plotHeight + ki[2] + 1, ki = this.plotLeft + this.plotWidth + ki[1] + 1;
-          let wi = this.plotLeft + this.plotWidth - (this.scrollablePixelsX || 0), Si = this.plotTop + this.plotHeight - (this.scrollablePixelsY || 0);
-          ji = this.scrollablePixelsX ? [["M", 0, ji], ["L", this.plotLeft - 1, ji], ["L", this.plotLeft - 1, Ni], ["L", 0, Ni], ["Z"], ["M", wi, ji], ["L", this.chartWidth, ji], ["L", this.chartWidth, Ni], ["L", wi, Ni], ["Z"]] : this.scrollablePixelsY ? [["M", gi, 0], ["L", gi, this.plotTop - 1], ["L", ki, this.plotTop - 1], ["L", ki, 0], ["Z"], ["M", gi, Si], ["L", gi, this.chartHeight], ["L", ki, this.chartHeight], [
+          let Ci = this.plotLeft + this.plotWidth - (this.scrollablePixelsX || 0), Si = this.plotTop + this.plotHeight - (this.scrollablePixelsY || 0);
+          ji = this.scrollablePixelsX ? [["M", 0, ji], ["L", this.plotLeft - 1, ji], ["L", this.plotLeft - 1, Ni], ["L", 0, Ni], ["Z"], ["M", Ci, ji], ["L", this.chartWidth, ji], ["L", this.chartWidth, Ni], ["L", Ci, Ni], ["Z"]] : this.scrollablePixelsY ? [["M", gi, 0], ["L", gi, this.plotTop - 1], ["L", ki, this.plotTop - 1], ["L", ki, 0], ["Z"], ["M", gi, Si], ["L", gi, this.chartHeight], ["L", ki, this.chartHeight], [
             "L",
             ki,
             Si
           ], ["Z"]] : [["M", 0, 0]], this.redrawTrigger !== "adjustHeight" && this.scrollableMask.attr({ d: ji });
-        }, $i(Ci, "afterInit", function() {
+        }, $i(wi, "afterInit", function() {
           this.chart.scrollableDirty = !0;
         }), $i(Ki, "show", function() {
           this.chart.scrollableDirty = !0;
         });
       }
-    ), ri(ii, "Core/Axis/Stacking/StackItem.js", [ii["Core/Templating.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
-      const { format: Ki } = li, { series: Yi } = Ci, { destroyObjectProperties: es, fireEvent: is, isNumber: $i, pick: Vi } = zi;
+    ), ri(ii, "Core/Axis/Stacking/StackItem.js", [ii["Core/Templating.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(hi, wi, zi) {
+      const { format: Ki } = hi, { series: Yi } = wi, { destroyObjectProperties: es, fireEvent: is, isNumber: $i, pick: Vi } = zi;
       class _i {
         constructor(Ai, ji, Ni, gi, ki) {
-          const wi = Ai.chart.inverted, Si = Ai.reversed;
-          this.axis = Ai, Ai = this.isNegative = !!Ni != !!Si, this.options = ji = ji || {}, this.x = gi, this.cumulative = this.total = null, this.points = {}, this.hasValidPoints = !1, this.stack = ki, this.rightCliff = this.leftCliff = 0, this.alignOptions = { align: ji.align || (wi ? Ai ? "left" : "right" : "center"), verticalAlign: ji.verticalAlign || (wi ? "middle" : Ai ? "bottom" : "top"), y: ji.y, x: ji.x }, this.textAlign = ji.textAlign || (wi ? Ai ? "right" : "left" : "center");
+          const Ci = Ai.chart.inverted, Si = Ai.reversed;
+          this.axis = Ai, Ai = this.isNegative = !!Ni != !!Si, this.options = ji = ji || {}, this.x = gi, this.cumulative = this.total = null, this.points = {}, this.hasValidPoints = !1, this.stack = ki, this.rightCliff = this.leftCliff = 0, this.alignOptions = { align: ji.align || (Ci ? Ai ? "left" : "right" : "center"), verticalAlign: ji.verticalAlign || (Ci ? "middle" : Ai ? "bottom" : "top"), y: ji.y, x: ji.x }, this.textAlign = ji.textAlign || (Ci ? Ai ? "right" : "left" : "center");
         }
         destroy() {
           es(this, this.axis);
@@ -5299,7 +5299,7 @@ var highcharts = { exports: {} };
           var gi = Ni.format;
           gi = gi ? Ki(gi, this, ji) : Ni.formatter.call(this), this.label ? this.label.attr({ text: gi, visibility: "hidden" }) : (this.label = ji.renderer.label(gi, null, void 0, Ni.shape, void 0, void 0, Ni.useHTML, !1, "stack-labels"), gi = { r: Ni.borderRadius || 0, text: gi, padding: Vi(Ni.padding, 5), visibility: "hidden" }, ji.styledMode || (gi.fill = Ni.backgroundColor, gi.stroke = Ni.borderColor, gi["stroke-width"] = Ni.borderWidth, this.label.css(Ni.style || {})), this.label.attr(gi), this.label.added || this.label.add(Ai)), this.label.labelrank = ji.plotSizeY, is(this, "afterRender");
         }
-        setOffset(Ai, ji, Ni, gi, ki, wi) {
+        setOffset(Ai, ji, Ni, gi, ki, Ci) {
           const {
             alignOptions: Si,
             axis: Ti,
@@ -5307,18 +5307,18 @@ var highcharts = { exports: {} };
             options: Di,
             textAlign: ci
           } = this, pi = Ti.chart;
-          Ni = this.getStackBox({ xOffset: Ai, width: ji, boxBottom: Ni, boxTop: gi, defaultX: ki, xAxis: wi });
+          Ni = this.getStackBox({ xOffset: Ai, width: ji, boxBottom: Ni, boxTop: gi, defaultX: ki, xAxis: Ci });
           var { verticalAlign: vi } = Si;
           if (Mi && Ni) {
-            gi = Mi.getBBox(), ki = Mi.padding, wi = Vi(Di.overflow, "justify") === "justify", Si.x = Di.x || 0, Si.y = Di.y || 0;
+            gi = Mi.getBBox(), ki = Mi.padding, Ci = Vi(Di.overflow, "justify") === "justify", Si.x = Di.x || 0, Si.y = Di.y || 0;
             const { x: ui, y: fi } = this.adjustStackPosition({ labelBox: gi, verticalAlign: vi, textAlign: ci });
-            Ni.x -= ui, Ni.y -= fi, Mi.align(Si, !1, Ni), (vi = pi.isInsidePlot(Mi.alignAttr.x + Si.x + ui, Mi.alignAttr.y + Si.y + fi)) || (wi = !1), wi && Yi.prototype.justifyDataLabel.call(Ti, Mi, Si, Mi.alignAttr, gi, Ni), Mi.attr({
+            Ni.x -= ui, Ni.y -= fi, Mi.align(Si, !1, Ni), (vi = pi.isInsidePlot(Mi.alignAttr.x + Si.x + ui, Mi.alignAttr.y + Si.y + fi)) || (Ci = !1), Ci && Yi.prototype.justifyDataLabel.call(Ti, Mi, Si, Mi.alignAttr, gi, Ni), Mi.attr({
               x: Mi.alignAttr.x,
               y: Mi.alignAttr.y,
               rotation: Di.rotation,
               rotationOriginX: gi.width / 2,
               rotationOriginY: gi.height / 2
-            }), Vi(!wi && Di.crop, !0) && (vi = $i(Mi.x) && $i(Mi.y) && pi.isInsidePlot(Mi.x - ki + Mi.width, Mi.y) && pi.isInsidePlot(Mi.x + ki, Mi.y)), Mi[vi ? "show" : "hide"]();
+            }), Vi(!Ci && Di.crop, !0) && (vi = $i(Mi.x) && $i(Mi.y) && pi.isInsidePlot(Mi.x - ki + Mi.width, Mi.y) && pi.isInsidePlot(Mi.x + ki, Mi.y)), Mi[vi ? "show" : "hide"]();
           }
           is(this, "afterSetOffset", { xOffset: Ai, width: ji });
         }
@@ -5331,13 +5331,13 @@ var highcharts = { exports: {} };
           const Ni = ji.chart, {
             boxTop: gi,
             defaultX: ki,
-            xOffset: wi,
+            xOffset: Ci,
             width: Si,
             boxBottom: Ti
           } = Ai;
           var Mi = ji.stacking.usePercentage ? 100 : Vi(gi, this.total, 0);
           Mi = ji.toPixels(Mi), Ai = Ai.xAxis || Ni.xAxis[0];
-          const Di = Vi(ki, Ai.translate(this.x)) + wi;
+          const Di = Vi(ki, Ai.translate(this.x)) + Ci;
           ji = ji.toPixels(Ti || $i(ji.min) && ji.logarithmic && ji.logarithmic.lin2log(ji.min) || 0), ji = Math.abs(Mi - ji);
           const ci = this.isNegative;
           return Ni.inverted ? { x: (ci ? Mi : Mi - ji) - Ni.plotLeft, y: Ai.height - Di - Si, width: ji, height: Si } : { x: Di + Ai.transB - Ni.plotLeft, y: (ci ? Mi - ji : Mi) - Ni.plotTop, width: Si, height: ji };
@@ -5350,7 +5350,7 @@ var highcharts = { exports: {} };
       ii["Core/Series/SeriesRegistry.js"],
       ii["Core/Axis/Stacking/StackItem.js"],
       ii["Core/Utilities.js"]
-    ], function(li, Ci, zi, Ki, Yi) {
+    ], function(hi, wi, zi, Ki, Yi) {
       function es() {
         const si = this, ti = si.inverted;
         si.yAxis.forEach((oi) => {
@@ -5378,16 +5378,16 @@ var highcharts = { exports: {} };
       function _i() {
         const si = this, ti = si.stackKey, oi = si.yAxis.stacking.stacks, di = si.processedXData, mi = si[si.options.stacking + "Stacker"];
         let Oi;
-        mi && [ti, "-" + ti].forEach((hi) => {
+        mi && [ti, "-" + ti].forEach((li) => {
           let Li = di.length, Ui;
           for (; Li--; ) {
             var Zi = di[Li];
-            Oi = si.getStackIndicator(Oi, Zi, si.index, hi), (Ui = (Zi = oi[hi] && oi[hi][Zi]) && Zi.points[Oi.key]) && mi.call(si, Ui, Zi, Li);
+            Oi = si.getStackIndicator(Oi, Zi, si.index, li), (Ui = (Zi = oi[li] && oi[li][Zi]) && Zi.points[Oi.key]) && mi.call(si, Ui, Zi, Li);
           }
         });
       }
       function bi(si, ti, oi) {
-        ti = ti.total ? 100 / ti.total : 0, si[0] = wi(si[0] * ti), si[1] = wi(si[1] * ti), this.stackedYData[oi] = si[1];
+        ti = ti.total ? 100 / ti.total : 0, si[0] = Ci(si[0] * ti), si[1] = Ci(si[1] * ti), this.stackedYData[oi] = si[1];
       }
       function Ai() {
         const si = this.yAxis.stacking;
@@ -5399,30 +5399,30 @@ var highcharts = { exports: {} };
         var ti = this.chart;
         const oi = si || this.options.stacking;
         if (oi && (this.visible === !0 || ti.options.chart.ignoreHiddenSeries === !1)) {
-          var di = this.processedXData, mi = this.processedYData, Oi = [], hi = mi.length, Li = this.options, Ui = Li.threshold, Zi = vi(Li.startFromThreshold && Ui, 0);
+          var di = this.processedXData, mi = this.processedYData, Oi = [], li = mi.length, Li = this.options, Ui = Li.threshold, Zi = vi(Li.startFromThreshold && Ui, 0);
           Li = Li.stack, si = si ? `${this.type},${oi}` : this.stackKey;
           var rs = "-" + si, Bi = this.negStacks;
           ti = oi === "group" ? ti.yAxis[0] : this.yAxis;
           var ni = ti.stacking.stacks, Pi = ti.stacking.oldStacks, Hi, Ri;
-          for (ti.stacking.stacksTouched += 1, Ri = 0; Ri < hi; Ri++) {
+          for (ti.stacking.stacksTouched += 1, Ri = 0; Ri < li; Ri++) {
             var qi = di[Ri], ai = mi[Ri], xi = this.getStackIndicator(xi, qi, this.index), yi = xi.key, Gi = (Hi = Bi && ai < (Zi ? 0 : Ui)) ? rs : si;
-            ni[Gi] || (ni[Gi] = {}), ni[Gi][qi] || (Pi[Gi] && Pi[Gi][qi] ? (ni[Gi][qi] = Pi[Gi][qi], ni[Gi][qi].total = null) : ni[Gi][qi] = new Ki(ti, ti.options.stackLabels, !!Hi, qi, Li)), Gi = ni[Gi][qi], ai !== null ? (Gi.points[yi] = Gi.points[this.index] = [vi(Gi.cumulative, Zi)], Si(Gi.cumulative) || (Gi.base = yi), Gi.touched = ti.stacking.stacksTouched, 0 < xi.index && this.singleStacks === !1 && (Gi.points[yi][0] = Gi.points[this.index + "," + qi + ",0"][0])) : Gi.points[yi] = Gi.points[this.index] = null, oi === "percent" ? (Hi = Hi ? si : rs, Bi && ni[Hi] && ni[Hi][qi] ? (Hi = ni[Hi][qi], Gi.total = Hi.total = Math.max(Hi.total, Gi.total) + Math.abs(ai) || 0) : Gi.total = wi(Gi.total + (Math.abs(ai) || 0))) : oi === "group" ? (Di(ai) && (ai = ai[0]), ai !== null && (Gi.total = (Gi.total || 0) + 1)) : Gi.total = wi(Gi.total + (ai || 0)), Gi.cumulative = oi === "group" ? (Gi.total || 1) - 1 : wi(vi(Gi.cumulative, Zi) + (ai || 0)), ai !== null && (Gi.points[yi].push(Gi.cumulative), Oi[Ri] = Gi.cumulative, Gi.hasValidPoints = !0);
+            ni[Gi] || (ni[Gi] = {}), ni[Gi][qi] || (Pi[Gi] && Pi[Gi][qi] ? (ni[Gi][qi] = Pi[Gi][qi], ni[Gi][qi].total = null) : ni[Gi][qi] = new Ki(ti, ti.options.stackLabels, !!Hi, qi, Li)), Gi = ni[Gi][qi], ai !== null ? (Gi.points[yi] = Gi.points[this.index] = [vi(Gi.cumulative, Zi)], Si(Gi.cumulative) || (Gi.base = yi), Gi.touched = ti.stacking.stacksTouched, 0 < xi.index && this.singleStacks === !1 && (Gi.points[yi][0] = Gi.points[this.index + "," + qi + ",0"][0])) : Gi.points[yi] = Gi.points[this.index] = null, oi === "percent" ? (Hi = Hi ? si : rs, Bi && ni[Hi] && ni[Hi][qi] ? (Hi = ni[Hi][qi], Gi.total = Hi.total = Math.max(Hi.total, Gi.total) + Math.abs(ai) || 0) : Gi.total = Ci(Gi.total + (Math.abs(ai) || 0))) : oi === "group" ? (Di(ai) && (ai = ai[0]), ai !== null && (Gi.total = (Gi.total || 0) + 1)) : Gi.total = Ci(Gi.total + (ai || 0)), Gi.cumulative = oi === "group" ? (Gi.total || 1) - 1 : Ci(vi(Gi.cumulative, Zi) + (ai || 0)), ai !== null && (Gi.points[yi].push(Gi.cumulative), Oi[Ri] = Gi.cumulative, Gi.hasValidPoints = !0);
           }
           oi === "percent" && (ti.stacking.usePercentage = !0), oi !== "group" && (this.stackedYData = Oi), ti.stacking.oldStacks = {};
         }
       }
-      const { getDeferredAnimation: Ni } = li, { series: { prototype: gi } } = zi, { addEvent: ki, correctFloat: wi, defined: Si, destroyObjectProperties: Ti, fireEvent: Mi, isArray: Di, isNumber: ci, objectEach: pi, pick: vi } = Yi;
+      const { getDeferredAnimation: Ni } = hi, { series: { prototype: gi } } = zi, { addEvent: ki, correctFloat: Ci, defined: Si, destroyObjectProperties: Ti, fireEvent: Mi, isArray: Di, isNumber: ci, objectEach: pi, pick: vi } = Yi;
       class ui {
         constructor(ti) {
           this.oldStacks = {}, this.stacks = {}, this.stacksTouched = 0, this.axis = ti;
         }
         buildStacks() {
           const ti = this.axis, oi = ti.series, di = ti.options.reversedStacks, mi = oi.length;
-          let Oi, hi;
-          for (this.usePercentage = !1, hi = mi; hi--; )
-            Oi = oi[di ? hi : mi - hi - 1], Oi.setStackedPoints(), Oi.setGroupedPoints();
-          for (hi = 0; hi < mi; hi++)
-            oi[hi].modifyStacks();
+          let Oi, li;
+          for (this.usePercentage = !1, li = mi; li--; )
+            Oi = oi[di ? li : mi - li - 1], Oi.setStackedPoints(), Oi.setGroupedPoints();
+          for (li = 0; li < mi; li++)
+            oi[li].modifyStacks();
           Mi(ti, "afterBuildStacks");
         }
         cleanStacks() {
@@ -5445,8 +5445,8 @@ var highcharts = { exports: {} };
           const oi = ti.chart, di = oi.renderer, mi = this.stacks;
           ti = Ni(oi, ti.options.stackLabels && ti.options.stackLabels.animation || !1);
           const Oi = this.stackTotalGroup = this.stackTotalGroup || di.g("stack-labels").attr({ zIndex: 6, opacity: 0 }).add();
-          Oi.translate(oi.plotLeft, oi.plotTop), pi(mi, function(hi) {
-            pi(hi, function(Li) {
+          Oi.translate(oi.plotLeft, oi.plotTop), pi(mi, function(li) {
+            pi(li, function(Li) {
               Li.render(Oi);
             });
           }), Oi.animate({ opacity: 1 }, ti);
@@ -5463,9 +5463,9 @@ var highcharts = { exports: {} };
       ii,
       "Series/Line/LineSeries.js",
       [ii["Core/Series/Series.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]],
-      function(li, Ci, zi) {
+      function(hi, wi, zi) {
         const { defined: Ki, merge: Yi } = zi;
-        class es extends li {
+        class es extends hi {
           constructor() {
             super(...arguments), this.points = this.options = this.data = void 0;
           }
@@ -5475,16 +5475,16 @@ var highcharts = { exports: {} };
             bi || Ai[0].push(Vi.lineColor || this.color || "#cccccc", Vi.dashStyle), Ai = $i.getZonesGraphs(Ai), Ai.forEach(function(ji, Ni) {
               var gi = ji[0];
               let ki = $i[gi];
-              const wi = ki ? "animate" : "attr";
-              ki ? (ki.endX = $i.preventGraphAnimation ? null : _i.xMap, ki.animate({ d: _i })) : _i.length && ($i[gi] = ki = $i.chart.renderer.path(_i).addClass(ji[1]).attr({ zIndex: 1 }).add($i.group)), ki && !bi && (gi = { stroke: ji[2], "stroke-width": Vi.lineWidth || 0, fill: $i.fillGraph && $i.color || "none" }, ji[3] ? gi.dashstyle = ji[3] : Vi.linecap !== "square" && (gi["stroke-linecap"] = gi["stroke-linejoin"] = "round"), ki[wi](gi).shadow(2 > Ni && Vi.shadow)), ki && (ki.startX = _i.xMap, ki.isArea = _i.isArea);
+              const Ci = ki ? "animate" : "attr";
+              ki ? (ki.endX = $i.preventGraphAnimation ? null : _i.xMap, ki.animate({ d: _i })) : _i.length && ($i[gi] = ki = $i.chart.renderer.path(_i).addClass(ji[1]).attr({ zIndex: 1 }).add($i.group)), ki && !bi && (gi = { stroke: ji[2], "stroke-width": Vi.lineWidth || 0, fill: $i.fillGraph && $i.color || "none" }, ji[3] ? gi.dashstyle = ji[3] : Vi.linecap !== "square" && (gi["stroke-linecap"] = gi["stroke-linejoin"] = "round"), ki[Ci](gi).shadow(2 > Ni && Vi.shadow)), ki && (ki.startX = _i.xMap, ki.isArea = _i.isArea);
             });
           }
           getGraphPath($i, Vi, _i) {
             const bi = this, Ai = bi.options, ji = [], Ni = [];
             let gi, ki = Ai.step;
             $i = $i || bi.points;
-            const wi = $i.reversed;
-            return wi && $i.reverse(), (ki = { right: 1, center: 2 }[ki] || ki && 3) && wi && (ki = 4 - ki), $i = this.getValidPoints($i, !1, !(Ai.connectNulls && !Vi && !_i)), $i.forEach(function(Si, Ti) {
+            const Ci = $i.reversed;
+            return Ci && $i.reverse(), (ki = { right: 1, center: 2 }[ki] || ki && 3) && Ci && (ki = 4 - ki), $i = this.getValidPoints($i, !1, !(Ai.connectNulls && !Vi && !_i)), $i.forEach(function(Si, Ti) {
               const Mi = Si.plotX, Di = Si.plotY, ci = $i[Ti - 1], pi = Si.isNull || typeof Di != "number";
               (Si.leftCliff || ci && ci.rightCliff) && !_i && (gi = !0), pi && !Ki(Vi) && 0 < Ti ? gi = !Ai.connectNulls : pi && !Vi ? gi = !0 : (Ti === 0 || gi ? Ti = [["M", Si.plotX, Si.plotY]] : bi.getPointSpline ? Ti = [bi.getPointSpline($i, Si, Ti)] : ki ? (Ti = ki === 1 ? [["L", ci.plotX, Di]] : ki === 2 ? [["L", (ci.plotX + Mi) / 2, ci.plotY], ["L", (ci.plotX + Mi) / 2, Di]] : [["L", Mi, ci.plotY]], Ti.push(["L", Mi, Di])) : Ti = [["L", Mi, Di]], Ni.push(Si.x), ki && (Ni.push(Si.x), ki === 2 && Ni.push(Si.x)), ji.push.apply(ji, Ti), gi = !1);
             }), ji.xMap = Ni, bi.graphPath = ji;
@@ -5495,14 +5495,14 @@ var highcharts = { exports: {} };
             }, this), $i;
           }
         }
-        return es.defaultOptions = Yi(li.defaultOptions, { legendSymbol: "lineMarker" }), Ci.registerSeriesType("line", es), es;
+        return es.defaultOptions = Yi(hi.defaultOptions, { legendSymbol: "lineMarker" }), wi.registerSeriesType("line", es), es;
       }
     ), ri(ii, "Series/Area/AreaSeries.js", [
       ii["Core/Color/Color.js"],
       ii["Core/Series/SeriesRegistry.js"],
       ii["Core/Utilities.js"]
-    ], function(li, Ci, zi) {
-      const { seriesTypes: { line: Ki } } = Ci, { extend: Yi, merge: es, objectEach: is, pick: $i } = zi;
+    ], function(hi, wi, zi) {
+      const { seriesTypes: { line: Ki } } = wi, { extend: Yi, merge: es, objectEach: is, pick: $i } = zi;
       class Vi extends Ki {
         constructor() {
           super(...arguments), this.points = this.options = this.data = void 0;
@@ -5513,15 +5513,15 @@ var highcharts = { exports: {} };
           this.zones.forEach(function(gi, ki) {
             Ni.push(["zone-area-" + ki, "highcharts-area highcharts-zone-area-" + ki + " " + gi.className, gi.color || bi.color, gi.fillColor || ji.fillColor]);
           }), Ni.forEach(function(gi) {
-            const ki = gi[0], wi = {};
+            const ki = gi[0], Ci = {};
             let Si = bi[ki];
             const Ti = Si ? "animate" : "attr";
-            Si ? (Si.endX = bi.preventGraphAnimation ? null : Ai.xMap, Si.animate({ d: Ai })) : (wi.zIndex = 0, Si = bi[ki] = bi.chart.renderer.path(Ai).addClass(gi[1]).add(bi.group), Si.isArea = !0), bi.chart.styledMode || (gi[3] ? wi.fill = gi[3] : (wi.fill = gi[2], wi["fill-opacity"] = $i(ji.fillOpacity, 0.75))), Si[Ti](wi), Si.startX = Ai.xMap, Si.shiftUnit = ji.step ? 2 : 1;
+            Si ? (Si.endX = bi.preventGraphAnimation ? null : Ai.xMap, Si.animate({ d: Ai })) : (Ci.zIndex = 0, Si = bi[ki] = bi.chart.renderer.path(Ai).addClass(gi[1]).add(bi.group), Si.isArea = !0), bi.chart.styledMode || (gi[3] ? Ci.fill = gi[3] : (Ci.fill = gi[2], Ci["fill-opacity"] = $i(ji.fillOpacity, 0.75))), Si[Ti](Ci), Si.startX = Ai.xMap, Si.shiftUnit = ji.step ? 2 : 1;
           });
         }
         getGraphPath(bi) {
           var Ai = Ki.prototype.getGraphPath, ji = this.options;
-          const Ni = ji.stacking, gi = this.yAxis, ki = [], wi = [], Si = this.index, Ti = gi.stacking.stacks[this.stackKey], Mi = ji.threshold, Di = Math.round(gi.getThreshold(ji.threshold));
+          const Ni = ji.stacking, gi = this.yAxis, ki = [], Ci = [], Si = this.index, Ti = gi.stacking.stacks[this.stackKey], Mi = ji.threshold, Di = Math.round(gi.getThreshold(ji.threshold));
           ji = $i(ji.connectNulls, Ni === "percent");
           var ci = function(fi, si, ti) {
             var oi = bi[fi];
@@ -5529,7 +5529,7 @@ var highcharts = { exports: {} };
             const di = oi[ti + "Null"] || 0;
             ti = oi[ti + "Cliff"] || 0;
             let mi, Oi;
-            oi = !0, ti || di ? (mi = (di ? fi[0] : fi[1]) + ti, Oi = fi[0] + ti, oi = !!di) : !Ni && bi[si] && bi[si].isNull && (mi = Oi = Mi), typeof mi < "u" && (wi.push({ plotX: pi, plotY: mi === null ? Di : gi.getThreshold(mi), isNull: oi, isCliff: !0 }), ki.push({ plotX: pi, plotY: Oi === null ? Di : gi.getThreshold(Oi), doCurve: !1 }));
+            oi = !0, ti || di ? (mi = (di ? fi[0] : fi[1]) + ti, Oi = fi[0] + ti, oi = !!di) : !Ni && bi[si] && bi[si].isNull && (mi = Oi = Mi), typeof mi < "u" && (Ci.push({ plotX: pi, plotY: mi === null ? Di : gi.getThreshold(mi), isNull: oi, isCliff: !0 }), ki.push({ plotX: pi, plotY: Oi === null ? Di : gi.getThreshold(Oi), doCurve: !1 }));
           };
           let pi;
           bi = bi || this.points, Ni && (bi = this.getStackPoints(bi));
@@ -5538,16 +5538,16 @@ var highcharts = { exports: {} };
             var vi = bi[fi].isNull;
             pi = $i(bi[fi].rectPlotX, bi[fi].plotX);
             var ui = Ni ? $i(bi[fi].yBottom, Di) : Di;
-            (!vi || ji) && (ji || ci(fi, fi - 1, "left"), vi && !Ni && ji || (wi.push(bi[fi]), ki.push({ x: fi, plotX: pi, plotY: ui })), ji || ci(fi, fi + 1, "right"));
+            (!vi || ji) && (ji || ci(fi, fi - 1, "left"), vi && !Ni && ji || (Ci.push(bi[fi]), ki.push({ x: fi, plotX: pi, plotY: ui })), ji || ci(fi, fi + 1, "right"));
           }
-          return ci = Ai.call(this, wi, !0, !0), ki.reversed = !0, vi = Ai.call(this, ki, !0, !0), (ui = vi[0]) && ui[0] === "M" && (vi[0] = ["L", ui[1], ui[2]]), vi = ci.concat(vi), vi.length && vi.push(["Z"]), Ai = Ai.call(this, wi, !1, ji), vi.xMap = ci.xMap, this.areaPath = vi, Ai;
+          return ci = Ai.call(this, Ci, !0, !0), ki.reversed = !0, vi = Ai.call(this, ki, !0, !0), (ui = vi[0]) && ui[0] === "M" && (vi[0] = ["L", ui[1], ui[2]]), vi = ci.concat(vi), vi.length && vi.push(["Z"]), Ai = Ai.call(this, Ci, !1, ji), vi.xMap = ci.xMap, this.areaPath = vi, Ai;
         }
         getStackPoints(bi) {
-          const Ai = this, ji = [], Ni = [], gi = this.xAxis, ki = this.yAxis, wi = ki.stacking.stacks[this.stackKey], Si = {}, Ti = ki.series, Mi = Ti.length, Di = ki.options.reversedStacks ? 1 : -1, ci = Ti.indexOf(Ai);
+          const Ai = this, ji = [], Ni = [], gi = this.xAxis, ki = this.yAxis, Ci = ki.stacking.stacks[this.stackKey], Si = {}, Ti = ki.series, Mi = Ti.length, Di = ki.options.reversedStacks ? 1 : -1, ci = Ti.indexOf(Ai);
           if (bi = bi || this.points, this.options.stacking) {
             for (let vi = 0; vi < bi.length; vi++)
               bi[vi].leftNull = bi[vi].rightNull = void 0, Si[bi[vi].x] = bi[vi];
-            is(wi, function(vi, ui) {
+            is(Ci, function(vi, ui) {
               vi.total !== null && Ni.push(ui);
             }), Ni.sort(function(vi, ui) {
               return vi - ui;
@@ -5557,13 +5557,13 @@ var highcharts = { exports: {} };
               let fi = 0, si, ti;
               if (Si[vi] && !Si[vi].isNull)
                 ji.push(Si[vi]), [-1, 1].forEach(function(oi) {
-                  const di = oi === 1 ? "rightNull" : "leftNull", mi = wi[Ni[ui + oi]];
+                  const di = oi === 1 ? "rightNull" : "leftNull", mi = Ci[Ni[ui + oi]];
                   let Oi = 0;
                   if (mi) {
-                    let hi = ci;
-                    for (; 0 <= hi && hi < Mi; ) {
-                      const Li = Ti[hi].index;
-                      si = mi.points[Li], si || (Li === Ai.index ? Si[vi][di] = !0 : pi[hi] && (ti = wi[vi].points[Li]) && (Oi -= ti[1] - ti[0])), hi += Di;
+                    let li = ci;
+                    for (; 0 <= li && li < Mi; ) {
+                      const Li = Ti[li].index;
+                      si = mi.points[Li], si || (Li === Ai.index ? Si[vi][di] = !0 : pi[li] && (ti = Ci[vi].points[Li]) && (Oi -= ti[1] - ti[0])), li += Di;
                     }
                   }
                   Si[vi][oi === 1 ? "rightCliff" : "leftCliff"] = Oi;
@@ -5571,7 +5571,7 @@ var highcharts = { exports: {} };
               else {
                 let oi = ci;
                 for (; 0 <= oi && oi < Mi; ) {
-                  if (si = wi[vi].points[Ti[oi].index]) {
+                  if (si = Ci[vi].points[Ti[oi].index]) {
                     fi = si[1];
                     break;
                   }
@@ -5584,9 +5584,9 @@ var highcharts = { exports: {} };
           return ji;
         }
       }
-      return Vi.defaultOptions = es(Ki.defaultOptions, { threshold: 0, legendSymbol: "rectangle" }), Yi(Vi.prototype, { singleStacks: !1 }), Ci.registerSeriesType("area", Vi), Vi;
-    }), ri(ii, "Series/Spline/SplineSeries.js", [ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(li, Ci) {
-      const { line: zi } = li.seriesTypes, { merge: Ki, pick: Yi } = Ci;
+      return Vi.defaultOptions = es(Ki.defaultOptions, { threshold: 0, legendSymbol: "rectangle" }), Yi(Vi.prototype, { singleStacks: !1 }), wi.registerSeriesType("area", Vi), Vi;
+    }), ri(ii, "Series/Spline/SplineSeries.js", [ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(hi, wi) {
+      const { line: zi } = hi.seriesTypes, { merge: Ki, pick: Yi } = wi;
       class es extends zi {
         constructor() {
           super(...arguments), this.points = this.options = this.data = void 0;
@@ -5597,26 +5597,26 @@ var highcharts = { exports: {} };
           let Ni, gi, ki;
           if (ji && !ji.isNull && ji.doCurve !== !1 && !Vi.isCliff && _i && !_i.isNull && _i.doCurve !== !1 && !Vi.isCliff) {
             $i = ji.plotY || 0;
-            var wi = _i.plotX || 0;
+            var Ci = _i.plotX || 0;
             _i = _i.plotY || 0;
             let Si = 0;
-            Ni = (1.5 * bi + (ji.plotX || 0)) / 2.5, gi = (1.5 * Ai + $i) / 2.5, wi = (1.5 * bi + wi) / 2.5, ki = (1.5 * Ai + _i) / 2.5, wi !== Ni && (Si = (ki - gi) * (wi - bi) / (wi - Ni) + Ai - ki), gi += Si, ki += Si, gi > $i && gi > Ai ? (gi = Math.max($i, Ai), ki = 2 * Ai - gi) : gi < $i && gi < Ai && (gi = Math.min($i, Ai), ki = 2 * Ai - gi), ki > _i && ki > Ai ? (ki = Math.max(_i, Ai), gi = 2 * Ai - ki) : ki < _i && ki < Ai && (ki = Math.min(_i, Ai), gi = 2 * Ai - ki), Vi.rightContX = wi, Vi.rightContY = ki;
+            Ni = (1.5 * bi + (ji.plotX || 0)) / 2.5, gi = (1.5 * Ai + $i) / 2.5, Ci = (1.5 * bi + Ci) / 2.5, ki = (1.5 * Ai + _i) / 2.5, Ci !== Ni && (Si = (ki - gi) * (Ci - bi) / (Ci - Ni) + Ai - ki), gi += Si, ki += Si, gi > $i && gi > Ai ? (gi = Math.max($i, Ai), ki = 2 * Ai - gi) : gi < $i && gi < Ai && (gi = Math.min($i, Ai), ki = 2 * Ai - gi), ki > _i && ki > Ai ? (ki = Math.max(_i, Ai), gi = 2 * Ai - ki) : ki < _i && ki < Ai && (ki = Math.min(_i, Ai), gi = 2 * Ai - ki), Vi.rightContX = Ci, Vi.rightContY = ki;
           }
           return Vi = ["C", Yi(ji.rightContX, ji.plotX, 0), Yi(ji.rightContY, ji.plotY, 0), Yi(Ni, bi, 0), Yi(gi, Ai, 0), bi, Ai], ji.rightContX = ji.rightContY = void 0, Vi;
         }
       }
-      return es.defaultOptions = Ki(zi.defaultOptions), li.registerSeriesType(
+      return es.defaultOptions = Ki(zi.defaultOptions), hi.registerSeriesType(
         "spline",
         es
       ), es;
-    }), ri(ii, "Series/AreaSpline/AreaSplineSeries.js", [ii["Series/Spline/SplineSeries.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
-      const { area: Ki, area: { prototype: Yi } } = Ci.seriesTypes, { extend: es, merge: is } = zi;
-      class $i extends li {
+    }), ri(ii, "Series/AreaSpline/AreaSplineSeries.js", [ii["Series/Spline/SplineSeries.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(hi, wi, zi) {
+      const { area: Ki, area: { prototype: Yi } } = wi.seriesTypes, { extend: es, merge: is } = zi;
+      class $i extends hi {
         constructor() {
           super(...arguments), this.options = this.points = this.data = void 0;
         }
       }
-      return $i.defaultOptions = is(li.defaultOptions, Ki.defaultOptions), es($i.prototype, { getGraphPath: Yi.getGraphPath, getStackPoints: Yi.getStackPoints, drawGraph: Yi.drawGraph }), Ci.registerSeriesType(
+      return $i.defaultOptions = is(hi.defaultOptions, Ki.defaultOptions), es($i.prototype, { getGraphPath: Yi.getGraphPath, getStackPoints: Yi.getStackPoints, drawGraph: Yi.drawGraph }), wi.registerSeriesType(
         "areaspline",
         $i
       ), $i;
@@ -5630,8 +5630,8 @@ var highcharts = { exports: {} };
       ii["Core/Series/Series.js"],
       ii["Core/Series/SeriesRegistry.js"],
       ii["Core/Utilities.js"]
-    ], function(li, Ci, zi, Ki, Yi, es, is) {
-      const { animObject: $i } = li, { parse: Vi } = Ci, { hasTouch: _i, noop: bi } = Ki, { clamp: Ai, defined: ji, extend: Ni, fireEvent: gi, isArray: ki, isNumber: wi, merge: Si, pick: Ti, objectEach: Mi } = is;
+    ], function(hi, wi, zi, Ki, Yi, es, is) {
+      const { animObject: $i } = hi, { parse: Vi } = wi, { hasTouch: _i, noop: bi } = Ki, { clamp: Ai, defined: ji, extend: Ni, fireEvent: gi, isArray: ki, isNumber: Ci, merge: Si, pick: Ti, objectEach: Mi } = is;
       class Di extends Yi {
         constructor() {
           super(...arguments), this.points = this.options = this.group = this.data = this.borderWidth = void 0;
@@ -5639,8 +5639,8 @@ var highcharts = { exports: {} };
         animate(pi) {
           const vi = this, ui = this.yAxis, fi = ui.pos, si = vi.options, ti = this.chart.inverted, oi = {}, di = ti ? "translateX" : "translateY";
           let mi;
-          pi ? (oi.scaleY = 1e-3, pi = Ai(ui.toPixels(si.threshold), fi, fi + ui.len), ti ? oi.translateX = pi - ui.len : oi.translateY = pi, vi.clipBox && vi.setClip(), vi.group.attr(oi)) : (mi = Number(vi.group.attr(di)), vi.group.animate({ scaleY: 1 }, Ni($i(vi.options.animation), { step: function(Oi, hi) {
-            vi.group && (oi[di] = mi + hi.pos * (fi - mi), vi.group.attr(oi));
+          pi ? (oi.scaleY = 1e-3, pi = Ai(ui.toPixels(si.threshold), fi, fi + ui.len), ti ? oi.translateX = pi - ui.len : oi.translateY = pi, vi.clipBox && vi.setClip(), vi.group.attr(oi)) : (mi = Number(vi.group.attr(di)), vi.group.animate({ scaleY: 1 }, Ni($i(vi.options.animation), { step: function(Oi, li) {
+            vi.group && (oi[di] = mi + li.pos * (fi - mi), vi.group.attr(oi));
           } })));
         }
         init(pi, vi) {
@@ -5663,8 +5663,8 @@ var highcharts = { exports: {} };
             let rs;
             Li.type !== pi.type || !Li.visible && pi.chart.options.chart.ignoreHiddenSeries || fi.len !== Ui.len || fi.pos !== Ui.pos || (Zi.stacking && Zi.stacking !== "group" ? (oi = Li.stackKey, typeof ti[oi] > "u" && (ti[oi] = di++), rs = ti[oi]) : Zi.grouping !== !1 && (rs = di++), Li.columnIndex = rs);
           });
-          const mi = Math.min(Math.abs(ui.transA) * (ui.ordinal && ui.ordinal.slope || vi.pointRange || ui.closestPointRange || ui.tickInterval || 1), ui.len), Oi = mi * vi.groupPadding, hi = (mi - 2 * Oi) / (di || 1);
-          return vi = Math.min(vi.maxPointWidth || ui.len, Ti(vi.pointWidth, hi * (1 - 2 * vi.pointPadding))), pi.columnMetrics = { width: vi, offset: (hi - vi) / 2 + (Oi + ((pi.columnIndex || 0) + (si ? 1 : 0)) * hi - mi / 2) * (si ? -1 : 1), paddedWidth: hi, columnCount: di }, pi.columnMetrics;
+          const mi = Math.min(Math.abs(ui.transA) * (ui.ordinal && ui.ordinal.slope || vi.pointRange || ui.closestPointRange || ui.tickInterval || 1), ui.len), Oi = mi * vi.groupPadding, li = (mi - 2 * Oi) / (di || 1);
+          return vi = Math.min(vi.maxPointWidth || ui.len, Ti(vi.pointWidth, li * (1 - 2 * vi.pointPadding))), pi.columnMetrics = { width: vi, offset: (li - vi) / 2 + (Oi + ((pi.columnIndex || 0) + (si ? 1 : 0)) * li - mi / 2) * (si ? -1 : 1), paddedWidth: li, columnCount: di }, pi.columnMetrics;
         }
         crispCol(pi, vi, ui, fi) {
           var si = this.borderWidth, ti = -(si % 2 ? 0.5 : 0);
@@ -5678,7 +5678,7 @@ var highcharts = { exports: {} };
             Mi(this.yAxis.stacking && this.yAxis.stacking.stacks, (mi) => {
               if (typeof ui.x == "number") {
                 const Oi = mi[ui.x.toString()];
-                Oi && (mi = Oi.points[this.index], si ? (mi && (oi = di), Oi.hasValidPoints && (ti ? di++ : di--)) : ki(mi) && (mi = Object.keys(Oi.points).filter((hi) => !hi.match(",") && Oi.points[hi] && 1 < Oi.points[hi].length).map(parseFloat).sort((hi, Li) => Li - hi), oi = mi.indexOf(this.index), di = mi.length));
+                Oi && (mi = Oi.points[this.index], si ? (mi && (oi = di), Oi.hasValidPoints && (ti ? di++ : di--)) : ki(mi) && (mi = Object.keys(Oi.points).filter((li) => !li.match(",") && Oi.points[li] && 1 < Oi.points[li].length).map(parseFloat).sort((li, Li) => Li - li), oi = mi.indexOf(this.index), di = mi.length));
               }
             }), pi = (ui.plotX || 0) + ((di - 1) * fi.paddedWidth + vi) / 2 - vi - oi * fi.paddedWidth;
           }
@@ -5688,14 +5688,14 @@ var highcharts = { exports: {} };
           const pi = this, vi = pi.chart, ui = pi.options;
           var fi = pi.dense = 2 > pi.closestPointRange * pi.xAxis.transA;
           fi = pi.borderWidth = Ti(ui.borderWidth, fi ? 0 : 1);
-          const si = pi.xAxis, ti = pi.yAxis, oi = ui.threshold, di = Ti(ui.minPointLength, 5), mi = pi.getColumnMetrics(), Oi = mi.width, hi = pi.pointXOffset = mi.offset, Li = pi.dataMin, Ui = pi.dataMax;
+          const si = pi.xAxis, ti = pi.yAxis, oi = ui.threshold, di = Ti(ui.minPointLength, 5), mi = pi.getColumnMetrics(), Oi = mi.width, li = pi.pointXOffset = mi.offset, Li = pi.dataMin, Ui = pi.dataMax;
           let Zi = pi.barW = Math.max(Oi, 1 + 2 * fi), rs = pi.translatedThreshold = ti.getThreshold(oi);
           vi.inverted && (rs -= 0.5), ui.pointPadding && (Zi = Math.ceil(Zi)), Yi.prototype.translate.apply(pi), pi.points.forEach(function(Bi) {
             const ni = Ti(Bi.yBottom, rs);
             var Pi = 999 + Math.abs(ni), Hi = Bi.plotX || 0;
             Pi = Ai(Bi.plotY, -Pi, ti.len + Pi);
-            let Ri = Math.min(Pi, ni), qi = Math.max(Pi, ni) - Ri, ai = Oi, xi = Hi + hi, yi = Zi;
-            di && Math.abs(qi) < di && (qi = di, Hi = !ti.reversed && !Bi.negative || ti.reversed && Bi.negative, wi(oi) && wi(Ui) && Bi.y === oi && Ui <= oi && (ti.min || 0) < oi && (Li !== Ui || (ti.max || 0) <= oi) && (Hi = !Hi, Bi.negative = !Bi.negative), Ri = Math.abs(Ri - rs) > di ? ni - di : rs - (Hi ? di : 0)), ji(Bi.options.pointWidth) && (ai = yi = Math.ceil(Bi.options.pointWidth), xi -= Math.round((ai - Oi) / 2)), ui.centerInCategory && (xi = pi.adjustForMissingColumns(xi, ai, Bi, mi)), Bi.barX = xi, Bi.pointWidth = ai, Bi.tooltipPos = vi.inverted ? [Ai(ti.len + ti.pos - vi.plotLeft - Pi, ti.pos - vi.plotLeft, ti.len + ti.pos - vi.plotLeft), si.len + si.pos - vi.plotTop - xi - yi / 2, qi] : [si.left - vi.plotLeft + xi + yi / 2, Ai(Pi + ti.pos - vi.plotTop, ti.pos - vi.plotTop, ti.len + ti.pos - vi.plotTop), qi], Bi.shapeType = pi.pointClass.prototype.shapeType || "roundedRect", Bi.shapeArgs = pi.crispCol(xi, Bi.isNull ? rs : Ri, yi, Bi.isNull ? 0 : qi);
+            let Ri = Math.min(Pi, ni), qi = Math.max(Pi, ni) - Ri, ai = Oi, xi = Hi + li, yi = Zi;
+            di && Math.abs(qi) < di && (qi = di, Hi = !ti.reversed && !Bi.negative || ti.reversed && Bi.negative, Ci(oi) && Ci(Ui) && Bi.y === oi && Ui <= oi && (ti.min || 0) < oi && (Li !== Ui || (ti.max || 0) <= oi) && (Hi = !Hi, Bi.negative = !Bi.negative), Ri = Math.abs(Ri - rs) > di ? ni - di : rs - (Hi ? di : 0)), ji(Bi.options.pointWidth) && (ai = yi = Math.ceil(Bi.options.pointWidth), xi -= Math.round((ai - Oi) / 2)), ui.centerInCategory && (xi = pi.adjustForMissingColumns(xi, ai, Bi, mi)), Bi.barX = xi, Bi.pointWidth = ai, Bi.tooltipPos = vi.inverted ? [Ai(ti.len + ti.pos - vi.plotLeft - Pi, ti.pos - vi.plotLeft, ti.len + ti.pos - vi.plotLeft), si.len + si.pos - vi.plotTop - xi - yi / 2, qi] : [si.left - vi.plotLeft + xi + yi / 2, Ai(Pi + ti.pos - vi.plotTop, ti.pos - vi.plotTop, ti.len + ti.pos - vi.plotTop), qi], Bi.shapeType = pi.pointClass.prototype.shapeType || "roundedRect", Bi.shapeArgs = pi.crispCol(xi, Bi.isNull ? rs : Ri, yi, Bi.isNull ? 0 : qi);
           }), gi(this, "afterColumnTranslate");
         }
         drawGraph() {
@@ -5707,18 +5707,18 @@ var highcharts = { exports: {} };
           const ti = fi["stroke-width"] || "borderWidth";
           let oi, di = pi && pi.color || this.color, mi = pi && pi[si] || ui[si] || di;
           fi = pi && pi.options.dashStyle || ui.dashStyle;
-          let Oi = pi && pi[ti] || ui[ti] || this[ti] || 0, hi = Ti(pi && pi.opacity, ui.opacity, 1);
+          let Oi = pi && pi[ti] || ui[ti] || this[ti] || 0, li = Ti(pi && pi.opacity, ui.opacity, 1);
           return pi && this.zones.length && (oi = pi.getZone(), di = pi.options.color || oi && (oi.color || pi.nonZonedColor) || this.color, oi && (mi = oi.borderColor || mi, fi = oi.dashStyle || fi, Oi = oi.borderWidth || Oi)), vi && pi && (pi = Si(
             ui.states[vi],
             pi.options.states && pi.options.states[vi] || {}
-          ), vi = pi.brightness, di = pi.color || typeof vi < "u" && Vi(di).brighten(pi.brightness).get() || di, mi = pi[si] || mi, Oi = pi[ti] || Oi, fi = pi.dashStyle || fi, hi = Ti(pi.opacity, hi)), si = { fill: di, stroke: mi, "stroke-width": Oi, opacity: hi }, fi && (si.dashstyle = fi), si;
+          ), vi = pi.brightness, di = pi.color || typeof vi < "u" && Vi(di).brighten(pi.brightness).get() || di, mi = pi[si] || mi, Oi = pi[ti] || Oi, fi = pi.dashStyle || fi, li = Ti(pi.opacity, li)), si = { fill: di, stroke: mi, "stroke-width": Oi, opacity: li }, fi && (si.dashstyle = fi), si;
         }
         drawPoints(pi = this.points) {
           const vi = this, ui = this.chart, fi = vi.options, si = ui.renderer, ti = fi.animationLimit || 250;
           let oi;
           pi.forEach(function(di) {
-            let mi = di.graphic, Oi = !!mi, hi = mi && ui.pointCount < ti ? "animate" : "attr";
-            wi(di.plotY) && di.y !== null ? (oi = di.shapeArgs, mi && di.hasNewShapeType() && (mi = mi.destroy()), vi.enabledDataSorting && (di.startXPos = vi.xAxis.reversed ? -(oi && oi.width || 0) : vi.xAxis.width), mi || (di.graphic = mi = si[di.shapeType](oi).add(di.group || vi.group)) && vi.enabledDataSorting && ui.hasRendered && ui.pointCount < ti && (mi.attr({ x: di.startXPos }), Oi = !0, hi = "animate"), mi && Oi && mi[hi](Si(oi)), ui.styledMode || mi[hi](vi.pointAttribs(di, di.selected && "select")).shadow(di.allowShadow !== !1 && fi.shadow), mi && (mi.addClass(di.getClassName(), !0), mi.attr({ visibility: di.visible ? "inherit" : "hidden" }))) : mi && (di.graphic = mi.destroy());
+            let mi = di.graphic, Oi = !!mi, li = mi && ui.pointCount < ti ? "animate" : "attr";
+            Ci(di.plotY) && di.y !== null ? (oi = di.shapeArgs, mi && di.hasNewShapeType() && (mi = mi.destroy()), vi.enabledDataSorting && (di.startXPos = vi.xAxis.reversed ? -(oi && oi.width || 0) : vi.xAxis.width), mi || (di.graphic = mi = si[di.shapeType](oi).add(di.group || vi.group)) && vi.enabledDataSorting && ui.hasRendered && ui.pointCount < ti && (mi.attr({ x: di.startXPos }), Oi = !0, li = "animate"), mi && Oi && mi[li](Si(oi)), ui.styledMode || mi[li](vi.pointAttribs(di, di.selected && "select")).shadow(di.allowShadow !== !1 && fi.shadow), mi && (mi.addClass(di.getClassName(), !0), mi.attr({ visibility: di.visible ? "inherit" : "hidden" }))) : mi && (di.graphic = mi.destroy());
           });
         }
         drawTracker(pi = this.points) {
@@ -5751,14 +5751,14 @@ var highcharts = { exports: {} };
         "column",
         Di
       ), Di;
-    }), ri(ii, "Core/Series/DataLabel.js", [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Templating.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
-      const { getDeferredAnimation: Ki } = li, { format: Yi } = Ci, { defined: es, extend: is, fireEvent: $i, isArray: Vi, isString: _i, merge: bi, objectEach: Ai, pick: ji, splat: Ni } = zi;
+    }), ri(ii, "Core/Series/DataLabel.js", [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Templating.js"], ii["Core/Utilities.js"]], function(hi, wi, zi) {
+      const { getDeferredAnimation: Ki } = hi, { format: Yi } = wi, { defined: es, extend: is, fireEvent: $i, isArray: Vi, isString: _i, merge: bi, objectEach: Ai, pick: ji, splat: Ni } = zi;
       var gi;
       return function(ki) {
-        function wi(fi, si, ti, oi, di) {
+        function Ci(fi, si, ti, oi, di) {
           const mi = this.chart;
           var Oi = this.isCartesian && mi.inverted;
-          const hi = this.enabledDataSorting;
+          const li = this.enabledDataSorting;
           var Li = fi.plotX, Ui = fi.plotY;
           const Zi = ti.rotation;
           var rs = ti.align;
@@ -5767,11 +5767,11 @@ var highcharts = { exports: {} };
             Math.round(Ui),
             { inverted: Oi, paneCoordinates: !0, series: this }
           );
-          let Bi = ji(ti.overflow, hi ? "none" : "justify") === "justify";
-          if (Oi = this.visible && fi.visible !== !1 && es(Li) && (fi.series.forceDL || hi && !Bi || Ui || ji(ti.inside, !!this.options.stacking) && oi && mi.isInsidePlot(Li, Oi ? oi.x + 1 : oi.y + oi.height - 1, { inverted: Oi, paneCoordinates: !0, series: this })), Li = fi.pos(), Oi && Li) {
+          let Bi = ji(ti.overflow, li ? "none" : "justify") === "justify";
+          if (Oi = this.visible && fi.visible !== !1 && es(Li) && (fi.series.forceDL || li && !Bi || Ui || ji(ti.inside, !!this.options.stacking) && oi && mi.isInsidePlot(Li, Oi ? oi.x + 1 : oi.y + oi.height - 1, { inverted: Oi, paneCoordinates: !0, series: this })), Li = fi.pos(), Oi && Li) {
             Zi && si.attr({ align: rs }), rs = si.getBBox(!0);
             var ni = [0, 0], Pi = mi.renderer.fontMetrics(si).b;
-            if (oi = is({ x: Li[0], y: Math.round(Li[1]), width: 0, height: 0 }, oi), is(ti, { width: rs.width, height: rs.height }), Zi ? (Bi = !1, ni = mi.renderer.rotCorr(Pi, Zi), Pi = { x: oi.x + (ti.x || 0) + oi.width / 2 + ni.x, y: oi.y + (ti.y || 0) + { top: 0, middle: 0.5, bottom: 1 }[ti.verticalAlign] * oi.height }, ni = [rs.x - Number(si.attr("x")), rs.y - Number(si.attr("y"))], hi && this.xAxis && !Bi && this.setDataLabelStartPos(fi, si, di, Ui, Pi), si[di ? "attr" : "animate"](Pi)) : (hi && this.xAxis && !Bi && this.setDataLabelStartPos(fi, si, di, Ui, oi), si.align(ti, void 0, oi), Pi = si.alignAttr), Bi && 0 <= oi.height)
+            if (oi = is({ x: Li[0], y: Math.round(Li[1]), width: 0, height: 0 }, oi), is(ti, { width: rs.width, height: rs.height }), Zi ? (Bi = !1, ni = mi.renderer.rotCorr(Pi, Zi), Pi = { x: oi.x + (ti.x || 0) + oi.width / 2 + ni.x, y: oi.y + (ti.y || 0) + { top: 0, middle: 0.5, bottom: 1 }[ti.verticalAlign] * oi.height }, ni = [rs.x - Number(si.attr("x")), rs.y - Number(si.attr("y"))], li && this.xAxis && !Bi && this.setDataLabelStartPos(fi, si, di, Ui, Pi), si[di ? "attr" : "animate"](Pi)) : (li && this.xAxis && !Bi && this.setDataLabelStartPos(fi, si, di, Ui, oi), si.align(ti, void 0, oi), Pi = si.alignAttr), Bi && 0 <= oi.height)
               this.justifyDataLabel(si, ti, Pi, rs, oi, di);
             else if (ji(ti.crop, !0)) {
               let { x: Hi, y: Ri } = Pi;
@@ -5782,7 +5782,7 @@ var highcharts = { exports: {} };
             }
             ti.shape && !Zi && si[di ? "attr" : "animate"]({ anchorX: Li[0], anchorY: Li[1] });
           }
-          di && hi && (si.placed = !1), Oi || hi && !Bi ? si.show() : (si.hide(), si.placed = !1);
+          di && li && (si.placed = !1), Oi || li && !Bi ? si.show() : (si.hide(), si.placed = !1);
         }
         function Si(fi, si) {
           var ti = si.filter;
@@ -5797,7 +5797,7 @@ var highcharts = { exports: {} };
         }
         function Di(fi = this.points) {
           var si, ti;
-          const oi = this, di = oi.chart, mi = oi.options, Oi = di.renderer, { backgroundColor: hi, plotBackgroundColor: Li } = di.options.chart, Ui = di.options.plotOptions, Zi = Oi.getContrast(_i(Li) && Li || _i(hi) && hi || "#000000");
+          const oi = this, di = oi.chart, mi = oi.options, Oi = di.renderer, { backgroundColor: li, plotBackgroundColor: Li } = di.options.chart, Ui = di.options.plotOptions, Zi = Oi.getContrast(_i(Li) && Li || _i(li) && li || "#000000");
           let rs = mi.dataLabels, Bi, ni;
           var Pi = Ni(rs)[0];
           const Hi = Pi.animation;
@@ -5826,9 +5826,9 @@ var highcharts = { exports: {} };
           })), $i(this, "afterDrawDataLabels");
         }
         function ci(fi, si, ti, oi, di, mi) {
-          const Oi = this.chart, hi = si.align, Li = si.verticalAlign, Ui = fi.box ? 0 : fi.padding || 0;
+          const Oi = this.chart, li = si.align, Li = si.verticalAlign, Ui = fi.box ? 0 : fi.padding || 0;
           let { x: Zi = 0, y: rs = 0 } = si, Bi, ni;
-          return Bi = (ti.x || 0) + Ui, 0 > Bi && (hi === "right" && 0 <= Zi ? (si.align = "left", si.inside = !0) : Zi -= Bi, ni = !0), Bi = (ti.x || 0) + oi.width - Ui, Bi > Oi.plotWidth && (hi === "left" && 0 >= Zi ? (si.align = "right", si.inside = !0) : Zi += Oi.plotWidth - Bi, ni = !0), Bi = ti.y + Ui, 0 > Bi && (Li === "bottom" && 0 <= rs ? (si.verticalAlign = "top", si.inside = !0) : rs -= Bi, ni = !0), Bi = (ti.y || 0) + oi.height - Ui, Bi > Oi.plotHeight && (Li === "top" && 0 >= rs ? (si.verticalAlign = "bottom", si.inside = !0) : rs += Oi.plotHeight - Bi, ni = !0), ni && (si.x = Zi, si.y = rs, fi.placed = !mi, fi.align(si, void 0, di)), ni;
+          return Bi = (ti.x || 0) + Ui, 0 > Bi && (li === "right" && 0 <= Zi ? (si.align = "left", si.inside = !0) : Zi -= Bi, ni = !0), Bi = (ti.x || 0) + oi.width - Ui, Bi > Oi.plotWidth && (li === "left" && 0 >= Zi ? (si.align = "right", si.inside = !0) : Zi += Oi.plotWidth - Bi, ni = !0), Bi = ti.y + Ui, 0 > Bi && (Li === "bottom" && 0 <= rs ? (si.verticalAlign = "top", si.inside = !0) : rs -= Bi, ni = !0), Bi = (ti.y || 0) + oi.height - Ui, Bi > Oi.plotHeight && (Li === "top" && 0 >= rs ? (si.verticalAlign = "bottom", si.inside = !0) : rs += Oi.plotHeight - Bi, ni = !0), ni && (si.x = Zi, si.y = rs, fi.placed = !mi, fi.align(si, void 0, di)), ni;
         }
         function pi(fi, si) {
           let ti = [], oi;
@@ -5848,48 +5848,48 @@ var highcharts = { exports: {} };
           return ti;
         }
         function vi(fi, si, ti, oi, di) {
-          const mi = this.chart, Oi = mi.inverted, hi = this.xAxis, Li = hi.reversed, Ui = Oi ? si.height / 2 : si.width / 2;
-          fi = (fi = fi.pointWidth) ? fi / 2 : 0, si.startXPos = Oi ? di.x : Li ? -Ui - fi : hi.width - Ui + fi, si.startYPos = Oi ? Li ? this.yAxis.height - Ui + fi : -Ui - fi : di.y, oi ? si.visibility === "hidden" && (si.show(), si.attr({ opacity: 0 }).animate({ opacity: 1 })) : si.attr({ opacity: 1 }).animate({ opacity: 0 }, void 0, si.hide), mi.hasRendered && (ti && si.attr({ x: si.startXPos, y: si.startYPos }), si.placed = !0);
+          const mi = this.chart, Oi = mi.inverted, li = this.xAxis, Li = li.reversed, Ui = Oi ? si.height / 2 : si.width / 2;
+          fi = (fi = fi.pointWidth) ? fi / 2 : 0, si.startXPos = Oi ? di.x : Li ? -Ui - fi : li.width - Ui + fi, si.startYPos = Oi ? Li ? this.yAxis.height - Ui + fi : -Ui - fi : di.y, oi ? si.visibility === "hidden" && (si.show(), si.attr({ opacity: 0 }).animate({ opacity: 1 })) : si.attr({ opacity: 1 }).animate({ opacity: 0 }, void 0, si.hide), mi.hasRendered && (ti && si.attr({ x: si.startXPos, y: si.startYPos }), si.placed = !0);
         }
         const ui = [];
         ki.compose = function(fi) {
-          zi.pushUnique(ui, fi) && (fi = fi.prototype, fi.initDataLabelsGroup = Ti, fi.initDataLabels = Mi, fi.alignDataLabel = wi, fi.drawDataLabels = Di, fi.justifyDataLabel = ci, fi.setDataLabelStartPos = vi);
+          zi.pushUnique(ui, fi) && (fi = fi.prototype, fi.initDataLabelsGroup = Ti, fi.initDataLabels = Mi, fi.alignDataLabel = Ci, fi.drawDataLabels = Di, fi.justifyDataLabel = ci, fi.setDataLabelStartPos = vi);
         };
       }(gi || (gi = {})), gi;
-    }), ri(ii, "Series/Column/ColumnDataLabel.js", [ii["Core/Series/DataLabel.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
-      const { series: Ki } = Ci, { merge: Yi, pick: es } = zi;
+    }), ri(ii, "Series/Column/ColumnDataLabel.js", [ii["Core/Series/DataLabel.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(hi, wi, zi) {
+      const { series: Ki } = wi, { merge: Yi, pick: es } = zi;
       var is;
       return function($i) {
         function Vi(bi, Ai, ji, Ni, gi) {
           let ki = this.chart.inverted;
-          var wi = bi.series;
-          let Si = (wi.xAxis ? wi.xAxis.len : this.chart.plotSizeX) || 0;
-          wi = (wi.yAxis ? wi.yAxis.len : this.chart.plotSizeY) || 0;
+          var Ci = bi.series;
+          let Si = (Ci.xAxis ? Ci.xAxis.len : this.chart.plotSizeX) || 0;
+          Ci = (Ci.yAxis ? Ci.yAxis.len : this.chart.plotSizeY) || 0;
           var Ti = bi.dlBox || bi.shapeArgs;
-          let Mi = es(bi.below, bi.plotY > es(this.translatedThreshold, wi)), Di = es(ji.inside, !!this.options.stacking);
-          Ti && (Ni = Yi(Ti), 0 > Ni.y && (Ni.height += Ni.y, Ni.y = 0), Ti = Ni.y + Ni.height - wi, 0 < Ti && Ti < Ni.height && (Ni.height -= Ti), ki && (Ni = { x: wi - Ni.y - Ni.height, y: Si - Ni.x - Ni.width, width: Ni.height, height: Ni.width }), Di || (ki ? (Ni.x += Mi ? 0 : Ni.width, Ni.width = 0) : (Ni.y += Mi ? Ni.height : 0, Ni.height = 0))), ji.align = es(ji.align, !ki || Di ? "center" : Mi ? "right" : "left"), ji.verticalAlign = es(ji.verticalAlign, ki || Di ? "middle" : Mi ? "top" : "bottom"), Ki.prototype.alignDataLabel.call(this, bi, Ai, ji, Ni, gi), ji.inside && bi.contrastColor && Ai.css({ color: bi.contrastColor });
+          let Mi = es(bi.below, bi.plotY > es(this.translatedThreshold, Ci)), Di = es(ji.inside, !!this.options.stacking);
+          Ti && (Ni = Yi(Ti), 0 > Ni.y && (Ni.height += Ni.y, Ni.y = 0), Ti = Ni.y + Ni.height - Ci, 0 < Ti && Ti < Ni.height && (Ni.height -= Ti), ki && (Ni = { x: Ci - Ni.y - Ni.height, y: Si - Ni.x - Ni.width, width: Ni.height, height: Ni.width }), Di || (ki ? (Ni.x += Mi ? 0 : Ni.width, Ni.width = 0) : (Ni.y += Mi ? Ni.height : 0, Ni.height = 0))), ji.align = es(ji.align, !ki || Di ? "center" : Mi ? "right" : "left"), ji.verticalAlign = es(ji.verticalAlign, ki || Di ? "middle" : Mi ? "top" : "bottom"), Ki.prototype.alignDataLabel.call(this, bi, Ai, ji, Ni, gi), ji.inside && bi.contrastColor && Ai.css({ color: bi.contrastColor });
         }
         const _i = [];
         $i.compose = function(bi) {
-          li.compose(Ki), zi.pushUnique(_i, bi) && (bi.prototype.alignDataLabel = Vi);
+          hi.compose(Ki), zi.pushUnique(_i, bi) && (bi.prototype.alignDataLabel = Vi);
         };
       }(is || (is = {})), is;
-    }), ri(ii, "Series/Bar/BarSeries.js", [ii["Series/Column/ColumnSeries.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
+    }), ri(ii, "Series/Bar/BarSeries.js", [ii["Series/Column/ColumnSeries.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(hi, wi, zi) {
       const { extend: Ki, merge: Yi } = zi;
-      class es extends li {
+      class es extends hi {
         constructor() {
           super(...arguments), this.points = this.options = this.data = void 0;
         }
       }
-      return es.defaultOptions = Yi(li.defaultOptions, {}), Ki(es.prototype, { inverted: !0 }), Ci.registerSeriesType("bar", es), es;
+      return es.defaultOptions = Yi(hi.defaultOptions, {}), Ki(es.prototype, { inverted: !0 }), wi.registerSeriesType("bar", es), es;
     }), ri(ii, "Series/Scatter/ScatterSeriesDefaults.js", [], function() {
       return { lineWidth: 0, findNearestPointBy: "xy", jitter: { x: 0, y: 0 }, marker: { enabled: !0 }, tooltip: { headerFormat: '<span style="color:{point.color}">●</span> <span style="font-size: 0.8em"> {series.name}</span><br/>', pointFormat: "x: <b>{point.x}</b><br/>y: <b>{point.y}</b><br/>" } };
     }), ri(
       ii,
       "Series/Scatter/ScatterSeries.js",
       [ii["Series/Scatter/ScatterSeriesDefaults.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]],
-      function(li, Ci, zi) {
-        const { column: Ki, line: Yi } = Ci.seriesTypes, { addEvent: es, extend: is, merge: $i } = zi;
+      function(hi, wi, zi) {
+        const { column: Ki, line: Yi } = wi.seriesTypes, { addEvent: es, extend: is, merge: $i } = zi;
         class Vi extends Yi {
           constructor() {
             super(...arguments), this.points = this.options = this.data = void 0;
@@ -5897,11 +5897,11 @@ var highcharts = { exports: {} };
           applyJitter() {
             const bi = this, Ai = this.options.jitter, ji = this.points.length;
             Ai && this.points.forEach(function(Ni, gi) {
-              ["x", "y"].forEach(function(ki, wi) {
+              ["x", "y"].forEach(function(ki, Ci) {
                 let Si = "plot" + ki.toUpperCase(), Ti, Mi;
                 if (Ai[ki] && !Ni.isNull) {
                   var Di = bi[ki + "Axis"];
-                  Mi = Ai[ki] * Di.transA, Di && !Di.isLog && (Ti = Math.max(0, Ni[Si] - Mi), Di = Math.min(Di.len, Ni[Si] + Mi), wi = 1e4 * Math.sin(gi + wi * ji), wi -= Math.floor(wi), Ni[Si] = Ti + (Di - Ti) * wi, ki === "x" && (Ni.clientX = Ni.plotX));
+                  Mi = Ai[ki] * Di.transA, Di && !Di.isLog && (Ti = Math.max(0, Ni[Si] - Mi), Di = Math.min(Di.len, Ni[Si] + Mi), Ci = 1e4 * Math.sin(gi + Ci * ji), Ci -= Math.floor(Ci), Ni[Si] = Ti + (Di - Ti) * Ci, ki === "x" && (Ni.clientX = Ni.plotX));
                 }
               });
             });
@@ -5910,31 +5910,31 @@ var highcharts = { exports: {} };
             this.options.lineWidth ? super.drawGraph() : this.graph && (this.graph = this.graph.destroy());
           }
         }
-        return Vi.defaultOptions = $i(Yi.defaultOptions, li), is(Vi.prototype, { drawTracker: Ki.prototype.drawTracker, sorted: !1, requireSorting: !1, noSharedTooltip: !0, trackerGroups: ["group", "markerGroup", "dataLabelsGroup"], takeOrdinalPosition: !1 }), es(Vi, "afterTranslate", function() {
+        return Vi.defaultOptions = $i(Yi.defaultOptions, hi), is(Vi.prototype, { drawTracker: Ki.prototype.drawTracker, sorted: !1, requireSorting: !1, noSharedTooltip: !0, trackerGroups: ["group", "markerGroup", "dataLabelsGroup"], takeOrdinalPosition: !1 }), es(Vi, "afterTranslate", function() {
           this.applyJitter();
-        }), Ci.registerSeriesType("scatter", Vi), Vi;
+        }), wi.registerSeriesType("scatter", Vi), Vi;
       }
-    ), ri(ii, "Series/CenteredUtilities.js", [ii["Core/Globals.js"], ii["Core/Series/Series.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
-      const { deg2rad: Ki } = li, { fireEvent: Yi, isNumber: es, pick: is, relativeLength: $i } = zi;
+    ), ri(ii, "Series/CenteredUtilities.js", [ii["Core/Globals.js"], ii["Core/Series/Series.js"], ii["Core/Utilities.js"]], function(hi, wi, zi) {
+      const { deg2rad: Ki } = hi, { fireEvent: Yi, isNumber: es, pick: is, relativeLength: $i } = zi;
       var Vi;
       return function(_i) {
         _i.getCenter = function() {
           var bi = this.options, Ai = this.chart;
           const ji = 2 * (bi.slicedOffset || 0), Ni = Ai.plotWidth - 2 * ji, gi = Ai.plotHeight - 2 * ji;
           var ki = bi.center;
-          const wi = Math.min(Ni, gi), Si = bi.thickness;
+          const Ci = Math.min(Ni, gi), Si = bi.thickness;
           var Ti = bi.size;
           let Mi = bi.innerSize || 0;
-          for (typeof Ti == "string" && (Ti = parseFloat(Ti)), typeof Mi == "string" && (Mi = parseFloat(Mi)), bi = [is(ki[0], "50%"), is(ki[1], "50%"), is(Ti && 0 > Ti ? void 0 : bi.size, "100%"), is(Mi && 0 > Mi ? void 0 : bi.innerSize || 0, "0%")], !Ai.angular || this instanceof Ci || (bi[3] = 0), ki = 0; 4 > ki; ++ki)
-            Ti = bi[ki], Ai = 2 > ki || ki === 2 && /%$/.test(Ti), bi[ki] = $i(Ti, [Ni, gi, wi, bi[2]][ki]) + (Ai ? ji : 0);
+          for (typeof Ti == "string" && (Ti = parseFloat(Ti)), typeof Mi == "string" && (Mi = parseFloat(Mi)), bi = [is(ki[0], "50%"), is(ki[1], "50%"), is(Ti && 0 > Ti ? void 0 : bi.size, "100%"), is(Mi && 0 > Mi ? void 0 : bi.innerSize || 0, "0%")], !Ai.angular || this instanceof wi || (bi[3] = 0), ki = 0; 4 > ki; ++ki)
+            Ti = bi[ki], Ai = 2 > ki || ki === 2 && /%$/.test(Ti), bi[ki] = $i(Ti, [Ni, gi, Ci, bi[2]][ki]) + (Ai ? ji : 0);
           return bi[3] > bi[2] && (bi[3] = bi[2]), es(Si) && 2 * Si < bi[2] && 0 < Si && (bi[3] = bi[2] - 2 * Si), Yi(this, "afterGetCenter", { positions: bi }), bi;
         }, _i.getStartAndEndRadians = function(bi, Ai) {
           return bi = es(bi) ? bi : 0, Ai = es(Ai) && Ai > bi && 360 > Ai - bi ? Ai : bi + 360, { start: Ki * (bi + -90), end: Ki * (Ai + -90) };
         };
       }(Vi || (Vi = {})), Vi;
-    }), ri(ii, "Series/Pie/PiePoint.js", [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Series/Point.js"], ii["Core/Utilities.js"]], function(li, Ci, zi) {
-      const { setAnimation: Ki } = li, { addEvent: Yi, defined: es, extend: is, isNumber: $i, pick: Vi, relativeLength: _i } = zi;
-      class bi extends Ci {
+    }), ri(ii, "Series/Pie/PiePoint.js", [ii["Core/Animation/AnimationUtilities.js"], ii["Core/Series/Point.js"], ii["Core/Utilities.js"]], function(hi, wi, zi) {
+      const { setAnimation: Ki } = hi, { addEvent: Yi, defined: es, extend: is, isNumber: $i, pick: Vi, relativeLength: _i } = zi;
+      class bi extends wi {
         constructor() {
           super(...arguments), this.series = this.options = this.labelDistance = void 0;
         }
@@ -5970,10 +5970,10 @@ var highcharts = { exports: {} };
           return $i(this.y) && 0 <= this.y;
         }
         setVisible(ji, Ni) {
-          const gi = this.series, ki = gi.chart, wi = gi.options.ignoreHiddenPoint;
-          Ni = Vi(Ni, wi), ji !== this.visible && (this.visible = this.options.visible = ji = typeof ji > "u" ? !this.visible : ji, gi.options.data[gi.data.indexOf(this)] = this.options, ["graphic", "dataLabel", "connector"].forEach((Si) => {
+          const gi = this.series, ki = gi.chart, Ci = gi.options.ignoreHiddenPoint;
+          Ni = Vi(Ni, Ci), ji !== this.visible && (this.visible = this.options.visible = ji = typeof ji > "u" ? !this.visible : ji, gi.options.data[gi.data.indexOf(this)] = this.options, ["graphic", "dataLabel", "connector"].forEach((Si) => {
             this[Si] && this[Si][ji ? "show" : "hide"](ji);
-          }), this.legendItem && ki.legend.colorizeItem(this, ji), ji || this.state !== "hover" || this.setState(""), wi && (gi.isDirty = !0), Ni && ki.redraw());
+          }), this.legendItem && ki.legend.colorizeItem(this, ji), ji || this.state !== "hover" || this.setState(""), Ci && (gi.isDirty = !0), Ni && ki.redraw());
         }
         slice(ji, Ni, gi) {
           const ki = this.series;
@@ -5991,10 +5991,10 @@ var highcharts = { exports: {} };
       }, crookedLine: function(Ai, ji, Ni) {
         const { breakAt: gi, touchingSliceAt: ki } = ji;
         ({ series: ji } = this);
-        const [wi, Si, Ti] = ji.center, Mi = Ti / 2, Di = ji.chart.plotWidth, ci = ji.chart.plotLeft;
+        const [Ci, Si, Ti] = ji.center, Mi = Ti / 2, Di = ji.chart.plotWidth, ci = ji.chart.plotLeft;
         ji = Ai.alignment === "left";
         const { x: pi, y: vi } = Ai;
-        return Ni.crookDistance ? (Ai = _i(Ni.crookDistance, 1), Ai = ji ? wi + Mi + (Di + ci - wi - Mi) * (1 - Ai) : ci + (wi - Mi) * Ai) : Ai = wi + (Si - vi) * Math.tan((this.angle || 0) - Math.PI / 2), Ni = [["M", pi, vi]], (ji ? Ai <= pi && Ai >= gi.x : Ai >= pi && Ai <= gi.x) && Ni.push(["L", Ai, vi]), Ni.push(["L", gi.x, gi.y], ["L", ki.x, ki.y]), Ni;
+        return Ni.crookDistance ? (Ai = _i(Ni.crookDistance, 1), Ai = ji ? Ci + Mi + (Di + ci - Ci - Mi) * (1 - Ai) : ci + (Ci - Mi) * Ai) : Ai = Ci + (Si - vi) * Math.tan((this.angle || 0) - Math.PI / 2), Ni = [["M", pi, vi]], (ji ? Ai <= pi && Ai >= gi.x : Ai >= pi && Ai <= gi.x) && Ni.push(["L", Ai, vi]), Ni.push(["L", gi.x, gi.y], ["L", ki.x, ki.y]), Ni;
       } } }), bi;
     }), ri(ii, "Series/Pie/PieSeriesDefaults.js", [], function() {
       return {
@@ -6020,11 +6020,11 @@ var highcharts = { exports: {} };
         lineWidth: void 0,
         states: { hover: { brightness: 0.1 } }
       };
-    }), ri(ii, "Series/Pie/PieSeries.js", [ii["Series/CenteredUtilities.js"], ii["Series/Column/ColumnSeries.js"], ii["Core/Globals.js"], ii["Series/Pie/PiePoint.js"], ii["Series/Pie/PieSeriesDefaults.js"], ii["Core/Series/Series.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Renderer/SVG/Symbols.js"], ii["Core/Utilities.js"]], function(li, Ci, zi, Ki, Yi, es, is, $i, Vi) {
-      const { getStartAndEndRadians: _i } = li;
+    }), ri(ii, "Series/Pie/PieSeries.js", [ii["Series/CenteredUtilities.js"], ii["Series/Column/ColumnSeries.js"], ii["Core/Globals.js"], ii["Series/Pie/PiePoint.js"], ii["Series/Pie/PieSeriesDefaults.js"], ii["Core/Series/Series.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Renderer/SVG/Symbols.js"], ii["Core/Utilities.js"]], function(hi, wi, zi, Ki, Yi, es, is, $i, Vi) {
+      const { getStartAndEndRadians: _i } = hi;
       ({ noop: zi } = zi);
       const { clamp: bi, extend: Ai, fireEvent: ji, merge: Ni, pick: gi, relativeLength: ki } = Vi;
-      class wi extends es {
+      class Ci extends es {
         constructor() {
           super(...arguments), this.points = this.options = this.maxLabelDistance = this.data = this.center = void 0;
         }
@@ -6091,15 +6091,15 @@ var highcharts = { exports: {} };
             di = ui[oi];
             var Oi = vi + mi * pi;
             !di.isValid() || Mi && !di.visible || (mi += di.percentage / 100);
-            var hi = vi + mi * pi, Li = {
+            var li = vi + mi * pi, Li = {
               x: Ti[0],
               y: Ti[1],
               r: Ti[2] / 2,
               innerR: Ti[3] / 2,
               start: Math.round(1e3 * Oi) / 1e3,
-              end: Math.round(1e3 * hi) / 1e3
+              end: Math.round(1e3 * li) / 1e3
             };
-            di.shapeType = "arc", di.shapeArgs = Li, di.labelDistance = gi(di.options.dataLabels && di.options.dataLabels.distance, fi), di.labelDistance = ki(di.labelDistance, Li.r), this.maxLabelDistance = Math.max(this.maxLabelDistance || 0, di.labelDistance), hi = (hi + Oi) / 2, hi > 1.5 * Math.PI ? hi -= 2 * Math.PI : hi < -Math.PI / 2 && (hi += 2 * Math.PI), di.slicedTranslation = { translateX: Math.round(Math.cos(hi) * Di), translateY: Math.round(Math.sin(hi) * Di) }, Li = Math.cos(hi) * Ti[2] / 2, ti = Math.sin(hi) * Ti[2] / 2, di.tooltipPos = [Ti[0] + 0.7 * Li, Ti[1] + 0.7 * ti], di.half = hi < -Math.PI / 2 || hi > Math.PI / 2 ? 1 : 0, di.angle = hi, Oi = Math.min(ci, di.labelDistance / 5), di.labelPosition = { natural: { x: Ti[0] + Li + Math.cos(hi) * di.labelDistance, y: Ti[1] + ti + Math.sin(hi) * di.labelDistance }, computed: {}, alignment: 0 > di.labelDistance ? "center" : di.half ? "right" : "left", connectorPosition: { breakAt: { x: Ti[0] + Li + Math.cos(hi) * Oi, y: Ti[1] + ti + Math.sin(hi) * Oi }, touchingSliceAt: { x: Ti[0] + Li, y: Ti[1] + ti } } };
+            di.shapeType = "arc", di.shapeArgs = Li, di.labelDistance = gi(di.options.dataLabels && di.options.dataLabels.distance, fi), di.labelDistance = ki(di.labelDistance, Li.r), this.maxLabelDistance = Math.max(this.maxLabelDistance || 0, di.labelDistance), li = (li + Oi) / 2, li > 1.5 * Math.PI ? li -= 2 * Math.PI : li < -Math.PI / 2 && (li += 2 * Math.PI), di.slicedTranslation = { translateX: Math.round(Math.cos(li) * Di), translateY: Math.round(Math.sin(li) * Di) }, Li = Math.cos(li) * Ti[2] / 2, ti = Math.sin(li) * Ti[2] / 2, di.tooltipPos = [Ti[0] + 0.7 * Li, Ti[1] + 0.7 * ti], di.half = li < -Math.PI / 2 || li > Math.PI / 2 ? 1 : 0, di.angle = li, Oi = Math.min(ci, di.labelDistance / 5), di.labelPosition = { natural: { x: Ti[0] + Li + Math.cos(li) * di.labelDistance, y: Ti[1] + ti + Math.sin(li) * di.labelDistance }, computed: {}, alignment: 0 > di.labelDistance ? "center" : di.half ? "right" : "left", connectorPosition: { breakAt: { x: Ti[0] + Li + Math.cos(li) * Oi, y: Ti[1] + ti + Math.sin(li) * Oi }, touchingSliceAt: { x: Ti[0] + Li, y: Ti[1] + ti } } };
           }
           ji(this, "afterTranslate");
         }
@@ -6112,16 +6112,16 @@ var highcharts = { exports: {} };
             pi = Ti[ci], pi.percentage = 0 < vi && (pi.visible || !Di) ? pi.y / vi * 100 : 0, pi.total = vi;
         }
       }
-      return wi.defaultOptions = Ni(es.defaultOptions, Yi), Ai(wi.prototype, { axisTypes: [], directTouch: !0, drawGraph: void 0, drawTracker: Ci.prototype.drawTracker, getCenter: li.getCenter, getSymbol: zi, isCartesian: !1, noSharedTooltip: !0, pointAttribs: Ci.prototype.pointAttribs, pointClass: Ki, requireSorting: !1, searchPoint: zi, trackerGroups: ["group", "dataLabelsGroup"] }), is.registerSeriesType(
+      return Ci.defaultOptions = Ni(es.defaultOptions, Yi), Ai(Ci.prototype, { axisTypes: [], directTouch: !0, drawGraph: void 0, drawTracker: wi.prototype.drawTracker, getCenter: hi.getCenter, getSymbol: zi, isCartesian: !1, noSharedTooltip: !0, pointAttribs: wi.prototype.pointAttribs, pointClass: Ki, requireSorting: !1, searchPoint: zi, trackerGroups: ["group", "dataLabelsGroup"] }), is.registerSeriesType(
         "pie",
-        wi
-      ), wi;
-    }), ri(ii, "Series/Pie/PieDataLabel.js", [ii["Core/Series/DataLabel.js"], ii["Core/Globals.js"], ii["Core/Renderer/RendererUtilities.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(li, Ci, zi, Ki, Yi) {
-      const { noop: es } = Ci, { distribute: is } = zi, { series: $i } = Ki, { arrayMax: Vi, clamp: _i, defined: bi, merge: Ai, pick: ji, relativeLength: Ni } = Yi;
+        Ci
+      ), Ci;
+    }), ri(ii, "Series/Pie/PieDataLabel.js", [ii["Core/Series/DataLabel.js"], ii["Core/Globals.js"], ii["Core/Renderer/RendererUtilities.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Utilities.js"]], function(hi, wi, zi, Ki, Yi) {
+      const { noop: es } = wi, { distribute: is } = zi, { series: $i } = Ki, { arrayMax: Vi, clamp: _i, defined: bi, merge: Ai, pick: ji, relativeLength: Ni } = Yi;
       var gi;
       return function(ki) {
-        function wi() {
-          const ci = this, pi = ci.data, vi = ci.chart, ui = ci.options.dataLabels || {}, fi = ui.connectorPadding, si = vi.plotWidth, ti = vi.plotHeight, oi = vi.plotLeft, di = Math.round(vi.chartWidth / 3), mi = ci.center, Oi = mi[2] / 2, hi = mi[1], Li = [[], []], Ui = [0, 0, 0, 0], Zi = ci.dataLabelPositioners;
+        function Ci() {
+          const ci = this, pi = ci.data, vi = ci.chart, ui = ci.options.dataLabels || {}, fi = ui.connectorPadding, si = vi.plotWidth, ti = vi.plotHeight, oi = vi.plotLeft, di = Math.round(vi.chartWidth / 3), mi = ci.center, Oi = mi[2] / 2, li = mi[1], Li = [[], []], Ui = [0, 0, 0, 0], Zi = ci.dataLabelPositioners;
           let rs, Bi, ni, Pi, Hi, Ri, qi, ai, xi, yi, Gi, Xi;
           ci.visible && (ui.enabled || ci._hasPointLabels) && (pi.forEach(function(Wi) {
             Wi.dataLabel && Wi.visible && Wi.dataLabel.shortened && (Wi.dataLabel.attr({ width: "auto" }).css({ width: "auto", textOverflow: "clip" }), Wi.dataLabel.shortened = !1);
@@ -6132,12 +6132,12 @@ var highcharts = { exports: {} };
             let ns, ls = 0;
             if (ss) {
               if (ci.sortByAngle(Wi, ts - 0.5), 0 < ci.maxLabelDistance) {
-                var Ii = Math.max(0, hi - Oi - ci.maxLabelDistance);
-                ns = Math.min(hi + Oi + ci.maxLabelDistance, vi.plotHeight), Wi.forEach(function(Ei) {
+                var Ii = Math.max(0, li - Oi - ci.maxLabelDistance);
+                ns = Math.min(li + Oi + ci.maxLabelDistance, vi.plotHeight), Wi.forEach(function(Ei) {
                   0 < Ei.labelDistance && Ei.dataLabel && (Ei.top = Math.max(
                     0,
-                    hi - Oi - Ei.labelDistance
-                  ), Ei.bottom = Math.min(hi + Oi + Ei.labelDistance, vi.plotHeight), ls = Ei.dataLabel.getBBox().height || 21, Ei.distributeBox = { target: Ei.labelPosition.natural.y - Ei.top + ls / 2, size: ls, rank: Ei.y }, os.push(Ei.distributeBox));
+                    li - Oi - Ei.labelDistance
+                  ), Ei.bottom = Math.min(li + Oi + Ei.labelDistance, vi.plotHeight), ls = Ei.dataLabel.getBBox().height || 21, Ei.distributeBox = { target: Ei.labelPosition.natural.y - Ei.top + ls / 2, size: ls, rank: Ei.y }, os.push(Ei.distributeBox));
                 }), Ii = ns + ls - Ii, is(os, Ii, Ii / 5);
               }
               for (Gi = 0; Gi < ss; Gi++) {
@@ -6189,18 +6189,18 @@ var highcharts = { exports: {} };
           }), pi ? fi + ui : vi - fi - ui;
         } };
         ki.compose = function(ci) {
-          li.compose($i), Yi.pushUnique(Mi, ci) && (ci = ci.prototype, ci.dataLabelPositioners = Di, ci.alignDataLabel = es, ci.drawDataLabels = wi, ci.placeDataLabels = Si, ci.verifyDataLabelOverflow = Ti);
+          hi.compose($i), Yi.pushUnique(Mi, ci) && (ci = ci.prototype, ci.dataLabelPositioners = Di, ci.alignDataLabel = es, ci.drawDataLabels = Ci, ci.placeDataLabels = Si, ci.verifyDataLabelOverflow = Ti);
         };
       }(gi || (gi = {})), gi;
-    }), ri(ii, "Extensions/OverlappingDataLabels.js", [ii["Core/Chart/Chart.js"], ii["Core/Utilities.js"]], function(li, Ci) {
+    }), ri(ii, "Extensions/OverlappingDataLabels.js", [ii["Core/Chart/Chart.js"], ii["Core/Utilities.js"]], function(hi, wi) {
       function zi(_i, bi) {
         let Ai, ji = !1;
         return _i && (Ai = _i.newOpacity, _i.oldOpacity !== Ai && (_i.alignAttr && _i.placed ? (_i[Ai ? "removeClass" : "addClass"]("highcharts-data-label-hidden"), ji = !0, _i.alignAttr.opacity = Ai, _i[_i.isOld ? "animate" : "attr"](_i.alignAttr, null, function() {
           bi.styledMode || _i.css({ pointerEvents: Ai ? "auto" : "none" });
         }), Yi(bi, "afterHideOverlappingLabel")) : _i.attr({ opacity: Ai })), _i.isOld = !0), ji;
       }
-      const { addEvent: Ki, fireEvent: Yi, isArray: es, isNumber: is, objectEach: $i, pick: Vi } = Ci;
-      Ki(li, "render", function() {
+      const { addEvent: Ki, fireEvent: Yi, isArray: es, isNumber: is, objectEach: $i, pick: Vi } = wi;
+      Ki(hi, "render", function() {
         let _i = this, bi = [];
         (this.labelCollectors || []).forEach(function(Ai) {
           bi = bi.concat(Ai());
@@ -6214,15 +6214,15 @@ var highcharts = { exports: {} };
           var ji = Ai.options.dataLabels;
           Ai.visible && (ji.enabled !== !1 || Ai._hasPointLabels) && (ji = (Ni) => Ni.forEach((gi) => {
             gi.visible && (es(gi.dataLabels) ? gi.dataLabels : gi.dataLabel ? [gi.dataLabel] : []).forEach(function(ki) {
-              const wi = ki.options;
-              ki.labelrank = Vi(wi.labelrank, gi.labelrank, gi.shapeArgs && gi.shapeArgs.height), wi.allowOverlap ? (ki.oldOpacity = ki.opacity, ki.newOpacity = 1, zi(ki, _i)) : bi.push(ki);
+              const Ci = ki.options;
+              ki.labelrank = Vi(Ci.labelrank, gi.labelrank, gi.shapeArgs && gi.shapeArgs.height), Ci.allowOverlap ? (ki.oldOpacity = ki.opacity, ki.newOpacity = 1, zi(ki, _i)) : bi.push(ki);
             });
           }), ji(Ai.nodes || []), ji(Ai.points));
         }), this.hideOverlappingLabels(bi);
-      }), li.prototype.hideOverlappingLabels = function(_i) {
+      }), hi.prototype.hideOverlappingLabels = function(_i) {
         let bi = this, Ai = _i.length, ji = bi.renderer;
         var Ni;
-        let gi, ki, wi, Si, Ti = !1;
+        let gi, ki, Ci, Si, Ti = !1;
         var Mi = function(Di) {
           let ci, pi;
           var vi;
@@ -6235,15 +6235,15 @@ var highcharts = { exports: {} };
         for (_i.sort(function(Di, ci) {
           return (ci.labelrank || 0) - (Di.labelrank || 0);
         }), gi = 0; gi < Ai; gi++)
-          for (wi = (Mi = _i[gi]) && Mi.absoluteBox, Ni = gi + 1; Ni < Ai; ++Ni)
-            Si = (ki = _i[Ni]) && ki.absoluteBox, !wi || !Si || Mi === ki || Mi.newOpacity === 0 || ki.newOpacity === 0 || Mi.visibility === "hidden" || ki.visibility === "hidden" || Si.x >= wi.x + wi.width || Si.x + Si.width <= wi.x || Si.y >= wi.y + wi.height || Si.y + Si.height <= wi.y || ((Mi.labelrank < ki.labelrank ? Mi : ki).newOpacity = 0);
+          for (Ci = (Mi = _i[gi]) && Mi.absoluteBox, Ni = gi + 1; Ni < Ai; ++Ni)
+            Si = (ki = _i[Ni]) && ki.absoluteBox, !Ci || !Si || Mi === ki || Mi.newOpacity === 0 || ki.newOpacity === 0 || Mi.visibility === "hidden" || ki.visibility === "hidden" || Si.x >= Ci.x + Ci.width || Si.x + Si.width <= Ci.x || Si.y >= Ci.y + Ci.height || Si.y + Si.height <= Ci.y || ((Mi.labelrank < ki.labelrank ? Mi : ki).newOpacity = 0);
         _i.forEach(function(Di) {
           zi(Di, bi) && (Ti = !0);
         }), Ti && Yi(bi, "afterHideAllOverlappingLabels");
       };
-    }), ri(ii, "Extensions/BorderRadius.js", [ii["Core/Defaults.js"], ii["Core/Series/Series.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Renderer/SVG/SVGElement.js"], ii["Core/Renderer/SVG/SVGRenderer.js"], ii["Core/Utilities.js"]], function(li, Ci, zi, Ki, Yi, es) {
-      const { defaultOptions: is } = li;
-      ({ seriesTypes: li } = zi);
+    }), ri(ii, "Extensions/BorderRadius.js", [ii["Core/Defaults.js"], ii["Core/Series/Series.js"], ii["Core/Series/SeriesRegistry.js"], ii["Core/Renderer/SVG/SVGElement.js"], ii["Core/Renderer/SVG/SVGRenderer.js"], ii["Core/Utilities.js"]], function(hi, wi, zi, Ki, Yi, es) {
+      const { defaultOptions: is } = hi;
+      ({ seriesTypes: hi } = zi);
       const { addEvent: $i, extend: Vi, isObject: _i, merge: bi, relativeLength: Ai } = es, ji = {
         radius: 0,
         scope: "stack",
@@ -6252,42 +6252,42 @@ var highcharts = { exports: {} };
       if (Ki.symbolCustomAttribs.indexOf("borderRadius") === -1) {
         Ki.symbolCustomAttribs.push("borderRadius", "brBoxHeight", "brBoxY");
         const gi = Yi.prototype.symbols.arc;
-        Yi.prototype.symbols.arc = function(wi, Si, Ti, Mi, Di = {}) {
-          wi = gi(wi, Si, Ti, Mi, Di);
+        Yi.prototype.symbols.arc = function(Ci, Si, Ti, Mi, Di = {}) {
+          Ci = gi(Ci, Si, Ti, Mi, Di);
           const { innerR: ci = 0, r: pi = Ti, start: vi = 0, end: ui = 0 } = Di;
           if (Di.open || !Di.borderRadius)
-            return wi;
-          for (Ti = ui - vi, Si = Math.sin(Ti / 2), Di = Math.max(Math.min(Ai(Di.borderRadius || 0, pi - ci), (pi - ci) / 2, pi * Si / (1 + Si)), 0), Ti = Math.min(Di, Ti / Math.PI * 2 * ci), Si = wi.length - 1; Si--; ) {
-            let Oi, hi, Li;
-            Mi = wi;
+            return Ci;
+          for (Ti = ui - vi, Si = Math.sin(Ti / 2), Di = Math.max(Math.min(Ai(Di.borderRadius || 0, pi - ci), (pi - ci) / 2, pi * Si / (1 + Si)), 0), Ti = Math.min(Di, Ti / Math.PI * 2 * ci), Si = Ci.length - 1; Si--; ) {
+            let Oi, li, Li;
+            Mi = Ci;
             var fi = Si, si = 1 < Si ? Ti : Di, ti = Mi[fi], oi = Mi[fi + 1];
-            if (oi[0] === "Z" && (oi = Mi[0]), ti[0] !== "M" && ti[0] !== "L" || oi[0] !== "A" ? ti[0] !== "A" || oi[0] !== "M" && oi[0] !== "L" || (Li = oi, hi = ti) : (Li = ti, hi = oi, Oi = !0), Li && hi && hi.params) {
-              ti = hi[1];
-              var di = hi[5];
-              oi = hi.params;
+            if (oi[0] === "Z" && (oi = Mi[0]), ti[0] !== "M" && ti[0] !== "L" || oi[0] !== "A" ? ti[0] !== "A" || oi[0] !== "M" && oi[0] !== "L" || (Li = oi, li = ti) : (Li = ti, li = oi, Oi = !0), Li && li && li.params) {
+              ti = li[1];
+              var di = li[5];
+              oi = li.params;
               const { start: Ui, end: Zi, cx: rs, cy: Bi } = oi;
               var mi = di ? ti - si : ti + si;
               const ni = mi ? Math.asin(si / mi) : 0;
-              di = di ? ni : -ni, mi *= Math.cos(ni), Oi ? (oi.start = Ui + di, Li[1] = rs + mi * Math.cos(Ui), Li[2] = Bi + mi * Math.sin(Ui), Mi.splice(fi + 1, 0, ["A", si, si, 0, 0, 1, rs + ti * Math.cos(oi.start), Bi + ti * Math.sin(oi.start)])) : (oi.end = Zi - di, hi[6] = rs + ti * Math.cos(oi.end), hi[7] = Bi + ti * Math.sin(oi.end), Mi.splice(fi + 1, 0, ["A", si, si, 0, 0, 1, rs + mi * Math.cos(Zi), Bi + mi * Math.sin(Zi)])), hi[4] = Math.abs(oi.end - oi.start) < Math.PI ? 0 : 1;
+              di = di ? ni : -ni, mi *= Math.cos(ni), Oi ? (oi.start = Ui + di, Li[1] = rs + mi * Math.cos(Ui), Li[2] = Bi + mi * Math.sin(Ui), Mi.splice(fi + 1, 0, ["A", si, si, 0, 0, 1, rs + ti * Math.cos(oi.start), Bi + ti * Math.sin(oi.start)])) : (oi.end = Zi - di, li[6] = rs + ti * Math.cos(oi.end), li[7] = Bi + ti * Math.sin(oi.end), Mi.splice(fi + 1, 0, ["A", si, si, 0, 0, 1, rs + mi * Math.cos(Zi), Bi + mi * Math.sin(Zi)])), li[4] = Math.abs(oi.end - oi.start) < Math.PI ? 0 : 1;
             }
           }
-          return wi;
+          return Ci;
         };
         const ki = Yi.prototype.symbols.roundedRect;
-        Yi.prototype.symbols.roundedRect = function(wi, Si, Ti, Mi, Di = {}) {
-          const ci = ki(wi, Si, Ti, Mi, Di), { r: pi = 0, brBoxHeight: vi = Mi, brBoxY: ui = Si } = Di;
+        Yi.prototype.symbols.roundedRect = function(Ci, Si, Ti, Mi, Di = {}) {
+          const ci = ki(Ci, Si, Ti, Mi, Di), { r: pi = 0, brBoxHeight: vi = Mi, brBoxY: ui = Si } = Di;
           var fi = Si - ui, si = ui + vi - (Si + Mi);
           Di = -0.1 < fi - pi ? 0 : pi;
           const ti = -0.1 < si - pi ? 0 : pi;
           var oi = Math.max(Di && fi, 0);
           const di = Math.max(ti && si, 0);
-          si = [wi + Di, Si], fi = [wi + Ti - Di, Si];
-          const mi = [wi + Ti, Si + Di], Oi = [wi + Ti, Si + Mi - ti], hi = [wi + Ti - ti, Si + Mi], Li = [wi + ti, Si + Mi], Ui = [wi, Si + Mi - ti], Zi = [wi, Si + Di];
+          si = [Ci + Di, Si], fi = [Ci + Ti - Di, Si];
+          const mi = [Ci + Ti, Si + Di], Oi = [Ci + Ti, Si + Mi - ti], li = [Ci + Ti - ti, Si + Mi], Li = [Ci + ti, Si + Mi], Ui = [Ci, Si + Mi - ti], Zi = [Ci, Si + Di];
           if (oi) {
             const rs = Math.sqrt(Math.pow(Di, 2) - Math.pow(Di - oi, 2));
             si[0] -= rs, fi[0] += rs, mi[1] = Zi[1] = Si + Di - oi;
           }
-          return Mi < Di - oi && (oi = Math.sqrt(Math.pow(Di, 2) - Math.pow(Di - oi - Mi, 2)), mi[0] = Oi[0] = wi + Ti - Di + oi, hi[0] = Math.min(mi[0], hi[0]), Li[0] = Math.max(Oi[0], Li[0]), Ui[0] = Zi[0] = wi + Di - oi, mi[1] = Zi[1] = Si + Mi), di && (oi = Math.sqrt(Math.pow(ti, 2) - Math.pow(ti - di, 2)), hi[0] += oi, Li[0] -= oi, Oi[1] = Ui[1] = Si + Mi - ti + di), Mi < ti - di && (Mi = Math.sqrt(Math.pow(ti, 2) - Math.pow(ti - di - Mi, 2)), mi[0] = Oi[0] = wi + Ti - ti + Mi, fi[0] = Math.min(mi[0], fi[0]), si[0] = Math.max(Oi[0], si[0]), Ui[0] = Zi[0] = wi + ti - Mi, Oi[1] = Ui[1] = Si), ci.length = 0, ci.push(["M", ...si], ["L", ...fi], [
+          return Mi < Di - oi && (oi = Math.sqrt(Math.pow(Di, 2) - Math.pow(Di - oi - Mi, 2)), mi[0] = Oi[0] = Ci + Ti - Di + oi, li[0] = Math.min(mi[0], li[0]), Li[0] = Math.max(Oi[0], Li[0]), Ui[0] = Zi[0] = Ci + Di - oi, mi[1] = Zi[1] = Si + Mi), di && (oi = Math.sqrt(Math.pow(ti, 2) - Math.pow(ti - di, 2)), li[0] += oi, Li[0] -= oi, Oi[1] = Ui[1] = Si + Mi - ti + di), Mi < ti - di && (Mi = Math.sqrt(Math.pow(ti, 2) - Math.pow(ti - di - Mi, 2)), mi[0] = Oi[0] = Ci + Ti - ti + Mi, fi[0] = Math.min(mi[0], fi[0]), si[0] = Math.max(Oi[0], si[0]), Ui[0] = Zi[0] = Ci + ti - Mi, Oi[1] = Ui[1] = Si), ci.length = 0, ci.push(["M", ...si], ["L", ...fi], [
             "A",
             Di,
             Di,
@@ -6295,36 +6295,36 @@ var highcharts = { exports: {} };
             0,
             1,
             ...mi
-          ], ["L", ...Oi], ["A", ti, ti, 0, 0, 1, ...hi], ["L", ...Li], ["A", ti, ti, 0, 0, 1, ...Ui], ["L", ...Zi], ["A", Di, Di, 0, 0, 1, ...si], ["Z"]), ci;
-        }, $i(li.pie, "afterTranslate", function() {
-          const wi = Ni(this.options.borderRadius);
+          ], ["L", ...Oi], ["A", ti, ti, 0, 0, 1, ...li], ["L", ...Li], ["A", ti, ti, 0, 0, 1, ...Ui], ["L", ...Zi], ["A", Di, Di, 0, 0, 1, ...si], ["Z"]), ci;
+        }, $i(hi.pie, "afterTranslate", function() {
+          const Ci = Ni(this.options.borderRadius);
           for (const Si of this.points) {
             const Ti = Si.shapeArgs;
-            Ti && (Ti.borderRadius = Ai(wi.radius, (Ti.r || 0) - (Ti.innerR || 0)));
+            Ti && (Ti.borderRadius = Ai(Ci.radius, (Ti.r || 0) - (Ti.innerR || 0)));
           }
-        }), $i(Ci, "afterColumnTranslate", function() {
-          var wi, Si;
+        }), $i(wi, "afterColumnTranslate", function() {
+          var Ci, Si;
           if (this.options.borderRadius && (!this.chart.is3d || !this.chart.is3d())) {
             const { options: ci, yAxis: pi } = this, vi = ci.stacking === "percent";
-            var Ti = (Si = (wi = is.plotOptions) === null || wi === void 0 ? void 0 : wi[this.type]) === null || Si === void 0 ? void 0 : Si.borderRadius;
-            wi = Ni(ci.borderRadius, _i(Ti) ? Ti : {}), Si = pi.options.reversed;
+            var Ti = (Si = (Ci = is.plotOptions) === null || Ci === void 0 ? void 0 : Ci[this.type]) === null || Si === void 0 ? void 0 : Si.borderRadius;
+            Ci = Ni(ci.borderRadius, _i(Ti) ? Ti : {}), Si = pi.options.reversed;
             for (const ui of this.points)
               if ({ shapeArgs: Ti } = ui, ui.shapeType === "roundedRect" && Ti) {
                 const { width: fi = 0, height: si = 0, y: ti = 0 } = Ti;
                 var Mi = ti, Di = si;
-                wi.scope === "stack" && ui.stackTotal && (Mi = pi.translate(vi ? 100 : ui.stackTotal, !1, !0, !1, !0), Di = pi.translate(ci.threshold || 0, !1, !0, !1, !0), Di = this.crispCol(0, Math.min(Mi, Di), 0, Math.abs(Mi - Di)), Mi = Di.y, Di = Di.height);
+                Ci.scope === "stack" && ui.stackTotal && (Mi = pi.translate(vi ? 100 : ui.stackTotal, !1, !0, !1, !0), Di = pi.translate(ci.threshold || 0, !1, !0, !1, !0), Di = this.crispCol(0, Math.min(Mi, Di), 0, Math.abs(Mi - Di)), Mi = Di.y, Di = Di.height);
                 const oi = (ui.negative ? -1 : 1) * (Si ? -1 : 1) === -1;
-                let di = wi.where;
+                let di = Ci.where;
                 !di && this.is("waterfall") && Math.abs((ui.yBottom || 0) - (this.translatedThreshold || 0)) > this.borderWidth && (di = "all"), di || (di = "end");
-                const mi = Math.min(Ai(wi.radius, fi), fi / 2, di === "all" ? si / 2 : 1 / 0) || 0;
+                const mi = Math.min(Ai(Ci.radius, fi), fi / 2, di === "all" ? si / 2 : 1 / 0) || 0;
                 di === "end" && (oi && (Mi -= mi), Di += mi), Vi(Ti, { brBoxHeight: Di, brBoxY: Mi, r: mi });
               }
           }
         }, { order: 9 });
       }
-      return Ci = { optionsToObject: Ni }, Ci;
-    }), ri(ii, "Core/Responsive.js", [ii["Core/Utilities.js"]], function(li) {
-      const { diffObjects: Ci, extend: zi, find: Ki, merge: Yi, pick: es, uniqueKey: is } = li;
+      return wi = { optionsToObject: Ni }, wi;
+    }), ri(ii, "Core/Responsive.js", [ii["Core/Utilities.js"]], function(hi) {
+      const { diffObjects: wi, extend: zi, find: Ki, merge: Yi, pick: es, uniqueKey: is } = hi;
       var $i;
       return function(Vi) {
         function _i(ji, Ni) {
@@ -6336,14 +6336,14 @@ var highcharts = { exports: {} };
         function bi(ji, Ni) {
           const gi = this.options.responsive;
           var ki = this.currentResponsive;
-          let wi = [];
+          let Ci = [];
           !Ni && gi && gi.rules && gi.rules.forEach((Si) => {
-            typeof Si._id > "u" && (Si._id = is()), this.matchResponsiveRule(Si, wi);
-          }, this), Ni = Yi(...wi.map((Si) => Ki((gi || {}).rules || [], (Ti) => Ti._id === Si)).map((Si) => Si && Si.chartOptions)), Ni.isResponsiveOptions = !0, wi = wi.toString() || void 0, wi !== (ki && ki.ruleIds) && (ki && this.update(ki.undoOptions, ji, !0), wi ? (ki = Ci(Ni, this.options, !0, this.collectionsWithUpdate), ki.isResponsiveOptions = !0, this.currentResponsive = { ruleIds: wi, mergedOptions: Ni, undoOptions: ki }, this.update(Ni, ji, !0)) : this.currentResponsive = void 0);
+            typeof Si._id > "u" && (Si._id = is()), this.matchResponsiveRule(Si, Ci);
+          }, this), Ni = Yi(...Ci.map((Si) => Ki((gi || {}).rules || [], (Ti) => Ti._id === Si)).map((Si) => Si && Si.chartOptions)), Ni.isResponsiveOptions = !0, Ci = Ci.toString() || void 0, Ci !== (ki && ki.ruleIds) && (ki && this.update(ki.undoOptions, ji, !0), Ci ? (ki = wi(Ni, this.options, !0, this.collectionsWithUpdate), ki.isResponsiveOptions = !0, this.currentResponsive = { ruleIds: Ci, mergedOptions: Ni, undoOptions: ki }, this.update(Ni, ji, !0)) : this.currentResponsive = void 0);
         }
         const Ai = [];
         Vi.compose = function(ji) {
-          return li.pushUnique(Ai, ji) && zi(ji.prototype, { matchResponsiveRule: _i, setResponsive: bi }), ji;
+          return hi.pushUnique(Ai, ji) && zi(ji.prototype, { matchResponsiveRule: _i, setResponsive: bi }), ji;
         };
       }($i || ($i = {})), $i;
     }), ri(ii, "masters/highcharts.src.js", [
@@ -6381,8 +6381,8 @@ var highcharts = { exports: {} };
       ii["Core/Responsive.js"],
       ii["Core/Color/Color.js"],
       ii["Core/Time.js"]
-    ], function(li, Ci, zi, Ki, Yi, es, is, $i, Vi, _i, bi, Ai, ji, Ni, gi, ki, wi, Si, Ti, Mi, Di, ci, pi, vi, ui, fi, si, ti, oi, di, mi, Oi, hi, Li) {
-      return li.animate = Yi.animate, li.animObject = Yi.animObject, li.getDeferredAnimation = Yi.getDeferredAnimation, li.setAnimation = Yi.setAnimation, li.stop = Yi.stop, li.timers = Ki.timers, li.AST = es, li.Axis = ji, li.Chart = ci, li.chart = ci.chart, li.Fx = Ki, li.Legend = Di, li.PlotLineOrBand = ki, li.Point = Ti, li.Pointer = Mi, li.Series = ui, li.StackItem = vi, li.SVGElement = Vi, li.SVGRenderer = _i, li.Templating = is, li.Tick = wi, li.Time = Li, li.Tooltip = Si, li.Color = hi, li.color = hi.parse, Ai.compose(_i), bi.compose(Vi), Mi.compose(ci), Di.compose(ci), li.defaultOptions = zi.defaultOptions, li.getOptions = zi.getOptions, li.time = zi.defaultTime, li.setOptions = zi.setOptions, li.dateFormat = is.dateFormat, li.format = is.format, li.numberFormat = is.numberFormat, li.addEvent = Ci.addEvent, li.arrayMax = Ci.arrayMax, li.arrayMin = Ci.arrayMin, li.attr = Ci.attr, li.clearTimeout = Ci.clearTimeout, li.correctFloat = Ci.correctFloat, li.createElement = Ci.createElement, li.css = Ci.css, li.defined = Ci.defined, li.destroyObjectProperties = Ci.destroyObjectProperties, li.discardElement = Ci.discardElement, li.distribute = $i.distribute, li.erase = Ci.erase, li.error = Ci.error, li.extend = Ci.extend, li.extendClass = Ci.extendClass, li.find = Ci.find, li.fireEvent = Ci.fireEvent, li.getMagnitude = Ci.getMagnitude, li.getStyle = Ci.getStyle, li.inArray = Ci.inArray, li.isArray = Ci.isArray, li.isClass = Ci.isClass, li.isDOMElement = Ci.isDOMElement, li.isFunction = Ci.isFunction, li.isNumber = Ci.isNumber, li.isObject = Ci.isObject, li.isString = Ci.isString, li.keys = Ci.keys, li.merge = Ci.merge, li.normalizeTickInterval = Ci.normalizeTickInterval, li.objectEach = Ci.objectEach, li.offset = Ci.offset, li.pad = Ci.pad, li.pick = Ci.pick, li.pInt = Ci.pInt, li.relativeLength = Ci.relativeLength, li.removeEvent = Ci.removeEvent, li.seriesType = fi.seriesType, li.splat = Ci.splat, li.stableSort = Ci.stableSort, li.syncTimeout = Ci.syncTimeout, li.timeUnits = Ci.timeUnits, li.uniqueKey = Ci.uniqueKey, li.useSerialIds = Ci.useSerialIds, li.wrap = Ci.wrap, ti.compose(si), mi.compose(ui), Ni.compose(ji), gi.compose(ji), di.compose(oi), ki.compose(ji), Oi.compose(ci), pi.compose(ji, ci, ui), Si.compose(Mi), li;
+    ], function(hi, wi, zi, Ki, Yi, es, is, $i, Vi, _i, bi, Ai, ji, Ni, gi, ki, Ci, Si, Ti, Mi, Di, ci, pi, vi, ui, fi, si, ti, oi, di, mi, Oi, li, Li) {
+      return hi.animate = Yi.animate, hi.animObject = Yi.animObject, hi.getDeferredAnimation = Yi.getDeferredAnimation, hi.setAnimation = Yi.setAnimation, hi.stop = Yi.stop, hi.timers = Ki.timers, hi.AST = es, hi.Axis = ji, hi.Chart = ci, hi.chart = ci.chart, hi.Fx = Ki, hi.Legend = Di, hi.PlotLineOrBand = ki, hi.Point = Ti, hi.Pointer = Mi, hi.Series = ui, hi.StackItem = vi, hi.SVGElement = Vi, hi.SVGRenderer = _i, hi.Templating = is, hi.Tick = Ci, hi.Time = Li, hi.Tooltip = Si, hi.Color = li, hi.color = li.parse, Ai.compose(_i), bi.compose(Vi), Mi.compose(ci), Di.compose(ci), hi.defaultOptions = zi.defaultOptions, hi.getOptions = zi.getOptions, hi.time = zi.defaultTime, hi.setOptions = zi.setOptions, hi.dateFormat = is.dateFormat, hi.format = is.format, hi.numberFormat = is.numberFormat, hi.addEvent = wi.addEvent, hi.arrayMax = wi.arrayMax, hi.arrayMin = wi.arrayMin, hi.attr = wi.attr, hi.clearTimeout = wi.clearTimeout, hi.correctFloat = wi.correctFloat, hi.createElement = wi.createElement, hi.css = wi.css, hi.defined = wi.defined, hi.destroyObjectProperties = wi.destroyObjectProperties, hi.discardElement = wi.discardElement, hi.distribute = $i.distribute, hi.erase = wi.erase, hi.error = wi.error, hi.extend = wi.extend, hi.extendClass = wi.extendClass, hi.find = wi.find, hi.fireEvent = wi.fireEvent, hi.getMagnitude = wi.getMagnitude, hi.getStyle = wi.getStyle, hi.inArray = wi.inArray, hi.isArray = wi.isArray, hi.isClass = wi.isClass, hi.isDOMElement = wi.isDOMElement, hi.isFunction = wi.isFunction, hi.isNumber = wi.isNumber, hi.isObject = wi.isObject, hi.isString = wi.isString, hi.keys = wi.keys, hi.merge = wi.merge, hi.normalizeTickInterval = wi.normalizeTickInterval, hi.objectEach = wi.objectEach, hi.offset = wi.offset, hi.pad = wi.pad, hi.pick = wi.pick, hi.pInt = wi.pInt, hi.relativeLength = wi.relativeLength, hi.removeEvent = wi.removeEvent, hi.seriesType = fi.seriesType, hi.splat = wi.splat, hi.stableSort = wi.stableSort, hi.syncTimeout = wi.syncTimeout, hi.timeUnits = wi.timeUnits, hi.uniqueKey = wi.uniqueKey, hi.useSerialIds = wi.useSerialIds, hi.wrap = wi.wrap, ti.compose(si), mi.compose(ui), Ni.compose(ji), gi.compose(ji), di.compose(oi), ki.compose(ji), Oi.compose(ci), pi.compose(ji, ci, ui), Si.compose(Mi), hi;
     }), ii["masters/highcharts.src.js"]._modules = ii, ii["masters/highcharts.src.js"];
   });
 })(highcharts);
@@ -6430,8 +6430,8 @@ var htmx_min = { exports: {} };
         return Fe || null;
       }
       function T(Fe, ei, ri) {
-        var ii = Z(ei, ri), li = Z(ei, "hx-disinherit");
-        return Fe !== ei && li && (li === "*" || li.split(" ").indexOf(ri) >= 0) ? "unset" : ii;
+        var ii = Z(ei, ri), hi = Z(ei, "hx-disinherit");
+        return Fe !== ei && hi && (hi === "*" || hi.split(" ").indexOf(ri) >= 0) ? "unset" : ii;
       }
       function Y(Fe, ei) {
         var ri = null;
@@ -6449,9 +6449,9 @@ var htmx_min = { exports: {} };
         return ri ? ri[1].toLowerCase() : "";
       }
       function i(Fe, ei) {
-        for (var ri = new DOMParser(), ii = ri.parseFromString(Fe, "text/html"), li = ii.body; ei > 0; )
-          ei--, li = li.firstChild;
-        return li == null && (li = K().createDocumentFragment()), li;
+        for (var ri = new DOMParser(), ii = ri.parseFromString(Fe, "text/html"), hi = ii.body; ei > 0; )
+          ei--, hi = hi.firstChild;
+        return hi == null && (hi = K().createDocumentFragment()), hi;
       }
       function H(Fe) {
         return Fe.match(/<body/);
@@ -6616,15 +6616,15 @@ var htmx_min = { exports: {} };
       }
       var _ = function(Fe, ei) {
         for (var ri = K().querySelectorAll(ei), ii = 0; ii < ri.length; ii++) {
-          var li = ri[ii];
-          if (li.compareDocumentPosition(Fe) === Node.DOCUMENT_POSITION_PRECEDING)
-            return li;
+          var hi = ri[ii];
+          if (hi.compareDocumentPosition(Fe) === Node.DOCUMENT_POSITION_PRECEDING)
+            return hi;
         }
       }, z = function(Fe, ei) {
         for (var ri = K().querySelectorAll(ei), ii = ri.length - 1; ii >= 0; ii--) {
-          var li = ri[ii];
-          if (li.compareDocumentPosition(Fe) === Node.DOCUMENT_POSITION_FOLLOWING)
-            return li;
+          var hi = ri[ii];
+          if (hi.compareDocumentPosition(Fe) === Node.DOCUMENT_POSITION_FOLLOWING)
+            return hi;
         }
       };
       function ie(Fe, ei) {
@@ -6638,8 +6638,8 @@ var htmx_min = { exports: {} };
       }
       function le(Fe, ei, ri) {
         Hr(function() {
-          var li = $(Fe, ei, ri);
-          li.target.addEventListener(li.event, li.listener);
+          var hi = $(Fe, ei, ri);
+          hi.target.addEventListener(hi.event, hi.listener);
         });
         var ii = A(ei);
         return ii ? ei : ri;
@@ -6687,25 +6687,25 @@ var htmx_min = { exports: {} };
       }
       function pe(Fe, ei) {
         for (var ri = Tr(ei), ii = 0; ii < ri.length; ii++) {
-          var li = ri[ii];
+          var hi = ri[ii];
           try {
-            if (li.isInlineSwap(Fe))
+            if (hi.isInlineSwap(Fe))
               return !0;
-          } catch (Ci) {
-            x(Ci);
+          } catch (wi) {
+            x(wi);
           }
         }
         return Fe === "outerHTML";
       }
       function me(Fe, ei, ri) {
-        var ii = "#" + J(ei, "id"), li = "outerHTML";
-        Fe === "true" || (Fe.indexOf(":") > 0 ? (li = Fe.substr(0, Fe.indexOf(":")), ii = Fe.substr(Fe.indexOf(":") + 1, Fe.length)) : li = Fe);
-        var Ci = K().querySelectorAll(ii);
-        return Ci ? (te(Ci, function(zi) {
+        var ii = "#" + J(ei, "id"), hi = "outerHTML";
+        Fe === "true" || (Fe.indexOf(":") > 0 ? (hi = Fe.substr(0, Fe.indexOf(":")), ii = Fe.substr(Fe.indexOf(":") + 1, Fe.length)) : hi = Fe);
+        var wi = K().querySelectorAll(ii);
+        return wi ? (te(wi, function(zi) {
           var Ki, Yi = ei.cloneNode(!0);
-          Ki = K().createDocumentFragment(), Ki.appendChild(Yi), pe(li, zi) || (Ki = Yi);
+          Ki = K().createDocumentFragment(), Ki.appendChild(Yi), pe(hi, zi) || (Ki = Yi);
           var es = { shouldSwap: !0, target: zi, fragment: Ki };
-          oe(zi, "htmx:oobBeforeSwap", es) && (zi = es.target, es.shouldSwap && ke(li, zi, zi, Ki, ri), te(ri.elts, function(is) {
+          oe(zi, "htmx:oobBeforeSwap", es) && (zi = es.target, es.shouldSwap && ke(hi, zi, zi, Ki, ri), te(ri.elts, function(is) {
             oe(is, "htmx:oobAfterSwap", es);
           }));
         }), ei.parentNode.removeChild(ei)) : (ei.parentNode.removeChild(ei), ae(K().body, "htmx:oobErrorNoTarget", { content: ei })), Fe;
@@ -6713,11 +6713,11 @@ var htmx_min = { exports: {} };
       function xe(Fe, ei, ri) {
         var ii = Y(Fe, "hx-select-oob");
         if (ii) {
-          var li = ii.split(",");
-          for (let es = 0; es < li.length; es++) {
-            var Ci = li[es].split(":", 2), zi = Ci[0].trim();
+          var hi = ii.split(",");
+          for (let es = 0; es < hi.length; es++) {
+            var wi = hi[es].split(":", 2), zi = wi[0].trim();
             zi.indexOf("#") === 0 && (zi = zi.substring(1));
-            var Ki = Ci[1] || "true", Yi = ei.querySelector("#" + zi);
+            var Ki = wi[1] || "true", Yi = ei.querySelector("#" + zi);
             Yi && me(Ki, Yi, ri);
           }
         }
@@ -6734,9 +6734,9 @@ var htmx_min = { exports: {} };
       }
       function be(Fe, ei, ri) {
         te(ei.querySelectorAll("[id]"), function(ii) {
-          var li = J(ii, "id");
-          if (li && li.length > 0) {
-            var Ci = li.replace("'", "\\'"), zi = ii.tagName.replace(":", "\\:"), Ki = Fe.querySelector(zi + "[id='" + Ci + "']");
+          var hi = J(ii, "id");
+          if (hi && hi.length > 0) {
+            var wi = hi.replace("'", "\\'"), zi = ii.tagName.replace(":", "\\:"), Ki = Fe.querySelector(zi + "[id='" + wi + "']");
             if (Ki && Ki !== Fe) {
               var Yi = ii.cloneNode();
               ge(ii, Ki), ri.tasks.push(function() {
@@ -6757,8 +6757,8 @@ var htmx_min = { exports: {} };
       }
       function a(Fe, ei, ri, ii) {
         for (be(Fe, ri, ii); ri.childNodes.length > 0; ) {
-          var li = ri.firstChild;
-          B(li, G.config.addedClass), Fe.insertBefore(li, ei), li.nodeType !== Node.TEXT_NODE && li.nodeType !== Node.COMMENT_NODE && ii.tasks.push(we(li));
+          var hi = ri.firstChild;
+          B(hi, G.config.addedClass), Fe.insertBefore(hi, ei), hi.nodeType !== Node.TEXT_NODE && hi.nodeType !== Node.COMMENT_NODE && ii.tasks.push(we(hi));
         }
       }
       function Ee(Fe, ei) {
@@ -6799,9 +6799,9 @@ var htmx_min = { exports: {} };
       function Te(Fe, ei, ri) {
         if (Fe.tagName === "BODY")
           return Ie(Fe, ei, ri);
-        var ii, li = Fe.previousSibling;
-        for (a(u(Fe), Fe, ei, ri), li == null ? ii = u(Fe).firstChild : ii = li.nextSibling, ee(Fe).replacedWith = ii, ri.elts = ri.elts.filter(function(Ci) {
-          return Ci != Fe;
+        var ii, hi = Fe.previousSibling;
+        for (a(u(Fe), Fe, ei, ri), hi == null ? ii = u(Fe).firstChild : ii = hi.nextSibling, ee(Fe).replacedWith = ii, ri.elts = ri.elts.filter(function(wi) {
+          return wi != Fe;
         }); ii && ii !== Fe; )
           ii.nodeType === Node.ELEMENT_NODE && ri.elts.push(ii), ii = ii.nextElementSibling;
         g(Fe), u(Fe).removeChild(Fe);
@@ -6832,45 +6832,45 @@ var htmx_min = { exports: {} };
       function Pe(Fe, ei, ri) {
         var ii = ri || Y(Fe, "hx-select");
         if (ii) {
-          var li = K().createDocumentFragment();
-          te(ei.querySelectorAll(ii), function(Ci) {
-            li.appendChild(Ci);
-          }), ei = li;
+          var hi = K().createDocumentFragment();
+          te(ei.querySelectorAll(ii), function(wi) {
+            hi.appendChild(wi);
+          }), ei = hi;
         }
         return ei;
       }
-      function ke(Fe, ei, ri, ii, li) {
+      function ke(Fe, ei, ri, ii, hi) {
         switch (Fe) {
           case "none":
             return;
           case "outerHTML":
-            Te(ri, ii, li);
+            Te(ri, ii, hi);
             return;
           case "afterbegin":
-            qe(ri, ii, li);
+            qe(ri, ii, hi);
             return;
           case "beforebegin":
-            He(ri, ii, li);
+            He(ri, ii, hi);
             return;
           case "beforeend":
-            Le(ri, ii, li);
+            Le(ri, ii, hi);
             return;
           case "afterend":
-            Ae(ri, ii, li);
+            Ae(ri, ii, hi);
             return;
           case "delete":
             Ne(ri);
             return;
           default:
-            for (var Ci = Tr(ei), zi = 0; zi < Ci.length; zi++) {
-              var Ki = Ci[zi];
+            for (var wi = Tr(ei), zi = 0; zi < wi.length; zi++) {
+              var Ki = wi[zi];
               try {
-                var Yi = Ki.handleSwap(Fe, ri, ii, li);
+                var Yi = Ki.handleSwap(Fe, ri, ii, hi);
                 if (Yi) {
                   if (typeof Yi.length < "u")
                     for (var es = 0; es < Yi.length; es++) {
                       var is = Yi[es];
-                      is.nodeType !== Node.TEXT_NODE && is.nodeType !== Node.COMMENT_NODE && li.tasks.push(we(is));
+                      is.nodeType !== Node.TEXT_NODE && is.nodeType !== Node.COMMENT_NODE && hi.tasks.push(we(is));
                     }
                   return;
                 }
@@ -6878,7 +6878,7 @@ var htmx_min = { exports: {} };
                 x($i);
               }
             }
-            Fe === "innerHTML" ? Ie(ri, ii, li) : ke(G.config.defaultSwapStyle, ei, ri, ii, li);
+            Fe === "innerHTML" ? Ie(ri, ii, hi) : ke(G.config.defaultSwapStyle, ei, ri, ii, hi);
         }
       }
       function Me(Fe) {
@@ -6888,20 +6888,20 @@ var htmx_min = { exports: {} };
             return ri[2];
         }
       }
-      function De(Fe, ei, ri, ii, li, Ci) {
-        li.title = Me(ii);
+      function De(Fe, ei, ri, ii, hi, wi) {
+        hi.title = Me(ii);
         var zi = l(ii);
         if (zi)
-          return xe(ri, zi, li), zi = Pe(ri, zi, Ci), ye(zi), ke(Fe, ri, ei, zi, li);
+          return xe(ri, zi, hi), zi = Pe(ri, zi, wi), ye(zi), ke(Fe, ri, ei, zi, hi);
       }
       function Xe(Fe, ei, ri) {
         var ii = Fe.getResponseHeader(ei);
         if (ii.indexOf("{") === 0) {
-          var li = y(ii);
-          for (var Ci in li)
-            if (li.hasOwnProperty(Ci)) {
-              var zi = li[Ci];
-              N(zi) || (zi = { value: zi }), oe(ri, Ci, zi);
+          var hi = y(ii);
+          for (var wi in hi)
+            if (hi.hasOwnProperty(wi)) {
+              var zi = hi[wi];
+              N(zi) || (zi = { value: zi }), oe(ri, wi, zi);
             }
         } else
           for (var Ki = ii.split(","), Yi = 0; Yi < Ki.length; Yi++)
@@ -6915,13 +6915,13 @@ var htmx_min = { exports: {} };
               ri++;
             ei.push(Fe.substr(ii, ri - ii + 1));
           } else if (Ve.indexOf(Fe.charAt(ri)) !== -1) {
-            var li = Fe.charAt(ri), ii = ri;
-            for (ri++; ri < Fe.length && Fe.charAt(ri) !== li; )
+            var hi = Fe.charAt(ri), ii = ri;
+            for (ri++; ri < Fe.length && Fe.charAt(ri) !== hi; )
               Fe.charAt(ri) === "\\" && ri++, ri++;
             ei.push(Fe.substr(ii, ri - ii + 1));
           } else {
-            var Ci = Fe.charAt(ri);
-            ei.push(Ci);
+            var wi = Fe.charAt(ri);
+            ei.push(wi);
           }
           ri++;
         }
@@ -6933,25 +6933,25 @@ var htmx_min = { exports: {} };
       function ze(Fe, ei, ri) {
         if (ei[0] === "[") {
           ei.shift();
-          for (var ii = 1, li = " return (function(" + ri + "){ return (", Ci = null; ei.length > 0; ) {
+          for (var ii = 1, hi = " return (function(" + ri + "){ return (", wi = null; ei.length > 0; ) {
             var zi = ei[0];
             if (zi === "]") {
               if (ii--, ii === 0) {
-                Ci === null && (li = li + "true"), ei.shift(), li += ")})";
+                wi === null && (hi = hi + "true"), ei.shift(), hi += ")})";
                 try {
                   var Ki = hr(Fe, function() {
-                    return Function(li)();
+                    return Function(hi)();
                   }, function() {
                     return !0;
                   });
-                  return Ki.source = li, Ki;
+                  return Ki.source = hi, Ki;
                 } catch (Yi) {
-                  return ae(K().body, "htmx:syntax:error", { error: Yi, source: li }), null;
+                  return ae(K().body, "htmx:syntax:error", { error: Yi, source: hi }), null;
                 }
               }
             } else
               zi === "[" && ii++;
-            _e(zi, Ci, ri) ? li += "((" + ri + "." + zi + ") ? (" + ri + "." + zi + ") : (window." + zi + "))" : li = li + zi, Ci = ei.shift();
+            _e(zi, wi, ri) ? hi += "((" + ri + "." + zi + ") ? (" + ri + "." + zi + ") : (window." + zi + "))" : hi = hi + zi, wi = ei.shift();
           }
         }
       }
@@ -6967,17 +6967,17 @@ var htmx_min = { exports: {} };
           var ii = We(ei);
           do {
             m(ii, je);
-            var li = ii.length, Ci = m(ii, /[,\[\s]/);
-            if (Ci !== "")
-              if (Ci === "every") {
+            var hi = ii.length, wi = m(ii, /[,\[\s]/);
+            if (wi !== "")
+              if (wi === "every") {
                 var zi = { trigger: "every" };
                 m(ii, je), zi.pollInterval = v(m(ii, /[,\[\s]/)), m(ii, je);
                 var Ki = ze(Fe, ii, "event");
                 Ki && (zi.eventFilter = Ki), ri.push(zi);
-              } else if (Ci.indexOf("sse:") === 0)
-                ri.push({ trigger: "sse", sseEvent: Ci.substr(4) });
+              } else if (wi.indexOf("sse:") === 0)
+                ri.push({ trigger: "sse", sseEvent: wi.substr(4) });
               else {
-                var Yi = { trigger: Ci }, Ki = ze(Fe, ii, "event");
+                var Yi = { trigger: wi }, Ki = ze(Fe, ii, "event");
                 for (Ki && (Yi.eventFilter = Ki); ii.length > 0 && ii[0] !== ","; ) {
                   m(ii, je);
                   var es = ii.shift();
@@ -6998,7 +6998,7 @@ var htmx_min = { exports: {} };
                 }
                 ri.push(Yi);
               }
-            ii.length === li && ae(Fe, "htmx:syntax:error", { token: ii.shift() }), m(ii, je);
+            ii.length === hi && ae(Fe, "htmx:syntax:error", { token: ii.shift() }), m(ii, je);
           } while (ii[0] === "," && ii.shift());
         }
         return ri.length > 0 ? ri : h(Fe, "form") ? [{ trigger: "submit" }] : h(Fe, 'input[type="button"], input[type="submit"]') ? [{ trigger: "click" }] : h(Fe, $e) ? [{ trigger: "change" }] : [{ trigger: "click" }];
@@ -7018,12 +7018,12 @@ var htmx_min = { exports: {} };
       function Ye(Fe, ei, ri) {
         if (Fe.tagName === "A" && Ke(Fe) && (Fe.target === "" || Fe.target === "_self") || Fe.tagName === "FORM") {
           ei.boosted = !0;
-          var ii, li;
+          var ii, hi;
           if (Fe.tagName === "A")
-            ii = "get", li = Fe.href;
+            ii = "get", hi = Fe.href;
           else {
-            var Ci = J(Fe, "method");
-            ii = Ci ? Ci.toLowerCase() : "get", li = J(Fe, "action");
+            var wi = J(Fe, "method");
+            ii = wi ? wi.toLowerCase() : "get", hi = J(Fe, "action");
           }
           ri.forEach(function(zi) {
             rt(Fe, function(Ki, Yi) {
@@ -7031,7 +7031,7 @@ var htmx_min = { exports: {} };
                 g(Ki);
                 return;
               }
-              se(ii, li, Ki, Yi);
+              se(ii, hi, Ki, Yi);
             }, ei, zi, !0);
           });
         }
@@ -7047,13 +7047,13 @@ var htmx_min = { exports: {} };
         if (ii)
           try {
             return ii.call(ei, ri) !== !0;
-          } catch (li) {
-            return ae(K().body, "htmx:eventFilter:error", { error: li, source: ii.source }), !0;
+          } catch (hi) {
+            return ae(K().body, "htmx:eventFilter:error", { error: hi, source: ii.source }), !0;
           }
         return !1;
       }
-      function rt(Fe, ei, ri, ii, li) {
-        var Ci = ee(Fe), zi;
+      function rt(Fe, ei, ri, ii, hi) {
+        var wi = ee(Fe), zi;
         ii.from ? zi = W(Fe, ii.from) : zi = [Fe], ii.changed && zi.forEach(function(Ki) {
           var Yi = ee(Ki);
           Yi.lastValue = Ki.value;
@@ -7063,15 +7063,15 @@ var htmx_min = { exports: {} };
               Ki.removeEventListener(ii.trigger, Yi);
               return;
             }
-            if (!et(Fe, es) && ((li || Qe(es, Fe)) && es.preventDefault(), !tt(ii, Fe, es))) {
+            if (!et(Fe, es) && ((hi || Qe(es, Fe)) && es.preventDefault(), !tt(ii, Fe, es))) {
               var is = ee(es);
               if (is.triggerSpec = ii, is.handledFor == null && (is.handledFor = []), is.handledFor.indexOf(Fe) < 0) {
                 if (is.handledFor.push(Fe), ii.consume && es.stopPropagation(), ii.target && es.target && !h(es.target, ii.target))
                   return;
                 if (ii.once) {
-                  if (Ci.triggeredOnce)
+                  if (wi.triggeredOnce)
                     return;
-                  Ci.triggeredOnce = !0;
+                  wi.triggeredOnce = !0;
                 }
                 if (ii.changed) {
                   var $i = ee(Ki);
@@ -7079,11 +7079,11 @@ var htmx_min = { exports: {} };
                     return;
                   $i.lastValue = Ki.value;
                 }
-                if (Ci.delayed && clearTimeout(Ci.delayed), Ci.throttle)
+                if (wi.delayed && clearTimeout(wi.delayed), wi.throttle)
                   return;
-                ii.throttle ? Ci.throttle || (ei(Fe, es), Ci.throttle = setTimeout(function() {
-                  Ci.throttle = null;
-                }, ii.throttle)) : ii.delay ? Ci.delayed = setTimeout(function() {
+                ii.throttle ? wi.throttle || (ei(Fe, es), wi.throttle = setTimeout(function() {
+                  wi.throttle = null;
+                }, ii.throttle)) : ii.delay ? wi.delayed = setTimeout(function() {
                   ei(Fe, es);
                 }, ii.delay) : (oe(Fe, "htmx:trigger"), ei(Fe, es));
               }
@@ -7112,9 +7112,9 @@ var htmx_min = { exports: {} };
         }
       }
       function st(Fe, ei, ri) {
-        for (var ii = k(ri), li = 0; li < ii.length; li++) {
-          var Ci = ii[li].split(/:(.+)/);
-          Ci[0] === "connect" && lt(Fe, Ci[1], 0), Ci[0] === "send" && ft(Fe);
+        for (var ii = k(ri), hi = 0; hi < ii.length; hi++) {
+          var wi = ii[hi].split(/:(.+)/);
+          wi[0] === "connect" && lt(Fe, wi[1], 0), wi[0] === "send" && ft(Fe);
         }
       }
       function lt(Fe, ei, ri) {
@@ -7123,21 +7123,21 @@ var htmx_min = { exports: {} };
             var ii = location.hostname + (location.port ? ":" + location.port : "");
             location.protocol == "https:" ? ei = "wss://" + ii + ei : location.protocol == "http:" && (ei = "ws://" + ii + ei);
           }
-          var li = G.createWebSocket(ei);
-          li.onerror = function(Ci) {
-            ae(Fe, "htmx:wsError", { error: Ci, socket: li }), ut(Fe);
-          }, li.onclose = function(Ci) {
-            if ([1006, 1012, 1013].indexOf(Ci.code) >= 0) {
+          var hi = G.createWebSocket(ei);
+          hi.onerror = function(wi) {
+            ae(Fe, "htmx:wsError", { error: wi, socket: hi }), ut(Fe);
+          }, hi.onclose = function(wi) {
+            if ([1006, 1012, 1013].indexOf(wi.code) >= 0) {
               var zi = ct(ri);
               setTimeout(function() {
                 lt(Fe, ei, ri + 1);
               }, zi);
             }
-          }, li.onopen = function(Ci) {
+          }, hi.onopen = function(wi) {
             ri = 0;
-          }, ee(Fe).webSocket = li, li.addEventListener("message", function(Ci) {
+          }, ee(Fe).webSocket = hi, hi.addEventListener("message", function(wi) {
             if (!ut(Fe)) {
-              var zi = Ci.data;
+              var zi = wi.data;
               w(Fe, function(Vi) {
                 zi = Vi.transformResponse(zi, null, Fe);
               });
@@ -7159,8 +7159,8 @@ var htmx_min = { exports: {} };
           return ee(ri).webSocket != null;
         });
         ei ? Fe.addEventListener(Ge(Fe)[0].trigger, function(ri) {
-          var ii = ee(ei).webSocket, li = ir(Fe, ei), Ci = er(Fe, "post"), zi = Ci.errors, Ki = Ci.values, Yi = gr(Fe), es = ne(Ki, Yi), is = ar(es, Fe);
-          if (is.HEADERS = li, zi && zi.length > 0) {
+          var ii = ee(ei).webSocket, hi = ir(Fe, ei), wi = er(Fe, "post"), zi = wi.errors, Ki = wi.values, Yi = gr(Fe), es = ne(Ki, Yi), is = ar(es, Fe);
+          if (is.HEADERS = hi, zi && zi.length > 0) {
             oe(Fe, "htmx:validation:halted", zi);
             return;
           }
@@ -7178,9 +7178,9 @@ var htmx_min = { exports: {} };
         x('htmx.config.wsReconnectDelay must either be a function or the string "full-jitter"');
       }
       function ht(Fe, ei, ri) {
-        for (var ii = k(ri), li = 0; li < ii.length; li++) {
-          var Ci = ii[li].split(/:(.+)/);
-          Ci[0] === "connect" && dt(Fe, Ci[1]), Ci[0] === "swap" && vt(Fe, Ci[1]);
+        for (var ii = k(ri), hi = 0; hi < ii.length; hi++) {
+          var wi = ii[hi].split(/:(.+)/);
+          wi[0] === "connect" && dt(Fe, wi[1]), wi[0] === "swap" && vt(Fe, wi[1]);
         }
       }
       function dt(Fe, ei) {
@@ -7192,31 +7192,31 @@ var htmx_min = { exports: {} };
       function vt(Fe, ei) {
         var ri = c(Fe, mt);
         if (ri) {
-          var ii = ee(ri).sseEventSource, li = function(Ci) {
+          var ii = ee(ri).sseEventSource, hi = function(wi) {
             if (!pt(ri)) {
               if (!re(Fe)) {
-                ii.removeEventListener(ei, li);
+                ii.removeEventListener(ei, hi);
                 return;
               }
-              var zi = Ci.data;
+              var zi = wi.data;
               w(Fe, function(is) {
                 zi = is.transformResponse(zi, null, Fe);
               });
               var Ki = sr(Fe), Yi = de(Fe), es = S(Fe);
-              De(Ki.swapStyle, Yi, Fe, zi, es), Wt(es.tasks), oe(Fe, "htmx:sseMessage", Ci);
+              De(Ki.swapStyle, Yi, Fe, zi, es), Wt(es.tasks), oe(Fe, "htmx:sseMessage", wi);
             }
           };
-          ee(Fe).sseListener = li, ii.addEventListener(ei, li);
+          ee(Fe).sseListener = hi, ii.addEventListener(ei, hi);
         } else
           ae(Fe, "htmx:noSSESourceError");
       }
       function gt(Fe, ei, ri) {
         var ii = c(Fe, mt);
         if (ii) {
-          var li = ee(ii).sseEventSource, Ci = function() {
-            pt(ii) || (re(Fe) ? ei(Fe) : li.removeEventListener(ri, Ci));
+          var hi = ee(ii).sseEventSource, wi = function() {
+            pt(ii) || (re(Fe) ? ei(Fe) : hi.removeEventListener(ri, wi));
           };
-          ee(Fe).sseListener = Ci, li.addEventListener(ri, Ci);
+          ee(Fe).sseListener = wi, hi.addEventListener(ri, wi);
         } else
           ae(Fe, "htmx:noSSESourceError");
       }
@@ -7228,23 +7228,23 @@ var htmx_min = { exports: {} };
         return ee(Fe).sseEventSource != null;
       }
       function xt(Fe, ei, ri, ii) {
-        var li = function() {
+        var hi = function() {
           ri.loaded || (ri.loaded = !0, ei(Fe));
         };
-        ii ? setTimeout(li, ii) : li();
+        ii ? setTimeout(hi, ii) : hi();
       }
       function yt(Fe, ei, ri) {
         var ii = !1;
-        return te(R, function(li) {
-          if (o(Fe, "hx-" + li)) {
-            var Ci = Z(Fe, "hx-" + li);
-            ii = !0, ei.path = Ci, ei.verb = li, ri.forEach(function(zi) {
+        return te(R, function(hi) {
+          if (o(Fe, "hx-" + hi)) {
+            var wi = Z(Fe, "hx-" + hi);
+            ii = !0, ei.path = wi, ei.verb = hi, ri.forEach(function(zi) {
               bt(Fe, zi, ei, function(Ki, Yi) {
                 if (d(Ki, G.config.disableSelector)) {
                   g(Ki);
                   return;
                 }
-                se(li, Ci, Ki, Yi);
+                se(hi, wi, Ki, Yi);
               });
             });
           }
@@ -7256,9 +7256,9 @@ var htmx_min = { exports: {} };
         else if (ei.trigger === "revealed")
           at(), rt(Fe, ii, ri, ei), ot(Fe);
         else if (ei.trigger === "intersect") {
-          var li = {};
-          ei.root && (li.root = ie(Fe, ei.root)), ei.threshold && (li.threshold = parseFloat(ei.threshold));
-          var Ci = new IntersectionObserver(function(zi) {
+          var hi = {};
+          ei.root && (hi.root = ie(Fe, ei.root)), ei.threshold && (hi.threshold = parseFloat(ei.threshold));
+          var wi = new IntersectionObserver(function(zi) {
             for (var Ki = 0; Ki < zi.length; Ki++) {
               var Yi = zi[Ki];
               if (Yi.isIntersecting) {
@@ -7266,8 +7266,8 @@ var htmx_min = { exports: {} };
                 break;
               }
             }
-          }, li);
-          Ci.observe(Fe), rt(Fe, ii, ri, ei);
+          }, hi);
+          wi.observe(Fe), rt(Fe, ii, ri, ei);
         } else
           ei.trigger === "load" ? tt(ei, Fe, Pt("load", { elt: Fe })) || xt(Fe, ii, ri, ei.delay) : ei.pollInterval ? (ri.polling = !0, Ze(Fe, ii, ei)) : rt(Fe, ii, ri, ei);
       }
@@ -7315,43 +7315,43 @@ var htmx_min = { exports: {} };
         var ei = s("#" + J(Fe, "form")) || d(Fe, "form");
         if (ei) {
           var ri = function(ii) {
-            var li = d(ii.target, "button, input[type='submit']");
-            if (li !== null) {
-              var Ci = ee(ei);
-              Ci.lastButtonClicked = li;
+            var hi = d(ii.target, "button, input[type='submit']");
+            if (hi !== null) {
+              var wi = ee(ei);
+              wi.lastButtonClicked = hi;
             }
           };
           Fe.addEventListener("click", ri), Fe.addEventListener("focusin", ri), Fe.addEventListener("focusout", function(ii) {
-            var li = ee(ei);
-            li.lastButtonClicked = null;
+            var hi = ee(ei);
+            hi.lastButtonClicked = null;
           });
         }
       }
       function Tt(Fe) {
         var ei = We(Fe), ri = 0;
         for (let ii = 0; ii < ei.length; ii++) {
-          const li = ei[ii];
-          li === "{" ? ri++ : li === "}" && ri--;
+          const hi = ei[ii];
+          hi === "{" ? ri++ : hi === "}" && ri--;
         }
         return ri;
       }
       function qt(Fe, ei, ri) {
         var ii = ee(Fe);
         ii.onHandlers = [];
-        var li, Ci = function(zi) {
+        var hi, wi = function(zi) {
           return hr(Fe, function() {
-            li || (li = new Function("event", ri)), li.call(Fe, zi);
+            hi || (hi = new Function("event", ri)), hi.call(Fe, zi);
           });
         };
-        Fe.addEventListener(ei, Ci), ii.onHandlers.push({ event: ei, listener: Ci });
+        Fe.addEventListener(ei, wi), ii.onHandlers.push({ event: ei, listener: wi });
       }
       function Ht(Fe) {
         var ei = Z(Fe, "hx-on");
         if (ei) {
           for (var ri = {}, ii = ei.split(`
-`), li = null, Ci = 0; ii.length > 0; ) {
+`), hi = null, wi = 0; ii.length > 0; ) {
             var zi = ii.shift(), Ki = zi.match(/^\s*([a-zA-Z:\-]+:)(.*)/);
-            Ci === 0 && Ki ? (zi.split(":"), li = Ki[1].slice(0, -1), ri[li] = Ki[2]) : ri[li] += zi, Ci += Tt(zi);
+            wi === 0 && Ki ? (zi.split(":"), hi = Ki[1].slice(0, -1), ri[hi] = Ki[2]) : ri[hi] += zi, wi += Tt(zi);
           }
           for (var Yi in ri)
             qt(Fe, Yi, ri[Yi]);
@@ -7362,8 +7362,8 @@ var htmx_min = { exports: {} };
         for (var ei = 0; ei < Fe.attributes.length; ei++) {
           var ri = Fe.attributes[ei].name, ii = Fe.attributes[ei].value;
           if (ri.startsWith("hx-on:") || ri.startsWith("data-hx-on:")) {
-            let li = ri.slice(ri.indexOf(":") + 1);
-            li.startsWith(":") && (li = "htmx" + li), qt(Fe, li, ii);
+            let hi = ri.slice(ri.indexOf(":") + 1);
+            hi.startsWith(":") && (hi = "htmx" + hi), qt(Fe, hi, ii);
           }
         }
       }
@@ -7380,10 +7380,10 @@ var htmx_min = { exports: {} };
             bt(Fe, zi, ei, function() {
             });
           })), (Fe.tagName === "FORM" || J(Fe, "type") === "submit" && o(Fe, "form")) && Ot(Fe);
-          var li = Z(Fe, "hx-sse");
-          li && ht(Fe, ei, li);
-          var Ci = Z(Fe, "hx-ws");
-          Ci && st(Fe, ei, Ci), oe(Fe, "htmx:afterProcessNode");
+          var hi = Z(Fe, "hx-sse");
+          hi && ht(Fe, ei, hi);
+          var wi = Z(Fe, "hx-ws");
+          wi && st(Fe, ei, wi), oe(Fe, "htmx:afterProcessNode");
         }
       }
       function Nt(Fe) {
@@ -7424,14 +7424,14 @@ var htmx_min = { exports: {} };
         Fe = s(Fe), ri == null && (ri = {}), ri.elt = Fe;
         var ii = Pt(ei, ri);
         G.logger && !kt(ei) && G.logger(Fe, ei, ri), ri.error && (x(ri.error), oe(Fe, "htmx:error", { errorInfo: ri }));
-        var li = Fe.dispatchEvent(ii), Ci = It(ei);
-        if (li && Ci !== ei) {
-          var zi = Pt(Ci, ii.detail);
-          li = li && Fe.dispatchEvent(zi);
+        var hi = Fe.dispatchEvent(ii), wi = It(ei);
+        if (hi && wi !== ei) {
+          var zi = Pt(wi, ii.detail);
+          hi = hi && Fe.dispatchEvent(zi);
         }
         return w(Fe, function(Ki) {
-          li = li && Ki.onEvent(ei, ii) !== !1;
-        }), li;
+          hi = hi && Ki.onEvent(ei, ii) !== !1;
+        }), hi;
       }
       var Mt = location.pathname + location.search;
       function Dt() {
@@ -7441,20 +7441,20 @@ var htmx_min = { exports: {} };
       function Xt(Fe, ei, ri, ii) {
         if (M()) {
           Fe = D(Fe);
-          for (var li = y(localStorage.getItem("htmx-history-cache")) || [], Ci = 0; Ci < li.length; Ci++)
-            if (li[Ci].url === Fe) {
-              li.splice(Ci, 1);
+          for (var hi = y(localStorage.getItem("htmx-history-cache")) || [], wi = 0; wi < hi.length; wi++)
+            if (hi[wi].url === Fe) {
+              hi.splice(wi, 1);
               break;
             }
           var zi = { url: Fe, content: ei, title: ri, scroll: ii };
-          for (oe(K().body, "htmx:historyItemCreated", { item: zi, cache: li }), li.push(zi); li.length > G.config.historyCacheSize; )
-            li.shift();
-          for (; li.length > 0; )
+          for (oe(K().body, "htmx:historyItemCreated", { item: zi, cache: hi }), hi.push(zi); hi.length > G.config.historyCacheSize; )
+            hi.shift();
+          for (; hi.length > 0; )
             try {
-              localStorage.setItem("htmx-history-cache", JSON.stringify(li));
+              localStorage.setItem("htmx-history-cache", JSON.stringify(hi));
               break;
             } catch (Ki) {
-              ae(K().body, "htmx:historyCacheError", { cause: Ki, cache: li }), li.shift();
+              ae(K().body, "htmx:historyCacheError", { cause: Ki, cache: hi }), hi.shift();
             }
         }
       }
@@ -7495,12 +7495,12 @@ var htmx_min = { exports: {} };
             oe(K().body, "htmx:historyCacheMissLoad", ri);
             var ii = l(this.response);
             ii = ii.querySelector("[hx-history-elt],[data-hx-history-elt]") || ii;
-            var li = Dt(), Ci = S(li), zi = Me(this.response);
+            var hi = Dt(), wi = S(hi), zi = Me(this.response);
             if (zi) {
               var Ki = b("title");
               Ki ? Ki.innerHTML = zi : window.document.title = zi;
             }
-            Ie(li, ii, Ci), Wt(Ci.tasks), Mt = Fe, oe(K().body, "htmx:historyRestore", { path: Fe, cacheMiss: !0, serverResponse: this.response });
+            Ie(hi, ii, wi), Wt(wi.tasks), Mt = Fe, oe(K().body, "htmx:historyRestore", { path: Fe, cacheMiss: !0, serverResponse: this.response });
           } else
             ae(K().body, "htmx:historyCacheMissLoadError", ri);
         }, ei.send();
@@ -7509,8 +7509,8 @@ var htmx_min = { exports: {} };
         Bt(), Fe = Fe || location.pathname + location.search;
         var ei = Ft(Fe);
         if (ei) {
-          var ri = l(ei.content), ii = Dt(), li = S(ii);
-          Ie(ii, ri, li), Wt(li.tasks), document.title = ei.title, setTimeout(function() {
+          var ri = l(ei.content), ii = Dt(), hi = S(ii);
+          Ie(ii, ri, hi), Wt(hi.tasks), document.title = ei.title, setTimeout(function() {
             window.scrollTo(0, ei.scroll);
           }, 0), Mt = Fe, oe(K().body, "htmx:historyRestore", { path: Fe, item: ei });
         } else
@@ -7546,18 +7546,18 @@ var htmx_min = { exports: {} };
           ii === void 0 ? ri[Fe] = ei : Array.isArray(ii) ? Array.isArray(ei) ? ri[Fe] = ii.concat(ei) : ii.push(ei) : Array.isArray(ei) ? ri[Fe] = [ii].concat(ei) : ri[Fe] = [ii, ei];
         }
       }
-      function Yt(Fe, ei, ri, ii, li) {
+      function Yt(Fe, ei, ri, ii, hi) {
         if (!(ii == null || Jt(Fe, ii))) {
           if (Fe.push(ii), Zt(ii)) {
-            var Ci = J(ii, "name"), zi = ii.value;
+            var wi = J(ii, "name"), zi = ii.value;
             ii.multiple && (zi = I(ii.querySelectorAll("option:checked")).map(function(Yi) {
               return Yi.value;
-            })), ii.files && (zi = I(ii.files)), Kt(Ci, zi, ei), li && Qt(ii, ri);
+            })), ii.files && (zi = I(ii.files)), Kt(wi, zi, ei), hi && Qt(ii, ri);
           }
           if (h(ii, "form")) {
             var Ki = ii.elements;
             te(Ki, function(Yi) {
-              Yt(Fe, ei, ri, Yi, li);
+              Yt(Fe, ei, ri, Yi, hi);
             });
           }
         }
@@ -7566,17 +7566,17 @@ var htmx_min = { exports: {} };
         Fe.willValidate && (oe(Fe, "htmx:validation:validate"), Fe.checkValidity() || (ei.push({ elt: Fe, message: Fe.validationMessage, validity: Fe.validity }), oe(Fe, "htmx:validation:failed", { message: Fe.validationMessage, validity: Fe.validity })));
       }
       function er(Fe, ei) {
-        var ri = [], ii = {}, li = {}, Ci = [], zi = ee(Fe), Ki = h(Fe, "form") && Fe.noValidate !== !0 || Z(Fe, "hx-validate") === "true";
-        if (zi.lastButtonClicked && (Ki = Ki && zi.lastButtonClicked.formNoValidate !== !0), ei !== "get" && Yt(ri, li, Ci, d(Fe, "form"), Ki), Yt(ri, ii, Ci, Fe, Ki), zi.lastButtonClicked || Fe.tagName === "BUTTON" || Fe.tagName === "INPUT" && J(Fe, "type") === "submit") {
+        var ri = [], ii = {}, hi = {}, wi = [], zi = ee(Fe), Ki = h(Fe, "form") && Fe.noValidate !== !0 || Z(Fe, "hx-validate") === "true";
+        if (zi.lastButtonClicked && (Ki = Ki && zi.lastButtonClicked.formNoValidate !== !0), ei !== "get" && Yt(ri, hi, wi, d(Fe, "form"), Ki), Yt(ri, ii, wi, Fe, Ki), zi.lastButtonClicked || Fe.tagName === "BUTTON" || Fe.tagName === "INPUT" && J(Fe, "type") === "submit") {
           var Yi = zi.lastButtonClicked || Fe, es = J(Yi, "name");
-          Kt(es, Yi.value, li);
+          Kt(es, Yi.value, hi);
         }
         var is = ce(Fe, "hx-include");
         return te(is, function($i) {
-          Yt(ri, ii, Ci, $i, Ki), h($i, "form") || te($i.querySelectorAll($e), function(Vi) {
-            Yt(ri, ii, Ci, Vi, Ki);
+          Yt(ri, ii, wi, $i, Ki), h($i, "form") || te($i.querySelectorAll($e), function(Vi) {
+            Yt(ri, ii, wi, Vi, Ki);
           });
-        }), ii = ne(ii, li), { errors: Ci, values: ii };
+        }), ii = ne(ii, hi), { errors: wi, values: ii };
       }
       function tr(Fe, ei, ri) {
         Fe !== "" && (Fe += "&"), String(ri) === "[object Object]" && (ri = JSON.stringify(ri));
@@ -7588,8 +7588,8 @@ var htmx_min = { exports: {} };
         for (var ri in Fe)
           if (Fe.hasOwnProperty(ri)) {
             var ii = Fe[ri];
-            Array.isArray(ii) ? te(ii, function(li) {
-              ei = tr(ei, ri, li);
+            Array.isArray(ii) ? te(ii, function(hi) {
+              ei = tr(ei, ri, hi);
             }) : ei = tr(ei, ri, ii);
           }
         return ei;
@@ -7599,8 +7599,8 @@ var htmx_min = { exports: {} };
         for (var ri in Fe)
           if (Fe.hasOwnProperty(ri)) {
             var ii = Fe[ri];
-            Array.isArray(ii) ? te(ii, function(li) {
-              ei.append(ri, li);
+            Array.isArray(ii) ? te(ii, function(hi) {
+              ei.append(ri, hi);
             }) : ei.append(ri, ii);
           }
         return ei;
@@ -7617,12 +7617,12 @@ var htmx_min = { exports: {} };
           if (ri === "*")
             return Fe;
           if (ri.indexOf("not ") === 0)
-            return te(ri.substr(4).split(","), function(li) {
-              li = li.trim(), delete Fe[li];
+            return te(ri.substr(4).split(","), function(hi) {
+              hi = hi.trim(), delete Fe[hi];
             }), Fe;
           var ii = {};
-          return te(ri.split(","), function(li) {
-            li = li.trim(), ii[li] = Fe[li];
+          return te(ri.split(","), function(hi) {
+            hi = hi.trim(), ii[hi] = Fe[hi];
           }), ii;
         } else
           return Fe;
@@ -7633,11 +7633,11 @@ var htmx_min = { exports: {} };
       function sr(Fe, ei) {
         var ri = ei || Y(Fe, "hx-swap"), ii = { swapStyle: ee(Fe).boosted ? "innerHTML" : G.config.defaultSwapStyle, swapDelay: G.config.defaultSwapDelay, settleDelay: G.config.defaultSettleDelay };
         if (ee(Fe).boosted && !or(Fe) && (ii.show = "top"), ri) {
-          var li = k(ri);
-          if (li.length > 0) {
-            ii.swapStyle = li[0];
-            for (var Ci = 1; Ci < li.length; Ci++) {
-              var zi = li[Ci];
+          var hi = k(ri);
+          if (hi.length > 0) {
+            ii.swapStyle = hi[0];
+            for (var wi = 1; wi < hi.length; wi++) {
+              var zi = hi[wi];
               if (zi.indexOf("swap:") === 0 && (ii.swapDelay = v(zi.substr(5))), zi.indexOf("settle:") === 0 && (ii.settleDelay = v(zi.substr(7))), zi.indexOf("transition:") === 0 && (ii.transition = zi.substr(11) === "true"), zi.indexOf("scroll:") === 0) {
                 var Ki = zi.substr(7), Yi = Ki.split(":"), es = Yi.pop(), is = Yi.length > 0 ? Yi.join(":") : null;
                 ii.scroll = es, ii.scrollTarget = is;
@@ -7660,8 +7660,8 @@ var htmx_min = { exports: {} };
       }
       function ur(Fe, ei, ri) {
         var ii = null;
-        return w(ei, function(li) {
-          ii == null && (ii = li.encodeParameters(Fe, ri, ei));
+        return w(ei, function(hi) {
+          ii == null && (ii = hi.encodeParameters(Fe, ri, ei));
         }), ii ?? (lr(ei) ? nr(ri) : rr(ri));
       }
       function S(Fe) {
@@ -7670,31 +7670,31 @@ var htmx_min = { exports: {} };
       function fr(Fe, ei) {
         var ri = Fe[0], ii = Fe[Fe.length - 1];
         if (ei.scroll) {
-          var li = null;
-          ei.scrollTarget && (li = ie(ri, ei.scrollTarget)), ei.scroll === "top" && (ri || li) && (li = li || ri, li.scrollTop = 0), ei.scroll === "bottom" && (ii || li) && (li = li || ii, li.scrollTop = li.scrollHeight);
+          var hi = null;
+          ei.scrollTarget && (hi = ie(ri, ei.scrollTarget)), ei.scroll === "top" && (ri || hi) && (hi = hi || ri, hi.scrollTop = 0), ei.scroll === "bottom" && (ii || hi) && (hi = hi || ii, hi.scrollTop = hi.scrollHeight);
         }
         if (ei.show) {
-          var li = null;
+          var hi = null;
           if (ei.showTarget) {
-            var Ci = ei.showTarget;
-            ei.showTarget === "window" && (Ci = "body"), li = ie(ri, Ci);
+            var wi = ei.showTarget;
+            ei.showTarget === "window" && (wi = "body"), hi = ie(ri, wi);
           }
-          ei.show === "top" && (ri || li) && (li = li || ri, li.scrollIntoView({ block: "start", behavior: G.config.scrollBehavior })), ei.show === "bottom" && (ii || li) && (li = li || ii, li.scrollIntoView({ block: "end", behavior: G.config.scrollBehavior }));
+          ei.show === "top" && (ri || hi) && (hi = hi || ri, hi.scrollIntoView({ block: "start", behavior: G.config.scrollBehavior })), ei.show === "bottom" && (ii || hi) && (hi = hi || ii, hi.scrollIntoView({ block: "end", behavior: G.config.scrollBehavior }));
         }
       }
       function cr(Fe, ei, ri, ii) {
         if (ii == null && (ii = {}), Fe == null)
           return ii;
-        var li = Z(Fe, ei);
-        if (li) {
-          var Ci = li.trim(), zi = ri;
-          if (Ci === "unset")
+        var hi = Z(Fe, ei);
+        if (hi) {
+          var wi = hi.trim(), zi = ri;
+          if (wi === "unset")
             return null;
-          Ci.indexOf("javascript:") === 0 ? (Ci = Ci.substr(11), zi = !0) : Ci.indexOf("js:") === 0 && (Ci = Ci.substr(3), zi = !0), Ci.indexOf("{") !== 0 && (Ci = "{" + Ci + "}");
+          wi.indexOf("javascript:") === 0 ? (wi = wi.substr(11), zi = !0) : wi.indexOf("js:") === 0 && (wi = wi.substr(3), zi = !0), wi.indexOf("{") !== 0 && (wi = "{" + wi + "}");
           var Ki;
           zi ? Ki = hr(Fe, function() {
-            return Function("return (" + Ci + ")")();
-          }, {}) : Ki = y(Ci);
+            return Function("return (" + wi + ")")();
+          }, {}) : Ki = y(wi);
           for (var Yi in Ki)
             Ki.hasOwnProperty(Yi) && ii[Yi] == null && (ii[Yi] = Ki[Yi]);
         }
@@ -7741,27 +7741,27 @@ var htmx_min = { exports: {} };
         return ei;
       }
       function br(Fe, ei, ri) {
-        var ii = new URL(ei, document.location.href), li = document.location.origin, Ci = li === ii.origin;
-        return G.config.selfRequestsOnly && !Ci ? !1 : oe(Fe, "htmx:validateUrl", ne({ url: ii, sameHost: Ci }, ri));
+        var ii = new URL(ei, document.location.href), hi = document.location.origin, wi = hi === ii.origin;
+        return G.config.selfRequestsOnly && !wi ? !1 : oe(Fe, "htmx:validateUrl", ne({ url: ii, sameHost: wi }, ri));
       }
-      function se(Fe, ei, ri, ii, li, Ci) {
+      function se(Fe, ei, ri, ii, hi, wi) {
         var zi = null, Ki = null;
-        if (li = li ?? {}, li.returnPromise && typeof Promise < "u")
+        if (hi = hi ?? {}, hi.returnPromise && typeof Promise < "u")
           var Yi = new Promise(function(xi, yi) {
             zi = xi, Ki = yi;
           });
         ri == null && (ri = K().body);
-        var es = li.handler || Sr;
+        var es = hi.handler || Sr;
         if (re(ri)) {
-          var is = li.targetOverride || de(ri);
+          var is = hi.targetOverride || de(ri);
           if (is == null || is == fe) {
             ae(ri, "htmx:targetError", { target: Z(ri, "hx-target") });
             return;
           }
-          if (!Ci) {
+          if (!wi) {
             var $i = function() {
-              return se(Fe, ei, ri, ii, li, !0);
-            }, Vi = { target: is, elt: ri, path: ei, verb: Fe, triggeringEvent: ii, etc: li, issueRequest: $i };
+              return se(Fe, ei, ri, ii, hi, !0);
+            }, Vi = { target: is, elt: ri, path: ei, verb: Fe, triggeringEvent: ii, etc: hi, issueRequest: $i };
             if (oe(ri, "htmx:confirm", Vi) === !1)
               return;
           }
@@ -7777,8 +7777,8 @@ var htmx_min = { exports: {} };
             } else if (Ai === "replace")
               oe(_i, "htmx:abort");
             else if (Ai.indexOf("queue") === 0) {
-              var wi = Ai.split(" ");
-              ji = (wi[1] || "last").trim();
+              var Ci = Ai.split(" ");
+              ji = (Ci[1] || "last").trim();
             }
           }
           if (bi.xhr)
@@ -7793,11 +7793,11 @@ var htmx_min = { exports: {} };
                 ji == null && (ji = "last");
               }
               bi.queuedRequests == null && (bi.queuedRequests = []), ji === "first" && bi.queuedRequests.length === 0 ? bi.queuedRequests.push(function() {
-                se(Fe, ei, ri, ii, li);
+                se(Fe, ei, ri, ii, hi);
               }) : ji === "all" ? bi.queuedRequests.push(function() {
-                se(Fe, ei, ri, ii, li);
+                se(Fe, ei, ri, ii, hi);
               }) : ji === "last" && (bi.queuedRequests = [], bi.queuedRequests.push(function() {
-                se(Fe, ei, ri, ii, li);
+                se(Fe, ei, ri, ii, hi);
               }));
               return;
             }
@@ -7818,18 +7818,18 @@ var htmx_min = { exports: {} };
           if (pi && !confirm(pi))
             return Q(zi), Mi(), Yi;
           var vi = ir(ri, is, ci);
-          li.headers && (vi = ne(vi, li.headers));
+          hi.headers && (vi = ne(vi, hi.headers));
           var ui = er(ri, Fe), fi = ui.errors, si = ui.values;
-          li.values && (si = ne(si, li.values));
+          hi.values && (si = ne(si, hi.values));
           var ti = gr(ri), oi = ne(si, ti), di = ar(oi, ri);
           Fe !== "get" && !lr(ri) && (vi["Content-Type"] = "application/x-www-form-urlencoded"), G.config.getCacheBusterParam && Fe === "get" && (di["org.htmx.cache-buster"] = J(is, "id") || "true"), (ei == null || ei === "") && (ei = K().location.href);
-          var mi = cr(ri, "hx-request"), Oi = ee(ri).boosted, hi = G.config.methodsThatUseUrlParams.indexOf(Fe) >= 0, Li = { boosted: Oi, useUrlParams: hi, parameters: di, unfilteredParameters: oi, headers: vi, target: is, verb: Fe, errors: fi, withCredentials: li.credentials || mi.credentials || G.config.withCredentials, timeout: li.timeout || mi.timeout || G.config.timeout, path: ei, triggeringEvent: ii };
+          var mi = cr(ri, "hx-request"), Oi = ee(ri).boosted, li = G.config.methodsThatUseUrlParams.indexOf(Fe) >= 0, Li = { boosted: Oi, useUrlParams: li, parameters: di, unfilteredParameters: oi, headers: vi, target: is, verb: Fe, errors: fi, withCredentials: hi.credentials || mi.credentials || G.config.withCredentials, timeout: hi.timeout || mi.timeout || G.config.timeout, path: ei, triggeringEvent: ii };
           if (!oe(ri, "htmx:configRequest", Li))
             return Q(zi), Mi(), Yi;
-          if (ei = Li.path, Fe = Li.verb, vi = Li.headers, di = Li.parameters, fi = Li.errors, hi = Li.useUrlParams, fi && fi.length > 0)
+          if (ei = Li.path, Fe = Li.verb, vi = Li.headers, di = Li.parameters, fi = Li.errors, li = Li.useUrlParams, fi && fi.length > 0)
             return oe(ri, "htmx:validation:halted", Li), Q(zi), Mi(), Yi;
           var Ui = ei.split("#"), Zi = Ui[0], rs = Ui[1], Bi = ei;
-          if (hi) {
+          if (li) {
             Bi = Zi;
             var ni = Object.keys(di).length !== 0;
             ni && (Bi.indexOf("?") < 0 ? Bi += "?" : Bi += "&", Bi += rr(di), rs && (Bi += "#" + rs));
@@ -7845,7 +7845,7 @@ var htmx_min = { exports: {} };
                 pr(Ti, Pi, Hi);
               }
           }
-          var Ri = { xhr: Ti, target: is, requestConfig: Li, etc: li, boosted: Oi, pathInfo: { requestPath: ei, finalRequestPath: Bi, anchor: rs } };
+          var Ri = { xhr: Ti, target: is, requestConfig: Li, etc: hi, boosted: Oi, pathInfo: { requestPath: ei, finalRequestPath: Bi, anchor: rs } };
           if (Ti.onload = function() {
             try {
               var xi = yr(ri);
@@ -7876,25 +7876,25 @@ var htmx_min = { exports: {} };
               });
             });
           }), oe(ri, "htmx:beforeSend", Ri);
-          var ai = hi ? null : ur(Ti, ri, di);
+          var ai = li ? null : ur(Ti, ri, di);
           return Ti.send(ai), Yi;
         }
       }
       function wr(Fe, ei) {
-        var ri = ei.xhr, ii = null, li = null;
-        if (E(ri, /HX-Push:/i) ? (ii = ri.getResponseHeader("HX-Push"), li = "push") : E(ri, /HX-Push-Url:/i) ? (ii = ri.getResponseHeader("HX-Push-Url"), li = "push") : E(ri, /HX-Replace-Url:/i) && (ii = ri.getResponseHeader("HX-Replace-Url"), li = "replace"), ii)
-          return ii === "false" ? {} : { type: li, path: ii };
-        var Ci = ei.pathInfo.finalRequestPath, zi = ei.pathInfo.responsePath, Ki = Y(Fe, "hx-push-url"), Yi = Y(Fe, "hx-replace-url"), es = ee(Fe).boosted, is = null, $i = null;
-        return Ki ? (is = "push", $i = Ki) : Yi ? (is = "replace", $i = Yi) : es && (is = "push", $i = zi || Ci), $i ? $i === "false" ? {} : ($i === "true" && ($i = zi || Ci), ei.pathInfo.anchor && $i.indexOf("#") === -1 && ($i = $i + "#" + ei.pathInfo.anchor), { type: is, path: $i }) : {};
+        var ri = ei.xhr, ii = null, hi = null;
+        if (E(ri, /HX-Push:/i) ? (ii = ri.getResponseHeader("HX-Push"), hi = "push") : E(ri, /HX-Push-Url:/i) ? (ii = ri.getResponseHeader("HX-Push-Url"), hi = "push") : E(ri, /HX-Replace-Url:/i) && (ii = ri.getResponseHeader("HX-Replace-Url"), hi = "replace"), ii)
+          return ii === "false" ? {} : { type: hi, path: ii };
+        var wi = ei.pathInfo.finalRequestPath, zi = ei.pathInfo.responsePath, Ki = Y(Fe, "hx-push-url"), Yi = Y(Fe, "hx-replace-url"), es = ee(Fe).boosted, is = null, $i = null;
+        return Ki ? (is = "push", $i = Ki) : Yi ? (is = "replace", $i = Yi) : es && (is = "push", $i = zi || wi), $i ? $i === "false" ? {} : ($i === "true" && ($i = zi || wi), ei.pathInfo.anchor && $i.indexOf("#") === -1 && ($i = $i + "#" + ei.pathInfo.anchor), { type: is, path: $i }) : {};
       }
       function Sr(Fe, ei) {
-        var ri = ei.xhr, ii = ei.target, li = ei.etc;
+        var ri = ei.xhr, ii = ei.target, hi = ei.etc;
         if (oe(Fe, "htmx:beforeOnLoad", ei)) {
           if (E(ri, /HX-Trigger:/i) && Xe(ri, "HX-Trigger", Fe), E(ri, /HX-Location:/i)) {
             Bt();
-            var Ci = ri.getResponseHeader("HX-Location"), zi;
-            Ci.indexOf("{") === 0 && (zi = y(Ci), Ci = zi.path, delete zi.path), xr("GET", Ci, zi).then(function() {
-              Vt(Ci);
+            var wi = ri.getResponseHeader("HX-Location"), zi;
+            wi.indexOf("{") === 0 && (zi = y(wi), wi = zi.path, delete zi.path), xr("GET", wi, zi).then(function() {
+              Vt(wi);
             });
             return;
           }
@@ -7910,18 +7910,18 @@ var htmx_min = { exports: {} };
           var Ki = wr(Fe, ei), Yi = ri.status >= 200 && ri.status < 400 && ri.status !== 204, es = ri.response, is = ri.status >= 400, $i = ne({ shouldSwap: Yi, serverResponse: es, isError: is }, ei);
           if (oe(ii, "htmx:beforeSwap", $i)) {
             if (ii = $i.target, es = $i.serverResponse, is = $i.isError, ei.target = ii, ei.failed = is, ei.successful = !is, $i.shouldSwap) {
-              ri.status === 286 && Je(Fe), w(Fe, function(wi) {
-                es = wi.transformResponse(es, ri, Fe);
+              ri.status === 286 && Je(Fe), w(Fe, function(Ci) {
+                es = Ci.transformResponse(es, ri, Fe);
               }), Ki.type && Bt();
-              var Vi = li.swapOverride;
+              var Vi = hi.swapOverride;
               E(ri, /HX-Reswap:/i) && (Vi = ri.getResponseHeader("HX-Reswap"));
               var zi = sr(Fe, Vi);
               ii.classList.add(G.config.swappingClass);
               var _i = null, bi = null, Ai = function() {
                 try {
-                  var wi = document.activeElement, Si = {};
+                  var Ci = document.activeElement, Si = {};
                   try {
-                    Si = { elt: wi, start: wi ? wi.selectionStart : null, end: wi ? wi.selectionEnd : null };
+                    Si = { elt: Ci, start: Ci ? Ci.selectionStart : null, end: Ci ? Ci.selectionEnd : null };
                   } catch {
                   }
                   var Ti;
@@ -7969,8 +7969,8 @@ var htmx_min = { exports: {} };
                 }
               }, ji = G.config.globalViewTransitions;
               if (zi.hasOwnProperty("transition") && (ji = zi.transition), ji && oe(Fe, "htmx:beforeTransition", ei) && typeof Promise < "u" && document.startViewTransition) {
-                var Ni = new Promise(function(wi, Si) {
-                  _i = wi, bi = Si;
+                var Ni = new Promise(function(Ci, Si) {
+                  _i = Ci, bi = Si;
                 }), gi = Ai;
                 Ai = function() {
                   document.startViewTransition(function() {
@@ -8011,14 +8011,14 @@ var htmx_min = { exports: {} };
           return ei;
         ei == null && (ei = []), ri == null && (ri = []);
         var ii = Z(Fe, "hx-ext");
-        return ii && te(ii.split(","), function(li) {
-          if (li = li.replace(/ /g, ""), li.slice(0, 7) == "ignore:") {
-            ri.push(li.slice(7));
+        return ii && te(ii.split(","), function(hi) {
+          if (hi = hi.replace(/ /g, ""), hi.slice(0, 7) == "ignore:") {
+            ri.push(hi.slice(7));
             return;
           }
-          if (ri.indexOf(li) < 0) {
-            var Ci = Er[li];
-            Ci && ei.indexOf(Ci) < 0 && ei.push(Ci);
+          if (ri.indexOf(hi) < 0) {
+            var wi = Er[hi];
+            wi && ei.indexOf(wi) < 0 && ei.push(wi);
           }
         }), Tr(u(Fe), ei, ri);
       }
@@ -8046,13 +8046,13 @@ var htmx_min = { exports: {} };
         Nt(Fe);
         var ei = K().querySelectorAll("[hx-trigger='restored'],[data-hx-trigger='restored']");
         Fe.addEventListener("htmx:abort", function(ii) {
-          var li = ii.target, Ci = ee(li);
-          Ci && Ci.xhr && Ci.xhr.abort();
+          var hi = ii.target, wi = ee(hi);
+          wi && wi.xhr && wi.xhr.abort();
         });
         var ri = window.onpopstate;
         window.onpopstate = function(ii) {
-          ii.state && ii.state.htmx ? (zt(), te(ei, function(li) {
-            oe(li, "htmx:restored", { document: K(), triggerEvent: oe });
+          ii.state && ii.state.htmx ? (zt(), te(ei, function(hi) {
+            oe(hi, "htmx:restored", { document: K(), triggerEvent: oe });
           })) : ri && ri(ii);
         }, setTimeout(function() {
           oe(Fe, "htmx:load", {}), Fe = null;
@@ -8089,21 +8089,21 @@ let n$3 = class {
   }
 };
 const r$5 = (Fe) => new n$3(typeof Fe == "string" ? Fe : Fe + "", void 0, s$2), i$2 = (Fe, ...ei) => {
-  const ri = Fe.length === 1 ? Fe[0] : ei.reduce((ii, li, Ci) => ii + ((zi) => {
+  const ri = Fe.length === 1 ? Fe[0] : ei.reduce((ii, hi, wi) => ii + ((zi) => {
     if (zi._$cssResult$ === !0)
       return zi.cssText;
     if (typeof zi == "number")
       return zi;
     throw Error("Value passed to 'css' function must be a 'css' function result: " + zi + ". Use 'unsafeCSS' to pass non-literal values, but take care to ensure page security.");
-  })(li) + Fe[Ci + 1], Fe[0]);
+  })(hi) + Fe[wi + 1], Fe[0]);
   return new n$3(ri, Fe, s$2);
 }, S$1 = (Fe, ei) => {
   if (e$2)
     Fe.adoptedStyleSheets = ei.map((ri) => ri instanceof CSSStyleSheet ? ri : ri.styleSheet);
   else
     for (const ri of ei) {
-      const ii = document.createElement("style"), li = t$1.litNonce;
-      li !== void 0 && ii.setAttribute("nonce", li), ii.textContent = ri.cssText, Fe.appendChild(ii);
+      const ii = document.createElement("style"), hi = t$1.litNonce;
+      hi !== void 0 && ii.setAttribute("nonce", hi), ii.textContent = ri.cssText, Fe.appendChild(ii);
     }
 }, c$2 = e$2 ? (Fe) => Fe : (Fe) => Fe instanceof CSSStyleSheet ? ((ei) => {
   let ri = "";
@@ -8155,21 +8155,21 @@ class b extends HTMLElement {
   }
   static createProperty(ei, ri = y$1) {
     if (ri.state && (ri.attribute = !1), this._$Ei(), this.elementProperties.set(ei, ri), !ri.noAccessor) {
-      const ii = Symbol(), li = this.getPropertyDescriptor(ei, ii, ri);
-      li !== void 0 && e$1(this.prototype, ei, li);
+      const ii = Symbol(), hi = this.getPropertyDescriptor(ei, ii, ri);
+      hi !== void 0 && e$1(this.prototype, ei, hi);
     }
   }
   static getPropertyDescriptor(ei, ri, ii) {
-    const { get: li, set: Ci } = r$4(this.prototype, ei) ?? { get() {
+    const { get: hi, set: wi } = r$4(this.prototype, ei) ?? { get() {
       return this[ri];
     }, set(zi) {
       this[ri] = zi;
     } };
     return { get() {
-      return li == null ? void 0 : li.call(this);
+      return hi == null ? void 0 : hi.call(this);
     }, set(zi) {
-      const Ki = li == null ? void 0 : li.call(this);
-      Ci.call(this, zi), this.requestUpdate(ei, Ki, ii);
+      const Ki = hi == null ? void 0 : hi.call(this);
+      wi.call(this, zi), this.requestUpdate(ei, Ki, ii);
     }, configurable: !0, enumerable: !0 };
   }
   static getPropertyOptions(ei) {
@@ -8186,20 +8186,20 @@ class b extends HTMLElement {
       return;
     if (this.finalized = !0, this._$Ei(), this.hasOwnProperty(d$1("properties"))) {
       const ri = this.properties, ii = [...h$1(ri), ...o$2(ri)];
-      for (const li of ii)
-        this.createProperty(li, ri[li]);
+      for (const hi of ii)
+        this.createProperty(hi, ri[hi]);
     }
     const ei = this[Symbol.metadata];
     if (ei !== null) {
       const ri = litPropertyMetadata.get(ei);
       if (ri !== void 0)
-        for (const [ii, li] of ri)
-          this.elementProperties.set(ii, li);
+        for (const [ii, hi] of ri)
+          this.elementProperties.set(ii, hi);
     }
     this._$Eh = /* @__PURE__ */ new Map();
     for (const [ri, ii] of this.elementProperties) {
-      const li = this._$Eu(ri, ii);
-      li !== void 0 && this._$Eh.set(li, ri);
+      const hi = this._$Eu(ri, ii);
+      hi !== void 0 && this._$Eh.set(hi, ri);
     }
     this.elementStyles = this.finalizeStyles(this.styles);
   }
@@ -8207,8 +8207,8 @@ class b extends HTMLElement {
     const ri = [];
     if (Array.isArray(ei)) {
       const ii = new Set(ei.flat(1 / 0).reverse());
-      for (const li of ii)
-        ri.unshift(c$2(li));
+      for (const hi of ii)
+        ri.unshift(c$2(hi));
     } else
       ei !== void 0 && ri.push(c$2(ei));
     return ri;
@@ -8262,24 +8262,24 @@ class b extends HTMLElement {
     this._$AK(ei, ii);
   }
   _$EO(ei, ri) {
-    var Ci;
-    const ii = this.constructor.elementProperties.get(ei), li = this.constructor._$Eu(ei, ii);
-    if (li !== void 0 && ii.reflect === !0) {
-      const zi = (((Ci = ii.converter) == null ? void 0 : Ci.toAttribute) !== void 0 ? ii.converter : u$1).toAttribute(ri, ii.type);
-      this._$Em = ei, zi == null ? this.removeAttribute(li) : this.setAttribute(li, zi), this._$Em = null;
+    var wi;
+    const ii = this.constructor.elementProperties.get(ei), hi = this.constructor._$Eu(ei, ii);
+    if (hi !== void 0 && ii.reflect === !0) {
+      const zi = (((wi = ii.converter) == null ? void 0 : wi.toAttribute) !== void 0 ? ii.converter : u$1).toAttribute(ri, ii.type);
+      this._$Em = ei, zi == null ? this.removeAttribute(hi) : this.setAttribute(hi, zi), this._$Em = null;
     }
   }
   _$AK(ei, ri) {
-    var Ci;
-    const ii = this.constructor, li = ii._$Eh.get(ei);
-    if (li !== void 0 && this._$Em !== li) {
-      const zi = ii.getPropertyOptions(li), Ki = typeof zi.converter == "function" ? { fromAttribute: zi.converter } : ((Ci = zi.converter) == null ? void 0 : Ci.fromAttribute) !== void 0 ? zi.converter : u$1;
-      this._$Em = li, this[li] = Ki.fromAttribute(ri, zi.type), this._$Em = null;
+    var wi;
+    const ii = this.constructor, hi = ii._$Eh.get(ei);
+    if (hi !== void 0 && this._$Em !== hi) {
+      const zi = ii.getPropertyOptions(hi), Ki = typeof zi.converter == "function" ? { fromAttribute: zi.converter } : ((wi = zi.converter) == null ? void 0 : wi.fromAttribute) !== void 0 ? zi.converter : u$1;
+      this._$Em = hi, this[hi] = Ki.fromAttribute(ri, zi.type), this._$Em = null;
     }
   }
-  requestUpdate(ei, ri, ii, li = !1, Ci) {
+  requestUpdate(ei, ri, ii, hi = !1, wi) {
     if (ei !== void 0) {
-      if (ii ?? (ii = this.constructor.getPropertyOptions(ei)), !(ii.hasChanged ?? f$1)(li ? Ci : this[ei], ri))
+      if (ii ?? (ii = this.constructor.getPropertyOptions(ei)), !(ii.hasChanged ?? f$1)(hi ? wi : this[ei], ri))
         return;
       this.C(ei, ri, ii);
     }
@@ -8307,24 +8307,24 @@ class b extends HTMLElement {
       return;
     if (!this.hasUpdated) {
       if (this._$Ep) {
-        for (const [Ci, zi] of this._$Ep)
-          this[Ci] = zi;
+        for (const [wi, zi] of this._$Ep)
+          this[wi] = zi;
         this._$Ep = void 0;
       }
-      const li = this.constructor.elementProperties;
-      if (li.size > 0)
-        for (const [Ci, zi] of li)
-          zi.wrapped !== !0 || this._$AL.has(Ci) || this[Ci] === void 0 || this.C(Ci, this[Ci], zi);
+      const hi = this.constructor.elementProperties;
+      if (hi.size > 0)
+        for (const [wi, zi] of hi)
+          zi.wrapped !== !0 || this._$AL.has(wi) || this[wi] === void 0 || this.C(wi, this[wi], zi);
     }
     let ei = !1;
     const ri = this._$AL;
     try {
-      ei = this.shouldUpdate(ri), ei ? (this.willUpdate(ri), (ii = this._$ES) == null || ii.forEach((li) => {
-        var Ci;
-        return (Ci = li.hostUpdate) == null ? void 0 : Ci.call(li);
+      ei = this.shouldUpdate(ri), ei ? (this.willUpdate(ri), (ii = this._$ES) == null || ii.forEach((hi) => {
+        var wi;
+        return (wi = hi.hostUpdate) == null ? void 0 : wi.call(hi);
       }), this.update(ri)) : this._$ET();
-    } catch (li) {
-      throw ei = !1, this._$ET(), li;
+    } catch (hi) {
+      throw ei = !1, this._$ET(), hi;
     }
     ei && this._$AE(ri);
   }
@@ -8333,8 +8333,8 @@ class b extends HTMLElement {
   _$AE(ei) {
     var ri;
     (ri = this._$ES) == null || ri.forEach((ii) => {
-      var li;
-      return (li = ii.hostUpdated) == null ? void 0 : li.call(ii);
+      var hi;
+      return (hi = ii.hostUpdated) == null ? void 0 : hi.call(ii);
     }), this.hasUpdated || (this.hasUpdated = !0, this.firstUpdated(ei)), this.updated(ei);
   }
   _$ET() {
@@ -8373,54 +8373,54 @@ function C(Fe, ei) {
 }
 const P = (Fe, ei) => {
   const ri = Fe.length - 1, ii = [];
-  let li, Ci = ei === 2 ? "<svg>" : "", zi = f;
+  let hi, wi = ei === 2 ? "<svg>" : "", zi = f;
   for (let Ki = 0; Ki < ri; Ki++) {
     const Yi = Fe[Ki];
     let es, is, $i = -1, Vi = 0;
     for (; Vi < Yi.length && (zi.lastIndex = Vi, is = zi.exec(Yi), is !== null); )
-      Vi = zi.lastIndex, zi === f ? is[1] === "!--" ? zi = v : is[1] !== void 0 ? zi = _ : is[2] !== void 0 ? ($.test(is[2]) && (li = RegExp("</" + is[2], "g")), zi = m) : is[3] !== void 0 && (zi = m) : zi === m ? is[0] === ">" ? (zi = li ?? f, $i = -1) : is[1] === void 0 ? $i = -2 : ($i = zi.lastIndex - is[2].length, es = is[1], zi = is[3] === void 0 ? m : is[3] === '"' ? g : p) : zi === g || zi === p ? zi = m : zi === v || zi === _ ? zi = f : (zi = m, li = void 0);
+      Vi = zi.lastIndex, zi === f ? is[1] === "!--" ? zi = v : is[1] !== void 0 ? zi = _ : is[2] !== void 0 ? ($.test(is[2]) && (hi = RegExp("</" + is[2], "g")), zi = m) : is[3] !== void 0 && (zi = m) : zi === m ? is[0] === ">" ? (zi = hi ?? f, $i = -1) : is[1] === void 0 ? $i = -2 : ($i = zi.lastIndex - is[2].length, es = is[1], zi = is[3] === void 0 ? m : is[3] === '"' ? g : p) : zi === g || zi === p ? zi = m : zi === v || zi === _ ? zi = f : (zi = m, hi = void 0);
     const _i = zi === m && Fe[Ki + 1].startsWith("/>") ? " " : "";
-    Ci += zi === f ? Yi + n$1 : $i >= 0 ? (ii.push(es), Yi.slice(0, $i) + e + Yi.slice($i) + h + _i) : Yi + h + ($i === -2 ? Ki : _i);
+    wi += zi === f ? Yi + n$1 : $i >= 0 ? (ii.push(es), Yi.slice(0, $i) + e + Yi.slice($i) + h + _i) : Yi + h + ($i === -2 ? Ki : _i);
   }
-  return [C(Fe, Ci + (Fe[ri] || "<?>") + (ei === 2 ? "</svg>" : "")), ii];
+  return [C(Fe, wi + (Fe[ri] || "<?>") + (ei === 2 ? "</svg>" : "")), ii];
 };
 class V {
   constructor({ strings: ei, _$litType$: ri }, ii) {
-    let li;
+    let hi;
     this.parts = [];
-    let Ci = 0, zi = 0;
+    let wi = 0, zi = 0;
     const Ki = ei.length - 1, Yi = this.parts, [es, is] = P(ei, ri);
     if (this.el = V.createElement(es, ii), E.currentNode = this.el.content, ri === 2) {
       const $i = this.el.content.firstChild;
       $i.replaceWith(...$i.childNodes);
     }
-    for (; (li = E.nextNode()) !== null && Yi.length < Ki; ) {
-      if (li.nodeType === 1) {
-        if (li.hasAttributes())
-          for (const $i of li.getAttributeNames())
+    for (; (hi = E.nextNode()) !== null && Yi.length < Ki; ) {
+      if (hi.nodeType === 1) {
+        if (hi.hasAttributes())
+          for (const $i of hi.getAttributeNames())
             if ($i.endsWith(e)) {
-              const Vi = is[zi++], _i = li.getAttribute($i).split(h), bi = /([.?@])?(.*)/.exec(Vi);
-              Yi.push({ type: 1, index: Ci, name: bi[2], strings: _i, ctor: bi[1] === "." ? k : bi[1] === "?" ? H : bi[1] === "@" ? I : R }), li.removeAttribute($i);
+              const Vi = is[zi++], _i = hi.getAttribute($i).split(h), bi = /([.?@])?(.*)/.exec(Vi);
+              Yi.push({ type: 1, index: wi, name: bi[2], strings: _i, ctor: bi[1] === "." ? k : bi[1] === "?" ? H : bi[1] === "@" ? I : R }), hi.removeAttribute($i);
             } else
-              $i.startsWith(h) && (Yi.push({ type: 6, index: Ci }), li.removeAttribute($i));
-        if ($.test(li.tagName)) {
-          const $i = li.textContent.split(h), Vi = $i.length - 1;
+              $i.startsWith(h) && (Yi.push({ type: 6, index: wi }), hi.removeAttribute($i));
+        if ($.test(hi.tagName)) {
+          const $i = hi.textContent.split(h), Vi = $i.length - 1;
           if (Vi > 0) {
-            li.textContent = i ? i.emptyScript : "";
+            hi.textContent = i ? i.emptyScript : "";
             for (let _i = 0; _i < Vi; _i++)
-              li.append($i[_i], l()), E.nextNode(), Yi.push({ type: 2, index: ++Ci });
-            li.append($i[Vi], l());
+              hi.append($i[_i], l()), E.nextNode(), Yi.push({ type: 2, index: ++wi });
+            hi.append($i[Vi], l());
           }
         }
-      } else if (li.nodeType === 8)
-        if (li.data === o$1)
-          Yi.push({ type: 2, index: Ci });
+      } else if (hi.nodeType === 8)
+        if (hi.data === o$1)
+          Yi.push({ type: 2, index: wi });
         else {
           let $i = -1;
-          for (; ($i = li.data.indexOf(h, $i + 1)) !== -1; )
-            Yi.push({ type: 7, index: Ci }), $i += h.length - 1;
+          for (; ($i = hi.data.indexOf(h, $i + 1)) !== -1; )
+            Yi.push({ type: 7, index: wi }), $i += h.length - 1;
         }
-      Ci++;
+      wi++;
     }
   }
   static createElement(ei, ri) {
@@ -8432,9 +8432,9 @@ function N(Fe, ei, ri = Fe, ii) {
   var zi, Ki;
   if (ei === w)
     return ei;
-  let li = ii !== void 0 ? (zi = ri._$Co) == null ? void 0 : zi[ii] : ri._$Cl;
-  const Ci = c(ei) ? void 0 : ei._$litDirective$;
-  return (li == null ? void 0 : li.constructor) !== Ci && ((Ki = li == null ? void 0 : li._$AO) == null || Ki.call(li, !1), Ci === void 0 ? li = void 0 : (li = new Ci(Fe), li._$AT(Fe, ri, ii)), ii !== void 0 ? (ri._$Co ?? (ri._$Co = []))[ii] = li : ri._$Cl = li), li !== void 0 && (ei = N(Fe, li._$AS(Fe, ei.values), li, ii)), ei;
+  let hi = ii !== void 0 ? (zi = ri._$Co) == null ? void 0 : zi[ii] : ri._$Cl;
+  const wi = c(ei) ? void 0 : ei._$litDirective$;
+  return (hi == null ? void 0 : hi.constructor) !== wi && ((Ki = hi == null ? void 0 : hi._$AO) == null || Ki.call(hi, !1), wi === void 0 ? hi = void 0 : (hi = new wi(Fe), hi._$AT(Fe, ri, ii)), ii !== void 0 ? (ri._$Co ?? (ri._$Co = []))[ii] = hi : ri._$Cl = hi), hi !== void 0 && (ei = N(Fe, hi._$AS(Fe, ei.values), hi, ii)), ei;
 }
 class S {
   constructor(ei, ri) {
@@ -8447,17 +8447,17 @@ class S {
     return this._$AM._$AU;
   }
   u(ei) {
-    const { el: { content: ri }, parts: ii } = this._$AD, li = ((ei == null ? void 0 : ei.creationScope) ?? r$3).importNode(ri, !0);
-    E.currentNode = li;
-    let Ci = E.nextNode(), zi = 0, Ki = 0, Yi = ii[0];
+    const { el: { content: ri }, parts: ii } = this._$AD, hi = ((ei == null ? void 0 : ei.creationScope) ?? r$3).importNode(ri, !0);
+    E.currentNode = hi;
+    let wi = E.nextNode(), zi = 0, Ki = 0, Yi = ii[0];
     for (; Yi !== void 0; ) {
       if (zi === Yi.index) {
         let es;
-        Yi.type === 2 ? es = new M(Ci, Ci.nextSibling, this, ei) : Yi.type === 1 ? es = new Yi.ctor(Ci, Yi.name, Yi.strings, this, ei) : Yi.type === 6 && (es = new L(Ci, this, ei)), this._$AV.push(es), Yi = ii[++Ki];
+        Yi.type === 2 ? es = new M(wi, wi.nextSibling, this, ei) : Yi.type === 1 ? es = new Yi.ctor(wi, Yi.name, Yi.strings, this, ei) : Yi.type === 6 && (es = new L(wi, this, ei)), this._$AV.push(es), Yi = ii[++Ki];
       }
-      zi !== (Yi == null ? void 0 : Yi.index) && (Ci = E.nextNode(), zi++);
+      zi !== (Yi == null ? void 0 : Yi.index) && (wi = E.nextNode(), zi++);
     }
-    return E.currentNode = r$3, li;
+    return E.currentNode = r$3, hi;
   }
   p(ei) {
     let ri = 0;
@@ -8470,8 +8470,8 @@ class M {
     var ei;
     return ((ei = this._$AM) == null ? void 0 : ei._$AU) ?? this._$Cv;
   }
-  constructor(ei, ri, ii, li) {
-    this.type = 2, this._$AH = T, this._$AN = void 0, this._$AA = ei, this._$AB = ri, this._$AM = ii, this.options = li, this._$Cv = (li == null ? void 0 : li.isConnected) ?? !0;
+  constructor(ei, ri, ii, hi) {
+    this.type = 2, this._$AH = T, this._$AN = void 0, this._$AA = ei, this._$AB = ri, this._$AM = ii, this.options = hi, this._$Cv = (hi == null ? void 0 : hi.isConnected) ?? !0;
   }
   get parentNode() {
     let ei = this._$AA.parentNode;
@@ -8497,12 +8497,12 @@ class M {
     this._$AH !== T && c(this._$AH) ? this._$AA.nextSibling.data = ei : this.$(r$3.createTextNode(ei)), this._$AH = ei;
   }
   g(ei) {
-    var Ci;
-    const { values: ri, _$litType$: ii } = ei, li = typeof ii == "number" ? this._$AC(ei) : (ii.el === void 0 && (ii.el = V.createElement(C(ii.h, ii.h[0]), this.options)), ii);
-    if (((Ci = this._$AH) == null ? void 0 : Ci._$AD) === li)
+    var wi;
+    const { values: ri, _$litType$: ii } = ei, hi = typeof ii == "number" ? this._$AC(ei) : (ii.el === void 0 && (ii.el = V.createElement(C(ii.h, ii.h[0]), this.options)), ii);
+    if (((wi = this._$AH) == null ? void 0 : wi._$AD) === hi)
       this._$AH.p(ri);
     else {
-      const zi = new S(li, this), Ki = zi.u(this.options);
+      const zi = new S(hi, this), Ki = zi.u(this.options);
       zi.p(ri), this.$(Ki), this._$AH = zi;
     }
   }
@@ -8513,16 +8513,16 @@ class M {
   T(ei) {
     a(this._$AH) || (this._$AH = [], this._$AR());
     const ri = this._$AH;
-    let ii, li = 0;
-    for (const Ci of ei)
-      li === ri.length ? ri.push(ii = new M(this.k(l()), this.k(l()), this, this.options)) : ii = ri[li], ii._$AI(Ci), li++;
-    li < ri.length && (this._$AR(ii && ii._$AB.nextSibling, li), ri.length = li);
+    let ii, hi = 0;
+    for (const wi of ei)
+      hi === ri.length ? ri.push(ii = new M(this.k(l()), this.k(l()), this, this.options)) : ii = ri[hi], ii._$AI(wi), hi++;
+    hi < ri.length && (this._$AR(ii && ii._$AB.nextSibling, hi), ri.length = hi);
   }
   _$AR(ei = this._$AA.nextSibling, ri) {
     var ii;
     for ((ii = this._$AP) == null ? void 0 : ii.call(this, !1, !0, ri); ei && ei !== this._$AB; ) {
-      const li = ei.nextSibling;
-      ei.remove(), ei = li;
+      const hi = ei.nextSibling;
+      ei.remove(), ei = hi;
     }
   }
   setConnected(ei) {
@@ -8537,21 +8537,21 @@ class R {
   get _$AU() {
     return this._$AM._$AU;
   }
-  constructor(ei, ri, ii, li, Ci) {
-    this.type = 1, this._$AH = T, this._$AN = void 0, this.element = ei, this.name = ri, this._$AM = li, this.options = Ci, ii.length > 2 || ii[0] !== "" || ii[1] !== "" ? (this._$AH = Array(ii.length - 1).fill(new String()), this.strings = ii) : this._$AH = T;
+  constructor(ei, ri, ii, hi, wi) {
+    this.type = 1, this._$AH = T, this._$AN = void 0, this.element = ei, this.name = ri, this._$AM = hi, this.options = wi, ii.length > 2 || ii[0] !== "" || ii[1] !== "" ? (this._$AH = Array(ii.length - 1).fill(new String()), this.strings = ii) : this._$AH = T;
   }
-  _$AI(ei, ri = this, ii, li) {
-    const Ci = this.strings;
+  _$AI(ei, ri = this, ii, hi) {
+    const wi = this.strings;
     let zi = !1;
-    if (Ci === void 0)
+    if (wi === void 0)
       ei = N(this, ei, ri, 0), zi = !c(ei) || ei !== this._$AH && ei !== w, zi && (this._$AH = ei);
     else {
       const Ki = ei;
       let Yi, es;
-      for (ei = Ci[0], Yi = 0; Yi < Ci.length - 1; Yi++)
-        es = N(this, Ki[ii + Yi], ri, Yi), es === w && (es = this._$AH[Yi]), zi || (zi = !c(es) || es !== this._$AH[Yi]), es === T ? ei = T : ei !== T && (ei += (es ?? "") + Ci[Yi + 1]), this._$AH[Yi] = es;
+      for (ei = wi[0], Yi = 0; Yi < wi.length - 1; Yi++)
+        es = N(this, Ki[ii + Yi], ri, Yi), es === w && (es = this._$AH[Yi]), zi || (zi = !c(es) || es !== this._$AH[Yi]), es === T ? ei = T : ei !== T && (ei += (es ?? "") + wi[Yi + 1]), this._$AH[Yi] = es;
     }
-    zi && !li && this.j(ei);
+    zi && !hi && this.j(ei);
   }
   j(ei) {
     ei === T ? this.element.removeAttribute(this.name) : this.element.setAttribute(this.name, ei ?? "");
@@ -8574,14 +8574,14 @@ class H extends R {
   }
 }
 class I extends R {
-  constructor(ei, ri, ii, li, Ci) {
-    super(ei, ri, ii, li, Ci), this.type = 5;
+  constructor(ei, ri, ii, hi, wi) {
+    super(ei, ri, ii, hi, wi), this.type = 5;
   }
   _$AI(ei, ri = this) {
     if ((ei = N(this, ei, ri, 0) ?? T) === w)
       return;
-    const ii = this._$AH, li = ei === T && ii !== T || ei.capture !== ii.capture || ei.once !== ii.once || ei.passive !== ii.passive, Ci = ei !== T && (ii === T || li);
-    li && this.element.removeEventListener(this.name, this, ii), Ci && this.element.addEventListener(this.name, this, ei), this._$AH = ei;
+    const ii = this._$AH, hi = ei === T && ii !== T || ei.capture !== ii.capture || ei.once !== ii.once || ei.passive !== ii.passive, wi = ei !== T && (ii === T || hi);
+    hi && this.element.removeEventListener(this.name, this, ii), wi && this.element.addEventListener(this.name, this, ei), this._$AH = ei;
   }
   handleEvent(ei) {
     var ri;
@@ -8603,12 +8603,12 @@ const Z = t.litHtmlPolyfillSupport;
 Z == null || Z(V, M), (t.litHtmlVersions ?? (t.litHtmlVersions = [])).push("3.0.0");
 const j = (Fe, ei, ri) => {
   const ii = (ri == null ? void 0 : ri.renderBefore) ?? ei;
-  let li = ii._$litPart$;
-  if (li === void 0) {
-    const Ci = (ri == null ? void 0 : ri.renderBefore) ?? null;
-    ii._$litPart$ = li = new M(ei.insertBefore(l(), Ci), Ci, void 0, ri ?? {});
+  let hi = ii._$litPart$;
+  if (hi === void 0) {
+    const wi = (ri == null ? void 0 : ri.renderBefore) ?? null;
+    ii._$litPart$ = hi = new M(ei.insertBefore(l(), wi), wi, void 0, ri ?? {});
   }
-  return li._$AI(Fe), li;
+  return hi._$AI(Fe), hi;
 };
 /**
  * @license
@@ -8651,9 +8651,9 @@ r$2 == null || r$2({ LitElement: s });
  * SPDX-License-Identifier: BSD-3-Clause
  */
 const o = { attribute: !0, type: String, converter: u$1, reflect: !1, hasChanged: f$1 }, r$1 = (Fe = o, ei, ri) => {
-  const { kind: ii, metadata: li } = ri;
-  let Ci = globalThis.litPropertyMetadata.get(li);
-  if (Ci === void 0 && globalThis.litPropertyMetadata.set(li, Ci = /* @__PURE__ */ new Map()), Ci.set(ri.name, Fe), ii === "accessor") {
+  const { kind: ii, metadata: hi } = ri;
+  let wi = globalThis.litPropertyMetadata.get(hi);
+  if (wi === void 0 && globalThis.litPropertyMetadata.set(hi, wi = /* @__PURE__ */ new Map()), wi.set(ri.name, Fe), ii === "accessor") {
     const { name: zi } = ri;
     return { set(Ki) {
       const Yi = ei.get.call(this);
@@ -8672,9 +8672,9 @@ const o = { attribute: !0, type: String, converter: u$1, reflect: !1, hasChanged
   throw Error("Unsupported decorator location: " + ii);
 };
 function n(Fe) {
-  return (ei, ri) => typeof ri == "object" ? r$1(Fe, ei, ri) : ((ii, li, Ci) => {
-    const zi = li.hasOwnProperty(Ci);
-    return li.constructor.createProperty(Ci, zi ? { ...ii, wrapped: !0 } : ii), zi ? Object.getOwnPropertyDescriptor(li, Ci) : void 0;
+  return (ei, ri) => typeof ri == "object" ? r$1(Fe, ei, ri) : ((ii, hi, wi) => {
+    const zi = hi.hasOwnProperty(wi);
+    return hi.constructor.createProperty(wi, zi ? { ...ii, wrapped: !0 } : ii), zi ? Object.getOwnPropertyDescriptor(hi, wi) : void 0;
   })(Fe, ei, ri);
 }
 /**
@@ -8685,33 +8685,65 @@ function n(Fe) {
 function r(Fe) {
   return n({ ...Fe, state: !0, attribute: !1 });
 }
+function formatFloat(Fe) {
+  let ei = "";
+  if (Fe < 0.1) {
+    const ri = toFixed(Fe, 10).split(".")[1];
+    if (!ri)
+      ei = Fe.toString();
+    else
+      for (let ii = 0; ii < ri.length; ii++)
+        if (ri[ii] != "0") {
+          ei = toFixed(Fe, ii + 3);
+          break;
+        }
+  } else
+    Fe < 10 ? ei = toFixed(Fe, 3) : ei = toFixed(Fe, 2);
+  return trimFloat(ei);
+}
+function toFixed(Fe, ei) {
+  const ri = Math.pow(10, ei), ii = Math.round(Fe * ri), hi = Math.floor(ii / ri), wi = String(ii % ri).padStart(ei, "0");
+  return `${hi}.${wi}`;
+}
+function trimFloat(Fe) {
+  for (let ei = Fe.length - 1; ei > 1 && Fe[ei] == "0"; ei--)
+    Fe = Fe.slice(0, ei - (Fe[ei - 1] == "." ? 1 : 0));
+  return Fe;
+}
 var __defProp = Object.defineProperty, __getOwnPropDesc = Object.getOwnPropertyDescriptor, __decorateClass = (Fe, ei, ri, ii) => {
-  for (var li = ii > 1 ? void 0 : ii ? __getOwnPropDesc(ei, ri) : ei, Ci = Fe.length - 1, zi; Ci >= 0; Ci--)
-    (zi = Fe[Ci]) && (li = (ii ? zi(ei, ri, li) : zi(li)) || li);
-  return ii && li && __defProp(ei, ri, li), li;
+  for (var hi = ii > 1 ? void 0 : ii ? __getOwnPropDesc(ei, ri) : ei, wi = Fe.length - 1, zi; wi >= 0; wi--)
+    (zi = Fe[wi]) && (hi = (ii ? zi(ei, ri, hi) : zi(hi)) || hi);
+  return ii && hi && __defProp(ei, ri, hi), hi;
 };
 class QuantitySelector extends s {
   constructor() {
-    super(), this.symbol = "", this.balance = 0, this.sell = !1, this.coin_value = 0, this.pecentage = 0, this.coin_price = 0, this.value = this.coin_value * this.coin_price;
+    super(), this.coin_price = 0, this.sell = !1, this.symbol = "", this.balance = 0, this.amount = 0, this.pecentage = 0, this.value = 0;
+  }
+  connectedCallback() {
+    super.connectedCallback();
+    const ei = this, ri = this.closest("form");
+    ri && ri.addEventListener("formdata", function(ii) {
+      ii.formData.set("amount", String(ei.amount));
+    });
   }
   ignore(ei) {
     (ei.key == "e" || ei.key == "+" || ei.key == "-") && (ei.preventDefault(), ei.stopPropagation());
   }
   slide(ei) {
     let ri = Number(ei.target.value);
-    this.pecentage = ri, this.coin_value = this.balance * (ri / 100), this.value = this.coin_value * this.coin_price;
+    this.pecentage = ri, this.amount = this.balance * (ri / 100), this.value = this.amount * this.coin_price;
   }
   update_slide() {
-    let ei = this.coin_value / this.balance * 100;
+    let ei = this.amount / this.balance * 100;
     ei = Math.round(ei), ei >= 0 && ei <= 100 && (this.pecentage = ei);
   }
   coin_value_change(ei) {
     let ri = Number(ei.target.value);
-    this.sell && ri * this.coin_price > this.balance * this.coin_price && (ri = this.balance), this.coin_value = ri, this.value = ri * this.coin_price, this.update_slide();
+    this.sell && ri * this.coin_price > this.balance * this.coin_price && (ri = this.value), this.amount = ri, this.value = ri * this.coin_price, this.update_slide(), ei.target.value = ri;
   }
   value_change(ei) {
     let ri = Number(ei.target.value);
-    this.sell && ri > this.balance * this.coin_price && (ri = this.balance * this.coin_price), this.value = ri, this.coin_value = ri / this.coin_price, this.update_slide(), ei.target.value = ri;
+    this.sell && ri > this.balance * this.coin_price && (ri = this.balance * this.coin_price), this.value = ri, this.amount = ri / this.coin_price, this.update_slide(), ei.target.value = ri;
   }
   render() {
     return x`
@@ -8719,6 +8751,9 @@ class QuantitySelector extends s {
 				${this.sell ? x`
 							<div class="slider">
 								<input
+									autocomplete="off"
+									aria-autocomplete="none"
+									name="balance_percentage"
 									@input=${this.slide}
 									type="range"
 									min="0"
@@ -8732,19 +8767,25 @@ class QuantitySelector extends s {
 				<div class="value">
 					<div class="input">
 						<input
+							autocomplete="off"
+							aria-autocomplete="none"
+							name="amount"
 							@keydown=${this.ignore}
-							@input=${this.coin_value_change}
+							@change=${this.coin_value_change}
 							type="number"
-							.value=${this.coin_value.toString()}
+							.value=${trimFloat(toFixed(this.amount, 10))}
 						/>
 						<span class="suffix">${this.symbol.toUpperCase()}</span>
 					</div>
 					<div class="input">
 						<input
+							autocomplete="off"
+							aria-autocomplete="none"
+							name="value"
 							@keydown=${this.ignore}
-							@input=${this.value_change}
+							@change=${this.value_change}
 							type="number"
-							.value=${this.value.toFixed(2)}
+							.value=${formatFloat(this.value)}
 						/>
 						<span class="suffix">$</span>
 					</div>
@@ -8772,13 +8813,13 @@ QuantitySelector.styles = i$2`
 			display: flex;
 			flex-direction: column;
 			gap: 12px;
-      font-size: 12.8px;
+			font-size: 12.8px;
 		}
 
 		.value {
 			display: flex;
 			gap: 12px;
-      flex-direction: column;
+			flex-direction: column;
 		}
 
 		.slider {
@@ -8793,8 +8834,8 @@ QuantitySelector.styles = i$2`
 			padding-left: 20px;
 			padding-right: 30px;
 			flex-direction: column;
-      align-items: center;
-      height: 40px;
+			align-items: center;
+			height: 40px;
 		}
 
 		.slider input {
@@ -8837,10 +8878,10 @@ QuantitySelector.styles = i$2`
 			border: solid var(--color) 2px;
 			border-radius: 0.75rem;
 			padding: 12px;
-      width: 100%;
+			width: 100%;
 			gap: 12px;
-      height: 40px;
-      align-items: center;
+			height: 40px;
+			align-items: center;
 		}
 
 		.input input {
@@ -8856,11 +8897,11 @@ QuantitySelector.styles = i$2`
 			top: 0;
 		}
 
-    @media screen and (min-width: 1600px) {
-      .value {
-        flex-direction: row;
-      }
-    }
+		@media screen and (min-width: 1600px) {
+			.value {
+				flex-direction: row;
+			}
+		}
 	`;
 __decorateClass([
   n({ type: Number })
@@ -8876,7 +8917,7 @@ __decorateClass([
 ], QuantitySelector.prototype, "balance", 2);
 __decorateClass([
   r()
-], QuantitySelector.prototype, "coin_value", 2);
+], QuantitySelector.prototype, "amount", 2);
 __decorateClass([
   r()
 ], QuantitySelector.prototype, "pecentage", 2);
@@ -8893,17 +8934,7 @@ window.load_chart = async function(Fe) {
     chart: {
       type: "line",
       backgroundColor: "var(--background-color)",
-      numberFormatter: function(ei) {
-        if (ei >= 100)
-          return ei.toFixed(0);
-        if (ei < 0.1) {
-          const ri = ei.toString().split(".")[1];
-          for (let ii = 0; ii < ri.length; ii++)
-            if (ri[ii] != "0")
-              return ei.toFixed(ii + 3);
-        }
-        return ei.toFixed(2);
-      }
+      numberFormatter: formatFloat
     },
     title: {
       text: ""
@@ -8943,3 +8974,12 @@ window.load_chart = async function(Fe) {
     }]
   });
 };
+window.addEventListener("htmx:configRequest", (Fe) => {
+  if (Fe.target instanceof HTMLFormElement) {
+    const ei = new FormData(Fe.target);
+    for (const ri of ei.entries()) {
+      const ii = ri[0], hi = ri[1], wi = Fe.detail.parameters;
+      wi[ii] == null ? wi[ii] = [hi] : Array.isArray(wi[ii]) && !wi[ii].includes(hi) && wi[ii].push(hi);
+    }
+  }
+});

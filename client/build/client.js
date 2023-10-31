@@ -8877,9 +8877,7 @@ QuantitySelector.styles = i$2`
 			color: var(--color);
 			border: solid var(--color) 2px;
 			border-radius: 0.75rem;
-			padding: 12px;
 			width: 100%;
-			gap: 12px;
 			height: 40px;
 			align-items: center;
 		}
@@ -8889,12 +8887,13 @@ QuantitySelector.styles = i$2`
 			appearance: none;
 			width: 100%;
 			height: 100%;
+			padding-left: 12px;
 		}
 
 		.input span {
 			pointer-events: none;
 			font-weight: bolder;
-			top: 0;
+			padding: 12px;
 		}
 
 		@media screen and (min-width: 1600px) {
@@ -8926,6 +8925,9 @@ __decorateClass([
 ], QuantitySelector.prototype, "value", 2);
 window.htmx = htmx;
 customElements.define("quantity-selector", QuantitySelector);
+window.snap_top = function(Fe) {
+  console.log(htmx_minExports.closest(Fe, ".asset"));
+};
 async function prices(Fe) {
   return fetch(`https://api.coincap.io/v2/assets/${Fe}/history?interval=m15&start=${Date.now() - 6048e5}&end=${Date.now()}`).then((ei) => ei.json()).then((ei) => ei.data.map((ri) => [ri.time, Number(ri.priceUsd)]));
 }

@@ -9,6 +9,7 @@ import (
 )
 
 var (
+	ComponentsHeader   *melt.Component
 	Index              *melt.Component
 	Login              *melt.Component
 	ComponentsOverview *melt.Component
@@ -18,21 +19,35 @@ type GlobalHandlers struct {
 }
 
 func Load(furnace *melt.Furnace, handlers GlobalHandlers) {
+	ComponentsHeader = furnace.MustGetComponent("templates/components/header.html")
+	Index = furnace.MustGetComponent("templates/index.html")
 	Login = furnace.MustGetComponent("templates/login.html")
 	ComponentsOverview = furnace.MustGetComponent("templates/components/overview.html")
-	Index = furnace.MustGetComponent("templates/index.html")
 
 	globalHandlers := make(map[string]melt.GlobalHandler)
 
 	furnace.SetGlobalHandlers(globalHandlers)
 }
 
+type ComponentsHeaderData struct {
+	Swap    any
+	Balance any
+}
+
+// generated write function for component
+//
+//	path: "templates/components/header.html"
+func WriteComponentsHeader(w io.Writer, r *http.Request, data ComponentsHeaderData, globalOptions ...melt.GlobalOption) error {
+	return ComponentsHeader.Write(w, r, data, globalOptions...)
+}
+
 type IndexData struct {
-	Wallet            any
+	Swap              any
+	Balance           any
 	Assets            any
 	PriceUsd          any
 	ChangePercent24Hr any
-	Balance           any
+	Wallet            any
 }
 
 // generated write function for component
@@ -43,10 +58,10 @@ func WriteIndex(w io.Writer, r *http.Request, data IndexData, globalOptions ...m
 }
 
 type IndexAssetData struct {
-	Id      any
-	Symbol  any
 	Name    any
 	Balance any
+	Id      any
+	Symbol  any
 }
 
 // generated write function for a template in a component

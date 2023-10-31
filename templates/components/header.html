@@ -1,0 +1,52 @@
+{{if .Swap}}
+    <header id="header" hx-swap-oob="true">
+{{else}}
+    <header id="header">
+{{end}}
+    <div>
+        <div class="balance">{{.Balance}} $</div>
+        <a href="/login" hx-boost="true">login</a>
+    </div>
+</header>
+
+<style>
+    a {
+        margin-left: auto;
+    }
+
+    .balance {
+        color: var(--blue);
+        font-weight: bold;
+    }
+
+    header {
+        background-color: var(--background-color);
+        height: 80px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        padding: 12px;
+        z-index: 100;
+    }
+
+    header > div {
+        align-items: center;
+        border-radius: 0.75rem;
+        border: solid var(--color) 2px;
+        color: var(--color);
+        padding: 12px;
+        display: flex;
+        min-width: 600px;
+        width: 45vw;
+        top: 12px;  
+    }  
+
+    @media screen and (max-width: 600px) {
+        header > div; {
+            min-width: unset;
+            width: 100%;
+        }
+    }
+</style>

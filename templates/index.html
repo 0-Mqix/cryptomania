@@ -1,21 +1,12 @@
+<import>Header components/header.html</import>
 {{ $wallet := .Wallet }}
-<!-- <header>
-    <div>
-        <svg class="icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 14 18">
-            <path d="M7 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm2 1H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"/>
-        </svg> 
-        <button>login</bu>
-    </div>
-</header> -->
 
+<Header />
 
-
-<main>
-    <div class="assets" hx-swap="outerHTML settle:0.3s"> 
-        {{ range .Assets }}
-            {{template "asset" . }}
-        {{ end }}
-    </div>
+<main hx-swap="outerHTML">
+    {{ range .Assets }}
+        {{template "asset" . }}
+    {{ end }}
 </main>
 
 {{ define "asset" }}
@@ -43,53 +34,19 @@
 {{end}}
 
 <style>
-    %g :root {
-        --header-size: 80px;
-    }
-
-    %g .overview, .asset {
-        opacity: 1; 
-        transition: opacity 0.5s;
-    }
-
-    %g .overview.htmx-settling, .asset.htmx-settling {
-        opacity: 0.3;
-    }
-
-    header {
-        z-index: 100;
-        width: 100%;
-        position: fixed;
-        background-color: var(--background-color);
-        padding: 12px;
-        display: flex;
-        justify-content: center;
-        height: var(--header-size);
-
-        div {
-            display: flex;
-            align-items: center;
-            min-width: 600px;
-            width: 45vw;
-        }
-    }
-
     main {
-        padding: 12px;
-        /* padding-top: var(--header-size); */
+        padding-top: 72px;
         display: flex;
         flex-direction: column;
         width: 100%;
         align-items: center;
+        gap: 12px;
     }
 
-    .assets {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
+    main > .asset, %g main > .overview {
         min-width: 600px;
-        width: 45vw;
-    }
+        width: 45vw;  
+    }   
 
     .asset {
         display: flex;
@@ -107,9 +64,8 @@
             color: var(--blue);
         }
 
-
         &:hover {
-            font-size: 120%;
+            border-style: dashed;
         }
 
         .price {
@@ -146,15 +102,13 @@
         }
     }
     @media screen and (max-width: 600px) {
-        header>div {
+        
+        main > .asset, %g main > .overview {
             min-width: unset;
             width: 100%;
         }
 
-        .assets {
-            min-width: unset;
-            width: 100%;
-
+        .asset {
             .name {
                 flex-direction: column;
                 align-items: flex-start;
@@ -164,6 +118,5 @@
                 }
             }
         }
-
     }
 </style>

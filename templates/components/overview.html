@@ -1,4 +1,4 @@
-<div class="overview" coin="{{.Coin}}">
+<div class="overview" id="overview-{{.Coin}}" coin="{{.Coin}}">
 	<div class="top">
 		<div class="name">
 			<div class="symbol">{{.Asset.Symbol}}</div>
@@ -34,7 +34,7 @@
 	{{end}}
 
 	<div class="actions">
-		<form class="action" hx-post="/buy/{{ .Coin }}" hx-swap="none">
+		<form class="action" hx-post="/user/buy/{{ .Coin }}" hx-target="closest .overview">
 			<h2>Buy</h2>
 			<quantity-selector
 				coin_price="{{.Asset.PriceUsd}}"
@@ -43,7 +43,7 @@
 			<button type="submit" class="buy button">buy</button>
 		</form>
 		{{ if ne $value 0.0}}
-			<form class="action" hx-post="/sell/{{ .Coin }}" hx-swap="none">
+			<form class="action" hx-post="/user/sell/{{ .Coin }}" hx-swap="none">
 				<h2>Sell</h2>
 				<quantity-selector
 					coin_price="{{.Asset.PriceUsd}}"
@@ -123,8 +123,6 @@
 		justify-items: center;
 		display: flex;
 		gap: 12px;
-		min-width: 600px;
-		width: 45vw;
 		padding: 12px;
 		border: solid var(--color) 2px;
 		border-radius: 0.75rem;
@@ -175,14 +173,8 @@
 		}
 	}
 
-	text.highcharts-credits {
+	%g text.highcharts-credits {
 		display: none !important;
 	}
 
-	@media screen and (max-width: 600px) {
-		.overview {
-			min-width: unset;
-			width: 100%;
-		}
-	}
 </style>

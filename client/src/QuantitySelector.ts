@@ -224,9 +224,7 @@ export default class QuantitySelector extends LitElement {
 			color: var(--color);
 			border: solid var(--color) 2px;
 			border-radius: 0.75rem;
-			padding: 12px;
 			width: 100%;
-			gap: 12px;
 			height: 40px;
 			align-items: center;
 		}
@@ -236,12 +234,13 @@ export default class QuantitySelector extends LitElement {
 			appearance: none;
 			width: 100%;
 			height: 100%;
+			padding-left: 12px;
 		}
 
 		.input span {
 			pointer-events: none;
 			font-weight: bolder;
-			top: 0;
+			padding: 12px;
 		}
 
 		@media screen and (min-width: 1600px) {

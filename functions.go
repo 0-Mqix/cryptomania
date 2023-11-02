@@ -85,13 +85,3 @@ func priceChange(input string) (template.HTML, error) {
 func lowCase(s string) string {
 	return strings.ToLower(s)
 }
-
-func calculateBalance(balance float64, priceString string) (string, error) {
-	price, err := strconv.ParseFloat(priceString, 64)
-
-	if err != nil {
-		return "", err
-	}
-
-	return formatFloat(balance*price) + " $", err
-}

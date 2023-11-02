@@ -1,63 +1,80 @@
-<div class="overview" id="overview-{{.Coin}}" coin="{{.Coin}}">
+<div class="overview" id="overview-{{.Id}}" coin="{{.Id}}">
 	<div class="top">
 		<div class="name">
-			<div class="symbol">{{.Asset.Symbol}}</div>
-			<div>{{.Asset.Name}}</div>
+			<div class="symbol">{{.Symbol}}</div>
+			<div>{{.Name}}</div>
 		</div>
-		<button hx-get="/list/{{.Coin}}" hx-target="closest .overview">
+		<button hx-get="/list/{{.Id}}" hx-target="closest .overview">
 			exit
 		</button>
 	</div>
 	<div class="info">
 		<span>Price</span>
-		<div class="price">{{ format_float .Asset.PriceUsd }} $</div>
+		<div class="price">{{ format_float .PriceUsd }} $</div>
 		<span>Change24hr</span>
-		<div class="change">{{ price_change .Asset.ChangePercent24Hr }}</div>
+		<div class="change">{{ price_change .ChangePercent24Hr }}</div>
 		<span>MarketCap</span>
-		<div class="market-cap">{{ format_float .Asset.MarketCapUsd }} $</div>
+		<div class="market-cap">{{ format_float .MarketCapUsd }} $</div>
 		<span>Volume</span>
-		<div class="volume">{{ format_float .Asset.VolumeUsd24Hr }} $</div>
+		<div class="volume">{{ format_float .VolumeUsd24Hr }} $</div>
 		<span>Supply</span>
 		<div class="supply">
-			{{ format_float .Asset.Supply }} {{.Asset.Symbol}}
+			{{ format_float .Supply }} {{.Symbol}}
 		</div>
 	</div>
 
-	<div class="chart" id="chart-{{.Coin}}"></div>
-	{{ $value := .Asset.Balance}} 
-	{{ if ne $value 0.0}}
+	<div class="chart" id="chart-{{.Id}}"></div>
+	{{ if ne .Balance 0.0}}
 		<div class="balance">
 			<h2>Balance</h2>
-			<span>{{ $value }} {{ .Asset.Symbol}}</span>
-			<span>{{calculate_balance $value .Asset.PriceUsd }}</span>
+			<span>{{ .Balance }} {{ .Symbol}}</span>
+			<span>{{ format_float .Value }} $</span>
 		</div>
 	{{end}}
 
 	<div class="actions">
-		<form class="action" hx-post="/user/buy/{{ .Coin }}" hx-target="closest .overview">
-			<h2>Buy</h2>
-			<quantity-selector
-				coin_price="{{.Asset.PriceUsd}}"
-				symbol="{{.Asset.Symbol}}"
-			></quantity-selector>
-			<button type="submit" class="buy button">buy</button>
-		</form>
-		{{ if ne $value 0.0}}
-			<form class="action" hx-post="/user/sell/{{ .Coin }}" hx-swap="none">
-				<h2>Sell</h2>
-				<quantity-selector
-					coin_price="{{.Asset.PriceUsd}}"
-					symbol="{{.Asset.Symbol}}"
-					sell
-					balance="{{$value}}"
-				></quantity-selector>
-				<button type="submit" class="sell button">sell</button>
-			</form>
+		{{if .Bought }}
+			<div id="buy" class="action success">
+				<div>
+					<div>Succesfully bought {{.ActionAmount}} {{.Symbol}}</div>
+					<button hx-get="/overview/{{.Id}}/actions" hx-swap="innerHTML" hx-target="closest .actions">close</button>
+				</div>
+			</div>
+		{{else if .Sold }}
+			<div id="sell" class="action success">
+				<div>
+					<div>Succesfully sold <span>{{.ActionAmount}} {{.Symbol}}</span></div>
+					<button hx-get="/overview/{{.Id}}/actions" hx-swap="innerHTML" hx-target="closest .actions">close</button>
+				</div>
+			</div>
+		{{else}}
+			{{block "actions" . }}
+				<form id="buy" class="action" hx-post="/user/buy/{{.Id}}" hx-target="#overview-{{.Id}}">
+					<h2>Buy</h2>
+					<quantity-selector
+						coin_price="{{.PriceUsd}}"
+						symbol="{{.Symbol}}"
+					></quantity-selector>
+					<button type="submit" class="buy button">buy</button>
+				</form>			
+				{{ if ne .Balance 0.0}}	
+					<form id="sell" class="action" hx-post="/user/sell/{{.Id}}" hx-target="#overview-{{.Id}}">
+						<h2>Sell</h2>
+						<quantity-selector
+							coin_price="{{.PriceUsd}}"
+							symbol="{{.Symbol}}"
+							sell
+							balance="{{.Balance}}"
+						></quantity-selector>
+						<button type="submit" class="sell button">sell</button>
+					</form>
+				{{end}}
+			{{end}}
 		{{end}}
 	</div>
 
 	<script>
-		window.load_chart("{{.Coin}}")
+		window.load_chart("{{.Id}}")
 	</script>
 </div>
 
@@ -128,6 +145,21 @@
 		border-radius: 0.75rem;
 	}
 
+	.action.success > div {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		gap: 12px;
+		text-align: center;
+		padding: 24px;
+
+		> div > span {
+			font-weight: bold;
+		}
+	}
+
 	.actions {
 		display: flex;
 		flex-direction: column;
@@ -176,5 +208,3 @@
 	%g text.highcharts-credits {
 		display: none !important;
 	}
-
-</style>

@@ -2,9 +2,9 @@ package main
 
 import (
 	"encoding/json"
-	"fmt"
-	"io"
 	"net/http"
+	"sync"
+	"time"
 )
 
 type Asset struct {
@@ -21,6 +21,11 @@ type Asset struct {
 	Vwap24Hr          string `json:"vwap24Hr"`
 
 	Balance float64
+	Value   float64
+
+	ActionAmount float64
+	Bought       bool
+	Sold         bool
 }
 
 type AssetsData struct {
@@ -33,62 +38,79 @@ type AssetData struct {
 	Timestamp int64  `json:"timestamp"`
 }
 
-const ASSETS_API_ENDPOINT = "https://api.coincap.io/v2/assets"
+const (
+	ASSETS_API_ENDPOINT = "https://api.coincap.io/v2/assets"
+	CACHE_DURATION      = 30 * time.Second
+)
+
+var (
+	cache struct {
+		sync.Mutex
+		lastRequest time.Time
+		array       []*Asset
+		list        map[string]*Asset
+	}
+)
 
 func GetAssets() ([]*Asset, error) {
+	cache.Lock()
+	defer cache.Unlock()
+
+	// check if cached data is still valid
+	if time.Since(cache.lastRequest) < CACHE_DURATION && cache.array != nil {
+		return cache.array, nil
+	}
+
+	// cache is invalid, fetch new data
 	client := &http.Client{}
 	req, err := http.NewRequest("GET", ASSETS_API_ENDPOINT, nil)
-
 	if err != nil {
-		fmt.Println(err)
 		return nil, err
 	}
 	res, err := client.Do(req)
 	if err != nil {
-		fmt.Println(err)
 		return nil, err
 	}
 	defer res.Body.Close()
 
 	var data AssetsData
 	err = json.NewDecoder(res.Body).Decode(&data)
-
 	if err != nil {
 		return nil, err
 	}
+
+	// update cache
+	cache.array = data.Assets
+	cache.lastRequest = time.Now()
 
 	return data.Assets, nil
 }
 
 func GetAsset(coin string) (*Asset, error) {
-	client := &http.Client{}
-	req, err := http.NewRequest("GET", ASSETS_API_ENDPOINT+"/"+coin, nil)
+	cache.Lock()
 
-	if err != nil {
-		fmt.Println(err)
-		return nil, err
+	if time.Since(cache.lastRequest) < CACHE_DURATION && cache.list != nil {
+		cache.Unlock()
+		return cache.list[coin], nil
 	}
 
-	res, err := client.Do(req)
+	cache.Unlock()
+	assets, err := GetAssets()
 
-	if err != nil {
-		fmt.Println(err)
-		return nil, err
-	}
-
-	defer res.Body.Close()
-
-	if res.StatusCode != 200 {
-		body, _ := io.ReadAll(res.Body)
-		return nil, fmt.Errorf("%d: %s", res.StatusCode, body)
-	}
-
-	var data AssetData
-	err = json.NewDecoder(res.Body).Decode(&data)
+	cache.Lock()
+	defer cache.Unlock()
 
 	if err != nil {
 		return nil, err
 	}
 
-	return data.Asset, nil
+	if cache.list == nil {
+		cache.list = make(map[string]*Asset)
+	}
+
+	for _, a := range assets {
+		cache.list[a.Id] = a
+	}
+
+	return cache.list[coin], err
 }

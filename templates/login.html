@@ -1,12 +1,25 @@
 <main>
-	<a href="/" hx-boost="true"><-</a>
-	<h1>Login</h1>
-	
-	<div id="login-error" style="display: none;"></div>
+	<a class="back" href="/{{if .Register}}login{{end}}" hx-boost="true"><-</a>
+	<div>
+		{{if .Register}}
+			<h1>Register</h1>
+			<a class="swap" href="/login" hx-boost="true">already have an acount?</a>
+		{{else}}
+			<h1>Login</h1>
+			<a class="swap" href="/register" hx-boost="true">dont have an acount?</a>
+		{{end}}
+	</div>
 
-	<form id="login-form" hx-post="/user/login" hx-target="#login-error" hx-swap="outerHTML">
+	<div id="login-error" style="display: none"></div>
+
+	<form
+		id="login-form"
+		hx-post="{{if .Register}}/user/register{{else}}/user/login{{end}}"
+		hx-target="#login-error"
+		hx-swap="outerHTML"
+	>
 		<input type="text" name="username" placeholder="username" />
-		<input type="text" name="password" placeholder="password" />
+		<input type="password" name="password" placeholder="password" />
 		<button type="submit">login</button>
 	</form>
 </main>
@@ -15,6 +28,10 @@
 	%g #login-error {
 		color: var(--red);
 		font-style: italic;
+		white-space: pre-line;
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
 	}
 
 	main {
@@ -22,8 +39,23 @@
 		display: flex;
 		flex-direction: column;
 		padding: 12px;
-		gap: 12px;
-		max-width: 350px;
+		gap: 24px;
+		width: 350px;
+	}
+	
+	.back {
+		text-align: left;
+		font-size: large;
+	}
+
+	h1 {
+		margin: 0;
+		padding: 0;
+	}
+
+	.swap {
+		font-size: 12px;
+		font-weight: normal;
 	}
 
 	form {
@@ -44,14 +76,4 @@
 		height: 50px;
 	}
 
-	a {
-		text-align: left;
-		font-size: large;
-		padding-block: 24px;
-	}
-
-	h1 {
-		margin: 0;
-		padding: 0;
-	}
 </style>

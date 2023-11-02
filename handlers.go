@@ -1,7 +1,6 @@
 package main
 
 import (
-	"bytes"
 	"cryptomania/templates"
 	"fmt"
 	"io"
@@ -13,18 +12,24 @@ import (
 func indexPage(w http.ResponseWriter, r *http.Request) {
 	assets, err := GetAssets()
 
-	for _, a := range assets {
-		a.Balance = wallet[a.Id]
-	}
-
 	if err != nil {
+		fmt.Println("[INDEX PAGE] [ASSETS] [ERROR]", err)
 		w.WriteHeader(500)
 		return
 	}
 
-	data := templates.IndexData{Balance: 1000, Swap: false, Assets: assets, Wallet: wallet}
+	username := sessions.GetString(r.Context(), "username")
+	id := sessions.GetInt(r.Context(), "id")
+	var value float64
 
-	if r.Header.Get("Hx-Boosted") == "true" {
+	if id != 0 {
+		assets, value, _ = loadBalances(id, assets)
+		sessions.Put(r.Context(), "total_value", value)
+	}
+
+	data := templates.IndexData{Username: username, Balance: value, Swap: false, Assets: assets}
+
+	if r.Header.Get("Hx-Request") == "true" {
 		templates.WriteIndex(w, r, data)
 		return
 	}
@@ -34,95 +39,57 @@ func indexPage(w http.ResponseWriter, r *http.Request) {
 	})
 }
 
-func loginPage(w http.ResponseWriter, r *http.Request) {
+func loginPage(register bool) func(http.ResponseWriter, *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
 
-	if r.Header.Get("Hx-Boosted") == "true" {
-		templates.WriteLogin(w, r, templates.LoginData{})
-		return
+		if r.Header.Get("Hx-Request") == "true" {
+			templates.WriteLogin(w, r, templates.LoginData{Register: register})
+			return
+		}
+
+		root.Write(w, nil, func(w io.Writer) {
+			templates.WriteLogin(w, r, templates.LoginData{Register: register})
+		})
 	}
-
-	root.Write(w, nil, func(w io.Writer) {
-		templates.WriteLogin(w, r, templates.LoginData{})
-	})
 }
 
-func login(w http.ResponseWriter, r *http.Request) {
-	r.ParseForm()
+func coinOverview(actionsOnly bool) func(http.ResponseWriter, *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		coin := chi.URLParam(r, "coin")
+		asset, err := GetAsset(coin)
 
-	if r.Form.Get("password") != "good" {
-		w.Write([]byte("<div id=\"login-error\">error: monkey</div>"))
-		return
+		if id := sessions.GetInt(r.Context(), "id"); id != 0 {
+			asset, _ = loadBalance(id, *asset)
+		}
+
+		if err != nil {
+			fmt.Println(err)
+			w.WriteHeader(500)
+			return
+		}
+
+		if actionsOnly {
+			templates.ComponentsOverview.WriteTemplate(w, "actions", asset)
+			return
+		}
+
+		templates.ComponentsOverview.Write(w, r, asset)
 	}
-
-	w.Header().Add("Hx-Redirect", "/")
 }
 
-func coinAction(w http.ResponseWriter, r *http.Request) {
-
-	coin := chi.URLParam(r, "coin")
-	action := chi.URLParam(r, "action")
-
-	if action != "buy" && action != "sell" {
-		w.WriteHeader(400)
-		return
-	}
-
-	body, _ := io.ReadAll(r.Body)
-
-	fmt.Println(action, string(body))
-
-	asset, err := GetAsset(coin)
-
-	if err != nil {
-		fmt.Println(err)
-		w.WriteHeader(500)
-		return
-	}
-
-	asset.Balance = wallet[asset.Id]
-
-	buffer := bytes.NewBuffer([]byte{})
-
-	templates.WriteComponentsOverview(buffer, r, templates.ComponentsOverviewData{
-		Coin:  coin,
-		Asset: asset,
-	})
-
-	templates.WriteComponentsHeader(buffer, r, templates.ComponentsHeaderData{
-		Balance: 2000,
-		Swap:    true,
-	})
-
-	w.Write(buffer.Bytes())
-}
-
-func coinOverview(w http.ResponseWriter, r *http.Request) {
-	coin := chi.URLParam(r, "coin")
-	asset, err := GetAsset(coin)
-
-	if err != nil {
-		fmt.Println(err)
-		w.WriteHeader(500)
-		return
-	}
-
-	asset.Balance = wallet[asset.Id]
-
-	templates.WriteComponentsOverview(w, r, templates.ComponentsOverviewData{
-		Coin:  coin,
-		Asset: asset,
-	})
-}
 func coinListItem(w http.ResponseWriter, r *http.Request) {
 	coin := chi.URLParam(r, "coin")
 	asset, err := GetAsset(coin)
 
+	if id := sessions.GetInt(r.Context(), "id"); id != 0 {
+		asset, _ = loadBalance(id, *asset)
+	}
+
 	if err != nil {
 		fmt.Println(err)
 		w.WriteHeader(500)
 		return
 	}
 
-	asset.Balance = wallet[asset.Id]
 	templates.Index.WriteTemplate(w, "asset", asset)
 }

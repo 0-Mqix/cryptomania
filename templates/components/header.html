@@ -3,50 +3,95 @@
 {{else}}
     <header id="header">
 {{end}}
+
     <div>
-        <div class="balance">{{.Balance}} $</div>
-        <a href="/login" hx-boost="true">login</a>
+        {{if ne .Balance 0.0 }}
+        <div class="balance">total: <span>{{format_float .Balance}} $</div>
+        {{end}}
+
+        <div class="user">
+            {{if ne .Username "" }}
+            <div class="username">user:<span class="value">{{.Username}}</span></div>
+            <div class="divider"></div>
+            <a href="/user/logout" hx-boost="true">logout</a>
+            {{else}}
+            <a href="/login" hx-boost="true">login</a>
+            {{end}}
+        </div>
     </div>
-</header>
+
+{{if .Swap}}
+    </header>
+{{else}}
+    </header>
+{{end}}
 
 <style>
-    a {
+
+
+	.user {
+        height: 100%;
         margin-left: auto;
-    }
-
-    .balance {
-        color: var(--blue);
-        font-weight: bold;
-    }
-
-    header {
-        background-color: var(--background-color);
-        height: 80px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        position: fixed;
-        top: 0;
-        padding: 12px;
-        z-index: 100;
-    }
-
-    header > div {
+		display: flex;
         align-items: center;
-        border-radius: 0.75rem;
-        border: solid var(--color) 2px;
-        color: var(--color);
-        padding: 12px;
-        display: flex;
-        min-width: 600px;
-        width: 45vw;
-        top: 12px;  
-    }  
 
-    @media screen and (max-width: 600px) {
-        header > div; {
-            min-width: unset;
-            width: 100%;
+        .divider {
+            height: 100%;
+            margin-inline: 12px;
+            border-left: solid var(--color) 2px;
         }
-    }
+
+        .username {
+            text-align: right;
+            .value {
+				font-weight: bold;
+			}
+		}
+
+        a {
+            display: flex;
+            align-items: center;
+        }
+	}
+	.balance {
+        span {
+		    font-weight: bold;
+        }
+	}
+
+	header {
+		background-color: var(--background-color);
+		height: 80px;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		position: fixed;
+		top: 0;
+		padding: 12px;
+		z-index: 100;
+	}
+
+	header > div {
+		display: flex;
+		gap: 12px;
+		align-items: center;
+		border-radius: 0.75rem;
+		border: solid var(--color) 2px;
+		color: var(--color);
+		padding: 12px;
+		min-width: 600px;
+		width: 45vw;
+		top: 12px;
+	}
+
+	@media screen and (max-width: 600px) {
+        header {
+            height: 110px;
+        
+            > div {
+                min-width: unset;
+                width: 100%;
+            }
+        }
+	}
 </style>

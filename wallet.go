@@ -166,6 +166,7 @@ func coinAction(w http.ResponseWriter, r *http.Request) {
 
 	userId := sessions.GetInt(r.Context(), "id")
 	if userId == 0 {
+		w.Header().Add("Hx-Location", "/login")
 		w.WriteHeader(http.StatusUnauthorized)
 		return
 	}

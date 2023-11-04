@@ -1,19 +1,21 @@
 # syntax=docker/dockerfile:1
 
-# TODO:
-# copy all go files
-# copy melt.json
-# build client
-# melt production mode
-
 FROM golang:1.21.1
 
 WORKDIR /cryptomania
 
-COPY go.mod go.sum ./
+ENV "PRODUCTION_MODE"=1
 
+COPY /melt.json ./
+COPY /client/build ./client/build
+COPY /templates/templates.go ./templates/templates.go
+COPY /*.go ./
+
+COPY go.mod go.sum ./
 RUN go mod download
 
 RUN go build -o cryptomania .
 
-CMD ["./drain"]
+EXPOSE 3000
+
+CMD ["./cryptomania"]

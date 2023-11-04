@@ -8688,22 +8688,22 @@ function r(Fe) {
 function formatFloat(Fe) {
   let ei = "";
   if (Fe < 0.1) {
-    const ri = toFixed(Fe, 10).split(".")[1];
-    if (!ri)
+    const wi = Fe.toString().split(".")[1];
+    if (!wi)
       ei = Fe.toString();
     else
-      for (let ii = 0; ii < ri.length; ii++)
-        if (ri[ii] != "0") {
-          ei = toFixed(Fe, ii + 3);
+      for (let zi = 0; zi < wi.length; zi++)
+        if (wi[zi] != "0") {
+          ei = Fe.toFixed(zi + 3);
           break;
         }
   } else
-    Fe < 10 ? ei = toFixed(Fe, 3) : ei = toFixed(Fe, 2);
-  return trimFloat(ei);
-}
-function toFixed(Fe, ei) {
-  const ri = Math.pow(10, ei), ii = Math.round(Fe * ri), hi = Math.floor(ii / ri), wi = String(ii % ri).padStart(ei, "0");
-  return `${hi}.${wi}`;
+    Fe < 10 ? ei = Fe.toFixed(3) : ei = Fe.toFixed(2);
+  const ri = ei.split("."), ii = ri[0];
+  let hi = "";
+  for (let wi = ii.length - 1; wi >= 0; wi--)
+    hi = ii[wi] + hi, (ii.length - 1 - wi) % 3 == 2 && wi != 0 && (hi = "_" + hi);
+  return trimFloat(hi + (ri[1] ? "." + ri[1] : ""));
 }
 function trimFloat(Fe) {
   for (let ei = Fe.length - 1; ei > 1 && Fe[ei] == "0"; ei--)
@@ -8773,7 +8773,7 @@ class QuantitySelector extends s {
 							@keydown=${this.ignore}
 							@change=${this.coin_value_change}
 							type="number"
-							.value=${trimFloat(toFixed(this.amount, 10))}
+							.value=${this.amount.toString()}
 						/>
 						<span class="suffix">${this.symbol.toUpperCase()}</span>
 					</div>

@@ -1,5 +1,9 @@
 github.com/0-mqix/melt v0.1.9 h1:LDd8f4rq4BDhsq+RSKxFXWba5xmEuhtpUBRrzU+jNO0=
 github.com/0-mqix/melt v0.1.9/go.mod h1:AUSkHVXeNYy/vNFGgXGk7N1ip54VV9g+w34qthaM0vQ=
+github.com/0-mqix/melt v0.1.10 h1:wArtJfii+vCw+OBxOjHeKI0v1PhlllTgUIAJ7vYECx4=
+github.com/0-mqix/melt v0.1.10/go.mod h1:AUSkHVXeNYy/vNFGgXGk7N1ip54VV9g+w34qthaM0vQ=
+github.com/0-mqix/melt v0.1.11 h1:gsiDaudBzVAMTDySFBkFXWoKbJBrE6pO3MVj8ZxdedA=
+github.com/0-mqix/melt v0.1.11/go.mod h1:AUSkHVXeNYy/vNFGgXGk7N1ip54VV9g+w34qthaM0vQ=
 github.com/alexedwards/scs/v2 v2.6.0 h1:vxNyhWZOnlWK9NsYlgFjSaP5IGN7Cm/sf6/slLJNBos=
 github.com/alexedwards/scs/v2 v2.6.0/go.mod h1:ToaROZxyKukJKT/xLcVQAChi5k6+Pn1Gvmdl7h3RRj8=
 github.com/bep/godartsass/v2 v2.0.0 h1:Ruht+BpBWkpmW+yAM2dkp7RSSeN0VLaTobyW0CiSP3Y=

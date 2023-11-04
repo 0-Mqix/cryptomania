@@ -2,6 +2,7 @@ package main
 
 import (
 	"cryptomania/templates"
+	"embed"
 	"fmt"
 	"html/template"
 	"log"
@@ -20,6 +21,10 @@ import (
 
 //go:generate go run generate.go
 
+//go:embed "melt.json"
+//go:embed "client/build"
+var build embed.FS
+
 var (
 	root     *melt.Root
 	database *sqlx.DB
@@ -29,46 +34,78 @@ var (
 func main() {
 	godotenv.Load()
 
-	m := melt.New(
-		melt.WithWatcher("/reload_event", true, true, []string{".html", ".scss"}, "./templates"),
-		melt.WithGeneration("./templates/templates.go"),
-		melt.WithStyle(true, "melt", "./templates/styles/main.scss", ""),
-		melt.WithComponentFuncMap(template.FuncMap{
-			"format_float": formatFloatFunction,
-			"low_case":     lowCase,
-			"price_change": priceChange,
-			"println":      fmt.Println,
-		}),
-	)
+	production := os.Getenv("PRODUCTION_MODE") == "1"
+
+	if production {
+		fmt.Println("[CRYPTOMANIA] starting in production mode...")
+	} else {
+		fmt.Println("[CRYPTOMANIA] starting in development mode...")
+	}
+
+	functions := template.FuncMap{
+		"format_float": formatFloatFunction,
+		"low_case":     lowCase,
+		"price_change": priceChange,
+		"println":      fmt.Println,
+	}
+
+	var m *melt.Furnace
+	var err error
+
+	if !production {
+		m = melt.New(
+			melt.WithOutput("./melt.json"),
+			melt.WithWatcher("/reload_event", true, true, []string{".html", ".scss"}, "./templates"),
+			melt.WithGeneration("./templates/templates.go"),
+			melt.WithStyle(true, "melt", "./templates/styles/main.scss", ""),
+			melt.WithComponentFuncMap(functions),
+		)
+	} else {
+		build, _ := build.ReadFile("melt.json")
+		m = melt.NewProduction(build, functions, nil)
+	}
+
+	templates.Load(m, templates.GlobalHandlers{})
+	root = m.MustGetRoot("./templates/root.html")
 
 	opt, _ := redis.ParseURL(os.Getenv("UPSTASH"))
 	client := redis.NewClient(opt)
-
-	var err error
 
 	database, err = sqlx.Connect("mysql", os.Getenv("PLANETSCALE"))
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	templates.Load(m, templates.GlobalHandlers{})
-	root = m.MustGetRoot("./templates/root.html")
-
 	sessions = scs.New()
 	sessions.Store = NewSessionStore(client)
 
 	r := chi.NewRouter()
 
-	r.Get("/reload_event", m.ReloadEventHandler)
-	r.Post("/reload_event", func(w http.ResponseWriter, r *http.Request) { m.SendReloadEvent() })
+	if !production {
+		r.Get("/reload_event", m.ReloadEventHandler)
+		r.Post("/reload_event", func(w http.ResponseWriter, r *http.Request) { m.SendReloadEvent() })
+	}
+
+	if !production {
+		r.Get("/client.js", func(w http.ResponseWriter, r *http.Request) {
+			http.ServeFile(w, r, "./client/build/client.js")
+		})
+	} else {
+		client, err := build.ReadFile("client/build/client.js")
+
+		if err != nil {
+			panic("[CRYPTOMANIA] client.js not found")
+		}
+
+		r.Get("/client.js", func(w http.ResponseWriter, r *http.Request) {
+			w.Header().Set("Content-Type", "application/javascript")
+			w.Write(client)
+		})
+	}
 
 	r.Get("/style.css", func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Content-Type", "text/css")
 		w.Write([]byte(m.Styles))
-	})
-
-	r.Get("/client.js", func(w http.ResponseWriter, r *http.Request) {
-		http.ServeFile(w, r, "./client/build/client.js")
 	})
 
 	//endpoints with session

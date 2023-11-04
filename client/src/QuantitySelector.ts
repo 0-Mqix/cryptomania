@@ -1,6 +1,6 @@
 import { LitElement, html, css } from "lit"
 import { property, state } from "lit/decorators.js"
-import { formatFloat, toFixed, trimFloat } from "./helpers"
+import { formatFloat } from "./helpers"
 
 export default class QuantitySelector extends LitElement {
 	@property({ type: Number }) coin_price = 0
@@ -120,7 +120,7 @@ export default class QuantitySelector extends LitElement {
 							@keydown=${this.ignore}
 							@change=${this.coin_value_change}
 							type="number"
-							.value=${trimFloat(toFixed(this.amount, 10))}
+							.value=${this.amount.toString()}
 						/>
 						<span class="suffix">${this.symbol.toUpperCase()}</span>
 					</div>

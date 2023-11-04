@@ -2,8 +2,9 @@ export function formatFloat(x: number) {
 	let str = ""
 
 	if (x < 0.1) {
-		const decimals = toFixed(x, 10).split(".")[1]
-		if (!decimals) {
+   const decimals = x.toString().split('.')[1];
+
+   		if (!decimals) {
 			str = x.toString()
 		} else {
 			for (let i = 0; i < decimals.length; i++) {
@@ -11,25 +12,28 @@ export function formatFloat(x: number) {
 					continue
 				}
 
-				str = toFixed(x, i + 3)
+				str = x.toFixed(i + 3)
 				break;
 			}
 		}
 	} else if (x < 10) {
-		str = toFixed(x, 3)
+		str = x.toFixed(3)
 	} else {
-		str = toFixed(x, 2)
+		str = x.toFixed(2)
 	}
 
-	return trimFloat(str)
-}
+	const split = str.split(".")
+	const left = split[0]
+	let formatted = ""
 
-export function toFixed(value: number, precision: number) {
-    const multiplier = Math.pow(10, precision);
-    const shiftedValue = Math.round(value * multiplier);
-    const integerPart = Math.floor(shiftedValue / multiplier);
-    const decimalPart = String(shiftedValue % multiplier).padStart(precision, '0');
-    return `${integerPart}.${decimalPart}`;
+	for (let i = left.length- 1; i >= 0; i--) {
+		formatted = left[i] + formatted
+		if ((left.length-1-i) % 3 == 2 && i != 0) {
+			formatted = "_" + formatted
+		}
+	}
+
+	return trimFloat(formatted + (split[1] ? "." + split[1] : ""))
 }
 
 export function trimFloat(s: string) {

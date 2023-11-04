@@ -3,7 +3,7 @@ module cryptomania
 go 1.20
 
 require (
-	github.com/0-mqix/melt v0.1.9
+	github.com/0-mqix/melt v0.1.11
 	github.com/go-chi/chi/v5 v5.0.10
 	golang.org/x/crypto v0.11.0
 )

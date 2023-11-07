@@ -52,6 +52,7 @@ func main() {
 	var m *melt.Furnace
 	var err error
 
+	//setup melt
 	if !production {
 		m = melt.New(
 			melt.WithOutput("./melt.json"),
@@ -65,22 +66,30 @@ func main() {
 		m = melt.NewProduction(build, functions, nil)
 	}
 
-	templates.Load(m, templates.GlobalHandlers{})
+	// load the generated code by melt and init the global handlers
+	templates.Load(m, templates.GlobalHandlers{
+		ComponentsHeader: HeaderGlobalHandler,
+	})
+
 	root = m.MustGetRoot("./templates/root.html")
 
+	// get redis connection
 	opt, _ := redis.ParseURL(os.Getenv("UPSTASH"))
 	client := redis.NewClient(opt)
 
+	// get sql connection
 	database, err = sqlx.Connect("mysql", os.Getenv("PLANETSCALE"))
 	if err != nil {
 		log.Fatalln(err)
 	}
 
+	// session system
 	sessions = scs.New()
 	sessions.Store = NewSessionStore(client)
 
 	r := chi.NewRouter()
 
+	// if not production mode add reload event stuff to melt with the current http router
 	if !production {
 		r.Get("/reload_event", m.ReloadEventHandler)
 		r.Post("/reload_event", func(w http.ResponseWriter, r *http.Request) { m.SendReloadEvent() })
@@ -114,6 +123,9 @@ func main() {
 
 		r.Get("/login", loginPage(false))
 		r.Get("/register", loginPage(true))
+
+		r.Get("/exchanges", exchangesPage)
+		r.Get("/news", newsPage)
 
 		r.Get("/overview/{coin}/actions", coinOverview(true))
 		r.Get("/overview/{coin}", coinOverview(false))

@@ -1,25 +1,43 @@
+<global />
+
+<!-- 
+    if swap it needs to set the hx-swap-oob to true in the response so
+    when i return multiple elements from a request i can swap those too without setting a target
+-->
+
 {{if .Swap}}
     <header id="header" hx-swap-oob="true">
 {{else}}
     <header id="header">
 {{end}}
 
-    <div>
-        {{if ne .Balance 0.0 }}
-        <div class="balance">total: <span>{{format_float .Balance}} $</div>
-        {{end}}
+        <div>
+            <div class="account">
+                {{if ne .Balance 0.0 }}
+                <div class="balance">total: <span>{{format_float .Balance}} $</div>
+                {{end}}
 
-        <div class="user">
-            {{if ne .Username "" }}
-            <div class="username">user:<span class="value">{{.Username}}</span></div>
-            <div class="divider"></div>
-            <a href="/user/logout" hx-boost="true">logout</a>
-            {{else}}
-            <a href="/login" hx-boost="true">login</a>
-            {{end}}
+                <div class="user">
+                    {{if ne .Username "" }}
+                    <div class="username">user:<span class="value">{{.Username}}</span></div>
+                    <div class="divider"></div>
+                    <a href="/user/logout" hx-boost="true">logout</a>
+                    {{else}}
+                    <a href="/login" hx-boost="true">login</a>
+                    {{end}}
+                </div>
+            </div>
+
+
+            <nav hx-boost="true">
+                <a href="/">coins</a>
+                <a href="/exchanges">exchanges</a>
+                <a href="/news">news</a>
+            </nav>
+
         </div>
-    </div>
 
+<!-- yes i know... this is so the html parser i use in melt sees it as a proper html tree -->
 {{if .Swap}}
     </header>
 {{else}}
@@ -27,12 +45,16 @@
 {{end}}
 
 <style>
+    nav {
+        display: flex;
+        justify-content: right;
+        gap: 12px;
+    }
 
-
-	.user {
+    .user {
         height: 100%;
         margin-left: auto;
-		display: flex;
+        display: flex;
         align-items: center;
 
         .divider {
@@ -43,55 +65,60 @@
 
         .username {
             text-align: right;
+
             .value {
-				font-weight: bold;
-			}
-		}
+                font-weight: bold;
+            }
+        }
 
         a {
             display: flex;
             align-items: center;
         }
-	}
-	.balance {
+    }
+
+    .balance {
         span {
-		    font-weight: bold;
+            font-weight: bold;
         }
-	}
+    }
 
-	header {
-		background-color: var(--background-color);
-		height: 80px;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		position: fixed;
-		top: 0;
-		padding: 12px;
-		z-index: 100;
-	}
+    header {
+        background-color: var(--background-color);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        padding: 12px;
+        z-index: 100;
+    }
+    
+    .account {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+    }
 
-	header > div {
-		display: flex;
-		gap: 12px;
-		align-items: center;
-		border-radius: 0.75rem;
-		border: solid var(--color) 2px;
-		color: var(--color);
-		padding: 12px;
-		min-width: 600px;
-		width: 45vw;
-		top: 12px;
-	}
+    header>div {
+        flex-direction: column;
+        display: flex;
+        gap: 12px;
+        border-radius: 0.75rem;
+        border: solid var(--color) 2px;
+        color: var(--color);
+        padding: 12px;
+        min-width: 600px;
+        width: 45vw;
+        top: 12px;
+    }
 
-	@media screen and (max-width: 600px) {
+    @media screen and (max-width: 600px) {
         header {
-            height: 110px;
-        
-            > div {
+            >div {
                 min-width: unset;
                 width: 100%;
             }
         }
-	}
+    }
 </style>

@@ -87,8 +87,8 @@ func validatePassword(password string) (bool, string) {
 	return !invalid, message
 }
 
+// writes the login error to the response writer this is used in endpoints with htmx for swapping the errors in the dom
 func writeLoginErrorMessage(w http.ResponseWriter, message string) {
-
 	if message == "" {
 		w.Write([]byte("<div id=\"login-error\" style=\"display: none;\"></div>"))
 		return

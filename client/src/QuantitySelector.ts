@@ -132,7 +132,7 @@ export default class QuantitySelector extends LitElement {
 							@keydown=${this.ignore}
 							@change=${this.value_change}
 							type="number"
-							.value=${formatFloat(this.value)}
+							.value=${formatFloat(this.value, true)}
 						/>
 						<span class="suffix">$</span>
 					</div>

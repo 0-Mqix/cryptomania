@@ -1,0 +1,80 @@
+<import>Header components/header.html</import>
+
+<Header />
+
+<main hx-swap="outerHTML" class="dynamic-top-padding">
+    {{ range .Exchanges }}
+        <div class="exchange">
+            
+            <div class="name">
+                <div class="rank">{{.Rank}}: </div>
+                <span class="value">{{.Name }}</span>
+            </div>
+            
+            <div class="info">
+                <div class="url">
+                    url: <a href="{{.ExchangeUrl}}">{{.ExchangeUrl}}</a>
+                </div>
+                {{if .VolumeUsd }}
+                    <div class="volume">volume: <span>{{ format_float .VolumeUsd }} $</span></div>
+                {{end}}
+            </div>
+        </div>
+    {{ end }}
+</main>
+
+
+<style>
+    a {
+        color: var(--blue);
+    }
+
+    .exchange {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+
+        .name {
+            display: flex;
+            
+            .value {
+                font-size: large;
+            }
+        }
+
+        .volume > span {
+            font-weight: bold;
+        }
+
+        .rank {
+            width: 40px;
+            color: var(--orange);
+            font-weight: bold;
+        }
+
+        .info {
+            padding-left: 40px;
+        }
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        gap: 12px;
+        min-width: 600px;
+        width: 45vw;  
+    }
+
+    
+   @media screen and (max-width: 600px) {
+        main {
+            min-width: unset;
+            width: 100%;
+        }
+    }
+
+</style>

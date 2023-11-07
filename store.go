@@ -7,6 +7,8 @@ import (
 	"github.com/redis/go-redis/v9"
 )
 
+// custom session store for the session libary i use because the redis libary i use is better because its from redis themselfs
+
 var Prefix = "session:"
 
 type SessionStore struct {

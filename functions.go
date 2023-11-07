@@ -11,6 +11,8 @@ import (
 func formatFloat(number float64) string {
 	var str string
 
+	// if number is smaller then 0.1 then find the first noticable value and formats it then
+	// 0.000000123456 => 0.000000123
 	if number < 0.1 {
 		decimals := strings.Split(strconv.FormatFloat(number, 'f', -1, 64), ".")[1]
 		for i := 0; i < len(decimals); i++ {
@@ -31,6 +33,8 @@ func formatFloat(number float64) string {
 	runes := []rune(split[0])
 	var result []rune
 
+	// format the part before the decimal points with _ each 3 spaces
+	// 10000 => 10_000
 	for i := len(runes) - 1; i >= 0; i-- {
 		result = append([]rune{runes[i]}, result...)
 		if (len(runes)-1-i)%3 == 2 && i != 0 {

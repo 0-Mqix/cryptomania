@@ -9,35 +9,61 @@ import (
 )
 
 var (
+	News               *melt.Component
 	ComponentsOverview *melt.Component
+	Exchanges          *melt.Component
 	Index              *melt.Component
 	Login              *melt.Component
 	ComponentsHeader   *melt.Component
 )
 
 type GlobalHandlers struct {
+	ComponentsHeader func(r *http.Request, arguments map[string]any) *ComponentsHeaderData
 }
 
 func Load(furnace *melt.Furnace, handlers GlobalHandlers) {
 	ComponentsHeader = furnace.MustGetComponent("templates/components/header.html")
+	News = furnace.MustGetComponent("templates/news.html")
 	ComponentsOverview = furnace.MustGetComponent("templates/components/overview.html")
+	Exchanges = furnace.MustGetComponent("templates/exchanges.html")
 	Index = furnace.MustGetComponent("templates/index.html")
 	Login = furnace.MustGetComponent("templates/login.html")
 
 	globalHandlers := make(map[string]melt.GlobalHandler)
+	var handler melt.GlobalHandler
+
+	if handlers.ComponentsHeader != nil {
+		handler = func(r *http.Request, arguments map[string]any) any { return handlers.ComponentsHeader(r, arguments) }
+	} else {
+		handler = func(r *http.Request, _ map[string]any) any { return &ComponentsHeaderData{} }
+	}
+
+	globalHandlers["templates/components/header.html"] = handler
 
 	furnace.SetGlobalHandlers(globalHandlers)
 }
 
+type ExchangesData struct {
+	Request   *http.Request
+	Exchanges any
+}
+
+// generated write function for component
+//
+//	path: "templates/exchanges.html"
+func WriteExchanges(w io.Writer, r *http.Request, data ExchangesData, globalOptions ...melt.GlobalOption) error {
+	return Exchanges.Write(w, r, data, globalOptions...)
+}
+
 type IndexData struct {
-	Swap              any
 	Balance           any
-	Username          any
-	Assets            any
-	PriceUsd          any
-	ChangePercent24Hr any
 	Value             any
 	Wallet            any
+	Request           *http.Request
+	Assets            any
+	PriceUsd          any
+	PriceEuro         any
+	ChangePercent24Hr any
 }
 
 // generated write function for component
@@ -48,10 +74,10 @@ func WriteIndex(w io.Writer, r *http.Request, data IndexData, globalOptions ...m
 }
 
 type IndexAssetData struct {
+	Id      any
 	Symbol  any
 	Name    any
 	Balance any
-	Id      any
 }
 
 // generated write function for a template in a component
@@ -86,20 +112,32 @@ func WriteComponentsHeader(w io.Writer, r *http.Request, data ComponentsHeaderDa
 	return ComponentsHeader.Write(w, r, data, globalOptions...)
 }
 
+type NewsData struct {
+	Request *http.Request
+	News    any
+}
+
+// generated write function for component
+//
+//	path: "templates/news.html"
+func WriteNews(w io.Writer, r *http.Request, data NewsData, globalOptions ...melt.GlobalOption) error {
+	return News.Write(w, r, data, globalOptions...)
+}
+
 type ComponentsOverviewData struct {
-	Sold              any
 	ChangePercent24Hr any
 	MarketCapUsd      any
-	Supply            any
-	Id                any
-	Symbol            any
 	VolumeUsd24Hr     any
-	ActionAmount      any
+	Supply            any
+	Symbol            any
 	Name              any
 	PriceUsd          any
-	Bought            any
 	Balance           any
 	Value             any
+	ActionAmount      any
+	Id                any
+	Bought            any
+	Sold              any
 }
 
 // generated write function for component

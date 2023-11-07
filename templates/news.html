@@ -1,0 +1,53 @@
+<import>Header components/header.html</import>
+
+<Header />
+
+<main class="dynamic-top-padding">
+    {{ range .News }}
+    <article>
+        <h1>{{.Title}}</h1>
+        <a href="{{ .Url }}"><div>{{ html .Content }}</div></a>
+    </article>
+    {{ end }}
+</main>
+
+
+<style>
+    article {
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        padding-bottom: 24px;
+        gap: 12px;
+        border-bottom: solid var(--color) 2px;
+
+        > h1 {
+           margin: 0;
+        }
+    }
+
+    a {
+        font-weight: normal;
+        &:hover {
+            color: var(--blue)
+        }
+    }
+
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        align-items: center;
+        gap: 12px;
+        min-width: 600px;
+        width: 45vw;  
+    }
+    
+   @media screen and (max-width: 600px) {
+        main {
+            min-width: unset;
+            width: 100%;
+        }
+    }    
+</style>

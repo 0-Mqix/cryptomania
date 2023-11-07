@@ -6,8 +6,33 @@ import (
 	"io"
 	"net/http"
 
+	"github.com/0-mqix/melt"
 	"github.com/go-chi/chi/v5"
 )
+
+// global handler so this function is called each time the Header component is rendered
+func HeaderGlobalHandler(r *http.Request, arguments map[string]any) *templates.ComponentsHeaderData {
+	id := sessions.GetInt(r.Context(), "id")
+
+	swap, ok := arguments["swap"].(bool)
+	if !ok {
+		swap = false
+	}
+
+	if id == 0 {
+		return &templates.ComponentsHeaderData{Username: "", Balance: 0.0, Swap: swap}
+	}
+
+	username := sessions.GetString(r.Context(), "username")
+
+	value, ok := arguments["value"].(float64)
+
+	if !ok {
+		value = sessions.GetFloat(r.Context(), "total_value")
+	}
+
+	return &templates.ComponentsHeaderData{Username: username, Swap: swap, Balance: value}
+}
 
 func indexPage(w http.ResponseWriter, r *http.Request) {
 	assets, err := GetAssets()
@@ -18,7 +43,6 @@ func indexPage(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	username := sessions.GetString(r.Context(), "username")
 	id := sessions.GetInt(r.Context(), "id")
 	var value float64
 
@@ -27,15 +51,62 @@ func indexPage(w http.ResponseWriter, r *http.Request) {
 		sessions.Put(r.Context(), "total_value", value)
 	}
 
-	data := templates.IndexData{Username: username, Balance: value, Swap: false, Assets: assets}
+	//arugments that are passed into global components for melt
+	arguments := melt.GlobalArguments(map[string]any{"value": value})
 
+	//data that is passed with into the template
+	data := templates.IndexData{Balance: value, Assets: assets, Request: r}
+
+	// if htmx then write without root
 	if r.Header.Get("Hx-Request") == "true" {
-		templates.WriteIndex(w, r, data)
+		templates.WriteIndex(w, r, data, arguments)
 		return
 	}
 
 	root.Write(w, nil, func(w io.Writer) {
-		templates.WriteIndex(w, r, data)
+		templates.WriteIndex(w, r, data, arguments)
+	})
+}
+
+func exchangesPage(w http.ResponseWriter, r *http.Request) {
+	exchanges, err := getExchanges()
+
+	if err != nil {
+		fmt.Println("[EXCHANGES PAGE] [ERROR]", err)
+		w.WriteHeader(500)
+		return
+	}
+
+	data := templates.ExchangesData{Exchanges: exchanges, Request: r}
+
+	if r.Header.Get("Hx-Request") == "true" {
+		templates.WriteExchanges(w, r, data)
+		return
+	}
+
+	root.Write(w, nil, func(w io.Writer) {
+		templates.WriteExchanges(w, r, data)
+	})
+}
+
+func newsPage(w http.ResponseWriter, r *http.Request) {
+	news, err := getNews()
+
+	if err != nil {
+		fmt.Println("[NEWS PAGE] [ERROR]", err)
+		w.WriteHeader(500)
+		return
+	}
+
+	data := templates.NewsData{News: news, Request: r}
+
+	if r.Header.Get("Hx-Request") == "true" {
+		templates.WriteNews(w, r, data)
+		return
+	}
+
+	root.Write(w, nil, func(w io.Writer) {
+		templates.WriteNews(w, r, data)
 	})
 }
 

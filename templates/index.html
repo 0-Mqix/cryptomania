@@ -3,7 +3,7 @@
 
 <Header />
 
-<main hx-swap="outerHTML">
+<main hx-swap="outerHTML" class="dynamic-top-padding">
     {{ range .Assets }}
         {{template "asset" . }}
     {{ end }}
@@ -24,6 +24,7 @@
                 </div>
             {{end}}
             <div class="value">{{ format_float .PriceUsd }} $</div>
+            <div class="value">{{ format_float .PriceEuro }} €</div>
             <div class="change">{{ price_change .ChangePercent24Hr }}</div>    
             {{if ne .Balance 0.0 }}
                 <div class="line"></div>
@@ -35,7 +36,6 @@
 
 <style>
     main {
-        padding-top: 72px;
         display: flex;
         flex-direction: column;
         width: 100%;
@@ -102,10 +102,6 @@
         }
     }
     @media screen and (max-width: 600px) {
-        main {
-            padding-top: 98px;
-        }
-
         main > .asset, %g main > .overview {
             min-width: unset;
             width: 100%;

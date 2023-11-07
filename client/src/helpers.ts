@@ -1,4 +1,4 @@
-export function formatFloat(x: number) {
+export function formatFloat(x: number, disableUnderscore = false) {
 	let str = ""
 
 	if (x < 0.1) {
@@ -20,6 +20,10 @@ export function formatFloat(x: number) {
 		str = x.toFixed(3)
 	} else {
 		str = x.toFixed(2)
+	}
+
+	if (disableUnderscore) {
+		return trimFloat(str)
 	}
 
 	const split = str.split(".")

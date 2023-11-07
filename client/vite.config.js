@@ -13,6 +13,7 @@ export default defineConfig({
 	},
 	plugins: [
 		{
+			// on build send reload event to server
 			name: "melt",
 			closeBundle: async () => {
 				try {

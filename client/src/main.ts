@@ -10,6 +10,7 @@ window.htmx = htmx
 //define custom elements
 customElements.define('quantity-selector', QuantitySelector);
 
+// load prices for charts
 async function prices(coin: string) {
     return fetch(`https://api.coincap.io/v2/assets/${coin}/history?interval=m15&start=${Date.now() -  604_800_000}&end=${Date.now()}`)
     .then(response => response.json())
@@ -18,6 +19,7 @@ async function prices(coin: string) {
         return data.data.map(item => {return [item.time, Number(item.priceUsd)]});
     })
 }
+
 function dynamicTopPadding() {
     var top = document.querySelector("#header>div");
     //@ts-ignore

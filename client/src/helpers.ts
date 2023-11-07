@@ -1,3 +1,4 @@
+// for explanatio view the go code that is amlost exactly the same
 export function formatFloat(x: number, disableUnderscore = false) {
 	let str = ""
 
@@ -40,6 +41,7 @@ export function formatFloat(x: number, disableUnderscore = false) {
 	return trimFloat(formatted + (split[1] ? "." + split[1] : ""))
 }
 
+// remove un necesary 0s at the end
 export function trimFloat(s: string) {
 	
 	for (let i = s.length - 1; i > 1; i--) {
